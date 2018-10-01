@@ -1,0 +1,331 @@
+{
+  "$id": "https://github.com/GW-HIVE/glygen-backend/blob/master/api/specs/protein/list/response.schema.json",
+  "type": "object",
+  "properties": {
+    "query": {
+      "$id": "/properties/query",
+      "type": "object",
+	  "description": "Object that contains a set of search criteria that where used to generate this result set.",
+      "minProperties": 1,
+      "maxProperties": 1,
+      "properties": {
+        "operation": {
+          "$id": "/properties/query/properties/operation",
+          "type": "string",
+          "description": "Logical operation used to combine the search result of the individual query parts. Possible values are AND and OR.",
+          "default": "AND",
+          "examples": [
+            "AND"
+          ]
+        },
+        "query_type": {
+          "$id": "/properties/query/properties/query_type",
+          "type": "string",
+          "description": "Identifies the type of search to be performed. Currently only search_protein is supported.",
+          "default": "search_protein",
+          "examples": [
+            "search_protein"
+          ]
+        },
+		"execution_time": {
+          "$id": "/properties/query/properties/execution_time",
+          "type": "string",
+          "description": "Time stamp at which time the result set was generated. This field uses ISO 8601 pattern: YYYY-MM-DDThh:mm:ss+-hh.",
+          "examples": [
+            "2008-09-15T15:53:00+05:00"
+          ]
+        },
+        "uniprot_canonical_ac": {
+          "$id": "/properties/query/properties/uniprot_canonical_ac",
+          "type": "string",
+          "description": "This value is used to search by protein ID. This can either be a complete UniProtID or a part of a UniprotID.",
+          "examples": [
+            "P01234"
+          ]
+        },
+        "mass": {
+          "$id": "/properties/query/properties/mass",
+          "type": "object",
+		  "description": "This object is used to search proteins by their mass. The object consists of a minimum and a maximum value specifying a mass range to search for.",
+          "properties": {
+            "min": {
+              "$id": "/properties/query/properties/mass/properties/min",
+              "type": "integer",
+              "description": "Minimum value for the mass range to search for proteins. The value is specified in Dalton.",
+              "default": 0,
+              "examples": [
+                10
+              ]
+            },
+            "max": {
+              "$id": "/properties/query/properties/mass/properties/max",
+              "type": "integer",
+              "description": "Maximum value for the mass range to search for proteins. The value is specified in Dalton.",
+              "default": 0,
+              "examples": [
+                10000
+              ]
+            }
+          },
+          "required": [
+            "min",
+            "max"
+          ]
+        },
+        "organism": {
+          "$id": "/properties/query/properties/organism",
+          "type": "string",
+          "description": "This field is set if a search by organism (e.g. human) is performed. The value can either be a scientific species name (NCBI Taxonomy), a synonym or a NCBI Taxonomy ID.",
+          "default": "Homo sapiens (9606)",
+          "examples": [
+            "Homo sapiens (9606)"
+          ]
+        },
+        "protein_name": {
+          "$id": "/properties/query/properties/protein_name",
+          "type": "string",
+          "description": "This value is set for a search by protein name. The value can either be a complete protein name or a partial name.",
+          "default": "",
+          "examples": [
+            "Envelope glycoprotein"
+          ]
+        },
+        "gene_name": {
+          "$id": "/properties/query/properties/gene_name",
+          "type": "string",
+          "description": "This value is specifies to search proteins by their gene name. The name can either be a complete name or a partial name.",
+          "default": "",
+          "examples": [
+            "MGAT1"
+          ]
+        },
+        "glycan": {
+          "$id": "/properties/query/properties/glycan",
+          "type": "object",
+		  "description": "This object is used to search proteins by a glycan. This can either by an attached glycan or a glycan that gets bound by the protein."
+          "properties": {
+            "relation": {
+              "$id": "/properties/query/properties/glycan/properties/relation",
+              "type": "string",
+              "description": "Describes the relationship of the glycan with the protein. Possible values are attached (for glycans that glycosylate the protein), binding (for glycans that bind to a protein) or any (includes both).",
+              "default": "attached",
+              "examples": [
+                "attached"
+              ]
+            },
+            "glytoucan_ac": {
+              "$id": "/properties/query/properties/glycan/properties/glytoucan_ac",
+              "type": "string",
+              "description": "GlyTouCan ID of the glycan.",
+              "default": "",
+              "examples": [
+                "G09012"
+              ]
+            }
+          }
+        },
+        "glycosylated_aa": {
+          "$id": "/properties/query/properties/glycosylated_aa",
+          "type": "array",
+		  "description": "Search a protein by its glycosylated amino acids. The value is a list of amino acid types in one letter code.",
+          "items": {
+            "$id": "/properties/query/properties/glycosylated_aa/items",
+            "type": "string",
+            "default": "",
+            "examples": [
+              "N",
+              "S"
+            ]
+          }
+        },
+        "sequence": {
+          "$id": "/properties/query/properties/sequence",
+          "type": "object",
+          "properties": {
+            "aa_sequence": {
+              "$id": "/properties/query/properties/sequence/properties/aa_sequence",
+              "type": "string",
+              "description": "Amino acid sequence to search for. The sequence is specified in one latter code. Depending on the type it has to be a complete sequence or a part of a sequence.",
+              "default": "",
+              "examples": [
+                "NSTRFV"
+              ]
+            },
+            "type": {
+              "$id": "/properties/query/properties/sequence/properties/type",
+              "type": "string",
+              "description": "Type of sequence search. Possible values are exact (find proteins with exactly this sequence), partial (for proteins that contain the sequence) or blast (proteins that are similar).",
+              "default": "partial",
+              "examples": [
+                "exact"
+              ]
+            }
+          },
+          "required": [
+            "aa_sequence",
+            "type"
+          ]
+        },
+        "pathway_id": {
+          "$id": "/properties/query/properties/pathway_id",
+          "type": "string",
+          "description": "Search for proteins involved in a certain pathway. The pathway is specified by its name.",
+          "examples": [
+            "melatonin biosynthesis"
+          ]
+        },
+		"glycosylation_evidence": {
+          "$id": "/properties/query/properties/glycosylation_evidence",
+          "type": "string",
+          "description": "Search for proteins based on the evidence for the glycosylation sites. Possible values are calculated, experimental, none or any.",
+          "default": "any",
+          "examples": [
+            "calculated"
+          ]
+        }
+      },
+      "required": [
+        "operation",
+		"execution_time",
+        "query_type"
+      ]
+    }
+  },
+
+    "pagination": {
+      "$id": "/properties/pagination",
+      "type": "object",
+	  "description": "Object storing information to summarize settings that have been used to only retrieve a subset of the entire result list. These settings are an offset of the first entry, the number of requested entries (limit), the order of the result list (sort) and the order direction (order).",
+      "properties": {
+        "offset": {
+          "$id": "/properties/pagination/properties/offset",
+          "type": "integer",
+          "description": "After ordering and sorting of the result list the offset specifies the first entry in the list that is part of the result set. ",
+          "default": 1,
+          "examples": [
+            1
+          ]
+        },
+        "limit": {
+          "$id": "/properties/pagination/properties/limit",
+          "type": "integer",
+          "description": "Limit specifies how many entries have been requested of this list.",
+          "default": 20,
+          "examples": [
+            10
+          ]
+        },
+        "total_length": {
+          "$id": "/properties/pagination/properties/total_length",
+          "type": "integer",
+          "description": "Total number of entries in the result list. This number may differ from the number of entries in the json which is specified by limit.",
+          "examples": [
+            1
+          ]
+        },
+        "sort": {
+          "$id": "/properties/pagination/properties/sort",
+          "type": "string",
+          "description": "Specifies which criteria was used to sort the list. Possible values are uniprot_canonical_ac, mass, protein_name_long, protein_name_short, gene_name and organism.",
+          "default": "uniprot_canonical_ac",
+          "examples": [
+            "uniprot_canonical_ac"
+          ]
+        },
+        "order": {
+          "$id": "/properties/pagination/properties/order",
+          "type": "string",
+          "description": "Specifies the order direction of the list. Possible values are asc (ascendant) and desc (descended). ",
+          "default": "asc",
+          "examples": [
+            "asc"
+          ]
+        }
+      },
+      "required": [
+        "offset",
+        "limit",
+        "total_length",
+        "sort",
+        "order"
+      ]
+    },
+    "results": {
+      "$id": "/properties/results",
+      "type": "array",
+	  "description":"A list of objects each representing an entry in the result list."
+      "items": {
+        "$id": "/properties/results/items",
+        "type": "object",
+        "properties": {
+          "uniprot_canonical_ac": {
+            "$id": "/properties/results/items/properties/uniprot_canonical_ac",
+            "type": "string",
+            "description": "Uniprot ID of the protein.",
+            "examples": [
+              "P03390"
+            ]
+          },
+          "mass": {
+            "$id": "/properties/results/items/properties/mass",
+            "type": "number",
+            "description": "Mass of the protein.",
+            "examples": [
+              1502.5
+            ]
+          },
+          "protein_name_long": {
+            "$id": "/properties/results/items/properties/protein_name_long",
+            "type": "string",
+            "description": "Long name of the protein.",
+            "examples": [
+              "Envelope glycoprotein"
+            ]
+          },
+          "protein_name_short": {
+            "$id": "/properties/results/items/properties/protein_name_short",
+            "type": "string",
+            "description": "Short name of the protein.",
+            "examples": [
+              "ENV_MLVF5"
+            ]
+          },
+          "gene_name": {
+            "$id": "/properties/results/items/properties/gene_name",
+            "type": "string",
+            "description": "Name of the gene producing the protein.",
+            "examples": [
+              "MGAT1"
+            ]
+          },
+          "organism": {
+            "$id": "/properties/results/items/properties/organism",
+            "type": "string",
+            "description": "Scientific name of the organism the protein was found in.",
+            "examples": [
+              "Homo sapiens"
+            ]
+          }
+        },
+        "required": [
+          "uniprot_canonical_ac",
+          "organism"
+        ]
+      }
+    }
+  },
+  "error_code": {
+      "$id": "/properties/error_code",
+      "type": "string",
+	  "description":"If an error occured that prevented the system from provinding the response a JSON with an error code is returned. Please note that the error code only replaces the result section. Pagination information and query are always present.",
+	  "examples": [
+              "DB001"
+            ]
+			},
+			"required": [
+			"query",
+    "pagination"
+  ]
+}
+ 
+ 

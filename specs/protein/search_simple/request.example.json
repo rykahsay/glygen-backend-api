@@ -1,0 +1,7 @@
+{
+   "query":{
+      "query_type":"search_protein_simple",
+      "term":"Homo s",
+      "term_category":"any"
+   }
+}

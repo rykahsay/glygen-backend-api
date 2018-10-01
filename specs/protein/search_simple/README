@@ -1,0 +1,46 @@
+Introduction:
+=============
+This web service is used to allow a simple search using a single search field. An optional drop-down allows to categorize the search term. 
+
+Search Workflow:
+================
+User enters search criteria on the search page.
+1.JavaScript generates a JSON search query calls search WS.
+2.Search WS returns the result list ID
+3.Result list ID is passed to the list page
+4.Result list ID is passed to list WS together with information about sorting and number of requested results
+5.List WS returns requested number of results.
+
+Note:
+=====
+When performing a search the server has to assign a unique ID to each search result and store the search result and ID. 
+This will also allow us to persist search results even across database changes.
+
+Web service call: 
+=================
+HTTP Request method		POST
+
+Function:
+=========
+The WS returns a protein list ID with all the proteins that could be found for the search term. The input for the search is a search term and optional a category for the search term. For example the category could be protein which means any kind of protein identifier (name, UniprotID, RefSeq ID) could be used. The categories do not match with the list of detail search but rather are a combination of multiple of them.  
+
+Response:
+=========
+Content						JSON
+HTTP Content Type			application/json
+Access-Control-Allow-Origin	*
+
+Warning:
+========
+To all Cross-Origin Resource Sharing (CORS) the web service has to allow all domains access. Otherwise browsers will not permit to call this web service by a webpage. 
+Therefore the HTTP response header must contain the appropriate Access-Control-Allow-Origin statement.
+
+Note:
+=====
+An example JSON is available separately and the JSON data structure is documented in a JSON schema.
+
+Error code:
+===========
+{
+}	
+

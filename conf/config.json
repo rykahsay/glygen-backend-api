@@ -1,0 +1,102 @@
+{
+	"server":"dev"
+	,"max_results_count":{
+		"glycan":4000
+		,"protein":2000
+	}
+	,"dev":{
+                "dbinfo":{
+			"dbhost":"localhost"
+			,"dbname":"glygen"
+			,"dbuserid":"glygenadmin"
+			,"dbpassword":"glygenpass"
+		}
+                ,"contactemailreceivers":[ "myGlyGen@gmail.com", "rykahsay@gwu.edu", "agarwalgaurav1995@gmail.com"]
+		,"rootinfo":{
+			"baseurl":"/datasetviewer"
+                	,"ghtmlroot":"/datasetviewer"
+                	,"htmlroot":"/datasetviewer"
+                	,"cgiroot":"/cgi-bin/datasetviewer"
+                	,"pagebase":"/datasetviewer"
+                	,"downloadbase":"/datasetviewer"
+        		,"glygen_api_type_url":"http://glycomics.ccrc.uga.edu/ontologies/GlycO#"
+			,"glygen_api_glycomedb_url":"http://glycomics.ccrc.uga.edu/"
+			,"glygen_api_uckb_url":"http://www.unicarbkb.org/"
+			,"glygen_api_pbch_url":"https://pubchem.ncbi.nlm.nih.gov/"
+			,"glygen_api_glyco_url":"http://jcggdb.jp/rcmg/glycodb/"
+			,"glygen_api_gene_url":"https://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id="
+		}
+		,"pathinfo":{
+                        "htmlpath":"/var/www/html/datasetviewer/"
+                        ,"cgipath":"/var/www/cgi-bin/datasetviewer/"
+                	,"apierrorlogpath":"/data/projects/glygen/apierrorlog/"
+			,"apicachepath":"/data/projects/glygen/apicache/"
+			,"proteindbpath":"/data/projects/glygen/jsondb/proteindb.json"
+			,"useriddbpath":"/data/projects/glygen/jsondb/useriddb.json"
+			,"logdbpath":"/data/projects/glygen/jsondb/logdb.json"
+			,"glycanimagespath":"/data/projects/glygen/glycanimages/"
+			,"debuglogfile":"/data/projects/glygen/apierrorlog/debug.txt"
+		}
+	}
+	,"prd":{
+                "dbinfo":{
+			"dbhost":"localhost"
+			,"dbname":"glygen"
+			,"dbuserid":"glygenadmin"
+			,"dbpassword":"glygenpass"
+		}
+                ,"contactemailreceivers":[ "myGlyGen@gmail.com", "mazumder@gwu.edu", "will@ccrc.uga.edu", "rene@ccrc.uga.edu", "nje5@georgetown.edu", "jeetvora@gwu.edu", "rykahsay@gwu.edu"]
+		,"rootinfo":{
+			"baseurl":"/datasetviewer"
+                	,"ghtmlroot":"/datasetviewer"
+                	,"htmlroot":"/datasetviewer"
+                	,"cgiroot":"/cgi-bin/datasetviewer"
+                	,"pagebase":"/datasetviewer"
+                	,"downloadbase":"/datasetviewer"
+        		,"glygen_api_type_url":"http://glycomics.ccrc.uga.edu/ontologies/GlycO#"
+			,"glygen_api_glycomedb_url":"http://glycomics.ccrc.uga.edu/"
+			,"glygen_api_uckb_url":"http://www.unicarbkb.org/"
+			,"glygen_api_pbch_url":"https://pubchem.ncbi.nlm.nih.gov/"
+			,"glygen_api_glyco_url":"http://jcggdb.jp/rcmg/glycodb/"
+			,"glygen_api_gene_url":"https://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id="
+		}
+		,"pathinfo":{
+                        "htmlpath":"/var/www/html/datasetviewer/"
+                        ,"cgipath":"/var/www/cgi-bin/datasetviewer/"
+                	,"apierrorlogpath":"/data/projects/glygen/apierrorlog/"
+			,"apicachepath":"/data/projects/glygen/apicache/"
+			,"proteindbpath":"/data/projects/glygen/jsondb/proteindb.json"
+			,"useriddbpath":"/data/projects/glygen/jsondb/useriddb.json"
+			,"logdbpath":"/data/projects/glygen/jsondb/logdb.json"
+			,"glycanimagespath":"/data/projects/glygen/glycanimages/"
+			,"debuglogfile":"/data/projects/glygen/apierrorlog/debug.txt"
+		}
+	}
+	,"errors":{
+                "open-connection-failed": "Unable to connect to database."
+		
+		,"userid-generator-failed": "Unable to get unique ID."
+		
+		,"missing-parameter":"one of the required parameter."
+		,"missing-query-key-in-query-json":"query property is missing in query JSON"
+		,"no-search-criteria-submitted": "all search field values are empty"
+
+		,"non-existent-search-results":"no search results exist for the submitted ID"
+		,"non-existent-record":"no record exist for the submitted ID"
+		
+		,"unexpected-field-in-query":"Unexpected field in query JSON."
+		
+		,"invalid-field-for-typeahead":"Submitted field is not listed for typeahead search"
+		,"invalid-query-json":"Submitted query JSON is not valid"
+		,"invalid-parameter-value":"one of the required parameter has invalid value."
+		,"invalid-parameter-value-length":"one of the required parameter value is too long"
+	}
+}
+
+
+
+
+
+
+
+

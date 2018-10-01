@@ -1,0 +1,290 @@
+<html>
+<head>
+<link rel="stylesheet" href="/test/styles.css" type="text/css">
+<script language="javascript" src="/test/jquery.min.js"></script>
+<script>
+
+$(document ).ready(function() {
+
+});
+
+////////////////////////////////////
+$(document).on('click', '#glycan_search_init', function (event) {
+        event.preventDefault();
+
+        var url = '/glycan/search_init'
+        $("#glycan_search_init_url").html(url);
+
+
+	$('html').animate({scrollTop:0}, 'fast');
+	$('body').animate({scrollTop:0}, 'fast');
+	$("#cover").css("display", "block");
+
+	var gifImage = '<img src=loading.gif style="width:20%;margin-left:40%;margin-top:2%;">';        
+	$("#glycan_search_init_cn").html(gifImage);
+
+        var reqObj = new XMLHttpRequest();
+        reqObj.open("POST", url, true);
+        reqObj.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        reqObj.onreadystatechange = function() {
+                if (reqObj.readyState == 4 && reqObj.status == 200) {
+                        $("#glycan_search_init_cn").html('<pre>'+reqObj.responseText+'</pre>');
+                	$("#cover").css("display", "none");
+		}
+        };
+        reqObj.send();
+                
+});
+
+
+////////////////////////////////////
+$(document).on('click', '#glycan_search', function (event) {
+
+	event.preventDefault();
+        	
+	var keyList1 = ["glycan_type", "glycan_subtype", "uniprot_canonical_ac",
+		"glycan_motif", "glytoucan_ac"
+	]
+	var keyList2 = [ "tax_id"]
+
+	var inJson = {"operation":"AND", "query_type":"search_glycan", 
+	"mass":{}, "number_monosaccharides":{}, "enzyme":{}
+	}
+	$('.glycan_search').each(function(){
+		var name = $(this).attr("name");
+		var value = $(this).val();
+		if (value.trim()){
+	       		if(keyList1.indexOf(name) != -1){
+				inJson[name] = value
+			}
+			else if(keyList2.indexOf(name) != -1){
+				inJson[name] = parseInt(value);
+			}
+			else if (name == "min_mass"){
+				inJson["mass"]["min"] = parseFloat(value);
+			}
+			else if (name == "max_mass"){
+				inJson["mass"]["max"] = parseFloat(value);
+			}
+			else if (name == "min_mono"){
+				inJson["number_monosaccharides"]["min"] = parseFloat(value);
+			}	
+			else if (name == "max_mono"){
+				inJson["number_monosaccharides"]["max"] = parseFloat(value);
+			}
+			else if (name == "enzyme_gene"){
+				inJson["enzyme"] = {"type":"gene", "id":value} 
+			}
+		}
+	});
+
+ 	var url = '/glycan/search';	
+	var postData = "query=" + JSON.stringify(inJson);
+	$("#glycan_search_url").html(url + '?' +  postData);
+	
+	var gifImage = '<img src=loading.gif style="width:20%;margin-left:40%;margin-top:2%;">';        
+	$("#glycan_search_cn").html(gifImage);
+
+
+
+	var reqObj = new XMLHttpRequest();
+        reqObj.open("POST", url, true);
+        reqObj.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        reqObj.onreadystatechange = function() {
+                if (reqObj.readyState == 4 && reqObj.status == 200) {
+			var resJson = JSON.parse(reqObj.responseText);
+			$("#glycan_search_cn").html('<pre>'+reqObj.responseText+'</pre>');
+                	$("#glycanid").val(resJson["list_id"]);
+		}
+        };
+        reqObj.send(postData);
+
+});
+
+////////////////////////////////////
+$(document).on('click', '#glycan_list', function (event) {
+
+	event.preventDefault();
+
+	
+	var inJson = {};
+	$('.glycan_list').each(function(){
+	 	var name = $(this).attr("name");
+		var value = $(this).val();
+		if (value.trim()){
+			if (["offset", "limit"].indexOf(name) != -1){
+				value = parseInt(value);
+			}
+			inJson[name] = value
+		}									                 
+	});
+	var url = '/glycan/list'
+	var postData = "query=" + JSON.stringify(inJson);
+	$("#glycan_list_url").html(url + '?' +postData);
+
+	var gifImage = '<img src=loading.gif style="width:20%;margin-left:40%;margin-top:2%;">';        
+	$("#glycan_list_cn").html(gifImage);
+
+
+	var reqObj = new XMLHttpRequest();
+	reqObj.open("POST", url, true);
+	reqObj.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	reqObj.onreadystatechange = function() {
+		if (reqObj.readyState == 4 && reqObj.status == 200) {
+			$("#glycan_list_cn").html('<pre>'+reqObj.responseText+'</pre>');
+		}
+	};
+	reqObj.send(postData);
+});
+
+////////////////////////////////////
+$(document).on('click', '#glycan_detail', function (event) {
+        event.preventDefault();
+
+	var glycanId = $("#glytoucan_ac").val();
+	var url = '/glycan/detail/' + glycanId
+	$("#glycan_detail_url").html(url);
+
+	var gifImage = '<img src=loading.gif style="width:20%;margin-left:40%;margin-top:2%;">';        
+	$("#glycan_detail_cn").html(gifImage);
+
+
+        var reqObj = new XMLHttpRequest();
+        reqObj.open("POST", url, true);
+        reqObj.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        reqObj.onreadystatechange = function() {
+                if (reqObj.readyState == 4 && reqObj.status == 200) {
+                        $("#glycan_detail_cn").html('<pre>'+reqObj.responseText+'</pre>');
+		}
+        };
+        //reqObj.send(postData);
+	reqObj.send();
+		
+});
+
+
+////////////////////////////////////
+$(document).on('click', '#glycan_image', function (event) {
+        event.preventDefault();
+	 
+
+	var glycanId = $("#glycan_image_id").val();
+        var url = '/glycan/image/' + glycanId;
+       	//var inJson = {"id":glycanId};
+        //var postData = "query=" + JSON.stringify(inJson);
+        $("#glycan_image_url").html(url);
+
+       	var gifImage = '<img src=loading.gif style="width:20%;margin-left:40%;margin-top:2%;">';
+        $("#glycan_image_cn").html(gifImage);
+
+        var reqObj = new XMLHttpRequest();
+        reqObj.open("POST", url, true);
+        reqObj.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        reqObj.onreadystatechange = function() {
+                if (reqObj.readyState == 4 && reqObj.status == 200) {
+			var img = new Image();   // Create new img element
+			img.src = 'data:image/gif;base64,' + '';
+			$("#glycan_image_cn").html(img);
+		}
+        };
+        //reqObj.send(postData);
+	reqObj.send();
+
+});
+
+
+
+
+</script>
+
+</head>
+<body>
+
+<table align=center width=80% border=1 style="background:#eee;">
+<tr><th align=left colspan=2 class=api_title>Test for glycan_search_init API</th></tr>
+<tr><td>Post Data</td><td id=glycan_search_init_url style="background:#fff;"></td></tr>
+<tr><td valign=top><input type=submit id=glycan_search_init name=btn value="Submit API request"></td>
+<td style="background:#fff;"><div style="width:700px;height:150px;overflow:auto;" id=glycan_search_init_cn></div></td></tr>
+
+
+<tr><th colspan=2 align=left class=api_title>Test for glycan_search API</th></tr>
+<tr><td>Glytoucan ID</td><td width=80%><input class=glycan_search name=glytoucan_ac type=text value=""></td></tr>
+<tr><td>Minimum Mass</td><td><input class=glycan_search name=min_mass type=number value=""></td></tr>
+<tr><td>Maximum Mass</td><td><input class=glycan_search name=max_mass type=number value=""></td></tr>
+<tr><td>Minimum Monosaccharides</td><td><input class=glycan_search name=min_mono type=number value=""></td></tr>
+<tr><td>Maximum Monosaccharides</td><td><input class=glycan_search name=max_mono type=number value=""></td></tr>
+<tr>
+<td>Tax ID</td>
+<td>
+<select class=glycan_search name=tax_id>
+	<option value="0" selected>0</option>
+	<option value="9606">9606</option>
+	<option value="10090">10090</option>
+</select>
+</td>
+</tr>
+
+<tr><td>Glycan Type</td><td><input class=glycan_search name=glycan_type type=text value=""></td></tr>
+<tr><td>Glycan Subtype</td><td><input class=glycan_search name=glycan_subtype type=text value=""></td></tr>
+<tr><td>Glycosylated Protein (accession)</td><td><input class=glycan_search name=uniprot_canonical_ac type=text value=""></td></tr>
+<tr><td>Synthesizing Enzyme (gene name) </td><td><input class=glycan_search name=enzyme_gene type=text value=""></td></tr>
+<tr><td>Motif Name</td><td><input class=glycan_search name=glycan_motif type=text value=""></td></tr>
+
+
+<tr><td>Post Data (both GET/POST supported)</td><td id=glycan_search_url style="background:#fff;"></td></tr>
+<tr height=100><td valign=top><input type=submit id=glycan_search name=btn value="Submit API request"></td>
+	<td id=glycan_search_cn style="background:#fff;"></td></tr>
+
+
+
+<tr><th colspan=2 align=left class=api_title>Test for glycan_list API</th></tr>
+<tr><td>Search Results ID</td><td><input id=glycanid class=glycan_list name=id type=text value=""></td></tr>
+<tr><td>Pagination Offset</td><td><input class=glycan_list name=offset type=text value="1"></td></tr>
+<tr><td>Pagination Limit</td><td><input class=glycan_list name=limit type=text value="20"></td></tr>
+<tr><td>Sort Field</td><td>
+		<select class=glycan_list name=sort>
+			<option value="glytoucan_ac" selected>glytoucan_ac</option>
+			<option value="mass">mass</option>
+			<option value="number_enzymes">numer_enzymes</option>
+			<option value="number_proteins">number_proteins</option>
+			<option value="number_monosaccharides">number_monosaccharides</option>
+		</select>
+</td></tr>
+<tr><td>Sort Order [asc/desc]</td><td>
+		<select class=glycan_list name=order>
+			<option value="asc" selected>asc</option>
+			<option value="desc">desc</option>
+		</select>
+</td></tr>
+<tr><td>Post Data  (both GET/POST supported)</td><td id=glycan_list_url style="background:#fff;"></td></tr>
+<tr><td valign=top><input type=submit id=glycan_list name=btn value="Submit API request"></td>
+<td style="background:#fff;"><div style="width:700px;height:300px;overflow:auto;" id=glycan_list_cn></div></td></tr>
+
+
+
+
+<tr><th colspan=2 align=left  class=api_title>Test for glycan_detail API</th></tr>
+<tr><td>Glytoucan ID</td><td><input class=glycan_detail id=glytoucan_ac type=text value="">
+ (e.g, G00053MO)
+</td></tr>
+<tr><td>Post Data</td><td id=glycan_detail_url style="background:#fff;"></td></tr>
+<tr><td valign=top><input type=submit id=glycan_detail name=btn value="Submit API request"></td>
+	<td style="background:#fff;"><div style="width:700px;height:300px;overflow:auto;" id=glycan_detail_cn></div></td></tr>
+
+
+
+<tr><th colspan=2 align=left  class=api_title>Test for glycan_image API</th></tr>
+<tr><td>Glytoucan ID</td><td><input class=glycandimage id=glycan_image_id type=text value="">
+ (e.g, G00053MO)
+</td></tr>
+<tr><td>Post Data</td><td id=glycan_image_url style="background:#fff;"></td></tr>
+
+<tr><td valign=top><input type=submit id=glycan_image name=btn value="Submit API request"></td>
+	        <td style="background:#fff;"><div style="width:700px;height:300px;overflow:auto;" id=glycan_image_cn></div></td></tr>
+
+
+
+</table>
+
+</body>
+<html>

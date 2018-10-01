@@ -1,0 +1,26 @@
+Introduction:
+This web service provides the images of the glycan structures based on an ID. The resulting Glycan images will be displayed on the Glygen portal in multiple webpages. 
+
+Web service call:
+HTTP Request method		GET
+Variables			id	ID of the glycan (GlyTouCan ID) or motif (internal motif ID)
+				type	Type of the ID (glycan or motif) default is glycan
+Example: http://url.domain/get_glycan_image?id=GB453245&type=glycan
+
+Function:
+Based on the provided ID the web service loads a cached image or generates an image of the glycan or the corresponding motifs. The image is returned by the web service
+
+Response:
+Content					Image
+HTTP Content Type			image/png or image/jpg
+Access-Control-Allow-Origin		*
+
+Warning:
+To all Cross-Origin Resource Sharing (CORS) the web service has to allow all domains access. Otherwise browsers will not permit to call this web service by a webpage. Therefore the HTTP response header must contain the appropriate Access-Control-Allow-Origin statement.
+
+Error code:
+===========
+{
+	"missing-parameter":"one of the required parameter."
+}
+

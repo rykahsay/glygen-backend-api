@@ -1,0 +1,14 @@
+[
+      {
+         "protein_name":"Alpha-1,3-mannosyl-glycoprotein 2-beta-N-acetylglucosaminyltransferase",
+         "uniprot_canonical_ac":"P26572",
+         "gene":"MGAT1",
+         "gene_link":"https://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=HGNC:7044"
+      },
+      {
+         "protein_name":"Alpha-1,3/1,6-mannosyltransferase ALG2",
+         "uniprot_canonical_ac":"P43636",
+         "gene":"ALG2",
+         "gene_link":"https://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=HGNC:23159"
+      }   
+]

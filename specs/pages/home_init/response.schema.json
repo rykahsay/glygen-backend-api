@@ -1,0 +1,103 @@
+{
+   "$schema":"http://json-schema.org/draft-07/schema#",
+   "$id":"http://example.com/root.json",
+   "type":"object",
+   "title":"Schema for the GlyGen home page init web service",
+   "required":[
+      "version",
+      "statistics"
+   ],
+   "properties":{
+      "version":{
+         "$id":"#/properties/version",
+         "type":"array",
+         "description":"A list of versions for individual components of the software.",
+         "items":{
+            "$id":"#/properties/version/items",
+            "type":"object",
+            "title":"Object that stores the name, version and release date of a software component",
+            "required":[
+               "component",
+               "version",
+               "release_date"
+            ],
+            "properties":{
+               "component":{
+                  "$id":"#/properties/version/items/properties/component",
+                  "type":"string",
+                  "description":"Name of the component (e.g. software, api, data).",
+                  "examples":[
+                     "software"
+                  ]
+               },
+               "version":{
+                  "$id":"#/properties/version/items/properties/version",
+                  "type":"string",
+                  "description":"Version number of the software component.",
+                  "examples":[
+                     "1.0.0"
+                  ]
+               },
+               "release_date":{
+                  "$id":"#/properties/version/items/properties/release_date",
+                  "type":"string",
+                  "description":"Release data of the software component. Uses ISO8601.",
+                  "examples":[
+                     "2008-09-15T15:53:00+05:00"
+                  ]
+               }
+            }
+         }
+      },
+      "statistics":{
+         "$id":"#/properties/statistics",
+         "type":"array",
+         "description":"A list of statistic values grouped by species.",
+         "items":{
+            "$id":"#/properties/statistics/items",
+            "type":"object",
+            "title":"A list of objects providing species specific statistics.",
+            "required":[
+               "species",
+               "proteins",
+               "glycoproteins",
+               "glycans"
+            ],
+            "properties":{
+               "species":{
+                  "$id":"#/properties/statistics/items/properties/species",
+                  "type":"string",
+                  "description":"Name of the species.",
+                  "examples":[
+                     "Homo sapiens"
+                  ]
+               },
+               "proteins":{
+                  "$id":"#/properties/statistics/items/properties/proteins",
+                  "type":"integer",
+                  "description":"Number of proteins for this species in GlyGen.",
+                  "examples":[
+                     20997
+                  ]
+               },
+               "glycoproteins":{
+                  "$id":"#/properties/statistics/items/properties/glycoproteins",
+                  "type":"integer",
+                  "description":"Number of GlycoProteins for this species in GlyGen.",
+                  "examples":[
+                     4429
+                  ]
+               },
+               "glycans":{
+                  "$id":"#/properties/statistics/items/properties/glycans",
+                  "type":"integer",
+                  "description":"Number of glycans for this species in GlyGen.",
+                  "examples":[
+                     3300
+                  ]
+               }
+            }
+         }
+      }
+   }
+}

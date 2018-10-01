@@ -1,0 +1,34 @@
+Introduction:
+=============
+This web services performs the glycoprotein search as requested by the user. The user input will be processed and a glycoprotein list ID will be returned.
+
+
+Web service call: 
+=================
+HTTP Request method		GET
+Example: http://glygen.org/api/usecases/glycan_to_glycoproteins/{tax_id}/{glytoucan_ac}/
+
+
+
+Function:
+=========
+The WS receives the user query which specifies the search criteria and performs the search. If the operation is successful a glycoprotein list ID that represents the results will be returned. The server stores the results associated with this glycoprotein list ID and can return them when requested via the list WS. If an error occurs an error message (human readable error message that can be used for the display) and error code (used for logging) is returned. If no results are found a successful response without a glycoprotein list ID is send. All responses are send in JSON format.
+
+Response:
+=========
+Content                         JSON
+HTTP Content Type                       application/json
+Access-Control-Allow-Origin             *
+
+
+Warning:
+========
+
+Note:
+=====
+
+Error code:
+===========
+{
+}
+

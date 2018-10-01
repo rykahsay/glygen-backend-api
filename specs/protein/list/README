@@ -1,0 +1,59 @@
+Introduction:
+=============
+This web services provides the list generated as result of a search. In a search webpage a web services for performing the search WS is called and an ID of the search result is returned.This ID is used as part of this web service to retrieve the individual elements of the search result.
+
+Search Workflow:
+================
+User enters search criteria on the search page.
+1.JavaScript generates a JSON search query calls search WS.
+2.Search WS returns the result list ID
+3.Result list ID is passed to the list page
+4.Result list ID is passed to list WS together with information about sorting and number of requested results
+5.List WS returns requested number of results.
+
+Note:
+=====
+When performing a search the server has to assign a unique ID to each search result and store the search result and ID. This will also allow us to persist search results even across database changes.
+
+Web service call: 
+=================
+HTTP Request method		GET
+Variables				id		ID of the search result
+						offset	Position in the search result the first entry comes from
+						limit	Number of entries to retrieve starting with the entry at the offset position
+						sort	Criteria to sort the list by (id, name, gene_name)
+						order	Sorting direction (asc, desc)
+Example:  http://url.domain/get_glycan_list?id=AB345TB7&offset=50&limit=20&sort=id&order=asc
+
+Function:
+=========
+Based on the glycan list ID the webservice will sort the list by the provided criteria (sort and order) and return the requested chunk (offset, limit) of the list. The server side paginationis required since large result sets (more than 1000 results) will perform very poorly with standard tables. The result set will be encoded in JSON (see separate JSON schema) and return. The JSON contains the result set, information about the search query and pagination information.
+
+Response:
+=========
+Content						JSON
+HTTP Content Type			application/json
+Access-Control-Allow-Origin	*
+
+Warning:
+========
+To all Cross-Origin Resource Sharing (CORS) the web service has to allow all domains access. Otherwise browsers will not permit to call this web service by a webpage. Therefore the HTTP response header must contain the appropriate Access-Control-Allow-Origin statement.
+
+Note:
+=====
+An example JSON is available separately and the JSON data structure is documented in a JSON schema.
+
+
+
+Error code:
+===========
+{                         
+	"invalid-query-json":"Submitted query JSON is not valid"
+        ,"non-existent-search-results":"no search results exist for the submitted ID"
+        ,"missing-parameter":"one of the required parameter."
+        ,"unexpected-field-in-query":"Unexpected field in query JSON."
+        ,"invalid-parameter-value":"one of the required parameter has invalid value."
+        ,"invalid-parameter-value-length":"one of the required parameter value is too long"
+}
+
+

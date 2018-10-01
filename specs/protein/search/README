@@ -1,0 +1,52 @@
+Introduction:
+=============
+This web services performs the protein search based on user specified criteria. The user input will be processed and a protein list ID will be returned.
+
+Search Workflow:
+================
+User enters search criteria on the search page.
+1.JavaScript generates a JSON search query calls search WS.
+2.Search WS returns the result list ID
+3.Result list ID is passed to the list page
+4.Result list ID is passed to list WS together with information about sorting and number of requested results
+5.List WS returns requested number of results.
+
+Note:
+=====
+When performing a search the server has to assign a unique ID to each search result and store the search result and ID. This will also allow us to persist search results even across database changes.
+
+Web service call: 
+=================
+HTTP Request method	POST
+Variables				query		JSON input containing the specifications of the user request.
+
+Function:
+=========
+The WS receives the user query which specifies the search criteria and performs the search. If the operation is successful a list ID that represents the results will be returned. The server stores the results associated with this list ID and can return them when requested via the list WS. If an error occurs an error code (used for logging and display of human readable messages) is returned. If no results are found a successful response without a list ID is send. All responses are send in JSON format.
+
+Response:
+=========
+Content						JSON
+HTTP Content Type			application/json
+Access-Control-Allow-Origin	*
+
+Warning:
+========
+To all Cross-Origin Resource Sharing (CORS) the web service has to allow all domains access. Otherwise browsers will not permit to call this web service by a webpage. Therefore the HTTP response header must contain the appropriate Access-Control-Allow-Origin statement.
+
+Note:
+=====
+An example JSON is available separately and the JSON data structure is documented in a JSON schema.
+
+Error code:
+===========
+{
+	"invalid-query-json":"Submitted query JSON is not valid"
+	,"open-connection-failed": "Unable to connect to database."
+	,"unexpected-field-in-query":"Unexpected field in query JSON."
+	,"invalid-parameter-value":"one of the required parameter has invalid value."
+	,"invalid-parameter-value-length":"one of the required parameter value is too long"
+	,"no-search-criteria-submitted": "all search field values are empty"
+
+}
+

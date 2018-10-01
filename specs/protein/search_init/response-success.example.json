@@ -1,0 +1,30 @@
+{
+   "Protein_mass":{
+      "min":435.00,
+      "max":3906488.00
+   },
+   "organism":[
+      {
+         "name":"Homo sapiens",
+         "id":9606
+      },
+      {
+         "name":"Mus musculus",
+         "id":10090
+      }
+   ],
+   "simple_search_category":[
+      {
+         "id":"glycan",
+         "display":"Glycan"
+      },
+      {
+         "id":"protein",
+         "display":"By Protein"
+      },
+      {
+         "id":"disease",
+         "display":"By Disease"
+      }
+   ]
+}

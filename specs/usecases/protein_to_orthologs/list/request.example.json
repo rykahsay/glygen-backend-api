@@ -1,0 +1,30 @@
+{
+  "query": {
+    "execution_time": "2018-07-26 16:18:29 EDT-0400", 
+    "uniprot_canonical_ac": "P26572-1"
+  }, 
+  "pagination": {
+    "sort": "uniprot_canonical_ac", 
+    "total_length": 12, 
+    "limit": 20, 
+    "order": "asc", 
+    "offset": 1
+  }, 
+  "results": [
+		{       
+                	"uniprot_canonical_ac":"x1", 
+                	"protein_name":"",
+									"organism":{
+										"name":"Mus musculus",
+										"id":10090
+								 },
+                	"evidence":[
+                        	{
+					"database":"", 
+					"id":"", 
+					"url":""
+				}
+                	]
+        	}
+	]
+}

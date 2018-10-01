@@ -1,0 +1,187 @@
+{
+	"$schema": "http://json-schema.org/draft-03/schema",
+	"type": ["object", "string"],
+	"properties": {
+		"glytoucan_ac": {
+			"description": "GlyTouCan accession number of the glycan.",
+			"type": "string"
+		},
+		"mass": {
+			"description": "Native mass of the glycan. If the glycan has a modification (e.g. sulfation, reducing end) it will have the corresponding mass",
+			"type": "number"
+		},
+
+		"classification": {
+			"type": "array",
+			"description": "A list of classifiers for the glycan (e.g. Bisection N-Glycan, Acidic glycan)",
+			"properties": {
+				"type": {
+					"name": {
+						"description": "This field is set if a search by glycan type (e.g. N-Glycan) will be performed. The complete list of glycan types is maintained by the glygen server.",
+						"type": "string"
+					},
+					"url": {
+						"description": "URL that links to the explaination of the type",
+						"type": "string",
+						"format": "uri"
+					}
+				},
+				"subtype": {
+					"name": {
+						"description": "This field is set if a search by glycan subtype (e.g. bisection) will be performed. The complete list of glycan subtypes is maintained by the glygen server. This field can be used intependendly from glycan_type and does not need to be used in combination.",
+						"type": "string"
+					},
+					"url": {
+						"description": "URL that links to the explaination of the subtype",
+						"type": "string",
+						"format": "uri"
+					}
+				}
+			}
+		},
+		"species": {
+			"type": "array",
+			"description": "A list of species entries this glycan was reported in. The objects in this list do also contain the databases and their entry IDs that reported this annotation.",
+			"properties": {
+				"name": {
+					"description": "Scientific name of the species from NCBI Taxonomy.",
+					"type": "string"
+				},
+				"taxid": {
+					"description": "Taxonomy ID of the species (NCBI Taxonomy)",
+					"type": "number"
+				},
+				"evidence": {
+					"type": "array",
+					"description": "A list of database references that reported this annotation. Each object contains of the name of the database, the database ID and URL.",
+					"properties": {
+						"database": {
+							"description": "Name of the database.",
+							"type": "string"
+						},
+						"id": {
+							"description": "ID or the entry in the database",
+							"type": "string"
+						},
+						"url": {
+							"description": "URL of the database entry. For non-public databases this field may not be present.",
+							"type": "string",
+							"format": "uri"
+						}
+					}
+				}
+			}
+		},
+		"motifs": {
+			"description": "List of motifs that have been found in the glycan structure.",
+			"type": "array",
+			"properties": {
+				"id": {
+					"description": "Internal ID of the motif.",
+					"type": "string"
+				},
+				"name": {
+					"description": "Name of the motif (e.g. LewisX).",
+					"type": "string"
+				}
+			}
+		},
+
+		"iupac": {
+			"description": "IUPAC sequence of the glycan. This sequence may not always be present since not all glycans can be represented in IUPAC.",
+			"type": "string"
+		},
+		"wurcs": {
+			"description": "Sequence of the glycan in WURCS format. This sequence will always be present.",
+			"type": "string"
+		},
+
+		"glycoct": {
+			"description": "GlycoCT sequence of the glycan. This sequence may not always be present.",
+			"type": "string"
+		},
+		"crossref": {
+			"type": "array",
+			"description": "List of references in other databases for the glycan structures. For each entry the name, the entry ID in the database and if available an URL is given.",
+			"properties": {
+				"database": {
+					"description": "Name of the database.",
+					"type": "string"
+				},
+				"id": {
+					"description": "ID or the entry in the database",
+					"type": "string"
+				},
+				"URL": {
+					"description": "URL of the database entry. For non-public databases this field may not be present.",
+					"type": "string",
+					"format": "uri"
+				}
+			}
+		},
+		"glycoprotein": {
+			"type": "array",
+			"description": "List of glycosylation sites the glycan has been reported on. The protein and if available the glycosylation postion is given together with references to reporting databases",
+			"properties": {
+				"protein_name": {
+					"description": "Name of the protein/enzyme from Uniprot.",
+					"type": "string"
+				},
+				"uniprot_canonical_ac": {
+					"description": "Uniprot protein ID ",
+					"type": "string"
+				},
+				"position": {
+					"description": "Position of the glycosylated aminoacide the glycan was attached to",
+					"type": "number"
+				},
+				"evidence": {
+					"description": "A list of database references that reported this annotation. Each object contains of the name of the database, the database ID and URL.",
+					"type": "array",
+					"properties": {
+						"database": {
+							"description": "Name of the database",
+							"type": "string"
+						},
+						"id": {
+							"description": "ID or the entry in the database",
+							"type": "string"
+						},
+						"url": {
+							"description": "URL of the database entry. For non-public databases this field may not be present.",
+							"type": "string",
+							"format": "uri"
+						}
+					}
+				}
+			}
+		},
+		"enzymes": {
+			"description": "List of enzymes that might be involved in the synthesis of the glycan. This annotation is present if one or many enzymes can add a certain monosaccharide to the glycan. However which of the alternative enzymes was really at work is not specified.",
+			"type": "array",
+			"properties": {
+				"protein_name": {
+					"description": "Name of the protein/enzyme from Uniprot.",
+					"type": "string"
+				},
+				"uniprot_canonical_ac": {
+					"description": "Uniprot protein ID ",
+					"type": "string"
+				},
+
+
+				"gene": {
+					"description": "Gene name of the protein. ",
+					"type": "string"
+				},
+				"gene_link": {
+					"description": "Genbank link for this gene.",
+					"type": "string",
+					"format": "uri"
+				}
+			}
+		}
+
+
+	}
+}

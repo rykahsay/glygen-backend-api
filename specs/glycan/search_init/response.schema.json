@@ -1,0 +1,157 @@
+{
+   "$id":"http://example.com/example.json",
+   "type":"object",
+   "properties":{
+      "glygan_mass":{
+         "$id":"/properties/glygan_mass",
+         "type":"object",
+         "description":"This object provides the minimum and maximum native mass of glycans in the database.",
+         "properties":{
+            "min":{
+               "$id":"/properties/glygan_mass/properties/min",
+               "type":"number",
+               "description":"Smallest mass value of a glycan in the repository.",
+               "default":0,
+               "examples":[
+                  1056.4000244140625
+               ]
+            },
+            "max":{
+               "$id":"/properties/glygan_mass/properties/max",
+               "type":"integer",
+               "description":"Largest mass value of a glycan in the repository.",
+               "default":0,
+               "examples":[
+                  1500
+               ]
+            }
+         },
+         "required":[
+            "min",
+            "max"
+         ]
+      },
+      "number_monosaccharides":{
+         "$id":"/properties/number_monosaccharides",
+         "type":"object",
+         "description":"Range for the number of monosaccharides of the glycans in the repository. There is a minimum value (number of monosaccharides in the smallest glycan) and a maximum value (number of monosaccharides in the largest glycan).",
+         "properties":{
+            "min":{
+               "$id":"/properties/number_monosaccharides/properties/min",
+               "type":"integer",
+               "description":"Number of monosaccharides in the smallest glycan.",
+               "default":0
+            },
+            "max":{
+               "$id":"/properties/number_monosaccharides/properties/max",
+               "type":"integer",
+               "description":"Number of monosaccharides in the largest glycan.",
+               "default":0,
+               "examples":[
+                  20
+               ]
+            }
+         },
+         "required":[
+            "min",
+            "max"
+         ]
+      },
+      "organism":{
+         "$id":"/properties/organism",
+         "type":"array",
+         "description":"This field is set of organism (e.g. human) that a present in the databases. Each string should contain the scientific name and the the NCBI Taxonomy ID in parentheses.",
+         "items":{
+            "$id":"/properties/organism/items",
+            "type":"string",
+            "examples":[
+               "Homo sapiens (Taxonomy ID: 9606)",
+               "Mus musculus (Taxonomy ID: 10090)"
+            ]
+         }
+      },
+      "glycan_type":{
+         "$id":"/properties/glycan_type",
+         "type":"array",
+         "description":"A list of glycan classifications/types. Each type has a name and a list of subtypes (e.g. N-Glycan -> High Mannose N-Glycan, Complex N-Glycan).",
+         "items":{
+            "$id":"/properties/glycan_type/items",
+            "type":"object",
+            "properties":{
+               "name":{
+                  "$id":"/properties/glycan_type/items/properties/name",
+                  "type":"string",
+                  "description":"Name of the glycan type (e.g. N-glycan).",
+                  "examples":[
+                     "N-Glycan"
+                  ]
+               },
+               "subtype":{
+                  "$id":"/properties/glycan_type/items/properties/subtype",
+                  "type":"array",
+                  "description":"List of subtypes for a certain glycan type. Each subtype is represented by a string.",
+                  "items":{
+                     "$id":"/properties/glycan_type/items/properties/subtype/items",
+                     "type":"string",
+                     "examples":[
+                        "Complex",
+                        "High-mannose",
+                        "Hybrid",
+                        "Bisected"
+                     ]
+                  }
+               }
+            },
+            "required":[
+               "name",
+               "subtype"
+            ]
+         }
+      },
+      "simple_search_category":{
+         "$id":"/properties/simple_search_category",
+         "type":"array",
+         "description":"A list of categories for the simple search.",
+         "items":{
+            "$id":"/properties/simple_search_category/items",
+            "type":"object",
+            "description":"A category for the simple search which has an identifier (used for the search WS) and a display name.",
+            "properties":{
+               "display":{
+                  "$id":"/properties/simple_search_category/items/properties/display",
+                  "type":"string",
+                  "description":"Name of the category used for display.",
+                  "examples":[
+                     "Glycan"
+                  ]
+               },
+               "id":{
+                  "$id":"/properties/simple_search_category/items/properties/id",
+                  "type":"string",
+                  "description":"Id of the category as used by the WS.",
+                  "items":{
+                     "$id":"/properties/simple_search_category/items/properties/subtype/items",
+                     "type":"string",
+                     "examples":[
+                        "glycan"
+                     ]
+                  }
+               }
+            },
+            "required":[
+               "display",
+               "id"
+            ]
+         }
+      },
+      "error_code":{
+         "$id":"/properties/error_code",
+         "type":"string",
+         "description":"If the operation fails an error code is send back instead of the other information.",
+         "default":"",
+         "examples":[
+            "ABV1234MN56BN"
+         ]
+      }
+   }
+}

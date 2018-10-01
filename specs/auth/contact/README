@@ -1,0 +1,41 @@
+Contact Us form Web Service Documentation
+
+v1.0
+Gaurav Agarwal
+CCRC, UGA
+
+Introduction:
+This web Service takes the contact form data submitted by the user and 
+returns an appropriate reply.
+On success this then sends a "noreply" type of system generated message to 
+the user as an acknowledgment and sends a copy of the user's submission 
+to our glygen mail ID.
+
+Web Service call:
+HTTP Request method:    POST
+Variable:               name        First name of the user
+                        surname     Last name of the user
+                        subject     Subject selected from dropdown
+                        email       email ID of the user
+                        message     The textual feedback from the user.
+
+Function:
+The web service on receiving a call will process it and returns
+"alert-success" on successful submission or "alert-danger" on some
+processing error. It also returns a message describing it further. 
+The result set will be encoded in JSON (see separate JSON schema) and returned.
+
+The Web service should send: 
+1. an acknowledgment mail to the email specified in the [request].
+2. a mail containing the [request] info to our glygen mail ID.
+
+Response:
+Content:                        JSON{type, message}
+HTTP Content type:              application/JSON
+Access-Control-Allow-Origin:    *
+
+Warning
+To all Cross-Origin Resource Sharing (CORS) the web service has to allow all domains access. Otherwise browsers will not permit to call this web service by a webpage. Therefore the HTTP response header must contain the appropriate Access-Control-Allow-Origin statement.
+
+Note
+An example JSON is available separately and the JSON data structure is documented in a JSON schema.

@@ -1,0 +1,140 @@
+<html>
+<head>
+<link rel="stylesheet" href="/test/styles.css" type="text/css">
+<script language="javascript" src="/test/jquery.min.js"></script>
+<script>
+
+$(document ).ready(function() {
+
+});
+
+////////////////////////////////////
+$(document).on('click', '#auth_userid', function (event) {
+        event.preventDefault();
+
+        var url = '/auth/userid';
+        $("#auth_userid_url").html(url);
+
+	var gifImage = '<img src=loading.gif style="width:20%;margin-left:40%;margin-top:2%;">';        
+	$("#auth_userid_cn").html(gifImage);
+
+
+        var reqObj = new XMLHttpRequest();
+        reqObj.open("POST", url, true);
+        reqObj.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        reqObj.onreadystatechange = function() {
+                if (reqObj.readyState == 4 && reqObj.status == 200) {
+                        $("#auth_userid_cn").html('<pre>'+reqObj.responseText+'</pre>');
+		}
+        };
+        reqObj.send();
+                
+});
+
+
+////////////////////////////////////
+$(document).on('click', '#auth_logging', function (event) {
+	event.preventDefault();
+	var keyList1 = ["id", "user", "type", "page", "message"];
+	var inJson = {};
+	$('.auth_logging').each(function(){
+		var name = $(this).attr("name");
+		var value = $(this).val();
+	       	if(keyList1.indexOf(name) != -1){
+			inJson[name] = value
+		}
+	});
+	var gifImage = '<img src=loading.gif style="width:20%;margin-left:40%;margin-top:2%;">';        
+	$("#auth_logging_cn").html(gifImage);
+ 	var url = '/auth/logging';	
+	var postData = "query=" + JSON.stringify(inJson);
+	$("#auth_logging_url").html(url + '?' +  postData);
+	var reqObj = new XMLHttpRequest();
+        reqObj.open("POST", url, true);
+        reqObj.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        reqObj.onreadystatechange = function() {
+                if (reqObj.readyState == 4 && reqObj.status == 200) {
+			var resJson = JSON.parse(reqObj.responseText);
+			$("#auth_logging_cn").html('<pre>'+reqObj.responseText+'</pre>');
+		}
+        };
+        reqObj.send(postData);
+
+});
+
+
+
+/////////////////////////////////
+$(document).on('click', '#auth_contact', function (event) {
+        event.preventDefault();
+        var keyList1 = ["fname", "lname", "email", "subject", "message"];
+        var inJson = {};
+        $('.auth_contact').each(function(){
+                var name = $(this).attr("name");
+                var value = $(this).val();
+                if(keyList1.indexOf(name) != -1){
+                        inJson[name] = value
+                }
+        });
+        var gifImage = '<img src=loading.gif style="width:20%;margin-left:40%;margin-top:2%;">';        
+        $("#auth_contact_cn").html(gifImage);
+        var url = '/auth/contact';  
+        var postData = "query=" + JSON.stringify(inJson);
+        $("#auth_contact_url").html(url + '?' +  postData);
+        var reqObj = new XMLHttpRequest();
+        reqObj.open("POST", url, true);
+        reqObj.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        reqObj.onreadystatechange = function() {
+                if (reqObj.readyState == 4 && reqObj.status == 200) {
+                        var resJson = JSON.parse(reqObj.responseText);
+                        $("#auth_contact_cn").html('<pre>'+reqObj.responseText+'</pre>');
+                }
+        };
+        reqObj.send(postData);
+
+});
+                            
+
+</script>
+
+
+</head>
+<body>
+
+
+<table align=center width=80% border=1 style="background:#eee;">
+<tr><th align=left colspan=2 class=api_title>Test for auth_userid API</th></tr>
+<tr><td>Post Data</td><td id=auth_userid_url style="background:#fff;"></td></tr>
+<tr><td valign=top><input type=submit id=auth_userid name=btn value="Submit API request"></td>
+<td style="background:#fff;"><div style="width:700px;height:150px;overflow:auto;" id=auth_userid_cn></div></td></tr>
+
+<tr><th colspan=2 align=left class=api_title>Test for auth_logging API</th></tr>
+<tr><td>ID</td><td width=80%><input class=auth_logging name=id type=text value=""></td></tr>
+<tr><td>User</td><td><input class=auth_logging name=user type=text value=""></td></tr>
+<tr><td>Type</td><td><input class=auth_logging name=type type=text value=""></td></tr>
+<tr><td>Page</td><td><input class=auth_logging name=page type=text value=""></td></tr>
+<tr><td>Message</td><td><input class=auth_logging name=message type=text value=""></td></tr>
+<tr><td>Post Data (both GET/POST supported)</td><td id=auth_logging_url style="background:#fff;"></td></tr>
+<tr height=100><td valign=top><input type=submit id=auth_logging name=btn value="Submit API request"></td>
+	<td id=auth_logging_cn style="background:#fff;"></td></tr>
+
+
+
+<tr><th colspan=2 align=left class=api_title>Test for auth_contact API</th></tr>
+<tr><td>First Name</td><td width=80%><input class=auth_contact name=fname type=text value=""></td></tr>
+<tr><td>Last Name</td><td><input class=auth_contact name=lname type=text value=""></td></tr>
+<tr><td>Email</td><td><input class=auth_contact name=email type=text value=""></td></tr>
+<tr><td>Subject</td><td><input class=auth_contact name=subject type=text value=""></td></tr>
+<tr><td>Message</td><td><textarea class=auth_contact name=message rows=10></textarea></td></tr>
+<tr><td>Post Data (both GET/POST supported)</td><td id=auth_contact_url style="background:#fff;"></td></tr>
+<tr height=100><td valign=top><input type=submit id=auth_contact name=btn value="Submit API request"></td>
+	        <td id=auth_contact_cn style="background:#fff;"></td></tr>
+
+
+
+
+
+</table>
+
+</body>
+<html>

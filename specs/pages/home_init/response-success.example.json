@@ -1,0 +1,33 @@
+{
+   "version":[
+      {
+	     "component":"software",
+         "version":"1.0.0",
+         "release_date":"2008-09-15T15:53:00+05:00"
+      },
+      {
+         "component":"api",
+         "version":"1.0.1",
+         "release_date":"2008-09-14T15:53:00+05:00"
+      },
+      {
+         "component":"data",
+         "version":"1.0.2",
+         "release_date":"2008-09-13T15:53:00+05:00"
+      }
+   ],
+   "statistics":[
+      {
+         "species":"Homo sapiens",
+         "proteins":20997,
+         "glycoproteins":4429,
+         "glycans":3300
+      },
+      {
+         "species":"Mus musculus",
+         "proteins":22273,
+         "glycoproteins":3765,
+         "glycans":517
+      }
+   ]
+}

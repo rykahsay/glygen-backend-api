@@ -1,0 +1,8 @@
+{
+	"query":{
+		"field":"protein_name",
+		"value":"phosphatase",
+		"limit":1000
+	}
+}
+

@@ -1,0 +1,176 @@
+{
+   "glytoucan":{
+   "glytoucan_ac":"G89290XU",
+   "mass":105.3,
+   "glytoucan_ac":"https://glytoucan.org/Structures/Glycans/G89290XU"
+   }, 
+   "classification":[
+      {
+         "type":{
+            "name":"N-glycan",
+            "url":"http://glycomics.ccrc.uga.edu/ontologies/GlycO#N-glycan_oligosaccharide"
+         },
+         "subtype":{
+            "name":"pauci-mannose N-glycan",
+            "url":"http://glycomics.ccrc.uga.edu/ontologies/GlycO#pauci-mannose_N-glycan_oligosaccharide"
+         }
+      },
+      {
+         "type":{
+            "name":"N-glycan",
+            "url":"http://glycomics.ccrc.uga.edu/ontologies/GlycO#N-glycan_oligosaccharide"
+         },
+         "subtype":{
+            "name":"Bisection N-glycan",
+            "url":"http://glycomics.ccrc.uga.edu/ontologies/GlycO#bisection_N-glycan_oligosaccharide"
+         }
+      }
+   ],
+   "species":[
+      {
+         "name":"human",
+         "taxid":9606,
+         "taxid_url":"https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&id=9606",
+         "evidence":[
+            {
+               "database":"UniCarbDB",
+               "id":"123",
+               "url":"http://glycomics.ccrc.uga.edu/ontologies"
+            },
+            {
+               "database":"GlycomeDB",
+               "id":"123A",
+               "url":"http://glycomics.ccrc.uga.edu/ontologies"
+            }
+         ]
+      },
+      {
+         "name":"mus musculus",
+         "taxid":1234,
+         "evidence":[
+            {
+               "database":"UniCarbDB",
+               "id":"123",
+               "url":"http://glycomics.ccrc.uga.edu/ontologies"
+            },
+            {
+               "database":"GlycomeDB",
+               "id":"123A",
+               "url":"http://glycomics.ccrc.uga.edu/ontologies"
+            }
+         ]
+      }
+   ],
+   "motifs":[
+      {
+         "id":"1234",
+         "name":"N-Glycan Core",
+         "url":"https://glytoucan.org/Structures/Glycans/id",
+      },
+      {
+        "id":"1234",
+        "name":"N-Glycan Core",
+        "url":"https://glytoucan.org/Structures/Glycans/id",
+     },
+     {
+        "id":"1234",
+        "name":"N-Glycan Core"
+     },
+     {
+        "id":"1234",
+        "name":"N-Glycan Core",
+        "url":"https://glytoucan.org/Structures/Glycans/id",
+     },
+     {
+        "id":"1234",
+        "name":"N-Glycan Core",
+        "url":"https://glytoucan.org/Structures/Glycans/id",
+     },
+     {
+        "id":"1234",
+        "name":"N-Glycan Core",
+         "url":"https://glytoucan.org/Structures/Glycans/id",
+     },
+     {
+        "id":"1234",
+        "name":"N-Glycan Core",
+         "url":"https://glytoucan.org/Structures/Glycans/id",
+     },
+      {
+         "id":"1256",
+         "name":"Bi-sected N-Glycan",
+         "url":"https://glytoucan.org/Structures/Glycans/id",
+        
+      }
+   ],
+   "iupac":"alpha-D-Manp-(1->3)[alpha-D-Manp-(1->6)]-beta-D-Manp-(1->4)-beta-D-GlcpNAc-(1->4)[beta-L-Fucp-(1->3)]-beta-D-GlcpNAc(1->",
+   "wurcs":"WURCS=2.0/4,6,5/[a2122h-1b_1-5_2*NCC/3=O][a1221m-1b_1-5][a1122h-1b_1-5][a1122h-1a_1-5]/1-2-1-3-4-4/a3-b1_a4-c1_c4-d1_d3-e1_d6-f1",
+   "glycoct":"RES\n1b:b-dglc-HEX-1:5\n2s:n-acetyl\n3b:b-lgal-HEX-1:5|6:d\n4b:b-dglc-HEX-1:5\n5s:n-acetyl\n6b:b-dman-HEX-1:5\n7b:a-dman-HEX-1:5\n8b:a-dman-HEX-1:5\nLIN\n1:1d(2+1)2n\n2:1o(3+1)3d\n3:1o(4+1)4d\n4:4d(2+1)5n\n5:4o(4+1)6d\n6:6o(3+1)7d\n7:6o(6+1)8d\n",
+   "crossref":[
+      {
+         "database":"PubChem Substance",
+         "id":"252295406",
+         "url":"https://pubchem.ncbi.nlm.nih.gov/substance/252295406#section=Top"
+      },
+      {
+         "database":"PubChem Compound",
+         "id":"91861410",
+         "url":"https://pubchem.ncbi.nlm.nih.gov/compound/91861410#section=Top"
+      },
+      {
+         "database":"UniCarbKB",
+         "id":"10",
+         "url":"https://pubchem.ncbi.nlm.nih.gov/compound/91861410#section=Top"
+      }
+   ],
+   "glycoprotein":[
+      {
+         "protein_name":"GP120",
+         "uniprot_canonical_ac":"P26572",
+         
+         "evidence":[
+            {
+               "database":"UniCarbDB",
+               "id":"123",
+               "url":"http://glycomics.ccrc.uga.edu/ontologies"
+            },
+            {
+               "database":"UniCarbDB",
+               "id":"1234",
+               "url":"http://glycomics.ccrc.uga.edu/ontologies"
+            }
+         ]
+      },
+      {
+        "protein":"GP120",
+        "uniprot_canonical_ac":"P26572",
+        "position":"123",
+        "evidence":[
+           {
+              "database":"UniCarbDB",
+              "id":"123",
+              "url":"http://glycomics.ccrc.uga.edu/ontologies"
+           },
+           {
+              "database":"UniCarbDB",
+              "id":"1234",
+              "url":"http://glycomics.ccrc.uga.edu/ontologies"
+           }
+        ]
+     }
+   ],
+   "enzymes":[
+      {
+         "protein_name":"Alpha-1,3-mannosyl-glycoprotein 2-beta-N-acetylglucosaminyltransferase",
+         "uniprot_canonical_ac":"P26572",
+         "gene":"MGAT1",
+         "gene_link":"https://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=HGNC:7044"
+      },
+      {
+         "protein_name":"Alpha-1,3/1,6-mannosyltransferase ALG2",
+         "uniprot_canonical_ac":"P43636",
+         "gene":"ALG2",
+         "gene_link":"https://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=HGNC:23159"
+      }
+   ]
+}

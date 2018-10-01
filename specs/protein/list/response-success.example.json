@@ -1,0 +1,53 @@
+{  
+   "query":{  
+      "operation":"AND",
+      "query_type":"search_protein",
+      "execution_time":"2008-09-15T15:53:00+05:00",
+      "uniprot_canonical_ac":"P01234",
+      "mass":{  
+         "min":10,
+         "max":10000
+      },
+      "organism":{
+        "name":"Homo sapiens",
+        "id":9606
+     },
+      "protein_name":"Envelope glycoprotein",
+      "gene_name":"MGAT1",
+      "glycan":{  
+         "relation":"attached",
+         "glytoucan_ac":"G09012"
+      },
+      "glycosylated_aa":[  
+         "N",
+         "S"
+      ],
+      "sequence":{  
+         "aa_sequence":"NSTRFV",
+         "type":"exact"
+      },
+      "pathway_id":"melatonin biosynthesis",
+      "glycosylation_evidence":"any"
+   },
+   "pagination":{  
+      "offset":1,
+      "limit":10,
+      "total_length":19,
+      "sort":"uniprot_canonical_ac",
+      "order":"asc"
+   },
+   "results":[  
+      {  
+         "uniprot_canonical_ac":"P03390",
+         "mass":1502.5,
+         "protein_name_long":"Envelope glycoprotein",
+         "protein_name_short":"ENV_MLVF5",
+         "gene_name":"MGAT1",
+         "organism":"Homo sapiens",
+         "refseq_name":" ",
+         "refseq_ac":"NP_002178.2"
+         
+      }
+   ]
+}
+

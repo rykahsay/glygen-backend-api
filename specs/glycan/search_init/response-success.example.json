@@ -1,0 +1,54 @@
+{
+   "glygan_mass":{
+      "min":1056.4,
+      "max":1500
+   },
+   "number_monosaccharides":{
+      "min":4,
+      "max":20
+   },
+   "organism":[
+      {
+         "name":"Homo sapiens",
+         "id":9606
+      },
+      {
+         "name":"Mus musculus",
+         "id":10090
+      }
+   ],
+   "glycan_type":[
+      {
+         "name":"N-Glycan",
+         "subtype":[
+            "Complex",
+            "High-mannose",
+            "Hybrid",
+            "Bisected"
+         ]
+      },
+      {
+         "name":"O-Glycan",
+         "subtype":[
+            "Core 1",
+            "Core 2",
+            "Core 3",
+            "Core 4",
+            "Core 5",
+            "Core 6",
+            "Core 7",
+            "Core 8"
+         ]
+      }
+   ],
+   "simple_search_category":[
+      {
+         "id":"glycan",
+         "display":"Glycan"
+      },
+      {
+         "id":"protein",
+         "display":"By Protein"
+      }
+   ]
+}
