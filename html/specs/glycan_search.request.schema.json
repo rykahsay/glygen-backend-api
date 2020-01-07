@@ -1,0 +1,172 @@
+{
+   "$id":"http://example.com/example.json",
+   "type":"object",
+   "properties":{
+      "query":{
+         "$id":"/properties/query",
+         "type":"object",
+         "description":"Object that contains the information of a glycan query. Each piece of information in the query is optional however one piece must be present for a meaning full search. In later versions it will be possible to combine query objects using logical operations (AND, OR, NOT).",
+         "properties":{
+            "operation":{
+               "$id":"/properties/query/properties/operation",
+               "type":"string",
+               "description":"his fields defines how the different parts/searches of the query are combined. Possible values are AND and OR. The default will be AND.",
+               "default":"AND",
+               "examples":[
+                  "AND"
+               ]
+            },
+            "query_type":{
+               "$id":"/properties/query/properties/query_type",
+               "type":"string",
+               "description":"This field is set if a search by glycan type (e.g. N-Glycan) will be performed. The complete list of glycan types is maintained by the glygen server.",
+               "default":"search_glycan",
+               "examples":[
+                  "search_glycan"
+               ]
+            },
+            "mass_type":{
+               "$id":"/properties/query/properties/mass_type",
+               "type":"string",
+               "description":"This field is set if a search by glycan mass is performed. Possible values are Native and Permethylated. The default will be Native.",
+               "examples":[
+                  "Native",
+                  "Permethylated"
+               ]
+            },
+	         "mass":{
+               "$id":"/properties/query/properties/mass",
+               "type":"object",
+               "description":"This objects is specified if a search by glycan mass is performed. The search query consists of a minimum mass (glycan has to have equal or larger mass) and a maximum mass (glycan has to have equal or smaller mass). That way it defines an mass range to be searched.",
+               "properties":{
+                  "min":{
+                     "$id":"/properties/query/properties/mass/properties/min",
+                     "type":"integer",
+                     "description":"Minimum value of the mass range.",
+                     "default":0,
+                     "examples":[
+                        100
+                     ]
+                  },
+                  "max":{
+                     "$id":"/properties/query/properties/mass/properties/max",
+                     "type":"integer",
+                     "description":"Maximum value of the mass range.",
+                     "examples":[
+                        6900
+                     ]
+                  }
+               },
+               "required":[
+                  "min",
+                  "max"
+               ]
+            },
+            "number_monosaccharides":{
+               "$id":"/properties/query/properties/number_monosaccharides",
+               "type":"object",
+               "description":"This objects is specified if a search by number of monosaccharides is performed. The search query consists of a minimum and a maximum value. That way it defines an range to be searched.",
+               "properties":{
+                  "min":{
+                     "$id":"/properties/query/properties/number_monosaccharides/properties/min",
+                     "type":"integer",
+                     "description":"Minimum number of monosaccharides.",
+                     "default":1,
+                     "examples":[
+                        10
+                     ]
+                  },
+                  "max":{
+                     "$id":"/properties/query/properties/number_monosaccharides/properties/max",
+                     "type":"integer",
+                     "description":"Maximum number of monosaccharides.",
+                     "examples":[
+                        69
+                     ]
+                  }
+               },
+               "required":[
+                  "min",
+                  "max"
+               ]
+            },
+            "glycan_type":{
+               "$id":"/properties/query/properties/glycan_type",
+               "type":"string",
+               "description":"This field is set if a search by glycan type (e.g. N-Glycan) will be performed. The complete list of glycan types is maintained by the glygen server.",
+               "examples":[
+                  "N-linked"
+               ]
+            },
+            "glycan_subtype":{
+               "$id":"/properties/query/properties/glycan_subtype",
+               "type":"string",
+               "description":"This field is set if a search by glycan subtype (e.g. bisection) will be performed. The complete list of glycan subtypes is maintained by the glygen server. This field can be used intependendly from g"
+            },
+            "organism":{
+               "$id":"/properties/query/properties/organism",
+               "type":"object",
+               "description":"This field is set if a search by organism (e.g. human) is performed. The value can either be a scientific species name (NCBI Taxonomy), a synonym or a NCBI Taxonomy ID."
+            },
+            "protein_identifier":{
+               "$id":"/properties/query/properties/protein_identifier",
+               "type":"string",
+               "description":"This field is set if a search for glycans attached to a both gene_name and protein accession. The input is a Uniprot protein ID and gene name",
+               "examples":[
+                  "P01234"
+               ]
+            },
+            "glycan_motif":{
+               "$id":"/properties/query/properties/glycan_motif",
+               "type":"string",
+               "description":"This field is set if a search by glycan motif is performed (e.g. LewisX). All structures containing this motif will be found.",
+               "examples":[
+                  "LewisX"
+               ]
+            },
+            "glytoucan_ac":{
+               "$id":"/properties/query/properties/glytoucan_ac",
+               "type":"string",
+               "description":"This field is set if a search by glycan ID is performed. Either an intact ID or part of an ID can be specified. The intact ID will lead to a single result while a partical ID might lead to many result",
+               "examples":[
+                  "AG56"
+               ]
+            },
+            "enzyme":{
+               "$id":"/properties/query/properties/enzyme",
+               "type":"object",
+               "description":"This field is set if a search for glycans synthesised by a certain enzyme is performed. The input is an object that consists of an ID and a type.",
+               "properties":{
+                  "id":{
+                     "$id":"/properties/query/properties/enzyme/properties/id",
+                     "type":"string",
+                     "description":"ID of the enzyme this can either be a Uniprot ID (type=protein) or a gene name (type=gene).",
+                     "examples":[
+                        "MGAT2"
+                     ]
+                  },
+                  "type":{
+                     "$id":"/properties/query/properties/enzyme/properties/type",
+                     "type":"string",
+                     "description":"Type of the enzyme input. This can either be a gene or a protein",
+                     "examples":[
+                        "gene"
+                     ]
+                  }
+               },
+               "required":[
+                  "id",
+                  "type"
+               ]
+            }
+         },
+         "required":[
+            "operation",
+            "query_type"
+         ]
+      }
+   },
+   "required":[
+      "query"
+   ]
+}

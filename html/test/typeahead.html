@@ -1,0 +1,147 @@
+<html>
+<head>
+<link rel="stylesheet" href="styles.css" type="text/css">
+<script language="javascript" src="jquery.min.js"></script>
+<script>
+var htmlRoot = ""
+
+$(document ).ready(function() {
+
+});
+
+
+////////////////////////////////////
+$(document).on('click', '#typeahead', function (event) {
+
+	event.preventDefault();
+	
+	var keyList1 = ["field", "value"]
+	var keyList2 = ["limit"];
+	var inJson = {};
+	$('.typeahead').each(function(){
+	 	var name = $(this).attr("name");
+		var value = $(this).val();
+		if (value.trim()){
+			if(keyList1.indexOf(name) != -1){
+				inJson[name] = value;
+			}
+			else if(keyList2.indexOf(name) != -1){
+				inJson[name] = parseInt(value);                                 
+			}
+		}	
+	});
+	var url = htmlRoot + '/typeahead'
+	var postData = "query=" + JSON.stringify(inJson);
+	$("#typeahead_url").html(url + '?' +postData);
+
+	var gifImage = '<img src=loading.gif style="width:20%;margin-left:40%;margin-top:2%;">';        
+	$("#typeahead_cn").html(gifImage);
+
+
+	var reqObj = new XMLHttpRequest();
+	reqObj.open("POST", url, true);
+	reqObj.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	reqObj.onreadystatechange = function() {
+		if (reqObj.readyState == 4 && [200, 500].indexOf(reqObj.status) != -1) {
+			$("#typeahead_cn").html('<pre>'+reqObj.responseText+'</pre>');
+		}
+	};
+	reqObj.send(postData);
+});
+
+
+/////////////////////////////
+$(document).on('click', '#categorized_typeahead', function (event) {
+
+        event.preventDefault();
+        
+        var keyList1 = ["field", "value"]
+        var keyList2 = ["total_limit", "categorywise_limit"];
+        var inJson = {};
+        $('.categorized_typeahead').each(function(){
+                var name = $(this).attr("name");
+                var value = $(this).val();
+                if (value.trim()){
+                        if(keyList1.indexOf(name) != -1){
+                                inJson[name] = value;
+                        }
+                        else if(keyList2.indexOf(name) != -1){
+                                inJson[name] = parseInt(value);                                 
+                        }
+                }       
+        });
+        var url = htmlRoot + '/categorized_typeahead'
+        var postData = "query=" + JSON.stringify(inJson);
+        $("#categorized_typeahead_url").html(url + '?' +postData);
+
+        var gifImage = '<img src=loading.gif style="width:20%;margin-left:40%;margin-top:2%;">';        
+        $("#categorized_typeahead_cn").html(gifImage);
+
+
+        var reqObj = new XMLHttpRequest();
+        reqObj.open("POST", url, true);
+        reqObj.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        reqObj.onreadystatechange = function() {
+                if (reqObj.readyState == 4 && [200, 500].indexOf(reqObj.status) != -1) {
+                        $("#categorized_typeahead_cn").html('<pre>'+reqObj.responseText+'</pre>');
+                }
+        };
+        reqObj.send(postData);
+});
+
+
+
+</script>
+
+</head>
+<body>
+
+
+<table align=center width=80% border=1 style="background:#eee;">
+
+<tr><th colspan=2 align=left class=api_title>Test for typeahead API</th></tr>
+<tr><td>Field Name </td><td>
+<select class=typeahead name=field>
+	<option value="glytoucan_ac" selected>glytoucan_ac</option>
+	<option value="uniprot_canonical_ac">uniprot_canonical_ac</option>
+	<option value="uniprot_id">uniprot_id</option>
+	<option value="refseq_ac">refseq_ac</option>
+	<option value="protein_name">protein_name</option>
+	<option value="gene_name">gene_name</option>
+	<option value="enzyme_uniprot_canonical_ac">enzyme_uniprot_canonical_ac</option>
+	<option value="motif_name">motif_name</option>
+	<option value="pathway_id">pathway_id</option>
+	<option value="pathway_name">pathway_name</option>	
+	<option value="disease_name">disease_name</option>
+        <option value="go_id">go_id</option>
+        <option value="go_term">go_term</option>
+</select>
+</td></tr>
+<tr><td>Field Value</td><td width=80%><input class=typeahead name=value type=text value=""></td></tr>
+<tr><td>Max Results Count</td><td><input type=number name=limit value=100 class=typeahead></td></tr>
+<tr><td>Post Data</td><td id=typeahead_url style="background:#fff;"></td></tr>
+<tr><td valign=top><input type=submit id=typeahead name=btn value="Submit API request"></td>
+	<td style="background:#fff;"><div style="width:700px;height:150px;overflow:auto;" id=typeahead_cn></div></td></tr>
+
+
+
+<tr><th colspan=2 align=left class=api_title>Test for categorized typeahead API</th></tr>
+<tr><td>Field Name </td><td>
+<select class=categorized_typeahead name=field>
+        <option value="go_term" selected>go_term</option>
+</select>
+</td></tr>
+<tr><td>Field Value</td><td width=80%><input class=categorized_typeahead name=value type=text value=""></td></tr>
+<tr><td>Total Limit</td><td><input type=number name=total_limit value=15 class=categorized_typeahead></td></tr>
+<tr><td>Category Wise Limit</td><td><input type=number name=categorywise_limit value=5 class=categorized_typeahead></td></tr>
+
+<tr><td>Post Data</td><td id=categorized_typeahead_url style="background:#fff;"></td></tr>
+<tr><td valign=top><input type=submit id=categorized_typeahead name=btn value="Submit API request"></td>
+        <td style="background:#fff;"><div style="width:700px;height:150px;overflow:auto;" id=categorized_typeahead_cn></div></td></tr>
+
+
+
+</table>
+
+</body>
+<html>

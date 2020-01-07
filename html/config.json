@@ -1,0 +1,381 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "GlyGen APIs",
+  },
+  "host": "api.dev.glygen.org",
+  "basePath": "/",
+  "produces": ["application/json"],
+  "schemes": ["https"],
+  "paths": {
+        "/directsearch/glycan/?query={query_json}":{
+              "get": {
+                "tags": [
+                    "Glycan Search (generic glycan API)"
+                ],
+                "description": "Search for glycan records in GlyGen",
+                "parameters": [
+                    {
+                        "name": "query_json",
+                        "in": "path",
+                        "description": "Query in JSON format [<a href=\"/specs/glycan_search.request.schema.json\" style=\"font-size:11px;text-decoration:none;\" target=_>view schema</a>]",
+                        "default":"{\"protein_identifier\":\"P14210\"}",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                     "200": {
+                        "description": "Successful request!",
+                        "schema": {
+                              "type": "object",
+                              "properties": {
+                              }
+                        }
+                     }
+                }
+            }
+        }
+        ,"/glycan/detail/{glytoucan_ac}/": {
+              "get": {
+                "tags": [
+                    "Glycan Details (generic glycan API)"
+                ],
+                "description": "Get details for a given glycan record in GlyGen",
+                "parameters": [
+                    {
+                        "name": "glytoucan_ac",
+                        "in": "path",
+                        "description": "GlyTouCan Accession",
+                        "required": true,
+                        "type": "string",
+                        "default":"G00053MO"
+                      }
+                ],
+                "responses": {
+                     "200": {
+                        "description": "Successful request!",
+                        "schema": {
+                              "type": "object",
+                              "properties": {
+                              }
+                        }
+                     }
+                }
+            }
+        }
+        ,"/glycan/image/{glytoucan_ac}/": {
+              "get": {
+                "tags": [
+                    "Glycan Image (generic glycan API)"
+                ],
+                "description": "Get image for a glycan record in GlyGen",
+                "parameters": [
+                    {
+                        "name": "glytoucan_ac",
+                        "in": "path",
+                        "description": "GlyTouCan Accession",
+                        "required": true,
+                        "type": "string",
+                        "default":"G00053MO"
+                      }
+                ],
+                "responses": {
+                     "200": {
+                        "description": "Successfully got glycan image",
+                        "schema": {
+                              "type": "object",
+                              "properties": {
+                              }
+                        }
+                     }
+                }
+            }
+        },
+        "/directsearch/biosynthesis_enzyme_to_glycans/?query={query_json}":{
+            "get": {
+                "tags": [
+                    "Glycans synthesized by enzyme/protein X (customized glycan search API)"
+                ],
+                "description": "Which glycans might have been synthesized using enzyme X",
+                "parameters": [
+                    {
+                        "name": "query_json",
+                        "in": "path",
+                        "description": "Query in JSON format [<a href=\"/specs/biosynthesis_enzyme_to_glycans.request.schema.json\" style=\"font-size:11px;text-decoration:none;\" target=_>view schema</a>]",
+                        "default":"{\"uniprot_canonical_ac\":\"Q921Q3-1\"}",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                     "200": {
+                        "description": "Successful request!",
+                        "schema": {
+                              "type": "object",
+                              "properties": {}
+                        }
+                     }
+                }
+            }     
+        }
+        ,"/directsearch/protein/?query={query_json}":{
+              "get": {
+                "tags": [
+                    "Protein Search (generic protein API)"
+                ],
+                "description": "Search for protein records in GlyGen",
+                "parameters": [
+                    {
+                        "name": "query_json",
+                        "in": "path",
+                        "description": "Query in JSON format [<a href=\"/specs/protein_search.request.schema.json\" style=\"font-size:11px;text-decoration:none;\" target=_>view schema</a>]",
+                        "default":"{\"uniprot_canonical_ac\":\"P14210\"}",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                     "200": {
+                        "description": "Successful request!",
+                        "schema": {
+                              "type": "object",
+                              "properties": {}
+                        }
+                     }
+                }
+            }
+        }
+        ,"/directsearch/glycan_to_biosynthesis_enzymes/?query={query_json}": {
+              "get": {
+                "tags": [
+                    "Proteins/enzymes involved in biosynthesis glycan X (customized protein search API)"
+                ],
+                "description": "What are the enzyme proteins involved in the biosynthesis of glycan X?",
+                "parameters": [
+                    {
+                        "name": "query_json",
+                        "in": "path",
+                        "description": "Query in JSON format [<a href=\"/specs/glycan_to_biosynthesis_enzymes.request.schema.json\" style=\"font-size:11px;text-decoration:none;\" target=_>view schema</a>]",
+                        "required": true,
+                        "type": "string",
+                        "default":"{\"glytoucan_ac\":\"G04483SK\"}"
+                    }
+                ],
+                "responses": {
+                     "200": {
+                        "description": "Successful request!",
+                        "schema": {
+                              "type": "object",
+                              "properties": {
+                              }
+                        }
+                     }
+                }
+            }
+        },
+        "/directsearch/glycan_to_glycoproteins/?query={query_json}": {
+              "get": {
+                "tags": [
+                    "Proteins bearing glycan X (customized protein search API)"
+                ],
+                "description": "Which proteins have been shown to bear glycan X and which site is this glycan attached to?",
+                "parameters": [
+                    {
+                        "name": "query_json",
+                        "in": "path",
+                        "description": "Query in JSON format [<a href=\"/specs/glycan_to_glycoproteins.request.schema.json\" style=\"font-size:11px;text-decoration:none;\" target=_>view schema</a>]",
+                                                
+                        "required": true,
+                        "type": "string",
+                        "default":"{\"glytoucan_ac\":\"G04483SK\"}"
+                      }
+                ],
+                "responses": {
+                     "200": {
+                        "description": "Successful request!",
+                        "schema": {
+                              "type": "object",
+                              "properties": {
+                              }
+                        }
+                     }
+                }
+            }
+        }
+        ,"/directsearch/protein_to_homologs/?query={query_json}": {
+              "get": {
+                "tags": [
+                    "Proteins homologous to protein X (customized protein search API)"
+                ],
+                "description": "Which proteins homologs of a given protein X?",
+                "parameters": [
+                    {
+                        "name": "query_json",
+                        "in": "path",
+                        "description": "Query in JSON format [<a href=\"/specs/protein_to_homologs.request.schema.json\" style=\"font-size:11px;text-decoration:none;\" target=_>view schema</a>]",
+                                                
+                        "required": true,
+                        "type": "string",
+                        "default":"{\"uniprot_canonical_ac\":\"Q921Q3-1\"}"
+                      }
+                ],
+                "responses": {
+                     "200": {
+                        "description": "Successful request!",
+                        "schema": {
+                              "type": "object",
+                              "properties": {
+                              }
+                        }
+                     }
+                }
+            }
+        }
+        ,"/directsearch/species_to_glycosyltransferases/?query={query_json}": {
+              "get": {
+                "tags": [
+                    "Proteins with glycosyltransferase activity in species X (customized protein search API)"
+                ],
+                "description": "Which proteins have glycosyltransferase activity in species X?",
+                "parameters": [
+                    {
+                        "name": "query_json",
+                        "in": "path",
+                        "description": "Query in JSON format [<a href=\"/specs/species_to_glycosyltransferases.request.schema.json\" style=\"font-size:11px;text-decoration:none;\" target=_>view schema</a>]",
+                                                
+                        "required": true,
+                        "type": "string",
+                        "default":"{\"tax_id\":9606}"
+                      }
+                ],
+                "responses": {
+                     "200": {
+                        "description": "Successful request!",
+                        "schema": {
+                              "type": "object",
+                              "properties": {
+                              }
+                        }
+                     }
+                }
+            }
+        }
+        ,"/directsearch/species_to_glycohydrolases/?query={query_json}": {
+              "get": {
+                "tags": [
+                    "Proteins with glycohydrolase activity in species X (customized protein search API)"
+                ],
+                "description": "Which proteins have glycohydrolase activity in species X?",
+                "parameters": [
+                    {
+                        "name": "query_json",
+                        "in": "path",
+                        "description": "Query in JSON format [<a href=\"/specs/species_to_glycohydrolases.request.schema.json\" style=\"font-size:11px;text-decoration:none;\" target=_>view schema</a>]",
+                                                
+                        "required": true,
+                        "type": "string",
+                        "default":"{\"tax_id\":9606}"
+                      }
+                ],
+                "responses": {
+                     "200": {
+                        "description": "Successful request!",
+                        "schema": {
+                              "type": "object",
+                              "properties": {
+                              }
+                        }
+                     }
+                }
+            }
+        }
+        ,"/directsearch/species_to_glycoproteins/?query={query_json}": {
+              "get": {
+                "tags": [
+                    "Glycoproteins reported in species X (customized protein search API)"
+                ],
+                "description": "What are the reported glycoproteins in species X?",
+                "parameters": [
+                    {
+                        "name": "query_json",
+                        "in": "path",
+                        "description": "Query in JSON format [<a href=\"/specs/species_to_glycoproteins.request.schema.json\" style=\"font-size:11px;text-decoration:none;\" target=_>view schema</a>]",
+                                                
+                        "required": true,
+                        "type": "string",
+                        "default":"{\"tax_id\":9606, \"evidence_type\":\"reported\"}"
+                      }
+                ],
+                "responses": {
+                     "200": {
+                        "description": "Successful request!",
+                        "schema": {
+                              "type": "object",
+                              "properties": {
+                              }
+                        }
+                     }
+                }
+            }
+        }
+        ,"/directsearch/disease_to_glycosyltransferases/?query={query_json}": {
+              "get": {
+                "tags": [
+                    "Glycosyltransferases involved in disease X (customized protein search API)"
+                ],
+                "description": "Which glycosyltransferases involved in disease X?",
+                "parameters": [
+                    {
+                        "name": "query_json",
+                        "in": "path",
+                        "description": "Query in JSON format [<a href=\"/specs/disease_to_glycosyltransferases.request.schema.json\" style=\"font-size:11px;text-decoration:none;\" target=_>view schema</a>]",
+                                                
+                        "required": true,
+                        "type": "string",
+                        "default":"{\"tax_id\":9606, \"do_name\":\"Gilbert syndrom\"}"
+                      }
+                ],
+                "responses": {
+                     "200": {
+                        "description": "Successful request!",
+                        "schema": {
+                              "type": "object",
+                              "properties": {
+                              }
+                        }
+                     }
+                }
+            }
+        }
+        ,"/protein/detail/{uniprotkb_ac}/": {
+              "get": {
+                "tags": [
+                    "Protein Details (generic protein API)"
+                ],
+                "description": "Get details for a given protein record in GlyGen",
+                "parameters": [
+                    {
+                        "name": "uniprotkb_ac",
+                        "in": "path",
+                        "description": "UniProtKB Accession",
+                        "required": true,
+                        "type": "string",
+                        "default":"P14210"
+                      }
+                ],
+                "responses": {
+                     "200": {
+                        "description": "Successfully got protein details",
+                        "schema": {
+                              "type": "object",
+                              "properties": {
+                              }
+                        }
+                     }
+                }
+            }
+        }
+    }
+}
+

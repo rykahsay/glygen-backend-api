@@ -1,0 +1,97 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Protein APIs",
+  },
+  "host": "api.dev.glygen.org",
+  "basePath": "/",
+  "produces": ["application/json"],
+  "schemes": ["https"],
+  "paths": {
+        "/directsearch/protein/?query={query_json}":{
+              "get": {
+                "tags": [
+                    "Protein Search"
+                ],
+                "description": "Search for protein records in GlyGen",
+                "parameters": [
+                    {
+                        "name": "query_json",
+                        "in": "path",
+                        "description": "Query in JSON format [<a href=\"/apidocs/specs/protein/search/request.schema.json\" style=\"font-size:11px;text-decoration:none;\" target=_>view schema</a>]",
+                        "default":"{\"uniprot_canonical_ac\":\"P14210\"}",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                     "200": {
+                        "description": "Successfully got search results ID",
+                        "schema": {
+                              "type": "object",
+                              "properties": {
+                              }
+                        }
+                     }
+                }
+            }
+        }
+        ,"/protein/detail/{protein_id}": {
+              "get": {
+                "tags": [
+                    "Protein Details"
+                ],
+                "description": "Get details for a given protein record in GlyGen",
+                "parameters": [
+                    {
+                        "name": "protein_id",
+                        "in": "path",
+                        "description": "Protein ID",
+                        "required": true,
+                        "type": "string",
+                        "default":"G00053MO"
+                      }
+                ],
+                "responses": {
+                     "200": {
+                        "description": "Successfully got protein details",
+                        "schema": {
+                              "type": "object",
+                              "properties": {
+                              }
+                        }
+                     }
+                }
+            }
+        }
+        ,"/protein/image/{protein_id}": {
+              "get": {
+                "tags": [
+                    "Protein Image"
+                ],
+                "description": "Get image for a protein record in GlyGen",
+                "parameters": [
+                    {
+                        "name": "protein_id",
+                        "in": "path",
+                        "description": "Protein ID",
+                        "required": true,
+                        "type": "string",
+                        "default":"G00053MO"
+                      }
+                ],
+                "responses": {
+                     "200": {
+                        "description": "Successfully got protein image",
+                        "schema": {
+                              "type": "object",
+                              "properties": {
+                              }
+                        }
+                     }
+                }
+            }
+        }
+    }
+}
+

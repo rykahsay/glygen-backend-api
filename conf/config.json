@@ -1,51 +1,672 @@
 {
 	"server":"dev"
-	,"max_results_count":{
-		"glycan":4000
-		,"protein":2000
+	,"moduleversion":"0.0.0"
+        ,"datarelease":"0.0.0"
+        ,"max_batch_size":100
+        ,"max_global_search_results":1000000
+        ,"max_query_value_len":2500
+        ,"max_sequence_len":3000
+        ,"cache_batch_size":10000
+        ,"max_results_count":{
+		"glycan":100000
+		,"protein":70000
 	}
-	,"dev":{
+        ,"taxid2name":{
+            "0":"All"
+            ,"9606":"Homo sapiens"
+            ,"10090":"Mus musculus"
+            ,"10116":"Rattus norvegicus"
+        }
+        ,"globalsearch_search":{
+            "field_info":{
+                "term":{"type":"string"}
+            }
+            ,"requiredfields":["term"]
+            ,"collectionlist":["c_glycan","c_protein"]
+        }
+        ,"glycan_searchinit":{
+            "field_info":{
+            }
+            ,"requiredfields":[]
+            ,"collectionlist":["c_searchinit"]
+        }
+        ,"glycan_search_simple":{
+            "field_info":{
+                "query_type":{"type":"string"}
+                ,"operation":{"type":"string"}
+                ,"term":{"type":"string"}
+                ,"term_category":{"type":"string"}
+            }
+            ,"requiredfields":["term", "term_category"]
+            ,"collectionlist":["c_glycan","c_glycancache"]
+        }
+        ,"glycan_search":{
+            "field_info":{
+                "query_type":{"type":"string"}
+                ,"operation":{"type":"string"}
+                ,"glytoucan_ac":{"type":"string"}
+                ,"glycan_motif":{"type":"string"}
+                ,"protein_identifier":{"type":"string"}
+                ,"glycan_type":{"type":"string"}
+                ,"mass_type":{"type":"string"}
+                ,"pmid":{"type":"string"}
+                ,"glycan_subtype":{"type":"string"}
+                ,"organism":{"organism_list":{"type":"list"},  "operation":{"type":"string"}}
+                ,"mass":{"min":{"type":"number"}, "max":{"type":"number"}}
+                ,"composition":{
+                    "residue":{"type":"string"}, 
+                    "min":{"type":"number"}, 
+                    "max":{"type":"number"}
+                }
+                ,"number_monosaccharides":{"min":{"type":"number"}, "max":{"type":"number"}}
+                ,"enzyme":{"id":{"type":"string"}, "type":{"type":"string"}}
+            }
+            ,"requiredfields":[]
+            ,"collectionlist":["c_glycan","c_glycancache"]
+        }
+        ,"glycan_search_direct":{
+            "field_info":{
+                "query_type":{"type":"string"}
+                ,"operation":{"type":"string"}
+                ,"glytoucan_ac":{"type":"string"}
+                ,"glycan_motif":{"type":"string"}
+                ,"protein_identifier":{"type":"string"}
+                ,"glycan_type":{"type":"string"}
+                ,"mass_type":{"type":"string"}
+                ,"pmid":{"type":"string"}
+                ,"glycan_subtype":{"type":"string"}
+                ,"organism":{"organism_list":{"type":"list"},  "operation":{"type":"string"}}
+                ,"mass":{"min":{"type":"number"}, "max":{"type":"number"}}
+                ,"composition":{
+                    "residue":{"type":"string"},
+                    "min":{"type":"number"},
+                    "max":{"type":"number"}
+                }
+                ,"number_monosaccharides":{"min":{"type":"number"}, "max":{"type":"number"}}
+                ,"enzyme":{"id":{"type":"string"}, "type":{"type":"string"}}
+                ,"limit":{"type":"number"}
+                ,"offset":{"type":"number"} 
+            }
+            ,"requiredfields":[]
+            ,"collectionlist":["c_glycan"]
+        }
+        ,"glycan_list":{
+            "field_info":{
+                "id":{"type":"string"}
+                ,"sort":{"type":"string"}
+                ,"order":{"type":"string"}
+                ,"limit":{"type":"number"}
+                ,"offset":{"type":"number"}
+            }
+            ,"returnfields":{
+                "int":["hit_score", "number_proteins", "number_monosaccharides", "number_enzymes"]
+                ,"float":["mass", "mass_pme"]
+                ,"string":["glytoucan_ac", "iupac", "glycoct", "wurcs"]
+            }
+            ,"requiredfields":["id"]
+            ,"collectionlist":["c_glycancache"]
+        }
+        ,"glycan_detail":{
+            "field_info":{
+                "glytoucan_ac":{"type":"string", "maxlen":20}
+            }
+            ,"requiredfields":["glytoucan_ac"]
+            ,"collectionlist":["c_glycan"]
+        }
+        ,"motif_detail":{
+            "field_info":{
+                "glytoucan_ac":{"type":"string", "maxlen":20}
+                ,"id":{"type":"string"}
+                ,"sort":{"type":"string"}
+                ,"order":{"type":"string"}
+                ,"limit":{"type":"number"}
+                ,"offset":{"type":"number"}
+            }
+            ,"requiredfields":["glytoucan_ac"]
+            ,"collectionlist":["c_glycan"]
+        }
+        ,"protein_searchinit":{
+            "field_info":{
+            }
+            ,"requiredfields":[]
+            ,"collectionlist":["c_searchinit"]
+        }
+        ,"protein_search_simple":{
+            "field_info":{
+                "query_type":{"type":"string"}
+                ,"operation":{"type":"string"}
+                ,"term":{"type":"string"}
+                ,"term_category":{"type":"string"}
+            }
+            ,"requiredfields":["term", "term_category"]
+            ,"collectionlist":["c_protein","c_proteincache"]
+        }
+        ,"protein_search":{
+            "field_info":{
+                "query_type":{"type":"string"}
+                ,"operation":{"type":"string"}
+                ,"uniprot_canonical_ac":{"type":"string"}
+                ,"protein_name":{"type":"string"}
+                ,"go_id":{"type":"string"}
+                ,"go_term":{"type":"string"}
+                ,"gene_name":{"type":"string"}
+                ,"refseq_ac":{"type":"string"}
+                ,"pathway_id":{"type":"string"}
+                ,"pmid":{"type":"string"}
+                ,"glycosylation_evidence":{"type":"string"}
+                ,"mass":{"min":{"type":"number"}, "max":{"type":"number"}}        
+                ,"organism":{"id":{"type":"number"}, "name":{"type":"string"}}
+                ,"glycan":{"glytoucan_ac":{"type":"string"}, "relation":{"type":"string"}}
+                ,"sequence":{"aa_sequence":{"type":"string"}, "type":{"type":"string"}}
+                ,"glycosylated_aa":{"aa_list":{"type":"list"}, "operation":{"type":"string"}}
+            }
+            ,"requiredfields":[]
+            ,"collectionlist":["c_protein","c_proteincache"]
+        }
+        ,"protein_search_direct":{
+            "field_info":{
+                "query_type":{"type":"string"}
+                ,"operation":{"type":"string"}
+                ,"uniprot_canonical_ac":{"type":"string"}
+                ,"protein_name":{"type":"string"}
+                ,"go_id":{"type":"string"}
+                ,"go_term":{"type":"string"}
+                ,"gene_name":{"type":"string"}
+                ,"refseq_ac":{"type":"string"}
+                ,"pathway_id":{"type":"string"}
+                ,"pmid":{"type":"string"}
+                ,"glycosylation_evidence":{"type":"string"}
+                ,"mass":{"min":{"type":"number"}, "max":{"type":"number"}}
+                ,"organism":{"id":{"type":"number"}, "name":{"type":"string"}}
+                ,"glycan":{"glytoucan_ac":{"type":"string"}, "relation":{"type":"string"}}
+                ,"sequence":{"aa_sequence":{"type":"string"}, "type":{"type":"string"}}
+                ,"glycosylated_aa":{"aa_list":{"type":"list"}, "operation":{"type":"string"}}
+                ,"limit":{"type":"number"}
+                ,"offset":{"type":"number"}
+            }
+            ,"requiredfields":[]
+            ,"collectionlist":["c_protein"]
+        }
+        ,"glycan_to_biosynthesis_enzymes_direct":{
+            "field_info":{
+                "glytoucan_ac":{"type":"string"}
+                ,"limit":{"type":"number"}
+                ,"offset":{"type":"number"}
+            }
+            ,"requiredfields":["glytoucan_ac"]
+            ,"collectionlist":["c_glycan","c_protein"]
+        }
+        ,"glycan_to_glycoproteins_direct":{
+            "field_info":{
+                "glytoucan_ac":{"type":"string"}
+                ,"limit":{"type":"number"}
+                ,"offset":{"type":"number"}
+            }
+            ,"requiredfields":["glytoucan_ac"]
+            ,"collectionlist":["c_glycan","c_protein"]
+        }
+        ,"biosynthesis_enzyme_to_glycans_direct":{
+            "field_info":{
+                "uniprot_canonical_ac":{"type":"string"}
+                ,"limit":{"type":"number"}
+                ,"offset":{"type":"number"}
+            }
+            ,"requiredfields":["uniprot_canonical_ac"]
+            ,"collectionlist":["c_glycan", "c_protein"]
+        }
+        ,"protein_to_homologs_direct":{
+            "field_info":{
+                "uniprot_canonical_ac":{"type":"string"}
+                ,"limit":{"type":"number"}
+                ,"offset":{"type":"number"}
+            }
+            ,"requiredfields":["uniprot_canonical_ac"]
+            ,"collectionlist":["c_protein"]
+        }
+        ,"species_to_glycosyltransferases_direct":{
+            "field_info":{
+                "tax_id":{"type":"number"}
+                ,"limit":{"type":"number"}
+                ,"offset":{"type":"number"}
+            }
+            ,"requiredfields":["tax_id"]
+            ,"collectionlist":["c_protein"]
+        }
+        ,"species_to_glycohydrolases_direct":{
+            "field_info":{
+                "tax_id":{"type":"number"}
+                ,"limit":{"type":"number"}
+                ,"offset":{"type":"number"}
+            }
+            ,"requiredfields":["tax_id"]
+            ,"collectionlist":["c_protein"]
+        }
+        ,"species_to_glycoproteins_direct":{
+            "field_info":{
+                "tax_id":{"type":"number"}
+                ,"evidence_type":{"type":"string"}
+                ,"limit":{"type":"number"}
+                ,"offset":{"type":"number"}
+            }
+            ,"requiredfields":["tax_id", "evidence_type"]
+            ,"collectionlist":["c_protein"]
+        }
+        ,"disease_to_glycosyltransferases_direct":{
+            "field_info":{
+                "tax_id":{"type":"number"}
+                ,"do_name":{"type":"string"}
+                ,"limit":{"type":"number"}
+                ,"offset":{"type":"number"}
+            }
+            ,"requiredfields":["tax_id", "do_name"]
+            ,"collectionlist":["c_protein"]
+        }
+        ,"protein_list":{
+            "field_info":{
+                "id":{"type":"string"}
+                ,"sort":{"type":"string"}
+                ,"order":{"type":"string"}
+                ,"limit":{"type":"number"}
+                ,"offset":{"type":"number"}
+            }
+            ,"returnfields":{
+                "int":["hit_score"]
+                ,"float":["mass"]
+                ,"string":["uniprot_canonical_ac","protein_name_short", "protein_name_long",
+                    "organism", "gene_name", "refseq_ac", "refseq_name"
+                ]
+            }
+            ,"requiredfields":["id"]
+            ,"collectionlist":["c_proteincache"]
+        }
+        ,"protein_detail":{
+            "field_info":{
+                "uniprot_canonical_ac":{"type":"string"}
+            }
+            ,"requiredfields":["uniprot_canonical_ac"]
+            ,"collectionlist":["c_protein"]
+        }
+        ,"protein_alignment":{
+            "field_info":{
+                "uniprot_canonical_ac":{"type":"string"},
+                "cluster_type":{"type":"string"}
+            }
+            ,"requiredfields":["uniprot_canonical_ac", "cluster_type"]
+            ,"collectionlist":["c_alignment"]
+
+        }
+        ,"usecases_group_one":{
+            "apilist":["glycan_to_biosynthesis_enzymes", "glycan_to_glycoproteins","glycan_to_enzyme_gene_loci"]
+            ,"field_info":{
+                "tax_id":{"type":"number"}
+                ,"glytoucan_ac":{"type":"string"}
+            }
+            ,"requiredfields":["glytoucan_ac", "tax_id"]
+            ,"collectionlist":["c_glycan","c_proteincache", "c_genelocuscache"]
+        } 
+        ,"usecases_group_two":{
+            "apilist":["biosynthesis_enzyme_to_glycans"]
+            ,"field_info":{
+                "tax_id":{"type":"number"}
+                ,"uniprot_canonical_ac":{"type":"string"}
+            }
+            ,"requiredfields":["uniprot_canonical_ac", "tax_id"]
+            ,"collectionlist":["c_glycan","c_glycancache"]
+        }
+        ,"usecases_group_three":{
+            "apilist":["protein_to_orthologs"]
+            ,"field_info":{
+                "uniprot_canonical_ac":{"type":"string"}
+            }
+            ,"requiredfields":["uniprot_canonical_ac"]
+            ,"collectionlist":["c_protein", "c_orthologcache"]
+        }
+        ,"usecases_group_four":{
+            "apilist":["species_to_glycosyltransferases", "species_to_glycohydrolases"]
+            ,"field_info":{
+                "tax_id":{"type":"number"}
+            }
+            ,"requiredfields":["tax_id"]
+            ,"collectionlist":["c_protein","c_proteincache"]
+        }
+        ,"usecases_group_five":{
+            "apilist":["species_to_glycoproteins"]
+            ,"field_info":{
+                "tax_id":{"type":"number"}
+                ,"evidence_type":{"type":"string"}
+            }   
+            ,"requiredfields":["tax_id", "evidence_type"]
+            ,"collectionlist":["c_protein","c_proteincache"]
+        }
+        ,"usecases_group_six":{
+            "apilist":["disease_to_glycosyltransferases"]
+            ,"field_info":{
+                "tax_id":{"type":"number"}
+                ,"do_name":{"type":"string"}
+            }   
+            ,"requiredfields":["tax_id", "do_name"]
+            ,"collectionlist":["c_protein","c_proteincache"]
+        }
+        ,"usecases_group_seven":{
+            "apilist":["protein_to_glycosequons"]
+            ,"field_info":{
+                "uniprot_canonical_ac":{"type":"string"}
+            }
+            ,"requiredfields":["uniprot_canonical_ac"]
+            ,"collectionlist":["c_protein","c_glycosequonscache"]
+        }
+        ,"auth_userid":{
+            "field_info":{
+            }
+            ,"requiredfields":[]
+            ,"collectionlist":["c_userid"]
+        }
+        ,"auth_contact":{
+            "field_info":{
+                "fname":{"type":"string"}
+                ,"lname":{"type":"string"}
+                ,"email":{"type":"string"}
+                ,"subject":{"type":"string"}
+                ,"page":{"type":"string"}
+                ,"message":{"type":"string"}
+            }
+            ,"requiredfields":["fname", "lname", "email", "subject", "message"]
+            ,"collectionlist":[]
+        }
+        ,"typeahead_glycan":{
+            "field_info":{
+                "field":{"type":"string"}
+                ,"value":{"type":"string"}
+                ,"limit":{"type":"number"}
+            }
+            ,"requiredfields":["field", "value", "limit"]
+            ,"collectionlist":["c_glycan"]
+        }
+        ,"typeahead_protein":{
+            "field_info":{
+                "field":{"type":"string"}
+                ,"value":{"type":"string"}
+                ,"limit":{"type":"number"}
+            }
+            ,"requiredfields":["field", "value", "limit"]
+            ,"collectionlist":["c_protein"]
+        }
+        ,"categorized_typeahead":{
+            "field_info":{
+                "field":{"type":"string"}
+                ,"value":{"type":"string"}
+                ,"total_limit":{"type":"number"}
+                ,"categorywise_limit":{"type":"number"}
+            }
+            ,"requiredfields":["field", "value", "total_limit", "categorywise_limit"]
+            ,"collectionlist":["c_protein"]
+        }
+        ,"data_download":{
+            "field_info":{
+                "type":{"type":"string"}
+                ,"format":{"type":"string"}
+                ,"id":{"type":"string"}
+                ,"compressed":{"type":"boolean"}
+            }
+            ,"requiredfields":["type","format", "id", "compressed"]
+            ,"collectionlist":[]
+        }
+        ,"pages_home_init":{
+             "field_info":{}
+             ,"requiredfields":[]
+            ,"collectionlist":["c_version", "c_stat"]
+        }
+        ,"log_logging":{
+            "field_info":{
+                "id":{"type":"string"}
+                ,"user":{"type":"string"}
+                ,"type":{"type":"string"}
+                ,"page":{"type":"string"}
+                ,"message":{"type":"string"}
+            }
+            ,"requiredfields":["user", "type", "page"]
+            ,"collectionlist":["c_userlog"]
+        }
+        ,"log_init":{
+            "field_info":{
+                "start_date":{"type":"string"}
+                ,"end_date":{"type":"string"}
+            }
+            ,"requiredfields":[]
+            ,"collectionlist":["c_userlog"]
+        }
+        ,"log_access":{
+            "field_info":{
+                "start_date":{"type":"string"}
+                ,"end_date":{"type":"string"}
+                ,"type":{"type":"string"}
+                ,"user":{"type":"string"}
+                ,"page":{"type":"string"}
+                ,"limit":{"type":"number"}
+                ,"offset":{"type":"number"}
+                ,"order":{"type":"string"}
+            }
+            ,"returnfields":{
+                "int":[]
+                ,"float":[]
+                ,"string":["type","user", "page","id", "message", "created"]
+            }
+            ,"requiredfields":["start_date", "end_date", "type"]
+            ,"collectionlist":["c_userlog"]
+        } 
+        ,"log_grouped":{
+            "field_info":{
+                "start_date":{"type":"string"}
+                ,"end_date":{"type":"string"}
+                ,"type":{"type":"string"}
+                ,"user":{"type":"string"}
+                ,"page":{"type":"string"}
+                ,"limit":{"type":"number"}
+                ,"offset":{"type":"number"}
+                ,"order":{"type":"string"}
+            }
+            ,"returnfields":{
+                "int":["count"]
+                ,"float":[]
+                ,"string":["message"]
+            }
+            ,"requiredfields":["start_date", "end_date", "type"]
+            ,"collectionlist":["c_userlog"]
+        } 
+        ,"commonquery_search_glycan":{
+            "field_info":{
+                "query_type":{"type":"string"}
+                ,"operation":{"type":"string"}
+                ,"glytoucan_ac":{"type":"string"}
+                ,"glycan_motif":{"type":"string"}
+                ,"protein_identifier":{"type":"string"}
+                ,"glycan_type":{"type":"string"}
+                ,"mass_type":{"type":"string"}
+                ,"pmid":{"type":"string"}
+                ,"glycan_subtype":{"type":"string"}
+                ,"organism":{"organism_list":{"type":"list"},  "operation":{"type":"string"}}
+                ,"mass":{"min":{"type":"number"}, "max":{"type":"number"}}
+                ,"composition":{
+                    "residue":{"type":"string"},
+                    "min":{"type":"number"},
+                    "max":{"type":"number"}
+                }
+                ,"number_monosaccharides":{"min":{"type":"number"}, "max":{"type":"number"}}
+                ,"enzyme":{"id":{"type":"string"}, "type":{"type":"string"}}
+            }
+            ,"requiredfields":["mass_type"]
+            ,"collectionlist":["c_glycan","c_glycancache"]
+        } 
+        ,"commonquery_search_protein":{
+            "field_info":{
+                "query_type":{"type":"string"}
+                ,"operation":{"type":"string"}
+                ,"uniprot_canonical_ac":{"type":"string"}
+                ,"protein_name":{"type":"string"}
+                ,"go_id":{"type":"string"}
+                ,"go_term":{"type":"string"}
+                ,"gene_name":{"type":"string"}
+                ,"refseq_ac":{"type":"string"}
+                ,"pathway_id":{"type":"string"}
+                ,"pmid":{"type":"string"}
+                ,"glycosylation_evidence":{"type":"string"}
+                ,"mass":{"min":{"type":"number"}, "max":{"type":"number"}}
+                ,"organism":{"id":{"type":"number"}, "name":{"type":"string"}}
+                ,"glycan":{"glytoucan_ac":{"type":"string"}, "relation":{"type":"string"}}
+                ,"sequence":{"aa_sequence":{"type":"string"}, "type":{"type":"string"}}
+                ,"glycosylated_aa":{"aa_list":{"type":"list"}, "operation":{"type":"string"}}
+            }
+            ,"requiredfields":[]
+            ,"collectionlist":["c_protein","c_proteincache"]
+        }
+        ,"urltemplate":{
+            "glytoucan":"https://glytoucan.org/Structures/Glycans/%s"
+            ,"uniprot":"http://www.uniprot.org/uniprot/%s/"
+        }
+        ,"mimetypes":{
+            "tsv":"text/tsv"
+            ,"csv":"text/csv"
+            ,"fasta":"text/plain"
+            ,"image":"image/png"
+            ,"png":"image/png"
+            ,"json":"application/json"
+        }
+        ,"downloadtypes":{
+            "protein_list":{"cache":"c_proteincache", "formatlist":["csv","json","fasta"]}
+            ,"glycan_list":{"cache":"c_glycancache", "formatlist":["csv","json"]}
+            ,"glycan_image":{"cache":"c_glycan", "formatlist":["png"]}
+            ,"glycan_detail":{"cache":"c_glycan", "formatlist":["json"]}
+            ,"motif_detail":{"cache":"c_glycan", "formatlist":["json", "csv"]}
+            ,"protein_detail":{"cache":"c_protein", "formatlist":["json","fasta"]}
+        }
+        ,"dev":{
                 "dbinfo":{
-			"dbhost":"localhost"
-			,"dbname":"glygen"
-			,"dbuserid":"glygenadmin"
-			,"dbpassword":"glygenpass"
+                        "mongodbname":"glydb"
+                        ,"mongodbuser":"glydbadmin"
+                        ,"mongodbpassword":"glydbpass"
+                        ,"sessionlife":3600
+                        ,"collections":{
+                            "bco":"c_bco"
+                            ,"counters":"c_counters"
+                            ,"users":"c_users"
+                            ,"glycan":"c_glycan"
+                            ,"protein":"c_protein"
+                            ,"searchinit":"c_searchinit"
+                            ,"alignment":"c_alignment"
+                        }
+                }
+                ,"contactemailreceivers":["rykahsay@gwu.edu"]
+		,"rootinfo":{
+			"baseurl":"/datasetviewer"
+                	,"ghtmlroot":"/datasetviewer"
+                	,"htmlroot":"/datasetviewer"
+                	,"cgiroot":"/cgi-bin/datasetviewer"
+                	,"pagebase":"/datasetviewer"
+                	,"downloadbase":"/datasetviewer"
+        		,"glygen_api_type_url":"http://glycomics.ccrc.uga.edu/ontologies/GlycO#"
+			,"glygen_api_glycomedb_url":"http://glycomics.ccrc.uga.edu/"
+			,"glygen_api_uckb_url":"http://www.unicarbkb.org/"
+			,"glygen_api_pbch_url":"https://pubchem.ncbi.nlm.nih.gov/"
+			,"glygen_api_glyco_url":"http://jcggdb.jp/rcmg/glycodb/"
+			,"glygen_api_gene_url":"https://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id="
 		}
+		,"pathinfo":{
+                	"apierrorlogpath":"/data/projects/glygen/apierrorlog/"
+			,"glycanimagespath":"/data/projects/glygen/wwwdata/glycanimages/"
+		        ,"gzip":"/usr/bin/gzip"
+                }
+	}
+	,"tst":{
+                "dbinfo":{
+                        "mongodbname":"glydb"
+                        ,"mongodbuser":"glydbadmin"
+                        ,"mongodbpassword":"glydbpass"
+                        ,"sessionlife":3600
+                        ,"collections":{
+                            "bco":"c_bco"
+                            ,"counters":"c_counters"
+                            ,"users":"c_users"
+                            ,"glycan":"c_glycan"
+                            ,"protein":"c_protein"
+                            ,"searchinit":"c_searchinit"
+                            ,"alignment":"c_alignment"
+                        }
+                }
                 ,"contactemailreceivers":[ "myGlyGen@gmail.com", "rykahsay@gwu.edu", "agarwalgaurav1995@gmail.com"]
-		,"rootinfo":{
-			"baseurl":"/datasetviewer"
-                	,"ghtmlroot":"/datasetviewer"
-                	,"htmlroot":"/datasetviewer"
-                	,"cgiroot":"/cgi-bin/datasetviewer"
-                	,"pagebase":"/datasetviewer"
-                	,"downloadbase":"/datasetviewer"
-        		,"glygen_api_type_url":"http://glycomics.ccrc.uga.edu/ontologies/GlycO#"
-			,"glygen_api_glycomedb_url":"http://glycomics.ccrc.uga.edu/"
-			,"glygen_api_uckb_url":"http://www.unicarbkb.org/"
-			,"glygen_api_pbch_url":"https://pubchem.ncbi.nlm.nih.gov/"
-			,"glygen_api_glyco_url":"http://jcggdb.jp/rcmg/glycodb/"
-			,"glygen_api_gene_url":"https://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id="
-		}
-		,"pathinfo":{
-                        "htmlpath":"/var/www/html/datasetviewer/"
-                        ,"cgipath":"/var/www/cgi-bin/datasetviewer/"
-                	,"apierrorlogpath":"/data/projects/glygen/apierrorlog/"
-			,"apicachepath":"/data/projects/glygen/apicache/"
-			,"proteindbpath":"/data/projects/glygen/jsondb/proteindb.json"
-			,"useriddbpath":"/data/projects/glygen/jsondb/useriddb.json"
-			,"logdbpath":"/data/projects/glygen/jsondb/logdb.json"
-			,"glycanimagespath":"/data/projects/glygen/glycanimages/"
-			,"debuglogfile":"/data/projects/glygen/apierrorlog/debug.txt"
-		}
-	}
-	,"prd":{
+                ,"rootinfo":{
+                        "baseurl":"/datasetviewer"
+                        ,"ghtmlroot":"/datasetviewer"
+                        ,"htmlroot":"/datasetviewer"
+                        ,"cgiroot":"/cgi-bin/datasetviewer"
+                        ,"pagebase":"/datasetviewer"
+                        ,"downloadbase":"/datasetviewer"
+                        ,"glygen_api_type_url":"http://glycomics.ccrc.uga.edu/ontologies/GlycO#"
+                        ,"glygen_api_glycomedb_url":"http://glycomics.ccrc.uga.edu/"
+                        ,"glygen_api_uckb_url":"http://www.unicarbkb.org/"
+                        ,"glygen_api_pbch_url":"https://pubchem.ncbi.nlm.nih.gov/"
+                        ,"glygen_api_glyco_url":"http://jcggdb.jp/rcmg/glycodb/"
+                        ,"glygen_api_gene_url":"https://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id="
+                }
+                ,"pathinfo":{
+                        "apierrorlogpath":"/data/projects/glygen/apierrorlog/"
+                        ,"glycanimagespath":"/data/projects/glygen/wwwdata/glycanimages/"
+                        ,"gzip":"/usr/bin/gzip"
+                }
+        }
+        ,"beta":{
                 "dbinfo":{
-			"dbhost":"localhost"
-			,"dbname":"glygen"
-			,"dbuserid":"glygenadmin"
-			,"dbpassword":"glygenpass"
-		}
-                ,"contactemailreceivers":[ "myGlyGen@gmail.com", "mazumder@gwu.edu", "will@ccrc.uga.edu", "rene@ccrc.uga.edu", "nje5@georgetown.edu", "jeetvora@gwu.edu", "rykahsay@gwu.edu"]
+                        "mongodbname":"glydb_beta"
+                        ,"mongodbuser":"glydb_betaadmin"
+                        ,"mongodbpassword":"glydb_betapass"
+                        ,"sessionlife":3600
+                        ,"collections":{
+                            "bco":"c_bco"
+                            ,"counters":"c_counters"
+                            ,"users":"c_users"
+                            ,"glycan":"c_glycan"
+                            ,"protein":"c_protein"
+                            ,"searchinit":"c_searchinit"
+                            ,"alignment":"c_alignment"
+                        }
+                }
+                ,"contactemailreceivers":[ "myGlyGen@gmail.com", "mazumder@gwu.edu", "will@ccrc.uga.edu", "rene@ccrc.uga.edu", "jeetvora@gwu.edu", "rykahsay@gwu.edu", "tvwillia@gmail.com", "rsn13@gwu.edu", "rupali.mahadik88@gmail.com","mtiemeyer@ccrc.uga.edu","tylerjstewart@email.gwu.edu"]
+                ,"rootinfo":{
+                        "baseurl":"/datasetviewer"
+                        ,"ghtmlroot":"/datasetviewer"
+                        ,"htmlroot":"/datasetviewer"
+                        ,"cgiroot":"/cgi-bin/datasetviewer"
+                        ,"pagebase":"/datasetviewer"
+                        ,"downloadbase":"/datasetviewer"
+                        ,"glygen_api_type_url":"http://glycomics.ccrc.uga.edu/ontologies/GlycO#"
+                        ,"glygen_api_glycomedb_url":"http://glycomics.ccrc.uga.edu/"
+                        ,"glygen_api_uckb_url":"http://www.unicarbkb.org/"
+                        ,"glygen_api_pbch_url":"https://pubchem.ncbi.nlm.nih.gov/"
+                        ,"glygen_api_glyco_url":"http://jcggdb.jp/rcmg/glycodb/"
+                        ,"glygen_api_gene_url":"https://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id="
+                }
+                ,"pathinfo":{
+                        "apierrorlogpath":"/data/projects/glygen-beta/apierrorlog/"
+                        ,"glycanimagespath":"/data/projects/glygen-beta/wwwdata/glycanimages/"
+                        ,"gzip":"/usr/bin/gzip"
+                }
+        }
+        ,"prd":{
+                "dbinfo":{
+                        "mongodbname":"glydb"
+                        ,"mongodbuser":"glydbadmin"
+                        ,"mongodbpassword":"glydbpass"
+                        ,"sessionlife":3600
+                        ,"collections":{
+                            "bco":"c_bco"
+                            ,"counters":"c_counters"
+                            ,"users":"c_users"
+                            ,"glycan":"c_glycan"
+                            ,"protein":"c_protein"
+                            ,"searchinit":"c_searchinit"
+                            ,"alignment":"c_alignment"
+                        }
+                }
+                ,"contactemailreceivers":[ "myGlyGen@gmail.com", "mazumder@gwu.edu", "will@ccrc.uga.edu", "rene@ccrc.uga.edu", "jeetvora@gwu.edu", "rykahsay@gwu.edu", "tvwillia@gmail.com", "rsn13@gwu.edu", "rupali.mahadik88@gmail.com","mtiemeyer@ccrc.uga.edu","tylerjstewart@email.gwu.edu"]
 		,"rootinfo":{
 			"baseurl":"/datasetviewer"
                 	,"ghtmlroot":"/datasetviewer"
@@ -61,21 +682,33 @@
 			,"glygen_api_gene_url":"https://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id="
 		}
 		,"pathinfo":{
-                        "htmlpath":"/var/www/html/datasetviewer/"
-                        ,"cgipath":"/var/www/cgi-bin/datasetviewer/"
-                	,"apierrorlogpath":"/data/projects/glygen/apierrorlog/"
-			,"apicachepath":"/data/projects/glygen/apicache/"
-			,"proteindbpath":"/data/projects/glygen/jsondb/proteindb.json"
-			,"useriddbpath":"/data/projects/glygen/jsondb/useriddb.json"
-			,"logdbpath":"/data/projects/glygen/jsondb/logdb.json"
-			,"glycanimagespath":"/data/projects/glygen/glycanimages/"
-			,"debuglogfile":"/data/projects/glygen/apierrorlog/debug.txt"
-		}
+                	"apierrorlogpath":"/data/projects/glygen/apierrorlog/"
+			,"glycanimagespath":"/data/projects/glygen/wwwdata/glycanimages/"
+		        ,"gzip":"/usr/bin/gzip"
+                }
 	}
-	,"errors":{
+	,"objectorder":{
+                "glycan":{"glytoucan":1,  "glytoucan_ac":1, "mass":2, "iupac":3, "wurcs":4, "glycoct":5, 
+                    "species":6, "classification":7,"glycoprotein":8,
+                    "enzyme":9, "crossref":10
+                }
+                ,"protein":{ "uniprot":1, "uniprot_canonical_ac":2, "mass":3,
+                    "recommendedname":4, "gene":5, "keywords":6, "species":7
+                }
+                ,"glycanlist":{"glytoucan_ac":1, "mass":2, "iupac":3, "wurcs":4, "glycoct":5,
+                    "species":6, "classification":7,"glycoprotein":8,
+                    "enzyme":9, "crossref":10
+                }
+                ,"proteinlist":{
+                    "uniprot_canonical_ac":1,"gene_name":2, "mass":3, "protein_name_long":4,
+                    "protein_name_short":5
+                }
+        }
+        ,"errors":{
                 "open-connection-failed": "Unable to connect to database."
-		
-		,"userid-generator-failed": "Unable to get unique ID."
+	        ,"missing-collection":"Collection is not found"	
+		,"mongodb-auth-failed":"Could not authenticate to mongodb database"
+                ,"userid-generator-failed": "Unable to get unique ID."
 		
 		,"missing-parameter":"one of the required parameter."
 		,"missing-query-key-in-query-json":"query property is missing in query JSON"
@@ -90,8 +723,12 @@
 		,"invalid-query-json":"Submitted query JSON is not valid"
 		,"invalid-parameter-value":"one of the required parameter has invalid value."
 		,"invalid-parameter-value-length":"one of the required parameter value is too long"
-	}
+	        ,"download-type-not-supported":"submitted download type is not supported" 
+                ,"download-type-format-combination-not-supported":"submitted type-format combination is not supported"
+                ,"non-existent-mime-type-for-submitted-format":"File format is not mapped to mime type"
+        }
 }
+
 
 
 

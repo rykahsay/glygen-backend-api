@@ -1,0 +1,335 @@
+{
+    "globalsearches":[
+        {
+            "searchname":"protein.all",
+            "targetcollection":"c_protein",
+            "cachecollection":"c_globalproteincache",
+            "mongoquery":{}
+        },
+        {
+            "searchname":"glycan.all",
+            "targetcollection":"c_glycan",
+            "cachecollection":"c_globalglycancache",
+            "mongoquery":{}
+        } 
+    ],
+    "regexfilters":[
+        {
+            "searchname":"protein.all",
+            "targetcollection":"c_globalproteincache",
+            "cachecollection":"c_proteincache",
+            "mongoquery":{
+                "$and":[
+                    {"list_id":{"$eq": "xx"}}
+                ]
+            }
+        },
+        {
+            "searchname":"protein.identifiers",
+            "targetcollection":"c_globalproteincache",
+            "cachecollection":"c_proteincache",
+            "mongoquery":{
+                "$and":[
+                    {"list_id":{"$eq": "xx"}},
+                    {"$or":[
+                        {"uniprot_canonical_ac":{"$regex":"query_term", "$options": "i"}},
+                        {"uniprot_id":{"$regex":"query_term", "$options": "i"}},
+                        {"isoforms.isoform_ac":{"$regex":"query_term", "$options": "i"}},
+                        {"isoforms.locus.evidence.id":{"$regex":"query_term", "$options": "i"}},
+                        {"orthologs.uniprot_canonical_ac":{"$regex":"query_term", "$options": "i"}},
+                        {"refseq.ac":{"$regex":"query_term", "$options": "i"}}
+                    ]
+                    }
+                ]
+            }
+        },
+        {
+            "searchname":"protein.names",
+            "targetcollection":"c_globalproteincache",
+            "cachecollection":"c_proteincache",
+            "mongoquery":{
+                "$and":[
+                    {"list_id":{"$eq": "xx"}},
+                    {"$or":[
+                        {"recommendedName.full":{"$regex":"query_term", "$options": "i"}},
+                        {"recommendedName.short":{"$regex":"query_term", "$options": "i"}},
+                        {"alternativeNames.full":{"$regex":"query_term", "$options": "i"}},
+                        {"alternativeNames.short":{"$regex":"query_term", "$options": "i"}},
+                        {"refseq.name":{"$regex":"query_term", "$options": "i"}}
+                    ]
+                    }
+                ]
+            }
+        },
+        {
+            "searchname":"protein.gene",
+            "targetcollection":"c_globalproteincache",
+            "cachecollection":"c_proteincache",
+            "mongoquery":{
+                "$and":[
+                    {"list_id":{"$eq": "xx"}},
+                    {"$or":[{"gene.name":{"$regex":"query_term", "$options": "i"}}]}
+                ]
+            }
+        },
+        {
+            "searchname":"protein.species",
+            "targetcollection":"c_globalproteincache",
+            "cachecollection":"c_proteincache",
+            "mongoquery":{
+                "$and":[
+                    {"list_id":{"$eq": "xx"}},
+                    {"$or":[{"species.name":{"$regex":"query_term", "$options": "i"}}]}
+                ]
+            }
+        }, 
+        {
+            "searchname":"protein.function",
+            "targetcollection":"c_globalproteincache",
+            "cachecollection":"c_proteincache",
+            "mongoquery":{
+                "$and":[
+                    {"list_id":{"$eq": "xx"}},
+                    {"$or":[{"function.annotation":{"$regex":"query_term", "$options": "i"}}]}
+                ]
+            }
+        },
+        {
+            "searchname":"protein.disease",
+            "targetcollection":"c_globalproteincache",
+            "cachecollection":"c_proteincache",
+            "mongoquery":{
+                "$and":[
+                    {"list_id":{"$eq": "xx"}},
+                    {"$or":[
+                        {"disease.name":{"$regex":"query_term", "$options": "i"}},
+                        {"disease.doid":{"$regex":"query_term", "$options": "i"}},
+                        {"disease.icd10":{"$regex":"query_term", "$options": "i"}}
+                    ]}
+                ]
+            }
+        },
+        {
+            "searchname":"glycoprotein.all",
+            "targetcollection":"c_globalproteincache",
+            "cachecollection":"c_proteincache",
+            "mongoquery":{
+                "$and":[
+                    {"list_id":{"$eq": "xx"}},
+                    {"glycosylation": {"$gt":[]}}
+                ]
+            }
+        },
+        {
+            "searchname":"glycoprotein.identifiers",
+            "targetcollection":"c_globalproteincache",
+            "cachecollection":"c_proteincache",
+            "mongoquery":{
+                "$and":[
+                    {"list_id":{"$eq": "xx"}},
+                    {"$or":[
+                        {"uniprot_canonical_ac":{"$regex":"query_term", "$options": "i"}},
+                        {"uniprot_id":{"$regex":"query_term", "$options": "i"}},
+                        {"isoforms.isoform_ac":{"$regex":"query_term", "$options": "i"}},
+                        {"isoforms.locus.evidence.id":{"$regex":"query_term", "$options": "i"}},
+                        {"orthologs.uniprot_canonical_ac":{"$regex":"query_term", "$options": "i"}},
+                        {"refseq.ac":{"$regex":"query_term", "$options": "i"}}
+                    ]
+                    },
+                    {"glycosylation": {"$gt":[]}}
+                ]
+            }
+        },
+        {
+            "searchname":"glycoprotein.names",
+            "targetcollection":"c_globalproteincache",
+            "cachecollection":"c_proteincache",
+            "mongoquery":{
+                "$and":[
+                    {"list_id":{"$eq": "xx"}},
+                    {"$or":[
+                        {"recommendedName.full":{"$regex":"query_term", "$options": "i"}},
+                        {"recommendedName.short":{"$regex":"query_term", "$options": "i"}},
+                        {"alternativeNames.full":{"$regex":"query_term", "$options": "i"}},
+                        {"alternativeNames.short":{"$regex":"query_term", "$options": "i"}},
+                        {"refseq.name":{"$regex":"query_term", "$options": "i"}}
+                    ]
+                    },
+                    {"glycosylation": {"$gt":[]}}
+                ]
+            }
+        },
+        {
+            "searchname":"glycoprotein.gene",
+            "targetcollection":"c_globalproteincache",
+            "cachecollection":"c_proteincache",
+            "mongoquery":{
+                "$and":[
+                    {"list_id":{"$eq": "xx"}},
+                    {"$or":[{"gene.name":{"$regex":"query_term", "$options": "i"}}]},
+                    {"glycosylation": {"$gt":[]}}
+                ]
+            }
+        },
+        {
+            "searchname":"glycoprotein.species",
+            "targetcollection":"c_globalproteincache",
+            "cachecollection":"c_proteincache",
+            "mongoquery":{
+                "$and":[
+                    {"list_id":{"$eq": "xx"}},
+                    {"$or":[{"species.name":{"$regex":"query_term", "$options": "i"}}]},
+                    {"glycosylation": {"$gt":[]}}
+                ]
+            }
+        },
+        {
+            "searchname":"glycoprotein.function",
+            "targetcollection":"c_globalproteincache",
+            "cachecollection":"c_proteincache",
+            "mongoquery":{
+                "$and":[
+                    {"list_id":{"$eq": "xx"}},
+                    {"$or":[{"function.annotation":{"$regex":"query_term", "$options": "i"}}]},
+                    {"glycosylation": {"$gt":[]}}
+                ]
+            }
+        },
+        {
+            "searchname":"glycoprotein.disease",
+            "targetcollection":"c_globalproteincache",
+            "cachecollection":"c_proteincache",
+            "mongoquery":{
+                "$and":[
+                    {"list_id":{"$eq": "xx"}},
+                    {
+                        "$or":[
+                            {"disease.name":{"$regex":"query_term", "$options": "i"}},
+                            {"disease.doid":{"$regex":"query_term", "$options": "i"}},
+                            {"disease.icd10":{"$regex":"query_term", "$options": "i"}}
+                        ]
+                    },
+                    {"glycosylation": {"$gt":[]}}
+                ]
+            }
+        },
+        {
+            "searchname":"glycan.all",
+            "targetcollection":"c_globalglycancache",
+            "cachecollection":"c_glycancache",
+            "mongoquery":{
+                "$and":[
+                    {"list_id":{"$eq": "xx"}}
+                ]
+            }
+        },
+        {
+            "searchname":"glycan.motifs",
+            "targetcollection":"c_globalglycancache",
+            "cachecollection":"c_glycancache",
+            "mongoquery":{
+                "$and":[
+                    {"list_id":{"$eq": "xx"}},
+                    {"$or":[
+                        {"motifs.id":{"$regex":"query_term", "$options": "i"}},
+                        {"motifs.name":{"$regex":"query_term", "$options": "i"}}
+                    ]}
+                ]
+            }
+        },
+        {
+            "searchname":"glycan.species",
+            "targetcollection":"c_globalglycancache",
+            "cachecollection":"c_glycancache",
+            "mongoquery":{
+                "$and":[
+                    {"list_id":{"$eq": "xx"}},
+                    {"$or":[{"species.name":{"$regex":"query_term", "$options": "i"}}]}
+                ]
+            }
+        },
+        {
+            "searchname":"glycan.enzyme",
+            "targetcollection":"c_globalglycancache",
+            "cachecollection":"c_glycancache",
+            "mongoquery":{
+                "$and":[
+                    {"list_id":{"$eq": "xx"}},
+                    {"$or":[
+                        {"enzyme.protein_name":{"$regex":"query_term", "$options": "i"}},
+                        {"enzyme.uniprot_canonical_ac":{"$regex":"query_term", "$options": "i"}},
+                        {"enzyme.gene":{"$regex":"query_term", "$options": "i"}}
+                    ]
+                    }
+                ]
+            }
+        },
+        {
+            "searchname":"glycan.sequences",
+            "targetcollection":"c_globalglycancache",
+            "cachecollection":"c_glycancache",
+            "mongoquery":{
+                "$and":[
+                    {"list_id":{"$eq": "xx"}},
+                    {"$or":[
+                        {"iupac":{"$regex":"query_term", "$options": "i"}},
+                        {"wurcs":{"$regex":"query_term", "$options": "i"}},
+                        {"glycoct":{"$regex":"query_term", "$options": "i"}}
+                    ]
+                    }
+                ]
+            }
+        }, 
+        {
+            "searchname":"glycan.identifiers",
+            "targetcollection":"c_globalglycancache",
+            "cachecollection":"c_glycancache",
+            "mongoquery":{      
+                "$and":[            
+                    {"list_id":{"$eq": "xx"}},
+                    {"$or":[
+                        {"glytoucan_ac":{"$regex":"query_term", "$options": "i"}}
+                    ]
+                    }
+                ]
+            }
+        },
+        {
+            "searchname":"glycan.glycoproteins",
+            "targetcollection":"c_globalglycancache",
+            "cachecollection":"c_glycancache",
+            "mongoquery":{
+                "$and":[
+                    {"list_id":{"$eq": "xx"}},
+                    {"$or":[
+                        {"glycoprotein.uniprot_canonical_ac":{"$regex":"query_term", "$options": "i"}},
+                        {"glycoprotein.protein_name":{"$regex":"query_term", "$options": "i"}}
+                    ]
+                    }
+                ]
+            }
+        },
+        {
+            "searchname":"glycan.n_glycan",
+            "targetcollection":"c_globalglycancache",
+            "cachecollection":"c_glycancache",
+            "mongoquery":{
+                "$and":[
+                    {"list_id":{"$eq": "xx"}},
+                    {"classification.type.name":{"$regex": "N-glycan", "$options": "i"}}
+                ]
+            }
+        },
+        {
+            "searchname":"glycan.o_glycan",
+            "targetcollection":"c_globalglycancache",
+            "cachecollection":"c_glycancache",
+            "mongoquery":{
+                "$and":[
+                    {"list_id":{"$eq": "xx"}},
+                    {"classification.type.name":{"$regex": "O-glycan", "$options": "i"}}
+                ]
+            }
+        }
+    ]
+}

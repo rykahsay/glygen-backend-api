@@ -9,158 +9,102 @@ import pytz
 from collections import OrderedDict
 
 
-from pymongo import MongoClient
-from pymongo.errors import ConnectionFailure
 
 import smtplib
 from email.mime.text import MIMEText
+import errorlib
+import util
 
 
+def auth_userid(config_obj):
+    
+    db_obj = config_obj[config_obj["server"]]["dbinfo"]
+    dbh, error_obj = util.connect_to_mongodb(db_obj) #connect to mongodb
+    if error_obj != {}:
+        return error_obj
 
-def auth_userid(db_obj):
+    #Collect errors 
+    error_list = errorlib.get_errors_in_query("auth_userid",{}, config_obj)
+    if error_list != []:
+        return {"error_list":error_list}
 
-    client = MongoClient('mongodb://localhost:27017')
-    dbh = client[db_obj["dbname"]]
     collection = "c_userid"
-    if collection not in dbh.collection_names():
-        return {"error_code": "open-connection-failed"}
-
-    gmt_time = time.gmtime()
-    gmt_time_to_dt = datetime.datetime.fromtimestamp(time.mktime(gmt_time), tz=pytz.timezone('GMT'))
-    gmt_plus = str(gmt_time_to_dt + datetime.timedelta(minutes = 120))
-
 
     res_obj = {}
     i = 0
     while True:
-        user_id = get_random_string(32).lower()
+        user_id = util.get_random_string(32).lower()
         user_obj = {"userid":user_id}
         if dbh[collection].find(user_obj).count() == 0:
-            user_obj["created_ts"] = gmt_plus
+            ts = datetime.datetime.now(pytz.timezone('US/Eastern')).strftime('%Y-%m-%d %H:%M:%S %Z%z')
+            user_obj["created_ts"] = ts
             result = dbh[collection].insert_one(user_obj)
             return {"user":user_id}
         if i > 100000:
-            return {"error_code":"userid-generator-failed"}
+            return {"error_list":[{"error_code":"userid-generator-failed"}]}
+
         i += 1
 
 
-def auth_logging(query_obj, db_obj):
-
-    client = MongoClient('mongodb://localhost:27017')
-    dbh = client[db_obj["dbname"]]
-    collection = "c_userlog"
-    if collection not in dbh.collection_names():
-        return {"error_code": "open-connection-failed"}
-	
-    res_json = {"status":"success"}
-    field_list_all = ["id", "user", "type", "page", "message"]
-    field_list_required = ["user", "type", "page"]
-
-    max_query_value_len = 2500
-    for field in query_obj:
-        if field not in field_list_all:
-            return {"error_code":"unexpected-field-in-query"}
-        if len(str(query_obj[field])) > max_query_value_len:
-            return {"error_code":"invalid-parameter-value-length"}
-
-    for field in field_list_required:
-        if query_obj[field].strip() == "":
-            return {"error_code":"invalid-parameter-value"}
-    
-    result = dbh[collection].insert_one(query_obj)
-
-    return res_json
 
 
 def auth_contact(query_obj, config_obj):
+
+    db_obj = config_obj[config_obj["server"]]["dbinfo"]
+    dbh, error_obj = util.connect_to_mongodb(db_obj) #connect to mongodb
+    if error_obj != {}:
+        return error_obj
+
+    #Collect errors 
+    error_list = errorlib.get_errors_in_query("auth_contact",query_obj, config_obj)
+    if error_list != []: 
+        return {"error_list":error_list}
+
+    collection = "c_message"
 
     res_json = {
         "type":"alert-success",
         "message":"We have received your message, we'll get back to you soon"
     }
-    field_list_all = ["fname", "lname", "email", "subject", "message"]
-    field_list_required = ["fname", "lname", "email", "subject", "message"]
-
-    max_query_value_len = 2500
-    for field in query_obj:
-        if field not in field_list_all:
-            return {"error_code":"unexpected-field-in-query"}
-        if len(str(query_obj[field])) > max_query_value_len:
-            return {"error_code":"invalid-parameter-value-length"}
-
-    for field in field_list_required:
-        if query_obj[field].strip() == "":
-            return {"error_code":"invalid-parameter-value"}
- 
 
     sender = config_obj[config_obj["server"]]["contactemailreceivers"][0]
-    receivers = [query_obj["email"]] + config_obj[config_obj["server"]]["contactemailreceivers"][1:]
+    receivers = [query_obj["email"]] + config_obj[config_obj["server"]]["contactemailreceivers"]
+    query_obj["page"] = query_obj["page"] if "page" in query_obj else ""
 
-
-    msg_text = "\n\nFirst Name: %s\nLast Name: %s\nEmail: %s\n\nSubject: %s\n\nMessage: %s\n\n" % (query_obj["fname"], query_obj["lname"], query_obj["email"], query_obj["subject"], query_obj["message"])
+    msg_text = "\n\n"
+    param_dict = {
+        "fname":"First Name", "lname":"Last Name", "email":"Email", "subject":"Subject", 
+        "page":"Page", "message":"Message"
+    }
+    for param in param_dict:
+        if param in query_obj:
+            if query_obj[param].strip() != "":
+                msg_text += "%s: %s\n" % (param_dict[param], query_obj[param].strip())
 
 
     msg = MIMEText(msg_text)
     msg['Subject'] = query_obj["subject"]
     msg['From'] = sender
     msg['To'] = receivers[0]
+    store_json = {"from":sender, "to":receivers[0], "subject":query_obj["subject"], "message":query_obj["message"]}
     try:
         s = smtplib.SMTP('localhost')
         s.sendmail(sender, receivers, msg.as_string())
         s.quit()
+        store_json["status"] = "success"
     except:
         res_json = {
             "type":"alert-danger",
             "message":"Oops! Something's wrong. Please try again later."
         }
+        store_json["status"] = "failed"
 
+    store_json["ts"] = datetime.datetime.now()
+    result = dbh[collection].insert_one(store_json)
+
+    
     return res_json
 
-
-def dump_debug_log(out_string):
-
-    debug_log_file = path_obj["debuglogfile"]
-    with open(debug_log_file, "a") as FA:
-        FA.write("\n\n%s\n" % (out_string))
-    return
-
-
-def get_random_string(size=6, chars=string.ascii_uppercase + string.digits):
-    return ''.join(random.choice(chars) for _ in range(size))
-
-def get_error_obj(error_code, error_log, path_obj):
-        
-    error_id = get_random_string(6) 
-    log_file = path_obj["apierrorlogpath"] + "/" + error_code + "-" + error_id + ".log"
-    with open(log_file, "w") as FW:
-        FW.write("%s" % (error_log))
-    return {"error_code": "exception-error-" + error_id}
-
-
-def is_valid_json(myjson):
-    try:
-        json_object = json.loads(myjson)
-    except ValueError, e:
-        return False
-    return True
-
-
-def is_float(input):
-      
-    try:
-        num = float(input)
-    except ValueError:
-        return False
-    return True
-
-
-                  
-def is_int(input):
-    try:
-        num = int(input)
-    except ValueError:
-        return False
-    return True
 
 
 

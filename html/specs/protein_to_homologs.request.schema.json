@@ -1,0 +1,41 @@
+
+glycan_to_biosynthesis_enzymes| {"glytoucan_ac":"G04483SK",  "offset":1, "limit":100}
+glycan_to_glycoproteins| {"glytoucan_ac":"G04483SK",  "offset":1, "limit":100}
+biosynthesis_enzyme_to_glycans| {"uniprot_canonical_ac": "Q921Q3-1", "offset":1, "limit":100}
+protein_to_homologs| {"uniprot_canonical_ac": "Q921Q3-1", "offset":1, "limit":100}
+species_to_glycosyltransferases| {"tax_id":9606, "offset":1, "limit":100}
+species_to_glycohydrolases| {"tax_id":9606, "offset":1, "limit":100}
+species_to_glycoproteins| {"tax_id":9606, "evidence_type":"predicted", "offset":1, "limit":100}
+disease_to_glycosyltransferases| {"tax_id":9606, "do_name":"Gilbert syndrom"}
+
+
+
+SEARCH FOR GLYCAN OBJECTS
+0|Which glycans might have been synthesized in mouse using enzyme X?
+  def biosynthesis_enzyme_to_glycans| 
+
+
+SEARCH FOR PROTEIN OBJECTS
+1|What are the enzymes involved in the biosynthesis of glycan X in human?
+1|Which proteins have been shown to bear glycan X and which site is this glycan attached to?
+0|What are the orthologues of protein X in different species?
+def protein_to_orthologs| 
+
+0|What are the glycosyltransferases in species X?
+0|What are the glycosylhydrolases in species X?
+0|What are the reported or predicted glycosylated proteins in species X?
+0|Which glycosyltransferases are known to be involved in disease X?
+
+
+
+def species_to_glycosyltransferases| 
+def species_to_glycohydrolases| 
+def species_to_glycoproteins| 
+def disease_to_glycosyltransferases| 
+
+
+
+
+
+
+

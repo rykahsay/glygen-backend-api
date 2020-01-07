@@ -1,0 +1,124 @@
+    html
+    {
+      box-sizing: border-box;
+      overflow: -moz-scrollbars-vertical;
+      overflow-y: scroll;
+    }
+    *,
+    *:before,
+    *:after
+    {
+      box-sizing: inherit;
+    }
+
+    body {
+      margin:0;
+      background: #fafafa;
+    }
+    .topbar {
+        //background-color: #2E78B7 !important;
+        background-color: transparent !important;
+        //height:60px;
+        //display:none;
+    }
+    .topbar-wrapper img[alt="Swagger UI"]{
+        background:transparent;
+        content:url('/imglib/logo-swagger.png');
+        width:150px;
+        margin:5px 0px 0px 0px;
+        display:none;
+    }
+    .topbar-wrapper{
+        margin-bottom:20px;
+        border:0px dashed orange;
+    }
+    
+    .topbar-wrapper span {
+        position:absolute;
+        right:3%;
+        height:30px;
+        content:url('/imglib/logo-swagger.png');
+    }
+    .download-url-wrapper input[type=text]{
+        display:none;
+    }
+    .download-url-button{
+        display:none;
+    }
+    .information-container {
+        display:none;
+    }
+
+.headercn{
+    margin:0px 0px 10px 0px;
+    background:#eee;
+}
+.queryvalue{
+    width:100%;
+    height:35px;
+    padding:10px;
+}
+
+.moduletitlecn{
+    font-size:20px;
+    padding:20px 0px 0px 20px;
+    text-align:left;
+    color:#3279b5;
+    font-weight:bold;
+}
+
+.moduleversioncn{
+    font-size:10px;
+}
+
+.pagelinkscn{
+    margin:0px 0px 10px 0px;
+    text-align:right;
+    cursor:pointer;
+    color:#3279b5;
+}
+
+.searchboxcn{
+    padding:10px 0px 20px 20px;
+    text-align:left;
+}
+
+.searchbtn{
+    height:35px;
+    padding:0px 15px 0px 15px;
+}
+
+.pagecn{
+    margin:0px 3% 200px 3%;
+    width:94%;
+    border:0px dashed orange;
+}
+
+.gridcn{
+    display:block;
+    float:left;
+    width:31%;
+    min-width:340px;
+    height:330px;
+    margin:0px 1.5% 1.5% 0px;
+    background:#fff;
+    border:1px solid #ccc;
+}
+
+
+td.faqquestion{
+    text-align:left;
+    padding:3px 0px 3px 10px;
+    cursor: pointer;
+    color:#005581;
+}
+
+
+td.faqanswer{
+    text-align:left;
+    padding:0px 0px 20px 30px;
+    display:none;
+}
+
+
+

@@ -1,0 +1,723 @@
+<html>
+<head>
+<link rel="stylesheet" href="styles.css" type="text/css">
+<script language="javascript" src="jquery.min.js"></script>
+<script>
+var htmlRoot = ""
+
+$(document ).ready(function() {
+
+});
+
+////////////////////////////////////
+$(document).on('click', '#search_init', function (event) {
+        event.preventDefault();
+
+        var url = htmlRoot + '/usecases/search_init'
+        $("#search_init_url").html(url);
+
+
+	$('html').animate({scrollTop:0}, 'fast');
+	$('body').animate({scrollTop:0}, 'fast');
+	$("#cover").css("display", "block");
+
+	var gifImage = '<img src=loading.gif style="width:20%;margin-left:40%;margin-top:2%;">';        
+	$("#search_init_cn").html(gifImage);
+
+        var reqObj = new XMLHttpRequest();
+        reqObj.open("POST", url, true);
+        reqObj.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        reqObj.onreadystatechange = function() {
+                if (reqObj.readyState == 4 && [200, 500].indexOf(reqObj.status) != -1) {
+                        $("#search_init_cn").html('<pre>'+reqObj.responseText+'</pre>');
+                	$("#cover").css("display", "none");
+		}
+        };
+        reqObj.send();
+                
+});
+
+
+////////////////////////////////////
+$(document).on('click', 'input.protein_to_glycosequons_search, input.protein_to_orthologs_search, input.biosynthesis_enzyme_to_glycans_search, input.glycan_to_biosynthesis_enzymes_search, input.glycan_to_enzyme_gene_loci_search,input.glycan_to_glycoproteins_search,input.species_to_glycosyltransferases_search,input.species_to_glycohydrolases_search,input.species_to_glycoproteins_search,input.disease_to_glycosyltransferases_search', function (event) {
+
+	event.preventDefault();
+        	
+	var svcName = this.id;
+	var keyList1 = ["tax_id", "glytoucan_ac", "uniprot_canonical_ac", "evidence_type", "do_name"];
+	var jqClass = "." + $(this).attr("class");
+
+	var inJson = {};
+	$(jqClass).each(function(){
+		var name = $(this).attr("name");
+		var value = $(this).val();
+		if (value.trim()){
+	       		if(keyList1.indexOf(name) != -1){
+				inJson[name] = value
+			}
+		}
+	});
+
+	var fieldList = ["tax_id", "glytoucan_ac", "uniprot_canonical_ac", "evidence_type", "do_name"]
+	var valueList = []
+	for (var i in fieldList){
+		if (fieldList[i] in inJson){
+			valueList.push(inJson[fieldList[i]]);
+		}
+	}	
+	var requestUrl = htmlRoot + '/usecases/' + svcName + '/' + valueList.join("/") + "/";
+	var jqId = '#' + svcName + '_search_cn';
+
+	if(svcName == "disease_to_glycosyltransferases"){
+		inJson["tax_id"] = parseInt(inJson["tax_id"]);
+		requestUrl = htmlRoot + '/usecases/' + svcName + '?query=' + JSON.stringify(inJson);
+	}
+
+
+	var gifImage = '<img src=loading.gif style="width:20%;margin-left:40%;margin-top:2%;">';        
+	$(jqId).html(gifImage);
+
+	var reqObj = new XMLHttpRequest();
+        reqObj.open("POST", requestUrl, true);
+        reqObj.jqId = jqId;
+	reqObj.listId = "#" + svcName + "_list_id";
+	reqObj.requestUrl = requestUrl;
+
+	reqObj.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        reqObj.onreadystatechange = function() {
+                if (reqObj.readyState == 4 && [200, 500].indexOf(reqObj.status) != -1) {
+			var resJson = JSON.parse(reqObj.responseText);
+			var cn = '<pre>';
+			cn += '\n\n<b>Request</b>:\n';
+			cn += this.requestUrl + '\n\n';
+			cn += '<b>Response</b>:\n';
+			cn += reqObj.responseText;
+			cn += '</pre>';
+			$(this.jqId).html(cn);
+                	$(this.listId).val(resJson["list_id"]);
+		}
+        };
+        reqObj.send();
+
+});
+
+////////////////////////////////////
+$(document).on('click', 'input.protein_to_glycosequons_list,input.protein_to_orthologs_list,input.biosynthesis_enzyme_to_glycans_list, input.glycan_to_biosynthesis_enzymes_list, input.glycan_to_enzyme_gene_loci_list, input.glycan_to_glycoproteins_list,input.species_to_glycosyltransferases_list,input.species_to_glycohydrolases_list,input.species_to_glycoproteins_list,input.disease_to_glycosyltransferases_list', function (event) {
+	event.preventDefault();
+
+	var searchSvc = this.id;
+
+	var searchSvcToListSvcUrl = {
+		"glycan_to_biosynthesis_enzymes":"/protein/list"
+		,"glycan_to_glycoproteins":"/protein/list"
+		,"glycan_to_enzyme_gene_loci":"/usecases/genelocus_list"
+		,"biosynthesis_enzyme_to_glycans":"/glycan/list"
+		,"species_to_glycosyltransferases":"/protein/list"
+		,"species_to_glycohydrolases":"/protein/list"
+		,"species_to_glycoproteins":"/protein/list"
+		,"disease_to_glycosyltransferases":"/protein/list"
+		,"protein_to_orthologs":"/usecases/ortholog_list"
+	        ,"protein_to_glycosequons":"/usecases/glycosequon_list"
+        }
+
+	var jqClass = "." + $(this).attr("class");
+
+	var inJson = {};
+	$(jqClass).each(function(){
+	 	var name = $(this).attr("name");
+		var value = $(this).val();
+		if (value.trim() && name != 'btn'){
+			if (["offset", "limit"].indexOf(name) != -1){
+				value = parseInt(value);
+			}
+			inJson[name] = value
+		}									                 
+	});
+
+	var url = htmlRoot + searchSvcToListSvcUrl[searchSvc];
+	var postData = "query=" + JSON.stringify(inJson);
+
+
+	var jqId = '#' + searchSvc + '_list_cn';
+	var gifImage = '<img src=loading.gif style="width:20%;margin-left:40%;margin-top:2%;">';
+	$(jqId).html(gifImage);
+
+
+	var reqObj = new XMLHttpRequest();
+	reqObj.open("POST", url, true);
+	reqObj.jqId = jqId;
+	reqObj.requestUrl = url + '?' +postData;
+
+	reqObj.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	reqObj.onreadystatechange = function() {
+		if (reqObj.readyState == 4 && [200, 500].indexOf(reqObj.status) != -1) {
+			var cn = '<pre>';
+			cn += '\n\n<b>Request</b>:\n';
+                        cn += this.requestUrl + '\n\n';
+			cn += '<b>Response</b>:\n';
+                        cn += reqObj.responseText;
+                        cn += '</pre>';
+			$(this.jqId).html(cn);
+			//$(this.jqId).html('<pre>'+reqObj.responseText+'</pre>');
+				
+		}
+	};
+	reqObj.send(postData);
+});
+
+
+
+</script>
+
+</head>
+<body>
+
+
+
+<!-- glycan_to_biosynthesis_enzymes --!>
+
+<div style="position:absolute;left:5%;top:20;width:43%;border:0px dashed red;">
+<table align=center width=100% border=1 style="background:#eee;">
+<tr><th align=left class=api_title>Search API: glycan_to_biosynthesis_enzymes</th></tr>
+<tr><td>Glytoucan ID<br><input class=glycan_to_biosynthesis_enzymes_search name=glytoucan_ac type=text value="G00279YF"></td></tr>
+<tr><td>Tax ID<br>
+	<select class=glycan_to_biosynthesis_enzymes_search name=tax_id>
+		<option value="9606" selected>9606</option>
+		<option value="10090">10090</option>
+                <option value="10116">10116</option>
+                <option value="0">0</option>
+	</select>
+</td></tr>
+<tr height=200><td valign=top>
+<div id=glycan_to_biosynthesis_enzymes_search_cn style="background:#fff;height:200;width:500;overflow:auto;"></div><br>
+<input type=submit id=glycan_to_biosynthesis_enzymes class=glycan_to_biosynthesis_enzymes_search name=btn value="Submit API request"><br>
+</td></tr>
+</table>
+</div>
+
+<div style="position:absolute;left:50%;top:20;width:43%;border:0px dashed red;">
+<table align=center width=100% border=1 style="background:#eee;">
+<tr><th align=left class=api_title colspan=4>List API: protein_list</th></tr>
+<tr><td colspan=4>List ID<br><input class=glycan_to_biosynthesis_enzymes_list id=glycan_to_biosynthesis_enzymes_list_id name=id  type=text value=""></td></tr>
+
+<tr>
+
+<td>Page Offset<br><input class=glycan_to_biosynthesis_enzymes_list name=offset type=text value="1"></td>
+<td>Page Limit<br><input class=glycan_to_biosynthesis_enzymes_list name=limit type=text value="20"></td>
+<td>Sort Field<br>
+	<select class=glycan_to_biosynthesis_enzymes_list name=sort>
+		<option value="uniprot_canonical_ac" selected>uniprot_canonical_ac</option>
+		<option value="mass">mass</option>
+		<option value="protein_name_long">protein_name_long</option>
+	</select>
+</td>
+<td>Sort Order<br>
+                <select class=glycan_to_biosynthesis_enzymes_list name=order>
+                        <option value="asc" selected>asc</option>
+                        <option value="desc">desc</option>
+                </select>
+</td></tr>
+
+<tr height=200><td colspan=4 valign=top>
+<div id=glycan_to_biosynthesis_enzymes_list_cn style="background:#fff;height:200;width:500;overflow:auto;"></div><br>
+<input type=submit id=glycan_to_biosynthesis_enzymes class=glycan_to_biosynthesis_enzymes_list name=btn value="Submit API request"><br>
+</td></tr>
+
+</table>
+</div>
+
+
+
+<!-- glycan_to_glycoproteins --!>
+
+<div style="position:absolute;left:5%;top:400;width:43%;border:0px dashed red;">
+<table align=center width=100% border=1 style="background:#eee;">
+<tr><th align=left class=api_title>Search API: glycan_to_glycoproteins</th></tr>
+<tr><td>Glytoucan ID<br><input class=glycan_to_glycoproteins_search name=glytoucan_ac type=text value="G57789QC"></td></tr>
+<tr><td>Tax ID<br>
+	<select class=glycan_to_glycoproteins_search name=tax_id>
+		<option value="9606" selected>9606</option>
+		<option value="10090">10090</option>
+                <option value="10116">10116</option>
+                <option value="0">0</option>
+	</select>
+</td></tr>
+<tr height=200><td valign=top>
+<div id=glycan_to_glycoproteins_search_cn style="background:#fff;height:200;width:500;overflow:auto;"></div><br>
+<input type=submit id=glycan_to_glycoproteins class=glycan_to_glycoproteins_search name=btn value="Submit API request"><br>
+</td></tr>
+</table>
+</div>
+
+<div style="position:absolute;left:50%;top:400;width:43%;border:0px dashed red;">
+<table align=center width=100% border=1 style="background:#eee;">
+<tr><th align=left class=api_title colspan=4>List API: protein_list</th></tr>
+<tr><td colspan=4>List ID<br><input class=glycan_to_glycoproteins_list id=glycan_to_glycoproteins_list_id name=id  type=text value=""></td></tr>
+
+<tr>
+
+<td>Page Offset<br><input class=glycan_to_glycoproteins_list name=offset type=text value="1"></td>
+<td>Page Limit<br><input class=glycan_to_glycoproteins_list name=limit type=text value="20"></td>
+<td>Sort Field<br>
+	<select class=glycan_to_glycoproteins_list name=sort>
+		<option value="uniprot_canonical_ac" selected>uniprot_canonical_ac</option>
+		<option value="mass">mass</option>
+		<option value="protein_name_long">protein_name_long</option>
+	</select>
+</td>
+<td>Sort Order<br>
+                <select class=glycan_to_glycoproteins_list name=order>
+                        <option value="asc" selected>asc</option>
+                        <option value="desc">desc</option>
+                </select>
+</td></tr>
+
+<tr height=200><td colspan=4 valign=top>
+<div id=glycan_to_glycoproteins_list_cn style="background:#fff;height:200;width:500;overflow:auto;"></div><br>
+<input type=submit id=glycan_to_glycoproteins class=glycan_to_glycoproteins_list name=btn value="Submit API request"><br>
+</td></tr>
+
+</table>
+</div>
+
+
+
+<!-- glycan_to_enzyme_gene_loci --!>
+
+<div style="position:absolute;left:5%;top:800;width:43%;border:0px dashed red;">
+<table align=center width=100% border=1 style="background:#eee;">
+<tr><th align=left class=api_title>Search API: glycan_to_enzyme_gene_loci</th></tr>
+<tr><td>Glytoucan ID<br><input class=glycan_to_enzyme_gene_loci_search name=glytoucan_ac type=text value="G74290AC"></td></tr>
+<tr><td>Tax ID<br>
+	<select class=glycan_to_enzyme_gene_loci_search name=tax_id>
+		<option value="9606" selected>9606</option>
+		<option value="10090">10090</option>
+                <option value="10116">10116</option>
+                <option value="0">0</option>
+	</select>
+</td></tr>
+<tr height=200><td valign=top>
+<div id=glycan_to_enzyme_gene_loci_search_cn style="background:#fff;height:200;width:500;overflow:auto;"></div><br>
+<input type=submit id=glycan_to_enzyme_gene_loci class=glycan_to_enzyme_gene_loci_search name=btn value="Submit API request"><br>
+</td></tr>
+</table>
+</div>
+
+<div style="position:absolute;left:50%;top:800;width:43%;border:0px dashed red;">
+<table align=center width=100% border=1 style="background:#eee;">
+<tr><th align=left class=api_title colspan=4>List API: genelocus_list</th></tr>
+<tr><td colspan=4>List ID<br><input class=glycan_to_enzyme_gene_loci_list id=glycan_to_enzyme_gene_loci_list_id name=id  type=text value=""></td></tr>
+<tr>
+<td>Page Offset<br><input class=glycan_to_enzyme_gene_loci_list name=offset type=text value="1"></td>
+<td>Page Limit<br><input class=glycan_to_enzyme_gene_loci_list name=limit type=text value="20"></td>
+<td>Sort Field<br>
+	<select class=glycan_to_enzyme_gene_loci_list name=sort>
+		<option value="uniprot_canonical_ac" selected>uniprot_canonical_ac</option>
+		<option value="protein_name">protein_name</option>
+		<option value="gene_name">gene_name</option>
+		<option value="chromosome">chromosome</option>
+		<option value="start_pos">start_pos</option>
+		<option value="end_pos">end_pos</option>
+		<option value="organism">organism</option>
+		<option value="tax_id">tax_id</option>
+	</select>
+</td>
+<td>Sort Order<br>
+                <select class=glycan_to_enzyme_gene_loci_list name=order>
+                        <option value="asc" selected>asc</option>
+                        <option value="desc">desc</option>
+                </select>
+</td></tr>
+
+<tr height=200><td colspan=4 valign=top>
+<div id=glycan_to_enzyme_gene_loci_list_cn style="background:#fff;height:200;width:500;overflow:auto;"></div><br>
+<input type=submit id=glycan_to_enzyme_gene_loci class=glycan_to_enzyme_gene_loci_list name=btn value="Submit API request"><br>
+</td></tr>
+
+</table>
+</div>
+
+
+
+<!-- biosynthesis_enzyme_to_glycans --!>
+
+<div style="position:absolute;left:5%;top:1200;width:43%;border:0px dashed red;">
+<table align=center width=100% border=1 style="background:#eee;">
+<tr><th align=left class=api_title>Search API: biosynthesis_enzyme_to_glycans</th></tr>
+<tr><td>Uniprot Ac<br><input class=biosynthesis_enzyme_to_glycans_search name=uniprot_canonical_ac type=text value="P26572-1"></td></tr>
+<tr><td>Tax ID<br>
+	<select class=biosynthesis_enzyme_to_glycans_search name=tax_id>
+		<option value="9606" selected>9606</option>
+		<option value="10090">10090</option>
+                <option value="10116">10116</option>
+                <option value="0">0</option>
+	</select>
+</td></tr>
+<tr height=200><td valign=top>
+<div id=biosynthesis_enzyme_to_glycans_search_cn style="background:#fff;height:200;width:500;overflow:auto;"></div><br>
+<input type=submit id=biosynthesis_enzyme_to_glycans class=biosynthesis_enzyme_to_glycans_search name=btn value="Submit API request"><br>
+</td></tr>
+</table>
+</div>
+
+<div style="position:absolute;left:50%;top:1200;width:43%;border:0px dashed red;">
+<table align=center width=100% border=1 style="background:#eee;">
+<tr><th align=left class=api_title colspan=4>List API: glycan_list</th></tr>
+<tr><td colspan=4>List ID<br><input class=biosynthesis_enzyme_to_glycans_list id=biosynthesis_enzyme_to_glycans_list_id name=id  type=text value=""></td></tr>
+<tr>
+<td>Page Offset<br><input class=biosynthesis_enzyme_to_glycans_list name=offset type=text value="1"></td>
+<td>Page Limit<br><input class=biosynthesis_enzyme_to_glycans_list name=limit type=text value="20"></td>
+<td>Sort Field<br>
+	<select class=biosynthesis_enzyme_to_glycans_list name=sort>
+	 	<option value="glytoucan_ac" selected>glytoucan_ac</option>
+		<option value="mass">mass</option>
+		<option value="number_enzymes">numer_enzymes</option>
+		<option value="number_proteins">number_proteins</option>
+		<option value="number_monosaccharides">number_monosaccharides</option>
+	</select>
+</td>
+<td>Sort Order<br>
+                <select class=biosynthesis_enzyme_to_glycans_list name=order>
+                        <option value="asc" selected>asc</option>
+                        <option value="desc">desc</option>
+                </select>
+</td></tr>
+
+<tr height=200><td colspan=4 valign=top>
+<div id=biosynthesis_enzyme_to_glycans_list_cn style="background:#fff;height:200;width:500;overflow:auto;"></div><br>
+<input type=submit id=biosynthesis_enzyme_to_glycans class=biosynthesis_enzyme_to_glycans_list name=btn value="Submit API request"><br>
+</td></tr>
+
+</table>
+</div>
+
+
+
+
+<!-- protein_to_orthologs --!>
+
+<div style="position:absolute;left:5%;top:1600;width:43%;border:0px dashed red;">
+<table align=center width=100% border=1 style="background:#eee;">
+<tr><th align=left class=api_title>Search API: protein_to_orthologs</th></tr>
+<tr><td>Uniprot Ac<br><input class=protein_to_orthologs_search name=uniprot_canonical_ac type=text value="P26572-1"></td></tr>
+<tr height=200><td valign=top>
+<div id=protein_to_orthologs_search_cn style="background:#fff;height:200;width:500;overflow:auto;"></div><br>
+<input type=submit id=protein_to_orthologs class=protein_to_orthologs_search name=btn value="Submit API request"><br>
+</td></tr>
+</table>
+</div>
+
+<div style="position:absolute;left:50%;top:1600;width:43%;border:0px dashed red;">
+<table align=center width=100% border=1 style="background:#eee;">
+<tr><th align=left class=api_title colspan=4>List API: ortholog_list</th></tr>
+<tr><td colspan=4>List ID<br><input class=protein_to_orthologs_list id=protein_to_orthologs_list_id name=id  type=text value=""></td></tr>
+
+<tr>
+<td>Page Offset<br><input class=protein_to_orthologs_list name=offset type=text value="1"></td>
+<td>Page Limit<br><input class=protein_to_orthologs_list name=limit type=text value="20"></td>
+<td>Sort Field<br>
+	<select class=protein_to_orthologs_list name=sort>
+	 	<option value="uniprot_canonical_ac" selected>uniprot_canonical_ac</option>
+		<option value="protein_name">protein_name</option>
+		<option value="organism">organism</option>
+		<option value="tax_id">tax_id</option>
+	</select>
+</td>
+<td>Sort Order<br>
+                <select class=protein_to_orthologs_list name=order>
+                        <option value="asc" selected>asc</option>
+                        <option value="desc">desc</option>
+                </select>
+</td></tr>
+
+<tr height=200><td colspan=4 valign=top>
+<div id=protein_to_orthologs_list_cn style="background:#fff;height:200;width:500;overflow:auto;"></div><br>
+<input type=submit id=protein_to_orthologs class=protein_to_orthologs_list name=btn value="Submit API request"><br>
+</td></tr>
+
+</table>
+</div>
+
+
+<!-- protein_to_glycosequons --!>
+
+
+
+<div style="position:absolute;left:5%;top:2000;width:43%;border:0px dashed red;">
+<table align=center width=100% border=1 style="background:#eee;">
+<tr><th align=left class=api_title>Search API: protein_to_glycosequons</th></tr>
+<tr><td>Uniprot Ac<br><input class=protein_to_glycosequons_search name=uniprot_canonical_ac type=text value="P51788-1"></td></tr>
+<tr height=200><td valign=top>
+<div id=protein_to_glycosequons_search_cn style="background:#fff;height:200;width:500;overflow:auto;"></div><br>
+<input type=submit id=protein_to_glycosequons class=protein_to_glycosequons_search name=btn value="Submit API request"><br>
+</td></tr>
+</table>
+</div>
+
+<div style="position:absolute;left:50%;top:2000;width:43%;border:0px dashed red;">
+<table align=center width=100% border=1 style="background:#eee;">
+<tr><th align=left class=api_title colspan=4>List API: glycosequon_list</th></tr>
+<tr><td colspan=4>List ID<br><input class=protein_to_glycosequons_list id=protein_to_glycosequons_list_id name=id  type=text value=""></td></tr>
+
+<tr>
+<td>Page Offset<br><input class=protein_to_glycosequons_list name=offset type=text value="1"></td>
+<td>Page Limit<br><input class=protein_to_glycosequons_list name=limit type=text value="20"></td>
+<td>Sort Field<br>
+        <select class=protein_to_glycosequons_list name=sort>
+                <option value="start_pos" selected>start_pos</option>
+                <option value="end_pos">end_pos</option>
+                <option value="motif">motif</option>
+        </select>
+</td>
+<td>Sort Order<br>
+                <select class=protein_to_glycosequons_list name=order>
+                        <option value="asc" selected>asc</option>
+                        <option value="desc">desc</option>
+                </select>
+</td></tr>
+
+<tr height=200><td colspan=4 valign=top>
+<div id=protein_to_glycosequons_list_cn style="background:#fff;height:200;width:500;overflow:auto;"></div><br>
+<input type=submit id=protein_to_glycosequons class=protein_to_glycosequons_list name=btn value="Submit API request"><br>
+</td></tr>
+
+</table>
+</div>
+
+
+
+
+
+
+<!-- species_to_glycosyltransferases --!>
+
+<div style="position:absolute;left:5%;top:2400;width:43%;border:0px dashed red;">
+<table align=center width=100% border=1 style="background:#eee;">
+<tr><th align=left class=api_title>Search API: species_to_glycosyltransferases</th></tr>
+<tr><td>Tax ID<br>
+	<select class=species_to_glycosyltransferases_search name=tax_id>
+		<option value="9606" selected>9606</option>
+		<option value="10090">10090</option>
+                <option value="10116">10116</option>
+                <option value="0">0</option>
+	</select>
+</td></tr>
+<tr height=200><td valign=top>
+<div id=species_to_glycosyltransferases_search_cn style="background:#fff;height:200;width:500;overflow:auto;"></div><br>
+<input type=submit id=species_to_glycosyltransferases class=species_to_glycosyltransferases_search name=btn value="Submit API request"><br>
+</td></tr>
+</table>
+</div>
+
+<div style="position:absolute;left:50%;top:2400;width:43%;border:0px dashed red;">
+<table align=center width=100% border=1 style="background:#eee;">
+<tr><th align=left class=api_title colspan=4>List API: protein_list</th></tr>
+<tr><td colspan=4>List ID<br><input class=species_to_glycosyltransferases_list id=species_to_glycosyltransferases_list_id name=id  type=text value=""></td></tr>
+
+<tr>
+
+<td>Page Offset<br><input class=species_to_glycosyltransferases_list name=offset type=text value="1"></td>
+<td>Page Limit<br><input class=species_to_glycosyltransferases_list name=limit type=text value="20"></td>
+<td>Sort Field<br>
+	<select class=species_to_glycosyltransferases_list name=sort>
+		<option value="uniprot_canonical_ac" selected>uniprot_canonical_ac</option>
+		<option value="mass">mass</option>
+		<option value="protein_name_long">protein_name_long</option>
+	</select>
+</td>
+<td>Sort Order<br>
+                <select class=species_to_glycosyltransferases_list name=order>
+                        <option value="asc" selected>asc</option>
+                        <option value="desc">desc</option>
+                </select>
+</td></tr>
+
+<tr height=200><td colspan=4 valign=top>
+<div id=species_to_glycosyltransferases_list_cn style="background:#fff;height:200;width:500;overflow:auto;"></div><br>
+<input type=submit id=species_to_glycosyltransferases class=species_to_glycosyltransferases_list name=btn value="Submit API request"><br>
+</td></tr>
+
+</table>
+</div>
+
+
+
+
+
+
+<!-- species_to_glycohydrolases --!>
+
+<div style="position:absolute;left:5%;top:2800;width:43%;border:0px dashed red;">
+<table align=center width=100% border=1 style="background:#eee;">
+<tr><th align=left class=api_title>Search API: species_to_glycohydrolases</th></tr>
+<tr><td>Tax ID<br>
+	<select class=species_to_glycohydrolases_search name=tax_id>
+		<option value="9606" selected>9606</option>
+		<option value="10090">10090</option>
+                <option value="10116">10116</option>
+                <option value="0">0</option>
+	</select>
+</td></tr>
+<tr height=200><td valign=top>
+<div id=species_to_glycohydrolases_search_cn style="background:#fff;height:200;width:500;overflow:auto;"></div><br>
+<input type=submit id=species_to_glycohydrolases class=species_to_glycohydrolases_search name=btn value="Submit API request"><br>
+</td></tr>
+</table>
+</div>
+
+<div style="position:absolute;left:50%;top:2800;width:43%;border:0px dashed red;">
+<table align=center width=100% border=1 style="background:#eee;">
+<tr><th align=left class=api_title colspan=4>List API: protein_list</th></tr>
+<tr><td colspan=4>List ID<br><input class=species_to_glycohydrolases_list id=species_to_glycohydrolases_list_id name=id  type=text value=""></td></tr>
+
+<tr>
+
+<td>Page Offset<br><input class=species_to_glycohydrolases_list name=offset type=text value="1"></td>
+<td>Page Limit<br><input class=species_to_glycohydrolases_list name=limit type=text value="20"></td>
+<td>Sort Field<br>
+	<select class=species_to_glycohydrolases_list name=sort>
+		<option value="uniprot_canonical_ac" selected>uniprot_canonical_ac</option>
+		<option value="mass">mass</option>
+		<option value="protein_name_long">protein_name_long</option>
+	</select>
+</td>
+<td>Sort Order<br>
+                <select class=species_to_glycohydrolases_list name=order>
+                        <option value="asc" selected>asc</option>
+                        <option value="desc">desc</option>
+                </select>
+</td></tr>
+
+<tr height=200><td colspan=4 valign=top>
+<div id=species_to_glycohydrolases_list_cn style="background:#fff;height:200;width:500;overflow:auto;"></div><br>
+<input type=submit id=species_to_glycohydrolases class=species_to_glycohydrolases_list name=btn value="Submit API request"><br>
+</td></tr>
+
+</table>
+</div>
+
+
+
+
+<!-- species_to_glycoproteins --!>
+
+<div style="position:absolute;left:5%;top:3200;width:43%;border:0px dashed red;">
+<table align=center width=100% border=1 style="background:#eee;">
+<tr><th align=left class=api_title>Search API: species_to_glycoproteins</th></tr>
+<tr><td>Tax ID<br>
+	<select class=species_to_glycoproteins_search name=tax_id>
+		<option value="9606" selected>9606</option>
+		<option value="10090">10090</option>
+                <option value="10116">10116</option>
+                <option value="0">0</option>
+	</select>
+</td></tr>
+
+<tr><td>Evidence Type<br>
+<select class=species_to_glycoproteins_search name=evidence_type>
+	<option value="reported" selected>reported</option> 
+	<option value="predicted">predicted</option>
+	<option value="both">both</option>
+</select>
+</td></tr>
+
+<tr height=200><td valign=top>
+<div id=species_to_glycoproteins_search_cn style="background:#fff;height:200;width:500;overflow:auto;"></div><br>
+<input type=submit id=species_to_glycoproteins class=species_to_glycoproteins_search name=btn value="Submit API request"><br>
+</td></tr>
+</table>
+</div>
+
+<div style="position:absolute;left:50%;top:3200;width:43%;border:0px dashed red;">
+<table align=center width=100% border=1 style="background:#eee;">
+<tr><th align=left class=api_title colspan=4>List API: protein_list</th></tr>
+<tr><td colspan=4>List ID<br><input class=species_to_glycoproteins_list id=species_to_glycoproteins_list_id name=id  type=text value=""></td></tr>
+
+<tr>
+
+<td>Page Offset<br><input class=species_to_glycoproteins_list name=offset type=text value="1"></td>
+<td>Page Limit<br><input class=species_to_glycoproteins_list name=limit type=text value="20"></td>
+<td>Sort Field<br>
+	<select class=species_to_glycoproteins_list name=sort>
+		<option value="uniprot_canonical_ac" selected>uniprot_canonical_ac</option>
+		<option value="mass">mass</option>
+		<option value="protein_name_long">protein_name_long</option>
+	</select>
+</td>
+<td>Sort Order<br>
+                <select class=species_to_glycoproteins_list name=order>
+                        <option value="asc" selected>asc</option>
+                        <option value="desc">desc</option>
+                </select>
+</td></tr>
+
+<tr height=200><td colspan=4 valign=top>
+<div id=species_to_glycoproteins_list_cn style="background:#fff;height:200;width:500;overflow:auto;"></div><br>
+<input type=submit id=species_to_glycoproteins class=species_to_glycoproteins_list name=btn value="Submit API request"><br>
+</td></tr>
+
+</table>
+</div>
+
+
+
+
+<!-- disease_to_glycosyltransferases --!>
+
+<div style="position:absolute;left:5%;top:3600;width:43%;border:0px dashed red;">
+<table align=center width=100% border=1 style="background:#eee;">
+<tr><th align=left class=api_title>Search API: disease_to_glycosyltransferases</th></tr>
+<tr><td>Tax ID<br>
+	<select class=disease_to_glycosyltransferases_search name=tax_id>
+		<option value="9606" selected>9606</option>
+		<option value="10090">10090</option>
+                <option value="10116">10116</option>
+                <option value="0">0</option>
+	</select>
+</td></tr>
+<tr><td>Disease Ontology ID<br>
+<input type=text class=disease_to_glycosyltransferases_search name=do_name value="Gilbert syndrom">
+</td></tr>
+
+<tr height=200><td valign=top>
+<div id=disease_to_glycosyltransferases_search_cn style="background:#fff;height:200;width:500;overflow:auto;"></div><br>
+<input type=submit id=disease_to_glycosyltransferases class=disease_to_glycosyltransferases_search name=btn value="Submit API request"><br>
+</td></tr>
+</table>
+</div>
+
+<div style="position:absolute;left:50%;top:3600;width:43%;border:0px dashed red;">
+<table align=center width=100% border=1 style="background:#eee;">
+<tr><th align=left class=api_title colspan=4>List API: protein_list</th></tr>
+<tr><td colspan=4>List ID<br><input class=disease_to_glycosyltransferases_list id=disease_to_glycosyltransferases_list_id name=id  type=text value=""></td></tr>
+
+<tr>
+
+<td>Page Offset<br><input class=disease_to_glycosyltransferases_list name=offset type=text value="1"></td>
+<td>Page Limit<br><input class=disease_to_glycosyltransferases_list name=limit type=text value="20"></td>
+<td>Sort Field<br>
+	<select class=disease_to_glycosyltransferases_list name=sort>
+		<option value="uniprot_canonical_ac" selected>uniprot_canonical_ac</option>
+		<option value="mass">mass</option>
+		<option value="protein_name_long">protein_name_long</option>
+	</select>
+</td>
+<td>Sort Order<br>
+                <select class=disease_to_glycosyltransferases_list name=order>
+                        <option value="asc" selected>asc</option>
+                        <option value="desc">desc</option>
+                </select>
+</td></tr>
+
+<tr height=200><td colspan=4 valign=top>
+<div id=disease_to_glycosyltransferases_list_cn style="background:#fff;height:200;width:500;overflow:auto;"></div><br>
+<input type=submit id=disease_to_glycosyltransferases class=disease_to_glycosyltransferases_list name=btn value="Submit API request"><br>
+</td></tr>
+
+</table>
+</div>
+
+
+
+</body>
+<html>

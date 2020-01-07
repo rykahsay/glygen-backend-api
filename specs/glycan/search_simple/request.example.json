@@ -1,7 +1,0 @@
-{
-   "query":{
-      "query_type":"search_glycan_simple",
-      "term":"Homo s",
-      "term_category":"any"
-   }
-}

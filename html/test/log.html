@@ -1,0 +1,366 @@
+<html>
+<head>
+<link rel="stylesheet" href="styles.css" type="text/css">
+<script language="javascript" src="jquery.min.js"></script>
+<script>
+var htmlRoot = ""
+
+$(document ).ready(function() {
+
+});
+
+////////////////////////////////////
+$(document).on('click', '#log_init', function (event) {
+        
+        event.preventDefault();
+        var formValues = {};
+        $('.log_init').each(function(){
+                var name = $(this).attr("name");
+                var value = $(this).val();
+                if (value.trim().length > 0){
+                    formValues[name] = value
+                }
+        });
+        var inJson = {};
+        if (Object.keys(formValues).length == 12){
+            var startDate = [formValues["start_yy"], formValues["start_mm"],formValues["start_dd"]].join("-");
+            startDate += " " + [formValues["start_hr"], formValues["start_mn"],formValues["start_sc"]].join(":");
+            startDate += " " + "EDT-0400";
+            var endDate = [formValues["end_yy"], formValues["end_mm"],formValues["end_dd"]].join("-");
+            endDate += " " + [formValues["end_hr"], formValues["end_mn"],formValues["end_sc"]].join(":");
+            endDate += " " + "EDT-0400";
+            inJson = {"start_date":startDate, "end_date":endDate};
+        }
+        
+        var url = htmlRoot + '/log/init'
+        var postData = "query=" + JSON.stringify(inJson);
+        $("#log_init_url").html(url + '?' +postData);
+
+        var gifImage = '<img src=loading.gif style="width:20%;margin-left:40%;margin-top:2%;">';
+        $("#log_init_cn").html(gifImage);
+
+
+        var reqObj = new XMLHttpRequest();
+        reqObj.open("POST", url, true);
+        reqObj.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        reqObj.onreadystatechange = function() {
+                if (reqObj.readyState == 4 && [200, 500].indexOf(reqObj.status) != -1) {
+                        $("#log_init_cn").html('<pre>'+reqObj.responseText+'</pre>');
+		}
+        };
+        reqObj.send(postData);
+});
+
+////////////////////////////////////
+$(document).on('click', '#log_access', function (event) {
+        
+        event.preventDefault();
+        var formValues = {};
+        $('.log_access').each(function(){
+                var name = $(this).attr("name");
+                var value = $(this).val();
+                if (value.trim().length > 0){
+                    formValues[name] = value
+                }
+        });
+            
+        var startDate = [formValues["start_yy"], formValues["start_mm"],formValues["start_dd"]].join("-");
+        startDate += " " + [formValues["start_hr"], formValues["start_mn"],formValues["start_sc"]].join(":");
+        startDate += " " + "EDT-0400";
+        var endDate = [formValues["end_yy"], formValues["end_mm"],formValues["end_dd"]].join("-");
+        endDate += " " + [formValues["end_hr"], formValues["end_mn"],formValues["end_sc"]].join(":");
+        endDate += " " + "EDT-0400";
+        inJson = {"start_date":startDate, "end_date":endDate};
+        
+        for (var k in formValues){
+            if (["order", "type", "page", "user"].indexOf(k) != -1){
+                inJson[k] = formValues[k];
+            }
+            else if (["offset", "limit"].indexOf(k) != -1){
+                inJson[k] = parseInt(formValues[k]);
+            }
+        }
+        var url = htmlRoot + '/log/access'
+        var postData = "query=" + JSON.stringify(inJson);
+        $("#log_access_url").html(url + '?' +postData);
+
+                var gifImage = '<img src=loading.gif style="width:20%;margin-left:40%;margin-top:2%;">';
+        $("#log_access_cn").html(gifImage);
+
+
+        var reqObj = new XMLHttpRequest();
+        reqObj.open("POST", url, true);
+        reqObj.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        reqObj.onreadystatechange = function() {
+                if (reqObj.readyState == 4 && [200, 500].indexOf(reqObj.status) != -1) {
+                        $("#log_access_cn").html('<pre>'+reqObj.responseText+'</pre>');
+                }
+        };
+        reqObj.send(postData);
+
+});
+
+
+
+////////////////////////////////////
+$(document).on('click', '#log_grouped', function (event) {
+        
+        event.preventDefault();
+        var formValues = {};
+        $('.log_grouped').each(function(){
+                var name = $(this).attr("name");
+                var value = $(this).val();
+                if (value.trim().length > 0){
+                    formValues[name] = value
+                }
+        });
+            
+        var startDate = [formValues["start_yy"], formValues["start_mm"],formValues["start_dd"]].join("-");
+        startDate += " " + [formValues["start_hr"], formValues["start_mn"],formValues["start_sc"]].join(":");
+        startDate += " " + "EDT-0400";
+        var endDate = [formValues["end_yy"], formValues["end_mm"],formValues["end_dd"]].join("-");
+        endDate += " " + [formValues["end_hr"], formValues["end_mn"],formValues["end_sc"]].join(":");
+        endDate += " " + "EDT-0400";
+        inJson = {"start_date":startDate, "end_date":endDate};
+        
+        for (var k in formValues){
+            if (["order", "type", "page", "user"].indexOf(k) != -1){
+                inJson[k] = formValues[k];
+            }
+            else if (["offset", "limit"].indexOf(k) != -1){
+                inJson[k] = parseInt(formValues[k]);
+            }
+        }
+        var url = htmlRoot + '/log/grouped'
+        var postData = "query=" + JSON.stringify(inJson);
+        $("#log_grouped_url").html(url + '?' +postData);
+
+                var gifImage = '<img src=loading.gif style="width:20%;margin-left:40%;margin-top:2%;">';
+        $("#log_grouped_cn").html(gifImage);
+
+
+        var reqObj = new XMLHttpRequest();
+        reqObj.open("POST", url, true);
+        reqObj.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        reqObj.onreadystatechange = function() {
+                if (reqObj.readyState == 4 && [200, 500].indexOf(reqObj.status) != -1) {
+                        $("#log_grouped_cn").html('<pre>'+reqObj.responseText+'</pre>');
+                }
+        };
+        reqObj.send(postData);
+
+});
+
+
+////////////////////////////////////
+$(document).on('click', '#log_logging', function (event) {
+        event.preventDefault();
+        var keyList1 = ["id", "user", "type", "page", "message"];
+        var inJson = {};
+        $('.log_logging').each(function(){
+                var name = $(this).attr("name");
+                var value = $(this).val();
+                if(keyList1.indexOf(name) != -1){
+                        inJson[name] = value
+                }
+        });
+        var gifImage = '<img src=loading.gif style="width:20%;margin-left:40%;margin-top:2%;">';        
+        $("#log_logging_cn").html(gifImage);
+        var url = htmlRoot + '/log/logging';      
+        var postData = "query=" + JSON.stringify(inJson);
+        $("#log_logging_url").html(url + '?' +  postData);
+        var reqObj = new XMLHttpRequest();
+        reqObj.open("POST", url, true);
+        reqObj.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        reqObj.onreadystatechange = function() {
+                if (reqObj.readyState == 4 && [200, 500].indexOf(reqObj.status) != -1) {
+                        var resJson = JSON.parse(reqObj.responseText);
+                        $("#log_logging_cn").html('<pre>'+reqObj.responseText+'</pre>');
+                }
+        };
+        reqObj.send(postData);
+});
+
+
+
+</script>
+
+
+</head>
+<body>
+
+
+<table align=center width=80% border=1 style="background:#eee;">
+<tr><th colspan=2 align=left class=api_title>Test for log_logging API</th></tr>
+<tr><td>Page *</td><td><input class=log_logging name=page type=text value="foo.html"></td></tr>
+<tr><td>User *</td><td><input class=log_logging name=user type=text value="foo"></td></tr>
+<tr><td>Log Type [error/user] *</td><td>
+                <select class=log_logging name=type>
+                        <option value=""></option>
+                        <option value="error" selected>error</option>
+                        <option value="user">user</option>
+                </select>
+</td></tr>
+<tr><td>ID</td><td width=80%><input class=log_logging name=id type=text value=""></td></tr>
+<tr><td>Message</td><td><input class=log_logging name=message type=text value=""></td></tr>
+<tr><td>Post Data (both GET/POST supported)</td><td id=log_logging_url style="background:#fff;"></td></tr>
+<tr height=100><td valign=top><input type=submit id=log_logging name=btn value="Submit API request"></td>
+        <td id=log_logging_cn style="background:#fff;"></td></tr>
+
+
+
+
+<tr><th align=left colspan=2 class=api_title>Test for log_init API</th></tr>
+<tr><td>Start Date</td>
+    <td nowrap>
+        Year Month Day Hour Minute Second<br>
+        <input class=log_init name=start_yy type=number value="2017" style="width:50px;">
+        <input class=log_init name=start_mm type=number value="1" style="width:50px;">
+        <input class=log_init name=start_dd type=number value="1" style="width:50px;">
+        <input class=log_init name=start_hr type=number value="1" style="width:50px;">
+        <input class=log_init name=start_mn type=number value="1" style="width:50px;">
+        <input class=log_init name=start_sc type=number value="1" style="width:50px;">
+    </td>
+</tr>
+<tr><td>End Date</td>
+    <td nowrap>
+        Year Month Day Hour Minute Second<br>
+        <input class=log_init name=end_yy type=number value="2018" style="width:50px;">
+        <input class=log_init name=end_mm type=number value="12" style="width:50px;">
+        <input class=log_init name=end_dd type=number value="31" style="width:50px;">
+        <input class=log_init name=end_hr type=number value="23" style="width:50px;">
+        <input class=log_init name=end_mn type=number value="59" style="width:50px;">
+        <input class=log_init name=end_sc type=number value="59" style="width:50px;">
+    </td>
+</tr>
+
+
+<tr><td>Post Data</td><td id=log_init_url style="background:#fff;"></td></tr>
+<tr><td valign=top><input type=submit id=log_init name=btn value="Submit API request"></td>
+<td style="background:#fff;"><div style="width:700px;height:150px;overflow:auto;" id=log_init_cn></div></td></tr>
+
+
+
+
+
+<tr><th align=left colspan=2 class=api_title>Test for log_access API</th></tr>
+<tr><td>Start Date *</td>
+    <td nowrap>
+        Year Month Day Hour Minute Second<br>
+        <input class=log_access name=start_yy type=number value="2017" style="width:50px;">
+        <input class=log_access name=start_mm type=number value="1" style="width:50px;">
+        <input class=log_access name=start_dd type=number value="1" style="width:50px;">
+        <input class=log_access name=start_hr type=number value="1" style="width:50px;">
+        <input class=log_access name=start_mn type=number value="1" style="width:50px;">
+        <input class=log_access name=start_sc type=number value="1" style="width:50px;">
+    </td>
+</tr>
+<tr><td>End Date *</td>
+    <td nowrap>
+        Year Month Day Hour Minute Second<br>
+        <input class=log_access name=end_yy type=number value="2018" style="width:50px;">
+        <input class=log_access name=end_mm type=number value="12" style="width:50px;">
+        <input class=log_access name=end_dd type=number value="31" style="width:50px;">
+        <input class=log_access name=end_hr type=number value="23" style="width:50px;">
+        <input class=log_access name=end_mn type=number value="59" style="width:50px;">
+        <input class=log_access name=end_sc type=number value="59" style="width:50px;">
+    </td>
+</tr>
+<tr><td>Log Type [error/user] *</td><td>
+                <select class=log_access name=type>
+                        <option value=""></option>
+                        <option value="error" selected>error</option>
+                        <option value="user">user</option>
+                </select>
+</td></tr>
+<tr><td>Page</td><td><input class=log_access name=page type=text value="index.html"></td></tr>
+<tr><td>User</td><td><input class=log_access name=user type=text value="xyz"></td></tr>
+
+
+<tr><td>Sort Order [asc/desc]</td><td>
+                <select class=log_access name=order>
+                        <option value=""></option>
+                        <option value="asc" selected>asc</option>
+                        <option value="desc">desc</option>
+                </select>
+</td></tr>
+
+
+<tr><td>Offset</td><td><input class=log_access name=offset type=number value="1"></td></tr>
+<tr><td>Limit</td><td><input class=log_access name=limit type=number value="100"></td></tr>
+
+
+<tr><td>Post Data</td><td id=log_access_url style="background:#fff;"></td></tr>
+<tr><td valign=top><input type=submit id=log_access name=btn value="Submit API request"></td>
+<td style="background:#fff;"><div style="width:700px;height:150px;overflow:auto;" id=log_access_cn></div></td></tr>
+
+
+
+
+
+
+<tr><th align=left colspan=2 class=api_title>Test for log_grouped API</th></tr>
+<tr><td>Start Date *</td>
+    <td nowrap>
+        Year Month Day Hour Minute Second<br>
+        <input class=log_grouped name=start_yy type=number value="2017" style="width:50px;">
+        <input class=log_grouped name=start_mm type=number value="1" style="width:50px;">
+        <input class=log_grouped name=start_dd type=number value="1" style="width:50px;">
+        <input class=log_grouped name=start_hr type=number value="1" style="width:50px;">
+        <input class=log_grouped name=start_mn type=number value="1" style="width:50px;">
+        <input class=log_grouped name=start_sc type=number value="1" style="width:50px;">
+    </td>
+</tr>
+<tr><td>End Date *</td>
+    <td nowrap>
+        Year Month Day Hour Minute Second<br>
+        <input class=log_grouped name=end_yy type=number value="2018" style="width:50px;">
+        <input class=log_grouped name=end_mm type=number value="12" style="width:50px;">
+        <input class=log_grouped name=end_dd type=number value="31" style="width:50px;">
+        <input class=log_grouped name=end_hr type=number value="23" style="width:50px;">
+        <input class=log_grouped name=end_mn type=number value="59" style="width:50px;">
+        <input class=log_grouped name=end_sc type=number value="59" style="width:50px;">
+    </td>
+</tr>
+<tr><td>Log Type [error/user] *</td><td>
+                <select class=log_grouped name=type>
+                        <option value=""></option>
+                        <option value="error" selected>error</option>
+                        <option value="user">user</option>
+                </select>
+</td></tr>
+<tr><td>Page</td><td><input class=log_grouped name=page type=text value="index.html"></td></tr>
+<tr><td>User</td><td><input class=log_grouped name=user type=text value="xyz"></td></tr>
+
+
+<tr><td>Sort Order [asc/desc]</td><td>
+                <select class=log_grouped name=order>
+                        <option value=""></option>
+                        <option value="asc" selected>asc</option>
+                        <option value="desc">desc</option>
+                </select>
+</td></tr>
+
+
+<tr><td>Offset</td><td><input class=log_grouped name=offset type=number value="1"></td></tr>
+<tr><td>Limit</td><td><input class=log_grouped name=limit type=number value="100"></td></tr>
+
+
+<tr><td>Post Data</td><td id=log_grouped_url style="background:#fff;"></td></tr>
+<tr><td valign=top><input type=submit id=log_grouped name=btn value="Submit API request"></td>
+<td style="background:#fff;"><div style="width:700px;height:150px;overflow:auto;" id=log_grouped_cn></div></td></tr>
+
+
+
+
+
+
+
+
+
+
+
+</table>
+
+</body>
+<html>

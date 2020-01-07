@@ -9,47 +9,42 @@ import pytz
 from collections import OrderedDict
 
 
-from pymongo import MongoClient
-from pymongo.errors import ConnectionFailure
+
+import errorlib
+import util
 
 
 
 
+def glycan_typeahead(query_obj, config_obj):
 
-def glycan_typeahead(query_obj, db_obj):
+    db_obj = config_obj[config_obj["server"]]["dbinfo"]
+    dbh, error_obj = util.connect_to_mongodb(db_obj) #connect to mongodb
+    if error_obj != {}:
+        return error_obj
 
+    #Collect errors 
+    error_list = errorlib.get_errors_in_query("typeahead_glycan",query_obj, config_obj)
+    if error_list != []:
+        return {"error_list":error_list}
 
-    client = MongoClient('mongodb://localhost:27017')
-    dbh = client[db_obj["dbname"]]
     collection = "c_glycan"
-    if collection not in dbh.collection_names():
-        return {"error_code": "open-connection-failed"}
-
-    field_list = ["glytoucan_ac", "motif_name", "enzyme_uniprot_canonical_ac"]
-                                                                       
-    max_query_value_len = 1000
-    required_keys = ["field", "value", "limit"]
-    for key in required_keys:
-        if key not in query_obj:
-            return {"error_code":"missing-parameter"}
-        if str(query_obj[key]).strip() == "":
-            return {"error_code":"invalid-parameter-value"}
-    
-    if is_int(query_obj["limit"]) == False:
-        return {"error_code":"invalid-parameter-value"}
-    if query_obj["field"] not in field_list:
-        return {"error_code":"invalid-field-for-typeahead"}
-    if len(query_obj["value"]) > max_query_value_len:
-        return {"error_code":"invalid-parameter-value-length"}
-
 
 
     res_obj = []
     mongo_query = {}
     if query_obj["field"] == "glytoucan_ac":
-        mongo_query = {"glytoucan_ac":{'$regex': query_obj["value"], '$options': 'i'}}
+        cond_list = [
+            {"glytoucan_ac":{'$regex': query_obj["value"], '$options': 'i'}},
+            {"crossref.id":{"$regex": query_obj["value"], "$options":"i"}}
+        ]
+        mongo_query = { "$or":cond_list}
         for obj in dbh[collection].find(mongo_query):
-            res_obj.append(obj["glytoucan_ac"])
+            if obj["glytoucan_ac"].lower().find(query_obj["value"].lower()) != -1:
+                res_obj.append(obj["glytoucan_ac"])
+            for o in obj["crossref"]:
+                if o["id"].lower().find(query_obj["value"].lower()) != -1:
+                    res_obj.append(o["id"])
             if len(sorted(set(res_obj))) >= query_obj["limit"]:
                 return sorted(set(res_obj))
     elif query_obj["field"] == "enzyme_uniprot_canonical_ac":
@@ -74,35 +69,20 @@ def glycan_typeahead(query_obj, db_obj):
 
 
 
-def protein_typeahead(query_obj, db_obj):
+def protein_typeahead(query_obj, config_obj):
+
+    db_obj = config_obj[config_obj["server"]]["dbinfo"]
+    dbh, error_obj = util.connect_to_mongodb(db_obj) #connect to mongodb
+    if error_obj != {}:
+        return error_obj
 
 
-
-    client = MongoClient('mongodb://localhost:27017')
-    dbh = client[db_obj["dbname"]]
+    #Collect errors 
+    error_list = errorlib.get_errors_in_query("typeahead_protein",query_obj, config_obj)
+    if error_list != []:
+        return {"error_list":error_list}
+  
     collection = "c_protein"
-    if collection not in dbh.collection_names():
-        return {"error_code": "open-connection-failed"}
-
-    field_list = ["uniprot_canonical_ac", "uniprot_id", "refseq_ac", 
-                    "protein_name", "gene_name", "pathway_id", "pathway_name", "disease_name"] 
-
-
-    max_query_value_len = 1000
-    required_keys = ["field", "value", "limit"]
-    for key in required_keys:
-        if key not in query_obj:
-            return {"error_code":"missing-parameter"}
-        if str(query_obj[key]).strip() == "":
-            return {"error_code":"invalid-parameter-value"}
-
-    if is_int(query_obj["limit"]) == False:
-        return {"error_code":"invalid-parameter-value"}
-    if query_obj["field"] not in field_list:
-        return {"error_code":"invalid-field-for-typeahead"}
-    if len(query_obj["value"]) > max_query_value_len:
-        return {"error_code":"invalid-parameter-value-length"}
-
 
 
     res_obj = []
@@ -113,6 +93,28 @@ def protein_typeahead(query_obj, db_obj):
             res_obj.append(obj["uniprot_canonical_ac"])
             if len(sorted(set(res_obj))) >= query_obj["limit"]:
                 return sorted(set(res_obj))
+
+    if query_obj["field"] == "go_id":
+        q_obj = {'$regex': query_obj["value"], '$options': 'i'}
+        mongo_query = {"go_annotation.categories.go_terms.id":q_obj}
+        for obj in dbh[collection].find(mongo_query):
+            for cat_obj in obj["go_annotation"]["categories"]:
+                for term_obj in cat_obj["go_terms"]:
+                    if term_obj["id"].lower().find(query_obj["value"].lower()) != -1:
+                        res_obj.append(term_obj["id"])
+                        if len(sorted(set(res_obj))) >= query_obj["limit"]:
+                            return sorted(set(res_obj))
+    if query_obj["field"] == "go_term":
+        q_obj = {'$regex': query_obj["value"], '$options': 'i'}
+        mongo_query = {"go_annotation.categories.go_terms.name":q_obj}
+        for obj in dbh[collection].find(mongo_query):
+            for cat_obj in obj["go_annotation"]["categories"]:
+                for term_obj in cat_obj["go_terms"]:
+                    if term_obj["name"].lower().find(query_obj["value"].lower()) != -1:
+                        res_obj.append(term_obj["name"])
+                        if len(sorted(set(res_obj))) >= query_obj["limit"]:
+                            return sorted(set(res_obj))
+
     if query_obj["field"] == "uniprot_id":
         mongo_query = {"uniprot_id":{'$regex': query_obj["value"], '$options': 'i'}}
         for obj in dbh[collection].find(mongo_query):
@@ -172,52 +174,53 @@ def protein_typeahead(query_obj, db_obj):
 
 
 
-def dump_debug_log(out_string):
 
-    debug_log_file = path_obj["debuglogfile"]
-    with open(debug_log_file, "a") as FA:
-        FA.write("\n\n%s\n" % (out_string))
-    return
+def categorized_typeahead(query_obj, config_obj):
+
+    db_obj = config_obj[config_obj["server"]]["dbinfo"]
+    dbh, error_obj = util.connect_to_mongodb(db_obj) #connect to mongodb
+    if error_obj != {}:
+        return error_obj
+
+    #Collect errors 
+    error_list = errorlib.get_errors_in_query("categorized_typeahead",query_obj, config_obj)
+    if error_list != []:
+        return {"error_list":error_list}
+  
+    collection = "c_protein"
+
+    mongo_query = {}
+    if query_obj["field"] == "go_term":
+        mongo_query = {"go_annotation.categories.go_terms.name":{'$regex': query_obj["value"], '$options': 'i'}}
+        hit_dict = {}
+        seen = {}
+        total = 0
+        limit_one = query_obj["total_limit"]
+        limit_two = query_obj["categorywise_limit"]
+
+        for obj in dbh[collection].find(mongo_query):
+            for cat_obj in obj["go_annotation"]["categories"]:
+                cat = cat_obj["name"]
+                for term_obj in cat_obj["go_terms"]:
+                    term = term_obj["name"]
+                    if term.lower().find(query_obj["value"].lower()) != -1:
+                        if cat not in hit_dict:
+                            hit_dict[cat] = []
+                            seen[cat] = {}
+                        if term not in seen[cat] and len(hit_dict[cat]) < limit_two:
+                            o = {"label":term, "category":cat}
+                            hit_dict[cat].append(o)
+                            seen[cat][term] = True
+                            total += 1
+                        if total >= limit_one:
+                            break
+    res_obj = []
+    for cat in hit_dict:
+        for o in hit_dict[cat]:
+            res_obj.append(o)
+
+    return res_obj
 
 
 
-def get_random_string(size=6, chars=string.ascii_uppercase + string.digits):
-    return ''.join(random.choice(chars) for _ in range(size))
 
-
-
-def get_error_obj(error_code, error_log, path_obj):
-    
-    error_id = get_random_string(6) 
-    log_file = path_obj["apierrorlogpath"] + "/" + error_code + "-" + error_id + ".log"
-    with open(log_file, "w") as FW:
-        FW.write("%s" % (error_log))
-    return {"error_code": "exception-error-" + error_id}
-
-
-
-
-def is_valid_json(myjson):
-    try:
-        json_object = json.loads(myjson)
-    except ValueError, e:
-        return False
-    return True
-
-
-def is_float(input):
-      
-    try:
-        num = float(input)
-    except ValueError:
-        return False
-    return True
-
-
-                  
-def is_int(input):
-    try:
-        num = int(input)
-    except ValueError:
-        return False
-    return True

@@ -1,0 +1,251 @@
+<html>
+<head>
+<link rel="stylesheet" href="styles.css" type="text/css">
+<script language="javascript" src="jquery.min.js"></script>
+<script>
+var htmlRoot = ""
+
+$(document ).ready(function() {
+
+});
+
+/////////////////////////////////
+$(document).on('click', '#commonquery_search', function (event) {
+        event.preventDefault();
+        var keyList1 = ["jsonquery"]
+        var inJson = {};
+        $('.commonquery_search').each(function(){
+                var name = $(this).attr("name");
+                var value = $(this).val();
+                if(keyList1.indexOf(name) != -1){
+                        inJson[name] = value
+                }
+        });
+        var gifImage = '<img src=loading.gif style="width:20%;margin-left:40%;margin-top:2%;">';        
+        $("#commonquery_search_cn").html(gifImage);
+        var url = htmlRoot + '/commonquery/search';  
+        var queryObj = JSON.parse(inJson["jsonquery"]);
+        var postData = "query=" + JSON.stringify(queryObj);
+        $("#commonquery_search_url").html(url + '?' +  postData);
+        var reqObj = new XMLHttpRequest();
+        reqObj.open("POST", url, true);
+        reqObj.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        reqObj.resultType = queryObj["result_type"]
+        reqObj.onreadystatechange = function() {
+                if (reqObj.readyState == 4 && [200, 500].indexOf(reqObj.status) != -1) {
+                        var resJson = JSON.parse(reqObj.responseText);
+                        $("#commonquery_search_cn").html('<pre>'+reqObj.responseText+'</pre>');
+                        if (this.resultType == "protein_list"){
+                            $(".proteinlistid").val(resJson["list_id"]);
+                            $(".glycanlistid").val("");
+                        }
+                        else if (this.resultType == "glycan_list"){
+                            $(".glycanlistid").val(resJson["list_id"]);
+                            $(".proteinlistid").val("");
+                        }
+                }
+        };
+        reqObj.send(postData);
+
+});
+
+
+
+
+////////////////////////////////////
+$(document).on('click', '#protein_list', function (event) {
+
+        event.preventDefault();
+        var inJson = {};
+        $('.protein_list').each(function(){
+                var name = $(this).attr("name");
+                var value = $(this).val();
+                if (value.trim()){
+                        if (["offset", "limit"].indexOf(name) != -1){
+                                value = parseInt(value);
+                        }
+                        inJson[name] = value
+                }                                                                                        
+        });
+        var url = htmlRoot + '/protein/list'
+        var postData = "query=" + JSON.stringify(inJson);
+        $("#protein_list_url").html(url + '?' +postData);
+
+        var gifImage = '<img src=loading.gif style="width:20%;margin-left:40%;margin-top:2%;">';        
+        $("#protein_list_cn").html(gifImage);
+
+
+        var reqObj = new XMLHttpRequest();
+        reqObj.open("POST", url, true);
+        reqObj.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        reqObj.onreadystatechange = function() {
+                if (reqObj.readyState == 4 && [200, 500].indexOf(reqObj.status) != -1) {
+                        $("#protein_list_cn").html('<pre>'+reqObj.responseText+'</pre>');
+                }
+        };
+        reqObj.send(postData);
+});
+
+
+
+
+////////////////////////////////////
+$(document).on('click', '#glycan_list', function (event) {
+
+        event.preventDefault();
+
+        
+        var inJson = {};
+        $('.glycan_list').each(function(){
+                var name = $(this).attr("name");
+                var value = $(this).val();
+                if (value.trim()){
+                        if (["offset", "limit"].indexOf(name) != -1){
+                                value = parseInt(value);
+                        }
+                        inJson[name] = value
+                }                                                                                        
+        });
+        var url = htmlRoot + '/glycan/list'
+        var postData = "query=" + JSON.stringify(inJson);
+        $("#glycan_list_url").html(url + '?' +postData);
+
+        var gifImage = '<img src=loading.gif style="width:20%;margin-left:40%;margin-top:2%;">';        
+        $("#glycan_list_cn").html(gifImage);
+
+
+        var reqObj = new XMLHttpRequest();
+        reqObj.open("POST", url, true);
+        reqObj.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        reqObj.onreadystatechange = function() {
+                if (reqObj.readyState == 4 && [200, 500].indexOf(reqObj.status) != -1) {
+                        $("#glycan_list_cn").html('<pre>'+reqObj.responseText+'</pre>');
+                }
+        };
+        reqObj.send(postData);
+});
+
+
+
+</script>
+
+
+</head>
+<body>
+
+
+<table align=center width=80% border=1 style="background:#eee;">
+<tr><th align=left colspan=2 class=api_title>Test for commonquery_search API</th></tr>
+<tr><td width=10%>Query JSON</td><td>
+<textarea class=commonquery_search name=jsonquery rows=10>
+{
+    "result_type": "protein_list",
+    "complex_query": {
+        "operation": "AND",
+        "query_list": [
+            {
+                "glycan_query": {
+                    "operation": "AND",
+                    "mass_type": "native",
+                    "protein_identifier":"P14210-1"
+                }
+            },
+            {
+                "protein_query": {
+                    "operation": "AND",
+                    "query_type": "search_protein",
+                    "uniprot_canonical_ac": "P1421"
+                }
+            },
+            {
+                "complex_query": {
+                    "operation": "AND",
+                    "query_list": [
+                        {
+                            "glycan_query": {
+                                "mass_type": "native",
+                                "protein_identifier":"P14210-1"
+                            }
+                        },
+                        {
+                            "protein_query": {
+                                "operation": "AND",
+                                "query_type": "search_protein",
+                                "uniprot_canonical_ac": "P1421"
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+} 
+</textarea>
+    </td></tr>
+<tr><td>Post Data (both GET/POST supported)</td><td id=commonquery_search_url style="background:#fff;"></td></tr>
+<tr height=100><td valign=top><input type=submit id=commonquery_search name=btn value="Submit API request"></td>
+	        <td id=commonquery_search_cn style="background:#fff;"></td></tr>
+
+
+
+<tr><th colspan=2 align=left class=api_title>Test for protein_list API</th></tr>
+<tr><td>Search Results ID *</td><td><input id=listid class="protein_list proteinlistid" name=id type=text value=""></td></tr>
+<tr><td>Pagination Offset</td><td><input class=protein_list name=offset type=text value="1"></td></tr>
+<tr><td>Pagination Limit</td><td><input class=protein_list name=limit type=text value="20"></td></tr>
+<tr><td>Sort Field</td><td>
+                
+        <select class=protein_list name=sort>
+            <option value=""></option>
+            <option value="uniprot_canonical_ac" selected>uniprot_canonical_ac</option>
+            <option value="mass">mass</option>
+            <option value="protein_name_long">protein_name_long</option>
+        </select>
+</td></tr>
+<tr><td>Sort Order [asc/desc]</td><td>
+        <select class=protein_list name=order>
+            <option value=""></option>
+            <option value="asc" selected>asc</option>
+            <option value="desc">desc</option>
+        </select>
+</td></tr>
+
+<tr><td>Post Data  (both GET/POST supported)</td><td id=protein_list_url style="background:#fff;"></td></tr>
+<tr><td valign=top><input type=submit id=protein_list name=btn value="Submit API request"></td>
+<td style="background:#fff;"><div style="width:700px;height:300px;overflow:auto;" id=protein_list_cn></div></td></tr>
+
+
+
+
+
+<tr><th colspan=2 align=left class=api_title>Test for glycan_list API</th></tr>
+<tr><td>Search Results ID *</td><td><input id=listid class="glycan_list glycanlistid" name=id type=text value=""></td></tr>
+<tr><td>Pagination Offset</td><td><input class=glycan_list name=offset type=text value="1"></td></tr>
+<tr><td>Pagination Limit</td><td><input class=glycan_list name=limit type=text value="20"></td></tr>
+<tr><td>Sort Field</td><td>
+                <select class=glycan_list name=sort>
+                        <option value=""></option>
+                        <option value="glytoucan_ac" selected>glytoucan_ac</option>
+                        <option value="mass">mass</option>
+                        <option value="mass_pme">mass_pme</option>
+                        <option value="number_enzymes">numer_enzymes</option>
+                        <option value="number_proteins">number_proteins</option>
+                        <option value="number_monosaccharides">number_monosaccharides</option>
+                </select>
+</td></tr>
+<tr><td>Sort Order [asc/desc]</td><td>
+                <select class=glycan_list name=order>
+                        <option value=""></option>
+                        <option value="asc" selected>asc</option>
+                        <option value="desc">desc</option>
+                </select>
+</td></tr>
+<tr><td>Post Data  (both GET/POST supported)</td><td id=glycan_list_url style="background:#fff;"></td></tr>
+<tr><td valign=top><input type=submit id=glycan_list name=btn value="Submit API request"></td>
+<td style="background:#fff;"><div style="width:700px;height:300px;overflow:auto;" id=glycan_list_cn></div></td></tr>
+
+
+
+</table>
+
+</body>
+<html>
