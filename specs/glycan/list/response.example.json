@@ -1,0 +1,142 @@
+{
+   "query": {
+      "operation": "AND",
+      "query_type": "search_glycan",
+      "execution_time": "2008-09-15T15:53:00+05:00",
+      "version": "1.2",
+      "mass_type": "Native",
+      "mass": {
+         "min": 1056,
+         "max": 1500
+      },
+      "number_monosaccharides": {
+         "min": 1,
+         "max": 15
+      },
+      "glycan_type": "N-linked",
+      "glycan_subtype": "N-linked",
+      "organism": {
+         "operation": "AND",
+         "subsumption": true,
+         "organism_list": [
+            {
+               "name": "Homo sapiens",
+               "id": 9606
+            },
+            {
+               "name": "Mus musculus",
+               "id": 10090
+            },
+            {
+               "name": "Rattus norvegicus",
+               "id": 10116
+            }
+         ]
+      },
+      "uniprot_canonical_ac": "P01234",
+      "glycan_motif": "LewisX",
+      "glycan":{
+         "id": "AG56",
+         "subsumption": 1
+      },
+      "enzyme": {
+         "id": "MGAT2",
+         "type": "gene"
+      },
+      "composition": [
+         {
+            "residue": "hex",
+            "min": 0,
+            "max": 100
+         },
+         {
+            "residue": "hexnac",
+            "min": 0,
+            "max": 100
+         },
+         {
+            "residue": "dhex",
+            "min": 0,
+            "max": 100
+         },
+         {
+            "residue": "neuac",
+            "min": 0,
+            "max": 100
+         },
+         {
+            "residue": "neugc",
+            "min": 0,
+            "max": 100
+         },
+         {
+            "residue": "default",
+            "min": 0,
+            "max": 100
+         },
+         {
+            "residue": "other",
+            "min": 0,
+            "max": 100
+         }
+      ]
+   },
+   "pagination": {
+      "offset": 1,
+      "limit": 10,
+      "total_length": 19,
+      "sort": "glytoucan_ac",
+      "order": "asc"
+   },
+   "results_history": [
+      {
+         "execution_time": "2018-09-15T15:53:00+05:00",
+         "result_count": 7000
+      },
+      {
+         "execution_time": "2019-09-15T15:53:00+05:00",
+         "result_count": 8000
+      },
+      {
+         "execution_time": "2020-09-15T15:53:00+05:00",
+         "result_count": 9600
+      }
+   ],
+   "query_error": [
+      {
+         "key": "glytoucan_ac",
+         "value": "G89290XU"
+      },
+      {
+         "key": "glytoucan_ac",
+         "value": "G89290XM"
+      },
+      {
+         "key": "glytoucan_ac",
+         "value": "G89290XU"
+      }
+   ],
+   "results": [
+        {
+      "glytoucan_ac": "G17689DH", 
+      "mass": 2368.84, 
+      "iupac": "alpha-D-NeupAc-(2->3)-beta-D-Galp-(1->4)-beta-D-GlcpNAc-(1->2)-alpha-D-Manp-(1->3)[alpha-D-NeupAc-(2->3)-beta-D-Galp-(1->4)-beta-D-GlcpNAc-(1->2)-alpha-D-Manp-(1->6)]-beta-D-Manp-(1->4)-beta-D-GlcpNAc-(1->4)[alpha-L-Fucp-(1->6)]-beta-D-GlcpNAc(1->", 
+      "wurcs": "WURCS=2.0/6,12,11/[a2122h-1b_1-5_2*NCC/3=O][a1122h-1b_1-5][a1122h-1a_1-5][a2112h-1b_1-5][Aad21122h-2a_2-6_5*NCC/3=O][a1221m-1a_1-5]/1-1-2-3-1-4-5-3-1-4-5-6/a4-b1_a6-l1_b4-c1_c3-d1_c6-h1_d2-e1_e4-f1_f3-g2_h2-i1_i4-j1_j3-k2", 
+      "glycoct": "RES 1b:b-dglc-HEX-1:5 2s:n-acetyl 3b:b-dglc-HEX-1:5 4s:n-acetyl 5b:b-dman-HEX-1:5 6b:a-dman-HEX-1:5 7b:b-dglc-HEX-1:5 8s:n-acetyl 9b:b-dgal-HEX-1:5 10b:a-dgro-dgal-NON-2:6|1:a|2:keto|3:d 11s:n-acetyl 12b:a-dman-HEX-1:5 13b:b-dglc-HEX-1:5 14s:n-acetyl 15b:b-dgal-HEX-1:5 16b:a-dgro-dgal-NON-2:6|1:a|2:keto|3:d 17s:n-acetyl 18b:a-lgal-HEX-1:5|6:d LIN 1:1d(2+1)2n 2:1o(4+1)3d 3:3d(2+1)4n 4:3o(4+1)5d 5:5o(3+1)6d 6:6o(2+1)7d 7:7d(2+1)8n 8:7o(4+1)9d 9:9o(3+2)10d 10:10d(5+1)11n 11:5o(6+1)12d 12:12o(2+1)13d 13:13d(2+1)14n 14:13o(4+1)15d 15:15o(3+2)16d 16:16d(5+1)17n 17:1o(6+1)18d", 
+      "classification": "N-glycan/complex", 
+      "glycoprotein": "P14210-1; P0DN86-1; P07911-1; P01588-1; P07911-1; P17050-1; P17050-1; P14210-1; P0DN86-1; P17050-1; P07911-1; P01730-1; P01730-1; P07911-1; P00750-1; P14210-1; P07911-1; P40225-1; P01588-1; P01574-1; P07911-1; P02788-1; P14210-1; P17050-1; P02788-1; Q63345-1; P17050-1; P07911-1; P01588-1", 
+      "enzyme": "Q9H3H5-1; Q9Y274-1; Q9Z2Y2-1; Q9NP73-1; O60512-1; P15535-1; Q9WTS2-1; Q9BYC5-1; Q8VIB3-1; P27808-1; Q11206-1; Q10469-1; Q11203-1; Q9DBE8-1; P97325-1; Q96F25-1; Q9D8C3-1; Q9D081-1; Q921V5-1; Q921Q3-1; Q8BML3-1; P26572-1; Q9BT22-1; Q9H553-1; Q91Y74-1; P42867-1; P15291-1; Q91YY2-1; O60909-1", 
+      "mass_pme": 2943.48, 
+      "inchi_key": "YWJPMIROECFZJW-YBQNOACISA-N", 
+      "publication": "7774715; 9061366; 468798; 24090084; 8407880; 10052594; 10092871; 8969451; 8687384; 8942648; 10764840; 8477709; 2390069; 1820200; 2513186; 1482348; 10704524; 2298213; 3667593; 1374031; 3179269; 12151713; 11805077; 10918037; 2592374; 8460945; 2550193; 2001369; 2813359; 2136357; 9884403; 2226797; 9449027; 10988252; 11278492; 7068558; 1929437", 
+      "number_enzymes": 15, 
+      "number_proteins": 11, 
+      "glycam": "DNeup5Aca2-3DGalpb1-4DGlcpNAcb1-2DManpa1-3[DNeup5Aca2-3DGalpb1-4DGlcpNAcb1-2DManpa1-6]DManpb1-4DGlcpNAcb1-4[LFucpa1-6]DGlcpNAcb1-", 
+      "number_monosaccharides": 12, 
+      "motifs": "GGM.000052; GGM.000001; GGM.000034", 
+      "inchi": "InChI=1S/C90H148N6O66/c1-21-47(116)59(128)62(131)81(142-21)140-20-40-69(55(124)43(77(135)143-40)93-24(4)108)152-78-44(94-25(5)109)56(125)66(36(16-103)148-78)153-82-63(132)72(156-86-76(61(130)51(120)33(13-100)147-86)158-80-46(96-27(7)111)58(127)68(38(18-105)150-80)155-84-65(134)74(53(122)35(15-102)145-84)162-90(88(138)139)9-29(113)42(92-23(3)107)71(160-90)49(118)31(115)11-98)54(123)39(151-82)19-141-85-75(60(129)50(119)32(12-99)146-85)157-79-45(95-26(6)110)57(126)67(37(17-104)149-79)154-83-64(133)73(52(121)34(14-101)144-83)161-89(87(136)137)8-28(112)41(91-22(2)106)70(159-89)48(117)30(114)10-97/h21,28-86,97-105,112-135H,8-20H2,1-7H3,(H,91,106)(H,92,107)(H,93,108)(H,94,109)(H,95,110)(H,96,111)(H,136,137)(H,138,139)/t21-,28-,29-,30+,31+,32+,33+,34+,35+,36+,37+,38+,39+,40+,41+,42+,43+,44+,45+,46+,47+,48+,49+,50+,51+,52-,53-,54+,55+,56+,57+,58+,59+,60-,61-,62-,63-,64+,65+,66+,67+,68+,69+,70+,71+,72-,73-,74-,75-,76-,77+,78-,79-,80-,81+,82-,83-,84-,85-,86+,89-,90-/m0/s1", 
+        "composition": "hexnac (4); dhex (1); neuac (2); hex (5)",
+        "hit_score":20.0
+      }
+   ]
+}

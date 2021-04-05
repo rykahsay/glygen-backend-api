@@ -1,0 +1,50 @@
+Introduction:
+=============
+This webform is used to initialize the dynamic components of the statistics page:
+    "sunb_bio_molecules",
+    "venn_glycan_species",
+    "sunb_glycan_type_subtype",
+    "sunb_glycan_organism_type",
+    "donut_motif",
+    "bar_mass_ranges",
+    "bar_sugar_ranges",
+    "sunb_canon_isof_prot",
+    "venn_protein_homo",
+    "venn_protein_mus",
+    "venn_protein_rat",
+    "pie_glycohydrolases_prot",
+    "pie_glycosyltransferases_prot",
+    "sunb_glycoprot_rep_pred_glyc"
+
+Web service call: 
+=================
+HTTP Request method		GET
+
+
+Function:
+=========
+Web service returns initial information used to populate the statistics page.
+
+Response:
+=========
+Content						JSON
+HTTP Content Type			application/json
+Access-Control-Allow-Origin	*
+
+Warning:
+========
+To all Cross-Origin Resource Sharing (CORS) the web service has to allow all domains access. 
+Otherwise browsers will not permit to call this web service by a webpage. 
+Therefore the HTTP response header must contain the appropriate Access-Control-Allow-Origin statement.
+
+Note:
+=====
+An example JSON is available separately and the JSON data structure is documented in a JSON schema.
+
+General error codes:
+====================
+{
+    "open-connection-failed": "Unable to connect to database."
+}
+
+

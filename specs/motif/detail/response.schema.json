@@ -1,0 +1,269 @@
+{
+    "$schema": "http://json-schema.org/schema#", 
+    "required": [], 
+    "type": "object", 
+    "properties": {
+        "pagination": {
+            "description": "", 
+            "required": [], 
+            "type": "object", 
+            "properties": {
+                "sort": {
+                    "type": "string", 
+                    "description": "", 
+                    "title": ""
+                }, 
+                "total_length": {
+                    "type": "integer", 
+                    "description": "", 
+                    "title": ""
+                }, 
+                "limit": {
+                    "type": "integer", 
+                    "description": "", 
+                    "title": ""
+                }, 
+                "order": {
+                    "type": "string", 
+                    "description": "", 
+                    "title": ""
+                }, 
+                "offset": {
+                    "type": "integer", 
+                    "description": "", 
+                    "title": ""
+                }
+            }, 
+            "title": ""
+        }, 
+        "motif": {
+            "description": "", 
+            "required": [], 
+            "type": "object", 
+            "properties": {
+                "url": {
+                    "type": "string", 
+                    "description": "", 
+                    "title": ""
+                }, 
+                "glytoucan_ac": {
+                    "type": "string", 
+                    "description": "", 
+                    "title": ""
+                }, 
+                "accession": {
+                    "type": "string", 
+                    "description": "", 
+                    "title": ""
+                }
+            }, 
+            "title": ""
+        }, 
+        "name": {
+            "type": "string", 
+            "description": "", 
+            "title": ""
+        }, 
+        "results": {
+            "items": {
+                "required": [], 
+                "type": "object", 
+                "properties": {
+                    "number_monosaccharides": {
+                        "type": "integer", 
+                        "description": "", 
+                        "title": ""
+                    }, 
+                    "glycoct": {
+                        "type": "string", 
+                        "description": "", 
+                        "title": ""
+                    }, 
+                    "number_enzymes": {
+                        "type": "integer", 
+                        "description": "", 
+                        "title": ""
+                    }, 
+                    "number_proteins": {
+                        "type": "integer", 
+                        "description": "", 
+                        "title": ""
+                    }, 
+                    "mass": {
+                        "type": "number", 
+                        "description": "", 
+                        "title": ""
+                    }, 
+                    "glytoucan_ac": {
+                        "type": "string", 
+                        "description": "", 
+                        "title": ""
+                    }, 
+                    "iupac": {
+                        "type": "string", 
+                        "description": "", 
+                        "title": ""
+                    }
+                }
+            }, 
+            "type": "array", 
+            "description": "", 
+            "title": ""
+        }, 
+        "mass": {
+            "type": "number", 
+            "description": "", 
+            "title": ""
+        }, 
+        "publication": {
+            "items": {
+                "required": [], 
+                "type": "object", 
+                "properties": {
+                    "reference": {
+                        "items": {
+                            "required": [], 
+                            "type": "object", 
+                            "properties": {
+                                "url": {
+                                    "type": "string", 
+                                    "description": "", 
+                                    "title": ""
+                                }, 
+                                "type": {
+                                    "type": "string", 
+                                    "description": "", 
+                                    "title": ""
+                                }, 
+                                "id": {
+                                    "type": "string", 
+                                    "description": "", 
+                                    "title": ""
+                                }
+                            }
+                        }, 
+                        "type": "array", 
+                        "description": "", 
+                        "title": ""
+                    }, 
+                    "title": {
+                        "type": "string", 
+                        "description": "", 
+                        "title": ""
+                    }, 
+                    "journal": {
+                        "type": "string", 
+                        "description": "", 
+                        "title": ""
+                    }, 
+                    "evidence": {
+                        "items": {
+                            "required": [], 
+                            "type": "object", 
+                            "properties": {
+                                "url": {
+                                    "type": "string", 
+                                    "description": "", 
+                                    "title": ""
+                                }, 
+                                "id": {
+                                    "type": "string", 
+                                    "description": "", 
+                                    "title": ""
+                                }, 
+                                "database": {
+                                    "type": "string", 
+                                    "description": "", 
+                                    "title": ""
+                                }
+                            }
+                        }, 
+                        "type": "array", 
+                        "description": "", 
+                        "title": ""
+                    }, 
+                    "authors": {
+                        "type": "string", 
+                        "description": "", 
+                        "title": ""
+                    }, 
+                    "date": {
+                        "type": "string", 
+                        "description": "", 
+                        "title": ""
+                    }
+                }
+            }, 
+            "type": "array", 
+            "description": "", 
+            "title": ""
+        }, 
+        "query": {
+            "description": "", 
+            "required": [], 
+            "type": "object", 
+            "properties": {
+                "sort": {
+                    "type": "string", 
+                    "description": "", 
+                    "title": ""
+                }, 
+                "glytoucan_ac": {
+                    "type": "string", 
+                    "description": "", 
+                    "title": ""
+                }, 
+                "limit": {
+                    "type": "integer", 
+                    "description": "", 
+                    "title": ""
+                }, 
+                "order": {
+                    "type": "string", 
+                    "description": "", 
+                    "title": ""
+                }, 
+                "offset": {
+                    "type": "integer", 
+                    "description": "", 
+                    "title": ""
+                }
+            }, 
+            "title": ""
+        }, 
+        "synonym": {
+            "items": {
+                "type": "string"
+            }, 
+            "type": "array", 
+            "description": "", 
+            "title": ""
+        }, 
+        "crossref": {
+            "items": {
+                "required": [], 
+                "type": "object", 
+                "properties": {
+                    "url": {
+                        "type": "string", 
+                        "description": "", 
+                        "title": ""
+                    }, 
+                    "id": {
+                        "type": "string", 
+                        "description": "", 
+                        "title": ""
+                    }, 
+                    "database": {
+                        "type": "string", 
+                        "description": "", 
+                        "title": ""
+                    }
+                }
+            }, 
+            "type": "array", 
+            "description": "", 
+            "title": ""
+        }
+    }
+}

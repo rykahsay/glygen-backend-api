@@ -1,0 +1,28 @@
+{
+   "definitions":{
+   },
+   "$schema":"http://json-schema.org/draft-07/schema#",
+   "$id":"http://api.glygen.org/log/init/request",
+   "type":"object",
+   "title":"The log message init query schema",
+   "properties":{
+      "start_date":{
+         "$id":"#/properties/start_date",
+         "type":"string",
+         "description":"Start date of the query. Only logs after this date will be included. The date is specified in ISO 8601.",
+         "examples":[
+            "2008-09-15T15:53:00+05:00"
+         ],
+         "pattern":"^(.*)$"
+      },
+      "end_date":{
+         "$id":"#/properties/end_date",
+         "type":"string",
+         "description":"End date of the query. Only logs before the date will be included. The date is specified in ISO 8601.",
+         "examples":[
+            "2008-09-15T15:53:00+05:00"
+         ],
+         "pattern":"^(.*)$"
+      }
+   }
+}

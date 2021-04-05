@@ -1,0 +1,38 @@
+<IfModule mod_headers.c>
+	Header set Access-Control-Allow-Origin "*"
+</IfModule>
+
+RewriteEngine on
+#RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule ^(idmapping)/(search_init|search|list)/?$ /cgi-bin/idmapping.cgi/$1/$2/ [L]
+RewriteRule ^(supersearch)/(search_init|search|reason|list)/?$ /cgi-bin/supersearch.cgi/$1/$2/ [L]
+RewriteRule ^(site)/(detail)/?$ /cgi-bin/site.cgi/$1/$2/empty/ [L]
+RewriteRule ^(site)/(detail)/(.*)/?$ /cgi-bin/site.cgi/$1/$2/$3/ [L]
+RewriteRule ^(site)/(search_init)/?$ /cgi-bin/site.cgi/$1/$2/ [L]
+RewriteRule ^(misc)/(gtclist|verlist|bcolist|testurls|testrecords|messagelist|propertylist|pathlist|validate)/?$ /cgi-bin/misc.cgi/$1/$2/ [L]
+RewriteRule ^(commonquery)/(search)/?$ /cgi-bin/commonquery.cgi/$1/$2/ [L]
+#RewriteRule ^(swagger)/(glycan_search|protein_search)/?$ /cgi-bin/swagger.cgi/$1/$2/ [L]
+
+RewriteRule ^(motif)/(detail|list)/?$ /cgi-bin/motif.cgi/$1/$2/ [L]
+RewriteRule ^(directsearch)/(protein|gene|glycan|glycan_to_biosynthesis_enzymes|glycan_to_glycoproteins|biosynthesis_enzyme_to_glycans|protein_to_homologs|species_to_glycosyltransferases|species_to_glycohydrolases|species_to_glycoproteins|disease_to_glycosyltransferases)/?$ /cgi-bin/directsearch.cgi/$1/$2/ [L]
+
+RewriteRule ^(globalsearch)/(search)/?$ /cgi-bin/globalsearch.cgi/$1/$2/ [L]
+RewriteRule ^(log)/(init|logging|access|grouped)/?$ /cgi-bin/log.cgi/$1/$2/ [L]
+RewriteRule ^(data)/(download)/?$ /cgi-bin/data.cgi/$1/$2/ [L]
+RewriteRule ^(pages)/(home_init)/?$ /cgi-bin/pages.cgi/$1/$2/ [L]
+RewriteRule ^(auth)/(register|userid|userinfo|userupdate|login|tokenstatus|contact|contactdelete|contactupdate|contactlist)/?$ /cgi-bin/auth.cgi/$1/$2/ [L]
+RewriteRule ^(event)/(addnew|update|list|detail|delete)/?$ /cgi-bin/event.cgi/$1/$2/ [L]
+RewriteRule ^(typeahead|categorized_typeahead)/?$ /cgi-bin/typeahead.cgi/$1/ [L]
+RewriteRule ^(glycan)/(search_init|search_simple|search|list)/?$ /cgi-bin/glycan.cgi/$1/$2/ [L]
+RewriteRule ^(glycan)/(detail|image)/?$ /cgi-bin/glycan.cgi/$1/$2/empty/ [L]
+RewriteRule ^(glycan)/(detail|image)/(.*)/?$ /cgi-bin/glycan.cgi/$1/$2/$3/ [L]
+RewriteRule ^(protein)/(search_init|search_simple|search|list|alignment)/?$ /cgi-bin/protein.cgi/$1/$2/ [L]
+RewriteRule ^(protein)/(detail)/?$ /cgi-bin/protein.cgi/$1/$2/empty/ [L]
+RewriteRule ^(protein)/(detail)/(.*)/?$ /cgi-bin/protein.cgi/$1/$2/$3/ [L]
+RewriteRule ^(usecases)/(search_init|genelocus_list|ortholog_list|glycosequon_list|disease_to_glycosyltransferases)/?$ /cgi-bin/usecases.cgi/$1/$2/ [L]
+RewriteRule ^(usecases)/(species_to_glycosyltransferases|species_to_glycohydrolases|protein_to_orthologs|protein_to_motifs)/(.*)/?$ /cgi-bin/usecases.cgi/$1/$2/$3/ [L]
+RewriteRule ^(usecases)/(.*)/(.*)/(.*)/?$ /cgi-bin/usecases.cgi/$1/$2/$3/$4/ [L]
+
+
+

@@ -1,0 +1,40 @@
+Introduction:
+=============
+
+
+Web service call: 
+=================
+
+
+Function:
+=========
+
+Response:
+=========
+
+
+Warning:
+========
+
+Note:
+=====
+
+
+
+General error codes:
+====================
+{
+    "open-connection-failed": "Unable to connect to database."
+}
+
+
+Input error codes:
+==================
+{
+    "missing-parameter":"one of the required parameter."
+    ,"invalid-parameter-value":"one of the required parameter has invalid value."
+    ,"invalid-parameter-value-length":"one of the required parameter value is too long"
+}
+
+
+

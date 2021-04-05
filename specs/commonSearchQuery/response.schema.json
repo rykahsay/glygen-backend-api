@@ -1,0 +1,79 @@
+{
+   "$id": "http://example.com/example.json",
+   "type": "object",
+   "properties": {
+      "list_id": {
+         "$id": "#/properties/list_id",
+         "type": "string",
+         "description": "If the search was successful the ID of the result list is returned based on result type.",
+         "examples": [
+            "ABV1234MN56BN"
+         ]
+      },
+      "count_list": {
+         "$id": "#/properties/count_list",
+         "type": "array",
+         "description": "If the search was successful count list is returned based on result type.",
+         "items": {
+            "name": {
+               "$id": "#/properties/count_list/items/name",
+               "type": "string",
+               "description": "If the search was successful then name is returned.",
+               "examples": [
+                  "glycan",
+                  "protein",
+                  "glycoprotein",
+                  "organism",
+                  "gene",
+                  "pathway",
+                  "enzyme"
+               ]
+            },
+            "count": {
+               "$id": "#/properties/count_list/items/count",
+               "type": "integer",
+               "description": "If the search was successful then count is returned.",
+               "examples": [
+                  300,
+                  1000,
+                  300,
+                  3,
+                  300,
+                  499,
+                  20
+               ]
+            }
+         },
+         "required": [
+            "name",
+            "count"
+         ]
+      },
+      "error_code": {
+         "$id": "#/properties/error_code",
+         "type": "string",
+         "description": "If the search fails an error code is send back instead of the list ID or count list.",
+         "default": "",
+         "examples": [
+            "ABV1234MN56BN"
+         ]
+      }
+   },
+   "oneOf": [
+      {
+         "required": [
+            "list_id"
+         ]
+      },
+      {
+         "required": [
+            "count_list"
+         ]
+      },
+      {
+         "required": [
+            "error_code"
+         ]
+      }
+   ]
+}

@@ -1,0 +1,36 @@
+{
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "description": "Object storing information about type ahead response.",
+    "properties": {
+        "field": {
+            "$id": "/properties/field",
+            "type": "string",
+            "description": "Specifies field name for the type ahead response.",
+            "examples": [
+                "go_term"
+            ]
+        },
+        "value": {
+            "$id": "/properties/value",
+            "type": "string",
+            "description": "Specifies value for the type ahead response.",
+            "examples": [
+                "mitochondrion"
+            ]
+        },
+        "limit": {
+            "$id": "/properties/limit",
+            "type": "integer",
+            "description": "Total number of entries in the type ahead response.",
+            "examples": [
+                20
+            ]
+        }
+    },
+    "required": [
+        "field",
+        "value",
+        "limit"
+    ]
+}

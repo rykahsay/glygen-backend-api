@@ -1,0 +1,91 @@
+{
+    "$schema": "http://json-schema.org/schema#", 
+    "required": [], 
+    "type": "object", 
+    "properties": {
+        "similar position": {
+            "type": "integer", 
+            "description": "", 
+            "title": ""
+        }, 
+        "uniprot_canonical_ac": {
+            "type": "string", 
+            "description": "", 
+            "title": ""
+        }, 
+        "algorithm": {
+            "description": "", 
+            "required": [], 
+            "type": "object", 
+            "properties": {
+                "url": {
+                    "type": "string", 
+                    "description": "", 
+                    "title": ""
+                }, 
+                "parameter": {
+                    "type": "string", 
+                    "description": "", 
+                    "title": ""
+                }, 
+                "name": {
+                    "type": "string", 
+                    "description": "", 
+                    "title": ""
+                }
+            }, 
+            "title": ""
+        }, 
+        "protein name": {
+            "type": "string", 
+            "description": "", 
+            "title": ""
+        }, 
+        "identical position": {
+            "type": "integer", 
+            "description": "", 
+            "title": ""
+        }, 
+        "identity": {
+            "type": "string", 
+            "description": "", 
+            "title": ""
+        }, 
+        "sequences": {
+            "items": {
+                "required": [], 
+                "type": "object", 
+                "properties": {
+                    "protein name": {
+                        "type": "string", 
+                        "description": "", 
+                        "title": ""
+                    }, 
+                    "uniprot_ac": {
+                        "type": "string", 
+                        "description": "", 
+                        "title": ""
+                    }, 
+                    "sequence": {
+                        "type": "string", 
+                        "description": "", 
+                        "title": ""
+                    }
+                }
+            }, 
+            "type": "array", 
+            "description": "", 
+            "title": ""
+        }, 
+        "date": {
+            "type": "string", 
+            "description": "", 
+            "title": ""
+        }, 
+        "alignment": {
+            "type": "string", 
+            "description": "", 
+            "title": ""
+        }
+    }
+}

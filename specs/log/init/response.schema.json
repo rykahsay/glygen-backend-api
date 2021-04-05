@@ -1,0 +1,80 @@
+{
+    "$schema": "http://json-schema.org/schema#", 
+    "required": [], 
+    "type": "object", 
+    "properties": {
+        "pages": {
+            "items": {
+                "required": [], 
+                "type": "object", 
+                "properties": {
+                    "access": {
+                        "type": "integer", 
+                        "description": "", 
+                        "title": ""
+                    }, 
+                    "page": {
+                        "type": "string", 
+                        "description": "", 
+                        "title": ""
+                    }, 
+                    "error": {
+                        "type": "integer", 
+                        "description": "", 
+                        "title": ""
+                    }
+                }
+            }, 
+            "type": "array", 
+            "description": "", 
+            "title": ""
+        }, 
+        "types": {
+            "items": {
+                "required": [], 
+                "type": "object", 
+                "properties": {
+                    "type": {
+                        "type": "string", 
+                        "description": "", 
+                        "title": ""
+                    }, 
+                    "number": {
+                        "type": "integer", 
+                        "description": "", 
+                        "title": ""
+                    }
+                }
+            }, 
+            "type": "array", 
+            "description": "", 
+            "title": ""
+        }, 
+        "users": {
+            "items": {
+                "required": [], 
+                "type": "object", 
+                "properties": {
+                    "access": {
+                        "type": "integer", 
+                        "description": "", 
+                        "title": ""
+                    }, 
+                    "user": {
+                        "type": "string", 
+                        "description": "", 
+                        "title": ""
+                    }, 
+                    "error": {
+                        "type": "integer", 
+                        "description": "", 
+                        "title": ""
+                    }
+                }
+            }, 
+            "type": "array", 
+            "description": "", 
+            "title": ""
+        }
+    }
+}

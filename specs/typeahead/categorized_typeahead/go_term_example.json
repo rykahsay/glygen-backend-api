@@ -1,0 +1,18 @@
+[
+    { "label": "axoneme", "category": "" },
+    { "label": "beta-catenin destruction complex", "category": "" },
+    { "label": "biological adhesion", "category": "" },
+    { "label": "carbamoyl-phosphate synthase complex", "category": "" },
+    { "label": "galactitol transport", "category": "Biological Process" },
+    { "label": "glucose transmembrane transport", "category": "Biological Process" },
+    { "label": "monosaccharide transmembrane transport", "category": "Biological Process" },
+    { "label": "uronic acid transmembrane transport", "category": "Biological Process" },
+    { "label": "microbody", "category": "Cellular Component" },
+    { "label": "mitochondrion", "category": "Cellular Component" },
+    { "label": "mitosome", "category": "Cellular Component" },
+    { "label": "neurofilament", "category": "Cellular Component" },
+    { "label": "amino acid binding", "category": "Molecular Function" },
+    { "label": "large ribosomal subunit rRNA binding", "category": "Molecular Function" },
+    { "label": "regulatory region RNA binding", "category": "Molecular Function" },
+    { "label": "RNA cap binding", "category": "Molecular Function" }
+]

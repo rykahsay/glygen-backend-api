@@ -1,0 +1,52 @@
+Introduction:
+=============
+This WS is used to generate the download files in the different required formats.
+
+Web service call: 
+=================
+HTTP Request method		POST
+
+
+Function:
+=========
+Web service will generate the download file or an HTTP error code.
+
+Response:
+=========
+Content						multiple, depending on the user request
+HTTP Content Type			multiple, depending on the file formats
+Access-Control-Allow-Origin	*
+
+Warning:
+========
+To all Cross-Origin Resource Sharing (CORS) the web service has to allow all domains access. Otherwise browsers will not permit to call this web service by a webpage. Therefore the HTTP response header must contain the appropriate Access-Control-Allow-Origin statement.
+
+Note:
+=====
+An example JSON is available separately and the JSON data structure is documented in a JSON schema.
+
+
+
+General error codes:
+====================
+{
+    "open-connection-failed": "Unable to connect to database."
+}
+
+
+Input error codes:
+==================
+{
+    "invalid-query-json":"Submitted query JSON is not valid"
+    ,"missing-query-key-in-query-json":"query property is missing in query JSON"
+    ,"unexpected-field-in-query":"Unexpected field in query JSON."
+    ,"missing-parameter":"one of the required parameter."
+    ,"invalid-parameter-value":"one of the required parameter has invalid value."
+    ,"invalid-parameter-value-length":"one of the required parameter value is too long"
+    ,"non-existent-search-results":"no search results exist for the submitted ID"
+    ,"download-type-not-supported":"submitted download type is not supported"
+    ,"download-type-format-combination-not-supported":"submitted type-format combination is not supported"
+    ,"non-existent-mime-type-for-submitted-format":"File format is not mapped to mime type"
+}
+
+

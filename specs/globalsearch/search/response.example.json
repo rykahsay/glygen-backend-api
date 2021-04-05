@@ -1,0 +1,59 @@
+{
+   "exact_match": [
+      {
+         "type": "glycan",
+         "name": "G17689DH",
+         "id": "G17689DH"
+      },
+      {
+         "type": "protein",
+         "name": "Hepatocyte growth factor",
+         "id": "P14210-1"
+      }
+   ],
+   "other_matches": {
+      "total_match_count": 7,
+      "glycan": {
+         "all_glycans":{
+            "count": 6,
+            "list_ID": ""
+         },
+         "N-glycan": {
+            "count": 3,
+            "list_ID": ""
+         },
+         "O-glycan": {
+            "count": 0,
+            "list_ID": ""
+         }
+      },
+      "protein": {
+         "all_proteins":{
+            "count": 10,
+            "list_ID": ""
+         },
+         "gene": {
+            "count": 0,
+            "list_ID": ""
+         },
+         "Function": {
+            "count": 4,
+            "list_ID": ""
+         }
+      },
+      "glycoprotein": {
+         "all_glycoproteins":{
+            "count": 2,
+            "list_ID": ""
+         },
+         "gene": {
+            "count": 2,
+            "list_ID": ""
+         },
+         "Function": {
+            "count": 0,
+            "list_ID": ""
+         }
+      }
+   }
+}

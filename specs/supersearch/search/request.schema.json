@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#", 
+  "definitions": {
+    "aggregated_query": {
+      "type": "object",
+      "properties": {
+        "aggregator": { "type": "string" },
+        "unaggregated_list": {
+            "type": "array",
+            "items": {
+                "properties": {
+                    "order":{ "type": "integer" },
+                    "path": { "type": "string" },
+                    "operator": { "type": "string" },
+                    "string_value": { "type": "string" },
+                    "numeric_value": { "type": "integer" }
+                },
+                "oneOf": [
+                    {"required":["path", "operator", "string_value"]},
+                    {"required":["path", "operator", "numeric_value"]}
+                ],
+                "additionalProperties": false
+            },
+            "default": []
+        },
+        "aggregated_list": { 
+            "type": "array",
+            "items": {"$ref": "#/definitions/aggregated_query"},
+            "default": []
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  
+  "type": "array",
+  "items": {
+    "properties": {
+        "concept": { "type": "string"},
+        "query": { "$ref": "#/definitions/aggregated_query" },
+        "additionalProperties": false
+    },
+    "additionalProperties": false
+   }    
+}

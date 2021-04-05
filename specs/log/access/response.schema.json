@@ -1,0 +1,48 @@
+{
+    "$schema": "http://json-schema.org/schema#", 
+    "required": [], 
+    "type": "object", 
+    "properties": {
+        "logs": {
+            "items": {
+                "required": [], 
+                "type": "object", 
+                "properties": {
+                    "created": {
+                        "type": "string", 
+                        "description": "", 
+                        "title": ""
+                    }, 
+                    "id": {
+                        "type": "string", 
+                        "description": "", 
+                        "title": ""
+                    }, 
+                    "user": {
+                        "type": "string", 
+                        "description": "", 
+                        "title": ""
+                    }, 
+                    "message": {
+                        "type": "string", 
+                        "description": "", 
+                        "title": ""
+                    }, 
+                    "type": {
+                        "type": "string", 
+                        "description": "", 
+                        "title": ""
+                    }, 
+                    "page": {
+                        "type": "string", 
+                        "description": "", 
+                        "title": ""
+                    }
+                }
+            }, 
+            "type": "array", 
+            "description": "", 
+            "title": ""
+        }
+    }
+}

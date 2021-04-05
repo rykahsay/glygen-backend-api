@@ -1,0 +1,14 @@
+[
+  {
+    "createdts": "2020-07-30 17:59:56 ", 
+    "description": "some description", 
+    "end_date": "some end date", 
+    "id": "5f2342dcf5c47b36f20b0726", 
+    "start_date": "some start date", 
+    "title": "some title", 
+    "updatedts": "2020-07-30 17:59:56 ", 
+    "venue": "some venue", 
+    "visibility": "visible"
+  }
+]
+

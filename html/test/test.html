@@ -1,0 +1,90 @@
+<html>
+<head>
+<link rel="stylesheet" href="styles.css" type="text/css">
+<script language="javascript" src="jquery.min.js"></script>
+<script>
+var htmlRoot = ""
+
+$(document ).ready(function() {
+
+});
+
+
+
+///////////////////////////////////
+$(document).on('click', '#submitfile', function (event) {
+    event.preventDefault();
+
+    var query = {
+        "recordtype":"glycan",
+        "input_namespace":"PubChem Compound", 
+        "output_namespace":"ChEBI",
+        "input_idlist":"91859018,91845230,91845682,439177,XYZ"
+    };
+
+    var file = $('#userfile')[0].files[0];
+    var formData = new FormData();
+    formData.append("userfile", file);
+
+    var sizeLimit = 1000000000;
+    if (file.size > sizeLimit){ 
+        var msg = 'Your submitted file is ' + file.size + ' Bytes big. ';
+        msg += 'This exceeds maximum allowed file size of ' + sizeLimit + ' Bytes.';
+        alert(msg);
+        return;
+    }
+
+    let xhr = new XMLHttpRequest();
+    // track upload progress
+    //xhr.upload.onprogress = function(event) {
+        //console.log(`Uploaded ${event.loaded} of ${event.total}`);
+    //};
+
+    // track completion: both successful or not
+    xhr.onloadend = function() {
+        if (xhr.status == 200) {
+            //console.log(xhr.responseText);
+            resJson = JSON.parse(xhr.responseText);
+        } else {
+            console.log("error " + this.status);
+        }
+    };
+    var url = '/idmapping/search';
+
+    xhr.open("POST", url);
+    xhr.send(formData);
+    console.log(formData);
+
+});
+
+
+
+</script>
+
+</head>
+<body>
+
+
+<table width=90% align=center border=1>
+<tr>
+    <td style="padding-top:20px;padding-left:40px;font-style:italic;width:350px;">
+        Select format<br>
+        <select id=fileformat name=fileformat style="width:100%;">
+            <option value="csv">Comma Separated Values (CSV)</option>
+            <option value="tsv">Tab Separated Values (TSV)</option>
+            </select>
+    </td>
+    <td style="padding-top:20px;padding-left:20px;font-style:italic;">
+        Select file<br>
+        <input id=userfile type='file' name='userfile'/>
+    </td>
+</tr>
+
+<tr><td colspan=2><input id=submitfile type='submit' value='Submit File'/></td></tr>
+
+</table>
+
+
+
+</body>
+<html>

@@ -1,0 +1,12 @@
+{
+   "error_list": [
+     {
+       "field": "term", 
+       "error_code": "missing-parameter"
+     }, 
+     {
+       "field": "term_category", 
+       "error_code": "missing-parameter"
+     }
+   ]
+ }

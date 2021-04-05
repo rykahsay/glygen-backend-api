@@ -1,0 +1,26 @@
+{
+    "pages": [
+        {
+            "access": 1, 
+            "page": "index.html", 
+            "error": 1
+        }
+    ], 
+    "types": [
+        {
+            "type": "user", 
+            "number": 1
+        }, 
+        {
+            "type": "error", 
+            "number": 1
+        }
+    ], 
+    "users": [
+        {
+            "access": 1, 
+            "user": "Undecided", 
+            "error": 1
+        }
+    ]
+}

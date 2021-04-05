@@ -1,0 +1,61 @@
+Introduction:
+=============
+This webservice is used to provide type ahead proposals for webforms. Depending on the user input and the specified type proposals are made by selecting all terms of a certain type and perform a substring search based on the user input. 
+
+Web service call: 
+=================
+HTTP Request method		POST
+Variables	field		Type of term to look for and propose (list is defined below)
+		value		user specified substring to filter the results by.
+
+Possible values for field:
+- protein = Propose proteins. Input and results are Uniprot protein ID.
+- enzyme = Propse enzyme. Input and results are Uniprot protein ID.
+- motif = Propose glycan motifs. Input and results are glycan motif names.
+- glycan = Propose glycans. Input and results are GlyTouCan glycan ID.
+- pathway = Propose pathway names. Input and results are Pathway names.
+- pname = Propose protein names. Input and results are Uniprot protein names.
+- gene = Propose protein gene names. Input and results are Uniprot gene names.
+- disease = Disease name. 
+- refseq = RefSeq IDs.
+- go_id = Propose protein go IDs. Input and results are go ID.
+- pmid = Propose protein Pubmed ID. Input and results are Pubmed ID.
+
+Function:
+=========
+Web service returns the list of strings of a certain type that match the user defined substrings.
+
+
+Response:
+=========
+Content						JSON
+HTTP Content Type			application/json
+Access-Control-Allow-Origin	*
+
+Warning:
+========
+To all Cross-Origin Resource Sharing (CORS) the web service has to allow all domains access. Otherwise browsers will not permit to call this web service by a webpage. Therefore the HTTP response header must contain the appropriate Access-Control-Allow-Origin statement.
+
+Note:
+=====
+An example JSON is available separately and the JSON data structure is documented in a JSON schema.
+
+General error codes:
+====================
+{
+    "open-connection-failed": "Unable to connect to database."
+}
+
+
+Input error codes:
+==================
+{
+    "invalid-query-json":"Submitted query JSON is not valid"
+    ,"missing-query-key-in-query-json":"query property is missing in query JSON"
+    ,"unexpected-field-in-query":"Unexpected field in query JSON."
+    ,"missing-parameter":"one of the required parameter."
+    ,"invalid-parameter-value":"one of the required parameter has invalid value."
+    ,"invalid-parameter-value-length":"one of the required parameter value is too long"
+}   
+
+

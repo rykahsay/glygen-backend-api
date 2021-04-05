@@ -1,0 +1,7 @@
+{
+    "page": "foo.html",
+    "user": "foo",
+    "type": "error",
+    "id": "ABC",
+    "message": "Test"
+}

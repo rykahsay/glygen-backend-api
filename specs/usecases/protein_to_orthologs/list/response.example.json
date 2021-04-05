@@ -1,0 +1,29 @@
+{
+	"query": {
+	  "execution_time": "2020-01-30 13:06:51 EST-0500", 
+	  "uniprot_canonical_ac": "P14210-1"
+	}, 
+	"pagination": {
+	  "sort": "uniprot_canonical_ac", 
+	  "total_length": 2, 
+	  "limit": 20, 
+	  "order": "asc", 
+	  "offset": 1
+	}, 
+	"results": [
+	  {
+		"uniprot_canonical_ac": "Q08048-1", 
+		"protein_name": "Hepatocyte growth factor", 
+		"evidence": [
+		  {
+			"url": "http://www.informatics.jax.org/homology/503", 
+			"id": "503", 
+			"database": "MGI"
+		  }
+		], 
+		"organism": "Mus musculus", 
+		"tax_id": 10090
+	  }
+	]
+  }
+  

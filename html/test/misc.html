@@ -1,0 +1,57 @@
+<html>
+<head>
+<link rel="stylesheet" href="styles.css" type="text/css">
+<script language="javascript" src="jquery.min.js"></script>
+<script language="javascript" src="api_test.js"></script>
+
+
+<script>
+var testInfo = {
+    "misc_pathlist":{
+        "string_fields":["recordtype [protein|glycan|motif]"]
+        ,"numeric_fields":[]
+        ,"required_fields":["recordtype"]
+        ,"url":"/misc/pathlist"
+        ,"query":{"recordtype":"glycan"}
+    },
+    "misc_propertylist":{
+        "string_fields":["recordtype [protein|glycan|motif]"]
+        ,"numeric_fields":[]
+        ,"required_fields":["recordtype"]
+        ,"url":"/misc/propertylist"
+        ,"query":{"recordtype":"glycan"}
+    },
+    "misc_bcolist":{
+        "string_fields":[]
+        ,"numeric_fields":[]
+        ,"required_fields":[]
+        ,"url":"/misc/bcolist"
+        ,"query":{}
+    },
+    "misc_gtclist":{
+        "string_fields":[]
+        ,"numeric_fields":[]
+        ,"required_fields":[]
+        ,"url":"/misc/gtclist"
+        ,"query":{}
+    },
+    "misc_validate":{
+        "string_fields":["schema", "instance"]
+        ,"numeric_fields":[]
+        ,"required_fields":["schema", "instance"]
+        ,"url":"/misc/validate/"
+        ,"query":{
+            "schema":{"$id":"https://example.com/person.schema.json","$schema":"http://json-schema.org/draft-07/schema#","title":"Person","type":"object","properties":{"firstName":{"type":"string","description":"The person's first name."},"lastName":{"type":"string","description":"The person's last name."},"age":{"description":"Age in years which must be equal to or greater than zero.","type":"integer","minimum":0}}},
+            "instance":{"firstName":"John","lastName":"Doe","age":21}
+        }
+    }
+};
+
+
+</script>
+
+</head>
+<body>
+
+</body>
+<html>

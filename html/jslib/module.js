@@ -2,6 +2,7 @@ var resJson = {};
 var pageId = 'home';
 var htmlRoot = "";
 var cgibin = "/cgi-bin";
+var domainUrlDict = {};
 
 
 ////////////////////////////////
@@ -19,6 +20,7 @@ $(document).ready(function() {
             }
             else{
                 $("#moduleversioncn").html(resJson["moduleversion"]);
+                domainUrlDict = resJson["domains"];
                 setNavigation(resJson["domains"]);
             }
         }
@@ -105,3 +107,11 @@ function setNavigation(domainUrls){
 
 
 }
+
+
+$(document).on('click', '.subdomain', function (event) {
+    event.preventDefault();
+    var k = this.id.split("_").pop();
+    window.location.href = domainUrlDict[k];
+
+});

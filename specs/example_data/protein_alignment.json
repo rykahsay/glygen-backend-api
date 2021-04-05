@@ -1,0 +1,48 @@
+{
+    "algorithm": {
+        "url": "http://www.clustal.org/clustal2/", 
+        "parameter": "Default Clustalw2 parameters", 
+        "name": "clustalw2"
+    }, 
+    "similar_positions": 4, 
+    "consensus": "*************************************                                                                                                                        .*: .:                          ", 
+    "sequences": [
+        {
+            "aln": "MTEYKLVVVGAGGVGKSALTIQLIQNHFVDEYDPTIE-----------------------------------------------------------------------------------------------------------------GVDDAFYTLVREIRKH-KEKMSKDGKKKKKKSKTKCVIM", 
+            "uniprot_ac": "G3V5T7-1", 
+            "uniprot_id": "RASK_HUMAN", 
+            "tax_name": "Homo sapiens", 
+            "id": "G3V5T7-1", 
+            "tax_id": 9606
+        }, 
+        {
+            "aln": "MTEYKLVVVGAGGVGKSALTIQLIQNHFVDEYDPTIE------------------------------------------------------------------------------------------------------------------------VLLSSM--------------------------", 
+            "uniprot_ac": "G3V4K2-1", 
+            "uniprot_id": "RASK_HUMAN", 
+            "tax_name": "Homo sapiens", 
+            "id": "G3V4K2-1", 
+            "tax_id": 9606
+        }, 
+        {
+            "aln": "MTEYKLVVVGAGGVGKSALTIQLIQNHFVDEYDPTIEDSYRKQVVIDGETCLLDILDTAGQEEYSAMRDQYMRTGEGFLCVFAINNTKSFEDIHHYREQIKRVKDSEDVPMVLVGNKCDLPSRTVDTKQAQDLARSYGIPFIETSAKTRQGVDDAFYTLVREIRKH-KEKMSKDGKKKKKKSKTKCVIM", 
+            "uniprot_ac": "P01116-2", 
+            "uniprot_id": "RASK_HUMAN", 
+            "tax_name": "Homo sapiens", 
+            "id": "P01116-2", 
+            "tax_id": 9606
+        }, 
+        {
+            "aln": "MTEYKLVVVGAGGVGKSALTIQLIQNHFVDEYDPTIEDSYRKQVVIDGETCLLDILDTAGQEEYSAMRDQYMRTGEGFLCVFAINNTKSFEDIHHYREQIKRVKDSEDVPMVLVGNKCDLPSRTVDTKQAQDLARSYGIPFIETSAKTRQRVEDAFYTLVREIRQYRLKKISKEEKTPGCVKIKKCIIM", 
+            "name": "GTPase KRas", 
+            "uniprot_ac": "P01116-1", 
+            "uniprot_id": "RASK_HUMAN", 
+            "tax_name": "Homo sapiens", 
+            "id": "P01116-1", 
+            "tax_id": 9606
+        }
+    ], 
+    "date": "2020-06-26 19:05:16 EDT-0400", 
+    "cls_id": "isoformset.uniprotkb.P01116-1", 
+    "identity": "20.11%", 
+    "identical_positions": 38
+}

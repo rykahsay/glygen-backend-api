@@ -1,0 +1,52 @@
+{
+   "complex_query": {
+       "operation": "NAND",
+       "query_list": [
+           {
+               "complex_query": {
+                   "operation": "OR",
+                   "query_list": [
+                       {
+                           "protein_query": {
+                               "operation": "AND",
+                               "query_type": "search_protein",
+                               "go_id": "GO:0005739"
+                           }
+                       },
+                       {
+                           "glycan_query": {
+                               "operation": "AND",
+                               "query_type": "search_glycan",
+                               "mass_type": "native",
+                               "glycan_type": "N-glycan"
+                           }
+                       }
+                   ]
+               }
+           },
+           {
+               "complex_query": {
+                   "operation": "OR",
+                   "query_list": [
+                       {
+                           "protein_query": {
+                               "operation": "AND",
+                               "query_type": "search_protein",
+                               "gene_name": "MGAT1"
+                           }
+                       },
+                       {
+                           "glycan_query": {
+                               "operation": "AND",
+                               "query_type": "search_glycan",
+                               "mass_type": "native",
+                               "protein_identifier": "P14210-1"
+                           }
+                       }
+                   ]
+               }
+           }
+       ]
+   },
+   "result_type": "glycan_list"
+}

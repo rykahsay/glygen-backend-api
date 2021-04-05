@@ -1,0 +1,176 @@
+{
+    "$schema": "http://json-schema.org/schema#", 
+    "required": [], 
+    "type": "object", 
+    "properties": {
+        "glycan_type": {
+            "items": {
+                "required": [], 
+                "type": "object", 
+                "properties": {
+                    "subtype": {
+                        "items": {
+                            "type": "string"
+                        }, 
+                        "type": "array", 
+                        "description": "", 
+                        "title": ""
+                    }, 
+                    "name": {
+                        "type": "string", 
+                        "description": "", 
+                        "title": ""
+                    }
+                }
+            }, 
+            "type": "array", 
+            "description": "", 
+            "title": ""
+        }, 
+        "number_monosaccharides": {
+            "description": "", 
+            "required": [], 
+            "type": "object", 
+            "properties": {
+                "max": {
+                    "type": "integer", 
+                    "description": "", 
+                    "title": ""
+                }, 
+                "min": {
+                    "type": "integer", 
+                    "description": "", 
+                    "title": ""
+                }
+            }, 
+            "title": ""
+        }, 
+        "glycan_mass": {
+            "description": "", 
+            "required": [], 
+            "type": "object", 
+            "properties": {
+                "permethylated": {
+                    "description": "", 
+                    "required": [], 
+                    "type": "object", 
+                    "properties": {
+                        "max": {
+                            "type": "integer", 
+                            "description": "", 
+                            "title": ""
+                        }, 
+                        "name": {
+                            "type": "string", 
+                            "description": "", 
+                            "title": ""
+                        }, 
+                        "min": {
+                            "type": "integer", 
+                            "description": "", 
+                            "title": ""
+                        }
+                    }, 
+                    "title": ""
+                }, 
+                "native": {
+                    "description": "", 
+                    "required": [], 
+                    "type": "object", 
+                    "properties": {
+                        "max": {
+                            "type": "integer", 
+                            "description": "", 
+                            "title": ""
+                        }, 
+                        "name": {
+                            "type": "string", 
+                            "description": "", 
+                            "title": ""
+                        }, 
+                        "min": {
+                            "type": "integer", 
+                            "description": "", 
+                            "title": ""
+                        }
+                    }, 
+                    "title": ""
+                }
+            }, 
+            "title": ""
+        }, 
+        "organism": {
+            "items": {
+                "required": [], 
+                "type": "object", 
+                "properties": {
+                    "name": {
+                        "type": "string", 
+                        "description": "", 
+                        "title": ""
+                    }, 
+                    "id": {
+                        "type": "integer", 
+                        "description": "", 
+                        "title": ""
+                    }
+                }
+            }, 
+            "type": "array", 
+            "description": "", 
+            "title": ""
+        }, 
+        "composition": {
+            "items": {
+                "required": [], 
+                "type": "object", 
+                "properties": {
+                    "residue": {
+                        "type": "string", 
+                        "description": "", 
+                        "title": ""
+                    }, 
+                    "max": {
+                        "type": "integer", 
+                        "description": "", 
+                        "title": ""
+                    }, 
+                    "url": {
+                        "type": "string", 
+                        "description": "", 
+                        "title": ""
+                    }, 
+                    "min": {
+                        "type": "integer", 
+                        "description": "", 
+                        "title": ""
+                    }
+                }
+            }, 
+            "type": "array", 
+            "description": "", 
+            "title": ""
+        }, 
+        "simple_search_category": {
+            "items": {
+                "required": [], 
+                "type": "object", 
+                "properties": {
+                    "id": {
+                        "type": "string", 
+                        "description": "", 
+                        "title": ""
+                    }, 
+                    "display": {
+                        "type": "string", 
+                        "description": "", 
+                        "title": ""
+                    }
+                }
+            }, 
+            "type": "array", 
+            "description": "", 
+            "title": ""
+        }
+    }
+}

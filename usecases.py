@@ -6,7 +6,7 @@ import traceback
 import usecases_apilib as apilib
 import errorlib
 import util
-
+import libgly
 
 from flask import Flask, request, jsonify, render_template, send_file
 from flask_cors import CORS
@@ -21,13 +21,26 @@ global path_obj
 config_obj = json.loads(open("./conf/config.json", "r").read())
 path_obj  =  config_obj[config_obj["server"]]["pathinfo"]
 
+species_obj = {}
+in_file = path_obj["datareleasespath"]
+in_file += "data/v-%s/misc/species_info.csv" % (config_obj["datarelease"])
+libgly.load_species_info(species_obj, in_file)
+for k in species_obj:
+    obj = species_obj[k]
+    if obj["is_reference"] == "yes":
+        config_obj["taxid2name"][str(obj["tax_id"])] = obj["long_name"]
+
+
+
+
+
 
 @app.route('/usecases/search_init/', methods=['GET', 'POST'])
-def usecases_search_init():
+def search_init():
   
     res_obj = {}
     try:
-        res_obj = apilib.usecases_search_init(config_obj)
+        res_obj = apilib.search_init(config_obj)
     except Exception, e:
         res_obj = errorlib.get_error_obj("usecases_search_init", traceback.format_exc(), path_obj)
     

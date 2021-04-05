@@ -12,6 +12,8 @@ from bson import json_util, ObjectId
 
 import errorlib
 import util
+import protein_apilib
+
 
 def commonquery_search(query_obj, config_obj):
 
@@ -25,7 +27,7 @@ def commonquery_search(query_obj, config_obj):
     q_list = query_obj["complex_query"]["query_list"]
     master_dict, final_id_list = run_query_list(q_list, config_obj, result_type, operation, 1)
 
-    cache_dict = {"protein_list":"c_proteincache", "glycan_list":"c_glycancache", "count_list":""}
+    cache_dict = {"protein_list":"c_cache", "glycan_list":"c_cache", "count_list":""}
     cache_collection = cache_dict[result_type] 
 
 
@@ -138,7 +140,8 @@ def commonquery_search_glycan(query_obj, config_obj, result_type):
     
     res_obj = {}
     seen = {}
-    for obj in dbh[collection].find(mongo_query):
+    prj_obj = {"glytoucan_ac":1, "glycoprotein":1}
+    for obj in dbh[collection].find(mongo_query,prj_obj):
         if result_type == "glycan_list":
             glytoucan_ac = obj["glytoucan_ac"]
             res_obj[glytoucan_ac] = get_glycan_list_record(obj)
@@ -172,7 +175,8 @@ def commonquery_search_protein(query_obj, config_obj, result_type):
     mongo_query = get_protein_mongo_query(query_obj)
     res_obj = {}
     seen = {}
-    for obj in dbh[collection].find(mongo_query):
+    prj_obj = {"uniprot_canonical_ac":1, "glycosylation":1}
+    for obj in dbh[collection].find(mongo_query, prj_obj):
         if result_type in ["protein_list", "count_list"]:
             canon = obj["uniprot_canonical_ac"]
             res_obj[canon] = get_protein_list_record(obj)
@@ -261,7 +265,7 @@ def get_glycan_mongo_query(query_obj):
      
     #pmid
     if "pmid" in query_obj:
-        cond_objs.append({"publication.pmid" : {'$regex': query_obj["pmid"], '$options': 'i'}})
+        cond_objs.append({"publication.reference.id" : {'$regex': query_obj["pmid"], '$options': 'i'}})
 
 
     #glycan_subtype
@@ -309,7 +313,7 @@ def get_protein_mongo_query(query_obj):
     if "protein_name" in query_obj:
         query_obj["protein_name"] = query_obj["protein_name"].replace("(", "\(").replace(")", "\)")
         query_obj["protein_name"] = query_obj["protein_name"].replace("[", "\[").replace("]", "\]")
-        cond_objs.append({"recommendedname.full":{'$regex': query_obj["protein_name"], '$options': 'i'}})
+        cond_objs.append({"protein_names.name":{'$regex': query_obj["protein_name"], '$options': 'i'}})
 
     #go_id
     if "go_id" in query_obj:
@@ -340,7 +344,7 @@ def get_protein_mongo_query(query_obj):
 
     #gene_name
     if "gene_name" in query_obj:
-        cond_objs.append({"gene.name" : {'$regex': query_obj["gene_name"], '$options': 'i'}})
+        cond_objs.append({"gene_names.name" : {'$regex': query_obj["gene_name"], '$options': 'i'}})
 
     #pathway_id
     if "pathway_id" in query_obj:
@@ -348,7 +352,7 @@ def get_protein_mongo_query(query_obj):
 
     #pmid
     if "pmid" in query_obj:
-        cond_objs.append({"publication.pmid" : {'$regex': query_obj["pmid"], '$options': 'i'}})
+        cond_objs.append({"publication.reference.id" : {'$regex': query_obj["pmid"], '$options': 'i'}})
 
     #glycan
     if "glycan" in query_obj:
@@ -508,36 +512,8 @@ def get_glycan_list_record(in_obj):
 def get_protein_list_record(in_obj):
 
 
+    out_obj = protein_apilib.get_protein_list_object(in_obj)
 
-    out_obj = {}
-    out_obj["uniprot_canonical_ac"] = in_obj["uniprot_canonical_ac"]
-    out_obj["mass"] = -1
-    if "mass" in in_obj:
-        if "chemical_mass" in in_obj["mass"]:
-            out_obj["mass"] = in_obj["mass"]["chemical_mass"]
-    
-    out_obj["protein_name_long"], out_obj["protein_name_long"] = "", ""
-    if "recommendedname" in in_obj:
-        full_name = in_obj["recommendedname"]["full"] if "full" in in_obj["recommendedname"] else ""
-        short_name = in_obj["recommendedname"]["short"] if "short" in in_obj["recommendedname"] else ""
-        out_obj["protein_name_long"] = full_name
-        out_obj["protein_name_short"] = short_name
-    
-    out_obj["refseq_ac"], out_obj["refseq_name"] = "", ""
-    if "refseq" in in_obj:
-        out_obj["refseq_ac"] = in_obj["refseq"]["ac"] if "ac" in in_obj["refseq"] else ""
-        out_obj["refseq_name"] = in_obj["refseq"]["name"] if "name" in in_obj["refseq"] else ""
-    
-    out_obj["gene_name"] = ""
-    if "gene" in in_obj:
-        if len(in_obj["gene"]) > 0:
-            out_obj["gene_name"] = in_obj["gene"][0]["name"] if "name" in in_obj["gene"][0] else ""
-    
-    out_obj["organism"] = ""
-    if "species" in in_obj:
-        if len(in_obj["species"]) > 0:
-            out_obj["organism"] = in_obj["species"][0]["name"] if "name" in in_obj["species"][0] else ""
-    
     out_obj["is_glycoprotein"] = False
     out_obj["glycanlist"] = []
     if "glycosylation" in in_obj:

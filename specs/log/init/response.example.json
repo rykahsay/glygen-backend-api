@@ -1,0 +1,22 @@
+{
+   "pages":[
+      {
+         "page":"index.html",
+         "access":1000,
+         "error":10
+      }
+   ],
+   "types":[
+      {
+         "type":"error",
+         "number":10
+      }
+   ],
+   "users":[
+      {
+         "user":"ADF...121SDD",
+         "access":1000,
+         "error":10
+      }
+   ]
+}

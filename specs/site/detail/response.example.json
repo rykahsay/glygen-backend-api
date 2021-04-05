@@ -1,0 +1,1683 @@
+{
+    "protein_names": [
+        {
+            "url": "https://www.uniprot.org/uniprot/P02724", 
+            "type": "synonym", 
+            "resource": "UniProtKB", 
+            "name": "MN sialoglycoprotein"
+        }, 
+        {
+            "url": "https://www.uniprot.org/uniprot/P02724", 
+            "type": "recommended", 
+            "resource": "UniProtKB", 
+            "name": "Glycophorin-A"
+        }, 
+        {
+            "url": "https://www.uniprot.org/uniprot/P02724", 
+            "type": "synonym", 
+            "resource": "UniProtKB", 
+            "name": "PAS-2"
+        }, 
+        {
+            "url": "https://www.uniprot.org/uniprot/P02724", 
+            "type": "synonym", 
+            "resource": "UniProtKB", 
+            "name": "Sialoglycoprotein alpha"
+        }, 
+        {
+            "url": "https://www.ncbi.nlm.nih.gov/protein/P02724", 
+            "type": "synonym", 
+            "resource": "RefSeq", 
+            "name": "glycophorin A (MN blood group); glycophorin SAT; glycophorin A, GPA; erythroid-lineage-specific membrane sialoglycoprotein; glycophorin MiI; glycophorin MiV; glycophorin Erik; glycophorin Sta type C; recombinant glycophorin A-B Miltenberger-DR; Mi.V glycoprotein (24 AA); MN sialoglycoprotein; sialoglycoprotein alpha"
+        }, 
+        {
+            "url": "https://www.ncbi.nlm.nih.gov/protein/P02724", 
+            "type": "synonym", 
+            "resource": "RefSeq", 
+            "name": "glycophorin-A isoform 3"
+        }
+    ], 
+    "glycosylation": [
+        {
+            "residue": "Thr", 
+            "site_category": "reported_with_glycan.unicarbkb", 
+            "evidence": [
+                {
+                    "url": "http://unicarbkb.org/proteinsummary/P02724/annotated", 
+                    "id": "P02724", 
+                    "database": "UniCarbKB"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/7430095", 
+                    "id": "7430095", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/8384526", 
+                    "id": "8384526", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/6619126", 
+                    "id": "6619126", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/6190803", 
+                    "id": "6190803", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/3514617", 
+                    "id": "3514617", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/4091823", 
+                    "id": "4091823", 
+                    "database": "PubMed"
+                }
+            ], 
+            "subtype": "", 
+            "relation": "attached", 
+            "position": 52, 
+            "glytoucan_ac": "G94435QH", 
+            "type": "o-linked"
+        }, 
+        {
+            "residue": "Thr", 
+            "site_category": "reported_with_glycan.unicarbkb", 
+            "evidence": [
+                {
+                    "url": "http://unicarbkb.org/proteinsummary/P02724/annotated", 
+                    "id": "P02724", 
+                    "database": "UniCarbKB"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/6619126", 
+                    "id": "6619126", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/6190803", 
+                    "id": "6190803", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/3514617", 
+                    "id": "3514617", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/4091823", 
+                    "id": "4091823", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/8384526", 
+                    "id": "8384526", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/7430095", 
+                    "id": "7430095", 
+                    "database": "PubMed"
+                }
+            ], 
+            "subtype": "", 
+            "relation": "attached", 
+            "position": 52, 
+            "glytoucan_ac": "G33350UC", 
+            "type": "o-linked"
+        }, 
+        {
+            "residue": "Thr", 
+            "site_category": "reported_with_glycan.unicarbkb", 
+            "evidence": [
+                {
+                    "url": "http://unicarbkb.org/proteinsummary/P02724/annotated", 
+                    "id": "P02724", 
+                    "database": "UniCarbKB"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/4091823", 
+                    "id": "4091823", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/3514617", 
+                    "id": "3514617", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/6190803", 
+                    "id": "6190803", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/6619126", 
+                    "id": "6619126", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/8384526", 
+                    "id": "8384526", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/7430095", 
+                    "id": "7430095", 
+                    "database": "PubMed"
+                }
+            ], 
+            "subtype": "", 
+            "relation": "attached", 
+            "position": 52, 
+            "glytoucan_ac": "G01614ZM", 
+            "type": "o-linked"
+        }, 
+        {
+            "residue": "Thr", 
+            "site_category": "reported_with_glycan.unicarbkb", 
+            "evidence": [
+                {
+                    "url": "http://unicarbkb.org/proteinsummary/P02724/annotated", 
+                    "id": "P02724", 
+                    "database": "UniCarbKB"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/8384526", 
+                    "id": "8384526", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/7430095", 
+                    "id": "7430095", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/6619126", 
+                    "id": "6619126", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/3514617", 
+                    "id": "3514617", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/4091823", 
+                    "id": "4091823", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/6190803", 
+                    "id": "6190803", 
+                    "database": "PubMed"
+                }
+            ], 
+            "subtype": "", 
+            "relation": "attached", 
+            "position": 52, 
+            "glytoucan_ac": "G56245IE", 
+            "type": "o-linked"
+        }, 
+        {
+            "residue": "Thr", 
+            "site_category": "reported_with_glycan.unicarbkb", 
+            "evidence": [
+                {
+                    "url": "http://unicarbkb.org/proteinsummary/P02724/annotated", 
+                    "id": "P02724", 
+                    "database": "UniCarbKB"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/7430095", 
+                    "id": "7430095", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/8384526", 
+                    "id": "8384526", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/3514617", 
+                    "id": "3514617", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/4091823", 
+                    "id": "4091823", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/6190803", 
+                    "id": "6190803", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/6619126", 
+                    "id": "6619126", 
+                    "database": "PubMed"
+                }
+            ], 
+            "subtype": "", 
+            "relation": "attached", 
+            "position": 52, 
+            "glytoucan_ac": "G65562ZE", 
+            "type": "o-linked"
+        }, 
+        {
+            "residue": "Thr", 
+            "site_category": "reported_with_glycan.unicarbkb", 
+            "evidence": [
+                {
+                    "url": "http://unicarbkb.org/proteinsummary/P02724/annotated", 
+                    "id": "P02724", 
+                    "database": "UniCarbKB"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/7430095", 
+                    "id": "7430095", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/8384526", 
+                    "id": "8384526", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/6190803", 
+                    "id": "6190803", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/4091823", 
+                    "id": "4091823", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/3514617", 
+                    "id": "3514617", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/6619126", 
+                    "id": "6619126", 
+                    "database": "PubMed"
+                }
+            ], 
+            "subtype": "", 
+            "relation": "attached", 
+            "position": 52, 
+            "glytoucan_ac": "G42797SX", 
+            "type": "o-linked"
+        }, 
+        {
+            "residue": "Thr", 
+            "site_category": "reported_with_glycan.unicarbkb", 
+            "evidence": [
+                {
+                    "url": "http://unicarbkb.org/proteinsummary/P02724/annotated", 
+                    "id": "P02724", 
+                    "database": "UniCarbKB"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/6190803", 
+                    "id": "6190803", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/4091823", 
+                    "id": "4091823", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/3514617", 
+                    "id": "3514617", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/6619126", 
+                    "id": "6619126", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/7430095", 
+                    "id": "7430095", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/8384526", 
+                    "id": "8384526", 
+                    "database": "PubMed"
+                }
+            ], 
+            "subtype": "", 
+            "relation": "attached", 
+            "position": 52, 
+            "glytoucan_ac": "G00031MO", 
+            "type": "o-linked"
+        }, 
+        {
+            "residue": "Thr", 
+            "site_category": "reported_with_glycan.unicarbkb", 
+            "evidence": [
+                {
+                    "url": "http://unicarbkb.org/proteinsummary/P02724/annotated", 
+                    "id": "P02724", 
+                    "database": "UniCarbKB"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/8384526", 
+                    "id": "8384526", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/7430095", 
+                    "id": "7430095", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/4091823", 
+                    "id": "4091823", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/3514617", 
+                    "id": "3514617", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/6190803", 
+                    "id": "6190803", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/6619126", 
+                    "id": "6619126", 
+                    "database": "PubMed"
+                }
+            ], 
+            "subtype": "", 
+            "relation": "attached", 
+            "position": 52, 
+            "glytoucan_ac": "G47180UC", 
+            "type": "o-linked"
+        }, 
+        {
+            "residue": "Thr", 
+            "site_category": "reported_with_glycan.unicarbkb", 
+            "evidence": [
+                {
+                    "url": "http://unicarbkb.org/proteinsummary/P02724/annotated", 
+                    "id": "P02724", 
+                    "database": "UniCarbKB"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/8384526", 
+                    "id": "8384526", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/7430095", 
+                    "id": "7430095", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/6619126", 
+                    "id": "6619126", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/3514617", 
+                    "id": "3514617", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/4091823", 
+                    "id": "4091823", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/6190803", 
+                    "id": "6190803", 
+                    "database": "PubMed"
+                }
+            ], 
+            "subtype": "", 
+            "relation": "attached", 
+            "position": 52, 
+            "glytoucan_ac": "G56682BC", 
+            "type": "o-linked"
+        }, 
+        {
+            "residue": "Thr", 
+            "site_category": "reported_with_glycan.unicarbkb", 
+            "evidence": [
+                {
+                    "url": "http://unicarbkb.org/proteinsummary/P02724/annotated", 
+                    "id": "P02724", 
+                    "database": "UniCarbKB"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/8384526", 
+                    "id": "8384526", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/7430095", 
+                    "id": "7430095", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/6619126", 
+                    "id": "6619126", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/4091823", 
+                    "id": "4091823", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/3514617", 
+                    "id": "3514617", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/6190803", 
+                    "id": "6190803", 
+                    "database": "PubMed"
+                }
+            ], 
+            "subtype": "", 
+            "relation": "attached", 
+            "position": 52, 
+            "glytoucan_ac": "G94217FB", 
+            "type": "o-linked"
+        }, 
+        {
+            "residue": "Thr", 
+            "site_category": "reported_with_glycan.unicarbkb", 
+            "evidence": [
+                {
+                    "url": "http://unicarbkb.org/proteinsummary/P02724/annotated", 
+                    "id": "P02724", 
+                    "database": "UniCarbKB"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/8384526", 
+                    "id": "8384526", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/7430095", 
+                    "id": "7430095", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/6619126", 
+                    "id": "6619126", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/6190803", 
+                    "id": "6190803", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/3514617", 
+                    "id": "3514617", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/4091823", 
+                    "id": "4091823", 
+                    "database": "PubMed"
+                }
+            ], 
+            "subtype": "", 
+            "relation": "attached", 
+            "position": 52, 
+            "glytoucan_ac": "G16370GQ", 
+            "type": "o-linked"
+        }, 
+        {
+            "residue": "Thr", 
+            "site_category": "reported.uniprotkb_gly", 
+            "evidence": [
+                {
+                    "url": "https://www.uniprot.org/uniprot/P02724#ptm_processing", 
+                    "id": "P02724", 
+                    "database": "UniProtKB"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/8286855", 
+                    "id": "8286855", 
+                    "database": "PubMed"
+                }
+            ], 
+            "subtype": "O-GalNAcylation", 
+            "relation": "attached", 
+            "position": 52, 
+            "glytoucan_ac": "", 
+            "type": "o-linked"
+        }, 
+        {
+            "residue": "Thr", 
+            "site_category": "reported.unicarbkb", 
+            "evidence": [
+                {
+                    "url": "http://unicarbkb.org/proteinsummary/P02724/annotated", 
+                    "id": "P02724", 
+                    "database": "UniCarbKB"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/4091823", 
+                    "id": "4091823", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/3514617", 
+                    "id": "3514617", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/6190803", 
+                    "id": "6190803", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/6619126", 
+                    "id": "6619126", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/8384526", 
+                    "id": "8384526", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/7430095", 
+                    "id": "7430095", 
+                    "database": "PubMed"
+                }
+            ], 
+            "subtype": "", 
+            "relation": "attached", 
+            "position": 52, 
+            "glytoucan_ac": "", 
+            "type": "o-linked"
+        }
+    ], 
+    "sequence": {
+        "header": "sp|P02724-1|GLPA_HUMAN Isoform 1 of Glycophorin-A  OS=Homo sapiens OX=9606 GN=GYPA PE=1 SV=2 CANONICAL=P02724-1", 
+        "length": 150, 
+        "sequence": "MYGKIIFVLLLSEIVSISASSTTGVAMHTSTSSSVTKSYISSQTNDTHKRDTYAATPRAHEVSEISVRTVYPPEEETGERVQLAHHFSEPEITLIIFGVMAGVIGTILLISYGIRRLIKKSPSDVKPLPSPDTDVPLSSVEIENPETSDQ"
+    }, 
+    "site_annotation": [], 
+    "mass": {
+        "monoisotopic_mass": 16331.0, 
+        "chemical_mass": 16331.0
+    }, 
+    "uniprot": {
+        "url": "http://www.uniprot.org/uniprot/P02724-1/", 
+        "uniprot_canonical_ac": "P02724-1", 
+        "length": 150, 
+        "uniprot_id": "GLPA_HUMAN"
+    }, 
+    "all_sites": [
+        {
+            "type": "site_annotation", 
+            "site_list": [
+                {
+                    "end_pos": 47, 
+                    "start_pos": 45
+                }
+            ]
+        }, 
+        {
+            "type": "mutation", 
+            "site_list": []
+        }, 
+        {
+            "type": "glycosylation", 
+            "site_list": [
+                {
+                    "end_pos": 32, 
+                    "start_pos": 32
+                }, 
+                {
+                    "end_pos": 41, 
+                    "start_pos": 41
+                }, 
+                {
+                    "end_pos": 21, 
+                    "start_pos": 21
+                }, 
+                {
+                    "end_pos": 30, 
+                    "start_pos": 30
+                }, 
+                {
+                    "end_pos": 31, 
+                    "start_pos": 31
+                }, 
+                {
+                    "end_pos": 44, 
+                    "start_pos": 44
+                }, 
+                {
+                    "end_pos": 66, 
+                    "start_pos": 66
+                }, 
+                {
+                    "end_pos": 63, 
+                    "start_pos": 63
+                }, 
+                {
+                    "end_pos": 66, 
+                    "start_pos": 66
+                }, 
+                {
+                    "end_pos": 22, 
+                    "start_pos": 22
+                }, 
+                {
+                    "end_pos": 23, 
+                    "start_pos": 23
+                }, 
+                {
+                    "end_pos": 38, 
+                    "start_pos": 38
+                }, 
+                {
+                    "end_pos": 36, 
+                    "start_pos": 36
+                }, 
+                {
+                    "end_pos": 31, 
+                    "start_pos": 31
+                }, 
+                {
+                    "end_pos": 52, 
+                    "start_pos": 52
+                }, 
+                {
+                    "end_pos": 38, 
+                    "start_pos": 38
+                }, 
+                {
+                    "end_pos": 29, 
+                    "start_pos": 29
+                }, 
+                {
+                    "end_pos": 30, 
+                    "start_pos": 30
+                }, 
+                {
+                    "end_pos": 31, 
+                    "start_pos": 31
+                }, 
+                {
+                    "end_pos": 31, 
+                    "start_pos": 31
+                }, 
+                {
+                    "end_pos": 31, 
+                    "start_pos": 31
+                }, 
+                {
+                    "end_pos": 66, 
+                    "start_pos": 66
+                }, 
+                {
+                    "end_pos": 41, 
+                    "start_pos": 41
+                }, 
+                {
+                    "end_pos": 56, 
+                    "start_pos": 56
+                }, 
+                {
+                    "end_pos": 22, 
+                    "start_pos": 22
+                }, 
+                {
+                    "end_pos": 44, 
+                    "start_pos": 44
+                }, 
+                {
+                    "end_pos": 56, 
+                    "start_pos": 56
+                }, 
+                {
+                    "end_pos": 52, 
+                    "start_pos": 52
+                }, 
+                {
+                    "end_pos": 69, 
+                    "start_pos": 69
+                }, 
+                {
+                    "end_pos": 56, 
+                    "start_pos": 56
+                }, 
+                {
+                    "end_pos": 21, 
+                    "start_pos": 21
+                }, 
+                {
+                    "end_pos": 44, 
+                    "start_pos": 44
+                }, 
+                {
+                    "end_pos": 23, 
+                    "start_pos": 23
+                }, 
+                {
+                    "end_pos": 69, 
+                    "start_pos": 69
+                }, 
+                {
+                    "end_pos": 32, 
+                    "start_pos": 32
+                }, 
+                {
+                    "end_pos": 32, 
+                    "start_pos": 32
+                }, 
+                {
+                    "end_pos": 31, 
+                    "start_pos": 31
+                }, 
+                {
+                    "end_pos": 29, 
+                    "start_pos": 29
+                }, 
+                {
+                    "end_pos": 23, 
+                    "start_pos": 23
+                }, 
+                {
+                    "end_pos": 23, 
+                    "start_pos": 23
+                }, 
+                {
+                    "end_pos": 41, 
+                    "start_pos": 41
+                }, 
+                {
+                    "end_pos": 63, 
+                    "start_pos": 63
+                }, 
+                {
+                    "end_pos": 21, 
+                    "start_pos": 21
+                }, 
+                {
+                    "end_pos": 63, 
+                    "start_pos": 63
+                }, 
+                {
+                    "end_pos": 38, 
+                    "start_pos": 38
+                }, 
+                {
+                    "end_pos": 36, 
+                    "start_pos": 36
+                }, 
+                {
+                    "end_pos": 36, 
+                    "start_pos": 36
+                }, 
+                {
+                    "end_pos": 38, 
+                    "start_pos": 38
+                }, 
+                {
+                    "end_pos": 31, 
+                    "start_pos": 31
+                }, 
+                {
+                    "end_pos": 69, 
+                    "start_pos": 69
+                }, 
+                {
+                    "end_pos": 44, 
+                    "start_pos": 44
+                }, 
+                {
+                    "end_pos": 41, 
+                    "start_pos": 41
+                }, 
+                {
+                    "end_pos": 38, 
+                    "start_pos": 38
+                }, 
+                {
+                    "end_pos": 63, 
+                    "start_pos": 63
+                }, 
+                {
+                    "end_pos": 36, 
+                    "start_pos": 36
+                }, 
+                {
+                    "end_pos": 52, 
+                    "start_pos": 52
+                }, 
+                {
+                    "end_pos": 36, 
+                    "start_pos": 36
+                }, 
+                {
+                    "end_pos": 69, 
+                    "start_pos": 69
+                }, 
+                {
+                    "end_pos": 66, 
+                    "start_pos": 66
+                }, 
+                {
+                    "end_pos": 23, 
+                    "start_pos": 23
+                }, 
+                {
+                    "end_pos": 38, 
+                    "start_pos": 38
+                }, 
+                {
+                    "end_pos": 21, 
+                    "start_pos": 21
+                }, 
+                {
+                    "end_pos": 56, 
+                    "start_pos": 56
+                }, 
+                {
+                    "end_pos": 22, 
+                    "start_pos": 22
+                }, 
+                {
+                    "end_pos": 32, 
+                    "start_pos": 32
+                }, 
+                {
+                    "end_pos": 22, 
+                    "start_pos": 22
+                }, 
+                {
+                    "end_pos": 38, 
+                    "start_pos": 38
+                }, 
+                {
+                    "end_pos": 32, 
+                    "start_pos": 32
+                }, 
+                {
+                    "end_pos": 41, 
+                    "start_pos": 41
+                }, 
+                {
+                    "end_pos": 63, 
+                    "start_pos": 63
+                }, 
+                {
+                    "end_pos": 66, 
+                    "start_pos": 66
+                }, 
+                {
+                    "end_pos": 32, 
+                    "start_pos": 32
+                }, 
+                {
+                    "end_pos": 30, 
+                    "start_pos": 30
+                }, 
+                {
+                    "end_pos": 66, 
+                    "start_pos": 66
+                }, 
+                {
+                    "end_pos": 69, 
+                    "start_pos": 69
+                }, 
+                {
+                    "end_pos": 30, 
+                    "start_pos": 30
+                }, 
+                {
+                    "end_pos": 44, 
+                    "start_pos": 44
+                }, 
+                {
+                    "end_pos": 56, 
+                    "start_pos": 56
+                }, 
+                {
+                    "end_pos": 21, 
+                    "start_pos": 21
+                }, 
+                {
+                    "end_pos": 52, 
+                    "start_pos": 52
+                }, 
+                {
+                    "end_pos": 23, 
+                    "start_pos": 23
+                }, 
+                {
+                    "end_pos": 63, 
+                    "start_pos": 63
+                }, 
+                {
+                    "end_pos": 29, 
+                    "start_pos": 29
+                }, 
+                {
+                    "end_pos": 31, 
+                    "start_pos": 31
+                }, 
+                {
+                    "end_pos": 52, 
+                    "start_pos": 52
+                }, 
+                {
+                    "end_pos": 29, 
+                    "start_pos": 29
+                }, 
+                {
+                    "end_pos": 44, 
+                    "start_pos": 44
+                }, 
+                {
+                    "end_pos": 32, 
+                    "start_pos": 32
+                }, 
+                {
+                    "end_pos": 41, 
+                    "start_pos": 41
+                }, 
+                {
+                    "end_pos": 52, 
+                    "start_pos": 52
+                }, 
+                {
+                    "end_pos": 66, 
+                    "start_pos": 66
+                }, 
+                {
+                    "end_pos": 66, 
+                    "start_pos": 66
+                }, 
+                {
+                    "end_pos": 31, 
+                    "start_pos": 31
+                }, 
+                {
+                    "end_pos": 32, 
+                    "start_pos": 32
+                }, 
+                {
+                    "end_pos": 21, 
+                    "start_pos": 21
+                }, 
+                {
+                    "end_pos": 31, 
+                    "start_pos": 31
+                }, 
+                {
+                    "end_pos": 66, 
+                    "start_pos": 66
+                }, 
+                {
+                    "end_pos": 31, 
+                    "start_pos": 31
+                }, 
+                {
+                    "end_pos": 32, 
+                    "start_pos": 32
+                }, 
+                {
+                    "end_pos": 63, 
+                    "start_pos": 63
+                }, 
+                {
+                    "end_pos": 52, 
+                    "start_pos": 52
+                }, 
+                {
+                    "end_pos": 29, 
+                    "start_pos": 29
+                }, 
+                {
+                    "end_pos": 22, 
+                    "start_pos": 22
+                }, 
+                {
+                    "end_pos": 42, 
+                    "start_pos": 42
+                }, 
+                {
+                    "end_pos": 41, 
+                    "start_pos": 41
+                }, 
+                {
+                    "end_pos": 38, 
+                    "start_pos": 38
+                }, 
+                {
+                    "end_pos": 69, 
+                    "start_pos": 69
+                }, 
+                {
+                    "end_pos": 32, 
+                    "start_pos": 32
+                }, 
+                {
+                    "end_pos": 41, 
+                    "start_pos": 41
+                }, 
+                {
+                    "end_pos": 44, 
+                    "start_pos": 44
+                }, 
+                {
+                    "end_pos": 29, 
+                    "start_pos": 29
+                }, 
+                {
+                    "end_pos": 36, 
+                    "start_pos": 36
+                }, 
+                {
+                    "end_pos": 30, 
+                    "start_pos": 30
+                }, 
+                {
+                    "end_pos": 36, 
+                    "start_pos": 36
+                }, 
+                {
+                    "end_pos": 32, 
+                    "start_pos": 32
+                }, 
+                {
+                    "end_pos": 38, 
+                    "start_pos": 38
+                }, 
+                {
+                    "end_pos": 52, 
+                    "start_pos": 52
+                }, 
+                {
+                    "end_pos": 23, 
+                    "start_pos": 23
+                }, 
+                {
+                    "end_pos": 22, 
+                    "start_pos": 22
+                }, 
+                {
+                    "end_pos": 29, 
+                    "start_pos": 29
+                }, 
+                {
+                    "end_pos": 69, 
+                    "start_pos": 69
+                }, 
+                {
+                    "end_pos": 23, 
+                    "start_pos": 23
+                }, 
+                {
+                    "end_pos": 38, 
+                    "start_pos": 38
+                }, 
+                {
+                    "end_pos": 21, 
+                    "start_pos": 21
+                }, 
+                {
+                    "end_pos": 56, 
+                    "start_pos": 56
+                }, 
+                {
+                    "end_pos": 29, 
+                    "start_pos": 29
+                }, 
+                {
+                    "end_pos": 30, 
+                    "start_pos": 30
+                }, 
+                {
+                    "end_pos": 69, 
+                    "start_pos": 69
+                }, 
+                {
+                    "end_pos": 52, 
+                    "start_pos": 52
+                }, 
+                {
+                    "end_pos": 22, 
+                    "start_pos": 22
+                }, 
+                {
+                    "end_pos": 56, 
+                    "start_pos": 56
+                }, 
+                {
+                    "end_pos": 56, 
+                    "start_pos": 56
+                }, 
+                {
+                    "end_pos": 32, 
+                    "start_pos": 32
+                }, 
+                {
+                    "end_pos": 63, 
+                    "start_pos": 63
+                }, 
+                {
+                    "end_pos": 69, 
+                    "start_pos": 69
+                }, 
+                {
+                    "end_pos": 29, 
+                    "start_pos": 29
+                }, 
+                {
+                    "end_pos": 63, 
+                    "start_pos": 63
+                }, 
+                {
+                    "end_pos": 44, 
+                    "start_pos": 44
+                }, 
+                {
+                    "end_pos": 56, 
+                    "start_pos": 56
+                }, 
+                {
+                    "end_pos": 30, 
+                    "start_pos": 30
+                }, 
+                {
+                    "end_pos": 41, 
+                    "start_pos": 41
+                }, 
+                {
+                    "end_pos": 52, 
+                    "start_pos": 52
+                }, 
+                {
+                    "end_pos": 29, 
+                    "start_pos": 29
+                }, 
+                {
+                    "end_pos": 45, 
+                    "start_pos": 45
+                }, 
+                {
+                    "end_pos": 44, 
+                    "start_pos": 44
+                }, 
+                {
+                    "end_pos": 52, 
+                    "start_pos": 52
+                }, 
+                {
+                    "end_pos": 66, 
+                    "start_pos": 66
+                }, 
+                {
+                    "end_pos": 69, 
+                    "start_pos": 69
+                }, 
+                {
+                    "end_pos": 66, 
+                    "start_pos": 66
+                }, 
+                {
+                    "end_pos": 21, 
+                    "start_pos": 21
+                }, 
+                {
+                    "end_pos": 38, 
+                    "start_pos": 38
+                }, 
+                {
+                    "end_pos": 52, 
+                    "start_pos": 52
+                }, 
+                {
+                    "end_pos": 21, 
+                    "start_pos": 21
+                }, 
+                {
+                    "end_pos": 52, 
+                    "start_pos": 52
+                }, 
+                {
+                    "end_pos": 22, 
+                    "start_pos": 22
+                }, 
+                {
+                    "end_pos": 21, 
+                    "start_pos": 21
+                }, 
+                {
+                    "end_pos": 23, 
+                    "start_pos": 23
+                }, 
+                {
+                    "end_pos": 36, 
+                    "start_pos": 36
+                }, 
+                {
+                    "end_pos": 21, 
+                    "start_pos": 21
+                }, 
+                {
+                    "end_pos": 36, 
+                    "start_pos": 36
+                }, 
+                {
+                    "end_pos": 69, 
+                    "start_pos": 69
+                }, 
+                {
+                    "end_pos": 66, 
+                    "start_pos": 66
+                }, 
+                {
+                    "end_pos": 22, 
+                    "start_pos": 22
+                }, 
+                {
+                    "end_pos": 21, 
+                    "start_pos": 21
+                }, 
+                {
+                    "end_pos": 63, 
+                    "start_pos": 63
+                }, 
+                {
+                    "end_pos": 29, 
+                    "start_pos": 29
+                }, 
+                {
+                    "end_pos": 21, 
+                    "start_pos": 21
+                }, 
+                {
+                    "end_pos": 69, 
+                    "start_pos": 69
+                }, 
+                {
+                    "end_pos": 22, 
+                    "start_pos": 22
+                }, 
+                {
+                    "end_pos": 36, 
+                    "start_pos": 36
+                }, 
+                {
+                    "end_pos": 69, 
+                    "start_pos": 69
+                }, 
+                {
+                    "end_pos": 63, 
+                    "start_pos": 63
+                }, 
+                {
+                    "end_pos": 44, 
+                    "start_pos": 44
+                }, 
+                {
+                    "end_pos": 66, 
+                    "start_pos": 66
+                }, 
+                {
+                    "end_pos": 41, 
+                    "start_pos": 41
+                }, 
+                {
+                    "end_pos": 56, 
+                    "start_pos": 56
+                }, 
+                {
+                    "end_pos": 36, 
+                    "start_pos": 36
+                }, 
+                {
+                    "end_pos": 23, 
+                    "start_pos": 23
+                }, 
+                {
+                    "end_pos": 69, 
+                    "start_pos": 69
+                }, 
+                {
+                    "end_pos": 30, 
+                    "start_pos": 30
+                }, 
+                {
+                    "end_pos": 38, 
+                    "start_pos": 38
+                }, 
+                {
+                    "end_pos": 22, 
+                    "start_pos": 22
+                }, 
+                {
+                    "end_pos": 29, 
+                    "start_pos": 29
+                }, 
+                {
+                    "end_pos": 31, 
+                    "start_pos": 31
+                }, 
+                {
+                    "end_pos": 23, 
+                    "start_pos": 23
+                }, 
+                {
+                    "end_pos": 41, 
+                    "start_pos": 41
+                }, 
+                {
+                    "end_pos": 36, 
+                    "start_pos": 36
+                }, 
+                {
+                    "end_pos": 32, 
+                    "start_pos": 32
+                }, 
+                {
+                    "end_pos": 41, 
+                    "start_pos": 41
+                }, 
+                {
+                    "end_pos": 30, 
+                    "start_pos": 30
+                }, 
+                {
+                    "end_pos": 41, 
+                    "start_pos": 41
+                }, 
+                {
+                    "end_pos": 44, 
+                    "start_pos": 44
+                }, 
+                {
+                    "end_pos": 63, 
+                    "start_pos": 63
+                }, 
+                {
+                    "end_pos": 56, 
+                    "start_pos": 56
+                }, 
+                {
+                    "end_pos": 22, 
+                    "start_pos": 22
+                }, 
+                {
+                    "end_pos": 31, 
+                    "start_pos": 31
+                }, 
+                {
+                    "end_pos": 22, 
+                    "start_pos": 22
+                }, 
+                {
+                    "end_pos": 63, 
+                    "start_pos": 63
+                }, 
+                {
+                    "end_pos": 36, 
+                    "start_pos": 36
+                }, 
+                {
+                    "end_pos": 44, 
+                    "start_pos": 44
+                }, 
+                {
+                    "end_pos": 30, 
+                    "start_pos": 30
+                }, 
+                {
+                    "end_pos": 23, 
+                    "start_pos": 23
+                }, 
+                {
+                    "end_pos": 23, 
+                    "start_pos": 23
+                }, 
+                {
+                    "end_pos": 30, 
+                    "start_pos": 30
+                }, 
+                {
+                    "end_pos": 44, 
+                    "start_pos": 44
+                }, 
+                {
+                    "end_pos": 30, 
+                    "start_pos": 30
+                }, 
+                {
+                    "end_pos": 56, 
+                    "start_pos": 56
+                }, 
+                {
+                    "end_pos": 56, 
+                    "start_pos": 56
+                }, 
+                {
+                    "end_pos": 38, 
+                    "start_pos": 38
+                }, 
+                {
+                    "end_pos": 56, 
+                    "start_pos": 56
+                }, 
+                {
+                    "end_pos": 29, 
+                    "start_pos": 29
+                }, 
+                {
+                    "end_pos": 30, 
+                    "start_pos": 30
+                }, 
+                {
+                    "end_pos": 69, 
+                    "start_pos": 69
+                }
+            ]
+        }, 
+        {
+            "type": "glycation", 
+            "site_list": []
+        }
+    ], 
+    "refseq": {
+        "url": "https://www.ncbi.nlm.nih.gov/protein/NP_001295119.1", 
+        "ac": "NP_001295119.1", 
+        "name": "glycophorin-A isoform 3", 
+        "summary": "Glycophorins A (GYPA) and B (GYPB) are major sialoglycoproteins of the human erythrocyte membrane which bear the antigenic determinants for the MN and Ss blood groups. In addition to the M or N and S or s antigens that commonly occur in all populations, about 40 related variant phenotypes have been identified. These variants include all the variants of the Miltenberger complex and several isoforms of Sta, as well as Dantu, Sat, He, Mg, and deletion variants Ena, S-s-U- and Mk. Most of the variants are the result of gene recombinations between GYPA and GYPB. [provided by RefSeq, Jul 2008]."
+    }, 
+    "gene": [
+        {
+            "url": "https://www.uniprot.org/uniprot/P02724", 
+            "name": "GYPA", 
+            "locus": {
+                "end_pos": 144109303, 
+                "start_pos": 144140786, 
+                "chromosome": "4", 
+                "evidence": [
+                    {
+                        "url": "https://www.ensembl.org/id/ENSG00000170180", 
+                        "id": "ENSG00000170180", 
+                        "database": "Ensembl Gene"
+                    }
+                ]
+            }
+        }
+    ], 
+    "gene_names": [
+        {
+            "url": "https://www.uniprot.org/uniprot/P02724", 
+            "type": "recommended", 
+            "resource": "UniProtKB", 
+            "name": "GYPA"
+        }, 
+        {
+            "url": "https://www.uniprot.org/uniprot/P02724", 
+            "type": "synonym", 
+            "resource": "UniProtKB", 
+            "name": "GPA"
+        }, 
+        {
+            "url": "https://www.ncbi.nlm.nih.gov/protein/P02724", 
+            "type": "synonym", 
+            "resource": "RefSeq", 
+            "name": "CD235a; GPA; GPErik; GPSAT; HGpMiV; HGpMiXI; HGpSta(C); MN; MNS; PAS-2"
+        }, 
+        {
+            "url": "https://www.ncbi.nlm.nih.gov/protein/P02724", 
+            "type": "synonym", 
+            "resource": "RefSeq", 
+            "name": "GYPA"
+        }
+    ], 
+    "species": [
+        {
+            "evidence": [
+                {
+                    "url": "https://www.uniprot.org/uniprot/P02724", 
+                    "id": "P02724", 
+                    "database": "UniProtKB"
+                }
+            ], 
+            "taxid": 9606, 
+            "name": "Homo sapiens"
+        }
+    ], 
+    "snv": [
+        {
+            "sequence_org": "S", 
+            "alt_nt": "T", 
+            "chr_id": "4", 
+            "ref_nt": "C", 
+            "chr_pos": "144120579", 
+            "evidence": [
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/SNP/snp_ref.cgi?type=rs&rs=rs770975475", 
+                    "id": "rs770975475", 
+                    "database": "dbSNP"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/SNP/snp_ref.cgi?type=rs&rs=rs770975475", 
+                    "id": "rs770975475", 
+                    "database": "ExAC"
+                }
+            ], 
+            "sequence_mut": "N", 
+            "keywords": [
+                "ebi", 
+                "germline"
+            ], 
+            "minor_allelic_frequency": "", 
+            "annotation": "Germline mutation passed 1 out of 1 filters: n-glyco-sequon-gain (SIS->NIS)."
+        }
+    ],
+    "glycation": [
+        {
+            "residue": "Lys", 
+            "type": "N-linked", 
+            "glytoucan_ac": "", 
+            "relation": "attached", 
+            "evidence": [
+                {
+                    "url": "https://www.uniprot.org/uniprot/P02768#ptm_processing", 
+                    "id": "P02768", 
+                    "database": "UniProtKB"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/15047055", 
+                    "id": "15047055", 
+                    "database": "PubMed"
+                }
+            ]
+        }
+    ],
+    "mutagenesis": [
+        {
+            "sequence_org": "S", 
+            "sequence_mut": "A", 
+            "annotation": "Decreased phosphorylation by FAM20C; when associated with A-24.", 
+            "evidence": [
+                {
+                    "url": "https://www.uniprot.org/uniprot/P02810", 
+                    "id": "P02810", 
+                    "database": "UniProtKB"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/26091039", 
+                    "id": "26091039", 
+                    "database": "PubMed"
+                }
+            ]
+        }
+    ], 
+    "phosphorylation": [
+        {
+            "residue": "Ser", 
+            "kinase_gene_name": "CDC73", 
+            "kinase_uniprot_canonical_ac": "Q6P1J9-1", 
+            "evidence": [
+                {
+                    "url": "http://phospho.elm.eu.org/byAccession/P02810.html", 
+                    "id": "P02810", 
+                    "database": "phospho.ELM"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/15693058", 
+                    "id": "15693058", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/20879038", 
+                    "id": "20879038", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/26091039", 
+                    "id": "26091039", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/10858503", 
+                    "id": "10858503", 
+                    "database": "PubMed"
+                }
+            ]
+        }, 
+        {
+            "residue": "Ser", 
+            "kinase_gene_name": "", 
+            "kinase_uniprot_canonical_ac": "", 
+            "evidence": [
+                {
+                    "url": "https://www.uniprot.org/uniprot/P02810", 
+                    "id": "P02810", 
+                    "database": "UniProtKB"
+                }
+            ]
+        }
+    ]
+}

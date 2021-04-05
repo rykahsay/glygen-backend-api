@@ -1,0 +1,45 @@
+{
+  "query": {
+    "execution_time": "2020-09-10 16:23:05 EDT-0400", 
+    "uniprot_canonical_ac": "P14210"
+  }, 
+  "pagination": {
+    "sort": "hit_score", 
+    "total_length": 1, 
+    "limit": 20, 
+    "order": "desc", 
+    "offset": 1
+  }, 
+  "query_error": [
+    {
+      "value": "P14210", 
+      "key": "uniprot_canonical_ac"
+    }
+  ], 
+  "results": [
+    {
+      "uniprot_canonical_ac": "P14210-1", 
+      "mass": 83134.0, 
+      "publication_count": 26, 
+      "predicted_glycosites": 4, 
+      "protein_names_refseq": "hepatocyte growth factor isoform 1 preproprotein; fibroblast-derived tumor cytotoxic factor; lung fibroblast-derived mitogen; hepatopoietin-A; hepatocyte growth factor (hepapoietin A; scatter factor)", 
+      "refseq_ac": "NP_000592.3", 
+      "reported_n_glycosites": 0, 
+      "refseq_name": "hepatocyte growth factor isoform 1 preproprotein", 
+      "protein_names_uniprotkb": "Hepatocyte growth factor; Hepatopoietin-A; Scatter factor; SF", 
+      "pathway": "Interleukin-7 signaling (R-HSA-1266695); Negative regulation of MET activity (R-HSA-6807004); MET activates STAT3 (R-HSA-8875791); Interleukin-4 and Interleukin-13 signaling (R-HSA-6785807); PIP3 activates AKT signaling (R-HSA-1257604);  (hsa:3082); MET interacts with TNS proteins (R-HSA-8875513); MET activates PTK2 signaling (R-HSA-8874081); MET activates RAS signaling (R-HSA-8851805); MET activates RAP1 and RAC1 (R-HSA-8875555); MET activates PTPN11 (R-HSA-8865999); MET activates PI3K/AKT signaling (R-HSA-8851907); RAF/MAP kinase cascade (R-HSA-5673001); PI5P, PP2A and IER3 Regulate PI3K/AKT Signaling (R-HSA-6811558); MET Receptor Activation (R-HSA-6806942); Constitutive Signaling by Aberrant PI3K in Cancer (R-HSA-2219530); MET receptor recycling (R-HSA-8875656); Platelet degranulation (R-HSA-114608)", 
+      "function": "Our study proved that paeoniflorin could inhibit migration and invasion and actin cytoskeleton rearrangement through inhibition of HGF/c-Met/RhoA/ROCK signaling in glioblastoma, suggesting that paeoniflorin might be a candidate compound to treat glioblastoma. Publication Status: Online-Only, [RefSeq]; There was correlation between turbidity toxin intrinsic syndrome of Chronic Erosive Gastritis patients and the expression level of HGF and c-Met., [RefSeq]; Potent mitogen for mature parenchymal hepatocyte cells, seems to be a hepatotrophic factor, and acts as a growth factor for a broad spectrum of tissues and cell types. Activating ligand for the receptor tyrosine kinase MET by binding to it and promoting its dimerization., [UniProtKB]; MM-131, a bispecific anti-Met/EpCAM mAb, inhibits HGF-dependent and HGF-independent Met signaling through concurrent binding to EpCAM., [RefSeq]; Human albumin-expressing ASC-C were observed in the livers of recipient animals. High levels of expression of HGF and its downstream signaling molecules, including p-38, were detected in the ASC-C-injected livers., [RefSeq]", 
+      "protein_name": "Hepatocyte growth factor", 
+      "reported_o_glycosites_with_glycan": 2, 
+      "tax_id": 9606, 
+      "gene_names_refseq": "DFNB39; F-TCF; HGFB; HPTA; SF; HGF", 
+      "disease": "autosomal recessive nonsyndromic deafness 39 (Disease Ontology:0110497)", 
+      "gene_names_uniprotkb": "HGF; HPTA", 
+      "reported_n_glycosites_with_glycan": 51, 
+      "reported_o_glycosites": 1, 
+      "organism": "Homo sapiens", 
+      "gene_name": "HGF",
+      "hit_score":20.0
+    }
+  ]
+}

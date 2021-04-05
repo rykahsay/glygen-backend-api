@@ -1,0 +1,45 @@
+{
+    "result_type": "glycan_list",
+    "complex_query": {
+        "operation": "AND",
+        "query_list": [
+            {
+                "glycan_query": {
+                    "operation": "AND",
+                    "query_type": "search_glycan",
+                    "mass_type": "native",
+                    "protein_identifier": "P14210-1"
+                }
+            },
+            {
+                "protein_query": {
+                    "operation": "AND",
+                    "query_type": "search_protein",
+                    "uniprot_canonical_ac": "P1421"
+                }
+            },
+            {
+                "complex_query": {
+                    "operation": "AND",
+                    "query_list": [
+                        {
+                            "glycan_query": {
+                                "operation": "AND",
+                                "query_type": "search_glycan",
+                                "mass_type": "native",
+                                "protein_identifier": "P14210-1"
+                            }
+                        },
+                        {
+                            "protein_query": {
+                                "operation": "AND",
+                                "query_type": "search_protein",
+                                "uniprot_canonical_ac": "P1421"
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,38 @@
+Introduction:
+=============
+This webform is used to initialize the search fields of the quick search webpage:
+-	Species
+
+Note:
+=====
+When performing a search the server has to assign a unique ID to each search result and store the search result and ID. This will also allow us to persist search results even across database changes.
+
+Web service call: 
+=================
+HTTP Request method		GET
+
+
+Function:
+=========
+Web service returns the values for the list of organism in the repository for quick search page. The result set will be encoded in JSON (see separate JSON schema) and returned. 
+
+Response:
+=========
+Content						JSON
+HTTP Content Type			application/json
+Access-Control-Allow-Origin	*
+
+Warning:
+========
+To all Cross-Origin Resource Sharing (CORS) the web service has to allow all domains access. Otherwise browsers will not permit to call this web service by a webpage. Therefore the HTTP response header must contain the appropriate Access-Control-Allow-Origin statement.
+
+Note:
+=====
+An example JSON is available separately and the JSON data structure is documented in a JSON schema.
+
+Error code:
+===========
+{
+	"open-connection-failed": "Unable to connect to database."
+}	
+

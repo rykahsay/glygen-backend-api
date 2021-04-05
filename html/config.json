@@ -146,6 +146,33 @@
                 }
             }
         }
+        ,"/directsearch/gene/?query={query_json}":{
+              "get": {
+                "tags": [
+                    "Gene Search (generic gene API)"
+                ],
+                "description": "Search for gene records in GlyGen",
+                "parameters": [
+                    {
+                        "name": "query_json",
+                        "in": "path",
+                        "description": "Query in JSON format [<a href=\"/specs/protein_search.request.schema.json\" style=\"font-size:11px;text-decoration:none;\" target=_>view schema</a>]",
+                        "default":"{\"recommended_gene_name\":\"HGF\", \"organism\":{\"id\":9606}}",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                     "200": {
+                        "description": "Successful request!",
+                        "schema": {
+                              "type": "object",
+                              "properties": {}
+                        }
+                     }
+                }
+            }
+        }
         ,"/directsearch/glycan_to_biosynthesis_enzymes/?query={query_json}": {
               "get": {
                 "tags": [

@@ -1,0 +1,3957 @@
+{
+    "glytoucan": {
+        "glytoucan_ac": "G17689DH", 
+        "glytoucan_url": "https://glytoucan.org/Structures/Glycans/G17689DH"
+    }, 
+    "mass": 2368.84, 
+    "iupac": "alpha-D-NeupAc-(2->3)-beta-D-Galp-(1->4)-beta-D-GlcpNAc-(1->2)-alpha-D-Manp-(1->3)[alpha-D-NeupAc-(2->3)-beta-D-Galp-(1->4)-beta-D-GlcpNAc-(1->2)-alpha-D-Manp-(1->6)]-beta-D-Manp-(1->4)-beta-D-GlcpNAc-(1->4)[alpha-L-Fucp-(1->6)]-beta-D-GlcpNAc(1->", 
+    "wurcs": "WURCS=2.0/6,12,11/[a2122h-1b_1-5_2*NCC/3=O][a1122h-1b_1-5][a1122h-1a_1-5][a2112h-1b_1-5][Aad21122h-2a_2-6_5*NCC/3=O][a1221m-1a_1-5]/1-1-2-3-1-4-5-3-1-4-5-6/a4-b1_a6-l1_b4-c1_c3-d1_c6-h1_d2-e1_e4-f1_f3-g2_h2-i1_i4-j1_j3-k2", 
+    "glycoct": "RES 1b:b-dglc-HEX-1:5 2s:n-acetyl 3b:b-dglc-HEX-1:5 4s:n-acetyl 5b:b-dman-HEX-1:5 6b:a-dman-HEX-1:5 7b:b-dglc-HEX-1:5 8s:n-acetyl 9b:b-dgal-HEX-1:5 10b:a-dgro-dgal-NON-2:6|1:a|2:keto|3:d 11s:n-acetyl 12b:a-dman-HEX-1:5 13b:b-dglc-HEX-1:5 14s:n-acetyl 15b:b-dgal-HEX-1:5 16b:a-dgro-dgal-NON-2:6|1:a|2:keto|3:d 17s:n-acetyl 18b:a-lgal-HEX-1:5|6:d LIN 1:1d(2+1)2n 2:1o(4+1)3d 3:3d(2+1)4n 4:3o(4+1)5d 5:5o(3+1)6d 6:6o(2+1)7d 7:7d(2+1)8n 8:7o(4+1)9d 9:9o(3+2)10d 10:10d(5+1)11n 11:5o(6+1)12d 12:12o(2+1)13d 13:13d(2+1)14n 14:13o(4+1)15d 15:15o(3+2)16d 16:16d(5+1)17n 17:1o(6+1)18d", 
+    "species": [
+        {
+            "evidence": [
+                {
+                    "url": "http://www.unicarbkb.org/structure/1189", 
+                    "id": "1189", 
+                    "database": "UniCarbKB"
+                }
+            ], 
+            "taxid": 10090, 
+            "name": "Mus musculus"
+        }, 
+        {
+            "evidence": [
+                {
+                    "url": "https://glyconnect.expasy.org/browser/structures/1077", 
+                    "id": "1077", 
+                    "database": "GlyConnect"
+                }, 
+                {
+                    "url": "https://glytoucan.org/Structures/Glycans/G17689DH", 
+                    "id": "G17689DH", 
+                    "database": "GlyTouCan"
+                }, 
+                {
+                    "url": "http://www.unicarbkb.org/structure/1189", 
+                    "id": "1189", 
+                    "database": "UniCarbKB"
+                }
+            ], 
+            "taxid": 9606, 
+            "name": "Homo sapiens"
+        }, 
+        {
+            "evidence": [
+                {
+                    "url": "http://www.unicarbkb.org/structure/1189", 
+                    "id": "1189", 
+                    "database": "UniCarbKB"
+                }
+            ], 
+            "taxid": 10116, 
+            "name": "Rattus norvegicus"
+        }
+    ], 
+    "classification": [
+        {
+            "subtype": {
+                "url": "http://bioportal.bioontology.org/ontologies/GLYCO/?p=classes&conceptid=complex_N-glycan&jump_to_nav=true", 
+                "name": "complex"
+            }, 
+            "type": {
+                "url": "http://bioportal.bioontology.org/ontologies/GLYCO/?p=classes&conceptid=N-glycan&jump_to_nav=true", 
+                "name": "N-glycan"
+            }
+        }
+    ], 
+    "glycoprotein": [
+        {
+            "residue": "Asn", 
+            "uniprot_canonical_ac": "P14210-1", 
+            "protein_name": "Hepatocyte growth factor; Scatter factor; SF; Hepatopoietin-A", 
+            "evidence": [
+                {
+                    "url": "http://unicarbkb.org/proteinsummary/P14210/annotated", 
+                    "id": "P14210", 
+                    "database": "UniCarbKB"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/8407880", 
+                    "id": "8407880", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/1482348", 
+                    "id": "1482348", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://glyconnect.expasy.org/browser/proteins/219", 
+                    "id": "219", 
+                    "database": "GlyConnect"
+                }
+            ], 
+            "position": 566, 
+            "tax_name": "Homo sapiens", 
+            "gene_name": "HGF; HPTA; DFNB39; F-TCF; HGFB; HPTA; SF", 
+            "tax_id": 9606
+        }, 
+        {
+            "residue": "Asn", 
+            "uniprot_canonical_ac": "P0DN86-1", 
+            "protein_name": "Choriogonadotropin subunit beta 3; Choriogonadotropin subunit beta; CG-beta; Chorionic gonadotropin chain beta", 
+            "evidence": [
+                {
+                    "url": "http://unicarbkb.org/proteinsummary/P0DN86/annotated", 
+                    "id": "P0DN86", 
+                    "database": "UniCarbKB"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/468798", 
+                    "id": "468798", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/1374031", 
+                    "id": "1374031", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/1820200", 
+                    "id": "1820200", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/9449027", 
+                    "id": "9449027", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://glyconnect.expasy.org/browser/proteins/91", 
+                    "id": "91", 
+                    "database": "GlyConnect"
+                }
+            ], 
+            "position": 33, 
+            "tax_name": "Homo sapiens", 
+            "gene_name": "CGB5; CGB; CGB8; CGB; CGB5; CGB7; CGB8; hCGB; CGB3", 
+            "tax_id": 9606
+        }, 
+        {
+            "residue": "Asn", 
+            "uniprot_canonical_ac": "P07911-1", 
+            "protein_name": "Uromodulin; Tamm-Horsfall urinary glycoprotein; THP", 
+            "evidence": [
+                {
+                    "url": "http://unicarbkb.org/proteinsummary/P07911/annotated", 
+                    "id": "P07911", 
+                    "database": "UniCarbKB"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/9884403", 
+                    "id": "9884403", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/2136357", 
+                    "id": "2136357", 
+                    "database": "PubMed"
+                }
+            ], 
+            "position": 322, 
+            "tax_name": "Homo sapiens", 
+            "gene_name": "UMOD; ADMCKD2; FJHN; HNFJ; HNFJ1; MCKD2; THGP; THP", 
+            "tax_id": 9606
+        }, 
+        {
+            "residue": "Asn", 
+            "uniprot_canonical_ac": "P01588-1", 
+            "protein_name": "Erythropoietin", 
+            "evidence": [
+                {
+                    "url": "http://unicarbkb.org/proteinsummary/P01588/annotated", 
+                    "id": "P01588", 
+                    "database": "UniCarbKB"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/10764840", 
+                    "id": "10764840", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/3179269", 
+                    "id": "3179269", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/11805077", 
+                    "id": "11805077", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/8460945", 
+                    "id": "8460945", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/2550193", 
+                    "id": "2550193", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/8477709", 
+                    "id": "8477709", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/2813359", 
+                    "id": "2813359", 
+                    "database": "PubMed"
+                }
+            ], 
+            "position": 110, 
+            "tax_name": "Homo sapiens", 
+            "gene_name": "EPO; DBAL; ECYT5; EP; MVCD2", 
+            "tax_id": 9606
+        }, 
+        {
+            "residue": "Asn", 
+            "uniprot_canonical_ac": "P07911-1", 
+            "protein_name": "Uromodulin; Tamm-Horsfall urinary glycoprotein; THP", 
+            "evidence": [
+                {
+                    "url": "http://unicarbkb.org/proteinsummary/P07911/annotated", 
+                    "id": "P07911", 
+                    "database": "UniCarbKB"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/9884403", 
+                    "id": "9884403", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/2136357", 
+                    "id": "2136357", 
+                    "database": "PubMed"
+                }
+            ], 
+            "position": 513, 
+            "tax_name": "Homo sapiens", 
+            "gene_name": "UMOD; ADMCKD2; FJHN; HNFJ; HNFJ1; MCKD2; THGP; THP", 
+            "tax_id": 9606
+        }, 
+        {
+            "residue": "Asn", 
+            "uniprot_canonical_ac": "P17050-1", 
+            "protein_name": "Alpha-N-acetylgalactosaminidase; 3.2.1.49; Alpha-galactosidase B", 
+            "evidence": [
+                {
+                    "url": "http://unicarbkb.org/proteinsummary/P17050/annotated", 
+                    "id": "P17050", 
+                    "database": "UniCarbKB"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/10704524", 
+                    "id": "10704524", 
+                    "database": "PubMed"
+                }
+            ], 
+            "position": 201, 
+            "tax_name": "Homo sapiens", 
+            "gene_name": "D22S674; GALB; NAGA", 
+            "tax_id": 9606
+        }, 
+        {
+            "residue": "Asn", 
+            "uniprot_canonical_ac": "P02788-1", 
+            "protein_name": "Lactotransferrin; Lactoferrin; 3.4.21.-; Growth-inhibiting protein 12; Talalactoferrin", 
+            "evidence": [
+                {
+                    "url": "http://unicarbkb.org/proteinsummary/P02788/annotated", 
+                    "id": "P02788", 
+                    "database": "UniCarbKB"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/7774715", 
+                    "id": "7774715", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/7068558", 
+                    "id": "7068558", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/2390069", 
+                    "id": "2390069", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/12151713", 
+                    "id": "12151713", 
+                    "database": "PubMed"
+                }
+            ], 
+            "position": 156, 
+            "tax_name": "Homo sapiens", 
+            "gene_name": "LF; GIG12; HEL110; HLF2; LF; LTF; GIG12", 
+            "tax_id": 9606
+        }, 
+        {
+            "residue": "Asn", 
+            "uniprot_canonical_ac": "P17050-1", 
+            "protein_name": "Alpha-N-acetylgalactosaminidase; 3.2.1.49; Alpha-galactosidase B", 
+            "evidence": [
+                {
+                    "url": "http://unicarbkb.org/proteinsummary/P17050/annotated", 
+                    "id": "P17050", 
+                    "database": "UniCarbKB"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/10704524", 
+                    "id": "10704524", 
+                    "database": "PubMed"
+                }
+            ], 
+            "position": 124, 
+            "tax_name": "Homo sapiens", 
+            "gene_name": "D22S674; GALB; NAGA", 
+            "tax_id": 9606
+        }, 
+        {
+            "residue": "Asn", 
+            "uniprot_canonical_ac": "P14210-1", 
+            "protein_name": "Hepatocyte growth factor; Scatter factor; SF; Hepatopoietin-A", 
+            "evidence": [
+                {
+                    "url": "http://unicarbkb.org/proteinsummary/P14210/annotated", 
+                    "id": "P14210", 
+                    "database": "UniCarbKB"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/1482348", 
+                    "id": "1482348", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/8407880", 
+                    "id": "8407880", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://glyconnect.expasy.org/browser/proteins/219", 
+                    "id": "219", 
+                    "database": "GlyConnect"
+                }
+            ], 
+            "position": 653, 
+            "tax_name": "Homo sapiens", 
+            "gene_name": "HGF; HPTA; DFNB39; F-TCF; HGFB; HPTA; SF", 
+            "tax_id": 9606
+        }, 
+        {
+            "residue": "Asn", 
+            "uniprot_canonical_ac": "P0DN86-1", 
+            "protein_name": "Choriogonadotropin subunit beta 3; Choriogonadotropin subunit beta; CG-beta; Chorionic gonadotropin chain beta", 
+            "evidence": [
+                {
+                    "url": "http://unicarbkb.org/proteinsummary/P0DN86/annotated", 
+                    "id": "P0DN86", 
+                    "database": "UniCarbKB"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/1820200", 
+                    "id": "1820200", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/9449027", 
+                    "id": "9449027", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/1374031", 
+                    "id": "1374031", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/468798", 
+                    "id": "468798", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://glyconnect.expasy.org/browser/proteins/91", 
+                    "id": "91", 
+                    "database": "GlyConnect"
+                }
+            ], 
+            "position": 50, 
+            "tax_name": "Homo sapiens", 
+            "gene_name": "CGB5; CGB; CGB8; CGB; CGB5; CGB7; CGB8; hCGB; CGB3", 
+            "tax_id": 9606
+        }, 
+        {
+            "residue": "Asn", 
+            "uniprot_canonical_ac": "P17050-1", 
+            "protein_name": "Alpha-N-acetylgalactosaminidase; 3.2.1.49; Alpha-galactosidase B", 
+            "evidence": [
+                {
+                    "url": "http://unicarbkb.org/proteinsummary/P17050/annotated", 
+                    "id": "P17050", 
+                    "database": "UniCarbKB"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/10704524", 
+                    "id": "10704524", 
+                    "database": "PubMed"
+                }
+            ], 
+            "position": 177, 
+            "tax_name": "Homo sapiens", 
+            "gene_name": "D22S674; GALB; NAGA", 
+            "tax_id": 9606
+        }, 
+        {
+            "residue": "Asn", 
+            "uniprot_canonical_ac": "P07911-1", 
+            "protein_name": "Uromodulin; Tamm-Horsfall urinary glycoprotein; THP", 
+            "evidence": [
+                {
+                    "url": "http://unicarbkb.org/proteinsummary/P07911/annotated", 
+                    "id": "P07911", 
+                    "database": "UniCarbKB"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/2136357", 
+                    "id": "2136357", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/9884403", 
+                    "id": "9884403", 
+                    "database": "PubMed"
+                }
+            ], 
+            "position": 76, 
+            "tax_name": "Homo sapiens", 
+            "gene_name": "UMOD; ADMCKD2; FJHN; HNFJ; HNFJ1; MCKD2; THGP; THP", 
+            "tax_id": 9606
+        }, 
+        {
+            "residue": "Asn", 
+            "uniprot_canonical_ac": "P01730-1", 
+            "protein_name": "T-cell surface glycoprotein CD4; Leu-3", 
+            "evidence": [
+                {
+                    "url": "http://unicarbkb.org/proteinsummary/P01730/annotated", 
+                    "id": "P01730", 
+                    "database": "UniCarbKB"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/2592374", 
+                    "id": "2592374", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://glyconnect.expasy.org/browser/proteins/587", 
+                    "id": "587", 
+                    "database": "GlyConnect"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/2001369", 
+                    "id": "2001369", 
+                    "database": "PubMed"
+                }
+            ], 
+            "position": 296, 
+            "tax_name": "Homo sapiens", 
+            "gene_name": "CD4; CD4mut", 
+            "tax_id": 9606
+        }, 
+        {
+            "residue": "Asn", 
+            "uniprot_canonical_ac": "P01730-1", 
+            "protein_name": "T-cell surface glycoprotein CD4; Leu-3", 
+            "evidence": [
+                {
+                    "url": "http://unicarbkb.org/proteinsummary/P01730/annotated", 
+                    "id": "P01730", 
+                    "database": "UniCarbKB"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/2592374", 
+                    "id": "2592374", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://glyconnect.expasy.org/browser/proteins/587", 
+                    "id": "587", 
+                    "database": "GlyConnect"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/2001369", 
+                    "id": "2001369", 
+                    "database": "PubMed"
+                }
+            ], 
+            "position": 325, 
+            "tax_name": "Homo sapiens", 
+            "gene_name": "CD4; CD4mut", 
+            "tax_id": 9606
+        }, 
+        {
+            "residue": "Asn", 
+            "uniprot_canonical_ac": "P07911-1", 
+            "protein_name": "Uromodulin; Tamm-Horsfall urinary glycoprotein; THP", 
+            "evidence": [
+                {
+                    "url": "http://unicarbkb.org/proteinsummary/P07911/annotated", 
+                    "id": "P07911", 
+                    "database": "UniCarbKB"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/9884403", 
+                    "id": "9884403", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/2136357", 
+                    "id": "2136357", 
+                    "database": "PubMed"
+                }
+            ], 
+            "position": 275, 
+            "tax_name": "Homo sapiens", 
+            "gene_name": "UMOD; ADMCKD2; FJHN; HNFJ; HNFJ1; MCKD2; THGP; THP", 
+            "tax_id": 9606
+        }, 
+        {
+            "residue": "Asn", 
+            "uniprot_canonical_ac": "P00750-1", 
+            "protein_name": "Tissue-type plasminogen activator; tPA; 3.4.21.68; t-PA; t-plasminogen activator", 
+            "evidence": [
+                {
+                    "url": "http://unicarbkb.org/proteinsummary/P00750/annotated", 
+                    "id": "P00750", 
+                    "database": "UniCarbKB"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/8687384", 
+                    "id": "8687384", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/2226797", 
+                    "id": "2226797", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/2513186", 
+                    "id": "2513186", 
+                    "database": "PubMed"
+                }
+            ], 
+            "position": 219, 
+            "tax_name": "Homo sapiens", 
+            "gene_name": "T-PA; TPA; PLAT", 
+            "tax_id": 9606
+        }, 
+        {
+            "residue": "Asn", 
+            "uniprot_canonical_ac": "P14210-1", 
+            "protein_name": "Hepatocyte growth factor; Scatter factor; SF; Hepatopoietin-A", 
+            "evidence": [
+                {
+                    "url": "http://unicarbkb.org/proteinsummary/P14210/annotated", 
+                    "id": "P14210", 
+                    "database": "UniCarbKB"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/1482348", 
+                    "id": "1482348", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/8407880", 
+                    "id": "8407880", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://glyconnect.expasy.org/browser/proteins/219", 
+                    "id": "219", 
+                    "database": "GlyConnect"
+                }
+            ], 
+            "position": 402, 
+            "tax_name": "Homo sapiens", 
+            "gene_name": "HGF; HPTA; DFNB39; F-TCF; HGFB; HPTA; SF", 
+            "tax_id": 9606
+        }, 
+        {
+            "residue": "Asn", 
+            "uniprot_canonical_ac": "P07911-1", 
+            "protein_name": "Uromodulin; Tamm-Horsfall urinary glycoprotein; THP", 
+            "evidence": [
+                {
+                    "url": "http://unicarbkb.org/proteinsummary/P07911/annotated", 
+                    "id": "P07911", 
+                    "database": "UniCarbKB"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/2136357", 
+                    "id": "2136357", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/9884403", 
+                    "id": "9884403", 
+                    "database": "PubMed"
+                }
+            ], 
+            "position": 80, 
+            "tax_name": "Homo sapiens", 
+            "gene_name": "UMOD; ADMCKD2; FJHN; HNFJ; HNFJ1; MCKD2; THGP; THP", 
+            "tax_id": 9606
+        }, 
+        {
+            "residue": "Asn", 
+            "uniprot_canonical_ac": "P01588-1", 
+            "protein_name": "Erythropoietin", 
+            "evidence": [
+                {
+                    "url": "http://unicarbkb.org/proteinsummary/P01588/annotated", 
+                    "id": "P01588", 
+                    "database": "UniCarbKB"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/10764840", 
+                    "id": "10764840", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/3179269", 
+                    "id": "3179269", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/11805077", 
+                    "id": "11805077", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/8460945", 
+                    "id": "8460945", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/2550193", 
+                    "id": "2550193", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/8477709", 
+                    "id": "8477709", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/2813359", 
+                    "id": "2813359", 
+                    "database": "PubMed"
+                }
+            ], 
+            "position": 51, 
+            "tax_name": "Homo sapiens", 
+            "gene_name": "EPO; DBAL; ECYT5; EP; MVCD2", 
+            "tax_id": 9606
+        }, 
+        {
+            "residue": "Asn", 
+            "uniprot_canonical_ac": "P40225-1", 
+            "protein_name": "Thrombopoietin; C-mpl ligand; ML; Megakaryocyte growth and development factor; MGDF; Megakaryocyte colony-stimulating factor; Myeloproliferative leukemia virus oncogene ligand", 
+            "evidence": [
+                {
+                    "url": "http://unicarbkb.org/proteinsummary/P40225/annotated", 
+                    "id": "P40225", 
+                    "database": "UniCarbKB"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/8942648", 
+                    "id": "8942648", 
+                    "database": "PubMed"
+                }
+            ], 
+            "position": 197, 
+            "tax_name": "Homo sapiens", 
+            "gene_name": "MGDF; MKCSF; ML; MPLLG; THCYT1; TPO; MGDF; THPO", 
+            "tax_id": 9606
+        }, 
+        {
+            "residue": "Asn", 
+            "uniprot_canonical_ac": "P01588-1", 
+            "protein_name": "Erythropoietin", 
+            "evidence": [
+                {
+                    "url": "http://unicarbkb.org/proteinsummary/P01588/annotated", 
+                    "id": "P01588", 
+                    "database": "UniCarbKB"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/2813359", 
+                    "id": "2813359", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/8477709", 
+                    "id": "8477709", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/2550193", 
+                    "id": "2550193", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/8460945", 
+                    "id": "8460945", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/11805077", 
+                    "id": "11805077", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/3179269", 
+                    "id": "3179269", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/10764840", 
+                    "id": "10764840", 
+                    "database": "PubMed"
+                }
+            ], 
+            "position": 65, 
+            "tax_name": "Homo sapiens", 
+            "gene_name": "EPO; DBAL; ECYT5; EP; MVCD2", 
+            "tax_id": 9606
+        }, 
+        {
+            "residue": "Asn", 
+            "uniprot_canonical_ac": "P01574-1", 
+            "protein_name": "Interferon beta; IFN-beta; Fibroblast interferon", 
+            "evidence": [
+                {
+                    "url": "http://unicarbkb.org/proteinsummary/P01574/annotated", 
+                    "id": "P01574", 
+                    "database": "UniCarbKB"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/3667593", 
+                    "id": "3667593", 
+                    "database": "PubMed"
+                }
+            ], 
+            "position": 101, 
+            "tax_name": "Homo sapiens", 
+            "gene_name": "IFB; IFF; IFN-beta; IFNB; IFNB; IFB; IFNB1", 
+            "tax_id": 9606
+        }, 
+        {
+            "residue": "Asn", 
+            "uniprot_canonical_ac": "P07911-1", 
+            "protein_name": "Uromodulin; Tamm-Horsfall urinary glycoprotein; THP", 
+            "evidence": [
+                {
+                    "url": "http://unicarbkb.org/proteinsummary/P07911/annotated", 
+                    "id": "P07911", 
+                    "database": "UniCarbKB"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/2136357", 
+                    "id": "2136357", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/9884403", 
+                    "id": "9884403", 
+                    "database": "PubMed"
+                }
+            ], 
+            "position": 396, 
+            "tax_name": "Homo sapiens", 
+            "gene_name": "UMOD; ADMCKD2; FJHN; HNFJ; HNFJ1; MCKD2; THGP; THP", 
+            "tax_id": 9606
+        }, 
+        {
+            "residue": "Asn", 
+            "uniprot_canonical_ac": "P02788-1", 
+            "protein_name": "Lactotransferrin; Lactoferrin; 3.4.21.-; Growth-inhibiting protein 12; Talalactoferrin", 
+            "evidence": [
+                {
+                    "url": "http://unicarbkb.org/proteinsummary/P02788/annotated", 
+                    "id": "P02788", 
+                    "database": "UniCarbKB"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/12151713", 
+                    "id": "12151713", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/2390069", 
+                    "id": "2390069", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/7068558", 
+                    "id": "7068558", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/7774715", 
+                    "id": "7774715", 
+                    "database": "PubMed"
+                }
+            ], 
+            "position": 497, 
+            "tax_name": "Homo sapiens", 
+            "gene_name": "LF; GIG12; HEL110; HLF2; LF; LTF; GIG12", 
+            "tax_id": 9606
+        }, 
+        {
+            "residue": "Asn", 
+            "uniprot_canonical_ac": "P14210-1", 
+            "protein_name": "Hepatocyte growth factor; Scatter factor; SF; Hepatopoietin-A", 
+            "evidence": [
+                {
+                    "url": "http://unicarbkb.org/proteinsummary/P14210/annotated", 
+                    "id": "P14210", 
+                    "database": "UniCarbKB"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/8407880", 
+                    "id": "8407880", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/1482348", 
+                    "id": "1482348", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://glyconnect.expasy.org/browser/proteins/219", 
+                    "id": "219", 
+                    "database": "GlyConnect"
+                }
+            ], 
+            "position": 294, 
+            "tax_name": "Homo sapiens", 
+            "gene_name": "HGF; HPTA; DFNB39; F-TCF; HGFB; HPTA; SF", 
+            "tax_id": 9606
+        }, 
+        {
+            "residue": "Asn", 
+            "uniprot_canonical_ac": "P17050-1", 
+            "protein_name": "Alpha-N-acetylgalactosaminidase; 3.2.1.49; Alpha-galactosidase B", 
+            "evidence": [
+                {
+                    "url": "http://unicarbkb.org/proteinsummary/P17050/annotated", 
+                    "id": "P17050", 
+                    "database": "UniCarbKB"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/10704524", 
+                    "id": "10704524", 
+                    "database": "PubMed"
+                }
+            ], 
+            "position": 385, 
+            "tax_name": "Homo sapiens", 
+            "gene_name": "D22S674; GALB; NAGA", 
+            "tax_id": 9606
+        }, 
+        {
+            "residue": "Asn", 
+            "uniprot_canonical_ac": "Q63345-1", 
+            "protein_name": "Myelin-oligodendrocyte glycoprotein", 
+            "evidence": [
+                {
+                    "url": "http://unicarbkb.org/proteinsummary/Q63345/annotated", 
+                    "id": "Q63345", 
+                    "database": "UniCarbKB"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/24090084", 
+                    "id": "24090084", 
+                    "database": "PubMed"
+                }
+            ], 
+            "position": 58, 
+            "tax_name": "Rattus norvegicus", 
+            "gene_name": "Mog", 
+            "tax_id": 10116
+        }, 
+        {
+            "residue": "Asn", 
+            "uniprot_canonical_ac": "P17050-1", 
+            "protein_name": "Alpha-N-acetylgalactosaminidase; 3.2.1.49; Alpha-galactosidase B", 
+            "evidence": [
+                {
+                    "url": "http://unicarbkb.org/proteinsummary/P17050/annotated", 
+                    "id": "P17050", 
+                    "database": "UniCarbKB"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/10704524", 
+                    "id": "10704524", 
+                    "database": "PubMed"
+                }
+            ], 
+            "position": 359, 
+            "tax_name": "Homo sapiens", 
+            "gene_name": "D22S674; GALB; NAGA", 
+            "tax_id": 9606
+        }, 
+        {
+            "residue": "Asn", 
+            "uniprot_canonical_ac": "P07911-1", 
+            "protein_name": "Uromodulin; Tamm-Horsfall urinary glycoprotein; THP", 
+            "evidence": [
+                {
+                    "url": "http://unicarbkb.org/proteinsummary/P07911/annotated", 
+                    "id": "P07911", 
+                    "database": "UniCarbKB"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/2136357", 
+                    "id": "2136357", 
+                    "database": "PubMed"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/9884403", 
+                    "id": "9884403", 
+                    "database": "PubMed"
+                }
+            ], 
+            "position": 232, 
+            "tax_name": "Homo sapiens", 
+            "gene_name": "UMOD; ADMCKD2; FJHN; HNFJ; HNFJ1; MCKD2; THGP; THP", 
+            "tax_id": 9606
+        }
+    ], 
+    "enzyme": [
+        {
+            "uniprot_canonical_ac": "P27808-1", 
+            "gene_link": "https://www.uniprot.org/uniprot/P27808", 
+            "protein_name": "Alpha-1,3-mannosyl-glycoprotein 2-beta-N-acetylglucosaminyltransferase; 2.4.1.101; N-glycosyl-oligosaccharide-glycoprotein N-acetylglucosaminyltransferase I; GNT-I; GlcNAc-T I", 
+            "tax_name": "Mus musculus", 
+            "gene": "Mgat1; Gnt1; Mgat-1", 
+            "tax_id": 10090
+        }, 
+        {
+            "uniprot_canonical_ac": "Q9NP73-1", 
+            "gene_link": "https://www.uniprot.org/uniprot/Q9NP73", 
+            "protein_name": "Putative bifunctional UDP-N-acetylglucosamine transferase and deubiquitinase ALG13; 2.4.1.141; 3.4.19.12; Asparagine-linked glycosylation 13 homolog; Glycosyltransferase 28 domain-containing protein 1; UDP-N-acetylglucosamine transferase subunit ALG13 homolog", 
+            "tax_name": "Homo sapiens", 
+            "gene": "CDG1S; CXorf45; EIEE36; GLT28D1; MDS031; TDRD13; YGL047W; CXorf45; ALG13; MDS031; GLT28D1", 
+            "tax_id": 9606
+        }, 
+        {
+            "uniprot_canonical_ac": "Q9Z2Y2-1", 
+            "gene_link": "https://www.uniprot.org/uniprot/Q9Z2Y2", 
+            "protein_name": "Beta-1,4-galactosyltransferase 2; Beta-1,4-GalTase 2; 2.4.1.-; Beta4Gal-T2; b4Gal-T2; Nal synthase; UDP-Gal:beta-GlcNAc beta-1,4-galactosyltransferase 2; UDP-galactose:beta-N-acetylglucosamine beta-1,4-galactosyltransferase 2; Beta-N-acetylglucosaminylglycopeptide beta-1,4-galactosyltransferase; 2.4.1.38; Lactose synthase A protein; 2.4.1.22; N-acetyllactosamine synthase; 2.4.1.90; Beta-N-acetylglucosaminyl-glycolipid beta-1,4-galactosyltransferase", 
+            "tax_name": "Mus musculus", 
+            "gene": "Ggtb2; B4galt2", 
+            "tax_id": 10090
+        }, 
+        {
+            "uniprot_canonical_ac": "Q9D081-1", 
+            "gene_link": "https://www.uniprot.org/uniprot/Q9D081", 
+            "protein_name": "UDP-N-acetylglucosamine transferase subunit ALG14 homolog", 
+            "tax_name": "Mus musculus", 
+            "gene": "5430428G01Rik; AI854024; Alg14", 
+            "tax_id": 10090
+        }, 
+        {
+            "uniprot_canonical_ac": "P15535-1", 
+            "gene_link": "https://www.uniprot.org/uniprot/P15535", 
+            "protein_name": "Beta-1,4-galactosyltransferase 1; Beta-1,4-GalTase 1; 2.4.1.-; Beta4Gal-T1; b4Gal-T1; UDP-Gal:beta-GlcNAc beta-1,4-galactosyltransferase 1; UDP-galactose:beta-N-acetylglucosamine beta-1,4-galactosyltransferase 1; Nal synthase; Beta-N-acetylglucosaminylglycopeptide beta-1,4-galactosyltransferase; 2.4.1.38; Lactose synthase A protein; 2.4.1.22; N-acetyllactosamine synthase; 2.4.1.90; Beta-N-acetylglucosaminyl-glycolipid beta-1,4-galactosyltransferase", 
+            "tax_name": "Mus musculus", 
+            "gene": "B4galt1; Ggtb; Ggtb2; 4-GalT; 4-GalT1; B-1; b4Gal-T1; beta-1; beta4Gal-T1; GalT; Ggtb; Ggtb2", 
+            "tax_id": 10090
+        }, 
+        {
+            "uniprot_canonical_ac": "Q9WTS2-1", 
+            "gene_link": "https://www.uniprot.org/uniprot/Q9WTS2", 
+            "protein_name": "Alpha-(1,6)-fucosyltransferase; Alpha1-6FucT; 2.4.1.68; GDP-L-Fuc:N-acetyl-beta-D-glucosaminide alpha1,6-fucosyltransferase; Glycoprotein 6-alpha-L-fucosyltransferase; GDP-fucose--glycoprotein fucosyltransferase; Fucosyltransferase 8", 
+            "tax_name": "Mus musculus", 
+            "gene": "Fut8", 
+            "tax_id": 10090
+        }, 
+        {
+            "uniprot_canonical_ac": "Q8VIB3-1", 
+            "gene_link": "https://www.uniprot.org/uniprot/Q8VIB3", 
+            "protein_name": "Type 2 lactosamine alpha-2,3-sialyltransferase; 2.4.99.-; ST3Gal VI; ST3GalVI; CMP-NeuAc:beta-galactoside alpha-2,3-sialyltransferase VI; Sialyltransferase 10", 
+            "tax_name": "Mus musculus", 
+            "gene": "Siat10; St3gal6; 1700023B24Rik; AI930218; AW552396; Siat10; St3galVI", 
+            "tax_id": 10090
+        }, 
+        {
+            "uniprot_canonical_ac": "Q91Y74-1", 
+            "gene_link": "https://www.uniprot.org/uniprot/Q91Y74", 
+            "protein_name": "CMP-N-acetylneuraminate-beta-galactosamide-alpha-2,3-sialyltransferase 4; Alpha 2,3-ST 4; 2.4.99.2; Beta-galactoside alpha-2,3-sialyltransferase 4; 2.4.99.6; Sialyltransferase 4C; SIAT4-C; ST3Gal IV; ST3GalIV; Alpha 2,3-sialyltransferase IV; Gal-beta-1,4-GalNAc-alpha-2,3-sialyltransferase", 
+            "tax_name": "Mus musculus", 
+            "gene": "SIAT4-C; Siat4c; ST3Gal IV; ST3GalIV; Siat4c; St3gal4", 
+            "tax_id": 10090
+        }, 
+        {
+            "uniprot_canonical_ac": "P42867-1", 
+            "gene_link": "https://www.uniprot.org/uniprot/P42867", 
+            "protein_name": "UDP-N-acetylglucosamine--dolichyl-phosphate N-acetylglucosaminephosphotransferase; 2.7.8.15; GlcNAc-1-P transferase; GPT; G1PT; N-acetylglucosamine-1-phosphate transferase", 
+            "tax_name": "Mus musculus", 
+            "gene": "Dpagt2; Gnpta; Dpagt1; AU021132; Dpagt2; G1PT; Gnpta; GPT", 
+            "tax_id": 10090
+        }, 
+        {
+            "uniprot_canonical_ac": "Q9H3H5-1", 
+            "gene_link": "https://www.uniprot.org/uniprot/Q9H3H5", 
+            "protein_name": "UDP-N-acetylglucosamine--dolichyl-phosphate N-acetylglucosaminephosphotransferase; 2.7.8.15; GlcNAc-1-P transferase; GPT; G1PT; N-acetylglucosamine-1-phosphate transferase", 
+            "tax_name": "Homo sapiens", 
+            "gene": "DPAGT2; DPAGT1; ALG7; CDG-Ij; CDG1J; CMS13; CMSTA2; D11S366; DGPT; DPAGT; DPAGT2; G1PT; GPT; UAGT; UGAT", 
+            "tax_id": 9606
+        }, 
+        {
+            "uniprot_canonical_ac": "Q10469-1", 
+            "gene_link": "https://www.uniprot.org/uniprot/Q10469", 
+            "protein_name": "Alpha-1,6-mannosyl-glycoprotein 2-beta-N-acetylglucosaminyltransferase; 2.4.1.143; GlcNAc-T II; GNT-II; Beta-1,2-N-acetylglucosaminyltransferase II; N-glycosyl-oligosaccharide-glycoprotein N-acetylglucosaminyltransferase II; Mannoside acetylglucosaminyltransferase 2", 
+            "tax_name": "Homo sapiens", 
+            "gene": "MGAT2; CDG2A; CDGS2; GLCNACTII; GNT-II; GNT2", 
+            "tax_id": 9606
+        }, 
+        {
+            "uniprot_canonical_ac": "Q11203-1", 
+            "gene_link": "https://www.uniprot.org/uniprot/Q11203", 
+            "protein_name": "CMP-N-acetylneuraminate-beta-1,4-galactoside alpha-2,3-sialyltransferase; 2.4.99.6; Beta-galactoside alpha-2,3-sialyltransferase 3; Alpha 2,3-ST 3; ST3Gal III; ST3GalIII; Sialyltransferase 6; Gal beta-1,3(4) GlcNAc alpha-2,3 sialyltransferase; ST3N; N-acetyllactosaminide alpha-2,3-sialyltransferase", 
+            "tax_name": "Homo sapiens", 
+            "gene": "ST3GAL3; EIEE15; MRT12; SIAT6; ST3Gal III; ST3GALII; ST3GalIII; ST3N; SIAT6", 
+            "tax_id": 9606
+        }, 
+        {
+            "uniprot_canonical_ac": "Q9DBE8-1", 
+            "gene_link": "https://www.uniprot.org/uniprot/Q9DBE8", 
+            "protein_name": "Alpha-1,3/1,6-mannosyltransferase ALG2; 2.4.1.132; 2.4.1.257; GDP-Man:Man(2)GlcNAc(2)-PP-Dol alpha-1,6-mannosyltransferase; GDP-Man:Man(1)GlcNAc(2)-PP-Dol alpha-1,3-mannosyltransferase; Asparagine-linked glycosylation protein 2 homolog; GDP-Man:Man(1)GlcNAc(2)-PP-dolichol mannosyltransferase", 
+            "tax_name": "Mus musculus", 
+            "gene": "Alg2; MNCb-5081; 1110018A23Rik; 1300013N08Rik; ALPG2; CDGIi; MNCb-5081", 
+            "tax_id": 10090
+        }, 
+        {
+            "uniprot_canonical_ac": "P97325-1", 
+            "gene_link": "https://www.uniprot.org/uniprot/P97325", 
+            "protein_name": "CMP-N-acetylneuraminate-beta-1,4-galactoside alpha-2,3-sialyltransferase; 2.4.99.6; Beta-galactoside alpha-2,3-sialyltransferase 3; Alpha 2,3-ST 3; ST3Gal III; ST3GalIII; Sialyltransferase 6; Gal beta-1,3(4) GlcNAc alpha-2,3 sialyltransferase; ST3N; N-acetyllactosaminide alpha-2,3-sialyltransferase", 
+            "tax_name": "Mus musculus", 
+            "gene": "St3gal3; Siat3; Siat3; Siat6; ST3GalIII; ST3N; Siat6", 
+            "tax_id": 10090
+        }, 
+        {
+            "uniprot_canonical_ac": "Q9Y274-1", 
+            "gene_link": "https://www.uniprot.org/uniprot/Q9Y274", 
+            "protein_name": "Type 2 lactosamine alpha-2,3-sialyltransferase; 2.4.99.-; ST3Gal VI; ST3GalVI; CMP-NeuAc:beta-galactoside alpha-2,3-sialyltransferase VI; Sialyltransferase 10", 
+            "tax_name": "Homo sapiens", 
+            "gene": "SIAT10; ST3GALVI; SIAT10; ST3GAL6", 
+            "tax_id": 9606
+        }, 
+        {
+            "uniprot_canonical_ac": "Q9BYC5-1", 
+            "gene_link": "https://www.uniprot.org/uniprot/Q9BYC5", 
+            "protein_name": "Alpha-(1,6)-fucosyltransferase; Alpha1-6FucT; 2.4.1.68; GDP-L-Fuc:N-acetyl-beta-D-glucosaminide alpha1,6-fucosyltransferase; Glycoprotein 6-alpha-L-fucosyltransferase; GDP-fucose--glycoprotein fucosyltransferase; Fucosyltransferase 8", 
+            "tax_name": "Homo sapiens", 
+            "gene": "CDGF; CDGF1; FUT8", 
+            "tax_id": 9606
+        }, 
+        {
+            "uniprot_canonical_ac": "Q96F25-1", 
+            "gene_link": "https://www.uniprot.org/uniprot/Q96F25", 
+            "protein_name": "UDP-N-acetylglucosamine transferase subunit ALG14 homolog", 
+            "tax_name": "Homo sapiens", 
+            "gene": "CMS15; ALG14", 
+            "tax_id": 9606
+        }, 
+        {
+            "uniprot_canonical_ac": "Q8BML3-1", 
+            "gene_link": "https://www.uniprot.org/uniprot/Q8BML3", 
+            "protein_name": "MCG145726; Glycosyltransferase 28 domain-containing 2", 
+            "tax_name": "Mus musculus", 
+            "gene": "4732486J07Rik; Glt28d1l; Glt28d2; mCG_145726", 
+            "tax_id": 10090
+        }, 
+        {
+            "uniprot_canonical_ac": "Q921V5-1", 
+            "gene_link": "https://www.uniprot.org/uniprot/Q921V5", 
+            "protein_name": "Alpha-1,6-mannosyl-glycoprotein 2-beta-N-acetylglucosaminyltransferase; 2.4.1.143; GlcNAc-T II; GNT-II; Beta-1,2-N-acetylglucosaminyltransferase II; N-glycosyl-oligosaccharide-glycoprotein N-acetylglucosaminyltransferase II; Mannoside acetylglucosaminyltransferase 2", 
+            "tax_name": "Mus musculus", 
+            "gene": "Mgat2; AA407964; CDGS2; GLCNACTII; GNT-II; GNT2", 
+            "tax_id": 10090
+        }, 
+        {
+            "uniprot_canonical_ac": "Q11206-1", 
+            "gene_link": "https://www.uniprot.org/uniprot/Q11206", 
+            "protein_name": "CMP-N-acetylneuraminate-beta-galactosamide-alpha-2,3-sialyltransferase 4; Alpha 2,3-ST 4; 2.4.99.2; Beta-galactoside alpha-2,3-sialyltransferase 4; 2.4.99.4; Sialyltransferase 4C; SIAT4-C; ST3Gal IV; ST3GalIV; STZ; ST-4; ST3GalA.2; Alpha 2,3-sialyltransferase IV; Gal-beta-1,4-GalNAc-alpha-2,3-sialyltransferase; SAT-3; Gal-NAc6S", 
+            "tax_name": "Homo sapiens", 
+            "gene": "CGS23; gal-NAc6S; NANTA3; SAT3; SIAT4; SIAT4C; ST-4; ST3GalA.2; ST3GalIV; STZ; SIAT4C; ST3GAL4; NANTA3; CGS23; STZ", 
+            "tax_id": 9606
+        }, 
+        {
+            "uniprot_canonical_ac": "Q921Q3-1", 
+            "gene_link": "https://www.uniprot.org/uniprot/Q921Q3", 
+            "protein_name": "Chitobiosyldiphosphodolichol beta-mannosyltransferase; 2.4.1.142; Beta-1,4-mannosyltransferase; Asparagine-linked glycosylation protein 1 homolog; GDP-Man:GlcNAc2-PP-dolichol mannosyltransferase; GDP-mannose-dolichol diphosphochitobiose mannosyltransferase", 
+            "tax_name": "Mus musculus", 
+            "gene": "Alg1; HMAT1; HMT1", 
+            "tax_id": 10090
+        }, 
+        {
+            "uniprot_canonical_ac": "P26572-1", 
+            "gene_link": "https://www.uniprot.org/uniprot/P26572", 
+            "protein_name": "Alpha-1,3-mannosyl-glycoprotein 2-beta-N-acetylglucosaminyltransferase; 2.4.1.101; N-glycosyl-oligosaccharide-glycoprotein N-acetylglucosaminyltransferase I; GNT-I; GlcNAc-T I", 
+            "tax_name": "Homo sapiens", 
+            "gene": "GGNT1; GLCT1; MGAT1; GLYT1; MGAT; GLCNAC-TI; GLCT1; GLYT1; GNT-1; GNT-I; GnTI; MGAT", 
+            "tax_id": 9606
+        }, 
+        {
+            "uniprot_canonical_ac": "Q9BT22-1", 
+            "gene_link": "https://www.uniprot.org/uniprot/Q9BT22", 
+            "protein_name": "Chitobiosyldiphosphodolichol beta-mannosyltransferase; 2.4.1.142; Mannosyltransferase-1; MT-1; hMat-1; Beta-1,4-mannosyltransferase; Asparagine-linked glycosylation protein 1 homolog; GDP-Man:GlcNAc2-PP-dolichol mannosyltransferase; GDP-mannose-dolichol diphosphochitobiose mannosyltransferase", 
+            "tax_name": "Homo sapiens", 
+            "gene": "ALG1; PRO1870; HMT1; PSEC0061; HMAT1; CDG1K; hMat-1; HMAT1; HMT-1; HMT1; Mat-1; MT-1", 
+            "tax_id": 9606
+        }, 
+        {
+            "uniprot_canonical_ac": "Q9H553-1", 
+            "gene_link": "https://www.uniprot.org/uniprot/Q9H553", 
+            "protein_name": "Alpha-1,3/1,6-mannosyltransferase ALG2; 2.4.1.132; 2.4.1.257; GDP-Man:Man(2)GlcNAc(2)-PP-Dol alpha-1,6-mannosyltransferase; GDP-Man:Man(1)GlcNAc(2)-PP-Dol alpha-1,3-mannosyltransferase; Asparagine-linked glycosylation protein 2 homolog; GDP-Man:Man(1)GlcNAc(2)-PP-dolichol mannosyltransferase", 
+            "tax_name": "Homo sapiens", 
+            "gene": "ALG2; PRO1298; CDG1I; CDGIi; CMS14; CMSTA3; hALPG2; NET38", 
+            "tax_id": 9606
+        }, 
+        {
+            "uniprot_canonical_ac": "O60512-1", 
+            "gene_link": "https://www.uniprot.org/uniprot/O60512", 
+            "protein_name": "Beta-1,4-galactosyltransferase 3; Beta-1,4-GalTase 3; 2.4.1.-; Beta4Gal-T3; b4Gal-T3; UDP-galactose:beta-N-acetylglucosamine beta-1,4-galactosyltransferase 3; Nal synthase; UDP-Gal:beta-GlcNAc beta-1,4-galactosyltransferase 3; Beta-N-acetylglucosaminylglycopeptide beta-1,4-galactosyltransferase; 2.4.1.38; N-acetyllactosamine synthase; 2.4.1.90; Beta-N-acetylglucosaminyl-glycolipid beta-1,4-galactosyltransferase", 
+            "tax_name": "Homo sapiens", 
+            "gene": "B4GALT3; beta4Gal-T3", 
+            "tax_id": 9606
+        }, 
+        {
+            "uniprot_canonical_ac": "P15291-1", 
+            "gene_link": "https://www.uniprot.org/uniprot/P15291", 
+            "protein_name": "Beta-1,4-galactosyltransferase 1; Beta-1,4-GalTase 1; 2.4.1.-; Beta4Gal-T1; b4Gal-T1; UDP-Gal:beta-GlcNAc beta-1,4-galactosyltransferase 1; UDP-galactose:beta-N-acetylglucosamine beta-1,4-galactosyltransferase 1; Nal synthase; Beta-N-acetylglucosaminylglycopeptide beta-1,4-galactosyltransferase; 2.4.1.38; Lactose synthase A protein; 2.4.1.22; N-acetyllactosamine synthase; 2.4.1.90; Beta-N-acetylglucosaminyl-glycolipid beta-1,4-galactosyltransferase", 
+            "tax_name": "Homo sapiens", 
+            "gene": "B4GALT1; GGTB2; B4GAL-T1; beta4Gal-T1; CDG2D; GGTB2; GT1; GTB", 
+            "tax_id": 9606
+        }, 
+        {
+            "uniprot_canonical_ac": "Q9D8C3-1", 
+            "gene_link": "https://www.uniprot.org/uniprot/Q9D8C3", 
+            "protein_name": "Putative bifunctional UDP-N-acetylglucosamine transferase and deubiquitinase ALG13; 2.4.1.141; 3.4.19.12; Asparagine-linked glycosylation 13 homolog; Glycosyltransferase 28 domain-containing protein 1; UDP-N-acetylglucosamine transferase subunit ALG13 homolog", 
+            "tax_name": "Mus musculus", 
+            "gene": "Alg13; 2810046O15Rik; 4833435D08Rik; Glt28d1; MDS031; Glt28d1", 
+            "tax_id": 10090
+        }, 
+        {
+            "uniprot_canonical_ac": "Q91YY2-1", 
+            "gene_link": "https://www.uniprot.org/uniprot/Q91YY2", 
+            "protein_name": "Beta-1,4-galactosyltransferase 3; Beta-1,4-GalTase 3; 2.4.1.-; Beta4Gal-T3; b4Gal-T3; UDP-galactose:beta-N-acetylglucosamine beta-1,4-galactosyltransferase 3; Nal synthase; UDP-Gal:beta-GlcNAc beta-1,4-galactosyltransferase 3; Beta-N-acetylglucosaminylglycopeptide beta-1,4-galactosyltransferase; 2.4.1.38; N-acetyllactosamine synthase; 2.4.1.90; Beta-N-acetylglucosaminyl-glycolipid beta-1,4-galactosyltransferase", 
+            "tax_name": "Mus musculus", 
+            "gene": "B4galt3; 9530061M23Rik; AA104562; AW125175; ESTM26; ESTM6; R74981", 
+            "tax_id": 10090
+        }, 
+        {
+            "uniprot_canonical_ac": "O60909-1", 
+            "gene_link": "https://www.uniprot.org/uniprot/O60909", 
+            "protein_name": "Beta-1,4-galactosyltransferase 2; Beta-1,4-GalTase 2; 2.4.1.-; Beta4Gal-T2; b4Gal-T2; Nal synthase; UDP-Gal:beta-GlcNAc beta-1,4-galactosyltransferase 2; UDP-galactose:beta-N-acetylglucosamine beta-1,4-galactosyltransferase 2; Beta-N-acetylglucosaminylglycopeptide beta-1,4-galactosyltransferase; 2.4.1.38; Lactose synthase A protein; 2.4.1.22; N-acetyllactosamine synthase; 2.4.1.90; Beta-N-acetylglucosaminyl-glycolipid beta-1,4-galactosyltransferase", 
+            "tax_name": "Homo sapiens", 
+            "gene": "B4Gal-T2; B4Gal-T3; beta4Gal-T2; B4GALT2", 
+            "tax_id": 9606
+        }
+    ], 
+    "crossref": [
+        {
+            "url": "https://pubchem.ncbi.nlm.nih.gov/compound/CID25098607", 
+            "id": "CID25098607", 
+            "database": "PubChem Compound"
+        }, 
+        {
+            "url": "http://www.unicarbkb.org/structure/1189", 
+            "id": "1189", 
+            "database": "UniCarbKB"
+        }, 
+        {
+            "url": "https://www.genome.jp/dbget-bin/www_bget?carbbank+35217", 
+            "id": "35217", 
+            "database": "CarbBank"
+        }, 
+        {
+            "url": "https://www.genome.jp/dbget-bin/www_bget?gl:G10716", 
+            "id": "G10716", 
+            "database": "KEGG Glycan"
+        }, 
+        {
+            "url": "https://www.genome.jp/dbget-bin/www_bget?carbbank+5470", 
+            "id": "5470", 
+            "database": "CarbBank"
+        }, 
+        {
+            "url": "http://www.glycosciences.de/database/start.php?action=explore_linucsid&linucsid=2688", 
+            "id": "2688", 
+            "database": "Glycosciences.de"
+        }, 
+        {
+            "url": "https://www.genome.jp/dbget-bin/www_bget?carbbank+20870", 
+            "id": "20870", 
+            "database": "CarbBank"
+        }, 
+        {
+            "url": "https://www.genome.jp/dbget-bin/www_bget?carbbank+1975", 
+            "id": "1975", 
+            "database": "CarbBank"
+        }, 
+        {
+            "url": "https://www.genome.jp/dbget-bin/www_bget?carbbank+1976", 
+            "id": "1976", 
+            "database": "CarbBank"
+        }, 
+        {
+            "url": "https://www.genome.jp/dbget-bin/www_bget?carbbank+27306", 
+            "id": "27306", 
+            "database": "CarbBank"
+        }, 
+        {
+            "url": "https://www.genome.jp/dbget-bin/www_bget?carbbank+25738", 
+            "id": "25738", 
+            "database": "CarbBank"
+        }, 
+        {
+            "url": "https://glyconnect.expasy.org/browser/structures/1077", 
+            "id": "1077", 
+            "database": "GlyConnect"
+        }, 
+        {
+            "url": "https://www.genome.jp/dbget-bin/www_bget?carbbank+1974", 
+            "id": "1974", 
+            "database": "CarbBank"
+        }, 
+        {
+            "url": "https://www.ebi.ac.uk/chebi/searchId.do?chebiId=87782", 
+            "id": "87782", 
+            "database": "ChEBI"
+        }, 
+        {
+            "url": "http://www.glycosciences.de/database/start.php?action=explore_linucsid&linucsid=23242", 
+            "id": "23242", 
+            "database": "Glycosciences.de"
+        }, 
+        {
+            "url": "https://www.genome.jp/dbget-bin/www_bget?carbbank+27281", 
+            "id": "27281", 
+            "database": "CarbBank"
+        }, 
+        {
+            "url": "https://pubchem.ncbi.nlm.nih.gov/substance/SID252290596", 
+            "id": "SID252290596", 
+            "database": "PubChem Substance"
+        }, 
+        {
+            "url": "https://www.genome.jp/dbget-bin/www_bget?carbbank+5493", 
+            "id": "5493", 
+            "database": "CarbBank"
+        }
+    ], 
+    "mass_pme": 2943.48, 
+    "inchi_key": {
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/YWJPMIROECFZJW-YBQNOACISA-N", 
+        "key": "YWJPMIROECFZJW-YBQNOACISA-N"
+    }, 
+    "publication": [
+        {
+            "title": "Structural determination of two N-linked glycans isolated from recombinant human lactoferrin expressed in BHK cells.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/7774715", 
+            "journal": "FEBS letters", 
+            "evidence": [
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/7774715", 
+                    "id": "7774715", 
+                    "database": "PubMed"
+                }
+            ], 
+            "authors": "Legrand D, Salmon V, Coddeville B, Benaissa M, Plancke Y, Spik G", 
+            "date": "1995", 
+            "pmid": "7774715"
+        }, 
+        {
+            "title": "Analysis of site-specific N-glycosylation of recombinant Desmodus rotundus salivary plasminogen activator rDSPA alpha 1 expressed in Chinese hamster ovary cells.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/9061366", 
+            "journal": "Glycobiology", 
+            "evidence": [
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/9061366", 
+                    "id": "9061366", 
+                    "database": "PubMed"
+                }
+            ], 
+            "authors": "Gohlke M, Nuck R, Kannicht C, Grunow D, Baude G, Donner P, Reutter W", 
+            "date": "1997", 
+            "pmid": "9061366"
+        }, 
+        {
+            "title": "Structure and location of the O-glycosidic carbohydrate units of human chorionic gonadotropin.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/468798", 
+            "journal": "The Journal of biological chemistry", 
+            "evidence": [
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/468798", 
+                    "id": "468798", 
+                    "database": "PubMed"
+                }
+            ], 
+            "authors": "Kessler MJ, Mise T, Ghai RD, Bahl OP", 
+            "date": "1979", 
+            "pmid": "468798"
+        }, 
+        {
+            "title": "Site-specific glycan-peptide analysis for determination of N-glycoproteome heterogeneity.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/24090084", 
+            "journal": "Journal of proteome research", 
+            "evidence": [
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/24090084", 
+                    "id": "24090084", 
+                    "database": "PubMed"
+                }
+            ], 
+            "authors": "Parker BL, Thaysen-Andersen M, Solis N, Scott NE, Larsen MR, Graham ME, Packer NH, Cordwell SJ", 
+            "date": "2013", 
+            "pmid": "24090084"
+        }, 
+        {
+            "title": "Structural study of the N-linked oligosaccharides of hepatocyte growth factor by two-dimensional sugar mapping.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/8407880", 
+            "journal": "Journal of biochemistry", 
+            "evidence": [
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/8407880", 
+                    "id": "8407880", 
+                    "database": "PubMed"
+                }
+            ], 
+            "authors": "Hara H, Nakae Y, Sogabe T, Ihara I, Ueno S, Sakai H, Inoue H, Shimizu S, Nakamura T, Shimizu N", 
+            "date": "1993", 
+            "pmid": "8407880"
+        }, 
+        {
+            "title": "N-glycan structures of a recombinant mouse soluble Fcgamma receptor II.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/10052594", 
+            "journal": "Glycoconjugate journal", 
+            "evidence": [
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/10052594", 
+                    "id": "10052594", 
+                    "database": "PubMed"
+                }
+            ], 
+            "authors": "Takahashi N, Yamada W, Masuda K, Araki H, Tsukamoto Y, Galinha A, Sautes C, Kato K, Shimada I", 
+            "date": "1998", 
+            "pmid": "10052594"
+        }, 
+        {
+            "title": "N-glycan structures of matrix metalloproteinase-1 derived from human fibroblasts and from HT-1080 fibrosarcoma cells.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/10092871", 
+            "journal": "European journal of biochemistry", 
+            "evidence": [
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/10092871", 
+                    "id": "10092871", 
+                    "database": "PubMed"
+                }
+            ], 
+            "authors": "Saarinen J, Welgus HG, Flizar CA, Kalkkinen N, Helin J", 
+            "date": "1999", 
+            "pmid": "10092871"
+        }, 
+        {
+            "title": "Elucidation of N-linked oligosaccharide structures of recombinant human factor VIII using fluorophore-assisted carbohydrate electrophoresis.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/8969451", 
+            "journal": "Biotechnology and applied biochemistry", 
+            "evidence": [
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/8969451", 
+                    "id": "8969451", 
+                    "database": "PubMed"
+                }
+            ], 
+            "authors": "Kumar HP, Hague C, Haley T, Starr CM, Besman MJ, Lundblad RL, Baker D", 
+            "date": "1996", 
+            "pmid": "8969451"
+        }, 
+        {
+            "title": "The glycosylation of Bowes melanoma tissue plasminogen activator: lectin mapping, reaction with anti-L2/HNK-1 antibodies and the presence of sulphated/glucuronic acid containing glycans.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/8687384", 
+            "journal": "The Biochemical journal", 
+            "evidence": [
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/8687384", 
+                    "id": "8687384", 
+                    "database": "PubMed"
+                }
+            ], 
+            "authors": "Jaques AJ, Opdenakker G, Rademacher TW, Dwek RA, Zamze SE", 
+            "date": "1996", 
+            "pmid": "8687384"
+        }, 
+        {
+            "title": "Peptide, disulfide, and glycosylation mapping of recombinant human thrombopoietin from ser1 to Arg246.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/8942648", 
+            "journal": "Biochemistry", 
+            "evidence": [
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/8942648", 
+                    "id": "8942648", 
+                    "database": "PubMed"
+                }
+            ], 
+            "authors": "Hoffman RC, Andersen H, Walker K, Krakover JD, Patel S, Stamm MR, Osborn SG", 
+            "date": "1996", 
+            "pmid": "8942648"
+        }, 
+        {
+            "title": "Unusual N-glycosylation of a recombinant human erythropoietin expressed in a human lymphoblastoid cell line does not alter its biological properties.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/10764840", 
+            "journal": "Glycobiology", 
+            "evidence": [
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/10764840", 
+                    "id": "10764840", 
+                    "database": "PubMed"
+                }
+            ], 
+            "authors": "Cointe D, Beliard R, Jorieux S, Leroy Y, Glacet A, Verbert A, Bourel D, Chirat F", 
+            "date": "2000", 
+            "pmid": "10764840"
+        }, 
+        {
+            "title": "Structures of sialylated oligosaccharides of human erythropoietin expressed in recombinant BHK-21 cells.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/8477709", 
+            "journal": "European journal of biochemistry", 
+            "evidence": [
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/8477709", 
+                    "id": "8477709", 
+                    "database": "PubMed"
+                }
+            ], 
+            "authors": "Nimtz M, Martin W, Wray V, Kloppel KD, Augustin J, Conradt HS", 
+            "date": "1993", 
+            "pmid": "8477709"
+        }, 
+        {
+            "title": "Primary structure of glycans isolated from human leucocyte lactotransferrin. Absence of fucose residues questions the proposed mechanism of hyposideraemia.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/2390069", 
+            "journal": "The Biochemical journal", 
+            "evidence": [
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/2390069", 
+                    "id": "2390069", 
+                    "database": "PubMed"
+                }
+            ], 
+            "authors": "Derisbourg P, Wieruszeski JM, Montreuil J, Spik G", 
+            "date": "1990", 
+            "pmid": "2390069"
+        }, 
+        {
+            "title": "Site-specific N-glycosylation of human chorionic gonadotrophin--structural analysis of glycopeptides by one- and two-dimensional 1H NMR spectroscopy.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/1820200", 
+            "journal": "Glycobiology", 
+            "evidence": [
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/1820200", 
+                    "id": "1820200", 
+                    "database": "PubMed"
+                }
+            ], 
+            "authors": "Weisshaar G, Hiyama J, Renwick AG", 
+            "date": "1991", 
+            "pmid": "1820200"
+        }, 
+        {
+            "title": "Carbohydrate structure of recombinant human uterine tissue plasminogen activator expressed in mouse epithelial cells.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/2513186", 
+            "journal": "European journal of biochemistry", 
+            "evidence": [
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/2513186", 
+                    "id": "2513186", 
+                    "database": "PubMed"
+                }
+            ], 
+            "authors": "Pfeiffer G, Schmidt M, Strube KH, Geyer R", 
+            "date": "1989", 
+            "pmid": "2513186"
+        }, 
+        {
+            "title": "Hepatocyte growth factor is linked by O-glycosylated oligosaccharide on the alpha chain.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/1482348", 
+            "journal": "Biochemical and biophysical research communications", 
+            "evidence": [
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/1482348", 
+                    "id": "1482348", 
+                    "database": "PubMed"
+                }
+            ], 
+            "authors": "Shimizu N, Hara H, Sogabe T, Sakai H, Ihara I, Inoue H, Nakamura T, Shimizu S", 
+            "date": "1992", 
+            "pmid": "1482348"
+        }, 
+        {
+            "title": "Human alpha-N-acetylgalactosaminidase: site occupancy and structure of N-linked oligosaccharides.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/10704524", 
+            "journal": "Glycobiology", 
+            "evidence": [
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/10704524", 
+                    "id": "10704524", 
+                    "database": "PubMed"
+                }
+            ], 
+            "authors": "Ohta M, Ohnishi T, Ioannou YA, Hodgson ME, Matsuura F, Desnick RJ", 
+            "date": "2000", 
+            "pmid": "10704524"
+        }, 
+        {
+            "title": "Oligosaccharides at individual glycosylation sites in glycoprotein 71 of Friend murine leukemia virus.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/2298213", 
+            "journal": "European journal of biochemistry", 
+            "evidence": [
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/2298213", 
+                    "id": "2298213", 
+                    "database": "PubMed"
+                }
+            ], 
+            "authors": "Geyer R, Dabrowski J, Dabrowski U, Linder D, Schluter M, Schott HH, Stirm S", 
+            "date": "1990", 
+            "pmid": "2298213"
+        }, 
+        {
+            "title": "Structure of the carbohydrate moiety of human interferon-beta secreted by a recombinant Chinese hamster ovary cell line.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/3667593", 
+            "journal": "The Journal of biological chemistry", 
+            "evidence": [
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/3667593", 
+                    "id": "3667593", 
+                    "database": "PubMed"
+                }
+            ], 
+            "authors": "Conradt HS, Egge H, Peter-Katalinic J, Reiser W, Siklosi T, Schaper K", 
+            "date": "1987", 
+            "pmid": "3667593"
+        }, 
+        {
+            "title": "The carbohydrate chains of the beta subunit of human chorionic gonadotropin produced by the choriocarcinoma cell line BeWo. Novel O-linked and novel bisecting-GlcNAc-containing N-linked carbohydrates.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/1374031", 
+            "journal": "European journal of biochemistry", 
+            "evidence": [
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/1374031", 
+                    "id": "1374031", 
+                    "database": "PubMed"
+                }
+            ], 
+            "authors": "Hard K, Damm JB, Spruijt MP, Bergwerff AA, Kamerling JP, Van Dedem GW, Vliegenthart JF", 
+            "date": "1992", 
+            "pmid": "1374031"
+        }, 
+        {
+            "title": "Comparative structural study of N-linked oligosaccharides of urinary and recombinant erythropoietins.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/3179269", 
+            "journal": "Biochemistry", 
+            "evidence": [
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/3179269", 
+                    "id": "3179269", 
+                    "database": "PubMed"
+                }
+            ], 
+            "authors": "Tsuda E, Goto M, Murakami A, Akai K, Ueda M, Kawanishi G, Takahashi N, Sasaki R, Chiba H, Ishihara H, et al.", 
+            "date": "1988", 
+            "pmid": "3179269"
+        }, 
+        {
+            "title": "N-glycosylation potential of maize: the human lactoferrin used as a model.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/12151713", 
+            "journal": "Glycoconjugate journal", 
+            "evidence": [
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/12151713", 
+                    "id": "12151713", 
+                    "database": "PubMed"
+                }
+            ], 
+            "authors": "Samyn-Petit B, Gruber V, Flahaut C, Wajda-Dubos JP, Farrer S, Pons A, Desmaizieres G, Slomianny MC, Theisen M, Delannoy P", 
+            "date": "2001", 
+            "pmid": "12151713"
+        }, 
+        {
+            "title": "Structural analysis of sulfated N-linked oligosaccharides in erythropoietin.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/11805077", 
+            "journal": "Glycobiology", 
+            "evidence": [
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/11805077", 
+                    "id": "11805077", 
+                    "database": "PubMed"
+                }
+            ], 
+            "authors": "Kawasaki N, Haishima Y, Ohta M, Itoh S, Hyuga M, Hyuga S, Hayakawa T", 
+            "date": "2001", 
+            "pmid": "11805077"
+        }, 
+        {
+            "title": "Carbohydrate structures of soluble human L-selectin recombinantly expressed in baby-hamster kidney cells.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/10918037", 
+            "journal": "Biotechnology and applied biochemistry", 
+            "evidence": [
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/10918037", 
+                    "id": "10918037", 
+                    "database": "PubMed"
+                }
+            ], 
+            "authors": "Gohlke M, Mach U, Nuck R, Zimmermann-Kordmann M, Grunow D, Fieger C, Volz B, Tauber R, Petri T, Debus N, Reutter W", 
+            "date": "2000", 
+            "pmid": "10918037"
+        }, 
+        {
+            "title": "Protein and carbohydrate structural analysis of a recombinant soluble CD4 receptor by mass spectrometry.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/2592374", 
+            "journal": "The Journal of biological chemistry", 
+            "evidence": [
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/2592374", 
+                    "id": "2592374", 
+                    "database": "PubMed"
+                }
+            ], 
+            "authors": "Carr SA, Hemling ME, Folena-Wasserman G, Sweet RW, Anumula K, Barr JR, Huddleston MJ, Taylor P", 
+            "date": "1989", 
+            "pmid": "2592374"
+        }, 
+        {
+            "title": "Structures of mucin-type sugar chains on human erythropoietins purified from urine and the culture medium of recombinant Chinese hamster ovary cells.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/8460945", 
+            "journal": "Archives of biochemistry and biophysics", 
+            "evidence": [
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/8460945", 
+                    "id": "8460945", 
+                    "database": "PubMed"
+                }
+            ], 
+            "authors": "Inoue N, Takeuchi M, Asano K, Shimizu R, Takasaki S, Kobata A", 
+            "date": "1993", 
+            "pmid": "8460945"
+        }, 
+        {
+            "title": "Recombinant human erythropoietin produced by Namalwa cells.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/2550193", 
+            "journal": "DNA (Mary Ann Liebert, Inc.)", 
+            "evidence": [
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/2550193", 
+                    "id": "2550193", 
+                    "database": "PubMed"
+                }
+            ], 
+            "authors": "Yanagi H, Yoshima T, Ogawa I, Okamoto M", 
+            "date": "1989", 
+            "pmid": "2550193"
+        }, 
+        {
+            "title": "Relationship between sugar chain structure and biological activity of recombinant human erythropoietin produced in Chinese hamster ovary cells.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/2813359", 
+            "journal": "Proceedings of the National Academy of Sciences of the United States of America", 
+            "evidence": [
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/2813359", 
+                    "id": "2813359", 
+                    "database": "PubMed"
+                }
+            ], 
+            "authors": "Takeuchi M, Inoue N, Strickland TW, Kubota M, Wada M, Shimizu R, Hoshi S, Kozutsumi H, Takasaki S, Kobata A", 
+            "date": "1989", 
+            "pmid": "2813359"
+        }, 
+        {
+            "title": "Pregnancy-associated changes in oligomannose oligosaccharides of human and bovine uromodulin (Tamm-Horsfall glycoprotein).", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/2136357", 
+            "journal": "Glycoconjugate journal", 
+            "evidence": [
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/2136357", 
+                    "id": "2136357", 
+                    "database": "PubMed"
+                }
+            ], 
+            "authors": "Smagula RM, Van Halbeek H, Decker JM, Muchmore AV, Moody CE, Sherblom AP", 
+            "date": "1990", 
+            "pmid": "2136357"
+        }, 
+        {
+            "title": "Glycosylation sites and site-specific glycosylation in human Tamm-Horsfall glycoprotein.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/9884403", 
+            "journal": "Glycobiology", 
+            "evidence": [
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/9884403", 
+                    "id": "9884403", 
+                    "database": "PubMed"
+                }
+            ], 
+            "authors": "van Rooijen JJ, Voskamp AF, Kamerling JP, Vliegenthart JF", 
+            "date": "1999", 
+            "pmid": "9884403"
+        }, 
+        {
+            "title": "Carbohydrate structures of a human tissue plasminogen activator variant expressed in recombinant Chinese hamster ovary cells.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/2226797", 
+            "journal": "FEBS letters", 
+            "evidence": [
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/2226797", 
+                    "id": "2226797", 
+                    "database": "PubMed"
+                }
+            ], 
+            "authors": "Nimtz M, Noll G, Paques EP, Conradt HS", 
+            "date": "1990", 
+            "pmid": "2226797"
+        }, 
+        {
+            "title": "Carbohydrate and peptide structure of the alpha- and beta-subunits of human chorionic gonadotropin from normal and aberrant pregnancy and choriocarcinoma.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/9449027", 
+            "journal": "Endocrine", 
+            "evidence": [
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/9449027", 
+                    "id": "9449027", 
+                    "database": "PubMed"
+                }
+            ], 
+            "authors": "Elliott MM, Kardana A, Lustbader JW, Cole LA", 
+            "date": "1997", 
+            "pmid": "9449027"
+        }, 
+        {
+            "title": "Characterization of the carbohydrate chains of the secreted form of the human epidermal growth factor receptor.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/10988252", 
+            "journal": "Glycobiology", 
+            "evidence": [
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/10988252", 
+                    "id": "10988252", 
+                    "database": "PubMed"
+                }
+            ], 
+            "authors": "Stroop CJ, Weber W, Gerwig GJ, Nimtz M, Kamerling JP, Vliegenthart JF", 
+            "date": "2000", 
+            "pmid": "10988252"
+        }, 
+        {
+            "title": "Characterization of the glycosylation profiles of Alzheimer's beta -secretase protein Asp-2 expressed in a variety of cell lines.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/11278492", 
+            "journal": "The Journal of biological chemistry", 
+            "evidence": [
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/11278492", 
+                    "id": "11278492", 
+                    "database": "PubMed"
+                }
+            ], 
+            "authors": "Charlwood J, Dingwall C, Matico R, Hussain I, Johanson K, Moore S, Powell DJ, Skehel JM, Ratcliffe S, Clarke B, Trill J, Sweitzer S, Camilleri P", 
+            "date": "2001", 
+            "pmid": "11278492"
+        }, 
+        {
+            "title": "Structural study of the sugar chains of human lactoferrin: finding of four novel complex-type asparagine-linked sugar chains.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/7068558", 
+            "journal": "Journal of biochemistry", 
+            "evidence": [
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/7068558", 
+                    "id": "7068558", 
+                    "database": "PubMed"
+                }
+            ], 
+            "authors": "Matsumoto A, Yoshima H, Takasaki S, Kobata A", 
+            "date": "1982", 
+            "pmid": "7068558"
+        }, 
+        {
+            "title": "Structural analysis of the N-linked oligosaccharides from murine glycophorin.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/1929437", 
+            "journal": "Archives of biochemistry and biophysics", 
+            "evidence": [
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/1929437", 
+                    "id": "1929437", 
+                    "database": "PubMed"
+                }
+            ], 
+            "authors": "Angel AS, Gronberg G, Krotkiewski H, Lisowska E, Nilsson B", 
+            "date": "1991", 
+            "pmid": "1929437"
+        }
+    ], 
+    "motifs": [
+        {
+            "id": "G00055MO", 
+            "name": "Lactosamine motif"
+        }, 
+        {
+            "id": "G00026MO", 
+            "name": "N-Glycan core basic"
+        }, 
+        {
+            "id": "G00065MO", 
+            "name": "VIM"
+        }, 
+        {
+            "id": "G00030MO", 
+            "name": "N-Glycan complex"
+        }
+    ], 
+    "composition": [
+        {
+            "residue": "hexnac", 
+            "count": 4, 
+            "url": "https://pubchem.ncbi.nlm.nih.gov/compound/899", 
+            "name": "N-Acetylhexosamine", 
+            "cid": "899"
+        }, 
+        {
+            "residue": "dhex", 
+            "count": 1, 
+            "url": "https://pubchem.ncbi.nlm.nih.gov/compound/840", 
+            "name": "6-Deoxy-Hexose", 
+            "cid": "840"
+        }, 
+        {
+            "residue": "neuac", 
+            "count": 2, 
+            "url": "https://pubchem.ncbi.nlm.nih.gov/compound/439197", 
+            "name": "N-Acetyl-Neuraminic Acid", 
+            "cid": "439197"
+        }, 
+        {
+            "residue": "hex", 
+            "count": 5, 
+            "url": "https://pubchem.ncbi.nlm.nih.gov/compound/206", 
+            "name": "Hexose", 
+            "cid": "206"
+        }
+    ], 
+    "residues": [
+        {
+            "attachedby": "rxn.Q9WTS2-1", 
+            "id": "N16", 
+            "name": "N-glycan_a-D-Neup5Ac_16", 
+            "parentid": "N6"
+        }, 
+        {
+            "attachedby": "rxn.P42867-1", 
+            "id": "N16", 
+            "name": "N-glycan_a-D-Neup5Ac_16", 
+            "parentid": "N6"
+        }, 
+        {
+            "attachedby": "rxn.Q9D081-1", 
+            "id": "N16", 
+            "name": "N-glycan_a-D-Neup5Ac_16", 
+            "parentid": "N6"
+        }, 
+        {
+            "attachedby": "rxn.Q9D8C3-1", 
+            "id": "N16", 
+            "name": "N-glycan_a-D-Neup5Ac_16", 
+            "parentid": "N6"
+        }, 
+        {
+            "attachedby": "rxn.Q921Q3-1", 
+            "id": "N16", 
+            "name": "N-glycan_a-D-Neup5Ac_16", 
+            "parentid": "N6"
+        }, 
+        {
+            "attachedby": "rxn.Q91YY2-1", 
+            "id": "N16", 
+            "name": "N-glycan_a-D-Neup5Ac_16", 
+            "parentid": "N6"
+        }, 
+        {
+            "attachedby": "rxn.Q9Z2Y2-1", 
+            "id": "N16", 
+            "name": "N-glycan_a-D-Neup5Ac_16", 
+            "parentid": "N6"
+        }, 
+        {
+            "attachedby": "rxn.P15535-1", 
+            "id": "N16", 
+            "name": "N-glycan_a-D-Neup5Ac_16", 
+            "parentid": "N6"
+        }, 
+        {
+            "attachedby": "rxn.Q9DBE8-1", 
+            "id": "N16", 
+            "name": "N-glycan_a-D-Neup5Ac_16", 
+            "parentid": "N6"
+        }, 
+        {
+            "attachedby": "rxn.Q921Q3-1", 
+            "id": "N2", 
+            "name": "N-glycan_b-D-GlcpNAc_2", 
+            "parentid": "N1"
+        }, 
+        {
+            "attachedby": "rxn.Q11203-1", 
+            "id": "N6", 
+            "name": "N-glycan_b-D-Galp_6", 
+            "parentid": "N5"
+        }, 
+        {
+            "attachedby": "rxn.Q9H553-1", 
+            "id": "N6", 
+            "name": "N-glycan_b-D-Galp_6", 
+            "parentid": "N5"
+        }, 
+        {
+            "attachedby": "rxn.Q9BT22-1", 
+            "id": "N5", 
+            "name": "N-glycan_b-D-GlcpNAc_5", 
+            "parentid": "N4"
+        }, 
+        {
+            "attachedby": "rxn.P26572-1", 
+            "id": "N16", 
+            "name": "N-glycan_a-D-Neup5Ac_16", 
+            "parentid": "N6"
+        }, 
+        {
+            "attachedby": "rxn.Q10469-1", 
+            "id": "N16", 
+            "name": "N-glycan_a-D-Neup5Ac_16", 
+            "parentid": "N6"
+        }, 
+        {
+            "attachedby": "rxn.Q11203-1", 
+            "id": "N16", 
+            "name": "N-glycan_a-D-Neup5Ac_16", 
+            "parentid": "N6"
+        }, 
+        {
+            "attachedby": "rxn.Q9H3H5-1", 
+            "id": "N16", 
+            "name": "N-glycan_a-D-Neup5Ac_16", 
+            "parentid": "N6"
+        }, 
+        {
+            "attachedby": "rxn.P15291-1", 
+            "id": "N16", 
+            "name": "N-glycan_a-D-Neup5Ac_16", 
+            "parentid": "N6"
+        }, 
+        {
+            "attachedby": "rxn.O60909-1", 
+            "id": "N16", 
+            "name": "N-glycan_a-D-Neup5Ac_16", 
+            "parentid": "N6"
+        }, 
+        {
+            "attachedby": "rxn.Q9BT22-1", 
+            "id": "NA", 
+            "name": "N-glycan_core_b-D-GlcpNAc_A", 
+            "parentid": "no_id"
+        }, 
+        {
+            "attachedby": "rxn.Q9NP73-1", 
+            "id": "NA", 
+            "name": "N-glycan_core_b-D-GlcpNAc_A", 
+            "parentid": "no_id"
+        }, 
+        {
+            "attachedby": "rxn.Q91Y74-1", 
+            "id": "NA", 
+            "name": "N-glycan_core_b-D-GlcpNAc_A", 
+            "parentid": "no_id"
+        }, 
+        {
+            "attachedby": "rxn.Q8VIB3-1", 
+            "id": "NA", 
+            "name": "N-glycan_core_b-D-GlcpNAc_A", 
+            "parentid": "no_id"
+        }, 
+        {
+            "attachedby": "rxn.Q921V5-1", 
+            "id": "NA", 
+            "name": "N-glycan_core_b-D-GlcpNAc_A", 
+            "parentid": "no_id"
+        }, 
+        {
+            "attachedby": "rxn.P97325-1", 
+            "id": "NA", 
+            "name": "N-glycan_core_b-D-GlcpNAc_A", 
+            "parentid": "no_id"
+        }, 
+        {
+            "attachedby": "rxn.Q8BML3-1", 
+            "id": "NA", 
+            "name": "N-glycan_core_b-D-GlcpNAc_A", 
+            "parentid": "no_id"
+        }, 
+        {
+            "attachedby": "rxn.P27808-1", 
+            "id": "NA", 
+            "name": "N-glycan_core_b-D-GlcpNAc_A", 
+            "parentid": "no_id"
+        }, 
+        {
+            "attachedby": "rxn.Q96F25-1", 
+            "id": "NA", 
+            "name": "N-glycan_core_b-D-GlcpNAc_A", 
+            "parentid": "no_id"
+        }, 
+        {
+            "attachedby": "rxn.Q9H553-1", 
+            "id": "NA", 
+            "name": "N-glycan_core_b-D-GlcpNAc_A", 
+            "parentid": "no_id"
+        }, 
+        {
+            "attachedby": "rxn.Q11206-1", 
+            "id": "N3", 
+            "name": "N-glycan_b-D-Galp_3", 
+            "parentid": "N2"
+        }, 
+        {
+            "attachedby": "rxn.P26572-1", 
+            "id": "N3", 
+            "name": "N-glycan_b-D-Galp_3", 
+            "parentid": "N2"
+        }, 
+        {
+            "attachedby": "rxn.Q10469-1", 
+            "id": "N3", 
+            "name": "N-glycan_b-D-Galp_3", 
+            "parentid": "N2"
+        }, 
+        {
+            "attachedby": "rxn.Q9Y274-1", 
+            "id": "N3", 
+            "name": "N-glycan_b-D-Galp_3", 
+            "parentid": "N2"
+        }, 
+        {
+            "attachedby": "rxn.Q921Q3-1", 
+            "id": "N17", 
+            "name": "N-glycan_a-D-Neup5Ac_17", 
+            "parentid": "N3"
+        }, 
+        {
+            "attachedby": "rxn.Q9DBE8-1", 
+            "id": "N17", 
+            "name": "N-glycan_a-D-Neup5Ac_17", 
+            "parentid": "N3"
+        }, 
+        {
+            "attachedby": "rxn.P15535-1", 
+            "id": "N17", 
+            "name": "N-glycan_a-D-Neup5Ac_17", 
+            "parentid": "N3"
+        }, 
+        {
+            "attachedby": "rxn.P15291-1", 
+            "id": "N6", 
+            "name": "N-glycan_b-D-Galp_6", 
+            "parentid": "N5"
+        }, 
+        {
+            "attachedby": "rxn.Q9D8C3-1", 
+            "id": "NA", 
+            "name": "N-glycan_core_b-D-GlcpNAc_A", 
+            "parentid": "no_id"
+        }, 
+        {
+            "attachedby": "rxn.Q9WTS2-1", 
+            "id": "NB", 
+            "name": "N-glycan_core_b-D-GlcpNAc_B", 
+            "parentid": "NA"
+        }, 
+        {
+            "attachedby": "rxn.Q8BML3-1", 
+            "id": "NB", 
+            "name": "N-glycan_core_b-D-GlcpNAc_B", 
+            "parentid": "NA"
+        }, 
+        {
+            "attachedby": "rxn.P15535-1", 
+            "id": "NB", 
+            "name": "N-glycan_core_b-D-GlcpNAc_B", 
+            "parentid": "NA"
+        }, 
+        {
+            "attachedby": "rxn.Q9Z2Y2-1", 
+            "id": "NB", 
+            "name": "N-glycan_core_b-D-GlcpNAc_B", 
+            "parentid": "NA"
+        }, 
+        {
+            "attachedby": "rxn.Q91YY2-1", 
+            "id": "NB", 
+            "name": "N-glycan_core_b-D-GlcpNAc_B", 
+            "parentid": "NA"
+        }, 
+        {
+            "attachedby": "rxn.P42867-1", 
+            "id": "NB", 
+            "name": "N-glycan_core_b-D-GlcpNAc_B", 
+            "parentid": "NA"
+        }, 
+        {
+            "attachedby": "rxn.Q921Q3-1", 
+            "id": "NB", 
+            "name": "N-glycan_core_b-D-GlcpNAc_B", 
+            "parentid": "NA"
+        }, 
+        {
+            "attachedby": "rxn.Q9D8C3-1", 
+            "id": "NB", 
+            "name": "N-glycan_core_b-D-GlcpNAc_B", 
+            "parentid": "NA"
+        }, 
+        {
+            "attachedby": "rxn.Q9D081-1", 
+            "id": "NB", 
+            "name": "N-glycan_core_b-D-GlcpNAc_B", 
+            "parentid": "NA"
+        }, 
+        {
+            "attachedby": "rxn.Q9DBE8-1", 
+            "id": "NB", 
+            "name": "N-glycan_core_b-D-GlcpNAc_B", 
+            "parentid": "NA"
+        }, 
+        {
+            "attachedby": "rxn.Q9Y274-1", 
+            "id": "NA", 
+            "name": "N-glycan_core_b-D-GlcpNAc_A", 
+            "parentid": "no_id"
+        }, 
+        {
+            "attachedby": "rxn.Q11206-1", 
+            "id": "NA", 
+            "name": "N-glycan_core_b-D-GlcpNAc_A", 
+            "parentid": "no_id"
+        }, 
+        {
+            "attachedby": "rxn.Q11203-1", 
+            "id": "NA", 
+            "name": "N-glycan_core_b-D-GlcpNAc_A", 
+            "parentid": "no_id"
+        }, 
+        {
+            "attachedby": "rxn.Q10469-1", 
+            "id": "NA", 
+            "name": "N-glycan_core_b-D-GlcpNAc_A", 
+            "parentid": "no_id"
+        }, 
+        {
+            "attachedby": "rxn.P26572-1", 
+            "id": "NA", 
+            "name": "N-glycan_core_b-D-GlcpNAc_A", 
+            "parentid": "no_id"
+        }, 
+        {
+            "attachedby": "rxn.Q9BYC5-1", 
+            "id": "NA", 
+            "name": "N-glycan_core_b-D-GlcpNAc_A", 
+            "parentid": "no_id"
+        }, 
+        {
+            "attachedby": "rxn.Q9H3H5-1", 
+            "id": "NA", 
+            "name": "N-glycan_core_b-D-GlcpNAc_A", 
+            "parentid": "no_id"
+        }, 
+        {
+            "attachedby": "rxn.O60512-1", 
+            "id": "NA", 
+            "name": "N-glycan_core_b-D-GlcpNAc_A", 
+            "parentid": "no_id"
+        }, 
+        {
+            "attachedby": "rxn.O60909-1", 
+            "id": "NA", 
+            "name": "N-glycan_core_b-D-GlcpNAc_A", 
+            "parentid": "no_id"
+        }, 
+        {
+            "attachedby": "rxn.P15291-1", 
+            "id": "NA", 
+            "name": "N-glycan_core_b-D-GlcpNAc_A", 
+            "parentid": "no_id"
+        }, 
+        {
+            "attachedby": "rxn.Q9H553-1", 
+            "id": "N2", 
+            "name": "N-glycan_b-D-GlcpNAc_2", 
+            "parentid": "N1"
+        }, 
+        {
+            "attachedby": "rxn.Q9NP73-1", 
+            "id": "N2", 
+            "name": "N-glycan_b-D-GlcpNAc_2", 
+            "parentid": "N1"
+        }, 
+        {
+            "attachedby": "rxn.Q91Y74-1", 
+            "id": "N2", 
+            "name": "N-glycan_b-D-GlcpNAc_2", 
+            "parentid": "N1"
+        }, 
+        {
+            "attachedby": "rxn.Q8VIB3-1", 
+            "id": "N2", 
+            "name": "N-glycan_b-D-GlcpNAc_2", 
+            "parentid": "N1"
+        }, 
+        {
+            "attachedby": "rxn.Q9Y274-1", 
+            "id": "N6", 
+            "name": "N-glycan_b-D-Galp_6", 
+            "parentid": "N5"
+        }, 
+        {
+            "attachedby": "rxn.Q9D081-1", 
+            "id": "NC", 
+            "name": "N-glycan_core_b-D-Manp", 
+            "parentid": "NB"
+        }, 
+        {
+            "attachedby": "rxn.Q9Z2Y2-1", 
+            "id": "NC", 
+            "name": "N-glycan_core_b-D-Manp", 
+            "parentid": "NB"
+        }, 
+        {
+            "attachedby": "rxn.P97325-1", 
+            "id": "N1", 
+            "name": "N-glycan_a-D-Manp_1", 
+            "parentid": "NC"
+        }, 
+        {
+            "attachedby": "rxn.P15291-1", 
+            "id": "N1", 
+            "name": "N-glycan_a-D-Manp_1", 
+            "parentid": "NC"
+        }, 
+        {
+            "attachedby": "rxn.Q9H553-1", 
+            "id": "N1", 
+            "name": "N-glycan_a-D-Manp_1", 
+            "parentid": "NC"
+        }, 
+        {
+            "attachedby": "rxn.Q9H3H5-1", 
+            "id": "NB", 
+            "name": "N-glycan_core_b-D-GlcpNAc_B", 
+            "parentid": "NA"
+        }, 
+        {
+            "attachedby": "rxn.Q9BYC5-1", 
+            "id": "NB", 
+            "name": "N-glycan_core_b-D-GlcpNAc_B", 
+            "parentid": "NA"
+        }, 
+        {
+            "attachedby": "rxn.Q11203-1", 
+            "id": "NB", 
+            "name": "N-glycan_core_b-D-GlcpNAc_B", 
+            "parentid": "NA"
+        }, 
+        {
+            "attachedby": "rxn.P26572-1", 
+            "id": "NB", 
+            "name": "N-glycan_core_b-D-GlcpNAc_B", 
+            "parentid": "NA"
+        }, 
+        {
+            "attachedby": "rxn.Q10469-1", 
+            "id": "NB", 
+            "name": "N-glycan_core_b-D-GlcpNAc_B", 
+            "parentid": "NA"
+        }, 
+        {
+            "attachedby": "rxn.Q921V5-1", 
+            "id": "N16", 
+            "name": "N-glycan_a-D-Neup5Ac_16", 
+            "parentid": "N6"
+        }, 
+        {
+            "attachedby": "rxn.Q8VIB3-1", 
+            "id": "N16", 
+            "name": "N-glycan_a-D-Neup5Ac_16", 
+            "parentid": "N6"
+        }, 
+        {
+            "attachedby": "rxn.Q9DBE8-1", 
+            "id": "NA", 
+            "name": "N-glycan_core_b-D-GlcpNAc_A", 
+            "parentid": "no_id"
+        }, 
+        {
+            "attachedby": "rxn.P15535-1", 
+            "id": "NA", 
+            "name": "N-glycan_core_b-D-GlcpNAc_A", 
+            "parentid": "no_id"
+        }, 
+        {
+            "attachedby": "rxn.Q9Z2Y2-1", 
+            "id": "NA", 
+            "name": "N-glycan_core_b-D-GlcpNAc_A", 
+            "parentid": "no_id"
+        }, 
+        {
+            "attachedby": "rxn.Q9D081-1", 
+            "id": "NA", 
+            "name": "N-glycan_core_b-D-GlcpNAc_A", 
+            "parentid": "no_id"
+        }, 
+        {
+            "attachedby": "rxn.P42867-1", 
+            "id": "NA", 
+            "name": "N-glycan_core_b-D-GlcpNAc_A", 
+            "parentid": "no_id"
+        }, 
+        {
+            "attachedby": "rxn.Q91YY2-1", 
+            "id": "N4", 
+            "name": "N-glycan_a-D-Manp_4", 
+            "parentid": "NC"
+        }, 
+        {
+            "attachedby": "rxn.P97325-1", 
+            "id": "N4", 
+            "name": "N-glycan_a-D-Manp_4", 
+            "parentid": "NC"
+        }, 
+        {
+            "attachedby": "rxn.Q9H3H5-1", 
+            "id": "N3", 
+            "name": "N-glycan_b-D-Galp_3", 
+            "parentid": "N2"
+        }, 
+        {
+            "attachedby": "rxn.O60512-1", 
+            "id": "N3", 
+            "name": "N-glycan_b-D-Galp_3", 
+            "parentid": "N2"
+        }, 
+        {
+            "attachedby": "rxn.Q8VIB3-1", 
+            "id": "N3", 
+            "name": "N-glycan_b-D-Galp_3", 
+            "parentid": "N2"
+        }, 
+        {
+            "attachedby": "rxn.Q9BT22-1", 
+            "id": "NB", 
+            "name": "N-glycan_core_b-D-GlcpNAc_B", 
+            "parentid": "NA"
+        }, 
+        {
+            "attachedby": "rxn.Q8VIB3-1", 
+            "id": "NB", 
+            "name": "N-glycan_core_b-D-GlcpNAc_B", 
+            "parentid": "NA"
+        }, 
+        {
+            "attachedby": "rxn.Q96F25-1", 
+            "id": "NB", 
+            "name": "N-glycan_core_b-D-GlcpNAc_B", 
+            "parentid": "NA"
+        }, 
+        {
+            "attachedby": "rxn.Q9NP73-1", 
+            "id": "NB", 
+            "name": "N-glycan_core_b-D-GlcpNAc_B", 
+            "parentid": "NA"
+        }, 
+        {
+            "attachedby": "rxn.Q921V5-1", 
+            "id": "NB", 
+            "name": "N-glycan_core_b-D-GlcpNAc_B", 
+            "parentid": "NA"
+        }, 
+        {
+            "attachedby": "rxn.P27808-1", 
+            "id": "NB", 
+            "name": "N-glycan_core_b-D-GlcpNAc_B", 
+            "parentid": "NA"
+        }, 
+        {
+            "attachedby": "rxn.Q91YY2-1", 
+            "id": "N5", 
+            "name": "N-glycan_b-D-GlcpNAc_5", 
+            "parentid": "N4"
+        }, 
+        {
+            "attachedby": "rxn.Q9Z2Y2-1", 
+            "id": "N5", 
+            "name": "N-glycan_b-D-GlcpNAc_5", 
+            "parentid": "N4"
+        }, 
+        {
+            "attachedby": "rxn.P26572-1", 
+            "id": "N6", 
+            "name": "N-glycan_b-D-Galp_6", 
+            "parentid": "N5"
+        }, 
+        {
+            "attachedby": "rxn.Q10469-1", 
+            "id": "N6", 
+            "name": "N-glycan_b-D-Galp_6", 
+            "parentid": "N5"
+        }, 
+        {
+            "attachedby": "rxn.Q921V5-1", 
+            "id": "NC", 
+            "name": "N-glycan_core_b-D-Manp", 
+            "parentid": "NB"
+        }, 
+        {
+            "attachedby": "rxn.P97325-1", 
+            "id": "NC", 
+            "name": "N-glycan_core_b-D-Manp", 
+            "parentid": "NB"
+        }, 
+        {
+            "attachedby": "rxn.Q91Y74-1", 
+            "id": "NC", 
+            "name": "N-glycan_core_b-D-Manp", 
+            "parentid": "NB"
+        }, 
+        {
+            "attachedby": "rxn.Q8VIB3-1", 
+            "id": "NC", 
+            "name": "N-glycan_core_b-D-Manp", 
+            "parentid": "NB"
+        }, 
+        {
+            "attachedby": "rxn.Q9BT22-1", 
+            "id": "NC", 
+            "name": "N-glycan_core_b-D-Manp", 
+            "parentid": "NB"
+        }, 
+        {
+            "attachedby": "rxn.Q9NP73-1", 
+            "id": "NC", 
+            "name": "N-glycan_core_b-D-Manp", 
+            "parentid": "NB"
+        }, 
+        {
+            "attachedby": "rxn.Q96F25-1", 
+            "id": "NC", 
+            "name": "N-glycan_core_b-D-Manp", 
+            "parentid": "NB"
+        }, 
+        {
+            "attachedby": "rxn.Q9H553-1", 
+            "id": "NC", 
+            "name": "N-glycan_core_b-D-Manp", 
+            "parentid": "NB"
+        }, 
+        {
+            "attachedby": "rxn.P15291-1", 
+            "id": "NC", 
+            "name": "N-glycan_core_b-D-Manp", 
+            "parentid": "NB"
+        }, 
+        {
+            "attachedby": "rxn.O60909-1", 
+            "id": "NC", 
+            "name": "N-glycan_core_b-D-Manp", 
+            "parentid": "NB"
+        }, 
+        {
+            "attachedby": "rxn.Q91YY2-1", 
+            "id": "N3", 
+            "name": "N-glycan_b-D-Galp_3", 
+            "parentid": "N2"
+        }, 
+        {
+            "attachedby": "rxn.Q9Y274-1", 
+            "id": "N2", 
+            "name": "N-glycan_b-D-GlcpNAc_2", 
+            "parentid": "N1"
+        }, 
+        {
+            "attachedby": "rxn.P26572-1", 
+            "id": "N5", 
+            "name": "N-glycan_b-D-GlcpNAc_5", 
+            "parentid": "N4"
+        }, 
+        {
+            "attachedby": "rxn.Q9BYC5-1", 
+            "id": "N5", 
+            "name": "N-glycan_b-D-GlcpNAc_5", 
+            "parentid": "N4"
+        }, 
+        {
+            "attachedby": "rxn.Q11203-1", 
+            "id": "N3", 
+            "name": "N-glycan_b-D-Galp_3", 
+            "parentid": "N2"
+        }, 
+        {
+            "attachedby": "rxn.P15535-1", 
+            "id": "NC", 
+            "name": "N-glycan_core_b-D-Manp", 
+            "parentid": "NB"
+        }, 
+        {
+            "attachedby": "rxn.Q9DBE8-1", 
+            "id": "NC", 
+            "name": "N-glycan_core_b-D-Manp", 
+            "parentid": "NB"
+        }, 
+        {
+            "attachedby": "rxn.Q9D8C3-1", 
+            "id": "NC", 
+            "name": "N-glycan_core_b-D-Manp", 
+            "parentid": "NB"
+        }, 
+        {
+            "attachedby": "rxn.Q9WTS2-1", 
+            "id": "NC", 
+            "name": "N-glycan_core_b-D-Manp", 
+            "parentid": "NB"
+        }, 
+        {
+            "attachedby": "rxn.P42867-1", 
+            "id": "NC", 
+            "name": "N-glycan_core_b-D-Manp", 
+            "parentid": "NB"
+        }, 
+        {
+            "attachedby": "rxn.Q91YY2-1", 
+            "id": "NC", 
+            "name": "N-glycan_core_b-D-Manp", 
+            "parentid": "NB"
+        }, 
+        {
+            "attachedby": "rxn.P27808-1", 
+            "id": "NC", 
+            "name": "N-glycan_core_b-D-Manp", 
+            "parentid": "NB"
+        }, 
+        {
+            "attachedby": "rxn.Q8BML3-1", 
+            "id": "NC", 
+            "name": "N-glycan_core_b-D-Manp", 
+            "parentid": "NB"
+        }, 
+        {
+            "attachedby": "rxn.Q8BML3-1", 
+            "id": "N4", 
+            "name": "N-glycan_a-D-Manp_4", 
+            "parentid": "NC"
+        }, 
+        {
+            "attachedby": "rxn.Q9WTS2-1", 
+            "id": "N4", 
+            "name": "N-glycan_a-D-Manp_4", 
+            "parentid": "NC"
+        }, 
+        {
+            "attachedby": "rxn.P42867-1", 
+            "id": "N4", 
+            "name": "N-glycan_a-D-Manp_4", 
+            "parentid": "NC"
+        }, 
+        {
+            "attachedby": "rxn.Q91Y74-1", 
+            "id": "N4", 
+            "name": "N-glycan_a-D-Manp_4", 
+            "parentid": "NC"
+        }, 
+        {
+            "attachedby": "rxn.Q921V5-1", 
+            "id": "N4", 
+            "name": "N-glycan_a-D-Manp_4", 
+            "parentid": "NC"
+        }, 
+        {
+            "attachedby": "rxn.P27808-1", 
+            "id": "N4", 
+            "name": "N-glycan_a-D-Manp_4", 
+            "parentid": "NC"
+        }, 
+        {
+            "attachedby": "rxn.Q9BT22-1", 
+            "id": "N4", 
+            "name": "N-glycan_a-D-Manp_4", 
+            "parentid": "NC"
+        }, 
+        {
+            "attachedby": "rxn.Q8VIB3-1", 
+            "id": "N4", 
+            "name": "N-glycan_a-D-Manp_4", 
+            "parentid": "NC"
+        }, 
+        {
+            "attachedby": "rxn.Q9Y274-1", 
+            "id": "NB", 
+            "name": "N-glycan_core_b-D-GlcpNAc_B", 
+            "parentid": "NA"
+        }, 
+        {
+            "attachedby": "rxn.Q11206-1", 
+            "id": "NB", 
+            "name": "N-glycan_core_b-D-GlcpNAc_B", 
+            "parentid": "NA"
+        }, 
+        {
+            "attachedby": "rxn.Q9NP73-1", 
+            "id": "N17", 
+            "name": "N-glycan_a-D-Neup5Ac_17", 
+            "parentid": "N3"
+        }, 
+        {
+            "attachedby": "rxn.Q9BT22-1", 
+            "id": "N2", 
+            "name": "N-glycan_b-D-GlcpNAc_2", 
+            "parentid": "N1"
+        }, 
+        {
+            "attachedby": "rxn.P27808-1", 
+            "id": "N1", 
+            "name": "N-glycan_a-D-Manp_1", 
+            "parentid": "NC"
+        }, 
+        {
+            "attachedby": "rxn.Q921V5-1", 
+            "id": "N1", 
+            "name": "N-glycan_a-D-Manp_1", 
+            "parentid": "NC"
+        }, 
+        {
+            "attachedby": "rxn.Q9WTS2-1", 
+            "id": "N1", 
+            "name": "N-glycan_a-D-Manp_1", 
+            "parentid": "NC"
+        }, 
+        {
+            "attachedby": "rxn.Q8BML3-1", 
+            "id": "N1", 
+            "name": "N-glycan_a-D-Manp_1", 
+            "parentid": "NC"
+        }, 
+        {
+            "attachedby": "rxn.Q91YY2-1", 
+            "id": "N1", 
+            "name": "N-glycan_a-D-Manp_1", 
+            "parentid": "NC"
+        }, 
+        {
+            "attachedby": "rxn.P42867-1", 
+            "id": "N1", 
+            "name": "N-glycan_a-D-Manp_1", 
+            "parentid": "NC"
+        }, 
+        {
+            "attachedby": "rxn.P15535-1", 
+            "id": "N1", 
+            "name": "N-glycan_a-D-Manp_1", 
+            "parentid": "NC"
+        }, 
+        {
+            "attachedby": "rxn.Q9Z2Y2-1", 
+            "id": "N1", 
+            "name": "N-glycan_a-D-Manp_1", 
+            "parentid": "NC"
+        }, 
+        {
+            "attachedby": "rxn.Q9D081-1", 
+            "id": "N1", 
+            "name": "N-glycan_a-D-Manp_1", 
+            "parentid": "NC"
+        }, 
+        {
+            "attachedby": "rxn.Q9DBE8-1", 
+            "id": "N1", 
+            "name": "N-glycan_a-D-Manp_1", 
+            "parentid": "NC"
+        }, 
+        {
+            "attachedby": "rxn.Q10469-1", 
+            "id": "N17", 
+            "name": "N-glycan_a-D-Neup5Ac_17", 
+            "parentid": "N3"
+        }, 
+        {
+            "attachedby": "rxn.Q11206-1", 
+            "id": "N17", 
+            "name": "N-glycan_a-D-Neup5Ac_17", 
+            "parentid": "N3"
+        }, 
+        {
+            "attachedby": "rxn.Q921Q3-1", 
+            "id": "N4", 
+            "name": "N-glycan_a-D-Manp_4", 
+            "parentid": "NC"
+        }, 
+        {
+            "attachedby": "rxn.Q9D8C3-1", 
+            "id": "N4", 
+            "name": "N-glycan_a-D-Manp_4", 
+            "parentid": "NC"
+        }, 
+        {
+            "attachedby": "rxn.Q9D081-1", 
+            "id": "N4", 
+            "name": "N-glycan_a-D-Manp_4", 
+            "parentid": "NC"
+        }, 
+        {
+            "attachedby": "rxn.Q9DBE8-1", 
+            "id": "N4", 
+            "name": "N-glycan_a-D-Manp_4", 
+            "parentid": "NC"
+        }, 
+        {
+            "attachedby": "rxn.P15535-1", 
+            "id": "N4", 
+            "name": "N-glycan_a-D-Manp_4", 
+            "parentid": "NC"
+        }, 
+        {
+            "attachedby": "rxn.Q91YY2-1", 
+            "id": "NA", 
+            "name": "N-glycan_core_b-D-GlcpNAc_A", 
+            "parentid": "no_id"
+        }, 
+        {
+            "attachedby": "rxn.P97325-1", 
+            "id": "N2", 
+            "name": "N-glycan_b-D-GlcpNAc_2", 
+            "parentid": "N1"
+        }, 
+        {
+            "attachedby": "rxn.Q8VIB3-1", 
+            "id": "N17", 
+            "name": "N-glycan_a-D-Neup5Ac_17", 
+            "parentid": "N3"
+        }, 
+        {
+            "attachedby": "rxn.Q9H553-1", 
+            "id": "N16", 
+            "name": "N-glycan_a-D-Neup5Ac_16", 
+            "parentid": "N6"
+        }, 
+        {
+            "attachedby": "rxn.Q96F25-1", 
+            "id": "N16", 
+            "name": "N-glycan_a-D-Neup5Ac_16", 
+            "parentid": "N6"
+        }, 
+        {
+            "attachedby": "rxn.Q9D8C3-1", 
+            "id": "N1", 
+            "name": "N-glycan_a-D-Manp_1", 
+            "parentid": "NC"
+        }, 
+        {
+            "attachedby": "rxn.Q921Q3-1", 
+            "id": "N1", 
+            "name": "N-glycan_a-D-Manp_1", 
+            "parentid": "NC"
+        }, 
+        {
+            "attachedby": "rxn.Q9H3H5-1", 
+            "id": "NC", 
+            "name": "N-glycan_core_b-D-Manp", 
+            "parentid": "NB"
+        }, 
+        {
+            "attachedby": "rxn.O60512-1", 
+            "id": "NC", 
+            "name": "N-glycan_core_b-D-Manp", 
+            "parentid": "NB"
+        }, 
+        {
+            "attachedby": "rxn.P26572-1", 
+            "id": "NC", 
+            "name": "N-glycan_core_b-D-Manp", 
+            "parentid": "NB"
+        }, 
+        {
+            "attachedby": "rxn.Q9BYC5-1", 
+            "id": "NC", 
+            "name": "N-glycan_core_b-D-Manp", 
+            "parentid": "NB"
+        }, 
+        {
+            "attachedby": "rxn.Q11203-1", 
+            "id": "NC", 
+            "name": "N-glycan_core_b-D-Manp", 
+            "parentid": "NB"
+        }, 
+        {
+            "attachedby": "rxn.Q10469-1", 
+            "id": "NC", 
+            "name": "N-glycan_core_b-D-Manp", 
+            "parentid": "NB"
+        }, 
+        {
+            "attachedby": "rxn.Q9Y274-1", 
+            "id": "NC", 
+            "name": "N-glycan_core_b-D-Manp", 
+            "parentid": "NB"
+        }, 
+        {
+            "attachedby": "rxn.Q11206-1", 
+            "id": "NC", 
+            "name": "N-glycan_core_b-D-Manp", 
+            "parentid": "NB"
+        }, 
+        {
+            "attachedby": "rxn.Q91Y74-1", 
+            "id": "N6", 
+            "name": "N-glycan_b-D-Galp_6", 
+            "parentid": "N5"
+        }, 
+        {
+            "attachedby": "rxn.Q9BT22-1", 
+            "id": "N6", 
+            "name": "N-glycan_b-D-Galp_6", 
+            "parentid": "N5"
+        }, 
+        {
+            "attachedby": "rxn.Q8BML3-1", 
+            "id": "N6", 
+            "name": "N-glycan_b-D-Galp_6", 
+            "parentid": "N5"
+        }, 
+        {
+            "attachedby": "rxn.Q921V5-1", 
+            "id": "N6", 
+            "name": "N-glycan_b-D-Galp_6", 
+            "parentid": "N5"
+        }, 
+        {
+            "attachedby": "rxn.Q96F25-1", 
+            "id": "N6", 
+            "name": "N-glycan_b-D-Galp_6", 
+            "parentid": "N5"
+        }, 
+        {
+            "attachedby": "rxn.Q11203-1", 
+            "id": "N4", 
+            "name": "N-glycan_a-D-Manp_4", 
+            "parentid": "NC"
+        }, 
+        {
+            "attachedby": "rxn.Q9D8C3-1", 
+            "id": "N2", 
+            "name": "N-glycan_b-D-GlcpNAc_2", 
+            "parentid": "N1"
+        }, 
+        {
+            "attachedby": "rxn.Q9D081-1", 
+            "id": "N2", 
+            "name": "N-glycan_b-D-GlcpNAc_2", 
+            "parentid": "N1"
+        }, 
+        {
+            "attachedby": "rxn.Q9H3H5-1", 
+            "id": "N1", 
+            "name": "N-glycan_a-D-Manp_1", 
+            "parentid": "NC"
+        }, 
+        {
+            "attachedby": "rxn.Q9BYC5-1", 
+            "id": "N1", 
+            "name": "N-glycan_a-D-Manp_1", 
+            "parentid": "NC"
+        }, 
+        {
+            "attachedby": "rxn.Q11206-1", 
+            "id": "N1", 
+            "name": "N-glycan_a-D-Manp_1", 
+            "parentid": "NC"
+        }, 
+        {
+            "attachedby": "rxn.Q91YY2-1", 
+            "id": "N6", 
+            "name": "N-glycan_b-D-Galp_6", 
+            "parentid": "N5"
+        }, 
+        {
+            "attachedby": "rxn.P42867-1", 
+            "id": "N6", 
+            "name": "N-glycan_b-D-Galp_6", 
+            "parentid": "N5"
+        }, 
+        {
+            "attachedby": "rxn.Q921Q3-1", 
+            "id": "N6", 
+            "name": "N-glycan_b-D-Galp_6", 
+            "parentid": "N5"
+        }, 
+        {
+            "attachedby": "rxn.Q9D8C3-1", 
+            "id": "N6", 
+            "name": "N-glycan_b-D-Galp_6", 
+            "parentid": "N5"
+        }, 
+        {
+            "attachedby": "rxn.Q11206-1", 
+            "id": "N5", 
+            "name": "N-glycan_b-D-GlcpNAc_5", 
+            "parentid": "N4"
+        }, 
+        {
+            "attachedby": "rxn.Q9Y274-1", 
+            "id": "N5", 
+            "name": "N-glycan_b-D-GlcpNAc_5", 
+            "parentid": "N4"
+        }, 
+        {
+            "attachedby": "rxn.P15535-1", 
+            "id": "N6", 
+            "name": "N-glycan_b-D-Galp_6", 
+            "parentid": "N5"
+        }, 
+        {
+            "attachedby": "rxn.Q9Z2Y2-1", 
+            "id": "N6", 
+            "name": "N-glycan_b-D-Galp_6", 
+            "parentid": "N5"
+        }, 
+        {
+            "attachedby": "rxn.Q9D081-1", 
+            "id": "N6", 
+            "name": "N-glycan_b-D-Galp_6", 
+            "parentid": "N5"
+        }, 
+        {
+            "attachedby": "rxn.Q9DBE8-1", 
+            "id": "N6", 
+            "name": "N-glycan_b-D-Galp_6", 
+            "parentid": "N5"
+        }, 
+        {
+            "attachedby": "rxn.Q11203-1", 
+            "id": "N17", 
+            "name": "N-glycan_a-D-Neup5Ac_17", 
+            "parentid": "N3"
+        }, 
+        {
+            "attachedby": "rxn.Q9Y274-1", 
+            "id": "N17", 
+            "name": "N-glycan_a-D-Neup5Ac_17", 
+            "parentid": "N3"
+        }, 
+        {
+            "attachedby": "rxn.Q9Z2Y2-1", 
+            "id": "N4", 
+            "name": "N-glycan_a-D-Manp_4", 
+            "parentid": "NC"
+        }, 
+        {
+            "attachedby": "rxn.Q9BT22-1", 
+            "id": "N1", 
+            "name": "N-glycan_a-D-Manp_1", 
+            "parentid": "NC"
+        }, 
+        {
+            "attachedby": "rxn.Q8VIB3-1", 
+            "id": "N1", 
+            "name": "N-glycan_a-D-Manp_1", 
+            "parentid": "NC"
+        }, 
+        {
+            "attachedby": "rxn.Q96F25-1", 
+            "id": "N1", 
+            "name": "N-glycan_a-D-Manp_1", 
+            "parentid": "NC"
+        }, 
+        {
+            "attachedby": "rxn.Q9NP73-1", 
+            "id": "N1", 
+            "name": "N-glycan_a-D-Manp_1", 
+            "parentid": "NC"
+        }, 
+        {
+            "attachedby": "rxn.O60512-1", 
+            "id": "N1", 
+            "name": "N-glycan_a-D-Manp_1", 
+            "parentid": "NC"
+        }, 
+        {
+            "attachedby": "rxn.O60909-1", 
+            "id": "N1", 
+            "name": "N-glycan_a-D-Manp_1", 
+            "parentid": "NC"
+        }, 
+        {
+            "attachedby": "rxn.Q91Y74-1", 
+            "id": "N1", 
+            "name": "N-glycan_a-D-Manp_1", 
+            "parentid": "NC"
+        }, 
+        {
+            "attachedby": "rxn.Q9DBE8-1", 
+            "id": "N15", 
+            "name": "N-glycan_a-L-Fucp_15", 
+            "parentid": "NA"
+        }, 
+        {
+            "attachedby": "rxn.Q9D081-1", 
+            "id": "N15", 
+            "name": "N-glycan_a-L-Fucp_15", 
+            "parentid": "NA"
+        }, 
+        {
+            "attachedby": "rxn.Q9D8C3-1", 
+            "id": "N15", 
+            "name": "N-glycan_a-L-Fucp_15", 
+            "parentid": "NA"
+        }, 
+        {
+            "attachedby": "rxn.Q921Q3-1", 
+            "id": "N15", 
+            "name": "N-glycan_a-L-Fucp_15", 
+            "parentid": "NA"
+        }, 
+        {
+            "attachedby": "rxn.P42867-1", 
+            "id": "N15", 
+            "name": "N-glycan_a-L-Fucp_15", 
+            "parentid": "NA"
+        }, 
+        {
+            "attachedby": "rxn.Q91YY2-1", 
+            "id": "N15", 
+            "name": "N-glycan_a-L-Fucp_15", 
+            "parentid": "NA"
+        }, 
+        {
+            "attachedby": "rxn.Q9Z2Y2-1", 
+            "id": "N15", 
+            "name": "N-glycan_a-L-Fucp_15", 
+            "parentid": "NA"
+        }, 
+        {
+            "attachedby": "rxn.P15535-1", 
+            "id": "N15", 
+            "name": "N-glycan_a-L-Fucp_15", 
+            "parentid": "NA"
+        }, 
+        {
+            "attachedby": "rxn.Q8BML3-1", 
+            "id": "N15", 
+            "name": "N-glycan_a-L-Fucp_15", 
+            "parentid": "NA"
+        }, 
+        {
+            "attachedby": "rxn.Q9WTS2-1", 
+            "id": "N15", 
+            "name": "N-glycan_a-L-Fucp_15", 
+            "parentid": "NA"
+        }, 
+        {
+            "attachedby": "rxn.Q9BYC5-1", 
+            "id": "N3", 
+            "name": "N-glycan_b-D-Galp_3", 
+            "parentid": "N2"
+        }, 
+        {
+            "attachedby": "rxn.Q9H3H5-1", 
+            "id": "N5", 
+            "name": "N-glycan_b-D-GlcpNAc_5", 
+            "parentid": "N4"
+        }, 
+        {
+            "attachedby": "rxn.O60512-1", 
+            "id": "N5", 
+            "name": "N-glycan_b-D-GlcpNAc_5", 
+            "parentid": "N4"
+        }, 
+        {
+            "attachedby": "rxn.O60909-1", 
+            "id": "N5", 
+            "name": "N-glycan_b-D-GlcpNAc_5", 
+            "parentid": "N4"
+        }, 
+        {
+            "attachedby": "rxn.P15291-1", 
+            "id": "N5", 
+            "name": "N-glycan_b-D-GlcpNAc_5", 
+            "parentid": "N4"
+        }, 
+        {
+            "attachedby": "rxn.Q9H553-1", 
+            "id": "N5", 
+            "name": "N-glycan_b-D-GlcpNAc_5", 
+            "parentid": "N4"
+        }, 
+        {
+            "attachedby": "rxn.Q96F25-1", 
+            "id": "N5", 
+            "name": "N-glycan_b-D-GlcpNAc_5", 
+            "parentid": "N4"
+        }, 
+        {
+            "attachedby": "rxn.P26572-1", 
+            "id": "N1", 
+            "name": "N-glycan_a-D-Manp_1", 
+            "parentid": "NC"
+        }, 
+        {
+            "attachedby": "rxn.Q10469-1", 
+            "id": "N1", 
+            "name": "N-glycan_a-D-Manp_1", 
+            "parentid": "NC"
+        }, 
+        {
+            "attachedby": "rxn.Q11203-1", 
+            "id": "N1", 
+            "name": "N-glycan_a-D-Manp_1", 
+            "parentid": "NC"
+        }, 
+        {
+            "attachedby": "rxn.Q9Y274-1", 
+            "id": "N1", 
+            "name": "N-glycan_a-D-Manp_1", 
+            "parentid": "NC"
+        }, 
+        {
+            "attachedby": "rxn.Q9BYC5-1", 
+            "id": "N16", 
+            "name": "N-glycan_a-D-Neup5Ac_16", 
+            "parentid": "N6"
+        }, 
+        {
+            "attachedby": "rxn.O60512-1", 
+            "id": "N16", 
+            "name": "N-glycan_a-D-Neup5Ac_16", 
+            "parentid": "N6"
+        }, 
+        {
+            "attachedby": "rxn.P27808-1", 
+            "id": "N15", 
+            "name": "N-glycan_a-L-Fucp_15", 
+            "parentid": "NA"
+        }, 
+        {
+            "attachedby": "rxn.Q921V5-1", 
+            "id": "N15", 
+            "name": "N-glycan_a-L-Fucp_15", 
+            "parentid": "NA"
+        }, 
+        {
+            "attachedby": "rxn.P97325-1", 
+            "id": "N15", 
+            "name": "N-glycan_a-L-Fucp_15", 
+            "parentid": "NA"
+        }, 
+        {
+            "attachedby": "rxn.Q91Y74-1", 
+            "id": "N15", 
+            "name": "N-glycan_a-L-Fucp_15", 
+            "parentid": "NA"
+        }, 
+        {
+            "attachedby": "rxn.Q8VIB3-1", 
+            "id": "N15", 
+            "name": "N-glycan_a-L-Fucp_15", 
+            "parentid": "NA"
+        }, 
+        {
+            "attachedby": "rxn.Q9BT22-1", 
+            "id": "N15", 
+            "name": "N-glycan_a-L-Fucp_15", 
+            "parentid": "NA"
+        }, 
+        {
+            "attachedby": "rxn.Q9NP73-1", 
+            "id": "N15", 
+            "name": "N-glycan_a-L-Fucp_15", 
+            "parentid": "NA"
+        }, 
+        {
+            "attachedby": "rxn.Q96F25-1", 
+            "id": "N15", 
+            "name": "N-glycan_a-L-Fucp_15", 
+            "parentid": "NA"
+        }, 
+        {
+            "attachedby": "rxn.Q9H553-1", 
+            "id": "N15", 
+            "name": "N-glycan_a-L-Fucp_15", 
+            "parentid": "NA"
+        }, 
+        {
+            "attachedby": "rxn.P15291-1", 
+            "id": "N15", 
+            "name": "N-glycan_a-L-Fucp_15", 
+            "parentid": "NA"
+        }, 
+        {
+            "attachedby": "rxn.Q921V5-1", 
+            "id": "N5", 
+            "name": "N-glycan_b-D-GlcpNAc_5", 
+            "parentid": "N4"
+        }, 
+        {
+            "attachedby": "rxn.P97325-1", 
+            "id": "N5", 
+            "name": "N-glycan_b-D-GlcpNAc_5", 
+            "parentid": "N4"
+        }, 
+        {
+            "attachedby": "rxn.Q91Y74-1", 
+            "id": "N5", 
+            "name": "N-glycan_b-D-GlcpNAc_5", 
+            "parentid": "N4"
+        }, 
+        {
+            "attachedby": "rxn.Q8VIB3-1", 
+            "id": "N5", 
+            "name": "N-glycan_b-D-GlcpNAc_5", 
+            "parentid": "N4"
+        }, 
+        {
+            "attachedby": "rxn.P42867-1", 
+            "id": "N5", 
+            "name": "N-glycan_b-D-GlcpNAc_5", 
+            "parentid": "N4"
+        }, 
+        {
+            "attachedby": "rxn.Q9WTS2-1", 
+            "id": "N5", 
+            "name": "N-glycan_b-D-GlcpNAc_5", 
+            "parentid": "N4"
+        }, 
+        {
+            "attachedby": "rxn.Q9D8C3-1", 
+            "id": "N17", 
+            "name": "N-glycan_a-D-Neup5Ac_17", 
+            "parentid": "N3"
+        }, 
+        {
+            "attachedby": "rxn.Q9WTS2-1", 
+            "id": "N2", 
+            "name": "N-glycan_b-D-GlcpNAc_2", 
+            "parentid": "N1"
+        }, 
+        {
+            "attachedby": "rxn.P42867-1", 
+            "id": "N2", 
+            "name": "N-glycan_b-D-GlcpNAc_2", 
+            "parentid": "N1"
+        }, 
+        {
+            "attachedby": "rxn.Q8BML3-1", 
+            "id": "N2", 
+            "name": "N-glycan_b-D-GlcpNAc_2", 
+            "parentid": "N1"
+        }, 
+        {
+            "attachedby": "rxn.Q9WTS2-1", 
+            "id": "N3", 
+            "name": "N-glycan_b-D-Galp_3", 
+            "parentid": "N2"
+        }, 
+        {
+            "attachedby": "rxn.Q8BML3-1", 
+            "id": "N3", 
+            "name": "N-glycan_b-D-Galp_3", 
+            "parentid": "N2"
+        }, 
+        {
+            "attachedby": "rxn.P27808-1", 
+            "id": "N3", 
+            "name": "N-glycan_b-D-Galp_3", 
+            "parentid": "N2"
+        }, 
+        {
+            "attachedby": "rxn.P15535-1", 
+            "id": "N3", 
+            "name": "N-glycan_b-D-Galp_3", 
+            "parentid": "N2"
+        }, 
+        {
+            "attachedby": "rxn.Q9Z2Y2-1", 
+            "id": "N3", 
+            "name": "N-glycan_b-D-Galp_3", 
+            "parentid": "N2"
+        }, 
+        {
+            "attachedby": "rxn.P42867-1", 
+            "id": "N3", 
+            "name": "N-glycan_b-D-Galp_3", 
+            "parentid": "N2"
+        }, 
+        {
+            "attachedby": "rxn.Q9D081-1", 
+            "id": "N17", 
+            "name": "N-glycan_a-D-Neup5Ac_17", 
+            "parentid": "N3"
+        }, 
+        {
+            "attachedby": "rxn.P15291-1", 
+            "id": "N3", 
+            "name": "N-glycan_b-D-Galp_3", 
+            "parentid": "N2"
+        }, 
+        {
+            "attachedby": "rxn.Q9H553-1", 
+            "id": "N3", 
+            "name": "N-glycan_b-D-Galp_3", 
+            "parentid": "N2"
+        }, 
+        {
+            "attachedby": "rxn.Q96F25-1", 
+            "id": "N3", 
+            "name": "N-glycan_b-D-Galp_3", 
+            "parentid": "N2"
+        }, 
+        {
+            "attachedby": "rxn.Q9NP73-1", 
+            "id": "N3", 
+            "name": "N-glycan_b-D-Galp_3", 
+            "parentid": "N2"
+        }, 
+        {
+            "attachedby": "rxn.Q9NP73-1", 
+            "id": "N5", 
+            "name": "N-glycan_b-D-GlcpNAc_5", 
+            "parentid": "N4"
+        }, 
+        {
+            "attachedby": "rxn.Q8BML3-1", 
+            "id": "N5", 
+            "name": "N-glycan_b-D-GlcpNAc_5", 
+            "parentid": "N4"
+        }, 
+        {
+            "attachedby": "rxn.P27808-1", 
+            "id": "N5", 
+            "name": "N-glycan_b-D-GlcpNAc_5", 
+            "parentid": "N4"
+        }, 
+        {
+            "attachedby": "rxn.Q10469-1", 
+            "id": "N15", 
+            "name": "N-glycan_a-L-Fucp_15", 
+            "parentid": "NA"
+        }, 
+        {
+            "attachedby": "rxn.P26572-1", 
+            "id": "N15", 
+            "name": "N-glycan_a-L-Fucp_15", 
+            "parentid": "NA"
+        }, 
+        {
+            "attachedby": "rxn.Q11206-1", 
+            "id": "N15", 
+            "name": "N-glycan_a-L-Fucp_15", 
+            "parentid": "NA"
+        }, 
+        {
+            "attachedby": "rxn.Q11203-1", 
+            "id": "N15", 
+            "name": "N-glycan_a-L-Fucp_15", 
+            "parentid": "NA"
+        }, 
+        {
+            "attachedby": "rxn.O60512-1", 
+            "id": "N15", 
+            "name": "N-glycan_a-L-Fucp_15", 
+            "parentid": "NA"
+        }, 
+        {
+            "attachedby": "rxn.O60909-1", 
+            "id": "N15", 
+            "name": "N-glycan_a-L-Fucp_15", 
+            "parentid": "NA"
+        }, 
+        {
+            "attachedby": "rxn.Q9BYC5-1", 
+            "id": "N15", 
+            "name": "N-glycan_a-L-Fucp_15", 
+            "parentid": "NA"
+        }, 
+        {
+            "attachedby": "rxn.Q9H3H5-1", 
+            "id": "N15", 
+            "name": "N-glycan_a-L-Fucp_15", 
+            "parentid": "NA"
+        }, 
+        {
+            "attachedby": "rxn.Q9Y274-1", 
+            "id": "N15", 
+            "name": "N-glycan_a-L-Fucp_15", 
+            "parentid": "NA"
+        }, 
+        {
+            "attachedby": "rxn.Q11203-1", 
+            "id": "N5", 
+            "name": "N-glycan_b-D-GlcpNAc_5", 
+            "parentid": "N4"
+        }, 
+        {
+            "attachedby": "rxn.Q10469-1", 
+            "id": "N5", 
+            "name": "N-glycan_b-D-GlcpNAc_5", 
+            "parentid": "N4"
+        }, 
+        {
+            "attachedby": "rxn.Q91Y74-1", 
+            "id": "NB", 
+            "name": "N-glycan_core_b-D-GlcpNAc_B", 
+            "parentid": "NA"
+        }, 
+        {
+            "attachedby": "rxn.P97325-1", 
+            "id": "NB", 
+            "name": "N-glycan_core_b-D-GlcpNAc_B", 
+            "parentid": "NA"
+        }, 
+        {
+            "attachedby": "rxn.P15291-1", 
+            "id": "NB", 
+            "name": "N-glycan_core_b-D-GlcpNAc_B", 
+            "parentid": "NA"
+        }, 
+        {
+            "attachedby": "rxn.Q9H553-1", 
+            "id": "NB", 
+            "name": "N-glycan_core_b-D-GlcpNAc_B", 
+            "parentid": "NA"
+        }, 
+        {
+            "attachedby": "rxn.P15535-1", 
+            "id": "N2", 
+            "name": "N-glycan_b-D-GlcpNAc_2", 
+            "parentid": "N1"
+        }, 
+        {
+            "attachedby": "rxn.P27808-1", 
+            "id": "N2", 
+            "name": "N-glycan_b-D-GlcpNAc_2", 
+            "parentid": "N1"
+        }, 
+        {
+            "attachedby": "rxn.Q11206-1", 
+            "id": "N4", 
+            "name": "N-glycan_a-D-Manp_4", 
+            "parentid": "NC"
+        }, 
+        {
+            "attachedby": "rxn.Q921Q3-1", 
+            "id": "N5", 
+            "name": "N-glycan_b-D-GlcpNAc_5", 
+            "parentid": "N4"
+        }, 
+        {
+            "attachedby": "rxn.Q9Y274-1", 
+            "id": "N4", 
+            "name": "N-glycan_a-D-Manp_4", 
+            "parentid": "NC"
+        }, 
+        {
+            "attachedby": "rxn.Q9D081-1", 
+            "id": "N5", 
+            "name": "N-glycan_b-D-GlcpNAc_5", 
+            "parentid": "N4"
+        }, 
+        {
+            "attachedby": "rxn.Q9D8C3-1", 
+            "id": "N5", 
+            "name": "N-glycan_b-D-GlcpNAc_5", 
+            "parentid": "N4"
+        }, 
+        {
+            "attachedby": "rxn.P15535-1", 
+            "id": "N5", 
+            "name": "N-glycan_b-D-GlcpNAc_5", 
+            "parentid": "N4"
+        }, 
+        {
+            "attachedby": "rxn.Q9DBE8-1", 
+            "id": "N5", 
+            "name": "N-glycan_b-D-GlcpNAc_5", 
+            "parentid": "N4"
+        }, 
+        {
+            "attachedby": "rxn.Q11206-1", 
+            "id": "N6", 
+            "name": "N-glycan_b-D-Galp_6", 
+            "parentid": "N5"
+        }, 
+        {
+            "attachedby": "rxn.O60909-1", 
+            "id": "N6", 
+            "name": "N-glycan_b-D-Galp_6", 
+            "parentid": "N5"
+        }, 
+        {
+            "attachedby": "rxn.Q9H3H5-1", 
+            "id": "N6", 
+            "name": "N-glycan_b-D-Galp_6", 
+            "parentid": "N5"
+        }, 
+        {
+            "attachedby": "rxn.Q9BYC5-1", 
+            "id": "N6", 
+            "name": "N-glycan_b-D-Galp_6", 
+            "parentid": "N5"
+        }, 
+        {
+            "attachedby": "rxn.Q921Q3-1", 
+            "id": "NC", 
+            "name": "N-glycan_core_b-D-Manp", 
+            "parentid": "NB"
+        }, 
+        {
+            "attachedby": "rxn.O60909-1", 
+            "id": "NB", 
+            "name": "N-glycan_core_b-D-GlcpNAc_B", 
+            "parentid": "NA"
+        }, 
+        {
+            "attachedby": "rxn.O60512-1", 
+            "id": "NB", 
+            "name": "N-glycan_core_b-D-GlcpNAc_B", 
+            "parentid": "NA"
+        }, 
+        {
+            "attachedby": "rxn.Q9DBE8-1", 
+            "id": "N3", 
+            "name": "N-glycan_b-D-Galp_3", 
+            "parentid": "N2"
+        }, 
+        {
+            "attachedby": "rxn.Q9D081-1", 
+            "id": "N3", 
+            "name": "N-glycan_b-D-Galp_3", 
+            "parentid": "N2"
+        }, 
+        {
+            "attachedby": "rxn.Q96F25-1", 
+            "id": "N17", 
+            "name": "N-glycan_a-D-Neup5Ac_17", 
+            "parentid": "N3"
+        }, 
+        {
+            "attachedby": "rxn.Q9H553-1", 
+            "id": "N17", 
+            "name": "N-glycan_a-D-Neup5Ac_17", 
+            "parentid": "N3"
+        }, 
+        {
+            "attachedby": "rxn.P15291-1", 
+            "id": "N17", 
+            "name": "N-glycan_a-D-Neup5Ac_17", 
+            "parentid": "N3"
+        }, 
+        {
+            "attachedby": "rxn.O60909-1", 
+            "id": "N17", 
+            "name": "N-glycan_a-D-Neup5Ac_17", 
+            "parentid": "N3"
+        }, 
+        {
+            "attachedby": "rxn.Q9H3H5-1", 
+            "id": "N17", 
+            "name": "N-glycan_a-D-Neup5Ac_17", 
+            "parentid": "N3"
+        }, 
+        {
+            "attachedby": "rxn.O60512-1", 
+            "id": "N6", 
+            "name": "N-glycan_b-D-Galp_6", 
+            "parentid": "N5"
+        }, 
+        {
+            "attachedby": "rxn.P27808-1", 
+            "id": "N16", 
+            "name": "N-glycan_a-D-Neup5Ac_16", 
+            "parentid": "N6"
+        }, 
+        {
+            "attachedby": "rxn.Q8BML3-1", 
+            "id": "N16", 
+            "name": "N-glycan_a-D-Neup5Ac_16", 
+            "parentid": "N6"
+        }, 
+        {
+            "attachedby": "rxn.P97325-1", 
+            "id": "N16", 
+            "name": "N-glycan_a-D-Neup5Ac_16", 
+            "parentid": "N6"
+        }, 
+        {
+            "attachedby": "rxn.Q91Y74-1", 
+            "id": "N16", 
+            "name": "N-glycan_a-D-Neup5Ac_16", 
+            "parentid": "N6"
+        }, 
+        {
+            "attachedby": "rxn.Q9NP73-1", 
+            "id": "N16", 
+            "name": "N-glycan_a-D-Neup5Ac_16", 
+            "parentid": "N6"
+        }, 
+        {
+            "attachedby": "rxn.Q9BT22-1", 
+            "id": "N16", 
+            "name": "N-glycan_a-D-Neup5Ac_16", 
+            "parentid": "N6"
+        }, 
+        {
+            "attachedby": "rxn.P97325-1", 
+            "id": "N3", 
+            "name": "N-glycan_b-D-Galp_3", 
+            "parentid": "N2"
+        }, 
+        {
+            "attachedby": "rxn.Q91Y74-1", 
+            "id": "N3", 
+            "name": "N-glycan_b-D-Galp_3", 
+            "parentid": "N2"
+        }, 
+        {
+            "attachedby": "rxn.O60909-1", 
+            "id": "N3", 
+            "name": "N-glycan_b-D-Galp_3", 
+            "parentid": "N2"
+        }, 
+        {
+            "attachedby": "rxn.Q9BT22-1", 
+            "id": "N3", 
+            "name": "N-glycan_b-D-Galp_3", 
+            "parentid": "N2"
+        }, 
+        {
+            "attachedby": "rxn.Q9BT22-1", 
+            "id": "N17", 
+            "name": "N-glycan_a-D-Neup5Ac_17", 
+            "parentid": "N3"
+        }, 
+        {
+            "attachedby": "rxn.O60512-1", 
+            "id": "N17", 
+            "name": "N-glycan_a-D-Neup5Ac_17", 
+            "parentid": "N3"
+        }, 
+        {
+            "attachedby": "rxn.Q11206-1", 
+            "id": "N16", 
+            "name": "N-glycan_a-D-Neup5Ac_16", 
+            "parentid": "N6"
+        }, 
+        {
+            "attachedby": "rxn.Q9Y274-1", 
+            "id": "N16", 
+            "name": "N-glycan_a-D-Neup5Ac_16", 
+            "parentid": "N6"
+        }, 
+        {
+            "attachedby": "rxn.P97325-1", 
+            "id": "N6", 
+            "name": "N-glycan_b-D-Galp_6", 
+            "parentid": "N5"
+        }, 
+        {
+            "attachedby": "rxn.Q8VIB3-1", 
+            "id": "N6", 
+            "name": "N-glycan_b-D-Galp_6", 
+            "parentid": "N5"
+        }, 
+        {
+            "attachedby": "rxn.Q9WTS2-1", 
+            "id": "N6", 
+            "name": "N-glycan_b-D-Galp_6", 
+            "parentid": "N5"
+        }, 
+        {
+            "attachedby": "rxn.Q9DBE8-1", 
+            "id": "N2", 
+            "name": "N-glycan_b-D-GlcpNAc_2", 
+            "parentid": "N1"
+        }, 
+        {
+            "attachedby": "rxn.Q91YY2-1", 
+            "id": "N2", 
+            "name": "N-glycan_b-D-GlcpNAc_2", 
+            "parentid": "N1"
+        }, 
+        {
+            "attachedby": "rxn.Q9Z2Y2-1", 
+            "id": "N2", 
+            "name": "N-glycan_b-D-GlcpNAc_2", 
+            "parentid": "N1"
+        }, 
+        {
+            "attachedby": "rxn.Q921V5-1", 
+            "id": "N2", 
+            "name": "N-glycan_b-D-GlcpNAc_2", 
+            "parentid": "N1"
+        }, 
+        {
+            "attachedby": "rxn.Q921V5-1", 
+            "id": "N3", 
+            "name": "N-glycan_b-D-Galp_3", 
+            "parentid": "N2"
+        }, 
+        {
+            "attachedby": "rxn.Q9H3H5-1", 
+            "id": "N4", 
+            "name": "N-glycan_a-D-Manp_4", 
+            "parentid": "NC"
+        }, 
+        {
+            "attachedby": "rxn.Q9BYC5-1", 
+            "id": "N4", 
+            "name": "N-glycan_a-D-Manp_4", 
+            "parentid": "NC"
+        }, 
+        {
+            "attachedby": "rxn.O60909-1", 
+            "id": "N4", 
+            "name": "N-glycan_a-D-Manp_4", 
+            "parentid": "NC"
+        }, 
+        {
+            "attachedby": "rxn.Q9NP73-1", 
+            "id": "N4", 
+            "name": "N-glycan_a-D-Manp_4", 
+            "parentid": "NC"
+        }, 
+        {
+            "attachedby": "rxn.Q921Q3-1", 
+            "id": "NA", 
+            "name": "N-glycan_core_b-D-GlcpNAc_A", 
+            "parentid": "no_id"
+        }, 
+        {
+            "attachedby": "rxn.Q9WTS2-1", 
+            "id": "NA", 
+            "name": "N-glycan_core_b-D-GlcpNAc_A", 
+            "parentid": "no_id"
+        }, 
+        {
+            "attachedby": "rxn.Q9WTS2-1", 
+            "id": "N17", 
+            "name": "N-glycan_a-D-Neup5Ac_17", 
+            "parentid": "N3"
+        }, 
+        {
+            "attachedby": "rxn.P42867-1", 
+            "id": "N17", 
+            "name": "N-glycan_a-D-Neup5Ac_17", 
+            "parentid": "N3"
+        }, 
+        {
+            "attachedby": "rxn.Q91YY2-1", 
+            "id": "N17", 
+            "name": "N-glycan_a-D-Neup5Ac_17", 
+            "parentid": "N3"
+        }, 
+        {
+            "attachedby": "rxn.Q9Z2Y2-1", 
+            "id": "N17", 
+            "name": "N-glycan_a-D-Neup5Ac_17", 
+            "parentid": "N3"
+        }, 
+        {
+            "attachedby": "rxn.P97325-1", 
+            "id": "N17", 
+            "name": "N-glycan_a-D-Neup5Ac_17", 
+            "parentid": "N3"
+        }, 
+        {
+            "attachedby": "rxn.Q921V5-1", 
+            "id": "N17", 
+            "name": "N-glycan_a-D-Neup5Ac_17", 
+            "parentid": "N3"
+        }, 
+        {
+            "attachedby": "rxn.P27808-1", 
+            "id": "N17", 
+            "name": "N-glycan_a-D-Neup5Ac_17", 
+            "parentid": "N3"
+        }, 
+        {
+            "attachedby": "rxn.Q8BML3-1", 
+            "id": "N17", 
+            "name": "N-glycan_a-D-Neup5Ac_17", 
+            "parentid": "N3"
+        }, 
+        {
+            "attachedby": "rxn.Q91Y74-1", 
+            "id": "N17", 
+            "name": "N-glycan_a-D-Neup5Ac_17", 
+            "parentid": "N3"
+        }, 
+        {
+            "attachedby": "rxn.P27808-1", 
+            "id": "N6", 
+            "name": "N-glycan_b-D-Galp_6", 
+            "parentid": "N5"
+        }, 
+        {
+            "attachedby": "rxn.Q9NP73-1", 
+            "id": "N6", 
+            "name": "N-glycan_b-D-Galp_6", 
+            "parentid": "N5"
+        }, 
+        {
+            "attachedby": "rxn.P15291-1", 
+            "id": "N2", 
+            "name": "N-glycan_b-D-GlcpNAc_2", 
+            "parentid": "N1"
+        }, 
+        {
+            "attachedby": "rxn.O60909-1", 
+            "id": "N2", 
+            "name": "N-glycan_b-D-GlcpNAc_2", 
+            "parentid": "N1"
+        }, 
+        {
+            "attachedby": "rxn.Q96F25-1", 
+            "id": "N2", 
+            "name": "N-glycan_b-D-GlcpNAc_2", 
+            "parentid": "N1"
+        }, 
+        {
+            "attachedby": "rxn.O60512-1", 
+            "id": "N2", 
+            "name": "N-glycan_b-D-GlcpNAc_2", 
+            "parentid": "N1"
+        }, 
+        {
+            "attachedby": "rxn.Q9H3H5-1", 
+            "id": "N2", 
+            "name": "N-glycan_b-D-GlcpNAc_2", 
+            "parentid": "N1"
+        }, 
+        {
+            "attachedby": "rxn.Q9BYC5-1", 
+            "id": "N17", 
+            "name": "N-glycan_a-D-Neup5Ac_17", 
+            "parentid": "N3"
+        }, 
+        {
+            "attachedby": "rxn.P26572-1", 
+            "id": "N17", 
+            "name": "N-glycan_a-D-Neup5Ac_17", 
+            "parentid": "N3"
+        }, 
+        {
+            "attachedby": "rxn.P26572-1", 
+            "id": "N4", 
+            "name": "N-glycan_a-D-Manp_4", 
+            "parentid": "NC"
+        }, 
+        {
+            "attachedby": "rxn.Q10469-1", 
+            "id": "N4", 
+            "name": "N-glycan_a-D-Manp_4", 
+            "parentid": "NC"
+        }, 
+        {
+            "attachedby": "rxn.O60512-1", 
+            "id": "N4", 
+            "name": "N-glycan_a-D-Manp_4", 
+            "parentid": "NC"
+        }, 
+        {
+            "attachedby": "rxn.Q9H553-1", 
+            "id": "N4", 
+            "name": "N-glycan_a-D-Manp_4", 
+            "parentid": "NC"
+        }, 
+        {
+            "attachedby": "rxn.P15291-1", 
+            "id": "N4", 
+            "name": "N-glycan_a-D-Manp_4", 
+            "parentid": "NC"
+        }, 
+        {
+            "attachedby": "rxn.Q96F25-1", 
+            "id": "N4", 
+            "name": "N-glycan_a-D-Manp_4", 
+            "parentid": "NC"
+        }, 
+        {
+            "attachedby": "rxn.Q9D8C3-1", 
+            "id": "N3", 
+            "name": "N-glycan_b-D-Galp_3", 
+            "parentid": "N2"
+        }, 
+        {
+            "attachedby": "rxn.Q921Q3-1", 
+            "id": "N3", 
+            "name": "N-glycan_b-D-Galp_3", 
+            "parentid": "N2"
+        }, 
+        {
+            "attachedby": "rxn.Q11206-1", 
+            "id": "N2", 
+            "name": "N-glycan_b-D-GlcpNAc_2", 
+            "parentid": "N1"
+        }, 
+        {
+            "attachedby": "rxn.Q11203-1", 
+            "id": "N2", 
+            "name": "N-glycan_b-D-GlcpNAc_2", 
+            "parentid": "N1"
+        }, 
+        {
+            "attachedby": "rxn.Q10469-1", 
+            "id": "N2", 
+            "name": "N-glycan_b-D-GlcpNAc_2", 
+            "parentid": "N1"
+        }, 
+        {
+            "attachedby": "rxn.P26572-1", 
+            "id": "N2", 
+            "name": "N-glycan_b-D-GlcpNAc_2", 
+            "parentid": "N1"
+        }, 
+        {
+            "attachedby": "rxn.Q9BYC5-1", 
+            "id": "N2", 
+            "name": "N-glycan_b-D-GlcpNAc_2", 
+            "parentid": "N1"
+        }
+    ], 
+    "glycam": "DNeup5Aca2-3DGalpb1-4DGlcpNAcb1-2DManpa1-3[DNeup5Aca2-3DGalpb1-4DGlcpNAcb1-2DManpa1-6]DManpb1-4DGlcpNAcb1-4[LFucpa1-6]DGlcpNAcb1-", 
+    "inchi": "InChI=1S/C90H148N6O66/c1-21-47(116)59(128)62(131)81(142-21)140-20-40-69(55(124)43(77(135)143-40)93-24(4)108)152-78-44(94-25(5)109)56(125)66(36(16-103)148-78)153-82-63(132)72(156-86-76(61(130)51(120)33(13-100)147-86)158-80-46(96-27(7)111)58(127)68(38(18-105)150-80)155-84-65(134)74(53(122)35(15-102)145-84)162-90(88(138)139)9-29(113)42(92-23(3)107)71(160-90)49(118)31(115)11-98)54(123)39(151-82)19-141-85-75(60(129)50(119)32(12-99)146-85)157-79-45(95-26(6)110)57(126)67(37(17-104)149-79)154-83-64(133)73(52(121)34(14-101)144-83)161-89(87(136)137)8-28(112)41(91-22(2)106)70(159-89)48(117)30(114)10-97/h21,28-86,97-105,112-135H,8-20H2,1-7H3,(H,91,106)(H,92,107)(H,93,108)(H,94,109)(H,95,110)(H,96,111)(H,136,137)(H,138,139)/t21-,28-,29-,30+,31+,32+,33+,34+,35+,36+,37+,38+,39+,40+,41+,42+,43+,44+,45+,46+,47+,48+,49+,50+,51+,52-,53-,54+,55+,56+,57+,58+,59+,60-,61-,62-,63-,64+,65+,66+,67+,68+,69+,70+,71+,72-,73-,74-,75-,76-,77+,78-,79-,80-,81+,82-,83-,84-,85-,86+,89-,90-/m0/s1", 
+    "smiles_isomeric": "C[C@H]1[C@H]([C@H]([C@@H]([C@@H](O1)OC[C@@H]2[C@H]([C@@H]([C@H]([C@@H](O2)O)NC(=O)C)O)O[C@H]3[C@@H]([C@H]([C@@H]([C@H](O3)CO)O[C@H]4[C@H]([C@H]([C@@H]([C@H](O4)CO[C@@H]5[C@H]([C@H]([C@@H]([C@H](O5)CO)O)O)O[C@H]6[C@@H]([C@H]([C@@H]([C@H](O6)CO)O[C@H]7[C@@H]([C@H]([C@H]([C@H](O7)CO)O)O[C@@]8(C[C@@H]([C@H]([C@@H](O8)[C@@H]([C@@H](CO)O)O)NC(=O)C)O)C(=O)O)O)O)NC(=O)C)O)O[C@@H]9[C@H]([C@H]([C@@H]([C@H](O9)CO)O)O)O[C@H]1[C@@H]([C@H]([C@@H]([C@H](O1)CO)O[C@H]1[C@@H]([C@H]([C@H]([C@H](O1)CO)O)O[C@@]1(C[C@@H]([C@H]([C@@H](O1)[C@@H]([C@@H](CO)O)O)NC(=O)C)O)C(=O)O)O)O)NC(=O)C)O)O)NC(=O)C)O)O)O"
+}

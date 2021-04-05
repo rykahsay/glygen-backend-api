@@ -1,0 +1,12 @@
+{
+   "logs":[
+      {
+         "created": "Wed, 31 Oct 2018 11:56:55 GMT", 
+         "id": "ABMND34...2FG1", 
+         "message": "Some message", 
+         "page": "quick_search.html", 
+         "type": "error", 
+         "user": "Undecided"
+      }
+   ]
+}

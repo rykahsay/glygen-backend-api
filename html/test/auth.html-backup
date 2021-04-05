@@ -1,0 +1,225 @@
+<html>
+<head>
+<link rel="stylesheet" href="styles.css" type="text/css">
+<script language="javascript" src="jquery.min.js"></script>
+<script>
+var htmlRoot = ""
+var testInfo = {
+    "auth_userid":{
+        "string_fields":[]
+        ,"integer_fields":[]
+        ,"float_fields":[]
+        ,"url":"/auth/userid"
+    }
+    ,"auth_contact":{
+        "string_fields":["fname","lname","email", "subject", "message","page"]
+        ,"integer_fields":[]
+        ,"float_fields":[]
+        ,"url":"/auth/contact"
+    }
+    ,"auth_register":{
+        "string_fields":["fname","lname","email","password"]
+        ,"integer_fields":[]
+        ,"float_fields":[]
+        ,"url":"/auth/register"
+    }
+    ,"auth_userinfo":{
+        "string_fields":["token","email"]
+        ,"integer_fields":[]
+        ,"float_fields":[]
+        ,"url":"/auth/userinfo"
+    }
+    ,"auth_userupdate":{
+        "string_fields":["token", "fname","lname","email","password", "access"]
+        ,"integer_fields":["status"]
+        ,"float_fields":[]
+        ,"url":"/auth/userupdate"
+    } 
+    ,"auth_login":{
+        "string_fields":["user","password"]
+        ,"integer_fields":[]
+        ,"float_fields":[]
+        ,"url":"/auth/login"
+    }
+    ,"auth_tokenstatus":{
+        "string_fields":["token"]
+        ,"integer_fields":[]
+        ,"float_fields":[]
+        ,"url":"/auth/tokenstatus"
+    }
+    ,"auth_contactlist":{
+        "string_fields":["token"]
+        ,"integer_fields":[]
+        ,"float_fields":[]
+        ,"url":"/auth/contactlist"
+    }
+    ,"auth_contactupdate":{
+        "string_fields":["token","fname","lname","email","subject","page","message","id", "comment",
+                "status", "agent", "visibility"
+        ]
+        ,"integer_fields":[]
+        ,"float_fields":[]
+        ,"url":"/auth/contactupdate"
+    }
+    ,"auth_contactdelete":{
+        "string_fields":["token", "id"]
+        ,"integer_fields":[]
+        ,"float_fields":[]
+        ,"url":"/auth/contactdelete"
+    }
+       
+};
+
+
+
+
+////////////////////////////////////
+$(document).on('click', '.submitbtn', function (event) {
+    event.preventDefault();
+    var apiName = this.id;
+    var reqCnJqId = '#' + apiName + '_req_cn';
+    var resCnJqId = '#' + apiName + '_res_cn';
+    var jqClass = '.' + apiName;
+
+
+    var gifImage = '<img src=loading.gif style="width:20%;margin-left:40%;margin-top:2%;">';
+    //$(resCnJqId).html(gifImage);
+    
+    var stringFieldList = testInfo[apiName]["string_fields"];
+    var integerFieldList = testInfo[apiName]["integer_fields"];
+    var floatFieldList = testInfo[apiName]["float_fields"];
+
+    var reqJson = {};
+    $(jqClass).each(function(){
+        var name = $(this).attr("name");
+        var value = $(this).val();
+        if(stringFieldList.indexOf(name) != -1){
+            reqJson[name] = value;
+        }
+        else if (integerFieldList.indexOf(name) != -1){
+            reqJson[name] = parseInt(value);
+        }
+        else if (floatFieldList.indexOf(name) != -1){
+            reqJson[name] = parseFloat(value);    
+        }
+    });
+
+    var url = testInfo[apiName]["url"];
+    if (Object.keys(reqJson).length > 0){
+        url += '?' + "query=" + JSON.stringify(reqJson);
+    }
+    $(reqCnJqId).html(url);
+    
+
+    var reqObj = new XMLHttpRequest();
+    reqObj.open("POST", url, true);
+    reqObj.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    reqObj.resCnJqId = resCnJqId;
+    reqObj.onreadystatechange = function() {
+        if (reqObj.readyState == 4 && [200, 500].indexOf(reqObj.status) != -1) {
+            $(this.resCnJqId).html(reqObj.responseText);
+        }
+    };
+    reqObj.send();
+
+});
+
+
+</script>
+
+
+</head>
+<body>
+
+
+<table align=center width=80% border=1 style="background:#eee;">
+<tr><th align=left colspan=2 class=api_title>Test for auth_userid API</th></tr>
+<tr><td>Post Data</td><td id=auth_userid_req_cn style="background:#fff;"></td></tr>
+<tr><td valign=top><input type=submit class=submitbtn id=auth_userid name=btn value="Submit API request"></td>
+<td style="background:#fff;"><div style="width:700px;height:150px;overflow:auto;" id=auth_userid_res_cn></div></td></tr>
+
+
+
+<tr><th colspan=2 align=left class=api_title>Test for auth_contact API</th></tr>
+<tr><td>First Name</td><td width=80%><input class=auth_contact name=fname type=text value=""></td></tr>
+<tr><td>Last Name</td><td><input class=auth_contact name=lname type=text value=""></td></tr>
+<tr><td>Email</td><td><input class=auth_contact name=email type=text value=""></td></tr>
+<tr><td>Subject</td><td><input class=auth_contact name=subject type=text value=""></td></tr>
+<tr><td>Page</td><td><input class=auth_contact name=page type=text value="xyz.html?a=b&c=d"></td></tr>
+<tr><td>Message</td><td><textarea class=auth_contact name=message rows=10></textarea></td></tr>
+<tr><td>Post Data (both GET/POST supported)</td><td id=auth_contact_req_cn style="background:#fff;"></td></tr>
+<tr height=100><td valign=top><input type=submit class=submitbtn id=auth_contact name=btn value="Submit API request"></td>
+
+    <td><textarea id=auth_contact_res_cn style="width:100%;height:200px;background:#fff;"></textarea></td></tr>
+
+
+<tr><th colspan=2 align=left class=api_title>Test for auth_register API</th></tr>
+<tr><td>First Name</td><td width=80%><input class="auth_register regular" name=fname type=text value=""></td></tr>
+<tr><td>Last Name</td><td><input class="auth_register regular" name=lname type=text value=""></td></tr>
+<tr><td>Email</td><td><input class="auth_register regular" name=email type=text value=""></td></tr>
+<tr><td>Password</td><td><input class="auth_register regular" name=password type=password value=""></td></tr>
+<tr><td>Post Data (both GET/POST supported)</td><td id=auth_register_req_cn style="background:#fff;"></td></tr>
+<tr height=100><td valign=top><input type=submit class=submitbtn id=auth_register name=btn value="Submit API request"></td><td><textarea id=auth_register_res_cn style="width:100%;height:200px;background:#fff;"></textarea></td></tr>
+
+
+
+<tr><th colspan=2 align=left class=api_title>Test for auth_login API</th></tr>
+<tr><td>User Name</td><td><input class="auth_login regular" name=user type=text value=""></td></tr>
+<tr><td>Password</td><td><input class="auth_login regular" name=password type=password value=""></td></tr>
+<tr><td>Post Data (both GET/POST supported)</td><td id=auth_login_req_cn style="background:#fff;"></td></tr>
+<tr height=100><td valign=top><input type=submit class=submitbtn id=auth_login name=btn value="Submit API request"></td><td><textarea id=auth_login_res_cn style="width:100%;height:200px;background:#fff;"></textarea></td></tr>
+
+
+<tr><th colspan=2 align=left class=api_title>Test for auth_tokenstatus API</th></tr>
+<tr><td>Token</td><td><input class="auth_tokenstatus regular" name=token type=text value=""></td></tr>
+<tr><td>Post Data (both GET/POST supported)</td><td id=auth_tokenstatus_req_cn style="background:#fff;"></td></tr>
+<tr height=100><td valign=top><input type=submit class=submitbtn id=auth_tokenstatus name=btn value="Submit API request"></td><td><textarea id=auth_tokenstatus_res_cn style="width:100%;height:200px;background:#fff;"></textarea></td></tr>
+
+
+<tr><th colspan=2 align=left class=api_title>Test for auth_userupdate API</th></tr>
+<tr><td>Token </td><td width=80%><input class="auth_userupdate regular" name=token type=text value=""></td></tr>
+<tr><td>First Name</td><td width=80%><input class="auth_userupdate regular" name=fname type=text value=""></td></tr>
+<tr><td>Last Name</td><td><input class="auth_userupdate regular" name=lname type=text value=""></td></tr>
+<tr><td>Email</td><td><input class="auth_userupdate regular" name=email type=text value=""></td></tr>
+<tr><td>Password</td><td><input class="auth_userupdate regular" name=password type=password value=""></td></tr>
+<tr><td>Access (read/write)</td><td><input class="auth_userupdate regular" name=access type=text value=""></td></tr>
+<tr><td>Status (0/1)</td><td><input class="auth_userupdate regular" name=status type=number value=""></td></tr>
+<tr><td>Post Data (both GET/POST supported)</td><td id=auth_userupdate_req_cn style="background:#fff;"></td></tr>
+<tr height=100><td valign=top><input type=submit class=submitbtn id=auth_userupdate name=btn value="Submit API request"></td><td><textarea id=auth_userupdate_res_cn style="width:100%;height:200px;background:#fff;"></textarea></td></tr>
+
+
+<tr><th colspan=2 align=left class=api_title>Test for auth_userinfo API</th></tr>
+<tr><td>Token </td><td width=80%><input class="auth_userinfo regular" name=token type=text value=""></td></tr>
+<tr><td>Email</td><td><input class="auth_userinfo regular" name=email type=text value=""></td></tr>
+<tr><td>Post Data (both GET/POST supported)</td><td id=auth_userinfo_req_cn style="background:#fff;"></td></tr>
+<tr height=100><td valign=top><input type=submit class=submitbtn id=auth_userinfo name=btn value="Submit API request"></td><td><textarea id=auth_userinfo_res_cn style="width:100%;height:200px;background:#fff;"></textarea></td></tr>
+
+
+<tr><th colspan=2 align=left class=api_title>Test for auth_contactlist API</th></tr>
+<tr><td>Token</td><td><input class="auth_contactlist regular" name=token type=text value=""></td></tr>
+<tr><td>Post Data (both GET/POST supported)</td><td id=auth_contactlist_req_cn style="background:#fff;"></td></tr>
+<tr height=100><td valign=top><input type=submit class=submitbtn id=auth_contactlist name=btn value="Submit API request"></td><td><textarea id=auth_contactlist_res_cn style="width:100%;height:200px;background:#fff;"></textarea></td></tr>
+
+
+
+<tr><th colspan=2 align=left class=api_title>Test for auth_contactdelete API</th></tr>
+<tr><td>Token</td><td><input class="auth_contactdelete regular" name=token type=text value=""></td></tr>
+<tr><td>Message ID</td><td><input class="auth_contactdelete regular" name=id type=text value=""></td></tr>
+<tr><td>Post Data (both GET/POST supported)</td><td id=auth_contactdelete_req_cn style="background:#fff;"></td></tr>
+<tr height=100><td valign=top><input type=submit class=submitbtn id=auth_contactdelete name=btn value="Submit API request"></td><td><textarea id=auth_contactdelete_res_cn style="width:100%;height:200px;background:#fff;"></textarea></td></tr>
+
+
+
+<tr><th colspan=2 align=left class=api_title>Test for auth_contactupdate API</th></tr>
+<tr><td>Token</td><td><input class="auth_contactupdate regular" name=token type=text value=""></td></tr>
+<tr><td>Message ID</td><td><input class="auth_contactupdate regular" name=id type=text value=""></td></tr>
+<tr><td>Agent</td><td><input class="auth_contactupdate regular" name=agent type=text value=""></td></tr>
+<tr><td>Visibility</td><td><input class="auth_contactupdate regular" name=visibility type=text value=""></td></tr>
+<tr><td>Post Data (both GET/POST supported)</td><td id=auth_contactupdate_req_cn style="background:#fff;"></td></tr>
+<tr height=100><td valign=top><input type=submit class=submitbtn id=auth_contactupdate name=btn value="Submit API request"></td><td><textarea id=auth_contactupdate_res_cn style="width:100%;height:200px;background:#fff;"></textarea></td></tr>
+
+
+</table>
+
+</body>
+<html>

@@ -1,0 +1,29 @@
+{
+   "$id": "http://example.com/example.json",
+   "type": "object",
+   "description": "Object that contains a set of search criteria to simple search of glycans.",
+   "properties": {
+      "uniprot_canonical_ac": {
+         "$id": "/properties/uniprot_canonical_ac",
+         "type": "string",
+         "description": "Specifies uniprot accession.",
+         "examples": [
+            "P01234"
+         ]
+      },
+      "cluster_type": {
+         "$id": "/properties/cluster_type",
+         "type": "string",
+         "description": "Specifies cluster type.",
+         "examples": [
+            "isoformset.uniprotkb",
+            "homologset.oma",
+            "homologset.mgi"
+         ]
+      }
+   },
+   "required": [
+      "uniprot_canonical_ac",
+      "cluster_type"
+   ]
+}

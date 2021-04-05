@@ -1,0 +1,65 @@
+Introduction:
+=============
+This web services provides the motif details generated as result from the glycan detail page when user clicks on 
+a motif's structure link from motif panel. 
+From the Glycan detail, motif link from motif section can be clicked for more details about motif. 
+This ID is used as part of this web service to retrieve the individual elements of the Glycan.
+
+Motif Detail Workflow:
+======================
+User enters glycan detail page.
+1. From motif panel user selects one of the motif's structure name link.  
+2. JavaScript generates a JSON search query calls search WS.
+3. Search WS returns the motif result ID.
+4. Result motif ID is passed to the motif page.
+5. Result motif page desplays general motif info (the same as glycan detail general panel), glycan list table, and glycan publication. 
+
+Web service call: 
+==================
+HTTP Request method		POST
+Variables			id	ID of the Glycan
+Example: http://glygen.org/api/motif/detail/G00026MO-N-Glycan core basic
+
+Function:
+=========
+Based on the glycan ID the web service will return the details of the motif. 
+The result set will be encoded in JSON (see separate JSON schema) and returned. 
+
+Response:
+=========
+Content					JSON
+HTTP Content Type			application/json
+Access-Control-Allow-Origin		*
+
+Warning:
+========
+To all Cross-Origin Resource Sharing (CORS) the web service has to allow all domains access. 
+Otherwise browsers will not permit to call this web service by a webpage. 
+Therefore the HTTP response header must contain the appropriate Access-Control-Allow-Origin statement.
+
+Note:
+=====
+An example JSON is available separately and the JSON data structure is documented in a JSON schema.
+
+
+General error codes:
+====================
+{
+    "open-connection-failed": "Unable to connect to database."
+}
+
+
+Input error codes:
+==================
+{
+    "missing-parameter":"one of the required parameter."
+    ,"invalid-parameter-value":"one of the required parameter has invalid value."
+    ,"invalid-parameter-value-length":"one of the required parameter value is too long"
+    ,"non-existent-record":"no record exist for the submitted ID"
+    "invalid-query-json":"Submitted query JSON is not valid"
+    ,"missing-query-key-in-query-json":"query property is missing in query JSON"
+    ,"unexpected-field-in-query":"Unexpected field in query JSON."
+    ,"non-existent-search-results":"no search results exist for the submitted ID"
+}
+
+        

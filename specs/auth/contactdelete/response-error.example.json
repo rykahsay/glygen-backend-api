@@ -1,0 +1,9 @@
+{
+   "type":"error",
+   "error_list":[
+      {
+         "error_code":"invalid-parameter",
+         "field":"message id"
+      }
+   ]
+}

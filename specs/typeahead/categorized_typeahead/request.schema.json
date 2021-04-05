@@ -1,0 +1,46 @@
+{
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "description": "Object storing information to summarize settings that have been used to only retrieve a subset of the entire result list. These settings are an offset of the first entry, the number of requested entries (limit), the order of the result list (sort) and the order direction (order).",
+    "properties": {
+        "field": {
+            "$id": "/properties/field",
+            "type": "string",
+            "description": "Specifies field name for the type ahead response.",
+            "examples": [
+                "go_term"
+            ]
+        },
+        "value": {
+            "$id": "/properties/value",
+            "type": "string",
+            "description": "Specifies value for the type ahead response.",
+            "examples": [
+                "mitochondrion"
+            ]
+        },
+        "categorywise_limit": {
+            "$id": "/properties/categorywise_limit",
+            "type": "integer",
+            "description": "Specifies total number of entries per category in the type ahead response.",
+            "default": 5,
+            "examples": [
+                5
+            ]
+        },
+        "total_limit": {
+            "$id": "/properties/total_limit",
+            "type": "integer",
+            "description": "Total number of entries in the type ahead response.",
+            "examples": [
+                20
+            ]
+        }
+    },
+    "required": [
+        "field",
+        "value",
+        "categorywise_limit",
+        "total_limit"
+    ]
+}

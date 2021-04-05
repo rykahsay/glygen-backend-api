@@ -1,0 +1,83 @@
+{
+   "query": {
+      "operation": "AND",
+      "query_type": "search_glycan",
+      "mass_type": "Native",
+      "version": "1.2",
+      "mass": {
+         "min": 100,
+         "max": 6900
+      },
+      "number_monosaccharides": {
+         "min": 10,
+         "max": 69
+      },
+      "glycan_type": "N-linked",
+      "glycan_subtype": "N-linked",
+      "organism": {
+         "operation": "AND",
+         "subsumption": true,
+         "organism_list": [
+            {
+               "name": "Homo sapiens",
+               "id": 9606
+            },
+            {
+               "name": "Mus musculus",
+               "id": 10090
+            },
+            {
+               "name": "Rattus norvegicus",
+               "id": 10116
+            }
+         ]
+      },
+      "protein_identifier": "P01234",
+      "glycan_motif": "LewisX",
+      "glycan":{
+         "id": "AG56",
+         "subsumption": 1
+      },
+      "enzyme": {
+         "id": "MGAT2",
+         "type": "gene"
+      },
+      "composition": [
+         {
+            "residue": "hex",
+            "min": 0,
+            "max": 100
+         },
+         {
+            "residue": "hexnac",
+            "min": 0,
+            "max": 100
+         },
+         {
+            "residue": "dhex",
+            "min": 0,
+            "max": 100
+         },
+         {
+            "residue": "neuac",
+            "min": 0,
+            "max": 100
+         },
+         {
+            "residue": "neugc",
+            "min": 0,
+            "max": 100
+         },
+         {
+            "residue": "default",
+            "min": 0,
+            "max": 100
+         },
+         {
+            "residue": "other",
+            "min": 0,
+            "max": 100
+         }
+      ]
+   }
+}

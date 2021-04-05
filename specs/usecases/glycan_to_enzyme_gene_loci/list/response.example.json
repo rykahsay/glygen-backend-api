@@ -1,0 +1,30 @@
+{
+    "query": {
+      "execution_time": "2020-01-30 12:48:51 EST-0500", 
+      "glytoucan_ac": "G17689DH", 
+      "organism": {
+        "id": 9606, 
+        "name": "Homo sapiens"
+      }
+    }, 
+    "pagination": {
+      "sort": "uniprot_canonical_ac", 
+      "total_length": 14, 
+      "limit": 20, 
+      "order": "desc", 
+      "offset": 1
+    }, 
+    "results": [
+      {
+        "uniprot_canonical_ac": "Q9Y274-1", 
+        "gene_link": "https://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=18080", 
+        "protein_name": "Type 2 lactosamine alpha-2,3-sialyltransferase", 
+        "gene_name": "ST3GAL6", 
+        "start_pos": 98793758, 
+        "end_pos": 98768441, 
+        "organism": "Homo sapiens", 
+        "chromosome": "3", 
+        "tax_id": 9606
+      }
+	]
+}

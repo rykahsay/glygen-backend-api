@@ -2,108 +2,40 @@
 <head>
 <link rel="stylesheet" href="styles.css" type="text/css">
 <script language="javascript" src="jquery.min.js"></script>
+<script language="javascript" src="api_test.js"></script>
+
 <script>
-var htmlRoot = ""
 
-$(document ).ready(function() {
-
-});
-
-////////////////////////////////////
-$(document).on('click', '#data_download', function (event) {
-        
-        event.preventDefault();
-        var inJson = {};
-        $('.data_download').each(function(){
-                var name = $(this).attr("name");
-                var value = $(this).val();
-                if (value.trim()){
-                        if (["compressed"].indexOf(name) != -1){
-                                value = (value == 'true');
-                        }
-                        inJson[name] = value
-                }
-        });
-        
-
-        var url = htmlRoot + '/data/download'
-        var postData = "query=" + JSON.stringify(inJson);
-        $("#data_download_url").html(url + '?' +postData);
-
-        var gifImage = '<img src=loading.gif style="width:20%;margin-left:40%;margin-top:2%;">';
-        $("#data_download_cn").html(gifImage);
-
-
-        var reqObj = new XMLHttpRequest();
-        reqObj.open("POST", url, true);
-        reqObj.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        reqObj.onreadystatechange = function() {
-                if (reqObj.readyState == 4 && [200, 500].indexOf(reqObj.status) != -1) {
-                        $("#data_download_cn").html('<pre>'+reqObj.responseText+'</pre>');
-		}
-        };
-        reqObj.send(postData);
-
-});
+var testInfo = {
+    "data_download": {
+        "string_fields": [
+            "type [protein_list|glycan_list|genelocus_list|ortholog_list|protein_detail|site_detail|protein_detail_isoformset|protein_detail_homologset|protein_detail|glycan_detail|motif_detail|glycan_image]",
+            "id",
+            "format [csv|json|fasta|png]"
+        ],
+        "url": "/data/download/",
+        "required_fields": [
+            "type",
+            "format",
+            "id",
+            "compressed"
+        ],
+        "numeric_fields": [],
+        "query": {
+            "compressed": false,
+            "type": "glycan_detail",
+            "format": "json",
+            "id": "G17689DH"
+        }
+    }
+};
 
 
 
 </script>
 
-
 </head>
 <body>
-
-
-<table align=center width=80% border=1 style="background:#eee;">
-<tr><th align=left colspan=2 class=api_title>Test for data_download API</th></tr>
-
-<tr><td>List ID *</td><td><input id=listid class=data_download name=id type=text value=""></td></tr>
-<tr><td>Download Type *</td><td>
-    <select class=data_download name=type>    
-        <option value=""></option>
-        <option value="protein_list">protein_list</option>
-        <option value="glycan_list">glycan_list</option>
-        <option value="protein_detail">protein_detail</option>
-        <option value="glycan_detail">glycan_detail</option>
-        <option value="motif_detail">motif_detail</option>
-        <option value="glycan_image">glycan_image</option>
-    </select>
-</td></tr>
-
-
-<tr><td>Download Format *</td><td>
-    <select class=data_download name=format>
-        <option value=""></option>
-        <option value="csv">CSV</option>
-        <option value="fasta">FASTA</option>
-        <option value="json">JSON</option>
-        <option value="png">PNG</option>
-    </select>
-</td></tr>
-
-<tr><td>Compressed *</td><td>
-                <select class=data_download name=compressed>
-                    <option value=""></option>
-                        <option value="false" selected>false</option>
-                        <option value="true">true</option>
-                </select>
-</td></tr>
-
-
-
-
-<tr><td>Post Data</td><td id=data_download_url style="background:#fff;"></td></tr>
-<tr><td valign=top><input type=submit id=data_download name=btn value="Submit API request"></td>
-<td style="background:#fff;"><div style="width:700px;height:150px;overflow:auto;" id=data_download_cn></div></td></tr>
-
-
-
-
-
-
-
-</table>
 
 </body>
 <html>

@@ -1,0 +1,58 @@
+{
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "properties": {
+        "page": {
+            "$id": "/properties/page",
+            "type": "string",
+            "description": "Specifies page name.",
+            "examples": [
+                "foo.html"
+            ]
+        },
+        "user": {
+            "$id": "/properties/user",
+            "type": "string",
+            "description": "Specifies user id.",
+            "default": "foo",
+            "examples": [
+                "foo"
+            ]
+        },
+        "type": {
+            "$id": "/properties/type",
+            "type": "string",
+            "description": "Access type.",
+            "default": "error or user",
+            "examples": [
+                "error",
+                "user"
+            ]
+        },
+        "id": {
+            "$id": "/properties/id",
+            "type": "string",
+            "description": "ID of the glycan, protein - list/detail page.",
+            "default": "ABC",
+            "examples": [
+                "ABC"
+            ]
+        },
+        "message": {
+            "$id": "/properties/message",
+            "type": "string",
+            "description": "Descriptive message of the log.",
+            "default": "Test",
+            "examples": [
+                "Test"
+            ]
+        }
+    },
+    "required": [
+        "page",
+        "user",
+        "type",
+        "id",
+        "message"
+    ]
+}

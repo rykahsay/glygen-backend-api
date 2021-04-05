@@ -12,17 +12,13 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
-
 global config_obj
 global path_obj
-
 config_obj = json.loads(open("./conf/config.json", "r").read())
 path_obj  =  config_obj[config_obj["server"]]["pathinfo"]
 
-
 @app.route('/data/download/', methods=['GET', 'POST'])
 def data_download():
-
 
     res_obj = {}
     try:
@@ -41,7 +37,6 @@ def data_download():
                 return res_obj
     except Exception, e:
         res_obj = errorlib.get_error_obj("data_download", traceback.format_exc(), path_obj)
-
 
     http_code = 500 if "error_list" in res_obj else 200
     return jsonify(res_obj), http_code

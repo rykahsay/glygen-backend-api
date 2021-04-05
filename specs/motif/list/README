@@ -1,0 +1,63 @@
+Introduction:
+=============
+This web services provides the motif list generated as result show all motif. 
+
+Search Workflow:
+================
+User click tab on menu bar to show all motifs.
+1.motif list WS returns whole list motif in database results.
+
+
+Web service call: 
+================= 
+HTTP Request method		GET
+Variables		
+				offset	Position in the search result the first entry comes from
+				limit	Number of entries to retrieve starting with the entry at the offset position
+				sort	Criteria to sort the list by (id, motif name, motif synonym)
+				order	Sorting direction (asc, desc)
+                filter  Criteria to filter the list by (motif name, motif synonyms, id)
+
+
+This query will retrieve the element 50-69 from the search result AB345TB7 which was ordered by the glycan ID.
+
+Function:
+=========
+Based on the motif list ID the webservice will sort and filter the list by the provided criteria (sort and order) and return the requested chunk (offset, limit) of the list. The server side paginationis required since large result sets (more than 1000 results) will perform very poorly with standard tables. The result set will be encoded in JSON (see separate JSON schema) and return. The JSON contains the result set, information about the search query and pagination information.
+
+Response:
+=========
+Content					JSON
+HTTP Content Type			application/json
+Access-Control-Allow-Origin		*
+
+Warning:
+========
+To all Cross-Origin Resource Sharing (CORS) the web service has to allow all domains access. Otherwise browsers will not permit to call this web service by a webpage. Therefore the HTTP response header must contain the appropriate Access-Control-Allow-Origin statement.
+
+Note:
+=====
+An example JSON is available separately and the JSON data structure is documented in a JSON schema.
+
+
+General error codes:
+====================
+{
+    "open-connection-failed": "Unable to connect to database."
+}
+
+
+Input error codes:
+==================
+{
+    "invalid-query-json":"Submitted query JSON is not valid"
+    ,"missing-query-key-in-query-json":"query property is missing in query JSON"
+    ,"unexpected-field-in-query":"Unexpected field in query JSON."
+    ,"missing-parameter":"one of the required parameter."
+    ,"invalid-parameter-value":"one of the required parameter has invalid value."
+    ,"invalid-parameter-value-length":"one of the required parameter value is too long"
+    ,"non-existent-search-results":"no search results exist for the submitted ID"
+}
+
+
+

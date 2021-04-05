@@ -1,0 +1,53 @@
+Introduction:
+=============
+This webservice is used to provide categorized type ahead proposals for webforms. Depending on the user input and the specified type, proposals are made by selecting all terms of a certain type and performing a substring search based on the user input. 
+
+Web service call: 
+=================
+HTTP Request method		         POST
+Variables	 field		         Type of term to look for and propose (list is defined below)
+		 value		         user specified substring to filter the results by.
+                 categorywise_limit      Maximum number of proposals per category. 
+                 total_limit             Maximum number of proposals for the user input.
+
+Possible values for field:
+- go_term = Propose categorized protein go terms. Input are go terms and results are categorized go terms.
+
+Function:
+=========
+Web service returns the list of objects of a certain type that match the user defined substrings.
+
+
+Response:
+=========
+Content						JSON
+HTTP Content Type			application/json
+Access-Control-Allow-Origin	*
+
+Warning:
+========
+To all Cross-Origin Resource Sharing (CORS) the web service has to allow all domains access. Otherwise browsers will not permit to call this web service by a webpage. Therefore the HTTP response header must contain the appropriate Access-Control-Allow-Origin statement.
+
+Note:
+=====
+An example JSON is available separately and the JSON data structure is documented in a JSON schema.
+
+General error codes:
+====================
+{
+    "open-connection-failed": "Unable to connect to database."
+}
+
+
+Input error codes:
+==================
+{
+    "invalid-query-json":"Submitted query JSON is not valid",
+    "missing-query-key-in-query-json":"query property is missing in query JSON",
+    "unexpected-field-in-query":"Unexpected field in query JSON.",
+    "missing-parameter":"one of the required parameter.",
+    "invalid-parameter-value":"one of the required parameter has invalid value.",
+    "invalid-parameter-value-length":"one of the required parameter value is too long"
+}   
+
+

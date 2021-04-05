@@ -1,0 +1,62 @@
+[
+    {
+        "category": "Molecular Function", 
+        "label": "protein serine/threonine kinase activity"
+    }, 
+    {
+        "category": "Molecular Function", 
+        "label": "receptor serine/threonine kinase binding"
+    }, 
+    {
+        "category": "Molecular Function", 
+        "label": "protein serine/threonine/tyrosine kinase activity"
+    }, 
+    {
+        "category": "Molecular Function", 
+        "label": "protein kinase activity"
+    }, 
+    {
+        "category": "Molecular Function", 
+        "label": "protein kinase C activity"
+    }, 
+    {
+        "category": "Biological Process", 
+        "label": "positive regulation of protein kinase A signaling"
+    }, 
+    {
+        "category": "Biological Process", 
+        "label": "positive regulation of protein kinase B signaling"
+    }, 
+    {
+        "category": "Biological Process", 
+        "label": "activation of JUN kinase activity"
+    }, 
+    {
+        "category": "Biological Process", 
+        "label": "positive regulation of protein tyrosine kinase activity"
+    }, 
+    {
+        "category": "Biological Process", 
+        "label": "negative regulation of protein tyrosine kinase activity"
+    }, 
+    {
+        "category": "Cellular Component", 
+        "label": "Atg1/ULK1 kinase complex"
+    }, 
+    {
+        "category": "Cellular Component", 
+        "label": "phosphatidylinositol 3-kinase complex, class IB"
+    }, 
+    {
+        "category": "Cellular Component", 
+        "label": "phosphatidylinositol 3-kinase complex"
+    }, 
+    {
+        "category": "Cellular Component", 
+        "label": "cyclin-dependent protein kinase holoenzyme complex"
+    }, 
+    {
+        "category": "Cellular Component", 
+        "label": "nucleotide-activated protein kinase complex"
+    }
+]

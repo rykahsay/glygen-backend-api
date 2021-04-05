@@ -1,0 +1,369 @@
+<html>
+<head>
+<link rel="stylesheet" href="styles.css" type="text/css">
+<script language="javascript" src="jquery.min.js"></script>
+<script language="javascript" src="queries_supersearch.js"></script>
+<script>
+var htmlRoot = ""
+</script>
+</head>
+<body>
+
+<table align=center width=80% border=1 style="background:#eee;">
+<tr><td>
+<pre>
+
+    Super-search query targeting various record types
+    ==================================================
+    A) Record sets for each record type are retrieved matching query 
+       for each record type.
+    
+        - Each record, no matter what record type, has an associated 
+          protein identifier. 
+    
+        - For protein/enzyme/glycoprotein record types, the UniProtKB cannonical accession 
+          is the protein identifier. 
+    
+        - For site record types, the protein identifier is the UniProtKB 
+          cannonical accession of the protein in which the site is located.
+    
+        - For glycan record types, the protein  identifier is the UniProtKB 
+          cannonical accession of the glycoprotein glycosylated by the glycan. 
+   
+
+    B) A record from each set found in (A) is removed if its associated
+       protein identifier is not found in all other sets. This is done to 
+       ensure maintain the relationship in the returned records.
+
+
+
+    {
+        "glycan": {
+            "$and": [
+                {"species.common_name": {"$eq": "Human"}},
+                {"motifs.name": {"$regex": "Polysialic", "$options": "i"}},
+                {"mass": {"$gte": 2100}}
+            ]
+        }, 
+        "protein": {
+            "$and":[
+                {"expression_tissue.tissue.name":{"$regex": "lung", "$options": "i"}},
+                {"expression_tissue.present":{"$regex": "yes", "$options": "i"}},
+                {"expression_disease.significant":{"$regex": "yes", "$options": "i"}},
+                {"expression_disease.disease.recommended_name.name":{"$regex": "lung", "$options": "i"}}
+            ]
+        }, 
+        "site": {
+            "$and":[
+                {"snv":{"$gt":[]}},
+                {"snv.disease":{"$gt":[]}},
+                {"glycosylation":{"$gt":[]}},
+                {"glycosylation.glytoucan_ac":{"$ne":""}},
+                {
+                    "$or":[
+                        {"species.taxid":{"$eq":9606}},
+                        {"species.name":{"$regex": "homo", "$options": "i"}},
+                        {"species.common_name":{"$regex": "human", "$options": "i"}}
+                    ]
+                }
+            ]
+        }
+    }
+
+
+
+    Search result summary for each record type
+    ========================================================
+
+    {
+        "glycan": {
+            "result_count": 4,
+            "list_id": "423013ba9df97f7d5efe85b01c845d71"
+        },
+        "protein": {
+            "result_count": 2,
+            "list_id": "5452790865b5f5c695f2c1d4b726c1df"
+        },
+        "site": {
+            "result_count": 6,
+            "list_id": "d5d9ccf0463ef9f796f093056fc840b4"
+        }
+    },    
+
+
+    Search results associated for each record type
+    ========================================================
+    {
+        "glycan": [
+            {
+                "glycoprotein": "P02768-1; P29965-1; P19835-1; P02743-1", 
+                "mass_pme": 2769.39, 
+                "inchi_key": {}, 
+                "publication": "7841792; 11676606; 11738084; ... ", 
+                "classification": "N-glycan/complex", 
+                "glycoct": "RES 1b:b-dglc-HEX-1:5 2s:n-acetyl ... ",
+                "number_enzymes": 11, 
+                "number_proteins": 4, 
+                "composition": "neuac (2); hexnac (4); hex (5)", 
+                "glycam": "", 
+                "enzyme": "Q9DBE8-1; P26572-1; P15535-1; ... ",
+                "number_monosaccharides": 11, 
+                "mass": 2222.78, 
+                "motifs": "GGM.000034; GGM.000001; GGM.000052", 
+                "inchi": "", 
+                "wurcs": "WURCS=2.0/5,11,10/[a2122h-1b_1-5_2*NCC/3=O] ... ",
+                "glytoucan_ac": "G53276NK", 
+                "hit_score": 0, 
+                "iupac": "alpha-D-NeupAc-(2->?)-beta-D-Galp-(1->4)-beta- ... "
+            }, 
+            {
+                "glycoprotein": "P00742-1; P00742-1", 
+                "mass_pme": 2857.45, 
+                "inchi_key": {}, 
+                "publication": "7620335", 
+                "classification": "N-glycan/complex", 
+                "glycoct": "RES 1b:b-dglc-HEX-1:5 2s:n-acetyl ... ",
+                "number_enzymes": 14, 
+                "number_proteins": 1, 
+                "composition": "neuac (1); hexnac (5); hex (6)", 
+                "glycam": "", 
+                "enzyme": "Q9Z2Y2-1; P27808-1; Q10469-1; P15535-1; ... ",
+                "number_monosaccharides": 12, 
+                "mass": 2296.82, 
+                "motifs": "GGM.000001; GGM.000052; GGM.000034", 
+                "inchi": "", 
+                "wurcs": "WURCS=2.0/5,12,11/[a2122h-1b_1-5_2*NCC/3=O] ... ",
+                "glytoucan_ac": "G46568MX", 
+                "hit_score": 0, 
+                "iupac": "alpha-D-NeupAc-(2->?)-beta-D-Galp-(1->4)- ... "
+            }, 
+            {
+                "glycoprotein": "P00742-1; P00742-1", 
+                "mass_pme": 2857.45, 
+                "inchi_key": {}, 
+                "publication": "7620335", 
+                "classification": "N-glycan/complex", 
+                "glycoct": "RES 1b:b-dglc-HEX-1:5 2s:n-acetyl ... ",
+                "number_enzymes": 14, 
+                "number_proteins": 1, 
+                "composition": "hexnac (5); neuac (1); hex (6)", 
+                "glycam": "", 
+                "enzyme": "P27808-1; Q9D306-1; Q10469-1; P15535-1; ... ",
+                "number_monosaccharides": 12, 
+                "mass": 2296.82, 
+                "motifs": "GGM.000001; GGM.000034; GGM.000052", 
+                "inchi": "", 
+                "wurcs": "WURCS=2.0/5,12,11/[a2122h-1b_1-5_2*NCC/3=O] ... ",
+                "glytoucan_ac": "G49478NM", 
+                "hit_score": 0, 
+                "iupac": "beta-D-Galp-(1->4)-beta-D-GlcpNAc-(1->2) ... "
+            }, 
+            {
+                "glycoprotein": "P00742-1; P00742-1", 
+                "mass_pme": 2857.45, 
+                "inchi_key": {}, 
+                "publication": "7620335", 
+                "classification": "N-glycan/complex", 
+                "glycoct": "RES 1b:b-dglc-HEX-1:5 2s:n-acetyl ... ",
+                "number_enzymes": 14, 
+                "number_proteins": 1, 
+                "composition": "hex (6); neuac (1); hexnac (5)", 
+                "glycam": "", 
+                "enzyme": "O60909-1; Q9H553-1; Q9UBM8-1; Q9Z2Y2-1; ... ",
+                "number_monosaccharides": 12, 
+                "mass": 2296.82, 
+                "motifs": "GGM.000034; GGM.000052; GGM.000001", 
+                "inchi": "", 
+                "wurcs": "WURCS=2.0/5,12,11/[a2122h-1b_1-5_2* ... ",
+                "glytoucan_ac": "G73073LQ", 
+                "hit_score": 0, 
+                "iupac": "beta-D-Galp-(1->4)-beta-D-GlcpNAc-(1->2) ... "
+            }
+        ], 
+        "protein": [
+            {
+                "function": "A high CRP/Alb ratio at POD 14 was an ... ",
+                "uniprot_canonical_ac": "P02768-1", 
+                "publication_count": 65, 
+                "reported_o_glycosites_with_glycan": 11, 
+                "protein_name": "Serum albumin", 
+                "protein_names_uniprotkb": "Serum albumin", 
+                "gene_names_refseq": "HSA; PRO0883; PRO0903; PRO1341; ALB", 
+                "refseq_ac": "NP_000468.1", 
+                "protein_names_refseq": "serum albumin; serum albumin preproprotein", 
+                "disease": "hyperthyroxinemia, familial dysalbuminemic ... ",
+                "reported_n_glycosites": 0, 
+                "mass": 69367.0, 
+                "refseq_name": "serum albumin preproprotein", 
+                "reported_n_glycosites_with_glycan": 3, 
+                "reported_o_glycosites": 0, 
+                "predicted_glycosites": 1, 
+                "tax_id": 9606, 
+                "organism": "Homo sapiens", 
+                "pathway": "Scavenging of heme from plasma (R-HSA-2168880); ... ",
+                "gene_name": "ALB", 
+                "gene_names_uniprotkb": "ALB; PRO1341; PRO2619; GIG20; ... ",
+            }, 
+            {
+                "function": "Factor Xa is a vitamin K-dependent glycoprotein that ... ",
+                "uniprot_canonical_ac": "P00742-1", 
+                "publication_count": 45, 
+                "reported_o_glycosites_with_glycan": 13, 
+                "protein_name": "Coagulation factor X", 
+                "protein_names_uniprotkb": "Coagulation factor X; 3.4.21.6;  ... ", 
+                "gene_names_refseq": "F10; FX; FXA", 
+                "refseq_ac": "NP_000495.1", 
+                "protein_names_refseq": "coagulation factor X isoform 1 ... ",
+                "disease": "factor X deficiency (Disease Ontology:DOID:2222)", 
+                "reported_n_glycosites": 2, 
+                "mass": 54732.0, 
+                "refseq_name": "coagulation factor X isoform 1 preproprotein", 
+                "reported_n_glycosites_with_glycan": 81, 
+                "reported_o_glycosites": 2, 
+                "predicted_glycosites": 0, 
+                "tax_id": 9606, 
+                "organism": "Homo sapiens", 
+                "pathway": "Gamma-carboxylation of protein ... ",
+                "gene_name": "F10", 
+                "gene_names_uniprotkb": "F10"
+            }
+        ], 
+        "site": [
+            {
+                "uniprot_canonical_ac": "P02768-1", 
+                "modifier_url": "", 
+                "start_pos": 443, 
+                "modification": "O-linked glycosylation", 
+                "modification_type": "glycosylation", 
+                "end_pos": 443, 
+                "disease": [], 
+                "modifier_id": "G43417UB", 
+                "evidence": [
+                    {
+                        "url": "http://unicarbkb.org/proteinsummary/P02768/annotated", 
+                        "id": "P02768", 
+                        "database": "UniCarbKB"
+                    }, 
+                    {
+                        "url": "https://www.ncbi.nlm.nih.gov/pubmed/30459171", 
+                        "id": "30459171", 
+                        "database": "PubMed"
+                    }
+                ]
+            }, 
+            {
+                "uniprot_canonical_ac": "P02768-1", 
+                "modifier_url": "", 
+                "start_pos": 443, 
+                "modification": "", 
+                "modification_type": "phosphorylation", 
+                "end_pos": 443, 
+                "disease": [], 
+                "modifier_id": "", 
+                "evidence": [
+                    {
+                        "url": "https://www.ncbi.nlm.nih.gov/pubmed/19690332", 
+                        "id": "19690332", 
+                        "database": "PubMed"
+                    }
+                ]
+            }, 
+            {
+                "uniprot_canonical_ac": "P02768-1", 
+                "modifier_url": "", 
+                "start_pos": 443, 
+                "modification": "", 
+                "modification_type": "phosphorylation", 
+                "end_pos": 443, 
+                "disease": [], 
+                "modifier_id": "", 
+                "evidence": [
+                    {
+                        "url": "https://www.uniprot.org/uniprot/P02768", 
+                        "id": "P02768", 
+                        "database": "UniProtKB"
+                    }
+                ]
+            }, 
+            {
+                "uniprot_canonical_ac": "P02768-1", 
+                "modifier_url": "", 
+                "start_pos": 443, 
+                "modification": "S -> P", 
+                "modification_type": "snv", 
+                "end_pos": 443, 
+                "disease": [
+                    {
+                        "url": "http://disease-ontology.org/term/DOID:363", 
+                        "id": "DOID:363", 
+                        "resource": "Disease Ontology", 
+                        "description": "A female reproductive organ cancer that is located_in the uterus.", 
+                        "name": "uterine cancer"
+                    }
+                ], 
+                "modifier_id": "", 
+                "evidence": [
+                    {
+                        "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P02768", 
+                        "id": "P02768", 
+                        "database": "BioMuta"
+                    }
+                ]
+            }, 
+            {
+                "uniprot_canonical_ac": "P00742-1", 
+                "modifier_url": "", 
+                "start_pos": 190, 
+                "modification": "O-linked glycosylation", 
+                "modification_type": "glycosylation", 
+                "end_pos": 190, 
+                "disease": [], 
+                "modifier_id": "G43417UB", 
+                "evidence": [
+                    {
+                        "url": "http://unicarbkb.org/proteinsummary/P00742/annotated", 
+                        "id": "P00742", 
+                        "database": "UniCarbKB"
+                    }, 
+                    {
+                        "url": "https://www.ncbi.nlm.nih.gov/pubmed/22171320", 
+                        "id": "22171320", 
+                        "database": "PubMed"
+                    }
+                ]
+            }, 
+            {
+                "uniprot_canonical_ac": "P00742-1", 
+                "modifier_url": "", 
+                "start_pos": 190, 
+                "modification": "S -> R", 
+                "modification_type": "snv", 
+                "end_pos": 190, 
+                "disease": [
+                    {
+                        "url": "http://disease-ontology.org/term/DOID:1324", 
+                        "id": "DOID:1324", 
+                        "resource": "Disease Ontology", 
+                        "description": "A respiratory system cancer that is located_in the lung.", 
+                        "name": "lung cancer"
+                    }
+                ], 
+                "modifier_id": "", 
+                "evidence": [
+                    {
+                        "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P00742", 
+                        "id": "P00742", 
+                        "database": "BioMuta"
+                    }
+                ]
+            }
+        ]
+    }
+}
+
+</pre>
+</td>
+</tr>
+</table>
+</body>
+</html>
