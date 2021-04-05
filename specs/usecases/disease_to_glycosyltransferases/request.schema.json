@@ -1,0 +1,47 @@
+{
+<<<<<<< HEAD
+   "$schema":"http://json-schema.org/draft-07/schema#",
+   "$id":"http://api.glygen.org/usecases/disease_to_glycosyltransferases/request",
+   "type":"object",
+   "title":"The disease_to_glycosyltransferases request schema",
+   "properties":{
+      "do_name":{
+         "$id":"#/properties/do_name",
+         "type":"string",
+         "description":"Disease Ontology (DO) name"
+      },
+      "tax_id":{
+         "$id":"#/properties/tax_id",
+         "type":"integer",
+         "description":"NCBI taxonomy ID"
+      }
+   }
+}
+=======
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "properties": {
+        "tax_id": {
+            "$id": "/properties/tax_id",
+            "type": "integer",
+            "description": "NCBI Taxonomy ID for the species entry.",
+            "default": 0,
+            "examples": [
+                9606
+            ]
+        },
+        "do_name": {
+            "$id": "/properties/do_name",
+            "type": "string",
+            "description": "Specifies disease Ontology ID.",
+            "examples": [
+                "Gilbert syndrom"
+            ]
+        }
+    },
+    "required": [
+        "tax_id",
+        "do_name"
+    ]
+}
+>>>>>>> 95901140b1467c588058ac3c13875aaa79750d7c

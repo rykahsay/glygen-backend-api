@@ -28,16 +28,24 @@ def motif_detail(query_obj, config_obj):
     error_list = errorlib.get_errors_in_query("motif_detail", query_obj, config_obj)
     if error_list != []:
         return {"error_list":error_list}
-    collection = "c_glycan"
+    collection = "c_motif"
 
 
     default_hash = {"offset":1, "limit":20, "sort":"glytoucan_ac", "order":"asc"}
     for key in default_hash:
         if key not in query_obj:
             query_obj[key] = default_hash[key]
+    
+    mongo_query = {}
+    if "motif_ac" in query_obj:
+        mongo_query = {"motif_ac":{'$eq': query_obj["motif_ac"]}}
+    elif "glytoucan_ac" in query_obj:
+        mongo_query = {"glytoucan_ac":{'$eq': query_obj["glytoucan_ac"]}}
+   
+    if mongo_query == {}:
+        return {"error_list":[{"error_code":"bad-query"}]}
 
 
-    mongo_query = {"glytoucan_ac":{'$eq': query_obj["glytoucan_ac"]}}
     motif_doc = dbh[collection].find_one(mongo_query)
     
     #check for post-access error, error_list should be empty upto this line
@@ -46,26 +54,27 @@ def motif_detail(query_obj, config_obj):
         post_error_list.append({"error_code":"non-existent-record"})
         return {"error_list":post_error_list}
 
-    keys_to_remove = ["_id", "number_monosaccharides"]
-    for key in keys_to_remove:
-        if key in motif_doc:
-            motif_doc.pop(key)
+    
+    url = config_obj["urltemplate"]["motif"] % (motif_doc["motif_ac"])
+    motif_doc["motif"] = {
+        "accession":motif_doc["motif_ac"], 
+        "url":url,
+        "glytoucan_ac":motif_doc["glytoucan_ac"]
+    }
 
-    url = config_obj["urltemplate"]["glytoucan"] % (motif_doc["glytoucan_ac"])
-    motif_doc["glytoucan"] = {"glytoucan_ac":motif_doc["glytoucan_ac"], "glytoucan_url":url}
-    motif_doc.pop("glytoucan_ac")
-
-    util.clean_obj(motif_doc)
+    prop_list = ["motif", "glytoucan","name",  "mass", "publication"]
+    prop_list += ["synonym", "crossref","keywords", "reducing_end","aglycon","reducing_end",
+        "alignment_method"
+    ]
 
     res_obj = {}
     for k in motif_doc:
-        if k in ["glytoucan","name",  "mass", "classification", "publication"]:
+        if k in prop_list:
             res_obj[k] = motif_doc[k]
 
-    mongo_query = {"motifs.id": {'$eq': query_obj["glytoucan_ac"]}}
-    doc_list = dbh[collection].find(mongo_query)
-    results = get_parent_glycans(query_obj["glytoucan_ac"], doc_list, res_obj)
-
+    mongo_query = {"motifs.id": {'$eq': motif_doc["motif_ac"]}}
+    doc_list = dbh["c_glycan"].find(mongo_query)
+    results = get_parent_glycans(motif_doc["motif_ac"], doc_list, res_obj)
 
     sorted_id_list = util.sort_objects(results, config_obj["glycan_list"]["returnfields"], 
                                         query_obj["sort"], query_obj["order"])
@@ -83,20 +92,19 @@ def motif_detail(query_obj, config_obj):
 
     res_obj["pagination"] = {"offset":query_obj["offset"], "limit":query_obj["limit"],
         "total_length":len(results), "sort":query_obj["sort"], "order":query_obj["order"]}
-    res_obj["synonym"] = []
     res_obj["query"] = query_obj
 
     return util.order_obj(res_obj, config_obj["objectorder"]["glycan"])
 
 
 
-def get_parent_glycans(glytoucan_ac, doc_list, res_obj):
+def get_parent_glycans(motif_ac, doc_list, res_obj):
 
     results = []
     for doc in doc_list:
         if "motifs" in doc:
             for o in doc["motifs"]:
-                if "name" not in res_obj and o["id"] == glytoucan_ac:
+                if "name" not in res_obj and o["id"] == motif_ac:
                     res_obj["name"] = o["name"]
 
         glytoucan_ac = doc["glytoucan_ac"]
@@ -125,5 +133,10 @@ def get_parent_glycans(glytoucan_ac, doc_list, res_obj):
 
 
     return results
+
+
+
+
+
 
 

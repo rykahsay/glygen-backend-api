@@ -1,0 +1,719 @@
+{
+    "definitions": {},
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "http://example.com/root.json",
+    "type": "object",
+    "description": "This is the glycan detail page consisting of the glytoucan, mass, classification, species, motifs, iupac, wurcs, glycoct, crossref, glycoprotein, enzymes, publication.",
+    "required": [
+        "glytoucan",
+        "mass",
+        "classification",
+        "species",
+        "motifs",
+        "iupac",
+        "wurcs",
+        "glycoct",
+        "crossref",
+        "glycoprotein",
+        "enzymes",
+        "publication"
+    ],
+    "properties": {
+        "glytoucan": {
+            "$id": "#/properties/glytoucan",
+            "type": "object",
+            "description": "This is the glytoucan of the glycan consisting of glytoucan_ac and glytoucan_url.",
+            "required": [
+                "glytoucan_ac",
+                "glytoucan_url"
+            ],
+            "properties": {
+                "glytoucan_ac": {
+                    "$id": "#/properties/glytoucan/properties/glytoucan_ac",
+                    "type": "string",
+                    "description": "This is the GlyTouCan accession number of the glycan.",
+                    "default": "",
+                    "examples": [
+                        "G89290XU"
+                    ],
+                    "pattern": "^(.*)$"
+                },
+                "glytoucan_url": {
+                    "$id": "#/properties/glytoucan/properties/glytoucan_url",
+                    "type": "string",
+                    "description": "This is the glytoucan_url of the glycan.",
+                    "default": "",
+                    "examples": [
+                        "https://glytoucan.org/Structures/Glycans/G89290XU"
+                    ],
+                    "format": "uri"
+                }
+            }
+        },
+        "mass": {
+            "$id": "#/properties/mass",
+            "type": "number",
+            "description": "The native mass of the glycan. If the glycan has a modification (e.g. sulfation, reducing end) it will have the corresponding mass.",
+            "default": 0.0,
+            "examples": [
+                105.3
+            ]
+        },
+        "mass_pme": {
+            "$id": "#/properties/mass_pme",
+            "type": "number",
+            "description": "The permethylated mass of the glycan. If the glycan has a modification (e.g. sulfation, reducing end) it will have the corresponding mass.",
+            "default": 0.0,
+            "examples": [
+                140.2
+            ]
+        },
+        "composition": {
+            "$id": "#/properties/composition",
+            "type": "array",
+            "description": "The list of compositions for the glycan.",
+            "items": {
+                "$id": "#/properties/composition/items",
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "$id": "#/properties/composition/items/properties/name",
+                        "type": "string",
+                        "description": "This is the name of residue of the glycan.",
+                        "examples": [
+                            "Hexose"
+                        ]
+                    },
+                    "residue": {
+                        "$id": "#/properties/composition/items/properties/residue",
+                        "type": "string",
+                        "description": "This is the residue of the glycan.",
+                        "examples": [
+                            "hex"
+                        ]
+                    },
+                    "count": {
+                        "$id": "#/properties/composition/items/properties/count",
+                        "type": "integer",
+                        "description": "This is residue count in the glycan.",
+                        "examples": [
+                            1
+                        ]
+                    },
+                    "url": {
+                        "$id": "#/properties/composition/items/properties/url",
+                        "type": "string",
+                        "description": "This is the pubchem link of the residue.",
+                        "examples": [
+                            "https://pubchem.ncbi.nlm.nih.gov/compound/899"
+                        ]
+                    },
+                    "cid": {
+                        "$id": "#/properties/composition/items/properties/cid",
+                        "type": "string",
+                        "description": "This is the pubchem CID of the residue.",
+                        "examples": [
+                            "899"
+                        ]
+                    }
+                }
+            }
+        },
+        "classification": {
+            "$id": "#/properties/classification",
+            "type": "array",
+            "description": "The list of classifiers for the glycan (e.g. Bisection N-Glycan, Acidic glycan).",
+            "items": {
+                "$id": "#/properties/classification/items",
+                "type": "object",
+                "description": "This is the items of the glycan consisting of the type and subtype.",
+                "required": [
+                    "type",
+                    "subtype"
+                ],
+                "properties": {
+                    "type": {
+                        "$id": "#/properties/classification/items/properties/type",
+                        "type": "object",
+                        "description": "This is the type of the glycan consisting of the name and url.",
+                        "required": [
+                            "name",
+                            "url"
+                        ],
+                        "properties": {
+                            "name": {
+                                "$id": "#/properties/classification/items/properties/type/properties/name",
+                                "type": "string",
+                                "description": "This field is set if a search by glycan type (e.g. N-Glycan) will be performed. The complete list of glycan types is maintained by the glygen server.",
+                                "default": "",
+                                "examples": [
+                                    "N-glycan"
+                                ],
+                                "pattern": "^(.*)$"
+                            },
+                            "url": {
+                                "$id": "#/properties/classification/items/properties/type/properties/url",
+                                "type": "string",
+                                "description": "The URL that links to the type explaination.",
+                                "default": "",
+                                "examples": [
+                                    "http://glycomics.ccrc.uga.edu/ontologies/GlycO#N-glycan_oligosaccharide"
+                                ],
+                                "format": "uri"
+                            }
+                        }
+                    },
+                    "subtype": {
+                        "$id": "#/properties/classification/items/properties/subtype",
+                        "type": "object",
+                        "description": "This is the subtype of the glycan consisting of the name and url.",
+                        "required": [
+                            "name",
+                            "url"
+                        ],
+                        "properties": {
+                            "name": {
+                                "$id": "#/properties/classification/items/properties/subtype/properties/name",
+                                "type": "string",
+                                "description": "This field is set if a search by glycan subtype (e.g. bisection) will be performed. The complete list of glycan subtypes is maintained by the glygen server. This field can be used intependendly from glycan_type and does not need to be used in combination.",
+                                "default": "",
+                                "examples": [
+                                    "pauci-mannose N-glycan"
+                                ],
+                                "pattern": "^(.*)$"
+                            },
+                            "url": {
+                                "$id": "#/properties/classification/items/properties/subtype/properties/url",
+                                "type": "string",
+                                "description": "The URL that links to the subtype explaination.",
+                                "default": "",
+                                "examples": [
+                                    "http://glycomics.ccrc.uga.edu/ontologies/GlycO#pauci-mannose_N-glycan_oligosaccharide"
+                                ],
+                                "format": "uri"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "species": {
+            "$id": "#/properties/species",
+            "type": "array",
+            "description": "The list of species entries this glycan was reported in. The objects in this list do also contain the databases and their entry IDs that reported this annotation.",
+            "items": {
+                "$id": "#/properties/species/items",
+                "type": "object",
+                "description": "This is the species of the glycan consisting of the name, tax_id, url, and evidence.",
+                "required": [
+                    "name",
+                    "tax_id",
+                    "url",
+                    "evidence"
+                ],
+                "properties": {
+                    "name": {
+                        "$id": "#/properties/species/items/properties/name",
+                        "type": "string",
+                        "description": "The scientific name of the species from NCBI Taxonomy.",
+                        "default": "",
+                        "examples": [
+                            "human"
+                        ],
+                        "pattern": "^(.*)$"
+                    },
+                    "tax_id": {
+                        "$id": "#/properties/species/items/properties/tax_id",
+                        "type": "integer",
+                        "description": "The taxonomy ID of the species (NCBI Taxonomy).",
+                        "default": 0,
+                        "examples": [
+                            9606
+                        ]
+                    },
+                    "url": {
+                        "$id": "#/properties/species/items/properties/url",
+                        "type": "string",
+                        "description": "The URL that links to the species explaination.",
+                        "default": "",
+                        "examples": [
+                            "https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&id=9606"
+                        ],
+                        "pattern": "^(.*)$"
+                    },
+                    "evidence": {
+                        "$id": "#/properties/species/items/properties/evidence",
+                        "type": "array",
+                        "description": "The list of database references that reported this annotation. Each object contains of the name of database, database ID and irl.",
+                        "items": {
+                            "$id": "#/properties/species/items/properties/evidence/items",
+                            "type": "object",
+                            "description": "This is the evidence of the glycan consisting of the database, id, and url.",
+                            "required": [
+                                "database",
+                                "id",
+                                "url"
+                            ],
+                            "properties": {
+                                "database": {
+                                    "$id": "#/properties/species/items/properties/evidence/items/properties/database",
+                                    "type": "string",
+                                    "description": "The Name of the database.",
+                                    "default": "",
+                                    "examples": [
+                                        "UniCarbDB"
+                                    ],
+                                    "pattern": "^(.*)$"
+                                },
+                                "id": {
+                                    "$id": "#/properties/species/items/properties/evidence/items/properties/id",
+                                    "type": "string",
+                                    "description": "The ID or the entry in the database.",
+                                    "default": "",
+                                    "examples": [
+                                        "123"
+                                    ],
+                                    "pattern": "^(.*)$"
+                                },
+                                "url": {
+                                    "$id": "#/properties/species/items/properties/evidence/items/properties/url",
+                                    "type": "string",
+                                    "description": "The URL of the database entry. For non-public databases this field may not be present.",
+                                    "default": "",
+                                    "examples": [
+                                        "http://glycomics.ccrc.uga.edu/ontologies"
+                                    ],
+                                    "format": "uri"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "motifs": {
+            "$id": "#/properties/motifs",
+            "type": "array",
+            "description": "The list of motifs that have been found in the glycan structure.",
+            "items": {
+                "$id": "#/properties/motifs/items",
+                "type": "object",
+                "description": "This is a motif of the glycan consisting of the id, name, and url.",
+                "required": [
+                    "id",
+                    "name",
+                    "url"
+                ],
+                "properties": {
+                    "id": {
+                        "$id": "#/properties/motifs/items/properties/id",
+                        "type": "string",
+                        "description": "The internal ID of the motif.",
+                        "default": "",
+                        "examples": [
+                            "1234"
+                        ],
+                        "pattern": "^(.*)$"
+                    },
+                    "name": {
+                        "$id": "#/properties/motifs/items/properties/name",
+                        "type": "string",
+                        "description": "The name of the motif (e.g. LewisX).",
+                        "default": "",
+                        "examples": [
+                            "N-Glycan Core"
+                        ],
+                        "pattern": "^(.*)$"
+                    },
+                    "url": {
+                        "$id": "#/properties/motifs/items/properties/url",
+                        "type": "string",
+                        "title": "The Url of the motif.",
+                        "default": "",
+                        "examples": [
+                            "https://glytoucan.org/Structures/Glycans/id"
+                        ],
+                        "format": "uri"
+                    }
+                }
+            }
+        },
+        "iupac": {
+            "$id": "#/properties/iupac",
+            "type": "string",
+            "description": "The IUPAC sequence of the glycan. This sequence may not always be present since not all glycans can be represented in IUPAC.",
+            "default": "",
+            "examples": [
+                "alpha-D-Manp-(1->3)[alpha-D-Manp-(1->6)]-beta-D-Manp-(1->4)-beta-D-GlcpNAc-(1->4)[beta-L-Fucp-(1->3)]-beta-D-GlcpNAc(1->"
+            ],
+            "pattern": "^(.*)$"
+        },
+        "wurcs": {
+            "$id": "#/properties/wurcs",
+            "type": "string",
+            "description": "The sequence of the glycan in WURCS format. This sequence will always be present.",
+            "default": "",
+            "examples": [
+                "WURCS=2.0/4,6,5/[a2122h-1b_1-5_2*NCC/3=O][a1221m-1b_1-5][a1122h-1b_1-5][a1122h-1a_1-5]/1-2-1-3-4-4/a3-b1_a4-c1_c4-d1_d3-e1_d6-f1"
+            ],
+            "pattern": "^(.*)$"
+        },
+        "glycoct": {
+            "$id": "#/properties/glycoct",
+            "type": "string",
+            "description": "The GlycoCT sequence of the glycan. This sequence may not always be present.",
+            "default": "",
+            "examples": [
+                "RES\n1b:b-dglc-HEX-1:5\n2s:n-acetyl\n3b:b-lgal-HEX-1:5|6:d\n4b:b-dglc-HEX-1:5\n5s:n-acetyl\n6b:b-dman-HEX-1:5\n7b:a-dman-HEX-1:5\n8b:a-dman-HEX-1:5\nLIN\n1:1d(2+1)2n\n2:1o(3+1)3d\n3:1o(4+1)4d\n4:4d(2+1)5n\n5:4o(4+1)6d\n6:6o(3+1)7d\n7:6o(6+1)8d\n"
+            ]
+        },
+        "glycam": {
+            "$id": "#/properties/glycam",
+            "type": "string",
+            "description": "The Glycam sequence of the glycan. This sequence may not always be present.",
+            "default": "",
+            "examples": [
+                "DNeup5Aca2-3DGalpb1-3[LFucpa1-4]DGlcpNAcb1-"
+            ],
+            "pattern": "^(.*)$"
+        },
+        "smiles_isomeric": {
+            "$id": "#/properties/smiles_isomeric",
+            "type": "string",
+            "description": "The isomeric smiles sequence of the glycan. This sequence may not always be present.",
+            "default": "",
+            "examples": [
+                "C[C@H]1[C@H]([C@H]([C@@H]([C@@H](O1)O[C@@H]2[C@H](O[C@H]([C@@H]([C@H]2O[C@H]3[C@@H]([C@H]([C@H]([C@H](O3)CO)O)O[C@@]4(C[C@@H]([C@H]([C@@H](O4)[C@@H]([C@@H](CO)O)O)NC(=O)C)O)C(=O)O)O)NC(=O)C)O)CO)O)O)O"
+            ],
+            "pattern": "^(.*)$"
+        },
+        "inchi_key": {
+            "$id": "#/properties/inchi_key",
+            "type": "object",
+            "description": "The inchi key sequence and pubchem url of the glycan. This sequence may not always be present.",
+            "required": [
+                "key",
+                "url"
+            ],
+            "properties": {
+                "key": {
+                    "$id": "#/properties/inchi_key/properties/key",
+                    "type": "string",
+                    "description": "The inchi key sequence of the glycan.",
+                    "default": "",
+                    "examples": [
+                        "YWJPMIROECFZJW-YBQNOACISA-N"
+                    ]
+                },
+                "url": {
+                    "$id": "#/properties/inchi_key/properties/url",
+                    "type": "string",
+                    "description": "This is the pubchem url of the inchi_key.",
+                    "default": "",
+                    "examples": [
+                        "https://pubchem.ncbi.nlm.nih.gov/compound/YWJPMIROECFZJW-YBQNOACISA-N"
+                    ]
+                }
+            }
+        },
+        "inchi": {
+            "$id": "#/properties/inchi",
+            "type": "string",
+            "description": "The inchi sequence of the glycan. This sequence may not always be present.",
+            "default": "",
+            "examples": [
+                "InChI=1S/C31H52N2O23/c1-8-17(41)20(44)21(45)28(50-8)53-23-14(7-36)51-27(47)16(33-10(3)38)25(23)54-29-22(46)26(19(43)13(6-35)52-29)56-31(30(48)49)4-11(39)15(32-9(2)37)24(55-31)18(42)12(40)5-34/h8,11-29,34-36,39-47H,4-7H2,1-3H3,(H,32,37)(H,33,38)(H,48,49)/t8-,11-,12+,13+,14+,15+,16+,17+,18+,19-,20+,21-,22+,23+,24+,25+,26-,27+,28-,29-,31-/m0/s1"
+            ],
+            "pattern": "^(.*)$"
+        },
+        "crossref": {
+            "$id": "#/properties/crossref",
+            "type": "array",
+            "description": "The list of references in other databases for the glycan structures. For each entry the name, the entry ID in the database and if available an URL is given.",
+            "items": {
+                "$id": "#/properties/crossref/items",
+                "type": "object",
+                "description": "This is the crossref of the glycan consisting of the database, id, and url.",
+                "required": [
+                    "database",
+                    "id",
+                    "url"
+                ],
+                "properties": {
+                    "database": {
+                        "$id": "#/properties/crossref/items/properties/database",
+                        "type": "string",
+                        "description": "The name of the database.",
+                        "default": "",
+                        "examples": [
+                            "PubChem Substance"
+                        ],
+                        "pattern": "^(.*)$"
+                    },
+                    "id": {
+                        "$id": "#/properties/crossref/items/properties/id",
+                        "type": "string",
+                        "description": "The ID or the entry in the database.",
+                        "default": "",
+                        "examples": [
+                            "252295406"
+                        ],
+                        "pattern": "^(.*)$"
+                    },
+                    "url": {
+                        "$id": "#/properties/crossref/items/properties/url",
+                        "type": "string",
+                        "description": "The URL of the database entry. For non-public databases this field may not be present.",
+                        "default": "",
+                        "examples": [
+                            "https://pubchem.ncbi.nlm.nih.gov/substance/252295406#section=Top"
+                        ],
+                        "format": "uri"
+                    }
+                }
+            }
+        },
+        "glycoprotein": {
+            "$id": "#/properties/glycoprotein",
+            "type": "array",
+            "description": "The list of glycosylation sites the glycan has been reported on. The protein and if available the glycosylation postion is given together with references to reporting databases.",
+            "items": {
+                "$id": "#/properties/glycoprotein/items",
+                "type": "object",
+                "description": "This is the glycoprotein of the glycan consisting of the protein_name, uniprot_canonical_ac, and evidence.",
+                "required": [
+                    "protein_name",
+                    "uniprot_canonical_ac",
+                    "position",
+                    "evidence"
+                ],
+                "properties": {
+                    "protein_name": {
+                        "$id": "#/properties/glycoprotein/items/properties/protein_name",
+                        "type": "string",
+                        "description": "The name of the protein/enzyme from UniProt.",
+                        "default": "",
+                        "examples": [
+                            "GP120"
+                        ],
+                        "pattern": "^(.*)$"
+                    },
+                    "uniprot_canonical_ac": {
+                        "$id": "#/properties/glycoprotein/items/properties/uniprot_canonical_ac",
+                        "type": "string",
+                        "description": "The UniProt protein ID.",
+                        "default": "",
+                        "examples": [
+                            "P26572"
+                        ],
+                        "pattern": "^(.*)$"
+                    },
+                      "residue": {
+                  "$id": "/properties/glycosylation/items/properties/residue",
+                  "type": "string",
+                  "description": "Amino acid residue that is glycosylated (one letter code).",
+                  "examples": [
+                     "T"
+                  ]
+               },
+                    "position": {
+                        "$id": "#/properties/glycoprotein/items/properties/position",
+                        "type": "string",
+                        "description": "Position of the glycosylated aminoacide the glycan was attached to.",
+                        "default": "",
+                        "examples": [
+                            "123"
+                        ],
+                        "pattern": "^(.*)$"
+                    },
+                    "evidence": {
+                        "$id": "#/properties/glycoprotein/items/properties/evidence",
+                        "type": "array",
+                        "description": "The list of database references that reported this annotation. Each object contains of the name of the database, the database ID and URL.",
+                        "items": {
+                            "$id": "#/properties/glycoprotein/items/properties/evidence/items",
+                            "type": "object",
+                            "description": "This is the crossref of the glycan consisting of the database, id, and url.",
+                            "required": [
+                                "database",
+                                "id",
+                                "url"
+                            ],
+                            "properties": {
+                                "database": {
+                                    "$id": "#/properties/glycoprotein/items/properties/evidence/items/properties/database",
+                                    "type": "string",
+                                    "description": "The name of the database.",
+                                    "default": "",
+                                    "examples": [
+                                        "UniCarbDB"
+                                    ],
+                                    "pattern": "^(.*)$"
+                                },
+                                "id": {
+                                    "$id": "#/properties/glycoprotein/items/properties/evidence/items/properties/id",
+                                    "type": "string",
+                                    "description": "The ID or the entry in the database.",
+                                    "default": "",
+                                    "examples": [
+                                        "123"
+                                    ],
+                                    "pattern": "^(.*)$"
+                                },
+                                "url": {
+                                    "$id": "#/properties/glycoprotein/items/properties/evidence/items/properties/url",
+                                    "type": "string",
+                                    "description": "The URL of the database entry. For non-public databases this field may not be present.",
+                                    "default": "",
+                                    "examples": [
+                                        "http://glycomics.ccrc.uga.edu/ontologies"
+                                    ],
+                                    "format": "uri"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "enzymes": {
+            "$id": "#/properties/enzymes",
+            "type": "array",
+            "description": "The list of enzymes that might be involved in the synthesis of the glycan. This annotation is present if one or many enzymes can add a certain monosaccharide to the glycan. However which of the alternative enzymes was really at work is not specified.",
+            "items": {
+                "$id": "#/properties/enzymes/items",
+                "type": "object",
+                "description": "This is a crossref of the glycan consisting of the protein_name, uniprot_canonical_ac, gene, and gene_link.",
+                "required": [
+                    "protein_name",
+                    "uniprot_canonical_ac",
+                    "gene",
+                    "gene_link"
+                ],
+                "properties": {
+                    "protein_name": {
+                        "$id": "#/properties/enzymes/items/properties/protein_name",
+                        "type": "string",
+                        "description": "The name of the protein/enzyme from Uniprot.",
+                        "default": "",
+                        "examples": [
+                            "Alpha-1,3-mannosyl-glycoprotein 2-beta-N-acetylglucosaminyltransferase"
+                        ],
+                        "pattern": "^(.*)$"
+                    },
+                    "uniprot_canonical_ac": {
+                        "$id": "#/properties/enzymes/items/properties/uniprot_canonical_ac",
+                        "type": "string",
+                        "description": "The UniProt protein ID.",
+                        "default": "",
+                        "examples": [
+                            "P26572"
+                        ],
+                        "pattern": "^(.*)$"
+                    },
+                    "gene": {
+                        "$id": "#/properties/enzymes/items/properties/gene",
+                        "type": "string",
+                        "description": "The gene name of the protein.",
+                        "default": "",
+                        "examples": [
+                            "MGAT1"
+                        ],
+                        "pattern": "^(.*)$"
+                    },
+                    "gene_link": {
+                        "$id": "#/properties/enzymes/items/properties/gene_link",
+                        "type": "string",
+                        "description": "The genbank link for this gene.",
+                        "default": "",
+                        "examples": [
+                            "https://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=HGNC:7044"
+                        ],
+                        "pattern": "^(.*)$"
+                    }
+                }
+            }
+        },
+        "publication": {
+            "$id": "#/properties/publication",
+            "type": "array",
+            "description": "This is a list of papers about the glycan.",
+            "items": {
+                "$id": "#/properties/publication/items",
+                "type": "object",
+                "description": "The information of a single publication about the glycan containting url, pmid, journal, title.",
+                "required": [
+                    "url",
+                    "pmid",
+                    "journal",
+                    "title",
+                    "database"
+                ],
+                "properties": {
+                    "url": {
+                        "$id": "#/properties/publication/items/properties/url",
+                        "type": "string",
+                        "description": "This is the Url where you can find publication about the glycan.",
+                        "default": "",
+                        "examples": [
+                            "https://www.ncbi.nlm.nih.gov/pubmed/1280830"
+                        ],
+                        "format": "uri"
+                    },
+                    "pmid": {
+                        "$id": "#/properties/publication/items/properties/pmid",
+                        "type": "string",
+                        "description": "The Pmid id of the paper.",
+                        "default": "",
+                        "examples": [
+                            "1280830"
+                        ],
+                        "pattern": "^(.*)$"
+                    },
+                    "journal": {
+                        "$id": "#/properties/publication/items/properties/journal",
+                        "type": "string",
+                        "description": "The Journal about the glycan.",
+                        "default": "",
+                        "examples": [
+                            "Proc. Natl. Acad. Sci. U.S.A."
+                        ],
+                        "pattern": "^(.*)$"
+                    },
+                    "title": {
+                        "$id": "#/properties/publication/items/properties/title",
+                        "type": "string",
+                        "description": "The title of the paper.",
+                        "default": "",
+                        "examples": [
+                            "A functional domain in the heavy chain of scatter factor/hepatocyte growth factor binds the c-Met receptor and induces cell dissociation but not mitogenesis."
+                        ],
+                        "pattern": "^(.*)$"
+                    },
+                    "auth_name": {
+                        "$id": "#/properties/publication/items/properties/auth_name",
+                        "type": "string",
+                        "description": "The auth_name of the paper.",
+                        "default": "",
+                        "examples": [
+                            "xyz"
+                        ],
+                        "pattern": "^(.*)$"
+                    },
+                    "properties": {
+                        "database": {
+                            "$id": "#/properties/glycoprotein/items/properties/evidence/items/properties/database",
+                            "type": "string",
+                            "description": "The name of the database.",
+                            "default": "",
+                            "examples": [
+                                "UniCarbDB"
+                            ],
+                            "pattern": "^(.*)$"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

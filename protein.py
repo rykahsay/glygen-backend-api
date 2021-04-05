@@ -93,7 +93,7 @@ def protein_list():
         else:
             query_obj = json.loads(query_value)
             util.trim_object(query_obj)
-            res_obj = apilib.protein_list(query_obj, config_obj)
+            res_obj = util.get_cached_records_indirect(query_obj, config_obj)
     except Exception, e:
         res_obj = errorlib.get_error_obj("protein_list", traceback.format_exc(), path_obj)
 

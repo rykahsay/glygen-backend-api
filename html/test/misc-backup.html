@@ -1,0 +1,243 @@
+<html>
+<head>
+<link rel="stylesheet" href="styles.css" type="text/css">
+<script language="javascript" src="jquery.min.js"></script>
+<script>
+var htmlRoot = ""
+
+$(document ).ready(function() {
+
+});
+
+/////////////////////////////////
+$(document).on('click', '#misc_bcolist', function (event) {
+        event.preventDefault();
+        var gifImage = '<img src=loading.gif style="width:20%;margin-left:40%;margin-top:2%;">';        
+        $("#misc_bcolist_cn").html(gifImage);
+        var url = htmlRoot + '/misc/bcolist/';  
+        $("#misc_bcolist_url").html(url);
+        var reqObj = new XMLHttpRequest();
+        reqObj.open("POST", url, true);
+        reqObj.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        reqObj.resultType = queryObj["result_type"]
+        reqObj.onreadystatechange = function() {
+                if (reqObj.readyState == 4 && [200, 500].indexOf(reqObj.status) != -1) {
+                        var resJson = JSON.parse(reqObj.responseText);
+                        $("#misc_bcolist_cn").html('<pre>'+reqObj.responseText+'</pre>');
+                }
+        };
+        reqObj.send(postData);
+
+});
+
+//////////////////////////////////
+$(document).on('click', '#misc_propertylist', function (event) {
+
+    event.preventDefault();
+    var keyList1 = ["recordtype"];
+    var inJson = {};
+    $('.misc_propertylist').each(function(){
+        var name = $(this).attr("name");
+        var value = $(this).val();
+        if (value.trim()){
+            if(keyList1.indexOf(name) != -1){
+                inJson[name] = value.trim();
+            }
+        }
+    });
+    var postData = "query=" + JSON.stringify(inJson);
+    console.log(postData);
+
+    var gifImage = '<img src=loading.gif style="width:20%;margin-left:40%;margin-top:2%;">';        
+    $("#misc_propertylist_cn").html(gifImage);
+    var url = htmlRoot + '/misc/propertylist/';  
+    $("#misc_propertylist_url").html(url + '?' +  postData);
+    var reqObj = new XMLHttpRequest();
+    reqObj.open("POST", url, true);
+    reqObj.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    reqObj.onreadystatechange = function() {
+        if (reqObj.readyState == 4 && [200, 500].indexOf(reqObj.status) != -1) {
+            var resJson = JSON.parse(reqObj.responseText);
+            $("#misc_propertylist_cn").html('<pre>'+reqObj.responseText+'</pre>');
+        }
+    };
+    reqObj.send(postData);
+
+});
+
+
+
+///////////////////////////
+$(document).on('click', '#misc_validate', function (event) {
+
+    event.preventDefault();
+    var keyList1 = ["schema", "instance"];
+    var inJson = {};
+    $('.misc_validate').each(function(){
+        var name = $(this).attr("name");
+        var value = $(this).val();
+        if (value.trim()){
+            if(keyList1.indexOf(name) != -1){
+                inJson[name] = JSON.parse(value.trim());
+            }
+        }
+    });
+
+    var postData = "query=" + JSON.stringify(inJson);
+    var gifImage = '<img src=loading.gif style="width:20%;margin-left:40%;margin-top:2%;">';        
+    $("#misc_validate_cn").html(gifImage);
+    var url = htmlRoot + '/misc/validate/';  
+    $("#misc_validate_url").html(url + '?' +  postData);
+    var reqObj = new XMLHttpRequest();
+    reqObj.open("POST", url, true);
+    reqObj.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    reqObj.onreadystatechange = function() {
+        if (reqObj.readyState == 4 && [200, 500].indexOf(reqObj.status) != -1) {
+            var resJson = JSON.parse(reqObj.responseText);
+            $("#misc_validate_cn").html('<pre>'+reqObj.responseText+'</pre>');
+        }
+    };
+    reqObj.send(postData);
+    console.log(postData);
+
+});
+
+///////////////////////////
+$(document).on('click', '#misc_testurls', function (event) {
+        event.preventDefault();
+        
+        var keyList1 = ["coll", "idlist"];
+        var inJson = {};
+        $('.misc_testurls').each(function(){
+                var name = $(this).attr("name");
+                var value = $(this).val();
+                if (value.trim()){
+                        if(keyList1.indexOf(name) != -1){
+                                inJson[name] = value
+                        }
+                }
+        });
+        inJson["idlist"] = inJson["idlist"].split("\n");
+
+        var postData = "query=" + JSON.stringify(inJson);
+        var gifImage = '<img src=loading.gif style="width:20%;margin-left:40%;margin-top:2%;">';        
+        $("#misc_testurls_cn").html(gifImage);
+        var url = htmlRoot + '/misc/testurls/';  
+        $("#misc_testurls").html(url + '?' +  postData);
+        var reqObj = new XMLHttpRequest();
+        reqObj.open("POST", url, true);
+        reqObj.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        reqObj.onreadystatechange = function() {
+                if (reqObj.readyState == 4 && [200, 500].indexOf(reqObj.status) != -1) {
+                        var resJson = JSON.parse(reqObj.responseText);
+                        $("#misc_testurls_cn").html('<pre>'+reqObj.responseText+'</pre>');
+                }
+        };
+        reqObj.send(postData);
+
+});
+
+
+
+
+</script>
+
+
+</head>
+<body>
+
+
+<table align=center width=80% border=1 style="background:#eee;">
+
+<tr><th align=left colspan=2 class=api_title>Test for misc_validate API</th></tr>
+<tr>
+<td width=10%>Schema JSON</td>
+<td>
+<textarea class=misc_validate name=schema id=schema style="width:100%;" rows=10>
+{
+  "$id": "https://example.com/person.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Person",
+  "type": "object",
+  "properties": {
+    "firstName": {
+      "type": "string",
+      "description": "The person's first name."
+    },
+    "lastName": {
+      "type": "string",
+      "description": "The person's last name."
+    },
+    "age": {
+      "description": "Age in years which must be equal to or greater than zero.",
+      "type": "integer",
+      "minimum": 0
+    }
+  }
+}
+</textarea>
+</td>
+</tr>
+
+<tr>
+<td width=10%>Instance JSON</td>
+<td>
+<textarea class=misc_validate name=instance id=instance style="width:100%;" rows=10>
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "age": 21
+}
+</textarea>
+</td>
+</tr>
+
+<tr>
+<td>Post Data (both GET/POST supported)</td>
+<td id=misc_validate_url style="background:#fff;"></td>
+</tr>
+
+<tr height=100>
+<td valign=top><input type=submit id=misc_validate name=btn value="Submit API request"></td>
+<td id=misc_validate_cn style="background:#fff;"></td>
+</tr>
+
+
+<tr><th colspan=2 align=left class=api_title>Test property list API</th></tr>
+<tr><td>Record type</td><td>
+        <select class=misc_propertylist name=recordtype>
+            <option value="glycan">glycan</option>
+            <option value="protein">protein</option>
+        </select>
+</td></tr>
+<tr><td valign=top><input type=submit id=misc_propertylist name=btn value="Submit API request"></td>
+    <td style="background:#fff;"><div style="width:700px;height:300px;overflow:auto;" id=misc_propertylist_cn></div></td></tr>
+
+
+
+
+    
+    
+<tr><th align=left colspan=2 class=api_title>Test for misc_bcolist API</th></tr>
+<tr><td width=10%>Query JSON</td><td></td></tr>
+<tr><td>Post Data (both GET/POST supported)</td><td id=misc_bcolist_url style="background:#fff;"></td></tr>
+<tr height=100><td valign=top><input type=submit id=misc_bcolist name=btn value="Submit API request"></td>
+	        <td id=misc_bcolist_cn style="background:#fff;"></td></tr>
+
+<tr><th colspan=2 align=left class=api_title>Test xref links API</th></tr>
+<tr><td>Record type</td><td>
+<select class=misc_testurls name=coll>
+<option value="c_glycan">glycan</option>
+<option value="c_protein">protein</option>
+</select>
+</td></tr>
+<tr><td>ID list</td><td><textarea class=misc_testurls name=idlist style="width:100%;" rows=10></textarea></td></tr>
+<tr><td valign=top><input type=submit id=misc_testurls name=btn value="Submit API request"></td>
+<td style="background:#fff;"><div style="width:700px;height:300px;overflow:auto;" id=misc_testurls_cn></div></td></tr>
+
+
+
+</table>
+
+</body>
+<html>

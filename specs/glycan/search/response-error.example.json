@@ -1,0 +1,8 @@
+{
+   "error_list": [
+     {
+       "field": "operatio", 
+       "error_code": "unexpected-field-in-query"
+     }
+   ]
+ }

@@ -1,0 +1,17 @@
+{
+    "$id":"http://example.com/example.json",
+    "type":"object",
+    "properties":{
+       "list_id":{
+          "$id":"/properties/list_id",
+          "type":"string",
+          "description":"If the search was successful the ID of the result list is returned.",
+          "examples":[
+             "ABV1234MN56BN"
+          ]
+       }
+    },
+    "required": [
+        "list_id"
+    ]
+ }

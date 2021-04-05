@@ -33,10 +33,12 @@ def typeahead():
         else:
             query_obj = json.loads(query_value)
             util.trim_object(query_obj)
-            field_list_one = ["glytoucan_ac", "motif_name", "enzyme_uniprot_canonical_ac"]
+            field_list_one = ["glytoucan_ac", "motif_name", "enzyme_uniprot_canonical_ac", 
+                    "glycan_pmid", "enzyme"]
             field_list_two = ["uniprot_canonical_ac", "uniprot_id", "refseq_ac", 
                                 "protein_name", "gene_name", "pathway_id", "pathway_name", 
-                                "disease_name", "go_id", "go_term"] 
+                                "disease_name","disease_id", 
+                                "go_id", "go_term", "protein_pmid"] 
             tmp_obj_one, tmp_obj_two = [], []
             if query_obj["field"] in field_list_one:
                 tmp_obj_one = apilib.glycan_typeahead(query_obj, config_obj)

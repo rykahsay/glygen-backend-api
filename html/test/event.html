@@ -1,0 +1,61 @@
+<html>
+<head>
+<link rel="stylesheet" href="styles.css" type="text/css">
+<script language="javascript" src="jquery.min.js"></script>
+<script language="javascript" src="api_test.js"></script>
+
+
+<script>
+var testInfo = {
+    "auth_login":{
+        "string_fields":["email","password"]
+        ,"numeric_fields":[]
+        ,"required_fields":["email","password"]
+        ,"url":"/auth/login"
+        ,"query":{"email":"","password":""}
+    }
+    ,"event_addnew":{
+        "string_fields":["token","title","description","start_date","end_date","venue", "url", "url_name","visibility"]
+        ,"numeric_fields":[]
+        ,"required_fields":["token", "title", "description", "start_date", "end_date","visibility"]
+        ,"url":"/event/addnew"
+        ,"query":{"token":"","title":"some title", "description":"some description", "start_date":"some start date", "end_date":"some end date", "venue":"some venue", "url":"some url", "url_name":"some url name", "visibility":"hidden"}
+    }
+    ,"event_list":{
+        "string_fields":["token", "visibility"]
+        ,"numeric_fields":[]
+        ,"required_fields":["token", "visibility"]
+        ,"url":"/event/list"
+        ,"query":{"token":"xx", "visibility":"all"}
+    }
+    ,"event_update":{
+        "string_fields":["token","id","title","description","start_date","end_date","venue", "url", "url_name", "visibility"]
+        ,"numeric_fields":[]
+        ,"required_fields":["token","id"]
+        ,"url":"/event/update"
+        ,"query":{ "token":"xxx", "id":"xxx","visibility":"visible"}
+    }
+    ,"event_detail":{
+        "string_fields":["token", "id"]
+        ,"numeric_fields":[]
+        ,"required_fields":["token","id"]
+        ,"url":"/event/detail"
+        ,"query":{"id": "xxx", "token":"xxx"}
+    } 
+    ,"event_delete":{
+        "string_fields":["token", "id"]
+        ,"numeric_fields":[]
+        ,"required_fields":["token","id"]
+        ,"url":"/event/delete"
+        ,"query":{"id": "xxx", "token":"xxx"}
+    }
+};
+
+
+</script>
+
+</head>
+<body>
+
+</body>
+<html>

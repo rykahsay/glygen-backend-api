@@ -1,0 +1,22 @@
+[
+        {
+        "concept":"protein",
+        "query":{
+                "aggregator":"$and",
+                "unaggregated_list":[
+                    {"order":1,"path":"xx", "operator":"$eq", "string_value":"dfafa"},
+                    {"order":2,"path":"xx", "operator":"$eq", "numeric_value":0}
+                ],
+                "aggregated_list":[
+                    {
+                        "aggregator":"$and",
+                        "unaggregated_list":[
+                            {"order":1,"path":"xx", "operator":"$eq", "string_value":"dfafa"}, 
+                            {"order":2,"path":"xx", "operator":"$eq", "numeric_value":0}
+                        ],
+                        "aggregated_list":[]
+                    }
+                ]
+            }
+        }
+]

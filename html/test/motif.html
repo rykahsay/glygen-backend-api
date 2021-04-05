@@ -2,49 +2,25 @@
 <head>
 <link rel="stylesheet" href="styles.css" type="text/css">
 <script language="javascript" src="jquery.min.js"></script>
+<script language="javascript" src="api_test.js"></script>
+
 <script>
-var htmlRoot = ""
-
-$(document ).ready(function() {
-
-});
-
-
-////////////////////////////////////
-$(document).on('click', '#motif_detail', function (event) {
-
-	event.preventDefault();
-
-	
-	var inJson = {};
-	$('.motif_detail').each(function(){
-	 	var name = $(this).attr("name");
-		var value = $(this).val();
-		if (value.trim()){
-			if (["offset", "limit"].indexOf(name) != -1){
-				value = parseInt(value);
-			}
-			inJson[name] = value
-		}									                 
-	});
-	var url = htmlRoot + '/motif/detail'
-	var postData = "query=" + JSON.stringify(inJson);
-	$("#motif_detail_url").html(url + '?' +postData);
-
-	var gifImage = '<img src=loading.gif style="width:20%;margin-left:40%;margin-top:2%;">';        
-	$("#motif_detail_cn").html(gifImage);
-
-
-	var reqObj = new XMLHttpRequest();
-	reqObj.open("POST", url, true);
-	reqObj.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	reqObj.onreadystatechange = function() {
-		if (reqObj.readyState == 4 && [200, 500].indexOf(reqObj.status) != -1) {
-			$("#motif_detail_cn").html('<pre>'+reqObj.responseText+'</pre>');
-		}
-	};
-	reqObj.send(postData);
-});
+var testInfo = {
+    "motif_detail":{
+        "string_fields":["motif_ac", "sort", "order"]
+        ,"numeric_fields":["limit", "offset"]
+        ,"required_fields":["motif_ac"]
+        ,"url":"/motif/detail"
+        ,"query":{"motif_ac":"GGM.000115"}
+    }
+    ,"motif_list":{
+        "string_fields":["sort", "order"]
+        ,"numeric_fields":["limit", "offset"]
+        ,"required_fields":[]
+        ,"url":"/motif/list"
+        ,"query":{"sort":"glycan_count", "order":"desc"}
+    }
+};
 
 
 
@@ -52,37 +28,6 @@ $(document).on('click', '#motif_detail', function (event) {
 
 </head>
 <body>
-
-<table align=center width=80% border=1 style="background:#eee;">
-
-<tr><th colspan=2 align=left class=api_title>Test for motif_detail API</th></tr>
-<tr><td>Glytoucan AC *</td><td><input id=glytoucan_ac class=motif_detail name=glytoucan_ac type=text value="G00055MO"></td></tr>
-<tr><td>Parent List Offset</td><td><input class=motif_detail name=offset type=text value="1"></td></tr>
-<tr><td>Parent List Limit</td><td><input class=motif_detail name=limit type=text value="20"></td></tr>
-<tr><td>Parent List Sort Field</td><td>
-		<select class=motif_detail name=sort>
-                        <option value=""></option>
-                        <option value="glytoucan_ac" selected>parent glytoucan_ac</option>
-			<option value="mass">mass</option>
-			<option value="number_enzymes">numer_enzymes</option>
-			<option value="number_proteins">number_proteins</option>
-			<option value="number_monosaccharides">number_monosaccharides</option>
-		</select>
-</td></tr>
-<tr><td>Paret List Sort Order [asc/desc]</td><td>
-		<select class=motif_detail name=order>
-                        <option value=""></option>
-                        <option value="asc" selected>asc</option>
-			<option value="desc">desc</option>
-		</select>
-</td></tr>
-<tr><td>Post Data  (both GET/POST supported)</td><td id=motif_detail_url style="background:#fff;"></td></tr>
-<tr><td valign=top><input type=submit id=motif_detail name=btn value="Submit API request"></td>
-<td style="background:#fff;"><div style="width:700px;height:300px;overflow:auto;" id=motif_detail_cn></div></td></tr>
-
-
-
-</table>
 
 </body>
 <html>

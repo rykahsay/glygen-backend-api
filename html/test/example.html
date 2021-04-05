@@ -1,0 +1,223 @@
+<html>
+<head>
+<link rel="stylesheet" href="styles.css" type="text/css">
+<script language="javascript" src="jquery.min.js"></script>
+<script language="javascript" src="response.example.js"></script>
+
+<script>
+
+var htmlRoot = ""
+
+$(document ).ready(function() {
+
+
+        var url = htmlRoot + '/pages/home_init';
+        $("#home_init_url").html(url);
+	var gifImage = '<img src=loading.gif style="width:20%;margin-left:40%;margin-top:2%;">';        
+	$("#frontend_cn").html(gifImage);
+        $("#backend_cn").html(gifImage);
+
+
+        var reqObj = new XMLHttpRequest();
+        reqObj.open("POST", url, true);
+        reqObj.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        reqObj.onreadystatechange = function() {
+                if (reqObj.readyState == 4 && [200, 500].indexOf(reqObj.status) != -1) {
+                    var backendObj = JSON.parse(reqObj.responseText);
+                    convert_stat_json(backendObj["statistics"], frontendObj);
+                    var frontendCn = JSON.stringify(frontendObj, null, ' ');
+                    var backendCn = JSON.stringify(backendObj["statistics"], null, ' ');
+                    $("#frontend_cn").html('<pre>'+frontendCn+'</pre>');
+                    $("#backend_cn").html('<pre>'+backendCn+'</pre>');
+                    $("#home_init_cn").html('<pre>'+reqObj.responseText+'</pre>');
+		}
+        };
+        reqObj.send();
+                
+});
+
+
+function convert_stat_json(backendObj, frontendObj){
+
+    var frontendKeySets = [
+        ["venn_protein_homo", "venn_protein_mus", "venn_protein_rat"],
+        ["venn_glycan_species"],
+        ["bar_mass_ranges","bar_sugar_ranges"],
+        ["sunb_canon_isof_prot"],
+        ["sunb_glycan_organism_type"],
+        ["sunb_glycan_type_subtype"],
+        ["sunb_bio_molecules"],
+        ["sunb_glycoprot_rep_pred_glyc"],
+        ["pie_glycohydrolases_prot", "pie_glycosyltransferases_prot"],
+        ["donut_motif"]
+    ];
+    
+    for (var keyOne in frontendObj){
+        if (frontendKeySets[0].indexOf(keyOne) != -1){
+            for (var i in frontendObj[keyOne]){
+                var o = frontendObj[keyOne][i]
+                taxId = o["organism"]["id"]
+                s = []
+                for (var idx in o["sets"]){
+                    s.push(idx)
+                }
+                backendKey = taxId + '_' + s.join("|");
+                if (backendKey in backendObj["protein"]["byproteintype"]){
+                    o["size"] = backendObj["protein"]["byproteintype"][backendKey]
+                }
+            }
+        }
+        else if (frontendKeySets[1].indexOf(keyOne) != -1){
+            for (var i in frontendObj[keyOne]){
+                var o = frontendObj[keyOne][i]
+                s = []
+                for (var idx in o["sets"]){
+                    s.push(idx)
+                }
+                backendKey = s.join("|");
+                if (backendKey in backendObj["glycan"]){
+                    o["size"] = backendObj["glycan"][backendKey]
+                }
+            }
+        }
+        else if (frontendKeySets[2].indexOf(keyOne) != -1){
+            frontendObj[keyOne]["data"] = backendObj["glycan"][keyOne]
+        }
+        else if (frontendKeySets[3].indexOf(keyOne) != -1){
+            for (var i in frontendObj[keyOne]["children"]){
+                var objOne = frontendObj[keyOne]["children"][i];
+                taxId = objOne["organism"]["id"]
+                for (var j in objOne["children"]){
+                    var objTwo = objOne["children"][j];
+                    var seqType = "canonical"
+                    if (objTwo["name"].indexOf("Isoform") != -1){
+                        seqType = "isoform"
+                    }
+                    backendKey = "%s_%s" % (taxId, seqType)
+                    if (backendKey in backendObj["protein"]["bysequencetype"]){
+                        var n = backendObj["protein"]["bysequencetype"][backendKey]
+                        objTwo["size"] = n
+                    }
+                }
+            }
+        }
+        else if (frontendKeySets[4].indexOf(keyOne) != -1){
+            for (var i in frontendObj[keyOne]["children"]){
+                var objOne = frontendObj[keyOne]["children"][i];
+                var taxId = objOne["organism"]["organism_list"][0]["id"]
+                for (var j in objOne["children"]){
+                    var objTwo = objOne["children"][j];
+                    var gType = objTwo["glycan_type"].toLowerCase();
+                    var backendKey = taxId + '_' + gType;
+                    if (backendKey in backendObj["glycan"]["byglycantype"]){
+                        var n = backendObj["glycan"]["byglycantype"][backendKey];
+                        objTwo["size"] = n;
+                    }
+                }
+            }
+        }
+        else if (frontendKeySets[5].indexOf(keyOne) != -1){
+            for (var i in frontendObj[keyOne]["children"]){
+                var objOne = frontendObj[keyOne]["children"][i];
+                var gType = objOne["name"].toLowerCase();
+                for (var j in objOne["children"]){
+                    var objTwo = objOne["children"][j];
+                    var gSubtype = objTwo["name"].toLowerCase();
+                    var backendKey = gType +'_'+ gSubtype;
+                    if (backendKey in backendObj["glycan"]["byglycantype"]){
+                        var n = backendObj["glycan"]["byglycantype"][backendKey]
+                        objTwo["size"] = n;
+                    }
+                }
+            }
+        }
+        else if (frontendKeySets[6].indexOf(keyOne) != -1){
+            for (var i in frontendObj[keyOne]["children"]){
+                var objOne = frontendObj[keyOne]["children"][i];
+                if (objOne["name"].indexOf("Protein") != -1){
+                    var taxId = objOne["organism"]["id"];
+                    var backendKey = taxId;
+                    if (backendKey in backendObj["protein"]["total"]){
+                        var n = backendObj["protein"]["total"][backendKey]
+                        objOne["size"] = n;
+                    }
+                }
+                else{
+                    var taxId = objOne["organism"]["organism_list"][0]["id"];
+                    for (var j in objOne["children"]){
+                        var objTwo = objOne["children"][j]; 
+                        var gType = objTwo["glycan_type"].toLowerCase()
+                        var backendKey = taxId  + '_' + gType
+                        if (backendKey in backendObj["glycan"]["byglycantype"]){
+                            var n = backendObj["glycan"]["byglycantype"][backendKey]
+                            objTwo["size"] = n;
+                        }
+                    }
+                }
+            }
+        }
+        else if (frontendKeySets[7].indexOf(keyOne) != -1){
+            for (var i in frontendObj[keyOne]["children"]){
+                var objOne = frontendObj[keyOne]["children"][i];
+                for (var j in objOne["children"]){
+                    var objTwo = objOne["children"][j]
+                    var taxId = objTwo["organism"]["id"]
+                    var siteType = objTwo["name"].split(" ")[1].toLowerCase();
+                    var backendKey = taxId + '_' + siteType;
+                    if (backendKey in backendObj["protein"]["bysitetype"]){
+                        var n = backendObj["protein"]["bysitetype"][backendKey];
+                        objTwo["size"] = n;
+                    }
+                }
+            }
+        }
+        else if (frontendKeySets[8].indexOf(keyOne) != -1){
+            for (var i in frontendObj[keyOne]){
+                var objOne = frontendObj[keyOne][i];
+                var taxId = objOne["organism"]["id"];
+                var backendKey = taxId;
+                var enzymeType = keyOne.split("_")[1];
+                if (backendKey in backendObj["protein"][enzymeType]){
+                    var n = backendObj["protein"][enzymeType][backendKey];
+                    objOne["size"] = n;
+                }
+            }
+        }
+        else if (frontendKeySets[9].indexOf(keyOne) != -1){
+            for (var i in frontendObj[keyOne]){
+                var objOne = frontendObj[keyOne][i];
+                backendKey = objOne["name"].toLowerCase()
+                if (backendKey in backendObj["glycan"]["bymotiftype"]){
+                    var n = backendObj["glycan"]["bymotiftype"][backendKey];
+                    objOne["size"] = n;
+                }
+            }
+        }
+    }
+       
+}
+
+        
+</script>
+
+
+</head>
+<body>
+
+
+<table align=center width=80% border=1 style="background:#eee;">
+
+<tr><td>Backend Object</td></tr>
+
+<tr><td style="background:#fff;"><div style="width:100%;height:150px;overflow:auto;border:1px solid #ccc;" id=backend_cn></div></td></tr>
+
+<tr><td>Frontend Object</td></tr>
+
+<tr><td style="background:#fff;"><div style="width:100%;height:150px;overflow:auto;border:1px solid #ccc;" id=frontend_cn></div></td></tr>
+
+
+
+</table>
+
+</body>
+<html>

@@ -1,0 +1,63 @@
+{
+    "statistics": [
+        {
+            "glycans": 12789, 
+            "glycoproteins": 4980, 
+            "proteins": 20656, 
+            "species": "Homo sapiens"
+        }, 
+        {
+            "glycans": 3854, 
+            "glycoproteins": 3881, 
+            "proteins": 21959, 
+            "species": "Mus musculus"
+        }, 
+        {
+            "glycans": 4125, 
+            "glycoproteins": 2106, 
+            "proteins": 21647, 
+            "species": "Rattus norvegicus"
+        }, 
+        {
+            "glycans": 14, 
+            "glycoproteins": 1, 
+            "proteins": 2, 
+            "species": "Hepatitis C virus (genotype 1a, isolate H)"
+        }, 
+        {
+            "glycans": 0, 
+            "glycoproteins": 1, 
+            "proteins": 1, 
+            "species": "Hepatitis C virus (genotype 1b, isolate Japanese)"
+        }, 
+        {
+            "glycans": 0, 
+            "glycoproteins": 3, 
+            "proteins": 15, 
+            "species": "SARS coronavirus (SARS-CoV-1)"
+        }, 
+        {
+            "glycans": 220, 
+            "glycoproteins": 2, 
+            "proteins": 14, 
+            "species": "SARS coronavirus (SARS-CoV-2 or 2019-nCoV)"
+        }
+    ], 
+    "version": [
+        {
+            "release_date": "2020-06-26 19:32:53 EDT-0400", 
+            "component": "data", 
+            "version": "1.5.32"
+        }, 
+        {
+            "release_date": "2020-06-22 14:32:14 EDT-0400", 
+            "component": "api", 
+            "version": "1.5.39"
+        }, 
+        {
+            "release_date": "2020-06-26 19:32:53 EDT-0400", 
+            "component": "software", 
+            "version": "1.5"
+        }
+    ]
+}

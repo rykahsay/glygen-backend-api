@@ -1,0 +1,83 @@
+{
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "complex_query": {
+            "$id": "#/properties/complex_query",
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "operation": {
+                    "$id": "#/properties/complex_query/properties/operation",
+                    "type": "string",
+                    "description": "Logical operation used to combine the search result of the individual query parts. Possible values are AND, OR, NAND and NOR.",
+                    "default": "AND",
+                    "examples": [
+                        "AND",
+                        "OR",
+                        "NAND",
+                        "NOR"
+                    ]
+                },
+                "query_list": {
+                    "$id": "#/properties/complex_query/properties/query_list",
+                    "additionalProperties": false,
+                    "minItems": 1,
+                    "type": "array",
+                    "items": {
+                        "$id": "#/properties/complex_query/properties/query_list/items",
+                        "oneOf": [
+                            {
+                                "type": "object",
+                                "additionalProperties": false,
+                                "properties": {
+                                    "complex_query": {
+                                        "$ref": "#/properties/complex_query"
+                                    }
+                                }
+                            },
+                            {
+                                "type": "object",
+                                "additionalProperties": false,
+                                "properties": {
+                                    "protein_query": {
+                                        "$ref": "https://raw.githubusercontent.com/glygener/glygen-backend-api/master/specs/protein/search/request.schema.json#/properties/query"
+                                    }
+                                }
+                            },
+                            {
+                                "type": "object",
+                                "additionalProperties": false,
+                                "properties": {
+                                    "glycan_query": {
+                                        "$ref": "https://raw.githubusercontent.com/glygener/glygen-backend-api/master/specs/glycan/search/request.schema.json#/properties/query"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            },
+            "required": [
+                "operation",
+                "query_list"
+            ]
+        },
+        "result_type": {
+            "$id": "#/properties/result_type",
+            "type": "string",
+            "description": "Identifies the result type of search to be performed.",
+            "default": "protein_list",
+            "examples": [
+                "protein_list",
+                "glycan_list",
+                "count_list"
+            ]
+        }
+    },
+    "required": [
+        "result_type",
+        "complex_query"
+    ]
+}

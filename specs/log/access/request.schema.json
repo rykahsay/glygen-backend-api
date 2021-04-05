@@ -1,0 +1,86 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://api.glygen.org/log/access/request",
+  "type": "object",
+  "title": "The log message query schema",
+  "required": [
+    "type",
+	"offset",
+    "order"
+  ],
+  "properties": {
+    "type": {
+      "$id": "#/properties/type",
+      "type": "string",
+      "description": "Type of the requested message. Possible values are error, access or both.",
+      "examples": [
+        "error"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "user": {
+      "$id": "#/properties/user",
+      "type": "string",
+      "description": "Request log messages based on the user ID.",
+      "examples": [
+        "ABMND34...2FG1"
+      ],
+      "pattern": "^(.*)$"
+    },
+	"start_date": {
+      "$id": "#/properties/start_date",
+      "type": "string",
+      "description": "Start date of the query. Only logs after this date will be included. The date is specified in ISO 8601.",
+      "examples": [
+        "2008-09-15T15:53:00+05:00"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "end_date": {
+      "$id": "#/properties/end_date",
+      "type": "string",
+      "description": "End date of the query. Only logs before the date will be included. The date is specified in ISO 8601.",
+      "examples": [
+        "2008-09-15T15:53:00+05:00"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "page": {
+      "$id": "#/properties/page",
+      "type": "string",
+      "description": "Request log messages based on the page.",
+      "examples": [
+        "index.html"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "limit": {
+      "$id": "#/properties/limit",
+      "type": "integer",
+      "description": "Number of messages to be returned by the server.",
+      "default": 0,
+      "examples": [
+        100
+      ]
+    },
+    "offset": {
+      "$id": "#/properties/limit",
+      "type": "integer",
+      "description": "Offset in the list of messages to begin with. Default value is 0.",
+      "default": 0,
+      "examples": [
+        100
+      ]
+    },
+    "order": {
+      "$id": "#/properties/order",
+      "type": "string",
+      "description": "Order of the log messages based on date. Possible values are desc and asc.",
+      "examples": [
+        "desc"
+      ],
+      "pattern": "^(.*)$"
+    }
+  }
+}

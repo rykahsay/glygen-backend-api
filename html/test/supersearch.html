@@ -1,0 +1,640 @@
+<html>
+<head>
+<link rel="stylesheet" href="styles.css" type="text/css">
+<script language="javascript" src="jquery.min.js"></script>
+<script language="javascript" src="api_test.js"></script>
+
+
+<script>
+var queryList = [
+        {
+            "label": "Empty query",
+            "query": {}
+        },
+        {
+            "label": "protein with UniProtKB accession P14210",
+            "query":{ 
+                "concept_query_list":
+                    [
+                        {
+                        "concept":"protein",
+                    "query":{
+                        "aggregator":"$and",
+                        "unaggregated_list":[
+                            {"order":1, "path":"uniprot_ac", "operator":"$eq", "string_value":"P14210"}
+                        ],
+                        "aggregated_list":[]
+                    }
+                }
+                ]
+            }
+        },
+        
+        {
+            "label": "protein with UniProtKB accession P14210 with edge constraints",
+            "query": { 
+                "concept_query_list":[
+                    {
+                        "concept":"protein",
+                        "query":{
+                            "aggregator":"$and",
+                            "unaggregated_list":[
+                                {"order":1, "path":"uniprot_ac", "operator":"$eq", 
+                                    "string_value":"P14210"}
+                            ],
+                            "aggregated_list":[]
+                        }
+                    }
+                ],
+                "ignored_edges":[
+                    {"source":"species", "target":"glycan", "direction":"both"},
+                    {"source":"gene", "target":"species", "direction":"both"},
+                    {"source":"gene", "target":"disease", "direction":"both"},
+                    {"source":"disease", "target":"site", "direction":"both"},
+                    {"source":"glycan", "target":"site"}
+                ]
+            }
+        },
+
+        {
+            "label": "enzyme with UniProtKB accession Q9D081 with edge constraints",
+            "query": {
+                "concept_query_list":[
+                    {
+                        "concept":"enzyme",
+                        "query":{
+                            "aggregator":"$and",
+                            "unaggregated_list":[{"order":1,"path":"uniprot_ac",
+                                "operator":"$eq","string_value":"Q9D081"}],
+                            "aggregated_list":[]
+                        }
+                    }
+                ],
+                "ignored_edges":[
+                    {"source": "species", "target": "protein"},
+                    {"source": "species", "target": "glycan"},
+                    {"source": "disease", "target": "protein"},
+                    {"source": "disease","target": "site","direction": "both"},
+                    {"source": "gene","target": "species","direction": "both"},
+                    {"source": "gene","target": "disease","direction": "both"},
+                    {"source": "site", "target": "protein"},
+                    {"source": "glycan", "target": "site"},
+                    {"source": "protein", "target": "glycan","direction": "both"}
+                ]
+            }
+        },
+
+
+
+        {
+            "label": "glycan with GlyToucan accession G17689DH",
+            "query": { "concept_query_list":[
+                {
+                    "concept":"glycan",
+                    "query":{
+                        "aggregator":"$and",
+                        "unaggregated_list":[
+                            {"order":1,"path":"glytoucan_ac", "operator":"$eq", "string_value":"G17689DH"}
+                        ],
+                        "aggregated_list":[]
+                    }
+                }
+            ]
+            }
+        },
+
+        {
+            "label":"Sites on human proteins that have both glycosylation and SNV data",
+            "query":{ "concept_query_list":[
+                {
+                    "concept": "species",
+                    "query": {
+                        "aggregator": "$and",
+                        "unaggregated_list": [
+                            {"order":1,"path":"taxid","operator":"$eq","numeric_value":9606}
+                        ],
+                        "aggregated_list": []
+                    }
+                },
+                {
+                    "concept":"site",
+                    "query":{
+                        "aggregator":"$and",
+                        "unaggregated_list":[
+                            {"order":1,"path":"glycosylation","operator":"$gt","string_value":[]},
+                            {"order":2,"path":"snv","operator":"$gt","string_value":[]}
+                        ],
+                        "aggregated_list":[]
+                    }
+                }
+            ]
+            }
+        },
+        {
+            "label":"Sites on P14210 with both glycosylation and SNV data",
+            "query":{ "concept_query_list":[
+                {
+                    "concept": "protein",
+                    "query": {
+                        "aggregator": "$and",
+                        "unaggregated_list": [
+                            {"order":1,"path": "uniprot_ac","operator": "$eq","string_value": "P14210"}
+                        ],
+                        "aggregated_list": []
+                    }
+                },
+                {
+                    "concept":"site",
+                    "query":{
+                        "aggregator":"$and",
+                        "unaggregated_list":[
+                            {"order":1,"path":"glycosylation","operator":"$gt","string_value":[]},
+                            {"order":2,"path":"snv","operator":"$gt","string_value":[]}
+                        ],
+                        "aggregated_list":[]
+                    }
+                }
+            ]
+            }
+        },
+        
+        {
+        "label": "human protein AND go_term has nucleus and nuclear membrane AND has o-glyco site AND has phosphorylated site AND associated with any disease",
+        "query": { "concept_query_list":[
+            {
+                "concept": "species",
+                "query": {
+                    "aggregator": "$and",
+                    "unaggregated_list": [
+                        {"order":1,"path":"taxid", "operator":"$eq", "numeric_value":9606}
+                    ],
+                    "aggregated_list": []
+                }
+            },   
+            {
+                "concept":"protein",
+                "query":{
+                    "aggregator":"$and",
+                    "unaggregated_list":[],
+                    "aggregated_list":[
+                        {
+                            "aggregator":"$or",
+                            "unaggregated_list":[
+                                {"order":1,"path":"disease", "operator":"$gt", "string_value":[]},
+                                {"order":2,"path":"snv.disease", "operator":"$gt", "string_value":[]},
+                                {"order":3,"path":"expression_disease.disease", "operator":"$gt", 
+                                    "string_value":[]}
+                            ]
+                        },
+                        {
+                            "aggregator":"$or",
+                            "unaggregated_list":[
+                                {"order":1,"path":"go_annotation.categories.go_terms.name", 
+                                    "operator":"$regex", "string_value":"nuclear membrane"},
+                                {"order":2,"path":"go_annotation.categories.go_terms.name", 
+                                    "operator":"$regex", "string_value":"nuclues"}
+                            ],
+                            "aggregated_list":[]
+                        }
+                    ]
+                }
+            },
+            {
+                "concept":"site",
+                "query":{
+                    "aggregator":"$and",
+                    "unaggregated_list":[
+                        {"order":1,"path":"phosphorylation", "operator":"$gt", "string_value":[]}, 
+                        {"order":2,"path":"glycosylation.type", "operator":"$regex", "string_value":"O-linked"}
+                    ],
+                    "aggregated_list":[]
+                }
+            }
+        ]
+        }
+    }, 
+    {
+        "label": "human protein AND has glycosylated site AND has mutation associated with lung cancer AND has mutation associated with breast cancer",
+        "query": { "concept_query_list":[
+            {
+                "concept":"species",
+                "query":{
+                    "aggregator":"$and",
+                    "unaggregated_list":[
+                        {"order":1,"path":"taxid", "operator":"$eq", "numeric_value":9606}
+                    ],
+                    "aggregated_list":[]
+                }
+            },
+            {
+                "concept":"site",
+                "query":{
+                    "aggregator":"$and",
+                    "unaggregated_list":[
+                        {"order":1,"path":"glycosylation", "operator":"$gt", "string_value":[]}, 
+                        {"order":2,"path":"snv.disease.recommended_name.name", "operator":"$regex",
+                            "string_value":"lung cancer"},
+                        {"order":3,"path":"snv.disease.recommended_name.name", "operator":"$regex",
+                            "string_value":"breast cancer"}    
+                    ],
+                    "aggregated_list":[]
+                }
+            }
+        ]
+        }
+    },
+
+
+    {
+        "label": "human protein AND on chromosome 7 AND has o-glyco site on Ser/Thr AND localised in nuclear membrane GO:0005635 AND has mutation associated with lung cancer",
+        "query": { "concept_query_list":[
+            {
+                "concept":"species",
+                "query":{
+                    "aggregator":"$and",
+                    "unaggregated_list":[
+                        {"order":1,"path":"taxid", "operator":"$eq", "numeric_value":9606}
+                    ],
+                    "aggregated_list":[]
+                }
+            },
+            {
+                "concept":"protein",
+                "query":{
+                    "aggregator":"$and",
+                    "unaggregated_list":[
+                        {"order":1,"path":"gene.locus.chromosome", "operator":"$eq", 
+                            "string_value":"7"},
+                        {"order":2,"path":"go_annotation.categories.go_terms.name", 
+                            "operator":"$regex", "string_value":"nuclear membrane"}
+                    ],
+                    "aggregated_list":[]
+                }
+            },
+            {
+                "concept":"site",
+                "query":{
+                    "aggregator":"$and",
+                    "unaggregated_list":[
+                        {"order":1,"path":"glycosylation.type","operator":"$regex", 
+                            "string_value":"O-linked"},
+                        {"order":2,"path":"snv.disease.recommended_name.name", "operator":"$regex", 
+                            "string_value":"lung cancer"}
+                    ],
+                    "aggregated_list":[
+                        {
+                            "aggregator":"$or",
+                            "unaggregated_list":[
+                                {"order":1,"path":"glycosylation.residue","operator":"$eq",
+                                    "string_value":"Ser"},
+                                {"order":2,"path":"glycosylation.residue","operator":"$eq",
+                                    "string_value":"Thr"}
+                            ],
+                            "aggregated_list":[]
+                        }
+                    ]
+                }
+            }
+        ]
+        }
+    }, 
+    
+    {
+        "label": "site in human protein AND glycosylated AND phosphorylated AND has mutation AND has mutagenesis",
+        "query": { "concept_query_list":[
+            {
+                "concept":"species",
+                "query":{
+                    "aggregator":"$and",
+                    "unaggregated_list":[
+                        {"order":1,"path":"taxid", "operator":"$eq", "numeric_value":9606}
+                    ],
+                    "aggregated_list":[]
+                }
+            }, 
+            {
+                "concept":"site",
+                "query":{
+                    "aggregator":"$and",
+                    "unaggregated_list":[
+                        {"order":1,"path":"glycosylation", "operator":"$gt", "string_value":[]},
+                        {"order":2,"path":"phosphorylation", "operator":"$gt", "string_value":[]},
+                        {"order":3,"path":"snv", "operator":"$gt", "string_value":[]},
+                        {"order":4,"path":"mutagenesis", "operator":"$gt", "string_value":[]}
+
+                    ],
+                    "aggregated_list":[]
+                }
+            } 
+        ]
+        }
+    }, 
+    
+
+    {
+        "label": "any site AND has n-linked sequon AND do not have experimental or predicted evidence for glycosylation",
+        "query": { "concept_query_list":[
+            {
+                "concept":"site",
+                "query":{
+                    "aggregator":"$and",
+                    "unaggregated_list":[
+                        {"order":1,"path":"site_annotation.annotation", "operator":"$eq",
+                            "string_value":"n_glycosylation_sequon"},
+                        {"order":2,"path":"glycosylation", "operator":"$exists", "string_value":false}
+                    
+                    ],
+                    "aggregated_list":[]
+                }
+            }
+        ]
+        }
+    },
+    {
+        "label": "any protein AND has mutation associated with lung cancer AND has mutation associated with brain cancer AND causes gain of nsequon or loss of glycosite AND in dbSNP",
+        "query": { "concept_query_list":[
+            {
+                "concept":"site",
+                "query":{
+                    "aggregator":"$and",
+                    "unaggregated_list":[
+                        {"order":1,"path":"snv.disease.recommended_name.name",
+                                "operator":"$regex","string_value":"lung cancer"},
+                        {"order":2,"path":"snv.disease.recommended_name.name",
+                                "operator":"$regex", "string_value":"breast cancer"},
+                        {"order":3,"path":"snv.evidence.database", "operator":"$eq", 
+                            "string_value":"dbSNP"}
+                    ],
+                    "aggregated_list":[
+                        {
+                            "aggregator":"$or",
+                            "unaggregated_list":[
+                                {"order":1,"path":"snv.glycoeffect", "operator":"$gte",
+                                    "string_value":["n-glyco-sequon-gain"]},
+                                {"order":2,"path":"snv.glycoeffect", "operator":"$gte",
+                                    "string_value":["n-glyco-site-loss"]}
+                            ],
+                            "aggregated_list":[]
+                        }
+                    ]
+                }
+            }
+        ]
+        }
+    }, 
+
+    {
+        "label": "human protein AND has site which carry lewis x glycan motif AND has mutation annotation",
+        "query": { "concept_query_list":[
+            {
+                "concept":"species",
+                "query":{
+                    "aggregator":"$and",
+                    "unaggregated_list":[
+                        {"order":1,"path":"taxid", "operator":"$eq", "numeric_value":9606}
+                    ],
+                    "aggregated_list":[]
+                }
+            }, 
+            {
+                "concept":"protein",
+                "query":{
+                    "aggregator":"$and",
+                    "unaggregated_list":[
+                        {"order":1,"path":"snv", "operator":"$gt","string_value":[]}
+                    ],
+                    "aggregated_list":[]
+                }
+            },
+            {
+                "concept":"motif",
+                "query":{
+                    "aggregator":"$and",
+                    "unaggregated_list":[
+                        {"order":1,"path":"names.name", "operator":"$regex", "string_value":"lewis x"}
+                    ],
+                    "aggregated_list":[]
+                }
+            }
+        ]
+        }
+    }, 
+    
+
+    {
+        "label": "mouse protein AND carries N-glycan AND associated with diabetes mellitus disease",
+        "query": { "concept_query_list":[
+             {
+                "concept":"xxx",
+                "query":{
+                    "aggregator":"$and",
+                    "unaggregated_list":[],
+                    "aggregated_list":[]
+                }
+            },
+            {
+                "concept":"xxx",
+                "query":{
+                    "aggregator":"$and",
+                    "unaggregated_list":[],
+                    "aggregated_list":[]
+                }
+            }
+        ]
+        }
+    }, 
+    
+
+    {
+        "label": "any protein AND associated with any disease AND has O-glycosylation site AND has Phosphorylation Site",
+        "query": { "concept_query_list":[
+             {
+                "concept":"xxx",
+                "query":{
+                    "aggregator":"$and",
+                    "unaggregated_list":[],
+                    "aggregated_list":[]
+                }
+            },
+            {
+                "concept":"xxx",
+                "query":{
+                    "aggregator":"$and",
+                    "unaggregated_list":[],
+                    "aggregated_list":[]
+                }
+            }
+        ]
+        }
+    }, 
+    
+
+    {
+        "label": "any site AND has Phosphorylation AND has O-glycosylation AND has mutation associated with Lung Cancer AND mutation in dbSNP",
+        "query": { "concept_query_list":[
+             {
+                "concept":"xxx",
+                "query":{
+                    "aggregator":"$and",
+                    "unaggregated_list":[],
+                    "aggregated_list":[]
+                }
+            },
+            {
+                "concept":"xxx",
+                "query":{
+                    "aggregator":"$and",
+                    "unaggregated_list":[],
+                    "aggregated_list":[]
+                }
+            }
+        ]
+        }
+    }, 
+    
+
+    {
+        "label": "any glycan AND bi-sected motif? AND (has Lewis X motif OR has Lewis Y motif)",
+        "query": { "concept_query_list":[
+             {
+                "concept":"xxx",
+                "query":{
+                    "aggregator":"$and",
+                    "unaggregated_list":[],
+                    "aggregated_list":[]
+                }
+            },
+            {
+                "concept":"xxx",
+                "query":{
+                    "aggregator":"$and",
+                    "unaggregated_list":[],
+                    "aggregated_list":[]
+                }
+            }
+        ]
+        }
+    }, 
+    
+
+    {
+        "label": "any protein AND has mutation AND (has glycosylated site OR has phosphorylated site)",
+        "query": { "concept_query_list":[
+             {
+                "concept":"xxx",
+                "query":{
+                    "aggregator":"$and",
+                    "unaggregated_list":[],
+                    "aggregated_list":[]
+                }
+            },
+            {
+                "concept":"xxx",
+                "query":{
+                    "aggregator":"$and",
+                    "unaggregated_list":[],
+                    "aggregated_list":[]
+                }
+            }
+        ]
+        }
+    }, 
+    
+
+    {
+        "label": "any protein AND reported to be upregulated in colon cancer AND not reported to be upregulated in prostata cancer",
+        "query": { "concept_query_list":[
+             {
+                "concept":"xxx",
+                "query":{
+                    "aggregator":"$and",
+                    "unaggregated_list":[],
+                    "aggregated_list":[]
+                }
+            },
+            {
+                "concept":"xxx",
+                "query":{
+                    "aggregator":"$and",
+                    "unaggregated_list":[],
+                    "aggregated_list":[]
+                }
+            }
+        ]
+        }
+    }, 
+    {
+        "label": "any glycan AND reported in Human AND reported in sarscov2 AND not reported in mouse",
+        "query": { "concept_query_list":[
+             {
+                "concept":"xxx",
+                "query":{
+                    "aggregator":"$and",
+                    "unaggregated_list":[],
+                    "aggregated_list":[]
+                }
+            },
+            {
+                "concept":"xxx",
+                "query":{
+                    "aggregator":"$and",
+                    "unaggregated_list":[],
+                    "aggregated_list":[]
+                }
+            }
+        ]
+        }
+    }
+];
+
+var testInfo = 
+{
+    "search_init": {
+        "string_fields": [],
+        "url": "/supersearch/search_init",
+        "required_fields": [],
+        "numeric_fields": [],
+        "query": {}
+    }
+    ,"search": {
+        "string_fields": [], 
+        "url": "/supersearch/search", 
+        "required_fields": [], 
+        "numeric_fields": [], 
+        "querylist": queryList
+    }
+    ,"reason": {
+        "string_fields": [], 
+        "url": "/supersearch/reason",
+        "required_fields": [],
+        "numeric_fields": [], 
+        "querylist": queryList
+    }
+    ,"supersearch_list": {
+        "string_fields": [
+            "sort", 
+            "id", 
+            "order"
+        ], 
+        "url": "/supersearch/list/", 
+        "required_fields": [
+            "id"
+        ], 
+        "numeric_fields": [
+            "offset", 
+            "limit"
+        ], 
+        "query": {
+            "id": ""
+        }
+    }
+};
+
+
+</script>
+
+</head>
+<body>
+
+</body>
+<html>

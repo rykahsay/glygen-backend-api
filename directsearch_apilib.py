@@ -53,6 +53,40 @@ def protein(query_obj, config_obj):
     return res_obj
 
 
+
+def gene(query_obj, config_obj):
+
+    db_obj = config_obj[config_obj["server"]]["dbinfo"]
+    dbh, error_obj = util.connect_to_mongodb(db_obj) #connect to mongodb
+    if error_obj != {}:
+        return error_obj
+
+    #Collect errors 
+    error_list = errorlib.get_errors_in_query("gene_search_direct", query_obj,config_obj)
+    if error_list != []:
+        return {"error_list":error_list}
+
+    mongo_query = protein_apilib.get_mongo_query(query_obj)
+    #return mongo_query
+    
+    collection = "c_protein"
+    main_id = "uniprot_canonical_ac"
+    results_dict = {}
+    i = 0
+    for obj in dbh[collection].find(mongo_query):
+        i += 1
+        if i > config_obj["max_results_count"]["protein"]:
+            break
+        if main_id not in obj:
+            continue
+        results_dict[obj[main_id]] = obj
+
+    res_obj = get_results_batch(results_dict, query_obj, config_obj)
+    return res_obj
+
+
+
+
 def get_results_batch(results_dict, query_obj, config_obj):
 
     id_list = sorted(results_dict.keys())

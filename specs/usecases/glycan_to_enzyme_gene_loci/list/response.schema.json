@@ -1,0 +1,223 @@
+{
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "properties": {
+        "query": {
+            "$id": "/properties/query",
+            "type": "object",
+            "description": "Object that contains a set of search criteria that where used to generate this result set.",
+            "minProperties": 1,
+            "maxProperties": 15,
+            "properties": {
+                "execution_time": {
+                    "$id": "/properties/query/properties/execution_time",
+                    "type": "string",
+                    "description": "Time stamp at which time the result set was generated. This field uses ISO 8601 pattern: YYYY-MM-DDThh:mm:ss+-hh.",
+                    "examples": [
+                        "2008-09-15T15:53:00+05:00"
+                    ]
+                },
+                "glytoucan_ac": {
+                    "$id": "/properties/query/properties/glytoucan_ac",
+                    "type": "string",
+                    "description": "GlyTouCan ID of the glycan.",
+                    "default": "",
+                    "examples": [
+                        "G09012"
+                    ]
+                },
+                "organism": {
+                    "$id": "/properties/query/properties/organism",
+                    "type": "object",
+                    "description": "This field is set if a search by organism (e.g. human) is performed.",
+                    "properties": {
+                        "id": {
+                            "$id": "/properties/query/properties/organism/properties/id",
+                            "type": "integer",
+                            "description": "The value can be a NCBI Taxonomy ID.",
+                            "examples": [
+                                "9606",
+                                "10090"
+                            ]
+                        },
+                        "name": {
+                            "$id": "/properties/query/properties/organism/properties/name",
+                            "type": "string",
+                            "description": "The value can be a scientific species name.",
+                            "examples": [
+                                "Homo sapiens",
+                                "Mus musculus"
+                            ]
+                        }
+                    }
+                }
+            },
+            "required": [
+                "execution_time",
+                "glytoucan_ac",
+                "organism"
+            ]
+        },
+        "pagination": {
+            "$id": "/properties/pagination",
+            "type": "object",
+            "description": "Object storing information to summarize settings that have been used to only retrieve a subset of the entire result list. These settings are an offset of the first entry, the number of requested entries (limit), the order of the result list (sort) and the order direction (order).",
+            "properties": {
+                "offset": {
+                    "$id": "/properties/pagination/properties/offset",
+                    "type": "integer",
+                    "description": "After ordering and sorting of the result list the offset specifies the first entry in the list that is part of the result set. ",
+                    "default": 1,
+                    "examples": [
+                        1
+                    ]
+                },
+                "limit": {
+                    "$id": "/properties/pagination/properties/limit",
+                    "type": "integer",
+                    "description": "Limit specifies how many entries have been requested of this list.",
+                    "default": 20,
+                    "examples": [
+                        10
+                    ]
+                },
+                "total_length": {
+                    "$id": "/properties/pagination/properties/total_length",
+                    "type": "integer",
+                    "description": "Total number of entries in the result list. This number may differ from the number of entries in the json which is specified by limit.",
+                    "examples": [
+                        1
+                    ]
+                },
+                "sort": {
+                    "$id": "/properties/pagination/properties/sort",
+                    "type": "string",
+                    "description": "This field is optional if not provided backend will decide sorting logic. Specifies which criteria was used to sort the list. Possible values are uniprot_canonical_ac, protein_name, chromosome, gene_name, organism and tax_id.",
+                    "default": "uniprot_canonical_ac",
+                    "examples": [
+                        "uniprot_canonical_ac"
+                    ]
+                },
+                "order": {
+                    "$id": "/properties/pagination/properties/order",
+                    "type": "string",
+                    "description": "Specifies the order direction of the list. Possible values are asc (ascendant) and desc (descended). ",
+                    "default": "asc",
+                    "examples": [
+                        "asc"
+                    ]
+                }
+            },
+            "required": [
+                "offset",
+                "limit",
+                "total_length",
+                "order"
+            ]
+        },
+        "results": {
+            "$id": "/properties/results",
+            "type": "array",
+            "description": "A list of objects each representing an entry in the result list.",
+            "items": {
+                "$id": "/properties/results/items",
+                "type": "object",
+                "properties": {
+                    "uniprot_canonical_ac": {
+                        "$id": "/properties/results/items/properties/uniprot_canonical_ac",
+                        "type": "string",
+                        "description": "Uniprot ID of the protein.",
+                        "examples": [
+                            "Q9Y274-1"
+                        ]
+                    },
+                    "protein_name": {
+                        "$id": "/properties/results/items/properties/protein_name",
+                        "type": "string",
+                        "description": "Name of the protein.",
+                        "examples": [
+                            "Type 2 lactosamine alpha-2,3-sialyltransferase"
+                        ]
+                    },
+                    "gene_name": {
+                        "$id": "/properties/results/items/properties/gene_name",
+                        "type": "string",
+                        "description": "Name of the gene.",
+                        "examples": [
+                            "ST3GAL6"
+                        ]
+                    },
+                    "gene_link": {
+                        "$id": "/properties/results/items/properties/gene_link",
+                        "type": "string",
+                        "description": "Link to the Gene.",
+                        "default": "",
+                        "examples": [
+                            "https://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=18080"
+                        ]
+                    },
+                    "start_pos": {
+                        "$id": "/properties/results/items/properties/start_pos",
+                        "type": "integer",
+                        "description": "Start position (number of base) where the encoded gene begins.",
+                        "examples": [
+                            98793758
+                        ]
+                    },
+                    "end_pos": {
+                        "$id": "/properties/results/items/properties/end_pos",
+                        "type": "integer",
+                        "description": "End position (number of base) the encoded gene ends with.",
+                        "examples": [
+                            98768441
+                        ]
+                    },
+                    "organism": {
+                        "$id": "/properties/results/items/properties/organism",
+                        "type": "string",
+                        "description": "Scientific name of the organism the protein was found in.",
+                        "examples": [
+                            "Homo sapiens"
+                        ]
+                    },
+                    "chromosome": {
+                        "$id": "/properties/results/items/properties/chromosome",
+                        "type": "string",
+                        "description": "Name of the chromosome the gene is located on.",
+                        "examples": [
+                            "3"
+                        ]
+                    },
+                    "tax_id": {
+                        "$id": "/properties/results/items/properties/tax_id",
+                        "type": "integer",
+                        "description": "NCBI Taxonomy ID for the species entry.",
+                        "default": 0,
+                        "examples": [
+                            9606
+                        ]
+                    }
+                },
+                "required": [
+                    "uniprot_canonical_ac",
+                    "protein_name",
+                    "gene_name",
+                    "gene_link",
+                    "start_pos",
+                    "end_pos",
+                    "organism",
+                    "chromosome",
+                    "tax_id"
+                ]
+            }
+        },
+        "error_code": {
+            "$id": "/properties/error_code",
+            "type": "string",
+            "description": "If an error occured that prevented the system from provinding the response a JSON with an error code is returned.",
+            "examples": [
+                "DB001"
+            ]
+        }
+    }
+}

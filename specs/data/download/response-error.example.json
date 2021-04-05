@@ -1,0 +1,16 @@
+{
+   "error_list": [
+     {
+       "error_code": "missing-parameter", 
+       "field": "type"
+     }, 
+     {
+       "error_code": "missing-parameter", 
+       "field": "format"
+     }, 
+     {
+       "error_code": "missing-parameter", 
+       "field": "id"
+     }
+   ]
+ }

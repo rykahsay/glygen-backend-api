@@ -1,0 +1,217 @@
+<html>
+<head>
+<link rel="stylesheet" href="styles.css" type="text/css">
+<script language="javascript" src="jquery.min.js"></script>
+
+<script>
+var htmlRoot = ""
+
+var bgColor = "MediumSeaGreen";
+
+////////////////////////////////////
+$(document ).ready(function() {
+
+    if (window.location.href.indexOf("dev") != -1){
+        bgColor = "Tomato";
+    }
+    else if (window.location.href.indexOf("tst") != -1){
+        bgColor = "Orange";
+    }
+    else if (window.location.href.indexOf("beta") != -1){
+        bgColor = "yellow";
+    }
+    $(".api_title").css("background",bgColor)
+
+
+});
+
+///////////////////////////////////
+$(document).on('click', '#search_init', function (event) {
+    event.preventDefault();
+
+    var gifImage = '<img src=loading.gif style="width:20%;margin-left:40%;margin-top:2%;">';
+    $("#search_init_cn").html(gifImage);
+
+    var url = '/idmapping/search_init';  
+    var postData = "query={}";
+    $("#search_init_url").html(url + '?' +  postData);
+    var reqObj = new XMLHttpRequest();
+    reqObj.open("POST", url, true);
+    reqObj.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    reqObj.onreadystatechange = function() {
+        if (reqObj.readyState == 4 && [200, 500].indexOf(reqObj.status) != -1) {
+            var resJson = JSON.parse(reqObj.responseText);
+            $("#search_init_cn").html('<pre>'+reqObj.responseText+'</pre>');
+        }
+    };
+    reqObj.send(postData);
+
+});
+
+
+///////////////////////////////////
+$(document).on('click', '#list', function (event) {
+    event.preventDefault();
+
+    var listId = $('#id').val();
+    var sortField = $('#sort').val();
+    var sortOrder = $('#order').val();
+    var category = $("#category option:selected").val();
+
+    var offset = $('#offset').val();
+    var limit = $('#limit').val();
+    
+    var inJson = {}
+    if (listId != ""){ inJson["id"] = listId;}
+    if (category != ""){ inJson["category"] = category;}
+    if (sortField != ""){ inJson["sort"] = sortField;}
+    if (sortOrder != ""){ inJson["order"] = sortOrder;}
+    if (offset != ""){ inJson["offset"] = parseInt(offset);}
+    if (limit != ""){ inJson["limit"] = parseInt(limit)}
+    
+
+    var url = '/idmapping/list'
+    var postData = "query=" + JSON.stringify(inJson);
+    $("#list_url").html(url + '?' +postData);
+    
+    var gifImage = '<img src=loading.gif style="width:20%;margin-left:40%;margin-top:2%;">';        
+    $("#list_cn").html(gifImage);
+
+    var reqObj = new XMLHttpRequest();
+    reqObj.open("POST", url, true);
+    reqObj.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    reqObj.onreadystatechange = function() {
+        if (reqObj.readyState == 4 && [200, 500].indexOf(reqObj.status) != -1) {
+            $("#list_cn").html('<pre>'+reqObj.responseText+'</pre>');
+        }
+    };
+    reqObj.send(postData);
+
+
+
+
+
+});
+
+
+///////////////////////////////////
+$(document).on('click', '#search', function (event) {
+    event.preventDefault();
+
+    var gifImage = '<img src=loading.gif style="width:20%;margin-left:40%;margin-top:2%;">';
+    $("#search_cn").html(gifImage);
+
+    var recordType = $("#recordtype option:selected").val();
+    var inputNameSpace = $('#input_namespace').val();
+    var outputNameSpace = $('#output_namespace').val();
+    var inputIdList = $('#input_idlist').val();
+
+    var formData = new FormData();
+    formData.append("recordtype", recordType);
+    formData.append("input_namespace", inputNameSpace);
+    formData.append("output_namespace", outputNameSpace);
+    formData.append("input_idlist", inputIdList);
+
+    var file = $('#userfile')[0].files[0];
+    if (file != undefined){
+        formData.append("userfile", file);
+        var sizeLimit = 1000000000;
+        if (file.size > sizeLimit){ 
+            var msg = 'Your submitted file is ' + file.size + ' Bytes big. ';
+            msg += 'This exceeds maximum allowed file size of ' + sizeLimit + ' Bytes.';
+            alert(msg);
+            return;
+        }
+    }
+    var url = '/idmapping/search';
+
+    $("#search_url").html(url);
+
+    let xhr = new XMLHttpRequest();
+    // track upload progress
+    //xhr.upload.onprogress = function(event) {
+    //console.log(`Uploaded ${event.loaded} of ${event.total}`);
+    //};
+    xhr.onloadend = function() {
+        if (xhr.status == 200) {
+            //console.log(xhr.responseText);
+            //resJson = JSON.parse(xhr.responseText);
+            $("#search_cn").html('<pre>'+xhr.responseText+'</pre>');
+        } else {
+            console.log("error " + this.status);
+        }
+    };
+    xhr.open("POST", url);
+    xhr.send(formData);
+
+});
+
+
+
+</script>
+
+</head>
+<body>
+
+
+<table width=80% align=center border=1>
+<tr><th colspan=2 align=left class=api_title>Test for search_init API</th></tr>
+<tr><td>Post Data</td><td id=search_init_url style="background:#fff;"></td></tr>
+<tr><td valign=top><input type=submit id=search_init name=btn value="Submit API request"></td>
+<td style="background:#fff;"><div style="width:700px;height:200px;overflow:auto;" id=search_init_cn></div></td></tr>
+
+
+<tr><th colspan=2 align=left class=api_title>Test for search API</th></tr>
+<tr><td>Record Type</td>
+<td>
+<select id=recordtype>
+<option value="glycan">Glycan</option>
+<option value="protein">Protein</option>
+</select>
+</td></tr>
+
+<tr><td>Input Namespace</td><td><input type=text id=input_namespace value="PubChem Compound"></td></tr>
+<tr><td>Output Namespace</td><td><input type=text id=output_namespace value="ChEBI"></td></tr>
+<tr>
+<td valign=top>Input ID List</td>
+<td style="padding:10;">Upload from file (simple text file one ID per line) <br><input id=userfile type='file' name='userfile'/>
+<br><br>
+ --- OR ----
+<br><br>
+Paste ID list
+<textarea id=input_idlist rows=10 style="width:100%;">91859018,91845230,91845682,439177,XYZ</textarea></td></tr>
+
+<tr><td>Post Data</td><td id=search_url style="background:#fff;"></td></tr>
+<tr><td valign=top><input type=submit id=search name=btn value="Submit API request"></td>
+<td style="background:#fff;"><div style="width:700px;height:200px;overflow:auto;" id=search_cn></div></td></tr>
+
+
+
+<tr><th colspan=2 align=left class=api_title>Test for list API</th></tr>
+<tr><td>List ID *</td><td><input type=text id=id value="" style="width:100%;"></td></tr>
+<tr><td>Category</td>
+<td>
+<select id=category>
+<option value="mapped">mapped</option>
+<option value="unmapped">unmapped</option>
+</select>
+</td>
+
+
+<tr><td>Sort Field</td><td><input type=text id=sort value="" style="width:100%;"></td></tr>
+<tr><td>Sort Order</td><td><input type=text id=order value="" style="width:100%;"></td></tr>
+<tr><td>Offset</td><td><input type=number id=offset value="" style="width:100%;"></td></tr>
+<tr><td>Limit</td><td><input type=number id=limit value="" style="width:100%;"></td></tr>
+<tr><td>Post Data</td><td id=list_url style="background:#fff;"></td></tr>
+<tr><td valign=top><input type=submit id=list name=btn value="Submit API request"></td>
+<td style="background:#fff;"><div style="width:700px;height:200px;overflow:auto;" id=list_cn></div></td></tr>
+
+
+
+
+</table>
+
+
+
+</body>
+<html>

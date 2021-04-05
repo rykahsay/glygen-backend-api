@@ -1,0 +1,104 @@
+{
+    "other_matches": {
+        "glycan": {
+            "all": {
+                "count": 0, 
+                "list_id": ""
+            }, 
+            "identifiers": {
+                "count": 0, 
+                "list_id": ""
+            }, 
+            "subtype": {
+                "count": 0, 
+                "list_id": ""
+            }, 
+            "enzyme": {
+                "count": 0, 
+                "list_id": ""
+            }, 
+            "motifs": {
+                "count": 0, 
+                "list_id": ""
+            }, 
+            "sequences": {
+                "count": 0, 
+                "list_id": ""
+            }, 
+            "glycoproteins": {
+                "count": 0, 
+                "list_id": ""
+            }, 
+            "type": {
+                "count": 0, 
+                "list_id": ""
+            }, 
+            "species": {
+                "count": 0, 
+                "list_id": ""
+            }
+        }, 
+        "glycoprotein": {
+            "function": {
+                "count": 40, 
+                "list_id": "2794868c61386a174fc4feae8ab206c0"
+            }, 
+            "all": {
+                "count": 44, 
+                "list_id": "c9025f2096d42fdaf0681075184676b5"
+            }, 
+            "identifiers": {
+                "count": 0, 
+                "list_id": ""
+            }, 
+            "disease": {
+                "count": 4, 
+                "list_id": "713a1549c1b606e1790aea470380ca12"
+            }, 
+            "names": {
+                "count": 0, 
+                "list_id": ""
+            }, 
+            "gene": {
+                "count": 0, 
+                "list_id": ""
+            }, 
+            "species": {
+                "count": 0, 
+                "list_id": ""
+            }
+        }, 
+        "protein": {
+            "function": {
+                "count": 123, 
+                "list_id": "c670159c158b00cd5cb995ff28e7abf0"
+            }, 
+            "all": {
+                "count": 137, 
+                "list_id": "bf5d310ada1a2f8648d4e915f967eb69"
+            }, 
+            "identifiers": {
+                "count": 0, 
+                "list_id": ""
+            }, 
+            "disease": {
+                "count": 7, 
+                "list_id": "2d9c961273b4fb19b99f62b92525066a"
+            }, 
+            "names": {
+                "count": 7, 
+                "list_id": "d05fa3cb756211d13bf1e8c094c97a52"
+            }, 
+            "gene": {
+                "count": 0, 
+                "list_id": ""
+            }, 
+            "species": {
+                "count": 0, 
+                "list_id": ""
+            }
+        }, 
+        "total_match_count": 362
+    }, 
+    "exact_match": []
+}

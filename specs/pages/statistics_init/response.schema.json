@@ -1,0 +1,1554 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "description": "This is the statistics page consisting of the sunb_bio_molecules, venn_glycan_species, sunb_glycan_type_subtype, sunb_glycan_organism_type, donut_motif, bar_mass_ranges, bar_sugar_ranges, sunb_canon_isof_prot, venn_protein_homo, venn_protein_mus, venn_protein_rat, pie_glycohydrolases_prot, pie_glycosyltransferases_prot, and sunb_glycoprot_rep_pred_glyc charts, bars, and diagrams.",
+  "required": [
+    "sunb_bio_molecules",
+    "venn_glycan_species",
+    "sunb_glycan_type_subtype",
+    "sunb_glycan_organism_type",
+    "donut_motif",
+    "bar_mass_ranges",
+    "bar_sugar_ranges",
+    "sunb_canon_isof_prot",
+    "venn_protein_homo",
+    "venn_protein_mus",
+    "venn_protein_rat",
+    "pie_glycohydrolases_prot",
+    "pie_glycosyltransferases_prot",
+    "sunb_glycoprot_rep_pred_glyc"
+  ],
+  "properties": {
+    "sunb_bio_molecules": {
+      "$id": "#/properties/sunb_bio_molecules",
+      "type": "object",
+      "description": "This is sunb_bio_molecules sunburst of the  proteins and glycans molecules consisting of the name, children_glycan, and children_protein.",
+      "required": [
+        "name",
+        "children_glycan",
+        "children_protein"
+      ],
+      "properties": {
+        "name": {
+          "$id": "#/properties/sunb_bio_molecules/properties/name",
+          "type": "string",
+          "description": "This is the name of the BioMolecules sunburst",
+          "examples": [
+            "BioMolecules"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "children_glycan": {
+          "$id": "#/properties/sunb_bio_molecules/properties/children_glycan",
+          "type": "array",
+          "description": "Glycan children of the BioMolecules sunburst.",
+          "items": {
+            "$id": "#/properties/sunb_bio_molecules/properties/children_glycan/items",
+            "type": "object",
+            "description": "This are the children of the glycan contain organism, name, and children.",
+            "required": [
+              "organism",
+              "name",
+              "children"
+            ],
+            "properties": {
+              "organism": {
+                "$id": "#/properties/sunb_bio_molecules/properties/children_glycan/items/properties/organism",
+                "type": "object",
+                "description": "This glycan organism by species contain organism_list and operation.",
+                "required": [
+                  "organism_list",
+                  "operation"
+                ],
+                "properties": {
+                  "organism_list": {
+                    "$id": "#/properties/sunb_bio_molecules/properties/children_glycan/items/properties/organism/properties/organism_list",
+                    "type": "array",
+                    "description": "List of organisms.",
+                    "items": {
+                      "$id": "#/properties/sunb_bio_molecules/properties/children_glycan/items/properties/organism/properties/organism_list/items",
+                      "type": "object",
+                      "description": "This is the glycan organism_list items contain id and name.",
+                      "required": [
+                        "id",
+                        "name"
+                      ],
+                      "properties": {
+                        "id": {
+                          "$id": "#/properties/sunb_bio_molecules/properties/children_glycan/items/properties/organism/properties/organism_list/items/properties/id",
+                          "type": "integer",
+                          "description": "The value can be a NCBI Taxonomy ID.",
+                          "examples": [
+                            9606,
+                            10090,
+                            10116
+                          ]
+                        },
+                        "name": {
+                          "$id": "#/properties/sunb_bio_molecules/properties/children_glycan/items/properties/organism/properties/organism_list/items/properties/name",
+                          "type": "string",
+                          "description": "The string contain the scientific name of the organism.",
+                          "examples": [
+                            "Homo sapiens",
+                            "Mus musculus",
+                            "Rattus norvegicus"
+                          ],
+                          "pattern": "^(.*)$"
+                        }
+                      }
+                    }
+                  },
+                  "operation": {
+                    "$id": "#/properties/sunb_bio_molecules/properties/children_glycan/items/properties/organism/properties/operation",
+                    "type": "string",
+                    "description": "Specifies type of operation to perform. Use OR.",
+                    "default": "OR",
+                    "examples": [
+                      "AND",
+                      "OR"
+                    ],
+                    "pattern": "^(.*)$"
+                  }
+                }
+              },
+              "name": {
+                "$id": "#/properties/sunb_bio_molecules/properties/children_glycan/items/properties/name",
+                "type": "string",
+                "description": "The Name of the glycan organism by species.",
+                "examples": [
+                  "Human Glycans",
+                  "Mouse Glycans",
+                  "Rat Glycans"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "children": {
+                "$id": "#/properties/sunb_bio_molecules/properties/children_glycan/items/properties/children",
+                "type": "array",
+                "description": "The Children of the glycan organism.",
+                "items": {
+                  "$id": "#/properties/sunb_bio_molecules/properties/children_glycan/items/properties/children/items",
+                  "type": "object",
+                  "description": "The Children of the human or mouse or rat glycan contain organism, glycan_type, name, and size.",
+                  "required": [
+                    "organism",
+                    "glycan_type",
+                    "name",
+                    "size"
+                  ],
+                  "properties": {
+                    "organism": {
+                      "$id": "#/properties/sunb_bio_molecules/properties/children_glycan/items/properties/children/items/properties/organism",
+                      "type": "object",
+                      "description": "The glycan organism contain organism_list and operation.",
+                      "required": [
+                        "organism_list",
+                        "operation"
+                      ],
+                      "properties": {
+                        "organism_list": {
+                          "$id": "#/properties/sunb_bio_molecules/properties/children_glycan/items/properties/children/items/properties/organism/properties/organism_list",
+                          "type": "array",
+                          "description": "List of organisms.",
+                          "items": {
+                            "$id": "#/properties/sunb_bio_molecules/properties/children_glycan/items/properties/children/items/properties/organism/properties/organism_list/items",
+                            "type": "object",
+                            "description": "This is the organism_list items contain id and name. In this case it has only one set of id and name.",
+                            "required": [
+                              "id",
+                              "name"
+                            ],
+                            "properties": {
+                              "id": {
+                                "$id": "#/properties/sunb_bio_molecules/properties/children_glycan/items/properties/children/items/properties/organism/properties/organism_list/items/properties/id",
+                                "type": "integer",
+                                "description": "The value can be a NCBI Taxonomy ID.",
+                                "examples": [
+                                  9606,
+                                  10090,
+                                  10116
+                                ]
+                              },
+                              "name": {
+                                "$id": "#/properties/sunb_bio_molecules/properties/children_glycan/items/properties/children/items/properties/organism/properties/organism_list/items/properties/name",
+                                "type": "string",
+                                "description": "The value can be a scientific species name.",
+                                "examples": [
+                                  "Homo sapiens",
+                                  "Mus musculus",
+                                  "Rattus norvegicus"
+                                ],
+                                "pattern": "^(.*)$"
+                              }
+                            }
+                          }
+                        },
+                        "operation": {
+                          "$id": "#/properties/sunb_bio_molecules/properties/children_glycan/items/properties/children/items/properties/organism/properties/operation",
+                          "type": "string",
+                          "description": "Specifies type of operation to perform. Use OR.",
+                          "default": "OR",
+                          "examples": [
+                            "AND",
+                            "OR"
+                          ],
+                          "pattern": "^(.*)$"
+                        }
+                      }
+                    },
+                    "glycan_type": {
+                      "$id": "#/properties/sunb_bio_molecules/properties/children_glycan/items/properties/children/items/properties/glycan_type",
+                      "type": "string",
+                      "description": "A list of glycan types.",
+                      "examples": [
+                        "N-Glycan",
+                        "O-Glycan",
+                        "Other"
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "name": {
+                      "$id": "#/properties/sunb_bio_molecules/properties/children_glycan/items/properties/children/items/properties/name",
+                      "type": "string",
+                      "description": "The Name of glycan type.",
+                      "examples": [
+                        "N-Glycan",
+                        "O-Glycan",
+                        "Other"
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "size": {
+                      "$id": "#/properties/sunb_bio_molecules/properties/children_glycan/items/properties/children/items/properties/size",
+                      "type": "integer",
+                      "description": "The size of glycan type.",
+                      "examples": [
+                        1605, 357
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "children_protein": {
+          "$id": "#/properties/sunb_bio_molecules/properties/children_protein",
+          "type": "array",
+          "description": "Protein children of the BioMolecules sunburst.",
+          "items": {
+            "$id": "#/properties/sunb_bio_molecules/properties/children_protein/items",
+            "type": "object",
+            "description": "This are the children of the protein contain organism, name, size, and children.",
+            "required": [
+              "organism",
+              "name",
+              "size",
+              "children"
+            ],
+            "properties": {
+              "organism": {
+                "$id": "#/properties/sunb_bio_molecules/properties/children_protein/items/properties/organism",
+                "type": "object",
+                "description": "Protein organism by species contain id and name.",
+                "required": [
+                  "id",
+                  "name"
+                ],
+                "properties": {
+                  "id": {
+                    "$id": "#/properties/sunb_bio_molecules/properties/children_protein/items/properties/organism/properties/id",
+                    "type": "integer",
+                    "description": "The value can be a NCBI Taxonomy ID.",
+                    "examples": [
+                      9606,
+                      10090,
+                      10116
+                    ]
+                  },
+                  "name": {
+                    "$id": "#/properties/sunb_bio_molecules/properties/children_protein/items/properties/organism/properties/name",
+                    "type": "string",
+                    "description": "The string contain the scientific name of the organism.",
+                    "examples": [
+                      "Homo sapiens",
+                      "Mus musculus",
+                      "Rattus norvegicus"
+                    ],
+                    "pattern": "^(.*)$"
+                  }
+                }
+              },
+              "name": {
+                "$id": "#/properties/sunb_bio_molecules/properties/children_protein/items/properties/name",
+                "type": "string",
+                "description": "The name of protein organism. A name displayed by a tooltip on mouseover.",
+                "examples": [
+                  "Human Proteins",
+                  "Mouse Proteins",
+                  "Rat Proteins",
+                ],
+                "pattern": "^(.*)$"
+              },
+              "size": {
+                "$id": "#/properties/sunb_bio_molecules/properties/children_protein/items/properties/size",
+                "type": "integer",
+                "description": "The size of protein by species. A size displayed by a tooltip on mouseover.",
+                "examples": [
+                  20950, 22282, 21673
+                ]
+              },
+              "children": {
+                "$id": "#/properties/sunb_bio_molecules/properties/children_protein/items/properties/children",
+                "type": "array",
+                "description": "The Children of the protein by species.",
+                "items": {
+                  "$id": "#/properties/sunb_bio_molecules/properties/children_protein/items/properties/children/items",
+                  "type": "object",
+                  "description": "The children of protein by species contain name and size.",
+                  "required": [
+                    "name",
+                    "size"
+                  ],
+                  "properties": {
+                    "name": {
+                      "$id": "#/properties/sunb_bio_molecules/properties/children_protein/items/properties/children/items/properties/name",
+                      "type": "string",
+                      "description": "The name of protein children. Leave it empty.",
+                      "default": "",
+                      "examples": [
+                        ""
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "size": {
+                      "$id": "#/properties/sunb_bio_molecules/properties/children_protein/items/properties/children/items/properties/size",
+                      "type": "integer",
+                      "description": "The Size of protein children. Leave it zero.",
+                      "default": 0,
+                      "examples": [
+                        0
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "venn_glycan_species": {
+      "$id": "#/properties/venn_glycan_species",
+      "type": "array",
+      "description": "The Venn_glycan_species glycan Venn diagram",
+      "items": {
+        "$id": "#/properties/venn_glycan_species/items",
+        "type": "object",
+        "description": "The Venn glycan species diagram contain sets, tooltipname, organism, name, and size.",
+        "required": [
+          "sets",
+          "tooltipname",
+          "organism",
+          "name",
+          "size"
+        ],
+        "properties": {
+          "sets": {
+            "$id": "#/properties/venn_glycan_species/items/properties/sets",
+            "type": "array",
+            "description": "Sets represent each glycan species as a circle and their relations with each other.",
+            "items": {
+              "$id": "#/properties/venn_glycan_species/items/properties/sets/items",
+              "type": "integer",
+              "description": "[0] - Human glycans, [1] - Mouse glycans, [2] - Rat glycans, [0 1] - Human & Mouse glycans,  [0 2] - Human & Rat glycans, [1 2] - Mouse & Rat glycans, [0 1 2] - Human & Mouse & Rat glycans.",
+              "examples": [
+                "[0]", "[1]", "[2]", "[0 1]", "[0 2]", "[1 2]", "[0 1 2]"
+              ]
+            }
+          },
+          "tooltipname": {
+            "$id": "#/properties/venn_glycan_species/items/properties/tooltipname",
+            "type": "string",
+            "description": "The Tooltipname displayed on a mouseover on each set.",
+            "examples": [
+              "Human glycans", "Mouse glycans", "Rat glycans", "Human & Mouse glycans", "Human & Rat glycans", "Mouse & Rat glycans", "Human & Mouse & Rat glycans".
+            ],
+            "pattern": "^(.*)$"
+          },
+          "organism": {
+            "$id": "#/properties/venn_glycan_species/items/properties/organism",
+            "type": "object",
+            "description": "The glycan organism contain organism_list and operation.",
+            "required": [
+              "organism_list",
+              "operation"
+            ],
+            "properties": {
+              "organism_list": {
+                "$id": "#/properties/venn_glycan_species/items/properties/organism/properties/organism_list",
+                "type": "array",
+                "description": "List of organisms.",
+                "items": {
+                  "$id": "#/properties/venn_glycan_species/items/properties/organism/properties/organism_list/items",
+                  "type": "object",
+                  "description": "This is the organism_list items contain id and name. In this case it can contain more than one set of id and name by species.",
+                  "required": [
+                    "id",
+                    "name"
+                  ],
+                  "properties": {
+                    "id": {
+                      "$id": "#/properties/venn_glycan_species/items/properties/organism/properties/organism_list/items/properties/id",
+                      "type": "integer",
+                      "description": "The value can be a NCBI Taxonomy ID.",
+                      "examples": [
+                        9606,
+                        10090,
+                        10116
+                      ]
+                    },
+                    "name": {
+                      "$id": "#/properties/venn_glycan_species/items/properties/organism/properties/organism_list/items/properties/name",
+                      "type": "string",
+                      "description": "The value can be a scientific species name.",
+                      "examples": [
+                        "Homo sapiens",
+                        "Mus musculus",
+                        "Rattus norvegicus"
+                      ],
+                      "pattern": "^(.*)$"
+                    }
+                  }
+                }
+              },
+              "operation": {
+                "$id": "#/properties/venn_glycan_species/items/properties/organism/properties/operation",
+                "type": "string",
+                "description": "Specifies type of operation to perform. If organism_list contain more than one sets ofid and name than use operation: AND. Sets [0, 1], [0, 2], [1, 2], and [0, 1, 2] has operation: AND.",
+                "default": "OR",
+                "examples": [
+                  "AND",
+                  "OR"
+                ],
+                "pattern": "^(.*)$"
+              }
+            }
+          },
+          "name": {
+            "$id": "#/properties/venn_glycan_species/items/properties/name",
+            "type": "string",
+            "description": "The Name displayed as a label for each circle (glycan species).",
+            "examples": [
+              "Human glycans",
+              "Mouse glycans",
+              "Rat glycans"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "size": {
+            "$id": "#/properties/venn_glycan_species/items/properties/size",
+            "type": "integer",
+            "description": "The size represents the circle of each glycan species and its relations to one another.",
+            "examples": [
+              "4046", "641", "250", "4378", "4183", "841"
+            ] 
+          }
+        }
+      }
+    },
+    "sunb_glycan_type_subtype": {
+      "$id": "#/properties/sunb_glycan_type_subtype",
+      "type": "object",
+      "description": "This is sunb_glycan_type_subtype sunburst of the statistics glycan types and subtypes consisting of the name and children.",
+      "required": [
+        "name",
+        "children"
+      ],
+      "properties": {
+        "name": {
+          "$id": "#/properties/sunb_glycan_type_subtype/properties/name",
+          "type": "string",
+          "description": "This is the glycan name. Leave it empty.",
+          "default": "",
+          "examples": [
+            ""
+          ],
+          "pattern": "^(.*)$"
+        },
+        "children": {
+          "$id": "#/properties/sunb_glycan_type_subtype/properties/children",
+          "type": "array",
+          "description": "List of glycan types and subtypes.",
+          "items": {
+            "$id": "#/properties/sunb_glycan_type_subtype/properties/children/items",
+            "type": "object",
+            "description": "The glycan type contain name, and children.",
+            "required": [
+              "name",
+              "children"
+            ],
+            "properties": {
+              "name": {
+                "$id": "#/properties/sunb_glycan_type_subtype/properties/children/items/properties/name",
+                "type": "string",
+                "description": "The Name of glycan type",
+                "examples": [
+                  "N-Glycan",
+                  "O-Glycan",
+                  "Other"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "children": {
+                "$id": "#/properties/sunb_glycan_type_subtype/properties/children/items/properties/children",
+                "type": "array",
+                "description": "The list of glycan subtypes.",
+                "items": {
+                  "$id": "#/properties/sunb_glycan_type_subtype/properties/children/items/properties/children/items",
+                  "type": "object",
+                  "description": "The glycan subtype consist of name and size",
+                  "required": [
+                    "name",
+                    "size"
+                  ],
+                  "properties": {
+                    "name": {
+                      "$id": "#/properties/sunb_glycan_type_subtype/properties/children/items/properties/children/items/properties/name",
+                      "type": "string",
+                      "description": "The Name of glycan subtype.",
+                      "examples": [
+                        "Hybrid",
+                        "Complex",
+                        "High-mannose",
+                        "Other",
+                        "Core 1",
+                        "Core 2",
+                        "Core 3",
+                        "Core 4",
+                        "Core 5",
+                        "Core 6",
+                        "Core 7"
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "size": {
+                      "$id": "#/properties/sunb_glycan_type_subtype/properties/children/items/properties/children/items/properties/size",
+                      "type": "integer",
+                      "description": "The Size of each glycan subtype.",
+                      "examples": [
+                        "85", "1796", "78", "606", "100", "189", "53", "38", "5", "8", "1".
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "sunb_glycan_organism_type": {
+      "$id": "#/properties/sunb_glycan_organism_type",
+      "type": "object",
+      "description": "This is sunb_glycan_organism_type glycan type by species sunburst of the statistics consisting of the name and children.",
+      "required": [
+        "name",
+        "children"
+      ],
+      "properties": {
+        "name": {
+          "$id": "#/properties/sunb_glycan_organism_type/properties/name",
+          "type": "string",
+          "description": "This is a sunburst name. Leave it empty.",
+          "default": "",
+          "examples": [
+            ""
+          ],
+          "pattern": "^(.*)$"
+        },
+        "children": {
+          "$id": "#/properties/sunb_glycan_organism_type/properties/children",
+          "type": "array",
+          "description": "The list of glycan organisms and types.",
+          "items": {
+            "$id": "#/properties/sunb_glycan_organism_type/properties/children/items",
+            "type": "object",
+            "description": "This are the children of the glycan contain organism, name, and children.",
+            "required": [
+              "organism",
+              "name",
+              "children"
+            ],
+            "properties": {
+              "organism": {
+                "$id": "#/properties/sunb_glycan_organism_type/properties/children/items/properties/organism",
+                "type": "object",
+                "description": "This glycan organism contain organism_list and operation.",
+                "required": [
+                  "organism_list",
+                  "operation"
+                ],
+                "properties": {
+                  "organism_list": {
+                    "$id": "#/properties/sunb_glycan_organism_type/properties/children/items/properties/organism/properties/organism_list",
+                    "type": "array",
+                    "description": "List of organisms.",
+                    "items": {
+                      "$id": "#/properties/sunb_glycan_organism_type/properties/children/items/properties/organism/properties/organism_list/items",
+                      "type": "object",
+                      "description": "This is the organism_list items contain id and name. In this case it has only one set of id and name.",
+                      "required": [
+                        "id",
+                        "name"
+                      ],
+                      "properties": {
+                        "id": {
+                          "$id": "#/properties/sunb_glycan_organism_type/properties/children/items/properties/organism/properties/organism_list/items/properties/id",
+                          "type": "integer",
+                          "description": "The value can be a NCBI Taxonomy ID.",
+                          "examples": [
+                            9606,
+                            10090,
+                            10116
+                          ]
+                        },
+                        "name": {
+                          "$id": "#/properties/sunb_glycan_organism_type/properties/children/items/properties/organism/properties/organism_list/items/properties/name",
+                          "type": "string",
+                          "description": "The string contain the scientific name of the organism.",
+                          "examples": [
+                            "Homo sapiens",
+                            "Mus musculus",
+                            "Rattus norvegicus"
+                          ],
+                          "pattern": "^(.*)$"
+                        }
+                      }
+                    }
+                  },
+                  "operation": {
+                    "$id": "#/properties/sunb_glycan_organism_type/properties/children/items/properties/organism/properties/operation",
+                    "type": "string",
+                    "description": "Specifies type of operation to perform. Use OR.",
+                    "default": "OR",
+                    "examples": [
+                      "AND",
+                      "OR"
+                    ],
+                    "pattern": "^(.*)$"
+                  }
+                }
+              },
+              "name": {
+                "$id": "#/properties/sunb_glycan_organism_type/properties/children/items/properties/name",
+                "type": "string",
+                "description": "The name of glycan species.",
+                "examples": [
+                  "Human Glycans",
+                  "Mouse Glycans",
+                  "Rat Glycans"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "children": {
+                "$id": "#/properties/sunb_glycan_organism_type/properties/children/items/properties/children",
+                "type": "array",
+                "description": "The children of glycan species (glycan type).",
+                "items": {
+                  "$id": "#/properties/sunb_glycan_organism_type/properties/children/items/properties/children/items",
+                  "type": "object",
+                  "description": "The children of glycan species contain organism, glycan type, name, and size.",
+                  "required": [
+                    "organism",
+                    "glycan_type",
+                    "name",
+                    "size"
+                  ],
+                  "properties": {
+                    "organism": {
+                      "$id": "#/properties/sunb_glycan_organism_type/properties/children/items/properties/children/items/properties/organism",
+                      "type": "object",
+                      "description": "The glycan organism contain organism_list and operation.",
+                      "required": [
+                        "organism_list",
+                        "operation"
+                      ],
+                      "properties": {
+                        "organism_list": {
+                          "$id": "#/properties/sunb_glycan_organism_type/properties/children/items/properties/children/items/properties/organism/properties/organism_list",
+                          "type": "array",
+                          "description": "List of organisms.",
+                          "items": {
+                            "$id": "#/properties/sunb_glycan_organism_type/properties/children/items/properties/children/items/properties/organism/properties/organism_list/items",
+                            "type": "object",
+                            "description": "This is the organism_list items contain id and name.",
+                            "required": [
+                              "id",
+                              "name"
+                            ],
+                            "properties": {
+                              "id": {
+                                "$id": "#/properties/sunb_glycan_organism_type/properties/children/items/properties/children/items/properties/organism/properties/organism_list/items/properties/id",
+                                "type": "integer",
+                                "description": "The value can be a NCBI Taxonomy ID.",
+                                "examples": [
+                                  9606,
+                                  10090,
+                                  10116
+                                ]
+                              },
+                              "name": {
+                                "$id": "#/properties/sunb_glycan_organism_type/properties/children/items/properties/children/items/properties/organism/properties/organism_list/items/properties/name",
+                                "type": "string",
+                                "description": "The scientific species name.",
+                                "examples": [
+                                  "Homo sapiens",
+                                  "Mus musculus",
+                                  "Rattus norvegicus"
+                                ],
+                                "pattern": "^(.*)$"
+                              }
+                            }
+                          }
+                        },
+                        "operation": {
+                          "$id": "#/properties/sunb_glycan_organism_type/properties/children/items/properties/children/items/properties/organism/properties/operation",
+                          "type": "string",
+                          "description": "Specifies type of operation to perform.",
+                          "default": "OR",
+                          "examples": [
+                            "AND",
+                            "OR"
+                          ],
+                          "pattern": "^(.*)$"
+                        }
+                      }
+                    },
+                    "glycan_type": {
+                      "$id": "#/properties/sunb_glycan_organism_type/properties/children/items/properties/children/items/properties/glycan_type",
+                      "type": "string",
+                      "description": "A list of glycan types.",
+                      "examples": [
+                        "N-Glycan",
+                        "O-Glycan",
+                        "Other"
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "name": {
+                      "$id": "#/properties/sunb_glycan_organism_type/properties/children/items/properties/children/items/properties/name",
+                      "type": "string",
+                      "description": "Tooltip name displayed on mouseover. The Name of glycan type by species.",
+                      "examples": [
+                        "Human N-Glycans",
+                        "Human O-Glycans",
+                        "Human Other",
+                        "Mouse N-Glycans",
+                        "Mouse O-Glycans",
+                        "Mouse Other",
+                        "Rat N-Glycans",
+                        "Rat O-Glycans",
+                        "Rat Other",
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "size": {
+                      "$id": "#/properties/sunb_glycan_organism_type/properties/children/items/properties/children/items/properties/size",
+                      "type": "integer",
+                      "description": "The size of glycan type.",
+                      "examples": [
+                        989, 312, 2001
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "donut_motif": {
+      "$id": "#/properties/donut_motif",
+      "type": "array",
+      "description": "This is donut_motif glycan motif donut chart.",
+      "items": {
+        "$id": "#/properties/donut_motif/items",
+        "type": "object",
+        "description": "The items of the glycan motif donut chart contain name and size.",
+        "required": [
+          "name",
+          "size"
+        ],
+        "properties": {
+          "name": {
+            "$id": "#/properties/donut_motif/items/properties/name",
+            "type": "string",
+            "description": "This is a scientific name of motif.",
+            "examples": [
+              "Lactosamine motif"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "size": {
+            "$id": "#/properties/donut_motif/items/properties/size",
+            "type": "integer",
+            "description": "This is a size of motif.",
+            "examples": [
+              14389
+            ]
+          }
+        }
+      }
+    },
+    "bar_mass_ranges": {
+      "$id": "#/properties/bar_mass_ranges",
+      "type": "object",
+      "description": "The bar chart of a glycan mass ranges contain stepsize and data.",
+      "required": [
+        "stepsize",
+        "data"
+      ],
+      "properties": {
+        "stepsize": {
+          "$id": "#/properties/bar_mass_ranges/properties/stepsize",
+          "type": "integer",
+          "description": "The Stepsize represents the number of glycans of a 50Da mass range for each bar. In this bar chart it is equals to 50.",
+          "default": 50,
+          "examples": [
+            50
+          ]
+        },
+        "data": {
+          "$id": "#/properties/bar_mass_ranges/properties/data",
+          "type": "array",
+          "description": "The data represents frequency of each bar.",
+          "items": {
+            "$id": "#/properties/bar_mass_ranges/properties/data/items",
+            "type": "integer",
+            "description": "The frequency data for every mass range.",
+            "examples": [
+              0, 0, 0, 6, 7, 7, 29, 44, 35, 42
+            ]
+          }
+        }
+      }
+    },
+    "bar_sugar_ranges": {
+      "$id": "#/properties/bar_sugar_ranges",
+      "type": "object",
+      "description": "The bar chart of a glycan sugar ranges contain stepsize and data.",
+      "required": [
+        "stepsize",
+        "data"
+      ],
+      "properties": {
+        "stepsize": {
+          "$id": "#/properties/bar_sugar_ranges/properties/stepsize",
+          "type": "integer",
+          "description": "The stepsize represents the number of glycans with a certain amount of residues. In this bar chart it is equals to 1.",
+          "default": 1,
+          "examples": [
+            1
+          ]
+        },
+        "data": {
+          "$id": "#/properties/bar_sugar_ranges/properties/data",
+          "type": "array",
+          "description": "The data represents frequency of resedue.",
+          "items": {
+            "$id": "#/properties/bar_sugar_ranges/properties/data/items",
+            "type": "integer",
+            "description": "Frequency of every resedue.",
+            "examples": [
+              17, 173, 401, 526, 589
+            ]
+          }
+        }
+      }
+    },
+    "sunb_canon_isof_prot": {
+      "$id": "#/properties/sunb_canon_isof_prot",
+      "type": "object",
+      "description": "This is sunburst of canononical proteins and isoforms consisting of the name and children.",
+      "required": [
+        "name",
+        "children"
+      ],
+      "properties": {
+        "name": {
+          "$id": "#/properties/sunb_canon_isof_prot/properties/name",
+          "type": "string",
+          "description": "This is a sunburst name. Leave it empty.",
+          "default": "",
+          "examples": [
+            ""
+          ],
+          "pattern": "^(.*)$"
+        },
+        "children": {
+          "$id": "#/properties/sunb_canon_isof_prot/properties/children",
+          "type": "array",
+          "description": "The list of protein organisms.",
+          "items": {
+            "$id": "#/properties/sunb_canon_isof_prot/properties/children/items",
+            "type": "object",
+            "description": "Protein organism contain of organism, name, and children.",
+            "required": [
+              "organism",
+              "name",
+              "children"
+            ],
+            "properties": {
+              "organism": {
+                "$id": "#/properties/sunb_canon_isof_prot/properties/children/items/properties/organism",
+                "type": "object",
+                "description": "Protein organism by species contain id and name.",
+                "required": [
+                  "id",
+                  "name"
+                ],
+                "properties": {
+                  "id": {
+                    "$id": "#/properties/sunb_canon_isof_prot/properties/children/items/properties/organism/properties/id",
+                    "type": "integer",
+                    "description": "The value can be a NCBI Taxonomy ID.",
+                    "examples": [
+                      9606,
+                      10090,
+                      10116
+                    ]
+                  },
+                  "name": {
+                    "$id": "#/properties/sunb_canon_isof_prot/properties/children/items/properties/organism/properties/name",
+                    "type": "string",
+                    "description": "The string contain the scientific name of the organism.",
+                    "examples": [
+                      "Homo sapiens",
+                      "Mus musculus",
+                      "Rattus norvegicus"
+                    ],
+                    "pattern": "^(.*)$"
+                  }
+                }
+              },
+              "name": {
+                "$id": "#/properties/sunb_canon_isof_prot/properties/children/items/properties/name",
+                "type": "string",
+                "description": "The name of protein organism. A name displayed by a tooltip on mouseover.",
+                "examples": [
+                  "Human Proteins",
+                  "Mouse Proteins",
+                  "Rat Proteins",
+                ],
+                "pattern": "^(.*)$"
+              },
+              "children": {
+                "$id": "#/properties/sunb_canon_isof_prot/properties/children/items/properties/children",
+                "type": "array",
+                "description": "The protein type (canonical protein and isoforms) for every organism.",
+                "items": {
+                  "$id": "#/properties/sunb_canon_isof_prot/properties/children/items/properties/children/items",
+                  "type": "object",
+                  "description": "The protein type (canonical protein and isoforms) for every organism contain organism, name, and size.",
+                  "required": [
+                    "organism",
+                    "name",
+                    "size"
+                  ],
+                  "properties": {
+                    "organism": {
+                      "$id": "#/properties/sunb_canon_isof_prot/properties/children/items/properties/children/items/properties/organism",
+                      "type": "object",
+                      "description": "The organism of canonical protein and isoforms contain id and name.",
+                      "required": [
+                        "id",
+                        "name"
+                      ],
+                      "properties": {
+                        "id": {
+                          "$id": "#/properties/sunb_canon_isof_prot/properties/children/items/properties/children/items/properties/organism/properties/id",
+                          "type": "integer",
+                          "description": "The value can be a NCBI Taxonomy ID.",
+                          "examples": [
+                            9606,
+                            10090,
+                            10116
+                          ]
+                        },
+                        "name": {
+                          "$id": "#/properties/sunb_canon_isof_prot/properties/children/items/properties/children/items/properties/organism/properties/name",
+                          "type": "string",
+                          "description": "The string contain the scientific name of the organism.",
+                          "examples": [
+                            "Homo sapiens",
+                            "Mus musculus",
+                            "Rattus norvegicus"
+                          ],
+                          "pattern": "^(.*)$"
+                        }
+                      }
+                    },
+                    "name": {
+                      "$id": "#/properties/sunb_canon_isof_prot/properties/children/items/properties/children/items/properties/name",
+                      "type": "string",
+                      "description": "The name of canonical and isoform species. A name displayed by a tooltip on mouseover.",
+                      "examples": [
+                        "Human Canonical",
+                        "Mouse Canonical",
+                        "Rat Canonical",
+                        "Human Isoforms",
+                        "Mouse Isoforms",
+                        "Rat Isoforms"
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "size": {
+                      "$id": "#/properties/sunb_canon_isof_prot/properties/children/items/properties/children/items/properties/size",
+                      "type": "integer",
+                      "description": "The size of canonical or Isoforms by species. A size displayed by a tooltip on mouseover.",
+                      "examples": [
+                        20950, 73583
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "venn_protein_homo": {
+      "$id": "#/properties/venn_protein_homo",
+      "type": "array",
+      "description": "The Venn diagram of the homo protein.",
+      "items": {
+        "$id": "#/properties/venn_protein_homo/items",
+        "type": "object",
+        "description": "The Venn diagram of the homo protein contain sets, tooltipname, name, and size.",
+        "required": [
+          "sets",
+          "tooltipname",
+          "name",
+          "size",
+          "organism"
+        ],
+        "properties": {
+          "sets": {
+            "$id": "#/properties/venn_protein_homo/items/properties/sets",
+            "type": "array",
+            "description": "Sets represent each molecule (protein, enzyme, glycoprotein) by species as a circle and their relations with each other.",
+            "items": {
+              "$id": "#/properties/venn_protein_homo/items/properties/sets/items",
+              "type": "integer",
+              "description": "All molecules (protein, enzyme, glycoprotein) and their relation with each other defind as a set.",
+              "examples": [
+                "[0]", "[1]", "[2]", "[0 1]", "[0 2]", "[1 2]", "[0 1 2]"
+              ]
+            }
+          },
+          "tooltipname": {
+            "$id": "#/properties/venn_protein_homo/items/properties/tooltipname",
+            "type": "string",
+            "description": "The Tooltipname displayed on a mouseover for each set.",
+            "examples": [
+              "Proteins", "Enzymes", "Glycoproteins"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "name": {
+            "$id": "#/properties/venn_protein_homo/items/properties/name",
+            "type": "string",
+            "description": "The name displayed on venn diagram. For sets [1], [2], [3] assign names 'Proteins', 'Enzymes', 'Glycoproteins' accordingly. For sets [0, 1], [0, 2], [0, 1, 2] leave name as an empty string. This is very important!",
+            "examples": [
+              "Proteins", "Enzymes", "Glycoproteins", " "
+            ],
+            "pattern": "^(.*)$"
+          },
+          "size": {
+            "$id": "#/properties/venn_protein_homo/items/properties/size",
+            "type": "integer",
+            "description": "The size of every molecule set. Shapes the venn diagram and displayed on tooltip.",
+            "examples": [
+              20950, 6000, 4715
+            ]
+          },
+          "organism": {
+            "$id": "#/properties/venn_protein_homo/items/properties/organism",
+            "type": "object",
+            "description": "Protein organism by species contain id and name.",
+            "required": [
+              "id",
+              "name"
+            ],
+            "properties": {
+              "id": {
+                "$id": "#/properties/venn_protein_homo/items/properties/organism/properties/id",
+                "type": "integer",
+                "description": "The value can be a NCBI Taxonomy ID.",
+                "examples": [
+                  9606,
+                  10090,
+                  10116
+                ]
+              },
+              "name": {
+                "$id": "#/properties/venn_protein_homo/items/properties/organism/properties/name",
+                "type": "string",
+                "description": "The string contain the scientific name of the organism.",
+                "examples": [
+                  "Homo sapiens",
+                  "Mus musculus",
+                  "Rattus norvegicus"
+                ],
+                "pattern": "^(.*)$"
+              }
+            }
+          }
+        }
+      }
+    },
+    "venn_protein_mus": {
+      "$id": "#/properties/venn_protein_mus",
+      "type": "array",
+      "description": "The Venn diagram of the mus protein.",
+      "items": {
+        "$id": "#/properties/venn_protein_mus/items",
+        "type": "object",
+        "description": "The Venn diagram of the mus protein contain sets, tooltipname, name, and size.",
+        "required": [
+          "sets",
+          "tooltipname",
+          "name",
+          "size",
+          "organism"
+        ],
+        "properties": {
+          "sets": {
+            "$id": "#/properties/venn_protein_mus/items/properties/sets",
+            "type": "array",
+            "description": "Sets represent each molecule (protein, enzyme, glycoprotein) by species as a circle and their relations with each other.",
+            "items": {
+              "$id": "#/properties/venn_protein_mus/items/properties/sets/items",
+              "type": "integer",
+              "description": "All molecules (protein, enzyme, glycoprotein) and their relation with each other defind as a set.",
+              "examples": [
+                "[0]", "[1]", "[2]", "[0 1]", "[0 2]", "[1 2]", "[0 1 2]"
+              ]
+            }
+          },
+          "tooltipname": {
+            "$id": "#/properties/venn_protein_mus/items/properties/tooltipname",
+            "type": "string",
+            "description": "The Tooltipname displayed on a mouseover for each set.",
+            "examples": [
+              "Proteins", "Enzymes", "Glycoproteins"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "name": {
+            "$id": "#/properties/venn_protein_mus/items/properties/name",
+            "type": "string",
+            "description": "The name displayed on venn diagram. For sets [1], [2], [3] assign names 'Proteins', 'Enzymes', 'Glycoproteins' accordingly. For sets [0, 1], [0, 2], [0, 1, 2] leave name as an empty string. This is very important!",
+            "examples": [
+              "Proteins", "Enzymes", "Glycoproteins", " "
+            ],
+            "pattern": "^(.*)$"
+          },
+          "size": {
+            "$id": "#/properties/venn_protein_mus/items/properties/size",
+            "type": "integer",
+            "description": "The size of every molecule set. Shapes the venn diagram and displayed on tooltip.",
+            "examples": [
+              22282, 8000, 3788
+            ]
+          },
+          "organism": {
+            "$id": "#/properties/venn_protein_mus/items/properties/organism",
+            "type": "object",
+            "description": "Protein organism by species contain id and name.",
+            "required": [
+              "id",
+              "name"
+            ],
+            "properties": {
+              "id": {
+                "$id": "#/properties/venn_protein_mus/items/properties/organism/properties/id",
+                "type": "integer",
+                "description": "The value can be a NCBI Taxonomy ID.",
+                "examples": [
+                  9606,
+                  10090,
+                  10116
+                ]
+              },
+              "name": {
+                "$id": "#/properties/venn_protein_mus/items/properties/organism/properties/name",
+                "type": "string",
+                "description": "The string contain the scientific name of the organism.",
+                "examples": [
+                  "Homo sapiens",
+                  "Mus musculus",
+                  "Rattus norvegicus"
+                ],
+                "pattern": "^(.*)$"
+              }
+            }
+          }
+        }
+      }
+    },
+    "venn_protein_rat": {
+      "$id": "#/properties/venn_protein_rat",
+      "type": "array",
+      "description": "The Venn diagram of the rat protein.",
+      "items": {
+        "$id": "#/properties/venn_protein_rat/items",
+        "type": "object",
+        "description": "The Venn diagram of the homo protein contain sets, tooltipname, name, and size.",
+        "required": [
+          "sets",
+          "tooltipname",
+          "name",
+          "size",
+          "organism"
+        ],
+        "properties": {
+          "sets": {
+            "$id": "#/properties/venn_protein_rat/items/properties/sets",
+            "type": "array",
+            "description": "Sets represent each molecule (protein, enzyme, glycoprotein) by species as a circle and their relations with each other.",
+            "items": {
+              "$id": "#/properties/venn_protein_rat/items/properties/sets/items",
+              "type": "integer",
+              "description": "All molecules (protein, enzyme, glycoprotein) and their relation with each other defind as a set.",
+              "examples": [
+                "[0]", "[1]", "[2]", "[0 1]", "[0 2]", "[1 2]", "[0 1 2]"
+              ]
+            }
+          },
+          "tooltipname": {
+            "$id": "#/properties/venn_protein_rat/items/properties/tooltipname",
+            "type": "string",
+            "description": "The Tooltipname displayed on a mouseover for each set.",
+            "examples": [
+              "Proteins", "Enzymes", "Glycoproteins"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "name": {
+            "$id": "#/properties/venn_protein_rat/items/properties/name",
+            "type": "string",
+            "description": "The name displayed on venn diagram. For sets [1], [2], [3] assign names 'Proteins', 'Enzymes', 'Glycoproteins' accordingly. For sets [0, 1], [0, 2], [0, 1, 2] leave name as an empty string. This is very important!",
+            "examples": [
+              "Proteins", "Enzymes", "Glycoproteins", " "
+            ],
+            "pattern": "^(.*)$"
+          },
+          "size": {
+            "$id": "#/properties/venn_protein_rat/items/properties/size",
+            "type": "integer",
+            "description": "The size of every molecule set. Shapes the venn diagram and displayed on tooltip.",
+            "examples": [
+              21673, 10000, 2086
+            ]
+          },
+          "organism": {
+            "$id": "#/properties/venn_protein_rat/items/properties/organism",
+            "type": "object",
+            "description": "Protein organism by species contain id and name.",
+            "required": [
+              "id",
+              "name"
+            ],
+            "properties": {
+              "id": {
+                "$id": "#/properties/venn_protein_rat/items/properties/organism/properties/id",
+                "type": "integer",
+                "description": "The value can be a NCBI Taxonomy ID.",
+                "examples": [
+                  9606,
+                  10090,
+                  10116
+                ]
+              },
+              "name": {
+                "$id": "#/properties/venn_protein_rat/items/properties/organism/properties/name",
+                "type": "string",
+                "description": "The string contain the scientific name of the organism.",
+                "examples": [
+                  "Homo sapiens",
+                  "Mus musculus",
+                  "Rattus norvegicus"
+                ],
+                "pattern": "^(.*)$"
+              }
+            }
+          }
+        }
+      }
+    },
+    "pie_glycohydrolases_prot": {
+      "$id": "#/properties/pie_glycohydrolases_prot",
+      "type": "array",
+      "description": "The glycohydrolases proteins pie chart.",
+      "items": {
+        "$id": "#/properties/pie_glycohydrolases_prot/items",
+        "type": "object",
+        "description": "The glycohydrolases proteins pie chart contain organism, name, and size.",
+        "required": [
+          "organism",
+          "name",
+          "size"
+        ],
+        "properties": {
+          "organism": {
+            "$id": "#/properties/pie_glycohydrolases_prot/items/properties/organism",
+            "type": "object",
+            "description": "The protein organism contain id and name.",
+            "required": [
+              "id",
+              "name"
+            ],
+            "properties": {
+              "id": {
+                "$id": "#/properties/pie_glycohydrolases_prot/items/properties/organism/properties/id",
+                "type": "integer",
+                "description": "The value can be a NCBI Taxonomy ID.",
+                "examples": [
+                  9606,
+                  10090,
+                  10116
+                ]
+              },
+              "name": {
+                "$id": "#/properties/pie_glycohydrolases_prot/items/properties/organism/properties/name",
+                "type": "string",
+                "description": "The string contain the scientific name of the organism.",
+                "examples": [
+                  "Homo sapiens",
+                  "Mus musculus",
+                  "Rattus norvegicus"
+                ],
+                "pattern": "^(.*)$"
+              }
+            }
+          },
+          "name": {
+            "$id": "#/properties/pie_glycohydrolases_prot/items/properties/name",
+            "type": "string",
+            "description": "The species name.",
+            "examples": [
+              "Human", 
+              "Mouse",
+              "Rat"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "size": {
+            "$id": "#/properties/pie_glycohydrolases_prot/items/properties/size",
+            "type": "integer",
+            "description": "The species size.",
+            "examples": [
+              84, 77, 35
+            ]
+          }
+        }
+      }
+    },
+    "pie_glycosyltransferases_prot": {
+      "$id": "#/properties/pie_glycosyltransferases_prot",
+      "type": "array",
+      "description": "The glycosyltransferases proteins pie chart.",
+      "items": {
+        "$id": "#/properties/pie_glycosyltransferases_prot/items",
+        "type": "object",
+        "description": "The glycosyltransferases proteins pie chart contain organism, name, and size.",
+        "required": [
+          "organism",
+          "name",
+          "size"
+        ],
+        "properties": {
+          "organism": {
+            "$id": "#/properties/pie_glycosyltransferases_prot/items/properties/organism",
+            "type": "object",
+            "description": "The protein organism contain id and name.",
+            "required": [
+              "id",
+              "name"
+            ],
+            "properties": {
+              "id": {
+                "$id": "#/properties/pie_glycosyltransferases_prot/items/properties/organism/properties/id",
+                "type": "integer",
+                "description": "The value can be a NCBI Taxonomy ID.",
+                "examples": [
+                  9606,
+                  10090,
+                  10116
+                ]
+              },
+              "name": {
+                "$id": "#/properties/pie_glycosyltransferases_prot/items/properties/organism/properties/name",
+                "type": "string",
+                "description": "The string contain the scientific name of the organism.",
+                "examples": [
+                  "Homo sapiens",
+                  "Mus musculus",
+                  "Rattus norvegicus"
+                ],
+                "pattern": "^(.*)$"
+              }
+            }
+          },
+          "name": {
+            "$id": "#/properties/pie_glycosyltransferases_prot/items/properties/name",
+            "type": "string",
+            "description": "The species name.",
+            "examples": [
+              "Human", 
+              "Mouse",
+              "Rat"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "size": {
+            "$id": "#/properties/pie_glycosyltransferases_prot/items/properties/size",
+            "type": "integer",
+            "description": "The species size.",
+            "examples": [
+              84, 77, 35
+            ]
+          }
+        }
+      }
+    },
+    "sunb_glycoprot_rep_pred_glyc": {
+      "$id": "#/properties/sunb_glycoprot_rep_pred_glyc",
+      "type": "object",
+      "description": "The glycoproteins with reported with glycan or without glycans and predicted glycans sunburst by species contain name and children.",
+      "required": [
+        "name",
+        "children"
+      ],
+      "properties": {
+        "name": {
+          "$id": "#/properties/sunb_glycoprot_rep_pred_glyc/properties/name",
+          "type": "string",
+          "description": "The name of sunburst. Leave it empty.",
+          "default": "",
+          "examples": [
+            ""
+          ],
+          "pattern": "^(.*)$"
+        },
+        "children": {
+          "$id": "#/properties/sunb_glycoprot_rep_pred_glyc/properties/children",
+          "type": "array",
+          "description": "The children are proteins by species.",
+          "items": {
+            "$id": "#/properties/sunb_glycoprot_rep_pred_glyc/properties/children/items",
+            "type": "object",
+            "description": "The proteins by species contain name and children.",
+            "required": [
+              "name",
+              "children"
+            ],
+            "properties": {
+              "name": {
+                "$id": "#/properties/sunb_glycoprot_rep_pred_glyc/properties/children/items/properties/name",
+                "type": "string",
+                "description": "The Name of protein by species.",
+                "examples": [
+                  "Human Proteins",
+                  "Mouse Proteins",
+                  "Rat Proteins"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "children": {
+                "$id": "#/properties/sunb_glycoprot_rep_pred_glyc/properties/children/items/properties/children",
+                "type": "array",
+                "description": "The children of protein by species represent reported with glycan structure RWGS, reported without glycan structure RWOGS, and reported glycans.",
+                "items": {
+                  "$id": "#/properties/sunb_glycoprot_rep_pred_glyc/properties/children/items/properties/children/items",
+                  "type": "object",
+                  "description": "Each protein child contain organism, name, and size.",
+                  "required": [
+                    "organism",
+                    "name",
+                    "size"
+                  ],
+                  "properties": {
+                    "organism": {
+                      "$id": "#/properties/sunb_glycoprot_rep_pred_glyc/properties/children/items/properties/children/items/properties/organism",
+                      "type": "object",
+                      "description": "The protein organism contain id and name.",
+                      "required": [
+                        "id",
+                        "name"
+                      ],
+                      "properties": {
+                        "id": {
+                          "$id": "#/properties/sunb_glycoprot_rep_pred_glyc/properties/children/items/properties/children/items/properties/organism/properties/id",
+                          "type": "integer",
+                          "description": "The value can be a NCBI Taxonomy ID.",
+                          "examples": [
+                            9606,
+                            10090,
+                            10116
+                          ]
+                        },
+                        "name": {
+                          "$id": "#/properties/sunb_glycoprot_rep_pred_glyc/properties/children/items/properties/children/items/properties/organism/properties/name",
+                          "type": "string",
+                          "description": "The string contain the scientific name of the organism.",
+                          "examples": [
+                            "Homo sapiens",
+                            "Mus musculus",
+                            "Rattus norvegicus"
+                          ],
+                          "pattern": "^(.*)$"
+                        }
+                      }
+                    },
+                    "name": {
+                      "$id": "#/properties/sunb_glycoprot_rep_pred_glyc/properties/children/items/properties/children/items/properties/name",
+                      "type": "string",
+                      "description": "The Name of protein's children by species. Displayed by tooltip. RWGS - Reported With Glycan Structures, RWOGS - Reported WithOut Glycan Structures.",
+                      "examples": [
+                        "Human RWGS",
+                        "Human RWOGS",
+                        "Human Predicted",
+                        "Mouse RWGS",
+                        "Mouse RWOGS",
+                        "Mouse Predicted",
+                        "Rat RWGS",
+                        "Rat RWOGS",
+                        "Rat Predicted",
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "size": {
+                      "$id": "#/properties/sunb_glycoprot_rep_pred_glyc/properties/children/items/properties/children/items/properties/size",
+                      "type": "integer",
+                      "description": "The size of protein's children by species.",
+                      "examples": [
+                        1084, 700, 2946
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

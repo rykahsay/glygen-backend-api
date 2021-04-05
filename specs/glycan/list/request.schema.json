@@ -1,0 +1,57 @@
+{
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "description": "Object storing information to summarize settings that have been used to only retrieve a subset of the entire result list. These settings are an offset of the first entry, the number of requested entries (limit), the order of the result list (sort) and the order direction (order).",
+    "properties": {
+        "id": {
+            "$id": "/properties/id",
+            "type": "string",
+            "description": "If the search was successful the ID of the result list is returned.",
+            "examples": [
+                "ABV1234MN56BN"
+            ]
+        },
+        "offset": {
+            "$id": "/properties/offset",
+            "type": "integer",
+            "description": "After ordering and sorting of the result list the offset specifies the first entry in the list that is part of the result set. ",
+            "default": 1,
+            "examples": [
+                1
+            ]
+        },
+        "limit": {
+            "$id": "/properties/limit",
+            "type": "integer",
+            "description": "Limit specifies how many entries have been requested of this list.",
+            "default": 20,
+            "examples": [
+                10
+            ]
+        },
+        "sort": {
+            "$id": "/properties/sort",
+            "type": "string",
+            "description": "This field is optional if not provided backend will decide sorting logic. Specifies which criteria was used to sort the list. Possible values are glytoucan_ac, mass, mass_pme, number_enzymes, number_proteins and number_monosaccharides.",
+            "default": "glytoucan_ac",
+            "examples": [
+                "glytoucan_ac"
+            ]
+        },
+        "order": {
+            "$id": "/properties/order",
+            "type": "string",
+            "description": "Specifies the order direction of the list. Possible values are asc (ascendant) and desc (descended). ",
+            "default": "asc",
+            "examples": [
+                "asc"
+            ]
+        }
+    },
+    "required": [
+        "offset",
+        "limit",
+        "id",
+        "order"
+    ]
+}

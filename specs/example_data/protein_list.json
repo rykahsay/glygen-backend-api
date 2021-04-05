@@ -1,0 +1,34 @@
+{
+    "query": {
+        "execution_time": "2020-06-30 14:59:25 EDT-0400", 
+        "uniprot_canonical_ac": "P01116-1", 
+        "operation": "AND", 
+        "version": "1.0.0", 
+        "query_type": "protein_search"
+    }, 
+    "pagination": {
+        "sort": "hit_score", 
+        "total_length": 1, 
+        "limit": 20, 
+        "order": "desc", 
+        "offset": 1
+    }, 
+    "query_error": [
+        {
+            "value": "P01116-1", 
+            "key": "uniprot_canonical_ac"
+        }
+    ], 
+    "results": [
+        {
+            "uniprot_canonical_ac": "P01116-1", 
+            "mass": 21656.0, 
+            "protein_name_short": "", 
+            "refseq_ac": "NP_004976.2", 
+            "refseq_name": "GTPase KRas isoform b", 
+            "organism": "Homo sapiens", 
+            "gene_name": "C-K-RAS; c-Ki-ras; c-Ki-ras2; CFC2; K-Ras; K-Ras 2; K-RAS2A; K-RAS2B; K-RAS4A; K-RAS4B; KI-RAS; KRAS1; KRAS2; NS; NS3; OES; RALD; RASK2; RASK2; KRAS2; KRAS", 
+            "protein_name_long": "GTPase KRas; c-Ki-ras; K-Ras 2; Ki-Ras; c-K-ras"
+        }
+    ]
+}

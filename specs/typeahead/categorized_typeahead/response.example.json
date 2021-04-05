@@ -1,0 +1,62 @@
+[
+  {
+    "category": "Molecular Function", 
+    "label": "protein kinase binding"
+  }, 
+  {
+    "category": "Molecular Function", 
+    "label": "protein serine/threonine kinase activity"
+  }, 
+  {
+    "category": "Molecular Function", 
+    "label": "protein tyrosine kinase activity"
+  }, 
+  {
+    "category": "Molecular Function", 
+    "label": "receptor tyrosine kinase binding"
+  }, 
+  {
+    "category": "Molecular Function", 
+    "label": "protein serine/threonine kinase activator activity"
+  }, 
+  {
+    "category": "Biological Process", 
+    "label": "positive regulation of protein kinase B signaling"
+  }, 
+  {
+    "category": "Biological Process", 
+    "label": "protein kinase B signaling"
+  }, 
+  {
+    "category": "Biological Process", 
+    "label": "positive regulation of phosphatidylinositol 3-kinase signaling"
+  }, 
+  {
+    "category": "Biological Process", 
+    "label": "regulation of protein kinase activity"
+  }, 
+  {
+    "category": "Biological Process", 
+    "label": "positive regulation of protein kinase activity"
+  }, 
+  {
+    "category": "Cellular Component", 
+    "label": "cyclin-dependent protein kinase holoenzyme complex"
+  }, 
+  {
+    "category": "Cellular Component", 
+    "label": "IkappaB kinase complex"
+  }, 
+  {
+    "category": "Cellular Component", 
+    "label": "DNA-dependent protein kinase-DNA ligase 4 complex"
+  }, 
+  {
+    "category": "Cellular Component", 
+    "label": "cytoplasmic cyclin-dependent protein kinase holoenzyme complex"
+  }, 
+  {
+    "category": "Cellular Component", 
+    "label": "nucleotide-activated protein kinase complex"
+  }
+]

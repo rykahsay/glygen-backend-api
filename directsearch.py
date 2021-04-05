@@ -66,6 +66,28 @@ def protein():
     return jsonify(res_obj), http_code
 
 
+@app.route('/directsearch/gene/', methods=['GET', 'POST'])
+def gene():
+
+    res_obj = {}
+    try:
+        query_value = util.get_arg_value("query", request.method)
+        if query_value == "":
+            res_obj = {"error_list":[{"error_code": "missing-query-key-in-query-json"}]}
+        elif util.is_valid_json(query_value) == False:
+            res_obj = {"error_list":[{"error_code": "invalid-query-json"}]}
+        else:
+            query_obj = json.loads(query_value)
+            util.trim_object(query_obj)
+            res_obj = apilib.gene(query_obj, config_obj)
+    except Exception, e:
+        res_obj = errorlib.get_error_obj("gene_search_direct", traceback.format_exc(), path_obj)
+
+
+    http_code = 500 if "error_list" in res_obj else 200
+    return jsonify(res_obj), http_code
+
+
 
 @app.route('/directsearch/glycan_to_biosynthesis_enzymes/', methods=['GET', 'POST'])
 def glycan_to_biosynthesis_enzymes():

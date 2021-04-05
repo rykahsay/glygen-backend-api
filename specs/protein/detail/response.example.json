@@ -1,0 +1,472 @@
+{
+  "uniprot": {
+    "url": "http://www.uniprot.org/uniprot/P29460-1/",
+    "uniprot_canonical_ac": "P29460-1",
+    "uniprot_id": "IL12B_HUMAN",
+    "uniprot_canonical_ac_length": "402"
+  },
+  "history": [
+    "introduced in data release 1.5.11"
+  ],
+  "mass": {
+     "chemical_mass": 638
+  },
+  "protein_names":[
+    {
+        "type":"recommended",
+        "name":"Sex hormone-binding globulin",
+        "resource":"UniProtKB"
+    },
+    {
+        "type":"synonym",
+        "name":"SHBG",
+        "resource":"UniProtKB"
+    }
+  ],
+  "gene_names":[
+    {
+        "type":"recommended",
+        "name":"MGAT1",
+        "resource":"UniProtKB"
+    },
+    {
+        "type":"synonym",
+        "name":"MGT1",
+        "resource":"UniProtKB"
+    }
+  ],
+  "species": [
+    {
+      "name": "human",
+      "common_name": "man",
+      "tax_id": 9606,
+      "url": "https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&id=9606",
+      "evidence": [
+        {
+          "database": "UniProt",
+          "id": "P04278",
+          "url": "http://glycomics.ccrc.uga.edu/ontologies"
+        }
+      ]
+    }
+  ],
+  "gene": [
+    {
+      "name": "MGAT1",
+      "url": "https://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=HGNC:7044",
+      "locus": {
+        "chromosome": "1",
+        "start_pos": 1233131,
+        "end_pos": 332423,
+        "strand":"+",
+        "evidence": [
+          {
+            "database": "Ensemble Gene",
+            "id": "ENSG00000090659",
+            "url": "http://useast.ensembl.org/Homo_sapiens/Gene/Summary?db=core;g=ENSG00000090659;r=19:7739994-7747564"
+          },
+          {
+            "database": "Ensemble Peptide",
+            "id": "ENSG00000090659",
+            "url": "http://useast.ensembl.org/Homo_sapiens/Gene/Summary?db=core;g=ENSG00000090659;r=19:7739994-7747564"
+          }
+        ]
+      }
+    }
+  ],
+  "ptm_annotation": [
+    {
+      "annotation": "High frequency non-synonymous mutation in BRCA (DOID:001) cancer",
+      "evidence": [
+        {
+          "database": "Ensemble Gene",
+          "id": "ENSG00000090659",
+          "url": "http://useast.ensembl.org/Homo_sapiens/Gene/Summary?db=core;g=ENSG00000090659;r=19:7739994-7747564"
+        },
+        {
+          "database": "Ensemble Peptide",
+          "id": "ENSG00000090659",
+          "url": "http://useast.ensembl.org/Homo_sapiens/Gene/Summary?db=core;g=ENSG00000090659;r=19:7739994-7747564"
+        }
+      ]
+    }
+  ],
+  "phosphorylation": [
+        {
+            "residue": "Ser",
+            "position": "1120",
+            "evidence": [
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/pubmed/10347170",
+                    "id": "10347170",
+                    "database": "PubMed"
+                }
+            ],
+            "kinase_uniprot_canonical_ac": "Q9UQM7-1",
+            "kinase_gene_name": "CAMK2A"
+        }
+  ],
+  "crossref": [
+    {
+      "database": "PubChem Substance",
+      "id": "252295406",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/substance/252295406#section=Top"
+    }
+  ],
+  "synthesized_glycans": [
+    {
+      "glytoucan_ac": "G123456",
+      "type": "N-Glycan"
+    }
+  ],
+  "pathway": [
+    {
+      "resource": "KEGG",
+      "id": "hsa:1081",
+      "url": "https://www.genome.jp/dbget-bin/www_bget?hsa:1081",
+      "name": "something"
+    }
+  ],
+  "sequence": {
+    "sequence": "MESRGPLATSRLLLLLLLLLLRHTRQGWALRPVLPTQSAHDPPAVHLSNGPGQEPIAVMTFDLTKITKTSSSFEVRTWDPEGVIFYGDTNPKDDWFMLGLRDGRPEIQLHNHWAQLTVGAGPRLDDGRWHQVEVKMEGDSVLLEVDGEEVLRLRQVSGPLTSKRHPIMRIALGGLLFPASNLRLPLVPALDGCLRRDSWLDKQAEISASAPTSLRSCDVESNPGIFLPPGTQAEFNLRDIPQPHAEPWAFSLDLGLKQAAGSGHLLALGTPENPSWLSLHLQDQKVVLSSGSGPGLDLPLVLGLPLQLKLSMSRVVLSQGSKMKALALPPLGLAPLLNLWAKPQGRLFLGALPGEDSSTSFCLNGLWAQGQRLDVDQALNRSHEIWTHSCPQSPGNGTDASH",
+    "length": 402
+  },
+  "keywords": [
+    "3D-structure"
+  ],
+  "isoforms": [
+    {
+      "isoform_ac": "P04278-4",
+      "Protein_name": "Hepatocyte growth factor",
+      "locus": {
+        "chromosome": "1",
+        "start_pos": 1233131,
+        "end_pos": 332423,
+        "strand":"+",
+        "evidence": [
+          {
+            "database": "Ensemble Transcript",
+            "id": "ENSG00000090659",
+            "url": "http://useast.ensembl.org/Homo_sapiens/Gene/Summary?db=core;g=ENSG00000090659;r=19:7739994-7747564"
+          },
+          {
+            "database": "Ensemble Peptide",
+            "id": "ENSG00000090659",
+            "url": "http://useast.ensembl.org/Homo_sapiens/Gene/Summary?db=core;g=ENSG00000090659;r=19:7739994-7747564"
+          }
+        ]
+      },
+      "sequence": {
+        "sequence": "MESRGPLATSRLLLLLLLLLLRHTRQGWALRPVLPTQSAHDPPAVHLSNGPGQEPIAVMTFDLTKITKTSSSFEVRTWDPEGVIFYGDTNPKDDWFMLGLRDGRPEIQLHNHWAQLTVGAGPRLDDGRWHQVEVKMEGDSVLLEVDGEEVLRLRQVSGPLTSKRHPIMRIALGGLLFPASNLRLPLVPALDGCLRRDSWLDKQAEISASAPTSLRSCDVESNPGIFLPPGTQAEFNLRDIPQPHAEPWAFSLDLGLKQAAGSGHLLALGTPENPSWLSLHLQDQKVVLSSGSGPGLDLPLVLGLPLQLKLSMSRVVLSQGSKMKALALPPLGLAPLLNLWAKPQGRLFLGALPGEDSSTSFCLNGLWAQGQRLDVDQALNRSHEIWTHSCPQSPGNGTDASH",
+        "length": 402
+      },
+      "url": "https://pubchem.ncbi.nlm.nih.gov/substance/252295406#section=Top"
+    }
+  ],
+  "orthologs": [
+    {
+      "uniprot_canonical_ac": "P29460-1",
+      "organism": "Mus_musculus",
+      "common_name": "man",
+      "tax_id": 1009,
+      "protein_name": "6.8 kDa mito",
+      "evidence": [
+        {
+          "database": "Ensemble Transcript",
+          "id": "ENSG00000090659",
+          "url": "http://useast.ensembl.org/Homo_sapiens/Gene/Summary?db=core;g=ENSG00000090659;r=19:7739994-7747564"
+        },
+        {
+          "database": "Ensemble Peptide",
+          "id": "ENSG00000090659",
+          "url": "http://useast.ensembl.org/Homo_sapiens/Gene/Summary?db=core;g=ENSG00000090659;r=19:7739994-7747564"
+        }
+      ],
+      "sequence": {
+        "sequence": "MESRGPLATSRLLLLLLLLLLRHTRQGWALRPVLPTQSAHDPPAVHLSNGPGQEPIAVMTFDLTKITKTSSSFEVRTWDPEGVIFYGDTNPKDDWFMLGLRDGRPEIQLHNHWAQLTVGAGPRLDDGRWHQVEVKMEGDSVLLEVDGEEVLRLRQVSGPLTSKRHPIMRIALGGLLFPASNLRLPLVPALDGCLRRDSWLDKQAEISASAPTSLRSCDVESNPGIFLPPGTQAEFNLRDIPQPHAEPWAFSLDLGLKQAAGSGHLLALGTPENPSWLSLHLQDQKVVLSSGSGPGLDLPLVLGLPLQLKLSMSRVVLSQGSKMKALALPPLGLAPLLNLWAKPQGRLFLGALPGEDSSTSFCLNGLWAQGQRLDVDQALNRSHEIWTHSCPQSPGNGTDASH",
+        "length": 402
+      }
+    }
+  ],
+  "publication": [
+    {
+      "title": "The carbohydrate chains of the beta subunit of human chorionic gonadotropin produced by the choriocarcinoma cell line BeWo. Novel O-linked and novel bisecting-GlcNAc-containing N-linked carbohydrates.",
+      "journal": "European journal of biochemistry",
+      "authors": "Hard K, Damm JB, Spruijt MP, Bergwerff AA, Kamerling JP, Van Dedem GW, Vliegenthart JF",
+      "date": "1992",
+      "reference":[
+        {
+            "type":"PMID",
+            "id":"1374031",
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/1374031"
+        }  
+      ],
+      "evidence": [
+        { 
+          "url": "http://www.unicarbkb.org/structure/1189",
+          "id": "1189",
+          "database": "UniCarbKB"
+        }
+      ]
+    }
+  ],
+  "glycosylation": [
+    {
+      "residue": "T",
+      "position": 36,
+      "glytoucan_ac": "G123456",
+      "type": "N-Glycan",
+      "subtype":"dffd",
+      "evidence": [
+        {
+          "database": "UniProt",
+          "id": "P04278",
+          "url": "http://glycomics.ccrc.uga.edu/ontologies"
+        }
+      ]
+    }
+  ],
+  "interactions": [
+    {
+      "interactor_type": "glycosaminoglycan",
+      "interactor_name": "chondroitin sulphate A",
+      "interactor_id": "G123456",
+      "evidence": [
+        {
+          "database": "UniProt",
+          "id": "P04278",
+          "url": "http://glycomics.ccrc.uga.edu/ontologies"
+        }
+      ]
+    }
+  ],
+  "glycation": [
+    {
+      "residue": "Lys371",
+      "reducing_end_sugar": "Glc",
+      "glycation_annotation": "Glc(glycation)lysine;inPHF;in VITRO",
+      "evidence": [
+        {
+          "database": "UniProt",
+          "id": "P04278",
+          "url": "http://glycomics.ccrc.uga.edu/ontologies"
+        }
+      ]
+    }
+  ],
+  "function": [
+    {
+      "annotation": "Sex hormon binding protein",
+      "evidence": [
+        {
+          "database": "UniProtKb",
+          "id": "P04278",
+          "url": "http://uniprot.org/P04278"
+        }
+      ],
+      "url": "http://glycomics.ccrc.uga.edu/ontologies"
+    }
+  ],
+  "go_annotation": {
+    "categories": [
+      {
+        "name": "Cellular Component",
+        "total": 100,
+        "go_terms": [
+          {
+            "name": "extracellular region",
+            "id": "GO:0005576",
+            "url": "https://www.ebi.ac.uk/QuickGO/term/GO:0005576",
+            "evidence": [
+              {
+                "database": "UniProt",
+                "id": "P14210",
+                "url": "https://www.uniprot.org/uniprot/P14210"
+              },
+              {
+                "database": "UniProt",
+                "id": "P14210",
+                "url": "https://www.uniprot.org/uniprot/P14210"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Biological Process",
+        "total": 99,
+        "go_terms": [
+          {
+            "name": "mitotic cell cycle",
+            "id": "GO:0000278",
+            "url": "https://www.ebi.ac.uk/QuickGO/term/GO:0000278",
+            "evidence": [
+              {
+                "database": "UniProt",
+                "id": "P14210",
+                "url": "https://www.uniprot.org/uniprot/P14210"
+              },
+              {
+                "database": "UniProt",
+                "id": "P14210",
+                "url": "https://www.uniprot.org/uniprot/P14210"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Molecular Function",
+        "total": 101,
+        "go_terms": [
+          {
+            "name": "chemoattractant activity",
+            "id": "GO:0042056",
+            "url": "https://www.ebi.ac.uk/QuickGO/term/GO:0042056",
+            "evidence": [
+              {
+                "database": "UniProt",
+                "id": "P14210",
+                "url": "https://www.uniprot.org/uniprot/P14210"
+              },
+              {
+                "database": "UniProt",
+                "id": "P14210",
+                "url": "https://www.uniprot.org/uniprot/P14210"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "disease": [
+    { 
+      "recommended_name":{
+          "name": "Osteoarthritis of first carpometacarpal joint",
+          "description":"dff dfsdfdsf",
+          "id": "DOID:162",
+          "resource":"Disease Ontology",
+          "url": "https://www.icd10data.com/ICD10CM/Codes/M00-M99/M15-M19/M18-/M18"
+      },
+      "synonyms":[
+            {
+                "name": "Some name in ICD10",
+                "id": "M18",
+                "resource":"ICD10",
+                "url": " some url in ICD10"
+            }
+      ],
+      "evidence": [
+        {
+          "database": "UniProtKb",
+          "id": "P04278",
+          "url": "http://uniprot.org/P04278"
+        }
+      ]
+    }
+  ],
+  "snv": [
+        {
+            "alt_nt": "A", 
+            "chr_id": "7", 
+            "ref_nt": "G", 
+            "chr_pos": "81372782",
+            "minor_allelic_frequency":"0.001",
+            "sequence_org": "T",
+            "sequence_mut": "N",
+            "start_pos": 36,
+            "end_pos": 36, 
+            "annotation": "Germline mutation passed 1 out of 1 filters: n-glyco-sequon-gain (TQS->NQS); o-glyco-sequon-loss (T->N).",
+            "keywords": [
+                "ebi",
+                "disease"
+            ],
+            "evidence": [
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/SNP/snp_ref.cgi?type=rs&rs=rs373254168",
+                    "id": "rs373254168",
+                    "database": "dbSNP"
+                }
+            ],
+            "disease": [
+                {
+                    "synonyms": [
+                        {
+                            "id": "0111395", 
+                            "url": "http://disease-ontology.org/term/DOID:0111395", 
+                            "resource": "Disease Ontology", 
+                            "name": "MPS3A", 
+                            "description": ""
+                        }
+                    ], 
+                    "recommended_name": {
+                        "id": "0111395", 
+                        "url": "http://disease-ontology.org/term/DOID:0111395", 
+                        "resource": "Disease Ontology", 
+                        "name": "mucopolysaccharidosis type IIIA", 
+                        "description": "A mucopolysaccharidosis III characterized by severe clinical manifestation and earlier age of onset compared to other forms of mucopolysaccharidosis III that has_material_basis_in homozygous or compound heterozygous mutation in SGSH on chromosome 17q25.3."
+                    }
+                }
+            ] 
+       }  
+  ],
+  "mutagenesis": [
+        {
+            "sequence_org": "T", 
+            "sequence_mut": "N",
+            "start_pos": 36,
+            "end_pos": 36,
+            "annotation": "Germline mutation passed 1 out of 1 filters: n-glyco-sequon-gain (TQS->NQS); o-glyco-sequon-loss (T->N).",
+            "evidence": [
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/SNP/snp_ref.cgi?type=rs&rs=rs373254168", 
+                    "id": "rs373254168", 
+                    "database": "dbSNP"
+                }
+            ] 
+       }  
+  ],
+  "refseq": {
+    "ac": " NC_001802",
+    "url": "https://www.genome.jp/dbget-bin/www_bget?refseq:NC_001802",
+    "name": "Some thing",
+    "summary": "somrthing"
+  },
+  "expression_tissue": [
+    {
+      "tissue": {
+        "name": "lung",
+        "uberon": "0002048",
+        "url": "https://www.icd10data.com/ICD10CM/Codes/M00-M99/M15-M19/M18-/M18"
+      },
+      "present": "no",
+      "evidence": [
+        {
+          "database": "UniProtKb",
+          "id": "P04278",
+          "url": "http://uniprot.org/P04278"
+        }
+      ]
+    }
+  ],
+  "expression_disease": [
+    {
+      "disease": {
+        "name": "Osteoarthritis of first carpometacarpal joint",
+        "icd10": "M18",
+        "doid": "DOID:162",
+        "url": "https://www.icd10data.com/ICD10CM/Codes/M00-M99/M15-M19/M18-/M18"
+      },
+      "significant": "yes",
+      "trend": "down",
+      "evidence": [
+        {
+          "database": "UniProtKb",
+          "id": "P04278",
+          "url": "http://uniprot.org/P04278"
+        }
+      ]
+    }
+  ]
+}

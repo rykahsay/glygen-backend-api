@@ -1,0 +1,27 @@
+{
+   "algorithm":{
+      "name":"xyz",
+      "url":"xyz",
+      "parameter":"The default transition matrix is Gonnet, gap opening penalty is 6 bits, gap extension is 1 bit. Clustal-Omega uses the HHalign algorithm and its default settings as its core alignment engine. The algorithm is described in Söding, J. (2005) 'Protein homology detection by HMM–HMM comparison'. Bioinformatics 21, 951-960"
+   },
+   "date":"xyz",
+   "uniprot_canonical_ac":"P14210-1",
+   "protein name":"Hepatocyte growth factor",
+   "sequences":[
+      {
+         "uniprot_ac":"P14210-2",
+         "protein name":"Hgf_Human",
+         "sequence":"MWVTKLLPALLLQHVLLHLLLLPIAIPYAEGQRKRRNTIHEFKKSAKTTLIKIDPALKIKTKKVNTADQCANRCTRNKGLPFTCKAFVFDKARKQCLWFPFNSMSSGVKKEFGHEFDLYENKDYIRNCIIGKGRSYKGTVSITKSGIKCQPWSSMIPHEHSFLPSSYRGKDLQENYCRNPRGEEGGPWCFTSNPEVRYEVCDIPQCSEVECMTCNGESYRGLMDHTESGKICQRWDHQTPHRHKFLPERYPDKGFDDNYCRNPDGQPRPWCYTLDPHTRWEYCAIKTCET"
+      },
+      {
+         "uniprot_ac":"C9JDP4",
+         "protein name":"C9JDP4_Human",
+         "sequence":"MWVTKLLPALLLQHVLLHLLLLPIAIPYAEGQRKRRNTIHEFKKSAKTTLIKIDPALKIKTKKVNTADQCANRCTRNKGLPFTCKAFVFDKARKQCLWFPFNSMSSGVKKEFGHEFDLYENKDYIRNCIIGKGRSYKGTVS-----------------------------------------------------------------------------------------------------------------------------------------------------"  }
+   ],
+   "alignment":"***********************************************************************************************************************************************",
+ 
+   "identical position" :141,
+   "identity" :"48.621%",
+   "similar position" :0
+}
+ 

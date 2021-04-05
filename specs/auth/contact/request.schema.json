@@ -1,0 +1,68 @@
+{
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "definitions": {},
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "properties": {
+      "fname": {
+        "$id": "/properties/fname",
+        "type": "string",
+        "title": "The Name Schema ",
+        "description": "This contains the first name of the user",
+        "default": "",
+        "examples": [
+          "Gaurav"
+        ]
+      },
+      "lname": {
+        "$id": "/properties/lname",
+        "type": "string",
+        "title": "The Surname Schema ",
+        "description": "This will have the last name of the user",
+        "default": "",
+        "examples": [
+          "Agarwal"
+        ]
+      },
+      "subject": {
+        "$id": "/properties/subject",
+        "type": "string",
+        "title": "The Subject Schema ",
+        "description": "This contains the subject line chosen by the user",
+        "default": "",
+        "examples": [
+          "General comment"
+        ]
+      },
+      "email": {
+        "$id": "/properties/email",
+        "type": "string",
+        "title": "The Email Schema ",
+        "description": "This will have the email ID input by the user",
+        "default": "",
+        "examples": [
+          "abc@xyz.com"
+        ]
+      },
+      "page": {
+        "$id": "/properties/page",
+        "type": "string",
+        "title": "The page Schema ",
+        "description": "This contains the on which page user is",
+        "default": "",
+        "examples": [
+          "Protein_search.html"
+        ]
+      },
+      "message": {
+        "$id": "/properties/message",
+        "type": "string",
+        "title": "The Message Schema ",
+        "description": "Contains the long message text from the user",
+        "default": "",
+        "examples": [
+          "something to say"
+        ]
+      }
+    }
+  }

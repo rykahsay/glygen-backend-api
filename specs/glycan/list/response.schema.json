@@ -1,0 +1,323 @@
+{
+    "$schema": "http://json-schema.org/schema#", 
+    "required": [], 
+    "type": "object", 
+    "properties": {
+        "results_history": {
+            "items": {
+                "required": [], 
+                "type": "object", 
+                "properties": {
+                    "execution_time": {
+                        "type": "string", 
+                        "description": "", 
+                        "title": ""
+                    }, 
+                    "result_count": {
+                        "type": "integer", 
+                        "description": "", 
+                        "title": ""
+                    }
+                }
+            }, 
+            "type": "array", 
+            "description": "", 
+            "title": ""
+        }, 
+        "query": {
+            "description": "", 
+            "required": [], 
+            "type": "object", 
+            "properties": {
+                "glycan_type": {
+                    "type": "string", 
+                    "description": "", 
+                    "title": ""
+                }, 
+                "uniprot_canonical_ac": {
+                    "type": "string", 
+                    "description": "", 
+                    "title": ""
+                }, 
+                "number_monosaccharides": {
+                    "description": "", 
+                    "required": [], 
+                    "type": "object", 
+                    "properties": {
+                        "max": {
+                            "type": "integer", 
+                            "description": "", 
+                            "title": ""
+                        }, 
+                        "min": {
+                            "type": "integer", 
+                            "description": "", 
+                            "title": ""
+                        }
+                    }, 
+                    "title": ""
+                }, 
+                "execution_time": {
+                    "type": "string", 
+                    "description": "", 
+                    "title": ""
+                }, 
+                "query_type": {
+                    "type": "string", 
+                    "description": "", 
+                    "title": ""
+                }, 
+                "enzyme": {
+                    "description": "", 
+                    "required": [], 
+                    "type": "object", 
+                    "properties": {
+                        "type": {
+                            "type": "string", 
+                            "description": "", 
+                            "title": ""
+                        }, 
+                        "id": {
+                            "type": "string", 
+                            "description": "", 
+                            "title": ""
+                        }
+                    }, 
+                    "title": ""
+                }, 
+                "glycan_motif": {
+                    "type": "string", 
+                    "description": "", 
+                    "title": ""
+                }, 
+                "glycan": {
+                    "description": "", 
+                    "required": [], 
+                    "type": "object", 
+                    "properties": {
+                        "subsumption": {
+                            "type": "integer", 
+                            "description": "", 
+                            "title": ""
+                        }, 
+                        "id": {
+                            "type": "string", 
+                            "description": "", 
+                            "title": ""
+                        }
+                    }, 
+                    "title": ""
+                }, 
+                "version": {
+                    "type": "string", 
+                    "description": "", 
+                    "title": ""
+                }, 
+                "mass": {
+                    "description": "", 
+                    "required": [], 
+                    "type": "object", 
+                    "properties": {
+                        "max": {
+                            "type": "integer", 
+                            "description": "", 
+                            "title": ""
+                        }, 
+                        "min": {
+                            "type": "integer", 
+                            "description": "", 
+                            "title": ""
+                        }
+                    }, 
+                    "title": ""
+                }, 
+                "glycan_subtype": {
+                    "type": "string", 
+                    "description": "", 
+                    "title": ""
+                }, 
+                "operation": {
+                    "type": "string", 
+                    "description": "", 
+                    "title": ""
+                }, 
+                "organism": {
+                    "description": "", 
+                    "required": [], 
+                    "type": "object", 
+                    "properties": {
+                        "subsumption": {
+                            "type": "boolean", 
+                            "description": "", 
+                            "title": ""
+                        }, 
+                        "operation": {
+                            "type": "string", 
+                            "description": "", 
+                            "title": ""
+                        }, 
+                        "organism_list": {
+                            "items": {
+                                "required": [], 
+                                "type": "object", 
+                                "properties": {
+                                    "name": {
+                                        "type": "string", 
+                                        "description": "", 
+                                        "title": ""
+                                    }, 
+                                    "id": {
+                                        "type": "integer", 
+                                        "description": "", 
+                                        "title": ""
+                                    }
+                                }
+                            }, 
+                            "type": "array", 
+                            "description": "", 
+                            "title": ""
+                        }
+                    }, 
+                    "title": ""
+                }, 
+                "composition": {
+                    "items": {
+                        "required": [], 
+                        "type": "object", 
+                        "properties": {
+                            "residue": {
+                                "type": "string", 
+                                "description": "", 
+                                "title": ""
+                            }, 
+                            "max": {
+                                "type": "integer", 
+                                "description": "", 
+                                "title": ""
+                            }, 
+                            "min": {
+                                "type": "integer", 
+                                "description": "", 
+                                "title": ""
+                            }
+                        }
+                    }, 
+                    "type": "array", 
+                    "description": "", 
+                    "title": ""
+                }, 
+                "mass_type": {
+                    "type": "string", 
+                    "description": "", 
+                    "title": ""
+                }
+            }, 
+            "title": ""
+        }, 
+        "pagination": {
+            "description": "", 
+            "required": [], 
+            "type": "object", 
+            "properties": {
+                "sort": {
+                    "type": "string", 
+                    "description": "", 
+                    "title": ""
+                }, 
+                "total_length": {
+                    "type": "integer", 
+                    "description": "", 
+                    "title": ""
+                }, 
+                "limit": {
+                    "type": "integer", 
+                    "description": "", 
+                    "title": ""
+                }, 
+                "order": {
+                    "type": "string", 
+                    "description": "", 
+                    "title": ""
+                }, 
+                "offset": {
+                    "type": "integer", 
+                    "description": "", 
+                    "title": ""
+                }
+            }, 
+            "title": ""
+        }, 
+        "query_error": {
+            "items": {
+                "required": [], 
+                "type": "object", 
+                "properties": {
+                    "value": {
+                        "type": "string", 
+                        "description": "", 
+                        "title": ""
+                    }, 
+                    "key": {
+                        "type": "string", 
+                        "description": "", 
+                        "title": ""
+                    }
+                }
+            }, 
+            "type": "array", 
+            "description": "", 
+            "title": ""
+        }, 
+        "results": {
+            "items": {
+                "required": [], 
+                "type": "object", 
+                "properties": {
+                    "mass_pme": {
+                        "type": "number", 
+                        "description": "", 
+                        "title": ""
+                    }, 
+                    "glycoct": {
+                        "type": "string", 
+                        "description": "", 
+                        "title": ""
+                    }, 
+                    "number_enzymes": {
+                        "type": "integer", 
+                        "description": "", 
+                        "title": ""
+                    }, 
+                    "number_proteins": {
+                        "type": "integer", 
+                        "description": "", 
+                        "title": ""
+                    }, 
+                    "number_monosaccharides": {
+                        "type": "integer", 
+                        "description": "", 
+                        "title": ""
+                    }, 
+                    "mass": {
+                        "type": "number", 
+                        "description": "", 
+                        "title": ""
+                    }, 
+                    "id": {
+                        "type": "string", 
+                        "description": "", 
+                        "title": ""
+                    }, 
+                    "iupac": {
+                        "type": "string", 
+                        "description": "", 
+                        "title": ""
+                    }
+                }
+            }, 
+            "type": "array", 
+            "description": "", 
+            "title": ""
+        }
+    }
+}

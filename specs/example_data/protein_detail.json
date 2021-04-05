@@ -1,0 +1,4939 @@
+{
+    "synonyms_protein_refseq": [
+        "GTPase KRas isoform b", 
+        "v-Ki-ras2 Kirsten rat sarcoma 2 viral oncogene homolog; transforming protein p21; c-Kirsten-ras protein; K-ras p21 protein; oncogene KRAS2; PR310 c-K-ras oncogene; cellular c-Ki-ras2 proto-oncogene; Kirsten rat sarcoma viral proto-oncogene; GTPase KRas; Kirsten rat sarcoma viral oncogene homolog; cellular transforming proto-oncogene"
+    ], 
+    "sequence": {
+        "length": 189, 
+        "sequence": "MTEYKLVVVGAGGVGKSALTIQLIQNHFVDEYDPTIEDSYRKQVVIDGETCLLDILDTAGQEEYSAMRDQYMRTGEGFLCVFAINNTKSFEDIHHYREQIKRVKDSEDVPMVLVGNKCDLPSRTVDTKQAQDLARSYGIPFIETSAKTRQRVEDAFYTLVREIRQYRLKKISKEEKTPGCVKIKKCIIM"
+    }, 
+    "synonyms_gene_uniprotkb": [
+        "KRAS", 
+        "KRAS2", 
+        "RASK2"
+    ], 
+    "species": [
+        {
+            "evidence": [
+                {
+                    "url": "https://www.uniprot.org/uniprot/P01116", 
+                    "id": "P01116", 
+                    "database": "UniProtKB"
+                }
+            ], 
+            "taxid": 9606, 
+            "name": "Homo sapiens"
+        }
+    ], 
+    "recommendedname": {
+        "full": "GTPase KRas; c-Ki-ras; K-Ras 2; Ki-Ras; c-K-ras"
+    }, 
+    "publication": [
+        {
+            "title": "BRAF and KRAS mutations in stomach cancer.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/14534542", 
+            "journal": "Oncogene", 
+            "evidence": [
+                {
+                    "url": "https://www.uniprot.org/uniprot/P01116", 
+                    "id": "P01116", 
+                    "database": "UniProtKB"
+                }
+            ], 
+            "authors": "Kim H.S., Lee J.Y., Lee S.H., Lee J.H., Kim S.H., Kim S.Y., Lee J.W., Park J.Y., Park W.S., Yoo N.J., Cho Y.G., Kim C.J., Nam S.W., Soung Y.H.", 
+            "date": "2003", 
+            "pmid": "14534542"
+        }, 
+        {
+            "title": "Activated c-Ha-ras oncogene with a guanine to thymine transversion at the twelfth codon in a human stomach cancer cell line.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/3034404", 
+            "journal": "Cancer Res.", 
+            "evidence": [
+                {
+                    "url": "https://www.uniprot.org/uniprot/P01116", 
+                    "id": "P01116", 
+                    "database": "UniProtKB"
+                }
+            ], 
+            "authors": "Chen S., Li H., Lu G., Lu Y., Xu X., Liu P., Miao J., Deng G., Cai H., Zheng E.", 
+            "date": "1987", 
+            "pmid": "3034404"
+        }, 
+        {
+            "title": "Isolation of transforming sequences of two human lung carcinomas: structural and functional analysis of the activated c-K-ras oncogenes.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/6320174", 
+            "journal": "Proc. Natl. Acad. Sci. U.S.A.", 
+            "evidence": [
+                {
+                    "url": "https://www.uniprot.org/uniprot/P01116", 
+                    "id": "P01116", 
+                    "database": "UniProtKB"
+                }
+            ], 
+            "authors": "Mizuno T., Nakano H., Yamamoto F., Evans D., Neville C., Perucho M.", 
+            "date": "1984", 
+            "pmid": "6320174"
+        }, 
+        {
+            "title": "Discovery of small molecules that bind to K-Ras and inhibit Sos-mediated activation.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/22566140", 
+            "journal": "Angew. Chem. Int. Ed. Engl.", 
+            "evidence": [
+                {
+                    "url": "https://www.uniprot.org/uniprot/P01116", 
+                    "id": "P01116", 
+                    "database": "UniProtKB"
+                }
+            ], 
+            "authors": "Sun Q., Fesik S.W., Olejniczak E.T., Lee T., Burns M.C., Waterson A.G., Burke J.P., Phan J., Rossanese O.W.", 
+            "date": "2012", 
+            "pmid": "22566140"
+        }, 
+        {
+            "title": "LZTR1 is a regulator of RAS ubiquitination and signaling.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/30442766", 
+            "journal": "Science", 
+            "evidence": [
+                {
+                    "url": "https://www.uniprot.org/uniprot/P01116", 
+                    "id": "P01116", 
+                    "database": "UniProtKB"
+                }
+            ], 
+            "authors": "Superti-Furga G., Rebsamen M., Fauster A., Heinz L.X., Mueller A.C., Kralovics R., Bigenzahn J.W., Brummelkamp T.R., Mlodzik M., Blomen V.A., Collu G.M., Kartnig F., Parapatics K., Pieraks M., Schischlik F., Sedlyarov V., Vladimer G.I., Winter G.E.", 
+            "date": "2018", 
+            "pmid": "30442766"
+        }, 
+        {
+            "title": "Activation of a human c-K-ras oncogene.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/6096811", 
+            "journal": "Nucleic Acids Res.", 
+            "evidence": [
+                {
+                    "url": "https://www.uniprot.org/uniprot/P01116", 
+                    "id": "P01116", 
+                    "database": "UniProtKB"
+                }
+            ], 
+            "authors": "Yamamoto F., Perucho M.", 
+            "date": "1984", 
+            "pmid": "6096811"
+        }, 
+        {
+            "title": "Long noncoding RNA TP53TG1 promotes pancreatic ductal adenocarcinoma development by acting as a molecular sponge of microRNA-96.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/31325400", 
+            "journal": "Cancer science", 
+            "evidence": [
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/protein/NP_004976.2", 
+                    "id": "NP_004976.2", 
+                    "database": "RefSeq"
+                }
+            ], 
+            "authors": "Zhang Y, Yang H, Du Y, Liu P, Zhang J, Li Y, Shen H, Xing L, Xue X, Chen J, Zhang X", 
+            "date": "2019", 
+            "pmid": "31325400"
+        }, 
+        {
+            "title": "Regulation of RAS oncogenicity by acetylation.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/22711838", 
+            "journal": "Proc. Natl. Acad. Sci. U.S.A.", 
+            "evidence": [
+                {
+                    "url": "https://www.uniprot.org/uniprot/P01116", 
+                    "id": "P01116", 
+                    "database": "UniProtKB"
+                }
+            ], 
+            "authors": "Bar-Sagi D., Shan Y., Haigis M.C., Haigis K.M., Shaw D.E., Philips M.R., Kim E.T., Yang M.H., Laurent G., Liot C., Nickerson S., Spang R.", 
+            "date": "2012", 
+            "pmid": "22711838"
+        }, 
+        {
+            "title": "Germline KRAS mutations cause Noonan syndrome.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/16474405", 
+            "journal": "Nat. Genet.", 
+            "evidence": [
+                {
+                    "url": "https://www.uniprot.org/uniprot/P01116", 
+                    "id": "P01116", 
+                    "database": "UniProtKB"
+                }
+            ], 
+            "authors": "Kalscheuer V., Klein C., Musante L., Rauch A., Bollag G., Zenker M., van der Burgt I., Nguyen H., Kratz C.P., Niemeyer C.M., Zhang K.Y.J., Sistermans E., West B., Boell S., Rowe S.L., Schubbert S., Shannon K., Wehner L.-E.", 
+            "date": "2006", 
+            "pmid": "16474405"
+        }, 
+        {
+            "title": "Two novel germline KRAS mutations: expanding the molecular and clinical phenotype.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/21797849", 
+            "journal": "Clin. Genet.", 
+            "evidence": [
+                {
+                    "url": "https://www.uniprot.org/uniprot/P01116", 
+                    "id": "P01116", 
+                    "database": "UniProtKB"
+                }
+            ], 
+            "authors": "Ryan M.M., Gillessen-Kaesbach G., Ahmadian M.R., Savarirayan R., Zenker M., Stark Z., Gremer L., Cirstea I.C.", 
+            "date": "2012", 
+            "pmid": "21797849"
+        }, 
+        {
+            "title": "Spontaneous improvement of hematologic abnormalities in patients having juvenile myelomonocytic leukemia with specific RAS mutations.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/17332249", 
+            "journal": "Blood", 
+            "evidence": [
+                {
+                    "url": "https://www.uniprot.org/uniprot/P01116", 
+                    "id": "P01116", 
+                    "database": "UniProtKB"
+                }
+            ], 
+            "authors": "Kawasaki K., Yamauchi K., Kikuchi A., Ogawa A., Kojima S., Matsuda K., Watanabe A., Tanaka M., Koike K., Yoshida N., Hidaka E., Shimada A., Nakazawa Y., Shiohara M., Ohtsuka Y., Koike K.', Yanagisawa R., Yanai F., Manabe A., Iizuka S., Yajima S., Yanagimachi M.", 
+            "date": "2007", 
+            "pmid": "17332249"
+        }, 
+        {
+            "title": "Mutations in LZTR1 drive human disease by dysregulating RAS ubiquitination.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/30442762", 
+            "journal": "Science", 
+            "evidence": [
+                {
+                    "url": "https://www.uniprot.org/uniprot/P01116", 
+                    "id": "P01116", 
+                    "database": "UniProtKB"
+                }
+            ], 
+            "authors": "Cai Y., Gevaert K., Zhang M., Impens F., Tavernier J., Messiaen L., Jang H., Baietti M.F., Legius E., Heymans S., Brems H., Renzi F., Sablina A.A., Eyckerman S., Abbasi Asbagh L., Batiuk A., Carai P., De Troyer M., Najm P., Nussinov R., Pandolfi S., Pastor T., Radaelli E., Simicek M., Steklov M.", 
+            "date": "2018", 
+            "pmid": "30442762"
+        }, 
+        {
+            "title": "Activation of the c-K-ras oncogene in a human pancreas carcinoma.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/3855240", 
+            "journal": "Biochem. Biophys. Res. Commun.", 
+            "evidence": [
+                {
+                    "url": "https://www.uniprot.org/uniprot/P01116", 
+                    "id": "P01116", 
+                    "database": "UniProtKB"
+                }
+            ], 
+            "authors": "Takaku F., Hirai H., Okabe T., Urabe A., Anraku Y., Fujisawa M.", 
+            "date": "1985", 
+            "pmid": "3855240"
+        }, 
+        {
+            "title": "Cell type-dependent differential activation of ERK by oncogenic KRAS in colon cancer and intestinal epithelium.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/31266962", 
+            "journal": "Nature communications", 
+            "evidence": [
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/protein/NP_004976.2", 
+                    "id": "NP_004976.2", 
+                    "database": "RefSeq"
+                }
+            ], 
+            "authors": "Brandt R, Sell T, Luthen M, Uhlitz F, Klinger B, Riemer P, Giesecke-Thiel C, Schulze S, El-Shimy IA, Kunkel D, Fauler B, Mielke T, Mages N, Herrmann BG, Sers C, Bluthgen N, Morkel M", 
+            "date": "2019", 
+            "pmid": "31266962"
+        }, 
+        {
+            "title": "Further evidence of genetic heterogeneity in Costello syndrome: involvement of the KRAS gene.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/17468812", 
+            "journal": "J. Hum. Genet.", 
+            "evidence": [
+                {
+                    "url": "https://www.uniprot.org/uniprot/P01116", 
+                    "id": "P01116", 
+                    "database": "UniProtKB"
+                }
+            ], 
+            "authors": "Kim C.A., Bertola D.R., Pereira A.C., Krieger J.E., Albano L.M., Brasil A.S.", 
+            "date": "2007", 
+            "pmid": "17468812"
+        }, 
+        {
+            "title": "Small molecule inhibition of the KRAS-PDE? interaction impairs oncogenic KRAS signalling.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/23698361", 
+            "journal": "Nature", 
+            "evidence": [
+                {
+                    "url": "https://www.uniprot.org/uniprot/P01116", 
+                    "id": "P01116", 
+                    "database": "UniProtKB"
+                }
+            ], 
+            "authors": "Wittinghofer A., Ismail S., Hahn S.A., Waldmann H., Bastiaens P.I., Hoffmann M., Vartak N., Zimmermann G., Chandra A., Papke B., Triola G.", 
+            "date": "2013", 
+            "pmid": "23698361"
+        }, 
+        {
+            "title": "Expansion of the genotypic and phenotypic spectrum in patients with KRAS germline mutations.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/17056636", 
+            "journal": "J. Med. Genet.", 
+            "evidence": [
+                {
+                    "url": "https://www.uniprot.org/uniprot/P01116", 
+                    "id": "P01116", 
+                    "database": "UniProtKB"
+                }
+            ], 
+            "authors": "Horn D., Mundlos S., Koenig R., Wehner L.E., Kutsche K., Schnabel D., Lehmann K., Zenker M., Meinecke P., Schulz A.L., Kratz C.P., Korinthenberg R., Raskin S., Morlot S., Barth H., Hansmann D., Kreiss-Nachtsheim M., Quante A.S.", 
+            "date": "2007", 
+            "pmid": "17056636"
+        }, 
+        {
+            "title": "Human colon carcinoma Ki-ras2 oncogene and its corresponding proto-oncogene.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/6092920", 
+            "journal": "Mol. Cell. Biol.", 
+            "evidence": [
+                {
+                    "url": "https://www.uniprot.org/uniprot/P01116", 
+                    "id": "P01116", 
+                    "database": "UniProtKB"
+                }
+            ], 
+            "authors": "Weinberg R.A., Bargmann C.I., McCoy M.S.", 
+            "date": "1984", 
+            "pmid": "6092920"
+        }, 
+        {
+            "title": "Clinicopathologic significance of the K-ras gene codon 12 point mutation in stomach cancer. An analysis of 140 cases.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/7773929", 
+            "journal": "Cancer", 
+            "evidence": [
+                {
+                    "url": "https://www.uniprot.org/uniprot/P01116", 
+                    "id": "P01116", 
+                    "database": "UniProtKB"
+                }
+            ], 
+            "authors": "Lee J.S., Lee J.H., Kim S.H., Kim S.W., Lee K.H., Lee M.S., Kim S.B., Park M.Y., Sun H.S., Suh C.", 
+            "date": "1995", 
+            "pmid": "7773929"
+        }, 
+        {
+            "title": "Structural basis of recognition of farnesylated and methylated KRAS4b by PDEdelta.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/27791178", 
+            "journal": "Proc. Natl. Acad. Sci. U.S.A.", 
+            "evidence": [
+                {
+                    "url": "https://www.uniprot.org/uniprot/P01116", 
+                    "id": "P01116", 
+                    "database": "UniProtKB"
+                }
+            ], 
+            "authors": "Esposito D., Gillette W.K., Tran T.H., Ghirlando R., McCormick F., Simanshu D.K., Dharmaiah S., Stephen A.G., Bindu L., Frank P.H., Nissley D.V.", 
+            "date": "2016", 
+            "pmid": "27791178"
+        }, 
+        {
+            "title": "Activation of Ki-ras2 gene in human colon and lung carcinomas by two different point mutations.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/6308467", 
+            "journal": "Nature", 
+            "evidence": [
+                {
+                    "url": "https://www.uniprot.org/uniprot/P01116", 
+                    "id": "P01116", 
+                    "database": "UniProtKB"
+                }
+            ], 
+            "authors": "Capon D.J., Hayflick J.S., Seeburg P.H., Goeddel D.V., Levinson A.D., Edman U., McGrath J.P.", 
+            "date": "1983", 
+            "pmid": "6308467"
+        }, 
+        {
+            "title": "Structure and organization of the human Ki-ras proto-oncogene and a related processed pseudogene.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/6308466", 
+            "journal": "Nature", 
+            "evidence": [
+                {
+                    "url": "https://www.uniprot.org/uniprot/P01116", 
+                    "id": "P01116", 
+                    "database": "UniProtKB"
+                }
+            ], 
+            "authors": "Capon D.J., Smith D.H., Seeburg P.H., Goeddel D.V., Chen E.Y., Levinson A.D., McGrath J.P.", 
+            "date": "1983", 
+            "pmid": "6308466"
+        }, 
+        {
+            "title": "Structure of the Ki-ras gene of the human lung carcinoma cell line Calu-1.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/6308465", 
+            "journal": "Nature", 
+            "evidence": [
+                {
+                    "url": "https://www.uniprot.org/uniprot/P01116", 
+                    "id": "P01116", 
+                    "database": "UniProtKB"
+                }
+            ], 
+            "authors": "Shimizu K., Birnbaum D., Wigler M., Goldfarb M., Fasano O., Taparowsky E., Edlund L., Ruley M.A., Suard Y.", 
+            "date": "1983", 
+            "pmid": "6308465"
+        }, 
+        {
+            "title": "Essential region for transforming activity of human c-Ha-ras-1.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/3932274", 
+            "journal": "Jpn. J. Cancer Res.", 
+            "evidence": [
+                {
+                    "url": "https://www.uniprot.org/uniprot/P01116", 
+                    "id": "P01116", 
+                    "database": "UniProtKB"
+                }
+            ], 
+            "authors": "Tokunaga A., Sekiya T., Fushimi M.", 
+            "date": "1985", 
+            "pmid": "3932274"
+        }, 
+        {
+            "title": "Germline KRAS mutations cause aberrant biochemical and physical properties leading to developmental disorders.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/20949621", 
+            "journal": "Hum. Mutat.", 
+            "evidence": [
+                {
+                    "url": "https://www.uniprot.org/uniprot/P01116", 
+                    "id": "P01116", 
+                    "database": "UniProtKB"
+                }
+            ], 
+            "authors": "Wittinghofer A., Ahmadian M.R., Zenker M., Kratz C.P., Gremer L., Cirstea I.C., Dvorsky R., Merbitz-Zahradnik T.", 
+            "date": "2011", 
+            "pmid": "20949621"
+        }, 
+        {
+            "title": "Detection of a rare point mutation in Ki-ras of a human bladder cancer xenograft by polymerase chain reaction and direct sequencing.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/1553789", 
+            "journal": "Urol. Res.", 
+            "evidence": [
+                {
+                    "url": "https://www.uniprot.org/uniprot/P01116", 
+                    "id": "P01116", 
+                    "database": "UniProtKB"
+                }, 
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/protein/NP_004976.2", 
+                    "id": "NP_004976.2", 
+                    "database": "RefSeq"
+                }
+            ], 
+            "authors": "Russell P.J., Grimmond S.M., Raghavan D.", 
+            "date": "1992", 
+            "pmid": "1553789"
+        }, 
+        {
+            "title": "Germline KRAS and BRAF mutations in cardio-facio-cutaneous syndrome.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/16474404", 
+            "journal": "Nat. Genet.", 
+            "evidence": [
+                {
+                    "url": "https://www.uniprot.org/uniprot/P01116", 
+                    "id": "P01116", 
+                    "database": "UniProtKB"
+                }
+            ], 
+            "authors": "Wieczorek D., Baumann C., Bonneau D., Heron D., Kato K., Matsubara Y., Cave H., Kaname T., Okamoto N., Aoki Y., Verloes A., Gillessen-Kaesbach G., Matsumoto N., Ohashi H., Hennekam R.C.M., Naritomi K., Kurosawa K., Neri G., Kure S., Wilson L., Corona G., Kavamura M.I., Narumi Y., Niihori T.", 
+            "date": "2006", 
+            "pmid": "16474404"
+        }, 
+        {
+            "title": "Germline missense mutations affecting KRAS Isoform B are associated with a severe Noonan syndrome phenotype.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/16773572", 
+            "journal": "Am. J. Hum. Genet.", 
+            "evidence": [
+                {
+                    "url": "https://www.uniprot.org/uniprot/P01116", 
+                    "id": "P01116", 
+                    "database": "UniProtKB"
+                }
+            ], 
+            "authors": "Dallapiccola B., Gelb B.D., Grammatico P., Tartaglia M., Zampino G., Pizzuti A., Carta C., Pantaleoni F., Sarkozy A., Bocchinfuso G., Stella L., Palleschi A., Digilio C., Vasta I.", 
+            "date": "2006", 
+            "pmid": "16773572"
+        }, 
+        {
+            "title": "The c-K-ras gene and human cancer (review).", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/3310850", 
+            "journal": "Anticancer Res.", 
+            "evidence": [
+                {
+                    "url": "https://www.uniprot.org/uniprot/P01116", 
+                    "id": "P01116", 
+                    "database": "UniProtKB"
+                }
+            ], 
+            "authors": "Yamamoto F., Kahn S., Forrester K., Perucho M., Almoguera C., Jordano J., Winter E.", 
+            "date": "1987", 
+            "pmid": "3310850"
+        }, 
+        {
+            "title": "A KRAS-directed transcriptional silencing pathway that mediates the CpG island methylator phenotype.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/24623306", 
+            "journal": "Elife", 
+            "evidence": [
+                {
+                    "url": "https://www.uniprot.org/uniprot/P01116", 
+                    "id": "P01116", 
+                    "database": "UniProtKB"
+                }
+            ], 
+            "authors": "Fang M., Green M.R., Park S.M., Hutchinson L., Serra R.W.", 
+            "date": "2014", 
+            "pmid": "24623306"
+        }, 
+        {
+            "title": "The human c-Kirsten ras gene is activated by a novel mutation in codon 13 in the breast carcinoma cell line MDA-MB231.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/3627975", 
+            "journal": "Nucleic Acids Res.", 
+            "evidence": [
+                {
+                    "url": "https://www.uniprot.org/uniprot/P01116", 
+                    "id": "P01116", 
+                    "database": "UniProtKB"
+                }
+            ], 
+            "authors": "Bos J.L., Hynes N.E., Kozma S.C., Groner B., Saurer S.M., Bogaard M.E., Buser K.", 
+            "date": "1987", 
+            "pmid": "3627975"
+        }, 
+        {
+            "title": "Malignant activation of a K-ras oncogene in lung carcinoma but not in normal tissue of the same patient.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/6695174", 
+            "journal": "Science", 
+            "evidence": [
+                {
+                    "url": "https://www.uniprot.org/uniprot/P01116", 
+                    "id": "P01116", 
+                    "database": "UniProtKB"
+                }
+            ], 
+            "authors": "Barbacid M., Porta G., Pierotti M.A., Santos E., Martin-Zanca D., Reddy P.E.", 
+            "date": "1984", 
+            "pmid": "6695174"
+        }, 
+        {
+            "title": "Distinct epidermal growth factor receptor and KRAS mutation patterns in non-small cell lung cancer patients with different tobacco exposure and clinicopathologic features.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/16533793", 
+            "journal": "Clin. Cancer Res.", 
+            "evidence": [
+                {
+                    "url": "https://www.uniprot.org/uniprot/P01116", 
+                    "id": "P01116", 
+                    "database": "UniProtKB"
+                }
+            ], 
+            "authors": "Gazdar A.F., Minna J.D., Chung L.P., Girard L., Chiu S.W., Ho K.K., Lam W.K., Suen W.S., Tam I.Y.S., Wang E., Wong M.C.M., Wong M.P.", 
+            "date": "2006", 
+            "pmid": "16533793"
+        }, 
+        {
+            "title": "Blockade of leukemia inhibitory factor as a therapeutic approach to KRAS driven pancreatic cancer.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/31296870", 
+            "journal": "Nature communications", 
+            "evidence": [
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/protein/NP_004976.2", 
+                    "id": "NP_004976.2", 
+                    "database": "RefSeq"
+                }
+            ], 
+            "authors": "Wang MT, Fer N, Galeas J, Collisson EA, Kim SE, Sharib J, McCormick F", 
+            "date": "2019", 
+            "pmid": "31296870"
+        }, 
+        {
+            "title": "Small-molecule ligands bind to a distinct pocket in Ras and inhibit SOS-mediated nucleotide exchange activity.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/22431598", 
+            "journal": "Proc. Natl. Acad. Sci. U.S.A.", 
+            "evidence": [
+                {
+                    "url": "https://www.uniprot.org/uniprot/P01116", 
+                    "id": "P01116", 
+                    "database": "UniProtKB"
+                }
+            ], 
+            "authors": "Wang W., Wu J., Anderson D.J., Fang G., Skelton N.J., Jackson P.K., Mellman I., Pan B., Starovasnik M.A., Stokoe D., Bowman K.K., Malek S., Giannetti A.M., Oh A., Rudolph J., Maurer T., Fauber B.P., Garrenton L.S., Ludlam M.J., Pitts K.", 
+            "date": "2012", 
+            "pmid": "22431598"
+        }, 
+        {
+            "title": "Targeting KRAS Mutant Lung Cancer Cells with siRNA-Loaded Bovine Serum Albumin Nanoparticles.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/31289919", 
+            "journal": "Pharmaceutical research", 
+            "evidence": [
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/protein/NP_004976.2", 
+                    "id": "NP_004976.2", 
+                    "database": "RefSeq"
+                }
+            ], 
+            "authors": "Mehta A, Dalle Vedove E, Isert L, Merkel OM", 
+            "date": "2019", 
+            "pmid": "31289919"
+        }, 
+        {
+            "title": "Biochemical characterization of a novel KRAS insertion mutation from a human leukemia.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/8955068", 
+            "journal": "J. Biol. Chem.", 
+            "evidence": [
+                {
+                    "url": "https://www.uniprot.org/uniprot/P01116", 
+                    "id": "P01116", 
+                    "database": "UniProtKB"
+                }
+            ], 
+            "authors": "Thompson P., Bollag G., McCormick F., McCabe P.C., Adler F., Conner E. Jr., Shannon K., elMasry N.", 
+            "date": "1996", 
+            "pmid": "8955068"
+        }, 
+        {
+            "title": "Craniosynostosis in patients with Noonan syndrome caused by germline KRAS mutations.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/19396835", 
+            "journal": "Am. J. Med. Genet. A", 
+            "evidence": [
+                {
+                    "url": "https://www.uniprot.org/uniprot/P01116", 
+                    "id": "P01116", 
+                    "database": "UniProtKB"
+                }
+            ], 
+            "authors": "Kant S.G., Kriek M., Di Rocco C., Tartaglia M., Zampino G., Zenker M., Pantaleoni F., Kratz C.P., Leoni C., Kloska S.P., Oudesluys-Murphy A.M.", 
+            "date": "2009", 
+            "pmid": "19396835"
+        }, 
+        {
+            "title": "Detection of point mutations in the Kirsten-ras oncogene provides evidence for the multicentricity of pancreatic carcinoma.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/8439212", 
+            "journal": "Ann. Surg.", 
+            "evidence": [
+                {
+                    "url": "https://www.uniprot.org/uniprot/P01116", 
+                    "id": "P01116", 
+                    "database": "UniProtKB"
+                }
+            ], 
+            "authors": "Urano T., Motojima K., Nagata Y., Shiku H., Kanematsu T., Tsurifune T.", 
+            "date": "1993", 
+            "pmid": "8439212"
+        }, 
+        {
+            "title": "RAS pathway activation and an oncogenic RAS mutation in sporadic pilocytic astrocytoma.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/16247081", 
+            "journal": "Neurology", 
+            "evidence": [
+                {
+                    "url": "https://www.uniprot.org/uniprot/P01116", 
+                    "id": "P01116", 
+                    "database": "UniProtKB"
+                }
+            ], 
+            "authors": "Gutmann D.H., Zehnbauer B.A., Watson M.A., Sharma M.K.", 
+            "date": "2005", 
+            "pmid": "16247081"
+        }, 
+        {
+            "title": "The consensus coding sequences of human breast and colorectal cancers.", 
+            "url": "https://www.ncbi.nlm.nih.gov/pubmed/16959974", 
+            "journal": "Science", 
+            "evidence": [
+                {
+                    "url": "https://www.uniprot.org/uniprot/P01116", 
+                    "id": "P01116", 
+                    "database": "UniProtKB"
+                }
+            ], 
+            "authors": "Bachman K.E., Barber T.D., Buckhaults P., Dawson D., Farrell C., Gazdar A.F., Hartigan J., Jones S., Kinzler K.W., Leary R.J., Lin J., Liu C., Mandelker D., Markowitz S.D., Meeh P., Papadopoulos N., Park B.H., Parmigiani G., Parsons D.W., Ptak J., Silliman N., Sjoeblom T., Szabo S., Velculescu V.E., Vogelstein B., Willis J., Willson J.K.V., Wood L.D., Wu L.", 
+            "date": "2006", 
+            "pmid": "16959974"
+        }
+    ], 
+    "synonyms_gene_refseq": [
+        "KRAS", 
+        "C-K-RAS; c-Ki-ras; c-Ki-ras2; CFC2; K-Ras; K-Ras 2; K-RAS2A; K-RAS2B; K-RAS4A; K-RAS4B; KI-RAS; KRAS1; KRAS2; NS; NS3; OES; RALD; RASK2"
+    ], 
+    "mutation": [
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "1044", 
+            "subjects_positive": "13", 
+            "disease": {
+                "doid": "10534", 
+                "url": "http://disease-ontology.org/term/DOID:10534", 
+                "name": "Stomach cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "1.2", 
+            "sequence_mut": "D", 
+            "start_pos": 12, 
+            "end_pos": 12, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 5 out of 6 filters: patient freq. (1.2%); patient count (13/1044); num. of cancers (15); DB annot. (1); Lit. mined (41). In dbSNP: rs121913529."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "399", 
+            "subjects_positive": "47", 
+            "disease": {
+                "doid": "1793", 
+                "url": "http://disease-ontology.org/term/DOID:1793", 
+                "name": "Pancreatic cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "11.8", 
+            "sequence_mut": "V", 
+            "start_pos": 12, 
+            "end_pos": 12, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 4 out of 6 filters: patient freq. (11.8%); patient count (47/399); num. of cancers (12); Lit. mined (26). In dbSNP: rs121913529."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "618", 
+            "subjects_positive": "11", 
+            "disease": {
+                "doid": "9256", 
+                "url": "http://disease-ontology.org/term/DOID:9256", 
+                "name": "Colorectal cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "1.8", 
+            "sequence_mut": "A", 
+            "start_pos": 12, 
+            "end_pos": 12, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 4 out of 6 filters: patient freq. (1.8%); patient count (11/618); num. of cancers (9); Lit. mined (6). In dbSNP: rs121913529."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "399", 
+            "subjects_positive": "29", 
+            "disease": {
+                "doid": "1793", 
+                "url": "http://disease-ontology.org/term/DOID:1793", 
+                "name": "Pancreatic cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "7.3", 
+            "sequence_mut": "R", 
+            "start_pos": 12, 
+            "end_pos": 12, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 4 out of 6 filters: patient freq. (7.3%); patient count (29/399); num. of cancers (7); Lit. mined (5). In dbSNP: rs121913530."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "399", 
+            "subjects_positive": "68", 
+            "disease": {
+                "doid": "1793", 
+                "url": "http://disease-ontology.org/term/DOID:1793", 
+                "name": "Pancreatic cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "17.0", 
+            "sequence_mut": "D", 
+            "start_pos": 12, 
+            "end_pos": 12, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 4 out of 6 filters: patient freq. (17.0%); patient count (68/399); num. of cancers (15); Lit. mined (41). In dbSNP: rs121913529."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "618", 
+            "subjects_positive": "43", 
+            "disease": {
+                "doid": "9256", 
+                "url": "http://disease-ontology.org/term/DOID:9256", 
+                "name": "Colorectal cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "7.0", 
+            "sequence_mut": "D", 
+            "start_pos": 13, 
+            "end_pos": 13, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 4 out of 6 filters: patient freq. (7.0%); patient count (43/618); num. of cancers (9); Lit. mined (24). In dbSNP: rs112445441."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "618", 
+            "subjects_positive": "59", 
+            "disease": {
+                "doid": "9256", 
+                "url": "http://disease-ontology.org/term/DOID:9256", 
+                "name": "Colorectal cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "9.5", 
+            "sequence_mut": "V", 
+            "start_pos": 12, 
+            "end_pos": 12, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 4 out of 6 filters: patient freq. (9.5%); patient count (59/618); num. of cancers (12); Lit. mined (26). In dbSNP: rs121913529."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "618", 
+            "subjects_positive": "66", 
+            "disease": {
+                "doid": "9256", 
+                "url": "http://disease-ontology.org/term/DOID:9256", 
+                "name": "Colorectal cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "10.7", 
+            "sequence_mut": "D", 
+            "start_pos": 12, 
+            "end_pos": 12, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 4 out of 6 filters: patient freq. (10.7%); patient count (66/618); num. of cancers (15); Lit. mined (41). In dbSNP: rs121913529."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "1514", 
+            "subjects_positive": "93", 
+            "disease": {
+                "doid": "1324", 
+                "url": "http://disease-ontology.org/term/DOID:1324", 
+                "name": "Lung cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "6.1", 
+            "sequence_mut": "C", 
+            "start_pos": 12, 
+            "end_pos": 12, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 4 out of 6 filters: patient freq. (6.1%); patient count (93/1514); num. of cancers (10); Lit. mined (13). In dbSNP: rs121913530."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "1514", 
+            "subjects_positive": "23", 
+            "disease": {
+                "doid": "1324", 
+                "url": "http://disease-ontology.org/term/DOID:1324", 
+                "name": "Lung cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "1.5", 
+            "sequence_mut": "D", 
+            "start_pos": 12, 
+            "end_pos": 12, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 3 out of 6 filters: patient freq. (1.5%); patient count (23/1514); num. of cancers (15). In dbSNP: rs121913529."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "672", 
+            "subjects_positive": "26", 
+            "disease": {
+                "doid": "363", 
+                "url": "http://disease-ontology.org/term/DOID:363", 
+                "name": "Uterine cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "3.9", 
+            "sequence_mut": "V", 
+            "start_pos": 12, 
+            "end_pos": 12, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 3 out of 6 filters: patient freq. (3.9%); patient count (26/672); num. of cancers (12). In dbSNP: rs121913529."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "1044", 
+            "subjects_positive": "11", 
+            "disease": {
+                "doid": "10534", 
+                "url": "http://disease-ontology.org/term/DOID:10534", 
+                "name": "Stomach cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "1.1", 
+            "sequence_mut": "D", 
+            "start_pos": 13, 
+            "end_pos": 13, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 3 out of 6 filters: patient freq. (1.1%); patient count (11/1044); num. of cancers (9). In dbSNP: rs112445441."
+        }, 
+        {
+            "sequence_org": "A", 
+            "subjects_tested": "618", 
+            "subjects_positive": "17", 
+            "disease": {
+                "doid": "9256", 
+                "url": "http://disease-ontology.org/term/DOID:9256", 
+                "name": "Colorectal cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "2.8", 
+            "sequence_mut": "T", 
+            "start_pos": 146, 
+            "end_pos": 146, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 3 out of 6 filters: patient freq. (2.8%); patient count (17/618); num. of cancers (4)."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "672", 
+            "subjects_positive": "35", 
+            "disease": {
+                "doid": "363", 
+                "url": "http://disease-ontology.org/term/DOID:363", 
+                "name": "Uterine cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "5.2", 
+            "sequence_mut": "D", 
+            "start_pos": 12, 
+            "end_pos": 12, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 3 out of 6 filters: patient freq. (5.2%); patient count (35/672); num. of cancers (15). In dbSNP: rs121913529."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "558", 
+            "subjects_positive": "13", 
+            "disease": {
+                "doid": "363", 
+                "url": "http://disease-ontology.org/term/DOID:363", 
+                "name": "Uterine cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "2.3", 
+            "sequence_mut": "D", 
+            "start_pos": 13, 
+            "end_pos": 13, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 3 out of 6 filters: patient freq. (2.3%); patient count (13/558); num. of cancers (9). In dbSNP: rs112445441."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "618", 
+            "subjects_positive": "14", 
+            "disease": {
+                "doid": "9256", 
+                "url": "http://disease-ontology.org/term/DOID:9256", 
+                "name": "Colorectal cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "2.3", 
+            "sequence_mut": "S", 
+            "start_pos": 12, 
+            "end_pos": 12, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 3 out of 6 filters: patient freq. (2.3%); patient count (14/618); num. of cancers (6). In dbSNP: rs121913530."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "2203", 
+            "subjects_positive": "83", 
+            "disease": {
+                "doid": "1324", 
+                "url": "http://disease-ontology.org/term/DOID:1324", 
+                "name": "Lung cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "3.8", 
+            "sequence_mut": "V", 
+            "start_pos": 12, 
+            "end_pos": 12, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 3 out of 6 filters: patient freq. (3.8%); patient count (83/2203); num. of cancers (12). In dbSNP: rs121913529."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "618", 
+            "subjects_positive": "17", 
+            "disease": {
+                "doid": "9256", 
+                "url": "http://disease-ontology.org/term/DOID:9256", 
+                "name": "Colorectal cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "2.8", 
+            "sequence_mut": "C", 
+            "start_pos": 12, 
+            "end_pos": 12, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 3 out of 6 filters: patient freq. (2.8%); patient count (17/618); num. of cancers (10). In dbSNP: rs121913530."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "2203", 
+            "subjects_positive": "20", 
+            "disease": {
+                "doid": "1324", 
+                "url": "http://disease-ontology.org/term/DOID:1324", 
+                "name": "Lung cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.9", 
+            "sequence_mut": "A", 
+            "start_pos": 12, 
+            "end_pos": 12, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 2 out of 6 filters: patient count (20/2203); num. of cancers (9). In dbSNP: rs121913529."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "672", 
+            "subjects_positive": "9", 
+            "disease": {
+                "doid": "363", 
+                "url": "http://disease-ontology.org/term/DOID:363", 
+                "name": "Uterine cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "1.3", 
+            "sequence_mut": "A", 
+            "start_pos": 12, 
+            "end_pos": 12, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 2 out of 6 filters: patient freq. (1.3%); num. of cancers (9). In dbSNP: rs121913529."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "191", 
+            "subjects_positive": "2", 
+            "disease": {
+                "doid": "5041", 
+                "url": "http://disease-ontology.org/term/DOID:5041", 
+                "name": "Esophageal cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "1.0", 
+            "sequence_mut": "D", 
+            "start_pos": 12, 
+            "end_pos": 12, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 2 out of 6 filters: patient freq. (1.0%); num. of cancers (15). In dbSNP: rs121913529."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "399", 
+            "subjects_positive": "1", 
+            "disease": {
+                "doid": "1793", 
+                "url": "http://disease-ontology.org/term/DOID:1793", 
+                "name": "Pancreatic cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.3", 
+            "sequence_mut": "C", 
+            "start_pos": 12, 
+            "end_pos": 12, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 2 out of 6 filters: num. of cancers (10); Lit. mined (13). In dbSNP: rs121913530."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "103", 
+            "subjects_positive": "1", 
+            "disease": {
+                "doid": "11054", 
+                "url": "http://disease-ontology.org/term/DOID:11054", 
+                "name": "Urinary bladder cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "1.0", 
+            "sequence_mut": "A", 
+            "start_pos": 12, 
+            "end_pos": 12, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 2 out of 6 filters: patient freq. (1.0%); num. of cancers (9). In dbSNP: rs121913529."
+        }, 
+        {
+            "sequence_org": "Q", 
+            "subjects_tested": "191", 
+            "subjects_positive": "2", 
+            "disease": {
+                "doid": "5041", 
+                "url": "http://disease-ontology.org/term/DOID:5041", 
+                "name": "Esophageal cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "1.0", 
+            "sequence_mut": "H", 
+            "start_pos": 61, 
+            "end_pos": 61, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 2 out of 6 filters: patient freq. (1.0%); num. of cancers (10). In dbSNP: rs17851045."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "499", 
+            "subjects_positive": "5", 
+            "disease": {
+                "doid": "2394", 
+                "url": "http://disease-ontology.org/term/DOID:2394", 
+                "name": "Ovarian cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "1.0", 
+            "sequence_mut": "V", 
+            "start_pos": 12, 
+            "end_pos": 12, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 2 out of 6 filters: patient freq. (1.0%); num. of cancers (12). In dbSNP: rs121913529."
+        }, 
+        {
+            "sequence_org": "L", 
+            "subjects_tested": "48", 
+            "subjects_positive": "1", 
+            "disease": {
+                "doid": "2531", 
+                "url": "http://disease-ontology.org/term/DOID:2531", 
+                "name": "Hematologic cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "2.1", 
+            "sequence_mut": "F", 
+            "start_pos": 19, 
+            "end_pos": 19, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 2 out of 6 filters: patient freq. (2.1%); num. of cancers (4). In dbSNP: rs121913538."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "350", 
+            "subjects_positive": "5", 
+            "disease": {
+                "doid": "4362", 
+                "url": "http://disease-ontology.org/term/DOID:4362", 
+                "name": "Cervical cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "1.4", 
+            "sequence_mut": "D", 
+            "start_pos": 12, 
+            "end_pos": 12, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 2 out of 6 filters: patient freq. (1.4%); num. of cancers (15). In dbSNP: rs121913529."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "350", 
+            "subjects_positive": "4", 
+            "disease": {
+                "doid": "4362", 
+                "url": "http://disease-ontology.org/term/DOID:4362", 
+                "name": "Cervical cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "1.1", 
+            "sequence_mut": "D", 
+            "start_pos": 13, 
+            "end_pos": 13, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 2 out of 6 filters: patient freq. (1.1%); num. of cancers (9). In dbSNP: rs112445441."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "150", 
+            "subjects_positive": "2", 
+            "disease": {
+                "doid": "2531", 
+                "url": "http://disease-ontology.org/term/DOID:2531", 
+                "name": "Hematologic cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "1.3", 
+            "sequence_mut": "V", 
+            "start_pos": 12, 
+            "end_pos": 12, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 2 out of 6 filters: patient freq. (1.3%); num. of cancers (12). In dbSNP: rs121913529."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "1044", 
+            "subjects_positive": "4", 
+            "disease": {
+                "doid": "10534", 
+                "url": "http://disease-ontology.org/term/DOID:10534", 
+                "name": "Stomach cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.4", 
+            "sequence_mut": "V", 
+            "start_pos": 12, 
+            "end_pos": 12, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 2 out of 6 filters: num. of cancers (12); DB annot. (1). In dbSNP: rs121913529."
+        }, 
+        {
+            "sequence_org": "Q", 
+            "subjects_tested": "25", 
+            "subjects_positive": "1", 
+            "disease": {
+                "doid": "10283", 
+                "url": "http://disease-ontology.org/term/DOID:10283", 
+                "name": "Prostate cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "4.0", 
+            "sequence_mut": "H", 
+            "start_pos": 61, 
+            "end_pos": 61, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 2 out of 6 filters: patient freq. (4.0%); num. of cancers (10). In dbSNP: rs17851045."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "1044", 
+            "subjects_positive": "4", 
+            "disease": {
+                "doid": "10534", 
+                "url": "http://disease-ontology.org/term/DOID:10534", 
+                "name": "Stomach cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.4", 
+            "sequence_mut": "S", 
+            "start_pos": 12, 
+            "end_pos": 12, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 2 out of 6 filters: num. of cancers (6); DB annot. (1). In dbSNP: rs121913530."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "742", 
+            "subjects_positive": "1", 
+            "disease": {
+                "doid": "11054", 
+                "url": "http://disease-ontology.org/term/DOID:11054", 
+                "name": "Urinary bladder cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.1", 
+            "sequence_mut": "R", 
+            "start_pos": 12, 
+            "end_pos": 12, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 2 out of 6 filters: num. of cancers (7); DB annot. (1). In dbSNP: rs121913530."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "558", 
+            "subjects_positive": "3", 
+            "disease": {
+                "doid": "363", 
+                "url": "http://disease-ontology.org/term/DOID:363", 
+                "name": "Uterine cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.5", 
+            "sequence_mut": "C", 
+            "start_pos": 13, 
+            "end_pos": 13, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (4). In dbSNP: rs121913535."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "963", 
+            "subjects_positive": "2", 
+            "disease": {
+                "doid": "1781", 
+                "url": "http://disease-ontology.org/term/DOID:1781", 
+                "name": "Thyroid gland cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.2", 
+            "sequence_mut": "V", 
+            "start_pos": 12, 
+            "end_pos": 12, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (12). In dbSNP: rs121913529."
+        }, 
+        {
+            "sequence_org": "Q", 
+            "subjects_tested": "499", 
+            "subjects_positive": "1", 
+            "disease": {
+                "doid": "2394", 
+                "url": "http://disease-ontology.org/term/DOID:2394", 
+                "name": "Ovarian cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.2", 
+            "sequence_mut": "L", 
+            "start_pos": 61, 
+            "end_pos": 61, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (7). In dbSNP: rs121913240."
+        }, 
+        {
+            "sequence_org": "Q", 
+            "subjects_tested": "963", 
+            "subjects_positive": "1", 
+            "disease": {
+                "doid": "1781", 
+                "url": "http://disease-ontology.org/term/DOID:1781", 
+                "name": "Thyroid gland cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.1", 
+            "sequence_mut": "R", 
+            "start_pos": 61, 
+            "end_pos": 61, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (4). In dbSNP: rs121913240."
+        }, 
+        {
+            "sequence_org": "Q", 
+            "subjects_tested": "399", 
+            "subjects_positive": "2", 
+            "disease": {
+                "doid": "1793", 
+                "url": "http://disease-ontology.org/term/DOID:1793", 
+                "name": "Pancreatic cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.5", 
+            "sequence_mut": "R", 
+            "start_pos": 61, 
+            "end_pos": 61, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (4). In dbSNP: rs121913240."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "456", 
+            "subjects_positive": "2", 
+            "disease": {
+                "doid": "9256", 
+                "url": "http://disease-ontology.org/term/DOID:9256", 
+                "name": "Colorectal cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.4", 
+            "sequence_mut": "R", 
+            "start_pos": 12, 
+            "end_pos": 12, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (7). In dbSNP: rs121913530."
+        }, 
+        {
+            "sequence_org": "Q", 
+            "subjects_tested": "150", 
+            "subjects_positive": "1", 
+            "disease": {
+                "doid": "2531", 
+                "url": "http://disease-ontology.org/term/DOID:2531", 
+                "name": "Hematologic cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.7", 
+            "sequence_mut": "H", 
+            "start_pos": 61, 
+            "end_pos": 61, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (10). In dbSNP: rs17851045."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "1042", 
+            "subjects_positive": "1", 
+            "disease": {
+                "doid": "1319", 
+                "url": "http://disease-ontology.org/term/DOID:1319", 
+                "name": "Brain cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.1", 
+            "sequence_mut": "A", 
+            "start_pos": 12, 
+            "end_pos": 12, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (9). In dbSNP: rs121913529."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "350", 
+            "subjects_positive": "3", 
+            "disease": {
+                "doid": "4362", 
+                "url": "http://disease-ontology.org/term/DOID:4362", 
+                "name": "Cervical cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.9", 
+            "sequence_mut": "V", 
+            "start_pos": 12, 
+            "end_pos": 12, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (12). In dbSNP: rs121913529."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "820", 
+            "subjects_positive": "2", 
+            "disease": {
+                "doid": "4159", 
+                "url": "http://disease-ontology.org/term/DOID:4159", 
+                "name": "Skin cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.2", 
+            "sequence_mut": "R", 
+            "start_pos": 12, 
+            "end_pos": 12, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (7). In dbSNP: rs121913530."
+        }, 
+        {
+            "sequence_org": "Q", 
+            "subjects_tested": "558", 
+            "subjects_positive": "4", 
+            "disease": {
+                "doid": "363", 
+                "url": "http://disease-ontology.org/term/DOID:363", 
+                "name": "Uterine cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.7", 
+            "sequence_mut": "H", 
+            "start_pos": 61, 
+            "end_pos": 61, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (10). In dbSNP: rs17851045."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "412", 
+            "subjects_positive": "1", 
+            "disease": {
+                "doid": "3571", 
+                "url": "http://disease-ontology.org/term/DOID:3571", 
+                "name": "Liver cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.2", 
+            "sequence_mut": "D", 
+            "start_pos": 13, 
+            "end_pos": 13, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (9). In dbSNP: rs112445441."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "1144", 
+            "subjects_positive": "1", 
+            "disease": {
+                "doid": "1612", 
+                "url": "http://disease-ontology.org/term/DOID:1612", 
+                "name": "Breast cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.1", 
+            "sequence_mut": "C", 
+            "start_pos": 12, 
+            "end_pos": 12, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (10). In dbSNP: rs121913530."
+        }, 
+        {
+            "sequence_org": "Q", 
+            "subjects_tested": "742", 
+            "subjects_positive": "1", 
+            "disease": {
+                "doid": "11054", 
+                "url": "http://disease-ontology.org/term/DOID:11054", 
+                "name": "Urinary bladder cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.1", 
+            "sequence_mut": "H", 
+            "start_pos": 61, 
+            "end_pos": 61, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (10). In dbSNP: rs17851045."
+        }, 
+        {
+            "sequence_org": "A", 
+            "subjects_tested": "558", 
+            "subjects_positive": "1", 
+            "disease": {
+                "doid": "363", 
+                "url": "http://disease-ontology.org/term/DOID:363", 
+                "name": "Uterine cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.2", 
+            "sequence_mut": "T", 
+            "start_pos": 146, 
+            "end_pos": 146, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (4)."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "399", 
+            "subjects_positive": "1", 
+            "disease": {
+                "doid": "1793", 
+                "url": "http://disease-ontology.org/term/DOID:1793", 
+                "name": "Pancreatic cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.3", 
+            "sequence_mut": "A", 
+            "start_pos": 12, 
+            "end_pos": 12, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (9). In dbSNP: rs121913529."
+        }, 
+        {
+            "sequence_org": "Q", 
+            "subjects_tested": "1514", 
+            "subjects_positive": "3", 
+            "disease": {
+                "doid": "1324", 
+                "url": "http://disease-ontology.org/term/DOID:1324", 
+                "name": "Lung cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.2", 
+            "sequence_mut": "L", 
+            "start_pos": 61, 
+            "end_pos": 61, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (7). In dbSNP: rs121913240."
+        }, 
+        {
+            "sequence_org": "Q", 
+            "subjects_tested": "963", 
+            "subjects_positive": "2", 
+            "disease": {
+                "doid": "1781", 
+                "url": "http://disease-ontology.org/term/DOID:1781", 
+                "name": "Thyroid gland cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.2", 
+            "sequence_mut": "K", 
+            "start_pos": 61, 
+            "end_pos": 61, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (3). In dbSNP: rs121913238."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "742", 
+            "subjects_positive": "2", 
+            "disease": {
+                "doid": "11054", 
+                "url": "http://disease-ontology.org/term/DOID:11054", 
+                "name": "Urinary bladder cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.3", 
+            "sequence_mut": "C", 
+            "start_pos": 12, 
+            "end_pos": 12, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (10). In dbSNP: rs121913530."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "678", 
+            "subjects_positive": "5", 
+            "disease": {
+                "doid": "1319", 
+                "url": "http://disease-ontology.org/term/DOID:1319", 
+                "name": "Brain cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.7", 
+            "sequence_mut": "D", 
+            "start_pos": 12, 
+            "end_pos": 12, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (15). In dbSNP: rs121913529."
+        }, 
+        {
+            "sequence_org": "Q", 
+            "subjects_tested": "820", 
+            "subjects_positive": "1", 
+            "disease": {
+                "doid": "4159", 
+                "url": "http://disease-ontology.org/term/DOID:4159", 
+                "name": "Skin cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.1", 
+            "sequence_mut": "R", 
+            "start_pos": 61, 
+            "end_pos": 61, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (4). In dbSNP: rs121913240."
+        }, 
+        {
+            "sequence_org": "Q", 
+            "subjects_tested": "1118", 
+            "subjects_positive": "1", 
+            "disease": {
+                "doid": "10283", 
+                "url": "http://disease-ontology.org/term/DOID:10283", 
+                "name": "Prostate cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.1", 
+            "sequence_mut": "L", 
+            "start_pos": 61, 
+            "end_pos": 61, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (7). In dbSNP: rs121913240."
+        }, 
+        {
+            "sequence_org": "A", 
+            "subjects_tested": "1044", 
+            "subjects_positive": "3", 
+            "disease": {
+                "doid": "10534", 
+                "url": "http://disease-ontology.org/term/DOID:10534", 
+                "name": "Stomach cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.3", 
+            "sequence_mut": "T", 
+            "start_pos": 146, 
+            "end_pos": 146, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (4)."
+        }, 
+        {
+            "sequence_org": "A", 
+            "subjects_tested": "350", 
+            "subjects_positive": "2", 
+            "disease": {
+                "doid": "4362", 
+                "url": "http://disease-ontology.org/term/DOID:4362", 
+                "name": "Cervical cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.6", 
+            "sequence_mut": "T", 
+            "start_pos": 146, 
+            "end_pos": 146, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (4)."
+        }, 
+        {
+            "sequence_org": "Q", 
+            "subjects_tested": "456", 
+            "subjects_positive": "3", 
+            "disease": {
+                "doid": "9256", 
+                "url": "http://disease-ontology.org/term/DOID:9256", 
+                "name": "Colorectal cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.7", 
+            "sequence_mut": "R", 
+            "start_pos": 61, 
+            "end_pos": 61, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (4). In dbSNP: rs121913240."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "256", 
+            "subjects_positive": "1", 
+            "disease": {
+                "doid": "10283", 
+                "url": "http://disease-ontology.org/term/DOID:10283", 
+                "name": "Prostate cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.4", 
+            "sequence_mut": "A", 
+            "start_pos": 12, 
+            "end_pos": 12, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (9). In dbSNP: rs121913529."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "672", 
+            "subjects_positive": "6", 
+            "disease": {
+                "doid": "363", 
+                "url": "http://disease-ontology.org/term/DOID:363", 
+                "name": "Uterine cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.9", 
+            "sequence_mut": "C", 
+            "start_pos": 12, 
+            "end_pos": 12, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (10). In dbSNP: rs121913530."
+        }, 
+        {
+            "sequence_org": "Q", 
+            "subjects_tested": "162", 
+            "subjects_positive": "1", 
+            "disease": {
+                "doid": "9256", 
+                "url": "http://disease-ontology.org/term/DOID:9256", 
+                "name": "Colorectal cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.6", 
+            "sequence_mut": "L", 
+            "start_pos": 61, 
+            "end_pos": 61, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (7). In dbSNP: rs121913240."
+        }, 
+        {
+            "sequence_org": "Q", 
+            "subjects_tested": "756", 
+            "subjects_positive": "1", 
+            "disease": {
+                "doid": "263", 
+                "url": "http://disease-ontology.org/term/DOID:263", 
+                "name": "Kidney cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.1", 
+            "sequence_mut": "H", 
+            "start_pos": 61, 
+            "end_pos": 61, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (10). In dbSNP: rs17851045."
+        }, 
+        {
+            "sequence_org": "A", 
+            "subjects_tested": "1044", 
+            "subjects_positive": "3", 
+            "disease": {
+                "doid": "10534", 
+                "url": "http://disease-ontology.org/term/DOID:10534", 
+                "name": "Stomach cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.3", 
+            "sequence_mut": "T", 
+            "start_pos": 59, 
+            "end_pos": 59, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: DB annot. (1). In dbSNP: rs121913528."
+        }, 
+        {
+            "sequence_org": "Q", 
+            "subjects_tested": "1044", 
+            "subjects_positive": "3", 
+            "disease": {
+                "doid": "10534", 
+                "url": "http://disease-ontology.org/term/DOID:10534", 
+                "name": "Stomach cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.3", 
+            "sequence_mut": "H", 
+            "start_pos": 61, 
+            "end_pos": 61, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (10). In dbSNP: rs17851045."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "1514", 
+            "subjects_positive": "3", 
+            "disease": {
+                "doid": "1324", 
+                "url": "http://disease-ontology.org/term/DOID:1324", 
+                "name": "Lung cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.2", 
+            "sequence_mut": "D", 
+            "start_pos": 13, 
+            "end_pos": 13, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (9). In dbSNP: rs112445441."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "820", 
+            "subjects_positive": "2", 
+            "disease": {
+                "doid": "4159", 
+                "url": "http://disease-ontology.org/term/DOID:4159", 
+                "name": "Skin cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.2", 
+            "sequence_mut": "D", 
+            "start_pos": 12, 
+            "end_pos": 12, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (15). In dbSNP: rs121913529."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "350", 
+            "subjects_positive": "1", 
+            "disease": {
+                "doid": "4362", 
+                "url": "http://disease-ontology.org/term/DOID:4362", 
+                "name": "Cervical cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.3", 
+            "sequence_mut": "C", 
+            "start_pos": 12, 
+            "end_pos": 12, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (10). In dbSNP: rs121913530."
+        }, 
+        {
+            "sequence_org": "L", 
+            "subjects_tested": "742", 
+            "subjects_positive": "2", 
+            "disease": {
+                "doid": "11054", 
+                "url": "http://disease-ontology.org/term/DOID:11054", 
+                "name": "Urinary bladder cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.3", 
+            "sequence_mut": "F", 
+            "start_pos": 19, 
+            "end_pos": 19, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (4). In dbSNP: rs121913538."
+        }, 
+        {
+            "sequence_org": "Q", 
+            "subjects_tested": "48", 
+            "subjects_positive": "1", 
+            "disease": {
+                "doid": "2531", 
+                "url": "http://disease-ontology.org/term/DOID:2531", 
+                "name": "Hematologic cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "2.1", 
+            "sequence_mut": "K", 
+            "start_pos": 22, 
+            "end_pos": 22, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: patient freq. (2.1%). In dbSNP: rs121913236."
+        }, 
+        {
+            "sequence_org": "L", 
+            "subjects_tested": "3028", 
+            "subjects_positive": "4", 
+            "disease": {
+                "doid": "1324", 
+                "url": "http://disease-ontology.org/term/DOID:1324", 
+                "name": "Lung cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.1", 
+            "sequence_mut": "F", 
+            "start_pos": 19, 
+            "end_pos": 19, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (4). In dbSNP: rs121913538."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "655", 
+            "subjects_positive": "2", 
+            "disease": {
+                "doid": "263", 
+                "url": "http://disease-ontology.org/term/DOID:263", 
+                "name": "Kidney cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.3", 
+            "sequence_mut": "V", 
+            "start_pos": 12, 
+            "end_pos": 12, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (12). In dbSNP: rs121913529."
+        }, 
+        {
+            "sequence_org": "Q", 
+            "subjects_tested": "820", 
+            "subjects_positive": "1", 
+            "disease": {
+                "doid": "4159", 
+                "url": "http://disease-ontology.org/term/DOID:4159", 
+                "name": "Skin cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.1", 
+            "sequence_mut": "K", 
+            "start_pos": 61, 
+            "end_pos": 61, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (3). In dbSNP: rs121913238."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "742", 
+            "subjects_positive": "1", 
+            "disease": {
+                "doid": "11054", 
+                "url": "http://disease-ontology.org/term/DOID:11054", 
+                "name": "Urinary bladder cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.1", 
+            "sequence_mut": "D", 
+            "start_pos": 13, 
+            "end_pos": 13, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (9). In dbSNP: rs112445441."
+        }, 
+        {
+            "sequence_org": "Q", 
+            "subjects_tested": "558", 
+            "subjects_positive": "1", 
+            "disease": {
+                "doid": "363", 
+                "url": "http://disease-ontology.org/term/DOID:363", 
+                "name": "Uterine cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.2", 
+            "sequence_mut": "L", 
+            "start_pos": 61, 
+            "end_pos": 61, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (7). In dbSNP: rs121913240."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "125", 
+            "subjects_positive": "1", 
+            "disease": {
+                "doid": "3277", 
+                "url": "http://disease-ontology.org/term/DOID:3277", 
+                "name": "Thymus cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.8", 
+            "sequence_mut": "D", 
+            "start_pos": 12, 
+            "end_pos": 12, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (15). In dbSNP: rs121913529."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "1514", 
+            "subjects_positive": "8", 
+            "disease": {
+                "doid": "1324", 
+                "url": "http://disease-ontology.org/term/DOID:1324", 
+                "name": "Lung cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.5", 
+            "sequence_mut": "S", 
+            "start_pos": 12, 
+            "end_pos": 12, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (6). In dbSNP: rs121913530."
+        }, 
+        {
+            "sequence_org": "Q", 
+            "subjects_tested": "150", 
+            "subjects_positive": "1", 
+            "disease": {
+                "doid": "2531", 
+                "url": "http://disease-ontology.org/term/DOID:2531", 
+                "name": "Hematologic cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.7", 
+            "sequence_mut": "L", 
+            "start_pos": 61, 
+            "end_pos": 61, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (7). In dbSNP: rs121913240."
+        }, 
+        {
+            "sequence_org": "Q", 
+            "subjects_tested": "2203", 
+            "subjects_positive": "2", 
+            "disease": {
+                "doid": "1324", 
+                "url": "http://disease-ontology.org/term/DOID:1324", 
+                "name": "Lung cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.1", 
+            "sequence_mut": "H", 
+            "start_pos": 61, 
+            "end_pos": 61, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (10). In dbSNP: rs17851045."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "1144", 
+            "subjects_positive": "3", 
+            "disease": {
+                "doid": "1612", 
+                "url": "http://disease-ontology.org/term/DOID:1612", 
+                "name": "Breast cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.3", 
+            "sequence_mut": "V", 
+            "start_pos": 12, 
+            "end_pos": 12, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (12). In dbSNP: rs121913529."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "499", 
+            "subjects_positive": "1", 
+            "disease": {
+                "doid": "2394", 
+                "url": "http://disease-ontology.org/term/DOID:2394", 
+                "name": "Ovarian cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.2", 
+            "sequence_mut": "R", 
+            "start_pos": 12, 
+            "end_pos": 12, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (7). In dbSNP: rs121913530."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "1144", 
+            "subjects_positive": "2", 
+            "disease": {
+                "doid": "1612", 
+                "url": "http://disease-ontology.org/term/DOID:1612", 
+                "name": "Breast cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.2", 
+            "sequence_mut": "D", 
+            "start_pos": 12, 
+            "end_pos": 12, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (15). In dbSNP: rs121913529."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "1118", 
+            "subjects_positive": "1", 
+            "disease": {
+                "doid": "10283", 
+                "url": "http://disease-ontology.org/term/DOID:10283", 
+                "name": "Prostate cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.1", 
+            "sequence_mut": "R", 
+            "start_pos": 12, 
+            "end_pos": 12, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (7). In dbSNP: rs121913530."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "820", 
+            "subjects_positive": "2", 
+            "disease": {
+                "doid": "4159", 
+                "url": "http://disease-ontology.org/term/DOID:4159", 
+                "name": "Skin cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.2", 
+            "sequence_mut": "D", 
+            "start_pos": 13, 
+            "end_pos": 13, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (9). In dbSNP: rs112445441."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "412", 
+            "subjects_positive": "1", 
+            "disease": {
+                "doid": "3571", 
+                "url": "http://disease-ontology.org/term/DOID:3571", 
+                "name": "Liver cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.2", 
+            "sequence_mut": "C", 
+            "start_pos": 12, 
+            "end_pos": 12, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (10). In dbSNP: rs121913530."
+        }, 
+        {
+            "sequence_org": "L", 
+            "subjects_tested": "456", 
+            "subjects_positive": "1", 
+            "disease": {
+                "doid": "9256", 
+                "url": "http://disease-ontology.org/term/DOID:9256", 
+                "name": "Colorectal cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.2", 
+            "sequence_mut": "F", 
+            "start_pos": 19, 
+            "end_pos": 19, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (4). In dbSNP: rs121913538."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "1044", 
+            "subjects_positive": "2", 
+            "disease": {
+                "doid": "10534", 
+                "url": "http://disease-ontology.org/term/DOID:10534", 
+                "name": "Stomach cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.2", 
+            "sequence_mut": "C", 
+            "start_pos": 12, 
+            "end_pos": 12, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (10). In dbSNP: rs121913530."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "1118", 
+            "subjects_positive": "1", 
+            "disease": {
+                "doid": "10283", 
+                "url": "http://disease-ontology.org/term/DOID:10283", 
+                "name": "Prostate cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.1", 
+            "sequence_mut": "D", 
+            "start_pos": 12, 
+            "end_pos": 12, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (15). In dbSNP: rs121913529."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "558", 
+            "subjects_positive": "3", 
+            "disease": {
+                "doid": "363", 
+                "url": "http://disease-ontology.org/term/DOID:363", 
+                "name": "Uterine cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.5", 
+            "sequence_mut": "S", 
+            "start_pos": 12, 
+            "end_pos": 12, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (6). In dbSNP: rs121913530."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "141", 
+            "subjects_positive": "1", 
+            "disease": {
+                "doid": "1612", 
+                "url": "http://disease-ontology.org/term/DOID:1612", 
+                "name": "Breast cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.7", 
+            "sequence_mut": "A", 
+            "start_pos": 12, 
+            "end_pos": 12, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (9). In dbSNP: rs121913529."
+        }, 
+        {
+            "sequence_org": "Q", 
+            "subjects_tested": "456", 
+            "subjects_positive": "4", 
+            "disease": {
+                "doid": "9256", 
+                "url": "http://disease-ontology.org/term/DOID:9256", 
+                "name": "Colorectal cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.9", 
+            "sequence_mut": "K", 
+            "start_pos": 61, 
+            "end_pos": 61, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (3). In dbSNP: rs121913238."
+        }, 
+        {
+            "sequence_org": "Q", 
+            "subjects_tested": "820", 
+            "subjects_positive": "2", 
+            "disease": {
+                "doid": "4159", 
+                "url": "http://disease-ontology.org/term/DOID:4159", 
+                "name": "Skin cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.2", 
+            "sequence_mut": "L", 
+            "start_pos": 61, 
+            "end_pos": 61, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (7). In dbSNP: rs121913240."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "742", 
+            "subjects_positive": "2", 
+            "disease": {
+                "doid": "11054", 
+                "url": "http://disease-ontology.org/term/DOID:11054", 
+                "name": "Urinary bladder cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.3", 
+            "sequence_mut": "V", 
+            "start_pos": 12, 
+            "end_pos": 12, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (12). In dbSNP: rs121913529."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "2203", 
+            "subjects_positive": "8", 
+            "disease": {
+                "doid": "1324", 
+                "url": "http://disease-ontology.org/term/DOID:1324", 
+                "name": "Lung cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.4", 
+            "sequence_mut": "C", 
+            "start_pos": 13, 
+            "end_pos": 13, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (4). In dbSNP: rs121913535."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "1411", 
+            "subjects_positive": "4", 
+            "disease": {
+                "doid": "263", 
+                "url": "http://disease-ontology.org/term/DOID:263", 
+                "name": "Kidney cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.3", 
+            "sequence_mut": "D", 
+            "start_pos": 12, 
+            "end_pos": 12, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (15). In dbSNP: rs121913529."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "125", 
+            "subjects_positive": "1", 
+            "disease": {
+                "doid": "2531", 
+                "url": "http://disease-ontology.org/term/DOID:2531", 
+                "name": "Hematologic cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.8", 
+            "sequence_mut": "A", 
+            "start_pos": 12, 
+            "end_pos": 12, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (9). In dbSNP: rs121913529."
+        }, 
+        {
+            "sequence_org": "Q", 
+            "subjects_tested": "780", 
+            "subjects_positive": "5", 
+            "disease": {
+                "doid": "9256", 
+                "url": "http://disease-ontology.org/term/DOID:9256", 
+                "name": "Colorectal cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.6", 
+            "sequence_mut": "H", 
+            "start_pos": 61, 
+            "end_pos": 61, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (10). In dbSNP: rs17851045."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "399", 
+            "subjects_positive": "1", 
+            "disease": {
+                "doid": "1793", 
+                "url": "http://disease-ontology.org/term/DOID:1793", 
+                "name": "Pancreatic cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.3", 
+            "sequence_mut": "S", 
+            "start_pos": 12, 
+            "end_pos": 12, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (6). In dbSNP: rs121913530."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "150", 
+            "subjects_positive": "1", 
+            "disease": {
+                "doid": "2531", 
+                "url": "http://disease-ontology.org/term/DOID:2531", 
+                "name": "Hematologic cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.7", 
+            "sequence_mut": "D", 
+            "start_pos": 13, 
+            "end_pos": 13, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (9). In dbSNP: rs112445441."
+        }, 
+        {
+            "sequence_org": "Q", 
+            "subjects_tested": "798", 
+            "subjects_positive": "7", 
+            "disease": {
+                "doid": "1793", 
+                "url": "http://disease-ontology.org/term/DOID:1793", 
+                "name": "Pancreatic cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.9", 
+            "sequence_mut": "H", 
+            "start_pos": 61, 
+            "end_pos": 61, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (10). In dbSNP: rs17851045."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "399", 
+            "subjects_positive": "1", 
+            "disease": {
+                "doid": "1793", 
+                "url": "http://disease-ontology.org/term/DOID:1793", 
+                "name": "Pancreatic cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.3", 
+            "sequence_mut": "C", 
+            "start_pos": 13, 
+            "end_pos": 13, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (4). In dbSNP: rs121913535."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "456", 
+            "subjects_positive": "2", 
+            "disease": {
+                "doid": "9256", 
+                "url": "http://disease-ontology.org/term/DOID:9256", 
+                "name": "Colorectal cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.4", 
+            "sequence_mut": "C", 
+            "start_pos": 13, 
+            "end_pos": 13, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (4). In dbSNP: rs121913535."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "742", 
+            "subjects_positive": "6", 
+            "disease": {
+                "doid": "11054", 
+                "url": "http://disease-ontology.org/term/DOID:11054", 
+                "name": "Urinary bladder cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.8", 
+            "sequence_mut": "D", 
+            "start_pos": 12, 
+            "end_pos": 12, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (15). In dbSNP: rs121913529."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "1514", 
+            "subjects_positive": "1", 
+            "disease": {
+                "doid": "1324", 
+                "url": "http://disease-ontology.org/term/DOID:1324", 
+                "name": "Lung cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.1", 
+            "sequence_mut": "R", 
+            "start_pos": 12, 
+            "end_pos": 12, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (7). In dbSNP: rs121913530."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "756", 
+            "subjects_positive": "1", 
+            "disease": {
+                "doid": "263", 
+                "url": "http://disease-ontology.org/term/DOID:263", 
+                "name": "Kidney cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.1", 
+            "sequence_mut": "C", 
+            "start_pos": 12, 
+            "end_pos": 12, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (10). In dbSNP: rs121913530."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "1144", 
+            "subjects_positive": "1", 
+            "disease": {
+                "doid": "1612", 
+                "url": "http://disease-ontology.org/term/DOID:1612", 
+                "name": "Breast cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.1", 
+            "sequence_mut": "S", 
+            "start_pos": 12, 
+            "end_pos": 12, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (6). In dbSNP: rs121913530."
+        }, 
+        {
+            "sequence_org": "G", 
+            "subjects_tested": "412", 
+            "subjects_positive": "2", 
+            "disease": {
+                "doid": "3571", 
+                "url": "http://disease-ontology.org/term/DOID:3571", 
+                "name": "Liver cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "0.5", 
+            "sequence_mut": "D", 
+            "start_pos": 12, 
+            "end_pos": 12, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: num. of cancers (15). In dbSNP: rs121913529."
+        }, 
+        {
+            "sequence_org": "A", 
+            "subjects_tested": "50", 
+            "subjects_positive": "1", 
+            "disease": {
+                "doid": "1781", 
+                "url": "http://disease-ontology.org/term/DOID:1781", 
+                "name": "Thyroid gland cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/biomuta/proteinview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioMuta"
+                }
+            ], 
+            "frequency": "2.0", 
+            "sequence_mut": "V", 
+            "start_pos": 59, 
+            "end_pos": 59, 
+            "type": "Point mutation", 
+            "annotation": "Somatic mutation passed 1 out of 6 filters: patient freq. (2.0%). In dbSNP: rs104886029."
+        }
+    ], 
+    "gene": [
+        {
+            "url": "https://www.uniprot.org/uniprot/P01116", 
+            "name": "C-K-RAS; c-Ki-ras; c-Ki-ras2; CFC2; K-Ras; K-Ras 2; K-RAS2A; K-RAS2B; K-RAS4A; K-RAS4B; KI-RAS; KRAS1; KRAS2; NS; NS3; OES; RALD; RASK2; RASK2; KRAS2; KRAS", 
+            "locus": {
+                "end_pos": 25204789, 
+                "start_pos": 25250936, 
+                "chromosome": "12", 
+                "evidence": [
+                    {
+                        "url": "https://www.ensembl.org/id/ENSG00000133703", 
+                        "id": "ENSG00000133703", 
+                        "database": "Ensembl Gene"
+                    }
+                ]
+            }
+        }
+    ], 
+    "synonyms_protein_uniprotkb": [
+        "GTPase KRas", 
+        "c-Ki-ras", 
+        "K-Ras 2", 
+        "Ki-Ras", 
+        "c-K-ras"
+    ], 
+    "isoforms": [
+        {
+            "url": "https://www.uniprot.org/uniprot/P01116#G3V4K2-1", 
+            "isoform_ac": "G3V4K2-1", 
+            "locus": {
+                "end_pos": 25235209, 
+                "start_pos": 25245384, 
+                "chromosome": "12", 
+                "evidence": [
+                    {
+                        "url": "https://www.ensembl.org/id/ENST00000556131", 
+                        "id": "ENST00000556131", 
+                        "database": "Ensembl Transcript"
+                    }, 
+                    {
+                        "url": "https://www.ensembl.org/id/ENSP00000451856", 
+                        "id": "ENSP00000451856", 
+                        "database": "Ensembl Peptide"
+                    }
+                ]
+            }, 
+            "sequence": {
+                "length": 43, 
+                "sequence": "MTEYKLVVVGAGGVGKSALTIQLIQNHFVDEYDPTIEVLLSSM"
+            }
+        }, 
+        {
+            "url": "https://www.uniprot.org/uniprot/P01116#P01116-2", 
+            "isoform_ac": "P01116-2", 
+            "locus": {
+                "end_pos": 25209798, 
+                "start_pos": 25245384, 
+                "chromosome": "12", 
+                "evidence": [
+                    {
+                        "url": "https://www.ensembl.org/id/ENST00000311936", 
+                        "id": "ENST00000311936", 
+                        "database": "Ensembl Transcript"
+                    }, 
+                    {
+                        "url": "https://www.ensembl.org/id/ENSP00000308495", 
+                        "id": "ENSP00000308495", 
+                        "database": "Ensembl Peptide"
+                    }
+                ]
+            }, 
+            "sequence": {
+                "length": 188, 
+                "sequence": "MTEYKLVVVGAGGVGKSALTIQLIQNHFVDEYDPTIEDSYRKQVVIDGETCLLDILDTAGQEEYSAMRDQYMRTGEGFLCVFAINNTKSFEDIHHYREQIKRVKDSEDVPMVLVGNKCDLPSRTVDTKQAQDLARSYGIPFIETSAKTRQGVDDAFYTLVREIRKHKEKMSKDGKKKKKKSKTKCVIM"
+            }
+        }, 
+        {
+            "url": "https://www.uniprot.org/uniprot/P01116#P01116-1", 
+            "isoform_ac": "P01116-1", 
+            "locus": {
+                "end_pos": 25215444, 
+                "start_pos": 25245384, 
+                "chromosome": "12", 
+                "evidence": [
+                    {
+                        "url": "https://www.ensembl.org/id/ENST00000256078", 
+                        "id": "ENST00000256078", 
+                        "database": "Ensembl Transcript"
+                    }, 
+                    {
+                        "url": "https://www.ensembl.org/id/ENSP00000256078", 
+                        "id": "ENSP00000256078", 
+                        "database": "Ensembl Peptide"
+                    }
+                ]
+            }, 
+            "sequence": {
+                "length": 189, 
+                "sequence": "MTEYKLVVVGAGGVGKSALTIQLIQNHFVDEYDPTIEDSYRKQVVIDGETCLLDILDTAGQEEYSAMRDQYMRTGEGFLCVFAINNTKSFEDIHHYREQIKRVKDSEDVPMVLVGNKCDLPSRTVDTKQAQDLARSYGIPFIETSAKTRQRVEDAFYTLVREIRQYRLKKISKEEKTPGCVKIKKCIIM"
+            }
+        }, 
+        {
+            "url": "https://www.uniprot.org/uniprot/P01116#G3V5T7-1", 
+            "isoform_ac": "G3V5T7-1", 
+            "locus": {
+                "end_pos": 25209798, 
+                "start_pos": 25245384, 
+                "chromosome": "12", 
+                "evidence": [
+                    {
+                        "url": "https://www.ensembl.org/id/ENST00000557334", 
+                        "id": "ENST00000557334", 
+                        "database": "Ensembl Transcript"
+                    }, 
+                    {
+                        "url": "https://www.ensembl.org/id/ENSP00000452512", 
+                        "id": "ENSP00000452512", 
+                        "database": "Ensembl Peptide"
+                    }
+                ]
+            }, 
+            "sequence": {
+                "length": 75, 
+                "sequence": "MTEYKLVVVGAGGVGKSALTIQLIQNHFVDEYDPTIEGVDDAFYTLVREIRKHKEKMSKDGKKKKKKSKTKCVIM"
+            }
+        }
+    ], 
+    "pathway": [
+        {
+            "url": "https://www.reactome.org/PathwayBrowser/#R-HSA-8951936", 
+            "resource": "Reactome", 
+            "id": "R-HSA-8951936", 
+            "name": "RUNX3 regulates p14-ARF"
+        }, 
+        {
+            "url": "https://www.reactome.org/PathwayBrowser/#R-HSA-6802955", 
+            "resource": "Reactome", 
+            "id": "R-HSA-6802955", 
+            "name": "Paradoxical activation of RAF signaling by kinase inactive BRAF"
+        }, 
+        {
+            "url": "https://www.reactome.org/PathwayBrowser/#R-HSA-9649913", 
+            "resource": "Reactome", 
+            "id": "R-HSA-9649913", 
+            "name": "RAS GTPase cycle mutants"
+        }, 
+        {
+            "url": "https://www.reactome.org/PathwayBrowser/#R-HSA-6802946", 
+            "resource": "Reactome", 
+            "id": "R-HSA-6802946", 
+            "name": "Signaling by moderate kinase activity BRAF mutants"
+        }, 
+        {
+            "url": "https://www.reactome.org/PathwayBrowser/#R-HSA-9649948", 
+            "resource": "Reactome", 
+            "id": "R-HSA-9649948", 
+            "name": "Signaling downstream of RAS mutants"
+        }, 
+        {
+            "url": "https://www.genome.jp/dbget-bin/get_linkdb?-t+pathway+hsa:3845", 
+            "resource": "KEGG Pathway", 
+            "id": "hsa:3845"
+        }
+    ], 
+    "function": [
+        {
+            "url": "https://www.ncbi.nlm.nih.gov/protein/NP_004976.2", 
+            "annotation": "KRAS is the most frequently mutated gene in human cancers. Direct inhibition of KRAS via pharmacological inhibitors has been challenging Publication Status: Online-Only", 
+            "evidence": [
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/protein/NP_004976.2", 
+                    "id": "NP_004976.2", 
+                    "database": "RefSeq"
+                }
+            ]
+        }, 
+        {
+            "url": "https://www.ncbi.nlm.nih.gov/protein/NP_004976.2", 
+            "annotation": "Dual-luciferase reporter assay in pancreatic ductal adenocarcinoma (PDAC) cells validated that TP53TG1 and 3'UTR of KRAS oncogene mRNA competitively bind with miR-96. Data further indicate that TP53TG1 could effectively function as a sponge for miR-96 to modulate the derepression of KRAS, thus promoting PDAC development.", 
+            "evidence": [
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/protein/NP_004976.2", 
+                    "id": "NP_004976.2", 
+                    "database": "RefSeq"
+                }
+            ]
+        }, 
+        {
+            "url": "https://www.uniprot.org/uniprot/P01116#function", 
+            "annotation": "Ras proteins bind GDP/GTP and possess intrinsic GTPase activity. Plays an important role in the regulation of cell proliferation (PubMed:23698361, PubMed:22711838). Plays a role in promoting oncogenic events by inducing transcriptional silencing of tumor suppressor genes (TSGs) in colorectal cancer (CRC) cells in a ZNF304-dependent manner (PubMed:24623306).", 
+            "evidence": [
+                {
+                    "url": "https://www.uniprot.org/uniprot/P01116#function", 
+                    "id": "P01116", 
+                    "database": "UniProtKB"
+                }
+            ]
+        }, 
+        {
+            "url": "https://www.ncbi.nlm.nih.gov/protein/NP_004976.2", 
+            "annotation": "Study shows that LIF expression is induced specifically by oncogenic KRAS in pancreatic ductal adenocarcinomas (PDAC) and that LIF depletion by genetic means or by neutralizing antibodies prevents engraftment in pancreatic xenograft models. The related cytokine IL-6 cannot substitute for LIF, suggesting that LIF mediates KRAS-driven malignancies through a non-STAT-signaling pathway. Publication Status: Online-Only", 
+            "evidence": [
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/protein/NP_004976.2", 
+                    "id": "NP_004976.2", 
+                    "database": "RefSeq"
+                }
+            ]
+        }, 
+        {
+            "url": "https://www.ncbi.nlm.nih.gov/protein/NP_004976.2", 
+            "annotation": "Oncogenic KRAS, together with beta-Catenin, favours expansion of crypt cells with high ERK activity. Publication Status: Online-Only", 
+            "evidence": [
+                {
+                    "url": "https://www.ncbi.nlm.nih.gov/protein/NP_004976.2", 
+                    "id": "NP_004976.2", 
+                    "database": "RefSeq"
+                }
+            ]
+        }
+    ], 
+    "orthologs": [
+        {
+            "uniprot_canonical_ac": "P08644-1", 
+            "protein_name": "GTPase KRas; c-Ki-ras; K-Ras 2; Ki-Ras; c-K-ras", 
+            "sequence": {
+                "length": 189, 
+                "sequence": "MTEYKLVVVGAGGVGKSALTIQLIQNHFVDEYDPTIEDSYRKQVVIDGETCLLDILDTAGQEEYSAMRDQYMRTGEGFLCVFAINNTKSFEDIHHYREQIKRVKDSEDVPMVLVGNKCDLPSRTVDTKQAQELARSYGIPFIETSAKTRQRVEDAFYTLVREIRQYRLKKISKEEKTPGCVKIKKCVIM"
+            }, 
+            "evidence": [
+                {
+                    "url": "http://www.informatics.jax.org/homology/37990", 
+                    "id": "37990", 
+                    "database": "MGI"
+                }
+            ], 
+            "organism": "Rattus norvegicus", 
+            "tax_id": 10116
+        }, 
+        {
+            "uniprot_canonical_ac": "P32883-1", 
+            "protein_name": "GTPase KRas; c-Ki-ras; K-Ras 2; Ki-Ras; c-K-ras", 
+            "sequence": {
+                "length": 189, 
+                "sequence": "MTEYKLVVVGAGGVGKSALTIQLIQNHFVDEYDPTIEDSYRKQVVIDGETCLLDILDTAGQEEYSAMRDQYMRTGEGFLCVFAINNTKSFEDIHHYREQIKRVKDSEDVPMVLVGNKCDLPSRTVDTKQAQELARSYGIPFIETSAKTRQRVEDAFYTLVREIRQYRLKKISKEEKTPGCVKIKKCVIM"
+            }, 
+            "evidence": [
+                {
+                    "url": "http://www.informatics.jax.org/homology/37990", 
+                    "id": "37990", 
+                    "database": "MGI"
+                }
+            ], 
+            "organism": "Mus musculus", 
+            "tax_id": 10090
+        }
+    ], 
+    "refseq": {
+        "url": "https://www.ncbi.nlm.nih.gov/protein/NP_004976.2", 
+        "ac": "NP_004976.2", 
+        "name": "GTPase KRas isoform b", 
+        "summary": "This gene, a Kirsten ras oncogene homolog from the mammalian ras gene family, encodes a protein that is a member of the small GTPase superfamily. A single amino acid substitution is responsible for an activating mutation. The transforming protein that results is implicated in various malignancies, including lung adenocarcinoma, mucinous adenoma, ductal carcinoma of the pancreas and colorectal carcinoma. Alternative splicing leads to variants encoding two isoforms that differ in the C-terminal region. [provided by RefSeq, Jul 2008]."
+    }, 
+    "go_annotation": {
+        "categories": [
+            {
+                "go_terms": [
+                    {
+                        "url": "https://www.ebi.ac.uk/QuickGO/term/GO:0019003", 
+                        "evidence": [
+                            {
+                                "url": "https://www.uniprot.org/uniprot/P01116", 
+                                "id": "P01116", 
+                                "database": "UniProtKB"
+                            }
+                        ], 
+                        "id": "GO:0019003", 
+                        "name": "GDP binding"
+                    }, 
+                    {
+                        "url": "https://www.ebi.ac.uk/QuickGO/term/GO:0019002", 
+                        "evidence": [
+                            {
+                                "url": "https://www.uniprot.org/uniprot/P01116", 
+                                "id": "P01116", 
+                                "database": "UniProtKB"
+                            }
+                        ], 
+                        "id": "GO:0019002", 
+                        "name": "GMP binding"
+                    }, 
+                    {
+                        "url": "https://www.ebi.ac.uk/QuickGO/term/GO:0005525", 
+                        "evidence": [
+                            {
+                                "url": "https://www.uniprot.org/uniprot/P01116", 
+                                "id": "P01116", 
+                                "database": "UniProtKB"
+                            }
+                        ], 
+                        "id": "GO:0005525", 
+                        "name": "GTP binding"
+                    }, 
+                    {
+                        "url": "https://www.ebi.ac.uk/QuickGO/term/GO:0003924", 
+                        "evidence": [
+                            {
+                                "url": "https://www.uniprot.org/uniprot/P01116", 
+                                "id": "P01116", 
+                                "database": "UniProtKB"
+                            }
+                        ], 
+                        "id": "GO:0003924", 
+                        "name": "GTPase activity"
+                    }, 
+                    {
+                        "url": "https://www.ebi.ac.uk/QuickGO/term/GO:0042802", 
+                        "evidence": [
+                            {
+                                "url": "https://www.uniprot.org/uniprot/P01116", 
+                                "id": "P01116", 
+                                "database": "UniProtKB"
+                            }
+                        ], 
+                        "id": "GO:0042802", 
+                        "name": "identical protein binding"
+                    }
+                ], 
+                "total": 7, 
+                "name": "Molecular Function"
+            }, 
+            {
+                "go_terms": [
+                    {
+                        "url": "https://www.ebi.ac.uk/QuickGO/term/GO:0005737", 
+                        "evidence": [
+                            {
+                                "url": "https://www.uniprot.org/uniprot/P01116", 
+                                "id": "P01116", 
+                                "database": "UniProtKB"
+                            }
+                        ], 
+                        "id": "GO:0005737", 
+                        "name": "cytoplasm"
+                    }, 
+                    {
+                        "url": "https://www.ebi.ac.uk/QuickGO/term/GO:0005829", 
+                        "evidence": [
+                            {
+                                "url": "https://www.uniprot.org/uniprot/P01116", 
+                                "id": "P01116", 
+                                "database": "UniProtKB"
+                            }
+                        ], 
+                        "id": "GO:0005829", 
+                        "name": "cytosol"
+                    }, 
+                    {
+                        "url": "https://www.ebi.ac.uk/QuickGO/term/GO:0031234", 
+                        "evidence": [
+                            {
+                                "url": "https://www.uniprot.org/uniprot/P01116", 
+                                "id": "P01116", 
+                                "database": "UniProtKB"
+                            }
+                        ], 
+                        "id": "GO:0031234", 
+                        "name": "extrinsic component of cytoplasmic side of plasma membrane"
+                    }, 
+                    {
+                        "url": "https://www.ebi.ac.uk/QuickGO/term/GO:0005925", 
+                        "evidence": [
+                            {
+                                "url": "https://www.uniprot.org/uniprot/P01116", 
+                                "id": "P01116", 
+                                "database": "UniProtKB"
+                            }
+                        ], 
+                        "id": "GO:0005925", 
+                        "name": "focal adhesion"
+                    }, 
+                    {
+                        "url": "https://www.ebi.ac.uk/QuickGO/term/GO:0016020", 
+                        "evidence": [
+                            {
+                                "url": "https://www.uniprot.org/uniprot/P01116", 
+                                "id": "P01116", 
+                                "database": "UniProtKB"
+                            }
+                        ], 
+                        "id": "GO:0016020", 
+                        "name": "membrane"
+                    }
+                ], 
+                "total": 8, 
+                "name": "Cellular Component"
+            }, 
+            {
+                "go_terms": [
+                    {
+                        "url": "https://www.ebi.ac.uk/QuickGO/term/GO:0030036", 
+                        "evidence": [
+                            {
+                                "url": "https://www.uniprot.org/uniprot/P01116", 
+                                "id": "P01116", 
+                                "database": "UniProtKB"
+                            }
+                        ], 
+                        "id": "GO:0030036", 
+                        "name": "actin cytoskeleton organization"
+                    }, 
+                    {
+                        "url": "https://www.ebi.ac.uk/QuickGO/term/GO:0019221", 
+                        "evidence": [
+                            {
+                                "url": "https://www.uniprot.org/uniprot/P01116", 
+                                "id": "P01116", 
+                                "database": "UniProtKB"
+                            }
+                        ], 
+                        "id": "GO:0019221", 
+                        "name": "cytokine-mediated signaling pathway"
+                    }, 
+                    {
+                        "url": "https://www.ebi.ac.uk/QuickGO/term/GO:0038002", 
+                        "evidence": [
+                            {
+                                "url": "https://www.uniprot.org/uniprot/P01116", 
+                                "id": "P01116", 
+                                "database": "UniProtKB"
+                            }
+                        ], 
+                        "id": "GO:0038002", 
+                        "name": "endocrine signaling"
+                    }, 
+                    {
+                        "url": "https://www.ebi.ac.uk/QuickGO/term/GO:0060441", 
+                        "evidence": [
+                            {
+                                "url": "https://www.uniprot.org/uniprot/P01116", 
+                                "id": "P01116", 
+                                "database": "UniProtKB"
+                            }
+                        ], 
+                        "id": "GO:0060441", 
+                        "name": "epithelial tube branching involved in lung morphogenesis"
+                    }, 
+                    {
+                        "url": "https://www.ebi.ac.uk/QuickGO/term/GO:0007565", 
+                        "evidence": [
+                            {
+                                "url": "https://www.uniprot.org/uniprot/P01116", 
+                                "id": "P01116", 
+                                "database": "UniProtKB"
+                            }
+                        ], 
+                        "id": "GO:0007565", 
+                        "name": "female pregnancy"
+                    }
+                ], 
+                "total": 29, 
+                "name": "Biological Process"
+            }
+        ]
+    }, 
+    "site_annotation": [
+        {
+            "end_pos": 87, 
+            "annotation": "n_glycosylation_sequon", 
+            "start_pos": 85
+        }
+    ], 
+    "crossref": [
+        {
+            "url": "https://www.rcsb.org/structure/1N4R", 
+            "id": "1N4R", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/1N4P", 
+            "id": "1N4P", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/1N4Q", 
+            "id": "1N4Q", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/1N4S", 
+            "id": "1N4S", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.reactome.org/PathwayBrowser/#R-HSA-9649948", 
+            "id": "R-HSA-9649948", 
+            "database": "Reactome"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/5VQ1", 
+            "id": "5VQ1", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/5VQ0", 
+            "id": "5VQ0", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/5VQ2", 
+            "id": "5VQ2", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/5VQ6", 
+            "id": "5VQ6", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/5VQ8", 
+            "id": "5VQ8", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/6GOG", 
+            "id": "6GOG", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/6GQY", 
+            "id": "6GQY", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/6GQT", 
+            "id": "6GQT", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/6GQW", 
+            "id": "6GQW", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/5UFQ", 
+            "id": "5UFQ", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/5UFE", 
+            "id": "5UFE", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.ncbi.nlm.nih.gov/gene/3845", 
+            "id": "3845", 
+            "database": "GeneID"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/5MLA", 
+            "id": "5MLA", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/5MLB", 
+            "id": "5MLB", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/3GFT", 
+            "id": "3GFT", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/5YY1", 
+            "id": "5YY1", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=6407", 
+            "id": "6407", 
+            "database": "HGNC"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/6BOF", 
+            "id": "6BOF", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/5US4", 
+            "id": "5US4", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/5USJ", 
+            "id": "5USJ", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/5UQW", 
+            "id": "5UQW", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.reactome.org/PathwayBrowser/#R-HSA-8951936", 
+            "id": "R-HSA-8951936", 
+            "database": "Reactome"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/6H47", 
+            "id": "6H47", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/1KZO", 
+            "id": "1KZO", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/1KZP", 
+            "id": "1KZP", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/5VPY", 
+            "id": "5VPY", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/6GQX", 
+            "id": "6GQX", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/6CU6", 
+            "id": "6CU6", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/4Q02", 
+            "id": "4Q02", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/4Q03", 
+            "id": "4Q03", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/1D8D", 
+            "id": "1D8D", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/1D8E", 
+            "id": "1D8E", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "http://pfam.xfam.org/family/PF00071", 
+            "id": "PF00071", 
+            "database": "Pfam"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/4WA7", 
+            "id": "4WA7", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/4Q01", 
+            "id": "4Q01", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/4DSO", 
+            "id": "4DSO", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/6N2K", 
+            "id": "6N2K", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/6N2J", 
+            "id": "6N2J", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/6QUU", 
+            "id": "6QUU", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/5XCO", 
+            "id": "5XCO", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/5O2T", 
+            "id": "5O2T", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/4LPK", 
+            "id": "4LPK", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/5V9L", 
+            "id": "5V9L", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "http://research.bioinformatics.udel.edu/pro/entry/PR_P01116", 
+            "id": "PR_P01116", 
+            "database": "PRO"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/4PZY", 
+            "id": "4PZY", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/4PZZ", 
+            "id": "4PZZ", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/4LRW", 
+            "id": "4LRW", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/4NMM", 
+            "id": "4NMM", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.reactome.org/PathwayBrowser/#R-HSA-6802946", 
+            "id": "R-HSA-6802946", 
+            "database": "Reactome"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/6GOF", 
+            "id": "6GOF", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/6GOE", 
+            "id": "6GOE", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/6GOD", 
+            "id": "6GOD", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/6GOM", 
+            "id": "6GOM", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/4LV6", 
+            "id": "4LV6", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/6M9W", 
+            "id": "6M9W", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/5V6S", 
+            "id": "5V6S", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/5V6V", 
+            "id": "5V6V", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/5W22", 
+            "id": "5W22", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/6B0V", 
+            "id": "6B0V", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/6B0Y", 
+            "id": "6B0Y", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/6GJ5", 
+            "id": "6GJ5", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/6P8Y", 
+            "id": "6P8Y", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/6P8X", 
+            "id": "6P8X", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/6P8Z", 
+            "id": "6P8Z", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/6P8W", 
+            "id": "6P8W", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.ebi.ac.uk/interpro/entry/IPR020849", 
+            "id": "IPR020849", 
+            "database": "InterPro"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/6MBT", 
+            "id": "6MBT", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.ebi.ac.uk/interpro/entry/IPR027417", 
+            "id": "IPR027417", 
+            "database": "InterPro"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/5KYK", 
+            "id": "5KYK", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.nextprot.org/entry/NX_P01116", 
+            "id": "NX_P01116", 
+            "database": "neXtProt"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/6ASA", 
+            "id": "6ASA", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/4DSN", 
+            "id": "4DSN", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/6E6F", 
+            "id": "6E6F", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/6E6G", 
+            "id": "6E6G", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.ebi.ac.uk/intact/interactors/id:P01116*", 
+            "id": "P01116", 
+            "database": "IntAct"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/5TAR", 
+            "id": "5TAR", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/6MQG", 
+            "id": "6MQG", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/6MQN", 
+            "id": "6MQN", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://omabrowser.org/oma/group/PTVENCY/", 
+            "id": "PTVENCY", 
+            "database": "OMA"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/4M1Y", 
+            "id": "4M1Y", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/4M1T", 
+            "id": "4M1T", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/4M1W", 
+            "id": "4M1W", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/4M1S", 
+            "id": "4M1S", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/4M1O", 
+            "id": "4M1O", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/5VP7", 
+            "id": "5VP7", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/5VPI", 
+            "id": "5VPI", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/5VPZ", 
+            "id": "5VPZ", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/6MBU", 
+            "id": "6MBU", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/5YXZ", 
+            "id": "5YXZ", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://pharos.nih.gov/targets/P01116", 
+            "id": "P01116", 
+            "database": "PHAROS"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/4EPT", 
+            "id": "4EPT", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.reactome.org/PathwayBrowser/#R-HSA-9649913", 
+            "id": "R-HSA-9649913", 
+            "database": "Reactome"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/5WPM", 
+            "id": "5WPM", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/5O2S", 
+            "id": "5O2S", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/6EPL", 
+            "id": "6EPL", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/6EPM", 
+            "id": "6EPM", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/6EPN", 
+            "id": "6EPN", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/6EPO", 
+            "id": "6EPO", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/6EPP", 
+            "id": "6EPP", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/5V9O", 
+            "id": "5V9O", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/5V9U", 
+            "id": "5V9U", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/6P0Z", 
+            "id": "6P0Z", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/5WHB", 
+            "id": "5WHB", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/5WHA", 
+            "id": "5WHA", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/4LYH", 
+            "id": "4LYH", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/4LYJ", 
+            "id": "4LYJ", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/6MBQ", 
+            "id": "6MBQ", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/6BP1", 
+            "id": "6BP1", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/5UK9", 
+            "id": "5UK9", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.ebi.ac.uk/interpro/entry/IPR001806", 
+            "id": "IPR001806", 
+            "database": "InterPro"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/4TQ9", 
+            "id": "4TQ9", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/4TQA", 
+            "id": "4TQA", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/5OCO", 
+            "id": "5OCO", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/5OCT", 
+            "id": "5OCT", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/6FA1", 
+            "id": "6FA1", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/6FA2", 
+            "id": "6FA2", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/6FA3", 
+            "id": "6FA3", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/6FA4", 
+            "id": "6FA4", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/6CCH", 
+            "id": "6CCH", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/6CCX", 
+            "id": "6CCX", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/6CC9", 
+            "id": "6CC9", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/4EPV", 
+            "id": "4EPV", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/4EPW", 
+            "id": "4EPW", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/4EPR", 
+            "id": "4EPR", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/4EPX", 
+            "id": "4EPX", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/4EPY", 
+            "id": "4EPY", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/6ASE", 
+            "id": "6ASE", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/6QUX", 
+            "id": "6QUX", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/6QUW", 
+            "id": "6QUW", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/6QUV", 
+            "id": "6QUV", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/4QL3", 
+            "id": "4QL3", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/6F76", 
+            "id": "6F76", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://bgee.org/?page=gene&gene_id=ENSG00000133703", 
+            "id": "ENSG00000133703", 
+            "database": "Bgee"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/5WHE", 
+            "id": "5WHE", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/5WHD", 
+            "id": "5WHD", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "http://www.genecards.org/cgi-bin/carddisp.pl?gene=KRAS", 
+            "id": "KRAS", 
+            "database": "GeneCards"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/5F2E", 
+            "id": "5F2E", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/4LYF", 
+            "id": "4LYF", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/4LDJ", 
+            "id": "4LDJ", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.ebi.ac.uk/interpro/entry/IPR005225", 
+            "id": "IPR005225", 
+            "database": "InterPro"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/5V71", 
+            "id": "5V71", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/5VBM", 
+            "id": "5VBM", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/5WLB", 
+            "id": "5WLB", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/4L8G", 
+            "id": "4L8G", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.reactome.org/PathwayBrowser/#R-HSA-6802955", 
+            "id": "R-HSA-6802955", 
+            "database": "Reactome"
+        }, 
+        {
+            "url": "https://www.genome.jp/dbget-bin/get_linkdb?-t+pathway+hsa:3845", 
+            "id": "hsa:3845", 
+            "database": "KEGG Pathway"
+        }, 
+        {
+            "url": "https://www.ncbi.nlm.nih.gov/protein/NP_004976.2", 
+            "id": "NP_004976.2", 
+            "database": "RefSeq"
+        }, 
+        {
+            "url": "http://www.pantherdb.org/panther/family.do?clsAccession=PTHR24070", 
+            "id": "PTHR24070", 
+            "database": "PANTHER"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/6H46", 
+            "id": "6H46", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/6GJ6", 
+            "id": "6GJ6", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/6GJ7", 
+            "id": "6GJ7", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/6GJ8", 
+            "id": "6GJ8", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/4LUC", 
+            "id": "4LUC", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/6ARK", 
+            "id": "6ARK", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/4M21", 
+            "id": "4M21", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/4M22", 
+            "id": "4M22", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/5TB5", 
+            "id": "5TB5", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/5OCG", 
+            "id": "5OCG", 
+            "database": "PDB"
+        }, 
+        {
+            "url": "https://www.rcsb.org/structure/4OBE", 
+            "id": "4OBE", 
+            "database": "PDB"
+        }
+    ], 
+    "expression_disease": [
+        {
+            "name": "Thyroid gland cancer [DO disease name]", 
+            "trend": "Down", 
+            "icd10": "C73", 
+            "disease": {
+                "doid": "1781", 
+                "url": "http://disease-ontology.org/term/DOID:1781", 
+                "name": "Thyroid gland cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/bioxpress/transcriptview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioXpress"
+                }
+            ], 
+            "url": "http://disease-ontology.org/term/DOID:1781", 
+            "significant": "No"
+        }, 
+        {
+            "name": "Prostate cancer [DO disease name]", 
+            "trend": "Up", 
+            "icd10": "C61", 
+            "disease": {
+                "doid": "10283", 
+                "url": "http://disease-ontology.org/term/DOID:10283", 
+                "name": "Prostate cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/bioxpress/transcriptview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioXpress"
+                }
+            ], 
+            "url": "http://disease-ontology.org/term/DOID:10283", 
+            "significant": "No"
+        }, 
+        {
+            "name": "Lung squamous cell carcinoma [DO disease name]", 
+            "trend": "Up", 
+            "disease": {
+                "doid": "3907", 
+                "url": "http://disease-ontology.org/term/DOID:3907", 
+                "name": "Lung squamous cell carcinoma"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/bioxpress/transcriptview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioXpress"
+                }
+            ], 
+            "url": "http://disease-ontology.org/term/DOID:3907", 
+            "significant": "Yes"
+        }, 
+        {
+            "name": "Esophageal cancer [DO disease name]", 
+            "trend": "Down", 
+            "icd10": "C15.3", 
+            "disease": {
+                "doid": "5041", 
+                "url": "http://disease-ontology.org/term/DOID:5041", 
+                "name": "Esophageal cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/bioxpress/transcriptview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioXpress"
+                }
+            ], 
+            "url": "http://disease-ontology.org/term/DOID:5041", 
+            "significant": "No"
+        }, 
+        {
+            "name": "Lung adenocarcinoma [DO disease name]", 
+            "trend": "Up", 
+            "disease": {
+                "doid": "3910", 
+                "url": "http://disease-ontology.org/term/DOID:3910", 
+                "name": "Lung adenocarcinoma"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/bioxpress/transcriptview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioXpress"
+                }
+            ], 
+            "url": "http://disease-ontology.org/term/DOID:3910", 
+            "significant": "No"
+        }, 
+        {
+            "name": "Urinary bladder cancer [DO disease name]", 
+            "trend": "Up", 
+            "icd10": "C67", 
+            "disease": {
+                "doid": "11054", 
+                "url": "http://disease-ontology.org/term/DOID:11054", 
+                "name": "Urinary bladder cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/bioxpress/transcriptview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioXpress"
+                }
+            ], 
+            "url": "http://disease-ontology.org/term/DOID:11054", 
+            "significant": "No"
+        }, 
+        {
+            "name": "Liver cancer [DO disease name]", 
+            "trend": "Up", 
+            "icd10": "C22.0", 
+            "disease": {
+                "doid": "3571", 
+                "url": "http://disease-ontology.org/term/DOID:3571", 
+                "name": "Liver cancer"
+            }, 
+            "evidence": [
+                {
+                    "url": "https://hive.biochemistry.gwu.edu/bioxpress/transcriptview/P01116", 
+                    "id": "P01116", 
+                    "database": "BioXpress"
+                }
+            ], 
+            "url": "http://disease-ontology.org/term/DOID:3571", 
+            "significant": "No"
+        }
+    ], 
+    "disease": [
+        {
+            "doid": "0111461", 
+            "url": "http://disease-ontology.org/term/DOID:0111461", 
+            "name": "Cardiofaciocutaneous syndrome 2 [DO disease name]", 
+            "evidence": [
+                {
+                    "url": "https://www.omim.org/entry/615278", 
+                    "id": "615278", 
+                    "database": "MIM"
+                }
+            ]
+        }, 
+        {
+            "doid": "0060581", 
+            "url": "http://disease-ontology.org/term/DOID:0060581", 
+            "icd10": "Q87.1", 
+            "name": "Noonan syndrome 3 [DO disease name]", 
+            "evidence": [
+                {
+                    "url": "https://www.omim.org/entry/609942", 
+                    "id": "609942", 
+                    "database": "MIM"
+                }
+            ]
+        }, 
+        {
+            "doid": "10534", 
+            "url": "http://disease-ontology.org/term/DOID:10534", 
+            "icd10": "C16", 
+            "name": "Stomach cancer [DO disease name]", 
+            "evidence": [
+                {
+                    "url": "https://www.omim.org/entry/613659", 
+                    "id": "613659", 
+                    "database": "MIM"
+                }
+            ]
+        }, 
+        {
+            "doid": "9119", 
+            "url": "http://disease-ontology.org/term/DOID:9119", 
+            "icd10": "C92.0", 
+            "name": "Acute myeloid leukemia [DO disease name]", 
+            "evidence": [
+                {
+                    "url": "https://www.omim.org/entry/601626", 
+                    "id": "601626", 
+                    "database": "MIM"
+                }
+            ]
+        }, 
+        {
+            "doid": "0050458", 
+            "url": "http://disease-ontology.org/term/DOID:0050458", 
+            "icd10": "C93.3", 
+            "name": "Juvenile myelomonocytic leukemia [DO disease name]", 
+            "evidence": [
+                {
+                    "url": "https://www.omim.org/entry/607785", 
+                    "id": "607785", 
+                    "database": "MIM"
+                }
+            ]
+        }
+    ], 
+    "mass": {
+        "chemical_mass": 21656.0
+    }, 
+    "expression_tissue": [
+        {
+            "tissue": {
+                "url": "http://purl.obolibrary.org/obo/UBERON_0002046", 
+                "uberon": "0002046", 
+                "name": "Thyroid gland"
+            }, 
+            "present": "yes", 
+            "evidence": [
+                {
+                    "url": "https://bgee.org/?page=gene&gene_id=ENSG00000133703", 
+                    "id": "ENSG00000133703", 
+                    "database": "Bgee"
+                }
+            ]
+        }, 
+        {
+            "tissue": {
+                "url": "http://purl.obolibrary.org/obo/UBERON_0002048", 
+                "uberon": "0002048", 
+                "name": "Lung"
+            }, 
+            "present": "yes", 
+            "evidence": [
+                {
+                    "url": "https://bgee.org/?page=gene&gene_id=ENSG00000133703", 
+                    "id": "ENSG00000133703", 
+                    "database": "Bgee"
+                }
+            ]
+        }, 
+        {
+            "tissue": {
+                "url": "http://purl.obolibrary.org/obo/UBERON_0001987", 
+                "uberon": "0001987", 
+                "name": "Placenta"
+            }, 
+            "present": "yes", 
+            "evidence": [
+                {
+                    "url": "https://bgee.org/?page=gene&gene_id=ENSG00000133703", 
+                    "id": "ENSG00000133703", 
+                    "database": "Bgee"
+                }
+            ]
+        }, 
+        {
+            "tissue": {
+                "url": "http://purl.obolibrary.org/obo/UBERON_0001043", 
+                "uberon": "0001043", 
+                "name": "Esophagus"
+            }, 
+            "present": "yes", 
+            "evidence": [
+                {
+                    "url": "https://bgee.org/?page=gene&gene_id=ENSG00000133703", 
+                    "id": "ENSG00000133703", 
+                    "database": "Bgee"
+                }
+            ]
+        }, 
+        {
+            "tissue": {
+                "url": "http://purl.obolibrary.org/obo/UBERON_0001155", 
+                "uberon": "0001155", 
+                "name": "Colon"
+            }, 
+            "present": "yes", 
+            "evidence": [
+                {
+                    "url": "https://bgee.org/?page=gene&gene_id=ENSG00000133703", 
+                    "id": "ENSG00000133703", 
+                    "database": "Bgee"
+                }
+            ]
+        }, 
+        {
+            "tissue": {
+                "url": "http://purl.obolibrary.org/obo/UBERON_0000948", 
+                "uberon": "0000948", 
+                "name": "Heart"
+            }, 
+            "present": "yes", 
+            "evidence": [
+                {
+                    "url": "https://bgee.org/?page=gene&gene_id=ENSG00000133703", 
+                    "id": "ENSG00000133703", 
+                    "database": "Bgee"
+                }
+            ]
+        }, 
+        {
+            "tissue": {
+                "url": "http://purl.obolibrary.org/obo/UBERON_0000992", 
+                "uberon": "0000992", 
+                "name": "Ovary"
+            }, 
+            "present": "yes", 
+            "evidence": [
+                {
+                    "url": "https://bgee.org/?page=gene&gene_id=ENSG00000133703", 
+                    "id": "ENSG00000133703", 
+                    "database": "Bgee"
+                }
+            ]
+        }, 
+        {
+            "tissue": {
+                "url": "http://purl.obolibrary.org/obo/UBERON_0001161", 
+                "uberon": "0001161", 
+                "name": "Body of stomach"
+            }, 
+            "present": "yes", 
+            "evidence": [
+                {
+                    "url": "https://bgee.org/?page=gene&gene_id=ENSG00000133703", 
+                    "id": "ENSG00000133703", 
+                    "database": "Bgee"
+                }
+            ]
+        }, 
+        {
+            "tissue": {
+                "url": "http://purl.obolibrary.org/obo/UBERON_0000458", 
+                "uberon": "0000458", 
+                "name": "Endocervix"
+            }, 
+            "present": "yes", 
+            "evidence": [
+                {
+                    "url": "https://bgee.org/?page=gene&gene_id=ENSG00000133703", 
+                    "id": "ENSG00000133703", 
+                    "database": "Bgee"
+                }
+            ]
+        }, 
+        {
+            "tissue": {
+                "url": "http://purl.obolibrary.org/obo/UBERON_0000007", 
+                "uberon": "0000007", 
+                "name": "Pituitary gland"
+            }, 
+            "present": "yes", 
+            "evidence": [
+                {
+                    "url": "https://bgee.org/?page=gene&gene_id=ENSG00000133703", 
+                    "id": "ENSG00000133703", 
+                    "database": "Bgee"
+                }
+            ]
+        }, 
+        {
+            "tissue": {
+                "url": "http://purl.obolibrary.org/obo/UBERON_0000473", 
+                "uberon": "0000473", 
+                "name": "Testis"
+            }, 
+            "present": "yes", 
+            "evidence": [
+                {
+                    "url": "https://bgee.org/?page=gene&gene_id=ENSG00000133703", 
+                    "id": "ENSG00000133703", 
+                    "database": "Bgee"
+                }
+            ]
+        }, 
+        {
+            "tissue": {
+                "url": "http://purl.obolibrary.org/obo/UBERON_0000996", 
+                "uberon": "0000996", 
+                "name": "Vagina"
+            }, 
+            "present": "yes", 
+            "evidence": [
+                {
+                    "url": "https://bgee.org/?page=gene&gene_id=ENSG00000133703", 
+                    "id": "ENSG00000133703", 
+                    "database": "Bgee"
+                }
+            ]
+        }, 
+        {
+            "tissue": {
+                "url": "http://purl.obolibrary.org/obo/UBERON_0002367", 
+                "uberon": "0002367", 
+                "name": "Prostate gland"
+            }, 
+            "present": "yes", 
+            "evidence": [
+                {
+                    "url": "https://bgee.org/?page=gene&gene_id=ENSG00000133703", 
+                    "id": "ENSG00000133703", 
+                    "database": "Bgee"
+                }
+            ]
+        }, 
+        {
+            "tissue": {
+                "url": "http://purl.obolibrary.org/obo/UBERON_0002107", 
+                "uberon": "0002107", 
+                "name": "Liver"
+            }, 
+            "present": "yes", 
+            "evidence": [
+                {
+                    "url": "https://bgee.org/?page=gene&gene_id=ENSG00000133703", 
+                    "id": "ENSG00000133703", 
+                    "database": "Bgee"
+                }
+            ]
+        }, 
+        {
+            "tissue": {
+                "url": "http://purl.obolibrary.org/obo/UBERON_0001160", 
+                "uberon": "0001160", 
+                "name": "Fundus of stomach"
+            }, 
+            "present": "yes", 
+            "evidence": [
+                {
+                    "url": "https://bgee.org/?page=gene&gene_id=ENSG00000133703", 
+                    "id": "ENSG00000133703", 
+                    "database": "Bgee"
+                }
+            ]
+        }, 
+        {
+            "tissue": {
+                "url": "http://purl.obolibrary.org/obo/UBERON_0000178", 
+                "uberon": "0000178", 
+                "name": "Blood"
+            }, 
+            "present": "yes", 
+            "evidence": [
+                {
+                    "url": "https://bgee.org/?page=gene&gene_id=ENSG00000133703", 
+                    "id": "ENSG00000133703", 
+                    "database": "Bgee"
+                }
+            ]
+        }, 
+        {
+            "tissue": {
+                "url": "http://purl.obolibrary.org/obo/UBERON_0009853", 
+                "uberon": "0009853", 
+                "name": "Body of uterus"
+            }, 
+            "present": "yes", 
+            "evidence": [
+                {
+                    "url": "https://bgee.org/?page=gene&gene_id=ENSG00000133703", 
+                    "id": "ENSG00000133703", 
+                    "database": "Bgee"
+                }
+            ]
+        }, 
+        {
+            "tissue": {
+                "url": "http://purl.obolibrary.org/obo/UBERON_0000955", 
+                "uberon": "0000955", 
+                "name": "Brain"
+            }, 
+            "present": "yes", 
+            "evidence": [
+                {
+                    "url": "https://bgee.org/?page=gene&gene_id=ENSG00000133703", 
+                    "id": "ENSG00000133703", 
+                    "database": "Bgee"
+                }
+            ]
+        }, 
+        {
+            "tissue": {
+                "url": "http://purl.obolibrary.org/obo/UBERON_0001255", 
+                "uberon": "0001255", 
+                "name": "Urinary bladder"
+            }, 
+            "present": "yes", 
+            "evidence": [
+                {
+                    "url": "https://bgee.org/?page=gene&gene_id=ENSG00000133703", 
+                    "id": "ENSG00000133703", 
+                    "database": "Bgee"
+                }
+            ]
+        }, 
+        {
+            "tissue": {
+                "url": "http://purl.obolibrary.org/obo/UBERON_0002369", 
+                "uberon": "0002369", 
+                "name": "Adrenal gland"
+            }, 
+            "present": "yes", 
+            "evidence": [
+                {
+                    "url": "https://bgee.org/?page=gene&gene_id=ENSG00000133703", 
+                    "id": "ENSG00000133703", 
+                    "database": "Bgee"
+                }
+            ]
+        }, 
+        {
+            "tissue": {
+                "url": "http://purl.obolibrary.org/obo/UBERON_0001150", 
+                "uberon": "0001150", 
+                "name": "Body of pancreas"
+            }, 
+            "present": "yes", 
+            "evidence": [
+                {
+                    "url": "https://bgee.org/?page=gene&gene_id=ENSG00000133703", 
+                    "id": "ENSG00000133703", 
+                    "database": "Bgee"
+                }
+            ]
+        }
+    ], 
+    "uniprot": {
+        "url": "http://www.uniprot.org/uniprot/P01116-1/", 
+        "uniprot_canonical_ac": "P01116-1", 
+        "length": 189, 
+        "uniprot_id": "RASK_HUMAN"
+    }
+}

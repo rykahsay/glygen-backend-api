@@ -1,0 +1,538 @@
+{
+    "protein": [
+        {
+            "source": "species",
+            "target": "glycan",
+            "direction": "both"
+        },
+        {
+            "source": "species",
+            "target": "protein",
+            "direction": "single"
+        },
+        {
+            "source": "species",
+            "target": "gene",
+            "direction": "both"
+        },
+        {
+            "source": "gene",
+            "target": "disease",
+            "direction": "both"
+        },
+        {
+            "source": "gene",
+            "target": "protein",
+            "direction": "single"
+        },
+        {
+            "source": "disease",
+            "target": "protein",
+            "direction": "single"
+        },
+        {
+            "source": "disease",
+            "target": "site",
+            "direction": "single"
+        },
+        {
+            "source": "glycan",
+            "target": "protein",
+            "direction": "single"
+        },
+        {
+            "source": "motif",
+            "target": "glycan",
+            "direction": "single"
+        },
+        {
+            "source": "enzyme",
+            "target": "protein",
+            "direction": "single"
+        },
+        {
+            "source": "site",
+            "target": "protein",
+            "direction": "single"
+        },
+        {
+            "source": "glycan",
+            "target": "site",
+            "direction": "single"
+        },
+        {
+            "source": "enzyme",
+            "target": "glycan",
+            "direction": "both"
+        }
+    ],
+	"site": [
+        {
+            "source": "species",
+            "target": "glycan",
+            "direction": "both"
+        },
+        {
+            "source": "species",
+            "target": "protein",
+            "direction": "single"
+        },
+        {
+            "source": "species",
+            "target": "gene",
+            "direction": "both"
+        },
+        {
+            "source": "gene",
+            "target": "disease",
+            "direction": "both"
+        },
+        {
+            "source": "gene",
+            "target": "protein",
+            "direction": "single"
+        },
+        {
+            "source": "disease",
+            "target": "protein",
+            "direction": "both"
+        },
+        {
+            "source": "disease",
+            "target": "site",
+            "direction": "single"
+        },
+        {
+            "source": "protein",
+            "target": "glycan",
+            "direction": "both"
+        },
+        {
+            "source": "motif",
+            "target": "glycan",
+            "direction": "single"
+        },
+        {
+            "source": "enzyme",
+            "target": "protein",
+            "direction": "single"
+        },
+        {
+            "source": "protein",
+            "target": "site",
+            "direction": "single"
+        },
+        {
+            "source": "glycan",
+            "target": "site",
+            "direction": "single"
+        },
+        {
+            "source": "enzyme",
+            "target": "glycan",
+            "direction": "both"
+        }
+    ],
+    "disease": [
+        {
+            "source": "species",
+            "target": "glycan",
+            "direction": "both"
+        },
+        {
+            "source": "species",
+            "target": "protein",
+            "direction": "single"
+        },
+        {
+            "source": "species",
+            "target": "gene",
+            "direction": "both"
+        },
+        {
+            "source": "gene",
+            "target": "disease",
+            "direction": "both"
+        },
+        {
+            "source": "gene",
+            "target": "protein",
+            "direction": "single"
+        },
+        {
+            "source": "protein",
+            "target": "disease",
+            "direction": "single"
+        },
+        {
+            "source": "site",
+            "target": "disease",
+            "direction": "single"
+        },
+        {
+            "source": "protein",
+            "target": "glycan",
+            "direction": "both"
+        },
+        {
+            "source": "glycan",
+            "target": "motif",
+            "direction": "both"
+        },
+        {
+            "source": "enzyme",
+            "target": "protein",
+            "direction": "single"
+        },
+        {
+            "source": "protein",
+            "target": "site",
+            "direction": "single"
+        },
+        {
+            "source": "site",
+            "target": "glycan",
+            "direction": "both"
+        },
+        {
+            "source": "enzyme",
+            "target": "glycan",
+            "direction": "both"
+        }
+    ],
+	"enzyme": [
+        {
+            "source": "species",
+            "target": "glycan",
+            "direction": "both"
+        },
+        {
+            "source": "species",
+            "target": "protein",
+            "direction": "single"
+        },
+        {
+            "source": "species",
+            "target": "gene",
+            "direction": "both"
+        },
+        {
+            "source": "gene",
+            "target": "disease",
+            "direction": "both"
+        },
+        {
+            "source": "gene",
+            "target": "protein",
+            "direction": "single"
+        },
+        {
+            "source": "disease",
+            "target": "protein",
+            "direction": "single"
+        },
+        {
+            "source": "disease",
+            "target": "site",
+            "direction": "both"
+        },
+        {
+            "source": "glycan",
+            "target": "protein",
+            "direction": "single"
+        },
+        {
+            "source": "motif",
+            "target": "glycan",
+            "direction": "single"
+        },
+        {
+            "source": "protein",
+            "target": "enzyme",
+            "direction": "single"
+        },
+        {
+            "source": "site",
+            "target": "protein",
+            "direction": "single"
+        },
+        {
+            "source": "glycan",
+            "target": "site",
+            "direction": "single"
+        },
+        {
+            "source": "glycan",
+            "target": "enzyme",
+            "direction": "single"
+        }
+    ],
+	"gene": [
+        {
+            "source": "species",
+            "target": "glycan",
+            "direction": "both"
+        },
+        {
+            "source": "species",
+            "target": "protein",
+            "direction": "single"
+        },
+        {
+            "source": "species",
+            "target": "gene",
+            "direction": "both"
+        },
+        {
+            "source": "gene",
+            "target": "disease",
+            "direction": "both"
+        },
+        {
+            "source": "protein",
+            "target": "gene",
+            "direction": "single"
+        },
+        {
+            "source": "disease",
+            "target": "protein",
+            "direction": "single"
+        },
+        {
+            "source": "disease",
+            "target": "site",
+            "direction": "single"
+        },
+        {
+            "source": "glycan",
+            "target": "protein",
+            "direction": "single"
+        },
+        {
+            "source": "motif",
+            "target": "glycan",
+            "direction": "single"
+        },
+        {
+            "source": "enzyme",
+            "target": "protein",
+            "direction": "single"
+        },
+        {
+            "source": "site",
+            "target": "protein",
+            "direction": "single"
+        },
+        {
+            "source": "glycan",
+            "target": "site",
+            "direction": "single"
+        },
+        {
+            "source": "glycan",
+            "target": "enzyme",
+            "direction": "single"
+        }
+    ],
+	"glycan": [
+        {
+            "source": "species",
+            "target": "glycan",
+            "direction": "single"
+        },
+        {
+            "source": "species",
+            "target": "protein",
+            "direction": "both"
+        },
+        {
+            "source": "species",
+            "target": "gene",
+            "direction": "both"
+        },
+        {
+            "source": "gene",
+            "target": "disease",
+            "direction": "both"
+        },
+        {
+            "source": "gene",
+            "target": "protein",
+            "direction": "single"
+        },
+        {
+            "source": "disease",
+            "target": "protein",
+            "direction": "both"
+        },
+        {
+            "source": "disease",
+            "target": "site",
+            "direction": "both"
+        },
+        {
+            "source": "protein",
+            "target": "glycan",
+            "direction": "single"
+        },
+        {
+            "source": "motif",
+            "target": "glycan",
+            "direction": "single"
+        },
+        {
+            "source": "protein",
+            "target": "enzyme",
+            "direction": "both"
+        },
+        {
+            "source": "protein",
+            "target": "site",
+            "direction": "single"
+        },
+        {
+            "source": "site",
+            "target": "glycan",
+            "direction": "single"
+        },
+        {
+            "source": "enzyme",
+            "target": "glycan",
+            "direction": "single"
+        }
+    ],
+	"species": [
+        {
+            "source": "glycan",
+            "target": "species",
+            "direction": "single"
+        },
+        {
+            "source": "protein",
+            "target": "species",
+            "direction": "single"
+        },
+        {
+            "source": "species",
+            "target": "gene",
+            "direction": "both"
+        },
+        {
+            "source": "gene",
+            "target": "disease",
+            "direction": "both"
+        },
+        {
+            "source": "gene",
+            "target": "protein",
+            "direction": "single"
+        },
+        {
+            "source": "disease",
+            "target": "protein",
+            "direction": "single"
+        },
+        {
+            "source": "disease",
+            "target": "site",
+            "direction": "single"
+        },
+        {
+            "source": "glycan",
+            "target": "protein",
+            "direction": "single"
+        },
+        {
+            "source": "motif",
+            "target": "glycan",
+            "direction": "single"
+        },
+        {
+            "source": "enzyme",
+            "target": "protein",
+            "direction": "single"
+        },
+        {
+            "source": "site",
+            "target": "protein",
+            "direction": "single"
+        },
+        {
+            "source": "site",
+            "target": "glycan",
+            "direction": "both"
+        },
+        {
+            "source": "enzyme",
+            "target": "glycan",
+            "direction": "both"
+        }
+    ],
+	"motif": [
+        {
+            "source": "species",
+            "target": "glycan",
+            "direction": "single"
+        },
+        {
+            "source": "species",
+            "target": "protein",
+            "direction": "both"
+        },
+        {
+            "source": "species",
+            "target": "gene",
+            "direction": "both"
+        },
+        {
+            "source": "gene",
+            "target": "disease",
+            "direction": "both"
+        },
+        {
+            "source": "gene",
+            "target": "protein",
+            "direction": "single"
+        },
+        {
+            "source": "disease",
+            "target": "protein",
+            "direction": "both"
+        },
+        {
+            "source": "disease",
+            "target": "site",
+            "direction": "both"
+        },
+        {
+            "source": "protein",
+            "target": "glycan",
+            "direction": "single"
+        },
+        {
+            "source": "glycan",
+            "target": "motif",
+            "direction": "single"
+        },
+        {
+            "source": "enzyme",
+            "target": "protein",
+            "direction": "single"
+        },
+        {
+            "source": "protein",
+            "target": "site",
+            "direction": "single"
+        },
+        {
+            "source": "site",
+            "target": "glycan",
+            "direction": "single"
+        },
+        {
+            "source": "enzyme",
+            "target": "glycan",
+            "direction": "single"
+        }
+    ]
+}

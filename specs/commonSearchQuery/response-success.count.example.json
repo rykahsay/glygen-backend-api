@@ -1,0 +1,32 @@
+{
+   "count_list": [
+      {
+         "name": "glycan",
+         "count": 300
+      },
+      {
+         "name": "protein",
+         "count": 1000
+      },
+      {
+         "name": "glycoprotein",
+         "count": 300
+      },
+      {
+         "name": "organism",
+         "count": 3
+      },
+      {
+         "name": "gene",
+         "count": 300
+      },
+      {
+         "name": "pathway",
+         "count": 499
+      },
+      {
+         "name": "enzyme",
+         "count": 20
+      }
+   ]
+}

@@ -1,0 +1,20 @@
+{
+    "glycan_exact_match": 5.0,
+    "glycan_has_glycoprotein": 5.0,
+    "glycan_has_enzyme": 5.0,
+    "glycan_has_species": 5.0,
+    "glycan_has_publication": 5.0,
+    "glycan_fully_determined": 5.0,
+    "protein_exact_match": 5.0,
+    "protein_reported_n_glycosites_with_glycan":5.0,
+    "protein_reported_o_glycosites_with_glycan":5.0,
+    "protein_reported_n_glycosites":4.0,
+    "protein_reported_o_glycosites":4.0,
+    "protein_predicted_glycosites":3.0,
+    "protein_publication_count":2.0,
+    "site_has_glycosylation":5.0,
+    "site_has_mutagenesis":3.0,
+    "site_has_phosphorylation":3.0,
+    "site_has_snv":3.0,
+    "site_has_glycation":3.0
+}

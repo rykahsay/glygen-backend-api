@@ -1,0 +1,45 @@
+{
+   "version":[
+      {
+        "component":"software",
+        "component_name": "Portal",
+         "version":"1.0.0",
+         "url":"https://github.com/glygener/glygen-frontend/wiki/Release-notes",
+         "release_date":"2008-09-15T15:53:00+05:00"
+      },
+      {
+         "component":"api",
+         "component_name": "Webservice",
+         "version":"1.0.1",
+         "url":"https://github.com/glygener/glygen-frontend/wiki/Release-notes",
+         "release_date":"2008-09-14T15:53:00+05:00"
+      },
+      {
+         "component":"data",
+         "component_name": "Data",
+         "version":"1.0.2",
+         "url":"https://github.com/glygener/glygen-frontend/wiki/Release-notes",
+         "release_date":"2008-09-13T15:53:00+05:00"
+      }
+   ],
+   "statistics":[
+      {
+         "species":"Homo sapiens",
+         "proteins":20997,
+         "glycoproteins":4429,
+         "glycans":3300
+      },
+      {
+         "species":"Mus musculus",
+         "proteins":22273,
+         "glycoproteins":3765,
+         "glycans":517
+      }
+   ],
+   "hot_topic" : {
+      "type": "info",
+      "headline": "",
+      "message": "",
+      "url": ""
+   }
+}

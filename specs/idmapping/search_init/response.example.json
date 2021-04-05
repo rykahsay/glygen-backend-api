@@ -1,0 +1,14 @@
+{
+    "id_mapping_category": [
+        {
+            "id": "glycan",
+            "display": "Glycan",
+            "namespace": […]
+        },
+        {
+            "id": "protein",
+            "display": "Protein / Glycoprotein",
+            "namespace": […]
+        }
+  ]
+}

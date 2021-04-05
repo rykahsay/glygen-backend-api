@@ -1,0 +1,104 @@
+{
+    "organism": [
+        {
+            "name": "Mus musculus", 
+            "id": 10090
+        }, 
+        {
+            "name": "Rattus norvegicus", 
+            "id": 10116
+        }, 
+        {
+            "name": "SARS coronavirus (SARS-CoV-2 or 2019-nCoV)", 
+            "id": 2697049
+        }, 
+        {
+            "name": "Hepatitis C virus (genotype 1b, isolate Japanese)", 
+            "id": 11116
+        }, 
+        {
+            "name": "SARS coronavirus (SARS-CoV-1)", 
+            "id": 694009
+        }, 
+        {
+            "name": "Homo sapiens", 
+            "id": 9606
+        }, 
+        {
+            "name": "Hepatitis C virus (genotype 1a, isolate H)", 
+            "id": 11108
+        }
+    ], 
+    "protein_mass": {
+        "max": 3906488.0, 
+        "min": 260.0
+    }, 
+    "aa_list": [
+        {
+            "name": "Cysteine - Cys - C", 
+            "key": "C"
+        }, 
+        {
+            "name": "Aspartic acid - Asp - D", 
+            "key": "D"
+        }, 
+        {
+            "name": "Serine - Ser - S", 
+            "key": "S"
+        }, 
+        {
+            "name": "Lysine - Lys - K", 
+            "key": "K"
+        }, 
+        {
+            "name": "Threonine - Thr - T", 
+            "key": "T"
+        }, 
+        {
+            "name": "Glutamic acid - Glu - E", 
+            "key": "E"
+        }, 
+        {
+            "name": "Arginine - Arg - R", 
+            "key": "R"
+        }, 
+        {
+            "name": "Tryptophan - Trp - W", 
+            "key": "W"
+        }, 
+        {
+            "name": "Asparagine - Asn - N", 
+            "key": "N"
+        }, 
+        {
+            "name": "Tyrosine - Tyr - Y", 
+            "key": "Y"
+        }
+    ], 
+    "simple_search_category": [
+        {
+            "id": "any", 
+            "display": "Any"
+        }, 
+        {
+            "id": "glycan", 
+            "display": "Glycan"
+        }, 
+        {
+            "id": "protein", 
+            "display": "Protein"
+        }, 
+        {
+            "id": "organism", 
+            "display": "Organism"
+        }, 
+        {
+            "id": "disease", 
+            "display": "Disease"
+        }, 
+        {
+            "id": "pathway", 
+            "display": "Pathway"
+        }
+    ]
+}

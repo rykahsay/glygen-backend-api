@@ -95,7 +95,7 @@ def glycan_list():
         else:
             query_obj = json.loads(query_value)
             util.trim_object(query_obj)
-            res_obj = apilib.glycan_list(query_obj, config_obj)
+            res_obj = util.get_cached_records_indirect(query_obj, config_obj)
     except Exception, e:
         res_obj = errorlib.get_error_obj("glycan_list", traceback.format_exc(), path_obj)
 
@@ -131,7 +131,7 @@ def glycan_image(glytoucan_ac):
             res_obj = {"error_list":[{"error_code":"missing-parameter", "field":"glytoucan_ac"}]}
         else:
             query_obj = {"glytoucan_ac":glytoucan_ac}
-            img_file = apilib.glycan_image(query_obj, path_obj)
+            img_file = apilib.glycan_image(query_obj, config_obj)
             return send_file(img_file, mimetype='image/png')
     except Exception, e:
         res_obj = errorlib.get_error_obj("glycan_image", traceback.format_exc(), path_obj)

@@ -1,0 +1,39 @@
+{
+   "$id": "http://example.com/example.json",
+   "properties": {
+      "error_list": {
+         "type": "array",
+         "items": {
+            "$id": "/properties/error_list/items/",
+            "type": "object",
+            "properties": {
+               "error_code": {
+                  "$id": "/properties/error_list/items/properties/error_code",
+                  "type": "string",
+                  "description": "If the search fails an error code is send back instead of the list ID.",
+                  "default": "",
+                  "examples": [
+                     "AB45NM"
+                  ]
+               },
+               "field": {
+                  "$id": "/properties/error_list/items/properties/field",
+                  "type": "string",
+                  "description": "Field name for which error is there.",
+                  "default": "",
+                  "examples": [
+                     "AB45NM"
+                  ]
+               }
+            },
+            "required": [
+               "error_code",
+               "field"
+            ]
+         }
+      }
+   },
+   "required": [
+      "error_list"
+   ]
+}

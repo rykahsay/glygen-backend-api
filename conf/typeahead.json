@@ -1,0 +1,37 @@
+{
+    "protein":{
+        "uniprot_canonical_ac":"uniprot_canonical_ac",
+        "uniprot_ac":"uniprot_canonical_ac",
+        "uniprot_id":"uniprot_id",
+        "refseq.ac":"refseq_ac",
+        "protein_names.name":"protein_name",
+        "gene_names.name":"gene_name",
+        "pathway.id":"pathway_id",
+        "pathway.name":"pathway_name",
+        "go_annotation.categories.go_terms.id":"go_id",
+        "go_annotation.categories.go_terms.name":"go_term"
+    },
+    "enzyme":{
+        "gene_names.name":"enzyme",
+        "uniprot_canonical_ac":"enzyme_uniprot_canonical_ac",
+        "pathway.id":"pathway_id",
+        "pathway.name":"pathway_name"
+    },
+    "glycan":{
+        "glytoucan_ac":"glytoucan_ac"
+    },
+    "motif":{
+        "glytoucan_ac":"glytoucan_ac",
+        "names.name":"motif_name"
+    },
+    "site":{
+    },
+    "species":{
+    },
+    "disease":{
+        "disease_id":"disease_id",
+        "recommended_name.id":"disease_id",
+        "synonyms.name":"disease_name",
+        "recommended_name.name":"disease_name"
+    }   
+}

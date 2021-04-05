@@ -25,12 +25,19 @@ $(document).on('click', '#search_init', function (event) {
 	$("#search_init_cn").html(gifImage);
 
         var reqObj = new XMLHttpRequest();
+        reqObj.requestUrl = url;
         reqObj.open("POST", url, true);
         reqObj.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         reqObj.onreadystatechange = function() {
                 if (reqObj.readyState == 4 && [200, 500].indexOf(reqObj.status) != -1) {
-                        $("#search_init_cn").html('<pre>'+reqObj.responseText+'</pre>');
-                	$("#cover").css("display", "none");
+                    var cn = '<pre>';
+                    cn += '\n\n<b>Request</b>:\n';
+                    cn += this.requestUrl + '\n\n';
+                    cn += '<b>Response</b>:\n';
+                    cn += reqObj.responseText;
+                    cn += '</pre>';
+                    $("#search_init_cn").html(cn);
+                    $("#cover").css("display", "none");
 		}
         };
         reqObj.send();
@@ -172,21 +179,35 @@ $(document).on('click', 'input.protein_to_glycosequons_list,input.protein_to_ort
 </head>
 <body>
 
+<!-- search_init --!>
+<div style="display:block;float:left;margin:20px 0px 0px 5%;width:80%;border:0px dashed red;">
+<table align=center width=100% border=1 style="background:#eee;">
+<tr><th align=left class=api_title>Search Init API</th></tr>
+<tr height=200><td valign=top>
+<div id=search_init_cn style="background:#fff;height:200;width:100%;overflow:auto;"></div><br>
+<input type=submit id=search_init class=search_init name=btn value="Submit API request"><br>
+</td></tr>
+</table>
+</div>
 
 
 <!-- glycan_to_biosynthesis_enzymes --!>
 
-<div style="position:absolute;left:5%;top:20;width:43%;border:0px dashed red;">
+<div style="display:block;float:left;margin:20px 0px 0px 5%;width:43%;border:0px dashed red;">
 <table align=center width=100% border=1 style="background:#eee;">
 <tr><th align=left class=api_title>Search API: glycan_to_biosynthesis_enzymes</th></tr>
-<tr><td>Glytoucan ID<br><input class=glycan_to_biosynthesis_enzymes_search name=glytoucan_ac type=text value="G00279YF"></td></tr>
+<tr><td>Glytoucan ID<br><input class=glycan_to_biosynthesis_enzymes_search name=glytoucan_ac type=text value="G17689DH"></td></tr>
 <tr><td>Tax ID<br>
-	<select class=glycan_to_biosynthesis_enzymes_search name=tax_id>
-		<option value="9606" selected>9606</option>
-		<option value="10090">10090</option>
-                <option value="10116">10116</option>
-                <option value="0">0</option>
-	</select>
+    <select class=glycan_to_biosynthesis_enzymes_search name=tax_id>
+	<option value="0" selected>0 (any)</option>
+        <option value="9606">9606 (human)</option>
+        <option value="10090">10090 (mouse)</option>
+        <option value="10116">10116 (rat)</option>
+        <option value="11108">11108 (hcv1a)</option>
+        <option value="11116">11116 (hcv1b)</option>
+        <option value="694009">694009 (sarscov1)</option>
+        <option value="2697049">2697049 (sarscov2)</option>
+  </select>
 </td></tr>
 <tr height=200><td valign=top>
 <div id=glycan_to_biosynthesis_enzymes_search_cn style="background:#fff;height:200;width:500;overflow:auto;"></div><br>
@@ -195,13 +216,12 @@ $(document).on('click', 'input.protein_to_glycosequons_list,input.protein_to_ort
 </table>
 </div>
 
-<div style="position:absolute;left:50%;top:20;width:43%;border:0px dashed red;">
+
+<div style="display:block;float:left;margin:20px 0px 0px 5%;width:43%;border:0px dashed red;">
 <table align=center width=100% border=1 style="background:#eee;">
 <tr><th align=left class=api_title colspan=4>List API: protein_list</th></tr>
 <tr><td colspan=4>List ID<br><input class=glycan_to_biosynthesis_enzymes_list id=glycan_to_biosynthesis_enzymes_list_id name=id  type=text value=""></td></tr>
-
 <tr>
-
 <td>Page Offset<br><input class=glycan_to_biosynthesis_enzymes_list name=offset type=text value="1"></td>
 <td>Page Limit<br><input class=glycan_to_biosynthesis_enzymes_list name=limit type=text value="20"></td>
 <td>Sort Field<br>
@@ -230,16 +250,20 @@ $(document).on('click', 'input.protein_to_glycosequons_list,input.protein_to_ort
 
 <!-- glycan_to_glycoproteins --!>
 
-<div style="position:absolute;left:5%;top:400;width:43%;border:0px dashed red;">
+<div style="display:block;float:left;margin:20px 0px 0px 5%;top:400;width:43%;border:0px dashed red;">
 <table align=center width=100% border=1 style="background:#eee;">
 <tr><th align=left class=api_title>Search API: glycan_to_glycoproteins</th></tr>
 <tr><td>Glytoucan ID<br><input class=glycan_to_glycoproteins_search name=glytoucan_ac type=text value="G57789QC"></td></tr>
 <tr><td>Tax ID<br>
 	<select class=glycan_to_glycoproteins_search name=tax_id>
-		<option value="9606" selected>9606</option>
-		<option value="10090">10090</option>
-                <option value="10116">10116</option>
-                <option value="0">0</option>
+	<option value="0" selected>0 (any)</option>
+        <option value="9606">9606 (human)</option>
+        <option value="10090">10090 (mouse)</option>
+        <option value="10116">10116 (rat)</option>
+        <option value="11108">11108 (hcv1a)</option>
+        <option value="11116">11116 (hcv1b)</option>
+        <option value="694009">694009 (sarscov1)</option>
+        <option value="2697049">2697049 (sarscov2)</option>
 	</select>
 </td></tr>
 <tr height=200><td valign=top>
@@ -249,7 +273,7 @@ $(document).on('click', 'input.protein_to_glycosequons_list,input.protein_to_ort
 </table>
 </div>
 
-<div style="position:absolute;left:50%;top:400;width:43%;border:0px dashed red;">
+<div style="display:block;float:left;margin:20px 0px 0px 5%;width:43%;border:0px dashed red;">
 <table align=center width=100% border=1 style="background:#eee;">
 <tr><th align=left class=api_title colspan=4>List API: protein_list</th></tr>
 <tr><td colspan=4>List ID<br><input class=glycan_to_glycoproteins_list id=glycan_to_glycoproteins_list_id name=id  type=text value=""></td></tr>
@@ -284,16 +308,20 @@ $(document).on('click', 'input.protein_to_glycosequons_list,input.protein_to_ort
 
 <!-- glycan_to_enzyme_gene_loci --!>
 
-<div style="position:absolute;left:5%;top:800;width:43%;border:0px dashed red;">
+<div style="display:block;float:left;margin:20px 0px 0px 5%;width:43%;border:0px dashed red;">
 <table align=center width=100% border=1 style="background:#eee;">
 <tr><th align=left class=api_title>Search API: glycan_to_enzyme_gene_loci</th></tr>
 <tr><td>Glytoucan ID<br><input class=glycan_to_enzyme_gene_loci_search name=glytoucan_ac type=text value="G74290AC"></td></tr>
 <tr><td>Tax ID<br>
 	<select class=glycan_to_enzyme_gene_loci_search name=tax_id>
-		<option value="9606" selected>9606</option>
-		<option value="10090">10090</option>
-                <option value="10116">10116</option>
-                <option value="0">0</option>
+		<option value="0" selected>0 (any)</option>
+        <option value="9606">9606 (human)</option>
+        <option value="10090">10090 (mouse)</option>
+        <option value="10116">10116 (rat)</option>
+        <option value="11108">11108 (hcv1a)</option>
+        <option value="11116">11116 (hcv1b)</option>
+        <option value="694009">694009 (sarscov1)</option>
+        <option value="2697049">2697049 (sarscov2)</option>
 	</select>
 </td></tr>
 <tr height=200><td valign=top>
@@ -303,7 +331,7 @@ $(document).on('click', 'input.protein_to_glycosequons_list,input.protein_to_ort
 </table>
 </div>
 
-<div style="position:absolute;left:50%;top:800;width:43%;border:0px dashed red;">
+<div style="display:block;float:left;margin:20px 0px 0px 5%;width:43%;border:0px dashed red;">
 <table align=center width=100% border=1 style="background:#eee;">
 <tr><th align=left class=api_title colspan=4>List API: genelocus_list</th></tr>
 <tr><td colspan=4>List ID<br><input class=glycan_to_enzyme_gene_loci_list id=glycan_to_enzyme_gene_loci_list_id name=id  type=text value=""></td></tr>
@@ -341,17 +369,21 @@ $(document).on('click', 'input.protein_to_glycosequons_list,input.protein_to_ort
 
 <!-- biosynthesis_enzyme_to_glycans --!>
 
-<div style="position:absolute;left:5%;top:1200;width:43%;border:0px dashed red;">
+<div style="display:block;float:left;margin:20px 0px 0px 5%;width:43%;border:0px dashed red;">
 <table align=center width=100% border=1 style="background:#eee;">
 <tr><th align=left class=api_title>Search API: biosynthesis_enzyme_to_glycans</th></tr>
 <tr><td>Uniprot Ac<br><input class=biosynthesis_enzyme_to_glycans_search name=uniprot_canonical_ac type=text value="P26572-1"></td></tr>
 <tr><td>Tax ID<br>
 	<select class=biosynthesis_enzyme_to_glycans_search name=tax_id>
-		<option value="9606" selected>9606</option>
-		<option value="10090">10090</option>
-                <option value="10116">10116</option>
-                <option value="0">0</option>
-	</select>
+	<option value="0" selected>0 (any)</option>
+        <option value="9606">9606 (human)</option>
+        <option value="10090">10090 (mouse)</option>
+        <option value="10116">10116 (rat)</option>
+        <option value="11108">11108 (hcv1a)</option>
+        <option value="11116">11116 (hcv1b)</option>
+        <option value="694009">694009 (sarscov1)</option>
+        <option value="2697049">2697049 (sarscov2)</option>
+        </select>
 </td></tr>
 <tr height=200><td valign=top>
 <div id=biosynthesis_enzyme_to_glycans_search_cn style="background:#fff;height:200;width:500;overflow:auto;"></div><br>
@@ -360,7 +392,7 @@ $(document).on('click', 'input.protein_to_glycosequons_list,input.protein_to_ort
 </table>
 </div>
 
-<div style="position:absolute;left:50%;top:1200;width:43%;border:0px dashed red;">
+<div style="display:block;float:left;margin:20px 0px 0px 5%;width:43%;border:0px dashed red;">
 <table align=center width=100% border=1 style="background:#eee;">
 <tr><th align=left class=api_title colspan=4>List API: glycan_list</th></tr>
 <tr><td colspan=4>List ID<br><input class=biosynthesis_enzyme_to_glycans_list id=biosynthesis_enzyme_to_glycans_list_id name=id  type=text value=""></td></tr>
@@ -396,7 +428,7 @@ $(document).on('click', 'input.protein_to_glycosequons_list,input.protein_to_ort
 
 <!-- protein_to_orthologs --!>
 
-<div style="position:absolute;left:5%;top:1600;width:43%;border:0px dashed red;">
+<div style="display:block;float:left;margin:20px 0px 0px 5%;width:43%;border:0px dashed red;">
 <table align=center width=100% border=1 style="background:#eee;">
 <tr><th align=left class=api_title>Search API: protein_to_orthologs</th></tr>
 <tr><td>Uniprot Ac<br><input class=protein_to_orthologs_search name=uniprot_canonical_ac type=text value="P26572-1"></td></tr>
@@ -407,7 +439,7 @@ $(document).on('click', 'input.protein_to_glycosequons_list,input.protein_to_ort
 </table>
 </div>
 
-<div style="position:absolute;left:50%;top:1600;width:43%;border:0px dashed red;">
+<div style="display:block;float:left;margin:20px 0px 0px 5%;width:43%;border:0px dashed red;">
 <table align=center width=100% border=1 style="background:#eee;">
 <tr><th align=left class=api_title colspan=4>List API: ortholog_list</th></tr>
 <tr><td colspan=4>List ID<br><input class=protein_to_orthologs_list id=protein_to_orthologs_list_id name=id  type=text value=""></td></tr>
@@ -443,7 +475,7 @@ $(document).on('click', 'input.protein_to_glycosequons_list,input.protein_to_ort
 
 
 
-<div style="position:absolute;left:5%;top:2000;width:43%;border:0px dashed red;">
+<div style="display:block;float:left;margin:20px 0px 0px 5%;width:43%;border:0px dashed red;">
 <table align=center width=100% border=1 style="background:#eee;">
 <tr><th align=left class=api_title>Search API: protein_to_glycosequons</th></tr>
 <tr><td>Uniprot Ac<br><input class=protein_to_glycosequons_search name=uniprot_canonical_ac type=text value="P51788-1"></td></tr>
@@ -454,7 +486,7 @@ $(document).on('click', 'input.protein_to_glycosequons_list,input.protein_to_ort
 </table>
 </div>
 
-<div style="position:absolute;left:50%;top:2000;width:43%;border:0px dashed red;">
+<div style="display:block;float:left;margin:20px 0px 0px 5%;width:43%;border:0px dashed red;">
 <table align=center width=100% border=1 style="background:#eee;">
 <tr><th align=left class=api_title colspan=4>List API: glycosequon_list</th></tr>
 <tr><td colspan=4>List ID<br><input class=protein_to_glycosequons_list id=protein_to_glycosequons_list_id name=id  type=text value=""></td></tr>
@@ -491,16 +523,20 @@ $(document).on('click', 'input.protein_to_glycosequons_list,input.protein_to_ort
 
 <!-- species_to_glycosyltransferases --!>
 
-<div style="position:absolute;left:5%;top:2400;width:43%;border:0px dashed red;">
+<div style="display:block;float:left;margin:20px 0px 0px 5%;width:43%;border:0px dashed red;">
 <table align=center width=100% border=1 style="background:#eee;">
 <tr><th align=left class=api_title>Search API: species_to_glycosyltransferases</th></tr>
 <tr><td>Tax ID<br>
 	<select class=species_to_glycosyltransferases_search name=tax_id>
-		<option value="9606" selected>9606</option>
-		<option value="10090">10090</option>
-                <option value="10116">10116</option>
-                <option value="0">0</option>
-	</select>
+	<option value="0" selected>0 (any)</option>
+        <option value="9606">9606 (human)</option>
+        <option value="10090">10090 (mouse)</option>
+        <option value="10116">10116 (rat)</option>
+        <option value="11108">11108 (hcv1a)</option>
+        <option value="11116">11116 (hcv1b)</option>
+        <option value="694009">694009 (sarscov1)</option>
+        <option value="2697049">2697049 (sarscov2)</option>
+        </select>
 </td></tr>
 <tr height=200><td valign=top>
 <div id=species_to_glycosyltransferases_search_cn style="background:#fff;height:200;width:500;overflow:auto;"></div><br>
@@ -509,7 +545,7 @@ $(document).on('click', 'input.protein_to_glycosequons_list,input.protein_to_ort
 </table>
 </div>
 
-<div style="position:absolute;left:50%;top:2400;width:43%;border:0px dashed red;">
+<div style="display:block;float:left;margin:20px 0px 0px 5%;width:43%;border:0px dashed red;">
 <table align=center width=100% border=1 style="background:#eee;">
 <tr><th align=left class=api_title colspan=4>List API: protein_list</th></tr>
 <tr><td colspan=4>List ID<br><input class=species_to_glycosyltransferases_list id=species_to_glycosyltransferases_list_id name=id  type=text value=""></td></tr>
@@ -547,16 +583,20 @@ $(document).on('click', 'input.protein_to_glycosequons_list,input.protein_to_ort
 
 <!-- species_to_glycohydrolases --!>
 
-<div style="position:absolute;left:5%;top:2800;width:43%;border:0px dashed red;">
+<div style="display:block;float:left;margin:20px 0px 0px 5%;width:43%;border:0px dashed red;">
 <table align=center width=100% border=1 style="background:#eee;">
 <tr><th align=left class=api_title>Search API: species_to_glycohydrolases</th></tr>
 <tr><td>Tax ID<br>
 	<select class=species_to_glycohydrolases_search name=tax_id>
-		<option value="9606" selected>9606</option>
-		<option value="10090">10090</option>
-                <option value="10116">10116</option>
-                <option value="0">0</option>
-	</select>
+	<option value="0" selected>0 (any)</option>
+        <option value="9606">9606 (human)</option>
+        <option value="10090">10090 (mouse)</option>
+        <option value="10116">10116 (rat)</option>
+        <option value="11108">11108 (hcv1a)</option>
+        <option value="11116">11116 (hcv1b)</option>
+        <option value="694009">694009 (sarscov1)</option>
+        <option value="2697049">2697049 (sarscov2)</option>
+        </select>
 </td></tr>
 <tr height=200><td valign=top>
 <div id=species_to_glycohydrolases_search_cn style="background:#fff;height:200;width:500;overflow:auto;"></div><br>
@@ -565,7 +605,7 @@ $(document).on('click', 'input.protein_to_glycosequons_list,input.protein_to_ort
 </table>
 </div>
 
-<div style="position:absolute;left:50%;top:2800;width:43%;border:0px dashed red;">
+<div style="display:block;float:left;margin:20px 0px 0px 5%;width:43%;border:0px dashed red;">
 <table align=center width=100% border=1 style="background:#eee;">
 <tr><th align=left class=api_title colspan=4>List API: protein_list</th></tr>
 <tr><td colspan=4>List ID<br><input class=species_to_glycohydrolases_list id=species_to_glycohydrolases_list_id name=id  type=text value=""></td></tr>
@@ -601,16 +641,20 @@ $(document).on('click', 'input.protein_to_glycosequons_list,input.protein_to_ort
 
 <!-- species_to_glycoproteins --!>
 
-<div style="position:absolute;left:5%;top:3200;width:43%;border:0px dashed red;">
+<div style="display:block;float:left;margin:20px 0px 0px 5%;width:43%;border:0px dashed red;">
 <table align=center width=100% border=1 style="background:#eee;">
 <tr><th align=left class=api_title>Search API: species_to_glycoproteins</th></tr>
 <tr><td>Tax ID<br>
 	<select class=species_to_glycoproteins_search name=tax_id>
-		<option value="9606" selected>9606</option>
-		<option value="10090">10090</option>
-                <option value="10116">10116</option>
-                <option value="0">0</option>
-	</select>
+	<option value="0" selected>0 (any)</option>
+        <option value="9606">9606 (human)</option>
+        <option value="10090">10090 (mouse)</option>
+        <option value="10116">10116 (rat)</option>
+        <option value="11108">11108 (hcv1a)</option>
+        <option value="11116">11116 (hcv1b)</option>
+        <option value="694009">694009 (sarscov1)</option>
+        <option value="2697049">2697049 (sarscov2)</option>
+        </select>
 </td></tr>
 
 <tr><td>Evidence Type<br>
@@ -618,6 +662,7 @@ $(document).on('click', 'input.protein_to_glycosequons_list,input.protein_to_ort
 	<option value="reported" selected>reported</option> 
 	<option value="predicted">predicted</option>
 	<option value="both">both</option>
+        <option value="none">none</option>
 </select>
 </td></tr>
 
@@ -628,7 +673,7 @@ $(document).on('click', 'input.protein_to_glycosequons_list,input.protein_to_ort
 </table>
 </div>
 
-<div style="position:absolute;left:50%;top:3200;width:43%;border:0px dashed red;">
+<div style="display:block;float:left;margin:20px 0px 0px 5%;width:43%;border:0px dashed red;">
 <table align=center width=100% border=1 style="background:#eee;">
 <tr><th align=left class=api_title colspan=4>List API: protein_list</th></tr>
 <tr><td colspan=4>List ID<br><input class=species_to_glycoproteins_list id=species_to_glycoproteins_list_id name=id  type=text value=""></td></tr>
@@ -664,16 +709,20 @@ $(document).on('click', 'input.protein_to_glycosequons_list,input.protein_to_ort
 
 <!-- disease_to_glycosyltransferases --!>
 
-<div style="position:absolute;left:5%;top:3600;width:43%;border:0px dashed red;">
+<div style="display:block;float:left;margin:20px 0px 0px 5%;width:43%;border:0px dashed red;">
 <table align=center width=100% border=1 style="background:#eee;">
 <tr><th align=left class=api_title>Search API: disease_to_glycosyltransferases</th></tr>
 <tr><td>Tax ID<br>
 	<select class=disease_to_glycosyltransferases_search name=tax_id>
-		<option value="9606" selected>9606</option>
-		<option value="10090">10090</option>
-                <option value="10116">10116</option>
-                <option value="0">0</option>
-	</select>
+	<option value="0" selected>0 (any)</option>
+        <option value="9606">9606 (human)</option>
+        <option value="10090">10090 (mouse)</option>
+        <option value="10116">10116 (rat)</option>
+        <option value="11108">11108 (hcv1a)</option>
+        <option value="11116">11116 (hcv1b)</option>
+        <option value="694009">694009 (sarscov1)</option>
+        <option value="2697049">2697049 (sarscov2)</option>
+        </select>
 </td></tr>
 <tr><td>Disease Ontology ID<br>
 <input type=text class=disease_to_glycosyltransferases_search name=do_name value="Gilbert syndrom">
@@ -686,7 +735,7 @@ $(document).on('click', 'input.protein_to_glycosequons_list,input.protein_to_ort
 </table>
 </div>
 
-<div style="position:absolute;left:50%;top:3600;width:43%;border:0px dashed red;">
+<div style="display:block;float:left;margin:20px 0px 0px 5%;width:43%;border:0px dashed red;">
 <table align=center width=100% border=1 style="background:#eee;">
 <tr><th align=left class=api_title colspan=4>List API: protein_list</th></tr>
 <tr><td colspan=4>List ID<br><input class=disease_to_glycosyltransferases_list id=disease_to_glycosyltransferases_list_id name=id  type=text value=""></td></tr>

@@ -1,0 +1,112 @@
+{
+   "Protein_mass":{
+      "min":435.00,
+      "max":3906488.00
+   },
+   "organism":[
+      {
+         "name":"Homo sapiens",
+         "id":9606
+      },
+      {
+         "name":"Mus musculus",
+         "id":10090
+      }
+   ],
+   "simple_search_category":[
+      {
+         "id":"glycan",
+         "display":"Glycan"
+      },
+      {
+         "id":"protein",
+         "display":"By Protein"
+      },
+      {
+         "id":"disease",
+         "display":"By Disease"
+      }
+   ],
+   "aa_list":[
+      {
+         "name":"Arginine - Arg - R",
+         "key":"R"
+      },
+      {
+         "name":"Lysine - Lys - K",
+         "key":"K"
+      },
+      {
+         "name":"Aspartic acid - Asp - D",
+         "key":"D"
+      },
+      {
+         "name":"Glutamic acid - Glu - E",
+         "key":"E"
+      },
+      {
+         "name":"Glutamine - Gln - Q",
+         "key":"Q"
+      },
+      {
+         "name":"Asparagine - Asn - N",
+         "key":"N"
+      },
+      {
+         "name":"Histidine - His - H",
+         "key":"H"
+      },
+      {
+         "name":"Serine - Ser - S",
+         "key":"S"
+      },
+      {
+         "name":"Threonine - Thr - T",
+         "key":"T"
+      },
+      {
+         "name":"Tyrosine - Tyr - Y",
+         "key":"Y"
+      },
+      {
+         "name":"Cysteine - Cys - C",
+         "key":"C"
+      },
+      {
+         "name":"Tryptophan - Trp - W",
+         "key":"W"
+      },
+      {
+         "name":"Alanine - Ala - A",
+         "key":"A"
+      },
+      {
+         "name":"Isoleucine - Ile - I",
+         "key":"I"
+      },
+      {
+         "name":"Leucine - Leu - L",
+         "key":"L"
+      },
+      {
+         "name":"Methionine - Met - M",
+         "key":"M"
+      },
+      {
+         "name":"Phenylalanine - Phe - F",
+         "key":"F"
+      },
+      {
+         "name":"Valine - Val - V",
+         "key":"V"
+      },
+      {
+         "name":"Proline - Pro - P",
+         "key":"P"
+      },
+      {
+         "name":"Glycine - Gly - G",
+         "key":"G"
+      }
+   ]
+}

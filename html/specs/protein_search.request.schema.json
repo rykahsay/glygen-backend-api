@@ -5,17 +5,20 @@
     "query": {
       "$id": "/properties/query",
       "type": "object",
-	  "description": "Object that contains a set of search criteria to search proteins for.",
+      "description": "Object that contains a set of search criteria to search proteins for.",
       "minProperties": 1,
-      "maxProperties": 14,
+      "maxProperties": 15,
       "properties": {
         "operation": {
           "$id": "/properties/query/properties/operation",
           "type": "string",
-          "description": "Logical operation used to combine the search result of the individual query parts. Possible values are AND and OR.",
+          "description": "Logical operation used to combine the search result of the individual query parts. Possible values are AND, OR, NAND and NOR.",
           "default": "AND",
           "examples": [
-            "AND"
+              "AND",
+              "OR",
+              "NAND",
+              "NOR"
           ]
         },
         "query_type": {
@@ -27,7 +30,7 @@
             "search_protein"
           ]
         },
-	"uniprot_canonical_ac": {
+        "uniprot_canonical_ac": {
           "$id": "/properties/query/properties/uniprot_canonical_ac",
           "type": "string",
           "description": "This value is used to search by protein ID. This can either be a complete UniProtID or a part of a UniprotID.",
@@ -35,7 +38,7 @@
             "P01234"
           ]
         },
-		"refseq_ac": {
+        "refseq_ac": {
           "$id": "/properties/query/properties/refseq_ac",
           "type": "string",
           "description": "This value is used to search by refseq accession number. This can either be a complete ID or a part of a ID.",
@@ -46,7 +49,7 @@
         "mass": {
           "$id": "/properties/query/properties/mass",
           "type": "object",
-		  "description": "This object is used to search proteins by their mass. The object consists of a minimum and a maximum value specifying a mass range to search for.",
+          "description": "This object is used to search proteins by their mass. The object consists of a minimum and a maximum value specifying a mass range to search for.",
           "properties": {
             "min": {
               "$id": "/properties/query/properties/mass/properties/min",
@@ -107,11 +110,29 @@
           "examples": [
             "mitochondrion"
           ]
-        },        
+        },
+        "go_id": {
+          "$id": "/properties/query/properties/go_id",
+          "type": "string",
+          "description": "This value is used to search by go id. The value can either be a complete go id or a partial go id.",
+          "default": "",
+          "examples": [
+            "GO:0005739"
+          ]
+        },
+        "pmid": {
+          "$id": "/properties/query/properties/pmid",
+          "type": "string",
+          "description": "This value is used to search by pmid. The value can either be a complete pmid or a partial pmid.",
+          "default": "",
+          "examples": [
+            "PMID:30646583"
+          ]
+        },
         "glycan": {
           "$id": "/properties/query/properties/glycan",
           "type": "object",
-		  "description": "This object is used to search proteins by a glycan. This can either by an attached glycan or a glycan that gets bound by the protein.",
+          "description": "This object is used to search proteins by a glycan. This can either by an attached glycan or a glycan that gets bound by the protein.",
           "properties": {
             "relation": {
               "$id": "/properties/query/properties/glycan/properties/relation",
@@ -135,16 +156,33 @@
         },
         "glycosylated_aa": {
           "$id": "/properties/query/properties/glycosylated_aa",
-          "type": "array",
-		  "description": "Search a protein by its glycosylated amino acids. The value is a list of amino acid types in one letter code.",
-          "items": {
-            "$id": "/properties/query/properties/glycosylated_aa/items",
-            "type": "string",
-            "default": "",
-            "examples": [
-              "N",
-              "S"
-            ]
+          "type": "object",
+          "description": "Search a protein by its glycosylated amino acids.",
+          "properties": {
+            "operation": {
+              "$id": "/properties/query/properties/glycosylated_aa/properties/operation",
+              "type": "string",
+              "description": "Specifies type of operation to perform.",
+              "default": "AND",
+              "examples": [
+                "AND",
+                "OR"
+              ]
+            },
+            "aa_list": {
+              "$id": "/properties/query/properties/glycosylated_aa/properties/aa_list",
+              "type": "array",
+              "description": "The value is a list of amino acid types in one letter code.",
+              "items": {
+                "$id": "/properties/query/properties/glycosylated_aa/properties/aa_list/items",
+                "type": "string",
+                "default": "",
+                "examples": [
+                  "N",
+                  "S"
+                ]
+              }
+            }
           }
         },
         "sequence": {
@@ -183,7 +221,7 @@
             "melatonin biosynthesis"
           ]
         },
-		"glycosylation_evidence": {
+        "glycosylation_evidence": {
           "$id": "/properties/query/properties/glycosylation_evidence",
           "type": "string",
           "description": "Search for proteins based on the evidence for the glycosylation sites. Possible values are calculated, experimental, none or any.",
@@ -203,4 +241,3 @@
     "query"
   ]
 }
-

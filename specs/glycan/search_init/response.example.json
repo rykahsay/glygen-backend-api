@@ -1,0 +1,100 @@
+{
+   "glycan_mass":{
+      "native":{
+         "name":"Native",
+         "min":1056,
+         "max":1500
+      },
+      "permethylated":{
+         "name":"Permethylated",
+         "min":1300,
+         "max":2000
+      }
+   },
+   "number_monosaccharides":{
+      "min":4,
+      "max":20
+   },
+   "organism":[
+      {
+         "name":"Homo sapiens",
+         "id":9606
+      },
+      {
+         "name":"Mus musculus",
+         "id":10090
+      }
+   ],
+   "glycan_type":[
+      {
+         "name":"N-Glycan",
+         "subtype":[
+            "Complex",
+            "High-mannose",
+            "Hybrid",
+            "Bisected"
+         ]
+      },
+      {
+         "name":"O-Glycan",
+         "subtype":[
+            "Core 1",
+            "Core 2",
+            "Core 3",
+            "Core 4",
+            "Core 5",
+            "Core 6",
+            "Core 7",
+            "Core 8"
+         ]
+      }
+   ],
+   "simple_search_category":[
+      {
+         "id":"glycan",
+         "display":"Glycan"
+      },
+      {
+         "id":"protein",
+         "display":"By Protein"
+      }
+   ],
+   "composition":[
+      {
+         "residue":"hex",
+         "min":0,
+         "max":100,
+         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/206"
+      },
+      {
+         "residue":"hexnac",
+         "min":10,
+         "max":40,
+         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/899"
+      },
+      {
+         "residue":"dhex",
+         "min":20,
+         "max":60,
+         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/840"
+      },
+      {
+         "residue":"neuac",
+         "min":5,
+         "max":30,
+         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/439197"
+      },
+      {
+         "residue":"neugc",
+         "min":10,
+         "max":50,
+         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/440001"
+      },
+      {
+         "residue":"other",
+         "min":0,
+         "max":100,
+         "url": ""
+      }
+   ]
+}

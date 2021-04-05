@@ -1,0 +1,47 @@
+{
+   "complex_query": {
+      "operation": "AND",
+      "query_list": [
+         {
+            "complex_query": {
+               "operation": "OR",
+               "query_list": [
+                  {
+                     "glycan_query": {
+                        "operation": "NOR",
+                        "query_type": "search_glycan",
+                        "composition": [
+                           {
+                              "residue": "hex",
+                              "min": 10,
+                              "max": 20
+                           },
+                           {
+                              "residue": "other",
+                              "min": 0,
+                              "max": 20
+                           }
+                        ]
+                     }
+                  },
+                  {
+                     "protein_query": {
+                        "operation": "NAND",
+                        "query_type": "search_protein",
+                        "go_id": "GO:0005739"
+                     }
+                  }
+               ]
+            }
+         },
+         {
+            "protein_query": {
+               "operation": "AND",
+               "query_type": "search_protein",
+               "protein_name": "Envelope glycoprotein"
+            }
+         }
+      ]
+   },
+   "result_type": "glycan_list"
+}

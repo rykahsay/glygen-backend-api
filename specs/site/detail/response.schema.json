@@ -1,0 +1,212 @@
+{
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "properties": {
+    "uniprot_canonical_id": {
+      "$id": "/properties/uniprot_canonical_id",
+      "type": "string",
+      "description": "ID of the protein using Uniprot entry name.",
+      "examples": ["SHBG_HUMAN"]
+    },
+    "uniprot_canonical_ac": {
+      "$id": "/properties/uniprot_canonical_ac",
+      "type": "string",
+      "description": "Accession ID of the protein using Uniprot entry ID",
+      "examples": ["P04278"]
+    },
+    "mass": {
+      "$id": "/properties/mass",
+      "type": "object",
+      "description": "Mass of the protein.",
+      "properties": {
+        "chemical_mass": {
+          "$id": "/properties/recommendedName/properties/chemical_mass",
+          "type": "number",
+          "description": "Chemical mass.",
+          "examples": [50638]
+        }
+      }
+    },
+    "recommendedName": {
+      "$id": "/properties/recommendedName",
+      "type": "object",
+      "description": "Object with a tuple of short and long name for the protein. It is possible that one of the names is missing.",
+      "properties": {
+        "full": {
+          "$id": "/properties/recommendedName/properties/full",
+          "type": "string",
+          "description": "Full name of the protein.",
+          "examples": ["Sex hormone-binding globulin"]
+        },
+        "short": {
+          "$id": "/properties/recommendedName/properties/short",
+          "type": "string",
+          "description": "Corresponding short name of the protein.",
+          "examples": ["SHBG"]
+        }
+      }
+    },
+
+    "sequence": {
+      "$id": "/properties/sequence",
+      "type": "object",
+      "description": "Sequence object for the protein. It contains the amino acid sequence and the sequence length (number of amino acids.",
+      "properties": {
+        "sequence": {
+          "$id": "/properties/sequence/properties/sequence",
+          "type": "string",
+          "description": "Amino acid sequence of the protein.",
+          "default": "",
+          "examples": [
+            "MESRGPLATSRLLLLLLLLLLRHTRQGWALRPVLPTQSAHDPPAVHLSNGPGQEPIAVMTFDLTKITKTSSSFEVRTWDPEGVIFYGDTNPKDDWFMLGLRDGRPEIQ"
+          ]
+        },
+        "length": {
+          "$id": "/properties/sequence/properties/length",
+          "type": "integer",
+          "description": "Number of amino acides in the sequence.",
+          "examples": [402]
+        }
+      },
+      "required": ["sequence"]
+    },
+    "keywords": {
+      "$id": "/properties/keywords",
+      "type": "array",
+      "description": "List of keywords that annotate the protein. The keyword concept is identical to the one in UniProt.",
+      "items": {
+        "$id": "/properties/keywords/items",
+        "type": "string",
+        "description": "String representing the keyword.",
+        "examples": ["3D-structure"]
+      }
+    },
+
+    "glycosylation": {
+      "$id": "/properties/glycosylation",
+      "type": "array",
+      "description": "List of glycosylations.",
+      "items": {
+        "$id": "/properties/glycosylation/items",
+        "type": "object",
+        "description": "Glycosylation object that contains the glycosylated amino acid, the positon of this amino acid, the reported glycan and a list of evidence for this annotation.",
+        "properties": {
+          "residue": {
+            "$id": "/properties/glycosylation/items/properties/residue",
+            "type": "string",
+            "description": "Amino acid residue that is glycosylated (one letter code).",
+            "examples": ["T"]
+          },
+          "position": {
+            "$id": "/properties/glycosylation/items/properties/position",
+            "type": "integer",
+            "description": "Position of the amino acid residue in the protein sequence.",
+            "examples": [36]
+          },
+          "glytoucan_ac": {
+            "$id": "/properties/glycosylation/items/properties/glytoucan_ac",
+            "type": "string",
+            "description": "ID of the glycan represented as GlyTouCan ID.",
+            "examples": ["G123456"]
+          },
+          "type": {
+            "$id": "/properties/glycosylation/items/properties/type",
+            "type": "string",
+            "description": "Type of glycosylation (e.g. N-Glycan).",
+            "examples": ["N-Glycan"]
+          },
+          "evidence": {
+            "$id": "/properties/glycosylation/items/properties/evidence",
+            "type": "array",
+            "description": "List of evidence objects.",
+            "items": {
+              "$id": "/properties/glycosylation/items/properties/evidence/items",
+              "type": "object",
+              "description": "Evidence object that stores the database name, entry ID and URL. The objects refers to an entry on another database that provided this glycosylation annotation.",
+              "properties": {
+                "database": {
+                  "$id": "/properties/glycosylation/items/properties/evidence/items/properties/database",
+                  "type": "string",
+                  "description": "Name of the database that provided this glycosylation annotation.",
+                  "default": "",
+                  "examples": ["UniProt"]
+                },
+                "id": {
+                  "$id": "/properties/glycosylation/items/properties/evidence/items/properties/id",
+                  "type": "string",
+                  "description": "Databases entry that provides this glycosylation annotation.",
+                  "default": "",
+                  "examples": ["P04278"]
+                },
+                "url": {
+                  "$id": "/properties/glycosylation/items/properties/evidence/items/properties/url",
+                  "type": "string",
+                  "description": "Link to the database entry that provided this glycosylation annotation.",
+                  "default": "",
+                  "examples": ["http://glycomics.ccrc.uga.edu/ontologies"]
+                }
+              },
+              "required": ["database"]
+            }
+          }
+        },
+        "required": ["type", "evidence"]
+      }
+    },
+
+    "mutation": {
+      "$id": "/properties/mutation",
+      "type": "array",
+      "description": "List of mutations in the gene.",
+      "items": {
+        "$id": "/properties/mutation/items",
+        "type": "object",
+        "description": "Object describing a mutation.",
+        "properties": {
+          "annotation": {
+            "$id": "/properties/mutation/items/properties/annotation",
+            "type": "string",
+            "description": "Description of the mutation.",
+            "default": "",
+            "examples": [
+              "High frequency non-synonymous mutation in BRCA (DOID:001) cancer"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "site_annotation": {
+    "$id": "/properties/site_annotation",
+    "type": "array",
+    "description": "List of site_annotation in the protein.",
+    "items": {
+      "$id": "/properties/site_annotation/items",
+      "type": "object",
+      "description": "Object describing a site_annotation.",
+      "properties": {
+        "start_pos": {
+          "$id": "/properties/isoforms/items/properties/site_annotation/properties/start_pos",
+          "type": "integer",
+          "description": "Start position (number of base) where the site_annotation begins.",
+          "examples": [1233131]
+        },
+        "end_pos": {
+          "$id": "/properties/isoforms/items/properties/site_annotation/properties/end_pos",
+          "type": "integer",
+          "description": "End position (number of base) the site_annotation ends with.",
+          "examples": [332423]
+        },
+        "annotation": {
+          "$id": "/properties/site_annotation/items/properties/annotation",
+          "type": "string",
+          "description": "Description of the site_annotation.",
+          "default": "",
+          "examples": [
+            "High frequency non-synonymous site_annotation in BRCA (DOID:001) cancer"
+          ]
+        }
+      }
+    }
+  }
+}

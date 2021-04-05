@@ -1,0 +1,87 @@
+<html>
+<head>
+<link rel="stylesheet" href="styles.css" type="text/css">
+<script language="javascript" src="jquery.min.js"></script>
+<script language="javascript" src="queries_supersearch.js"></script>
+<script>
+var htmlRoot = ""
+
+$(document ).ready(function() {
+
+    var cn = 'Load Example Query<br><select class=qselector id="qselector" style="width:100%;margin-bottom:3px;height:30px;background:#D6EAF8;">';
+    for (var i in qObjList){
+        var obj = qObjList[i];
+        var qStr = JSON.stringify(obj["query"]);
+        cn += "<option value='"+qStr+"'>"+obj["name"]+"</option>";
+    }
+    cn += '</select>';
+    $("#qselector_cn").html(cn);
+    $('#super_query').val(JSON.stringify(qObjList[0]["query"],null, 2));
+
+    var url = htmlRoot + '/misc/pathlist';
+    var recordTypeList = ["glycan", "protein", "glycoprotein", "enzyme"];
+    for (var i in recordTypeList){
+        var recordType = recordTypeList[i];
+        var queryObj = {"recordtype":recordType};
+        var postData = "query=" + JSON.stringify(queryObj);
+        var reqObj = new XMLHttpRequest();
+        reqObj.recordType = recordType;
+        reqObj.open("POST", url, false);
+        reqObj.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        reqObj.onreadystatechange = function() {
+            if (reqObj.readyState == 4 && [200, 500].indexOf(reqObj.status) != -1) {
+                var resJson = JSON.parse(reqObj.responseText);
+                var cn = resJson.join("\n");
+                var jqId = '#' + this.recordType + '_fields_cn';
+                $(jqId).html(cn);
+            }
+        };
+        reqObj.send(postData);
+        console.log(postData);
+    }
+});
+
+
+////////////////////////////////////
+$(document).on('click', '#diagram_cn', function (event) {
+    event.preventDefault();
+    $("#diagram").toggle();
+
+});
+
+
+$(document).on('change', '#qselector', function (event) {
+    event.preventDefault();
+    var q = $('#qselector').val();
+    $('#super_query').val(q);
+});
+
+</script>
+
+</head>
+<body>
+
+
+<table align=center width=80% border=1 style="background:#eee;">
+<tr><th align=left colspan=10 class=api_title>Test for super_search API</th></tr>
+<tr><td colspan=10 id=diagram_cn align=right><a href="">View Diagram</a></td></tr>
+<tr><td colspan=10 align=center><img id="diagram" src="searchsuper.png" style="width:100%;height:500px;display:none;"></td></tr>
+<tr>
+<td>Glycan Fields<br><textarea id=glycan_fields_cn rows=10 style="width:100%;"></textarea></td>
+<td>Glycoprotein Fields<br><textarea  id=glycoprotein_fields_cn rows=10 style="width:100%;"></textarea></td>
+<td>Protein Fields<br><textarea  id=protein_fields_cn rows=10 style="width:100%;"></textarea></td>
+
+</tr>
+<tr><td id=qselector_cn colspan=10></td></tr>
+<tr><td colspan=10><textarea id=super_query rows=10 style="width:100%;"></textarea></td></tr>
+
+<tr height=100>
+<td valign=top><input type=submit id=supper_search name=btn value="Submit API request"></td>
+	 
+    <td id=supper_search_cn style="background:#fff;" colspan=10></td></tr>
+
+</table>
+
+
+</body>
+</html>

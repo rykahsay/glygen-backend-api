@@ -4,6 +4,23 @@ import json
 import util
 
 
+def get_errors_in_superquery(query_obj, config_obj):
+
+    error_list = []
+    for obj in query_obj:
+        for k in ["concept", "query"]:
+            if k not in obj:
+                error_list.append({"error_code": "missing-%s" % (k)})
+        if "concept" in obj:
+            concept = obj["concept"]
+            if "query" in obj:
+                for k in ["aggregator", "unaggregated_list", "aggregated_list"]:
+                    if k not in obj["query"]:
+                        error_list.append({"error_code": "missing-%s" %(k),"concept":concept})
+
+    return error_list
+
+
 
 def get_errors_in_query(svc_name, query_obj, config_obj):
 

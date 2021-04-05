@@ -1,0 +1,41 @@
+{
+   "query": {
+      "operation": "AND",
+      "query_type": "search_protein",
+      "uniprot_canonical_ac": "P01234",
+      "version": "1.2",
+      "refseq_ac": "P01234",
+      "mass": {
+         "min": 10,
+         "max": 10000
+      },
+      "organism": {
+         "name": "Mus musculus",
+         "id": 10090
+      },
+      "protein_name": "Envelope glycoprotein",
+      "gene_name": "MGAT1",
+      "go_term": "mitochondrion",
+      "go_id": "GO:0005739",
+      "pmid": "30646583",
+      "glycan": {
+         "relation": "attached",
+         "operation": "AND",
+         "glytoucan_ac": "G09012,G17689DH"
+      },
+      "glycosylated_aa": {
+         "operation": "AND",
+         "aa_list": [
+            "N",
+            "S"
+         ]
+      },
+      "sequence": {
+         "aa_sequence": "NSTRFV",
+         "type": "exact"
+      },
+      "interactor_id": "G16235VG",
+      "pathway_id": "melatonin biosynthesis",
+      "glycosylation_evidence": "any"
+   }
+}

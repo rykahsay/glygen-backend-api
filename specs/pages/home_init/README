@@ -1,0 +1,37 @@
+Introduction:
+=============
+This webform is used to initialize the dynamic components of the home page:
+-	Version numbers of webpage, API and data
+-	Statistics
+
+Web service call: 
+=================
+HTTP Request method		GET
+
+
+Function:
+=========
+Web service returns initial information used to populate the home page.
+
+Response:
+=========
+Content						JSON
+HTTP Content Type			application/json
+Access-Control-Allow-Origin	*
+
+Warning:
+========
+To all Cross-Origin Resource Sharing (CORS) the web service has to allow all domains access. Otherwise browsers will not permit to call this web service by a webpage. Therefore the HTTP response header must contain the appropriate Access-Control-Allow-Origin statement.
+
+Note:
+=====
+An example JSON is available separately and the JSON data structure is documented in a JSON schema.
+
+General error codes:
+====================
+{
+    "open-connection-failed": "Unable to connect to database."
+}
+
+
+

@@ -1,0 +1,104 @@
+{
+  "pagination": {
+    "$id": "/properties/pagination",
+    "type": "object",
+    "properties": {
+      "offset": {
+        "$id": "/properties/pagination/properties/offset",
+        "type": "integer",
+        "description": "Start address of subset. This number specifies the first result to be included.",
+        "default": 1,
+        "examples": [1]
+      },
+      "limit": {
+        "$id": "/properties/pagination/properties/limit",
+        "type": "integer",
+        "description": "Number of results in the subset. For example offset=11 and limit=30 will result in a subset from entry 11 to 40.",
+        "default": 10,
+        "examples": [10]
+      },
+      "total_length": {
+        "$id": "/properties/pagination/properties/total_length",
+        "type": "integer",
+        "description": "Total number of results in the search result list.",
+        "examples": [19]
+      },
+      "sort": {
+        "$id": "/properties/pagination/properties/sort",
+        "type": "string",
+        "description": "Sort order of the total result set. Default is ID to sort by glycan id, mass,number_enzymes,number_proteins,number_sugar",
+        "default": "id",
+        "examples": ["id"]
+      },
+      "order": {
+        "$id": "/properties/pagination/properties/order",
+        "type": "string",
+        "description": "Sort direction of the total result set. Possible values are asc and desc.",
+        "default": "asc",
+        "examples": ["asc"]
+      }
+    },
+    "required": ["offset", "limit", "total_length", "sort", "order"]
+  },
+  "filter": {
+    "$id": "/properties/filter",
+    "type": "array",
+    "properties": {
+      "motif_name": {
+        "$id": "/properties/filter/properties/motif_name",
+        "type": "string",
+        "description": "fliter list by motif_list"
+      },
+      "glycan_id": {
+        "$id": "/properties/filter/properties/glycan_id",
+        "type": "string",
+        "description": "fliter list by glycan_id"
+      },
+      "motif_synonyms": {
+        "$id": "/properties/filter/properties/motif_synonyms",
+        "type": "array",
+        "description": "fliter list by motif_synonyms"
+      }
+    }
+  },
+  "results": {
+    "$id": "/properties/results",
+    "type": "array",
+    "items": {
+      "$id": "/properties/results/items",
+      "type": "object",
+      "properties": {
+        "glycan_id": {
+          "$id": "/properties/results/items/properties/glycan_id",
+          "type": "string",
+          "description": "GlyTouCan accession number of the glycan.",
+          "examples": ["G89290XU"]
+        },
+        "motif_name": {
+          "$id": "/properties/results/items/properties/motif_name",
+          "type": "string",
+          "description": "Glycan  motif.",
+          "examples": ["G89290XU"]
+        },
+        "motif_synonyms": {
+          "$id": "/properties/filter/properties/motif_synonyms",
+          "type": "array",
+          "description": " list of motif_synonyms",
+          "examples": ["xyz", "abc", "wrc"]
+        },
+        "pmid": {
+          "$id": "/properties/filter/properties/pmid",
+          "type": "string",
+          "description": "Pubmed ID of the paper.",
+          "examples": ["2139487"]
+        },
+        "number_glycan": {
+          "$id": "/properties/filter/properties/number_glycan",
+          "type": "numer",
+          "description": "list of number_glycan for motif.",
+          "examples": ["2139487"]
+        }
+      }
+    }
+  }
+}

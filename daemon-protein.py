@@ -69,12 +69,11 @@ def main():
     db_obj = config_obj[config_obj["server"]]["dbinfo"]
 
     api_domain = "https://api.glygen.org" 
-    log_file = "/var/www/html/api/logs/api_test.log"
+    log_file = path_obj["apierrorlogpath"] + "/api_test.log"
     if config_obj["server"] in ["dev", "tst"]:
         api_domain = "https://api.%s.glygen.org" % (config_obj["server"])
     elif config_obj["server"] in ["beta"]:
         api_domain = "https://%s-api.glygen.org" % (config_obj["server"])
-        log_file = "/var/www/html/beta/api/logs/api_test.log"
 
 
     record_count = 10

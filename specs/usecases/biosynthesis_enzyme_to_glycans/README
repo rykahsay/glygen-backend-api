@@ -1,0 +1,44 @@
+Introduction:
+=============
+This web services performs the glycan search as requested by the user. The user input will be processed and a glycan list ID will be returned.
+
+
+Web service call: 
+=================
+HTTP Request method		GET
+Example: http://glygen.org/api/usecases/biosynthesis_enzyme_to_glycans/{tax_id}/{uniprot_canonical_ac}/
+
+
+
+Function:
+=========
+The WS receives the user query which specifies the search criteria and performs the search. If the operation is successful a glycan list ID that represents the results will be returned. The server stores the results associated with this glycan list ID and can return them when requested via the list WS. If an error occurs an error message (human readable error message that can be used for the display) and error code (used for logging) is returned. If no results are found a successful response without a glycan list ID is send. All responses are send in JSON format.
+
+Response:
+=========
+Content                         JSON
+HTTP Content Type                       application/json
+Access-Control-Allow-Origin             *
+
+
+Warning:
+========
+
+Note:
+=====
+
+General error codes:
+====================
+{
+    "open-connection-failed": "Unable to connect to database."
+}
+
+
+Input error codes:
+==================
+{
+    "missing-parameter":"one of the required parameter."
+    ,"invalid-parameter-value":"one of the required parameter has invalid value."
+    ,"invalid-parameter-value-length":"one of the required parameter value is too long"
+}
+

@@ -2,409 +2,116 @@
 <head>
 <link rel="stylesheet" href="styles.css" type="text/css">
 <script language="javascript" src="jquery.min.js"></script>
+<script language="javascript" src="api_test.js"></script>
+
 <script>
-var htmlRoot = ""
-
-$(document ).ready(function() {
-
-});
-
-////////////////////////////////////
-$(document).on('click', '#protein_search_init', function (event) {
-        event.preventDefault();
-
-        var url = htmlRoot + '/protein/search_init'
-        $("#protein_search_init_url").html(url);
-
-	
-	var gifImage = '<img src=loading.gif style="width:20%;margin-left:40%;margin-top:2%;">';	
-	$("#protein_search_init_cn").html(gifImage);
-
-        var reqObj = new XMLHttpRequest();
-        reqObj.open("POST", url, true);
-        reqObj.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        reqObj.onreadystatechange = function() {
-                if (reqObj.readyState == 4 && [200, 500].indexOf(reqObj.status) != -1) {
-                        $("#protein_search_init_cn").html('<pre>'+reqObj.responseText+'</pre>');
-		}
-        };
-        reqObj.send();
-                
-});
-
-
-////////////////////////////////////
-$(document).on('click', '#protein_search_simple', function (event) {
-
-        event.preventDefault();
-        var keyList1 = ["term", "term_category"];
-        var inJson = {"operation":"AND", "query_type":"protein_search_simple"};
-        $('.protein_search_simple').each(function(){
-                var name = $(this).attr("name");
-                var value = $(this).val();
-                if (value.trim()){
-                        if(keyList1.indexOf(name) != -1){
-                                inJson[name] = value
-                        }
-                }
-        });
-
-        var url = htmlRoot + '/protein/search_simple';     
-        var postData = "query=" + JSON.stringify(inJson);
-        $("#protein_search_simple_url").html(url + '?' +  postData);
-        
-        var gifImage = '<img src=loading.gif style="width:20%;margin-left:40%;margin-top:2%;">';        
-        $("#protein_search_simple_cn").html(gifImage);
-
-        var reqObj = new XMLHttpRequest();
-        reqObj.open("POST", url, true);
-        reqObj.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        reqObj.onreadystatechange = function() {
-                if (reqObj.readyState == 4 && [200, 500].indexOf(reqObj.status) != -1) {
-                        var resJson = JSON.parse(reqObj.responseText);
-                        $("#protein_search_simple_cn").html('<pre>'+reqObj.responseText+'</pre>');
-                        $("#listid").val(resJson["list_id"]);
-                }
-        };
-        reqObj.send(postData);
-
-});
-
-
-
-
-////////////////////////////////////
-$(document).on('click', '#protein_search', function (event) {
-
-	event.preventDefault();
-        	
-	var keyList1 = ["uniprot_canonical_ac", "refseq_ac", "gene_name",  "protein_name", "go_term", "go_id",
-		"glycosylation_evidence", "pathway_id", "pmid"
-	]
-	var keyList2 = [ "tax_id"]
-
-	var inJson = {"operation":"AND", "query_type":"search_protein", 
-		"mass":{}, "glycan":{"glytoucan_ac":"", "relation":""}};
-	$('.protein_search').each(function(){
-		var name = $(this).attr("name");
-		var value = $(this).val();
-		if (name == "glycosylated_aa"){
-                    var aaList = value;
-                    var operation = $("select[name=operation]").val();
-                    inJson["glycosylated_aa"] = {"aa_list":aaList, "operation":operation};
-                }
-		else if (value.trim()){
-	       		if(keyList1.indexOf(name) != -1){
-				inJson[name] = value;
-			}
-			else if(keyList2.indexOf(name) != -1){
-                            if (name == "tax_id"){
-                                var taxid2name = {"0":"All", "9606":"Homo sapiens", "10090":"Mus musculus",
-                                                "10116":"Rattus norvegicus"}
-                                var tax_id = value;
-                                var tax_name = taxid2name[tax_id];
-                                inJson["organism"] = {"id": parseInt(value), "name":tax_name};
-                            }
-                            else{
-                                inJson[name] = parseInt(value);
-                            }
-                        }
-			else if (name == "min_mass"){
-				inJson["mass"]["min"] = parseFloat(value);
-			}
-			else if (name == "max_mass"){
-				inJson["mass"]["max"] = parseFloat(value);
-			}
-			else if (name == "sequence"){
-				inJson["sequence"] = {"type":"exact", "aa_sequence":value}
-			}
-			else if (name == "glytoucan_ac"){
-				inJson["glycan"]["glytoucan_ac"] = value;
-			}
-                        else if (name == "relation"){
-                            inJson["glycan"]["relation"] = value;
-                        }
-		}
-	});
-
- 	var url = htmlRoot + '/protein/search';	
-	var postData = "query=" + JSON.stringify(inJson);
-	$("#protein_search_url").html(url + '?' +  postData);
-
-	var gifImage = '<img src=loading.gif style="width:20%;margin-left:40%;margin-top:2%;">';        
-	$("#protein_search_cn").html(gifImage);
-
-	
-	var reqObj = new XMLHttpRequest();
-        reqObj.open("POST", url, true);
-        reqObj.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        reqObj.onreadystatechange = function() {
-                if (reqObj.readyState == 4 && [200, 500].indexOf(reqObj.status) != -1) {
-			var resJson = JSON.parse(reqObj.responseText);
-			$("#protein_search_cn").html('<pre>'+reqObj.responseText+'</pre>');
-                	$("#listid").val(resJson["list_id"]);
-		}
-        };
-        reqObj.send(postData);
-
-});
-
-////////////////////////////////////
-$(document).on('click', '#protein_list', function (event) {
-
-	event.preventDefault();
-	var inJson = {};
-	$('.protein_list').each(function(){
-	 	var name = $(this).attr("name");
-		var value = $(this).val();
-		if (value.trim()){
-			if (["offset", "limit"].indexOf(name) != -1){
-				value = parseInt(value);
-			}
-			inJson[name] = value
-		}									                 
-	});
-	var url = htmlRoot + '/protein/list'
-	var postData = "query=" + JSON.stringify(inJson);
-	$("#protein_list_url").html(url + '?' +postData);
-
-	var gifImage = '<img src=loading.gif style="width:20%;margin-left:40%;margin-top:2%;">';        
-	$("#protein_list_cn").html(gifImage);
-
-
-	var reqObj = new XMLHttpRequest();
-	reqObj.open("POST", url, true);
-	reqObj.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	reqObj.onreadystatechange = function() {
-		if (reqObj.readyState == 4 && [200, 500].indexOf(reqObj.status) != -1) {
-			$("#protein_list_cn").html('<pre>'+reqObj.responseText+'</pre>');
-		}
-	};
-	reqObj.send(postData);
-});
-
-////////////////////////////////////
-$(document).on('click', '#protein_detail', function (event) {
-        event.preventDefault();
-
-	var proteinId = $("#uniprot_canonical_ac").val();
-	var url = htmlRoot + '/protein/detail/' + proteinId
-	$("#protein_detail_url").html(url);
-
-	var gifImage = '<img src=loading.gif style="width:20%;margin-left:40%;margin-top:2%;">';        
-	$("#protein_detail_cn").html(gifImage);
-
-        var reqObj = new XMLHttpRequest();
-        reqObj.open("POST", url, true);
-        reqObj.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        reqObj.onreadystatechange = function() {
-                if (reqObj.readyState == 4 && [200, 500].indexOf(reqObj.status) != -1) {
-                        $("#protein_detail_cn").html('<pre>'+reqObj.responseText+'</pre>');
-		}
-        };
-        //reqObj.send(postData);
-	reqObj.send();
-});
-
-////////////////////////////////////
-$(document).on('click', '#protein_alignment', function (event) {
-        event.preventDefault();
-
-        var proteinId = $("#uniprot_canonical_ac_alignment").val();
-        var clusterType = $("select[name=cluster_type]").val();
-        var inJson = {"uniprot_canonical_ac":proteinId, "cluster_type":clusterType};
-
-        var url = htmlRoot + '/protein/alignment/';
-        var postData = "query=" + JSON.stringify(inJson);
-        $("#protein_alignment_url").html(url + '?' +postData);
-
-        var gifImage = '<img src=loading.gif style="width:20%;margin-left:40%;margin-top:2%;">';
-        $("#protein_alignment_cn").html(gifImage);
-
-        var reqObj = new XMLHttpRequest();
-        reqObj.open("POST", url, true);
-        reqObj.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        reqObj.onreadystatechange = function() {
-                if (reqObj.readyState == 4 && [200, 500].indexOf(reqObj.status) != -1) {
-                        $("#protein_alignment_cn").html('<pre>'+reqObj.responseText+'</pre>');
-                }
-        };
-        reqObj.send(postData);
-});
-
-
+var testInfo = {
+    "search_init":{
+        "string_fields":[
+        ]
+        ,"numeric_fields":[
+        ]
+        ,"required_fields":[]
+        ,"url":"/protein/search_init"
+        ,"query":{
+        }
+    },
+    "protein_search_simple":{
+        "string_fields":[
+            "query_type", "operation", "term", "term_category [glycan|protein|gene|organism|enzyme]"
+        ]
+        ,"numeric_fields":[
+        ]
+        ,"required_fields":["term", "term_category"]
+        ,"url":"/protein/search_simple"
+        ,"query":{"term_category":"protein","term":"P14210"}
+    }
+    ,"protein_search": {
+        "string_fields": [
+            "pathway_id",
+            "uniprot_canonical_ac",
+            "protein_name",
+            "attached_glycan_id",
+            "binding_glycan_id",
+            "query_type",
+            "refseq_ac",
+            "go_term",
+            "go_id",
+            "disease_id",
+            "version",
+            "disease_name",
+            "operation",
+            "glycosylation_evidence",
+            "pmid",
+            "gene_name",
+            "organism.name",
+            "organism.id", 
+            "mass.min",
+            "mass.max",
+            "sequence.aa_sequence", 
+            "glycosylated_aa"
+        ],
+        "url": "/protein/search/",
+        "required_fields": [],
+        "numeric_fields": [
+            "organism.id"
+        ],
+        "query": {"uniprot_canonical_ac":"P14210"}
+    }
+    ,"protein_list": {
+        "string_fields": [
+            "sort", 
+            "id", 
+            "order"
+        ], 
+        "url": "/protein/list/", 
+        "required_fields": [
+            "id"
+        ], 
+        "numeric_fields": [
+            "offset", 
+            "limit"
+        ], 
+        "query": {
+            "id": ""
+        }
+    }
+    ,"protein_detail": {
+        "string_fields": [
+            "uniprot_canonical_ac"
+        ],
+        "url": "/protein/detail/",
+        "required_fields": [
+            "uniprot_canonical_ac"
+        ],
+        "numeric_fields": [],
+        "query":"P14210",
+        "semantic":true
+    }
+    ,"protein_alignment": {
+        "string_fields": [
+            "uniprot_canonical_ac",
+            "cluster_type [isoformset.uniprotkb|homologset.oma|homologset.mgi]"
+        ],
+        "url": "/protein/alignment/",
+        "required_fields": [
+            "uniprot_canonical_ac",
+            "cluster_type"
+        ],
+        "numeric_fields": [],
+        "query": {
+            "uniprot_canonical_ac": "P11531-1",
+            "cluster_type": "homologset.oma"
+        }
+    }
+};
 
 
 
 </script>
 
-
 </head>
 <body>
-
-
-
-<table align=center width=80% border=1 style="background:#eee;">
-
-<tr><th align=left colspan=2 class=api_title>Test for protein_search_init API</th></tr>
-<tr><td>Post Data</td><td id=protein_search_init_url style="background:#fff;"></td></tr>
-<tr><td valign=top><input type=submit id=protein_search_init name=btn value="Submit API request"></td>
-<td style="background:#fff;"><div style="width:700px;height:150px;overflow:auto;" id=protein_search_init_cn></div></td></tr>
-
-
-
-
-<tr><th colspan=2 align=left class=api_title>Test for protein_search_simple API</th></tr>
-<tr>
-<td>Term Category *</td>
-<td>
-<select class=protein_search_simple name=term_category>
-        <option value=""></option>
-        <option value="any">Any</option>
-        <option value="protein">Protein</option>
-        <option value="glycan">Glycan</option>
-        <option value="organism">Organism</option>
-        <option value="disease">Disease</option>
-        <option value="pathway">Pathway</option>
-</select>
-</td>
-</tr>
-<tr><td>Term *</td><td width=80%><input class=protein_search_simple name=term type=text value=""></td></tr>
-<tr><td>Post Data (both GET/POST supported)</td><td id=protein_search_simple_url style="background:#fff;"></td></tr>
-<tr height=100><td valign=top><input type=submit id=protein_search_simple name=btn value="Submit API request"></td>
-            <td id=protein_search_simple_cn style="background:#fff;"></td></tr>
-
-
-
-
-
-<tr><th colspan=2 align=left class=api_title>Test for protein_search API</th></tr>
-<tr><td>UniProt Accession</td><td width=80%><input class=protein_search name=uniprot_canonical_ac type=text value=""></td></tr>
-<tr><td>RefSeq Accession</td><td width=80%><input class=protein_search name=refseq_ac type=text value=""></td></tr>
-
-<tr><td>Gene Name</td><td width=80%><input class=protein_search name=gene_name type=text value=""></td></tr>
-<tr><td>Protein Name</td><td width=80%><input class=protein_search name=protein_name type=text value=""></td></tr>
-<tr><td>GO ID</td><td width=80%><input class=protein_search name=go_id type=text value=""></td></tr>
-<tr><td>GO Term</td><td width=80%><input class=protein_search name=go_term type=text value=""></td></tr>
-<tr><td>Minimum Mass</td><td><input class=protein_search name=min_mass type=number value=""></td></tr>
-<tr><td>Maximum Mass</td><td><input class=protein_search name=max_mass type=number value=""></td></tr>
-
-
-<tr>
-<td>Tax ID</td>
-<td>
-<select class=protein_search name=tax_id>
-        <option value=""></option>
-        <option value="0" selected>0</option>
-	<option value="9606">9606</option>
-        <option value="10090">10090</option>
-        <option value="10116">10116</option>
-</select>
-</td>
-</tr>
-
-<tr><td>Glycan</td><td><input class=protein_search name=glytoucan_ac type=text value=""></td></tr>
-<tr><td>Glycan Relation</td><td>
-        <select class=protein_search name=relation>
-            <option value="attached" selected>attached</option>
-            <option value="binding">binding</option>
-            <option value="any">any</option>
-        </select>
-</td></tr>
-
-<tr><td>Glycosylated AA</td><td>
-		       
-<select class=protein_search name=glycosylated_aa multiple>
-<option value="C">C</option>
-<option value="N">N</option>
-<option value="R">R</option>
-<option value="S">S</option>
-<option value="T">T</option>
-<option value="W">W</option>
-</select>
-</td></tr>
-
-<tr>
-<td>Glycosylated AA Junction</td>
-<td>
-<select class=glycan_search name=operation>
-    <option value="and" selected>AND</option>
-    <option value="or">OR</option>
-</select>
-</td>
-</tr>
-
-
-
-<tr><td>Glycosylation Evidence</td><td><input class=protein_search name=glycosylation_evidence type=text value=""></td></tr>
-<tr><td>Pathway ID</td><td><input class=protein_search name=pathway_id type=text value=""></td></tr>
-<tr><td valign=top>Sequence (or subsequence)</td><td><textarea class=protein_search name=sequence rows=3></textarea></td></tr>
-
-<tr><td>Pubmed ID</td><td><input class=protein_search name=pmid type=text value=""></td></tr>
-
-<tr><td>Post Data (both GET/POST supported)</td><td id=protein_search_url style="background:#fff;"></td></tr>
-<tr height=100><td valign=top><input type=submit id=protein_search name=btn value="Submit API request"></td>
-	<td id=protein_search_cn style="background:#fff;"></td></tr>
-
-
-
-<tr><th colspan=2 align=left class=api_title>Test for protein_list API</th></tr>
-<tr><td>Search Results ID *</td><td><input id=listid class=protein_list name=id type=text value=""></td></tr>
-<tr><td>Pagination Offset</td><td><input class=protein_list name=offset type=text value="1"></td></tr>
-<tr><td>Pagination Limit</td><td><input class=protein_list name=limit type=text value="20"></td></tr>
-<tr><td>Sort Field</td><td>
-		
-        <select class=protein_list name=sort>
-            <option value=""></option>
-            <option value="uniprot_canonical_ac" selected>uniprot_canonical_ac</option>
-            <option value="mass">mass</option>
-            <option value="protein_name_long">protein_name_long</option>
-        </select>
-</td></tr>
-<tr><td>Sort Order [asc/desc]</td><td>
-        <select class=protein_list name=order>
-            <option value=""></option>
-            <option value="asc" selected>asc</option>
-            <option value="desc">desc</option>
-        </select>
-</td></tr>
-
-<tr><td>Post Data  (both GET/POST supported)</td><td id=protein_list_url style="background:#fff;"></td></tr>
-<tr><td valign=top><input type=submit id=protein_list name=btn value="Submit API request"></td>
-<td style="background:#fff;"><div style="width:700px;height:300px;overflow:auto;" id=protein_list_cn></div></td></tr>
-
-
-
-
-<tr><th colspan=2 align=left  class=api_title>Test for protein_detail API</th></tr>
-<tr><td>Accession *</td><td><input class=protein_detail id=uniprot_canonical_ac type=text value="P14210-1">
- (e.g, P14210-1)
-</td></tr>
-<tr><td>Post Data</td><td id=protein_detail_url style="background:#fff;"></td></tr>
-<tr><td valign=top><input type=submit id=protein_detail name=btn value="Submit API request"></td>
-	<td style="background:#fff;"><div style="width:700px;height:300px;overflow:auto;" id=protein_detail_cn></div></td></tr>
-
-
-<tr><th colspan=2 align=left  class=api_title>Test for protein_alignment API</th></tr>
-<tr><td>Accession *</td><td><input class=protein_alignment id=uniprot_canonical_ac_alignment type=text value="P14210-1"> (e.g, P14210-1)
-</td></tr>
-
-<tr><td>Cluster Type</td><td>
-    <select class=protein_alignment name=cluster_type>
-        <option value="isoformset.uniprotkb" selected>isoformset.uniprotkb</option>
-        <option value="homologset.oma">homologset.oma</option>
-        <option value="homologset.mgi">homologset.mgi</option>
-    </select>
-</td></tr>
-
-<tr><td>Post Data</td><td id=protein_alignment_url style="background:#fff;"></td></tr>
-<tr><td valign=top><input type=submit id=protein_alignment name=btn value="Submit API request"></td>
-        <td style="background:#fff;"><div style="width:700px;height:300px;overflow:auto;" id=protein_alignment_cn></div></td></tr>
-
-
-
-
-</table>
 
 </body>
 <html>

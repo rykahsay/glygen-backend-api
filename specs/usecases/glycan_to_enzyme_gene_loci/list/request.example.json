@@ -1,0 +1,7 @@
+{
+    "id": "dc6c48316a12e3f4a3bcb0bd4b9e0d76",
+    "sort": "uniprot_canonical_ac",
+    "offset": 1,
+    "limit": 20,
+    "order": "desc"
+}

@@ -1,0 +1,173 @@
+<html>
+<head>
+<link rel="stylesheet" href="styles.css" type="text/css">
+<script language="javascript" src="jquery.min.js"></script>
+<script language="javascript" src="vjGoogleChart.js"></script>
+<script language="javascript" src="loader.js"></script>
+<script language="javascript" src="config.js"></script>
+
+<script>
+var htmlRoot = ''
+var selectedRecordType = 'protein';
+var summaryJson = []
+
+
+$(document ).ready(function() {
+
+    var cn = getQueryForm();
+    cn += '<div id=pagecn style="display:block;width:100%;float:left;"></div>';
+
+    $('body').html(cn);
+
+    rndrFrame();
+
+});
+
+
+
+///////////////////////////
+$(document).on('change', '#recordtype', function (event) {
+    event.preventDefault();
+    selectedRecordType = $("#recordtype").val();
+    var recordIdHash = {"protein":"P14210-1", "glycan":"G17689DH"};
+    $("#recordid").val(recordIdHash[selectedRecordType]);
+
+});
+
+///////////////////////////
+$(document).on('click', '#testrecords', function (event) {
+    
+        event.preventDefault();
+        rndrFrame();
+
+        var keyList1 = ["recordtype", "recordid", "datarelease"];
+        var inJson = {};
+        $('.misc_testrecords').each(function(){
+                var name = $(this).attr("name");
+                var value = $(this).val();
+                if (value.trim()){
+                        if(keyList1.indexOf(name) != -1){
+                                inJson[name] = value
+                        }
+                }
+        });
+
+        var postData = "query=" + JSON.stringify(inJson);
+        var gifImage = '<img src=loading.gif style="width:20%;margin-left:40%;margin-top:2%;">';
+        var reqObjList = [];
+        $("#summaryttl").css("display", "block");
+        $("#summarydiv").css("display", "block");
+        summaryJson = [
+            ["section", "pass_count", "fail_count"],
+            ["string", "number", "number"]
+        ]
+        var secList = Object.keys(configJson[selectedRecordType]);
+        for (var i in secList){
+            var bodyDivId = 'secdiv_' + secList[i];
+            var jqBodyDivId = '#' + bodyDivId;
+            var jqTitleDivId = '#secttldiv_' + secList[i];
+            
+
+            $(jqTitleDivId).css("display", "block");
+            $(jqBodyDivId).css("display", "block");
+            $(jqBodyDivId).html(gifImage);
+
+            inJson["section"] = secList[i];
+            makeRequest(bodyDivId, inJson);
+        }
+});
+
+////////////////////////////
+function rndrFrame(){
+
+    var cn = '';
+    var bodyStyle = 'display:block;float:left;width:80%;margin-left:10%;overflow:auto;';
+    bodyStyle += 'padding:10px;border:0px solid #eee;';
+    var ttlStyle = 'display:block;float:left;width:80%;margin-left:10%;height:20px;';
+    ttlStyle += 'font-weight:bold;background:#eee;padding:10px;margin-top:30px;';
+    cn += '<div class=secdivcn id="summaryttl" style="'+ttlStyle+'">Summary</div>';
+    cn += '<div class=secdivcn id="summarydiv" style="'+bodyStyle+'"></div>';
+    
+    var secList = Object.keys(configJson[selectedRecordType]);
+    for (var i in secList){
+        var secName = secList[i];
+        var ttlDivId = 'secttldiv_' + secName;
+        var bodyDivId = 'secdiv_' + secName;
+        var divTitle = 'Results for ' + secName + ' section.';
+        cn += '<div class=secdivcn id='+ttlDivId+' style="'+ttlStyle+'">'+divTitle+'</div>';
+        cn += '<div class=secdivcn id='+bodyDivId+' style="'+bodyStyle+'"></div>';
+    }
+    $('#pagecn').html(cn);
+    $(".secdivcn").css("display", "none");
+    return;
+
+}
+
+
+/////////////////////////////////
+function makeRequest(bodyDivId, inJson){
+
+    var jqBodyDivId = '#' + bodyDivId;
+    var url = htmlRoot + '/misc/testrecords/';
+    var postData = "query=" + JSON.stringify(inJson);
+    console.log(postData);
+    var reqObj = new XMLHttpRequest();
+    reqObj.open("POST", url, true);
+    reqObj.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    reqObj.bodyDivId = bodyDivId;
+    reqObj.jqBodyDivId = jqBodyDivId;
+    reqObj.onreadystatechange = function() {
+        if (reqObj.readyState == 4 && [200, 500].indexOf(reqObj.status) != -1) {
+            var resJson = JSON.parse(reqObj.responseText);
+            if ("table" in resJson){
+                var n_pass = 0;
+                var n_fail = 0;
+                for (var i=2; i < resJson["table"].length; i++ ){
+                    n_pass += (resJson["table"][i][3].indexOf("True") != -1 ? 1 : 0);
+                    n_fail += (resJson["table"][i][3].indexOf("False") != -1 ? 1 : 0);
+                }
+                summaryJson.push([resJson["section"], n_pass, n_fail]);
+                drawTable(resJson["table"], this.bodyDivId, {"pagesize":100, "height":""});
+                //$(this.jqBodyDivId).html('<pre>'+reqObj.responseText+'</pre>');
+            }
+            drawTable(summaryJson, "summarydiv", {"pagesize":100});
+        }
+    };
+    reqObj.send(postData);
+}
+
+
+
+function getQueryForm(){
+    var cn = '<table align=center width=80% border=1 style="background:#eee;">';
+    cn += '<tr><th colspan=10 align=left class=api_title>Compare Record Data from API vs from Datasets</th></tr>';
+    cn += '<tr height=60><td width=150>';
+    cn += 'Record Type<br>';
+    cn += '<select class=misc_testrecords id= recordtype name=recordtype>';
+    cn += '<option value="protein" selected>protein</option>';
+    cn += '<option value="glycan">glycan</option>';
+    cn += '</select>';
+    cn += '</td>';
+    cn += '<td width=300>Record ID<br>';
+    cn += '<input class=misc_testrecords type=text id=recordid name=recordid value="P14210-1"></td>';
+    cn += '<td width=150>Data Release<br>';
+    cn += '<input class=misc_testrecords type=text name=datarelease value="1.5.33"></td>';
+    cn += '<td width=150>&nbsp;<br>';
+    cn += '<input class=misc_testrecords id=testrecords type=submit value="Submit Test">';
+    cn += '</td><td></td>';
+    cn += '</tr>';
+    cn += '</table>';
+
+    return cn;
+}
+
+
+</script>
+
+
+</head>
+
+<body>
+
+</body>
+<html>

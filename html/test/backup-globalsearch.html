@@ -1,0 +1,70 @@
+<html>
+<head>
+<link rel="stylesheet" href="styles.css" type="text/css">
+<script language="javascript" src="jquery.min.js"></script>
+<script>
+var htmlRoot = ""
+
+$(document ).ready(function() {
+
+});
+
+
+////////////////////////////////////
+$(document).on('click', '#globalsearch_search', function (event) {
+
+        event.preventDefault();
+        var keyList1 = ["term"];
+        var inJson = {};
+        $('.globalsearch_search').each(function(){
+                var name = $(this).attr("name");
+                var value = $(this).val();
+                if (value.trim()){
+                        if(keyList1.indexOf(name) != -1){
+                                inJson[name] = value
+                        }
+                }
+        });
+
+        var url = htmlRoot + '/globalsearch/search';     
+        var postData = "query=" + JSON.stringify(inJson);
+        $("#globalsearch_search_url").html(url + '?' +  postData);
+        
+        var gifImage = '<img src=loading.gif style="width:20%;margin-left:40%;margin-top:2%;">';        
+        $("#globalsearch_search_cn").html(gifImage);
+
+        var reqObj = new XMLHttpRequest();
+        reqObj.open("POST", url, true);
+        reqObj.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        reqObj.onreadystatechange = function() {
+                if (reqObj.readyState == 4 && [200, 500].indexOf(reqObj.status) != -1) {
+                        var resJson = JSON.parse(reqObj.responseText);
+                        $("#globalsearch_search_cn").html('<pre>'+reqObj.responseText+'</pre>');
+                }
+        };
+        reqObj.send(postData);
+
+});
+
+
+
+</script>
+
+
+</head>
+<body>
+
+
+
+<table align=center width=80% border=1 style="background:#eee;">
+
+<tr><th colspan=2 align=left class=api_title>Test for globalsearch_search API</th></tr>
+<tr><td>Term *</td><td width=80%><input class=globalsearch_search name=term type=text value="Psoriasis"></td></tr>
+<tr><td>Post Data (both GET/POST supported)</td><td id=globalsearch_search_url style="background:#fff;"></td></tr>
+<tr height=100><td valign=top><input type=submit id=globalsearch_search name=btn value="Submit API request"></td>
+            <td id=globalsearch_search_cn style="background:#fff;"></td></tr>
+
+</table>
+
+</body>
+<html>

@@ -1,0 +1,99 @@
+{
+   "query": {
+      "operation": "AND",
+      "query_type": "search_protein",
+      "execution_time": "2008-09-15T15:53:00+05:00",
+      "version": "1.2",
+      "uniprot_canonical_ac": "P01234",
+      "mass": {
+         "min": 10,
+         "max": 10000
+      },
+      "organism": {
+         "name": "Homo sapiens",
+         "id": 9606
+      },
+      "protein_name": "Envelope glycoprotein",
+      "gene_name": "MGAT1",
+      "go_term": "mitochondrion",
+      "go_id": "GO:0005739",
+      "pmid": "30646583",
+      "glycan": {
+         "relation": "attached",
+         "glytoucan_ac": "G09012"
+      },
+      "glycosylated_aa": {
+         "operation": "AND",
+         "aa_list": [
+            "N",
+            "S"
+         ]
+      },
+      "sequence": {
+         "aa_sequence": "NSTRFV",
+         "type": "exact"
+      },
+      "pathway_id": "melatonin biosynthesis",
+      "glycosylation_evidence": "any"
+   },
+   "pagination": {
+      "offset": 1,
+      "limit": 10,
+      "total_length": 19,
+      "sort": "uniprot_canonical_ac",
+      "order": "asc"
+   },
+   "results_history": [
+      {
+         "execution_time": "2018-09-15T15:53:00+05:00",
+         "result_count": 8006
+      },
+      {
+         "execution_time": "2019-09-15T15:53:00+05:00",
+         "result_count": 9000
+      },
+      {
+         "execution_time": "2020-09-15T15:53:00+05:00",
+         "result_count": 10000
+      }
+   ],
+   "query_error": [
+      {
+         "key": "uniprot_canonical_ac",
+         "value": "P03390"
+      },
+      {
+         "key": "uniprot_canonical_ac",
+         "value": "P14210"
+      },
+      {
+         "key": "uniprot_canonical_ac",
+         "value": "A2ASS6-1"
+      }
+   ],
+   "results": [
+      {
+      "uniprot_canonical_ac": "P12928-1", 
+      "mass": 62200.0, 
+      "publication": "", 
+      "protein_names_refseq": "pyruvate kinase isozymes R/L; L-PK; ",
+      "refseq_ac": "NP_036756.3", 
+      "refseq_name": "pyruvate kinase PKLR", 
+      "protein_names_uniprotkb": "Pyruvate kinase PKLR; 2.7.1.40; R; L-PK", 
+      "pathway": "", 
+      "function": "", 
+      "protein_name": "Pyruvate kinase PKLR", 
+      "n_glycan_count": "", 
+      "o_glycan_count": "", 
+      "glcosite_occupied_count": "", 
+      "go_terms": "", 
+      "tax_id": "", 
+      "gene_names_refseq": "PK1; PKL; Pklg; Pklr", 
+      "disease": "", 
+      "gene_names_uniprotkb": "Pklr", 
+      "glcosite_count": "", 
+      "organism": "Rattus norvegicus", 
+      "gene_name": "Pklr"
+      }
+   ]
+}

@@ -1,0 +1,45 @@
+{
+   "logs":[
+      {
+         "message": "Message 1", 
+         "count": 55
+      },
+      {
+         "message": "Message 2", 
+         "count": 33
+      },
+      {
+         "message": "Message 3", 
+         "count": 10
+      },
+      {
+         "message": "Message 4", 
+         "count": 3
+      },
+      {
+         "message": "Message 5", 
+         "count": 14
+      },
+      {
+         "message": "Message 6", 
+         "count": 6
+      },
+      {
+         "message": "Message 7", 
+         "count": 3
+      },
+      {
+         "message": "Message 8", 
+         "count": 3
+      },
+      {
+         "message": "Message 9", 
+         "count": 15
+      },
+      {
+         "message": "Message 10", 
+         "count": 3
+      }
+   ],
+   "recordsTotal": 15
+}

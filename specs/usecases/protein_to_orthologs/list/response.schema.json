@@ -1,0 +1,193 @@
+{
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "properties": {
+        "query": {
+            "$id": "/properties/query",
+            "type": "object",
+            "description": "Object that contains a set of search criteria that where used to generate this result set.",
+            "minProperties": 1,
+            "maxProperties": 15,
+            "properties": {
+                "execution_time": {
+                    "$id": "/properties/query/properties/execution_time",
+                    "type": "string",
+                    "description": "Time stamp at which time the result set was generated. This field uses ISO 8601 pattern: YYYY-MM-DDThh:mm:ss+-hh.",
+                    "examples": [
+                        "2008-09-15T15:53:00+05:00"
+                    ]
+                },
+                "uniprot_canonical_ac": {
+                    "$id": "/properties/query/properties/uniprot_canonical_ac",
+                    "type": "string",
+                    "description": "This value is used to search by protein ID. This can either be a complete UniProtID or a part of a UniprotID.",
+                    "examples": [
+                        "P01234"
+                    ]
+                }
+            },
+            "required": [
+                "execution_time",
+                "uniprot_canonical_ac"
+            ]
+        },
+        "pagination": {
+            "$id": "/properties/pagination",
+            "type": "object",
+            "description": "Object storing information to summarize settings that have been used to only retrieve a subset of the entire result list. These settings are an offset of the first entry, the number of requested entries (limit), the order of the result list (sort) and the order direction (order).",
+            "properties": {
+                "offset": {
+                    "$id": "/properties/pagination/properties/offset",
+                    "type": "integer",
+                    "description": "After ordering and sorting of the result list the offset specifies the first entry in the list that is part of the result set. ",
+                    "default": 1,
+                    "examples": [
+                        1
+                    ]
+                },
+                "limit": {
+                    "$id": "/properties/pagination/properties/limit",
+                    "type": "integer",
+                    "description": "Limit specifies how many entries have been requested of this list.",
+                    "default": 20,
+                    "examples": [
+                        10
+                    ]
+                },
+                "total_length": {
+                    "$id": "/properties/pagination/properties/total_length",
+                    "type": "integer",
+                    "description": "Total number of entries in the result list. This number may differ from the number of entries in the json which is specified by limit.",
+                    "examples": [
+                        1
+                    ]
+                },
+                "sort": {
+                    "$id": "/properties/pagination/properties/sort",
+                    "type": "string",
+                    "description": "This field is optional if not provided backend will decide sorting logic. Specifies which criteria was used to sort the list. Possible values are uniprot_canonical_ac, mass, protein_name_long, protein_name_short, gene_name and organism.",
+                    "default": "uniprot_canonical_ac",
+                    "examples": [
+                        "uniprot_canonical_ac"
+                    ]
+                },
+                "order": {
+                    "$id": "/properties/pagination/properties/order",
+                    "type": "string",
+                    "description": "Specifies the order direction of the list. Possible values are asc (ascendant) and desc (descended). ",
+                    "default": "asc",
+                    "examples": [
+                        "asc"
+                    ]
+                }
+            },
+            "required": [
+                "offset",
+                "limit",
+                "total_length",
+                "order"
+            ]
+        },
+        "results": {
+            "$id": "/properties/results",
+            "type": "array",
+            "description": "A list of objects each representing an entry in the result list.",
+            "items": {
+                "$id": "/properties/results/items",
+                "type": "object",
+                "properties": {
+                    "uniprot_canonical_ac": {
+                        "$id": "/properties/results/items/properties/uniprot_canonical_ac",
+                        "type": "string",
+                        "description": "Uniprot ID of the protein.",
+                        "examples": [
+                            "P03390"
+                        ]
+                    },
+                    "protein_name": {
+                        "$id": "/properties/results/items/properties/protein_name",
+                        "type": "string",
+                        "description": "Name of the protein.",
+                        "examples": [
+                            "Envelope glycoprotein"
+                        ]
+                    },
+                    "organism": {
+                        "$id": "/properties/results/items/properties/organism",
+                        "type": "string",
+                        "description": "Scientific name of the organism the protein was found in.",
+                        "examples": [
+                            "Homo sapiens"
+                        ]
+                    },
+                    "tax_id": {
+                        "$id": "/properties/results/items/properties/tax_id",
+                        "type": "integer",
+                        "description": "NCBI Taxonomy ID for the species entry.",
+                        "default": 0,
+                        "examples": [
+                            9606
+                        ]
+                    },
+                    "evidence": {
+                        "$id": "/properties/results/items/properties/evidence",
+                        "type": "array",
+                        "description": "List of evidence objects.",
+                        "items": {
+                            "$id": "/properties/results/items/properties/evidence/items",
+                            "type": "object",
+                            "description": "Evidence object that stores the database name, entry ID and URL. The objects refers to an entry on another database that provided this taxonomical annotation.",
+                            "properties": {
+                                "database": {
+                                    "$id": "/properties/results/items/properties/evidence/items/properties/database",
+                                    "type": "string",
+                                    "description": "Name of the database that provided the annotation.",
+                                    "default": "",
+                                    "examples": [
+                                        "UniProt"
+                                    ]
+                                },
+                                "id": {
+                                    "$id": "/properties/results/items/properties/evidence/items/properties/id",
+                                    "type": "string",
+                                    "description": "Databases entry that provides the annotation.",
+                                    "default": "",
+                                    "examples": [
+                                        "P04278"
+                                    ]
+                                },
+                                "url": {
+                                    "$id": "/properties/results/items/properties/evidence/items/properties/url",
+                                    "type": "string",
+                                    "description": "Link to the database entry that provided the annotation.",
+                                    "default": "",
+                                    "examples": [
+                                        "http://glycomics.ccrc.uga.edu/ontologies"
+                                    ]
+                                }
+                            },
+                            "required": [
+                                "database"
+                            ]
+                        }
+                    }
+                },
+                "required": [
+                    "uniprot_canonical_ac",
+                    "protein_name",
+                    "organism",
+                    "tax_id",
+                    "evidence"
+                ]
+            }
+        },
+        "error_code": {
+            "$id": "/properties/error_code",
+            "type": "string",
+            "description": "If an error occured that prevented the system from provinding the response a JSON with an error code is returned.",
+            "examples": [
+                "DB001"
+            ]
+        }
+    }
+}

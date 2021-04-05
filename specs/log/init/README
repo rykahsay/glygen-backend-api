@@ -1,0 +1,39 @@
+Introduction:
+=============
+This service provides access to an overview of the log messages that have stored on the server.
+
+Web service call:
+=================
+HTTP Request method		POST
+Variables		query		JSON input containing the specifications of the user request.
+
+Function:
+=========
+This WS will gives some basic statistics and categories of the log messages that have been stored on the server. The response is a JSON file. An optional query variable can be used to specify an time interval of intersted. If the variable is not give the entire dataset is requested.
+
+Response:
+=========
+Content					None
+Access-Control-Allow-Origin		*
+
+Warning:
+========
+To all Cross-Origin Resource Sharing (CORS) the web service has to allow all domains access. Otherwise browsers will not permit to call this web service by a webpage. Therefore the HTTP response header must contain the appropriate Access-Control-Allow-Origin statement.
+
+General error codes:
+====================
+{
+    "open-connection-failed": "Unable to connect to database."
+}
+
+
+Input error codes:
+==================
+{
+    "invalid-query-json":"Submitted query JSON is not valid"
+    ,"missing-query-key-in-query-json":"query property is missing in query JSON"
+    ,"unexpected-field-in-query":"Unexpected field in query JSON."
+    ,"missing-parameter":"one of the required parameter."
+    ,"invalid-parameter-value":"one of the required parameter has invalid value."
+    ,"invalid-parameter-value-length":"one of the required parameter value is too long"
+}   

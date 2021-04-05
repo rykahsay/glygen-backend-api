@@ -1,0 +1,44 @@
+Introduction:
+=============
+This web services performs complete search on all the databases for the query requested by the user. 
+The user input will be processed and a json response will be returned.
+
+Web service call: 
+================= 
+HTTP Request method		GET
+Variables		query		The search term entered by the user in the search box.
+
+Function:
+=========
+The WS receives the user query which specifies the search term and performs the search. 
+If the operation is successful a result set will be encoded in JSON (see separate JSON schema) and returned.
+
+Response:
+=========
+Content				JSON
+HTTP Content Type			application/json
+Access-Control-Allow-Origin		*
+
+Warning:
+========
+To all Cross-Origin Resource Sharing (CORS) the web service has to allow all domains access. Otherwise browsers will not permit to call this web service by a webpage. Therefore the HTTP response header must contain the appropriate Access-Control-Allow-Origin statement.
+
+Note:
+=====
+An example JSON is available separately and the JSON data structure is documented in a JSON schema.
+
+General error codes:
+====================
+{
+    "open-connection-failed": "Unable to connect to database."
+}
+
+
+Input error codes:
+==================
+{
+    "missing-parameter":"one of the required parameter."
+    ,"invalid-parameter-value":"one of the required parameter has invalid value."
+    ,"invalid-parameter-value-length":"one of the required parameter value is too long"
+    ,"non-existent-record":"no record exist for the submitted query"
+}
