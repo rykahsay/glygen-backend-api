@@ -37,6 +37,7 @@
                 ,"wurcs":1
                 ,"inchi":1
                 ,"inchi_key":1
+                ,"byonic":1
                 ,"motifs":1
                 ,"composition":1
                 ,"publication":1
@@ -92,6 +93,7 @@
                 ,"names":1
                 ,"glycam":1
                 ,"wurcs":1
+                ,"byonic":1
                 ,"inchi":1
                 ,"inchi_key":1
                 ,"glycans":1
@@ -102,6 +104,7 @@
             "c_protein":["_id","uniprot_canonical_ac", "uniprot_ac", "uniprot_id",
                 "synonyms"],
             "c_alignment":["_id"],
+            "c_publication":["_id"],
             "c_glycan":["_id", "number_monosaccharides", "glytoucan_ac"]
         }
         ,"taxid2name":{
@@ -136,6 +139,7 @@
                 ,"limit":{"type":"number"}
                 ,"offset":{"type":"number"}
                 ,"category":{"type":"string"}
+                ,"filters":{"type":"list"}
             }
             ,"requiredfields":[]
             ,"collectionlist":[]
@@ -180,6 +184,7 @@
                 ,"pmid":{"type":"string"}
                 ,"binding_protein_id":{"type":"string"}
                 ,"glycan_subtype":{"type":"string"}
+                ,"id_namespace":{"type":"string"}
                 ,"organism":{
                     "organism_list":{"type":"list"},  
                     "operation":{"type":"string"},
@@ -245,6 +250,14 @@
             }
             ,"requiredfields":["glytoucan_ac"]
             ,"collectionlist":["c_glycan"]
+        }
+        ,"publication_detail":{
+            "field_info":{
+                "id":{"type":"string", "maxlen":200},
+                "type":{"type":"string", "maxlen":20}
+            }
+            ,"requiredfields":["id", "type"]
+            ,"collectionlist":["c_publication"]
         }
         ,"motif_detail":{
             "field_info":{
@@ -708,6 +721,15 @@
             ,"requiredfields":["field", "value", "total_limit", "categorywise_limit"]
             ,"collectionlist":["c_protein"]
         }
+        ,"global_typeahead":{
+            "field_info":{
+                "value":{"type":"string"}
+                ,"target":{"type":"string"}
+                ,"limit":{"type":"number"}
+            }
+            ,"requiredfields":["value", "limit"]
+            ,"collectionlist":[]
+        }
         ,"data_download":{
             "field_info":{
                 "type":{"type":"string"}
@@ -845,6 +867,7 @@
             ,"fasta":"text/plain"
             ,"iupac":"text/plain"
             ,"wurcs":"text/plain"
+            ,"byonic":"text/plain"
             ,"glycam":"text/plain"
             ,"smiles_isomeric":"text/plain"
             ,"inchi":"text/plain"
@@ -855,14 +878,16 @@
         }
         ,"downloadtypes":{
             "protein_list":{"cache":"c_cache", "formatlist":["csv","json","fasta"]}
-            ,"glycan_list":{"cache":"c_cache", "formatlist":["csv","json", "iupac", "wurcs","glycam","smiles_isomeric","inchi","glycoct"]}
-            ,"motif_list":{"cache":"c_motif", "formatlist":["csv","json", "iupac", "wurcs","glycam","smiles_isomeric","inchi","glycoct"]}
+            ,"glycan_list":{"cache":"c_cache", "formatlist":["csv","json", "iupac", "wurcs","glycam","smiles_isomeric","inchi","glycoct", "byonic"]}
+            ,"motif_list":{"cache":"c_motif", "formatlist":["csv","json", "iupac", "wurcs","glycam","smiles_isomeric","inchi","glycoct", "byonic"]}
             ,"genelocus_list":{"cache":"c_cache", "formatlist":["csv","json","fasta"]}
             ,"ortholog_list":{"cache":"c_cache", "formatlist":["csv","json","fasta"]}
+            ,"site_list":{"cache":"c_cache", "formatlist":["csv","json"]}
             ,"protein_detail":{"cache":"c_protein", "formatlist":["json","fasta"]}
-            ,"glycan_detail":{"cache":"c_glycan", "formatlist":["json", "iupac", "wurcs","glycam","smiles_isomeric","inchi","glycoct"]}
+            ,"glycan_detail":{"cache":"c_glycan", "formatlist":["json", "iupac", "wurcs","glycam","smiles_isomeric","inchi","glycoct", "byonic"]}
             ,"motif_detail":{"cache":"c_motif", "formatlist":["json", "csv","png"]}
             ,"site_detail":{"cache":"c_site", "formatlist":["json"]}
+            ,"publication_detail":{"cache":"c_publication", "formatlist":["json"]}
             ,"protein_detail_isoformset":{"cache":"c_protein", "formatlist":["fasta"]}
             ,"protein_detail_homologset":{"cache":"c_protein", "formatlist":["fasta"]}
             ,"glycan_image":{"cache":"c_glycan", "formatlist":["png"]}
@@ -874,8 +899,8 @@
         ,"dev":{
                 "dbinfo":{
                         "mongodbname":"glydb"
-                        ,"mongodbuser":"xxxxx"
-                        ,"mongodbpassword":"xxxxx"
+                        ,"mongodbuser":"glydbadmin"
+                        ,"mongodbpassword":"glydbpass"
                         ,"sessionlife":3600
                         ,"collections":{
                             "bco":"c_bco"
@@ -913,8 +938,8 @@
 	,"tst":{
                 "dbinfo":{
                         "mongodbname":"glydb"
-                        ,"mongodbuser":"xxxxx"
-                        ,"mongodbpassword":"xxxxx"
+                        ,"mongodbuser":"glydbadmin"
+                        ,"mongodbpassword":"glydbpass"
                         ,"sessionlife":3600
                         ,"collections":{
                             "bco":"c_bco"
@@ -952,8 +977,8 @@
         ,"beta":{
                 "dbinfo":{
                         "mongodbname":"glydb_beta"
-                        ,"mongodbuser":"xxx"
-                        ,"mongodbpassword":"xxxx"
+                        ,"mongodbuser":"glydb_betaadmin"
+                        ,"mongodbpassword":"glydb_betapass"
                         ,"sessionlife":3600
                         ,"collections":{
                             "bco":"c_bco"
@@ -991,8 +1016,8 @@
         ,"backup":{
                 "dbinfo":{
                         "mongodbname":"glydb_backup"
-                        ,"mongodbuser":"xxxxx"
-                        ,"mongodbpassword":"xxxxx"
+                        ,"mongodbuser":"glydb_backupadmin"
+                        ,"mongodbpassword":"glydb_backuppass"
                         ,"sessionlife":3600
                         ,"collections":{
                             "bco":"c_bco"
@@ -1030,8 +1055,8 @@
         ,"prd":{
                 "dbinfo":{
                         "mongodbname":"glydb"
-                        ,"mongodbuser":"xxxxx"
-                        ,"mongodbpassword":"xxxxx"
+                        ,"mongodbuser":"glydbadmin"
+                        ,"mongodbpassword":"glydbpass"
                         ,"sessionlife":3600
                         ,"collections":{
                             "bco":"c_bco"

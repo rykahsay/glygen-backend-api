@@ -862,8 +862,11 @@ def transform_query(in_obj, concept, seen_path, path_map):
                 if "string_value" in obj:
                     if obj["string_value"] in [True, False]:
                         obj["string_value"] = str(obj["string_value"]).lower()
+                
+                val = ""
+                val = obj["string_value"] if "string_value" in obj else val
+                val = obj["numeric_value"] if "numeric_value" in obj else val
 
-                val = obj["string_value"] if "string_value" in obj else obj["numeric_value"]
                 val_obj = {obj["operator"]:val}
                 if obj["operator"] == "$eq" and "string_value" in obj:
                     val = "^%s$" % (val)
@@ -890,10 +893,11 @@ def transform_query(in_obj, concept, seen_path, path_map):
     if "aggregated_list" in in_obj:
         for i in xrange(0, len(in_obj["aggregated_list"])):
             child_obj = in_obj["aggregated_list"][i]
-            o = transform_query(child_obj, concept, seen_path, path_map)
+            o, err_list = transform_query(child_obj, concept, seen_path, path_map)
             q_list.append(o)
 
     in_obj = {in_obj["aggregator"]:q_list} if q_list != [] else {}
+
 
 
     return in_obj, error_list

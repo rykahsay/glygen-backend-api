@@ -30,7 +30,8 @@
             "name":{"targetlist":["common_name", "name"]}
         },
         "disease":{
-            "name":{"targetlist":["recommended_name.name", "synonyms.name"]}
+            "name":{"targetlist":["recommended_name.name", "synonyms.name"]},
+            "disease_id":{"targetlist":["disease_id", "synonyms.id"]}
         }
     },
     "ignored_path_list":{ 

@@ -56,7 +56,7 @@ def glycan_search_simple(query_obj, config_obj):
     prj_obj = {"glytoucan_ac":1}
     for doc in dbh[collection].find(mongo_query,prj_obj):
         record_list.append(doc["glytoucan_ac"])
-
+        
 
     ts_format = "%Y-%m-%d %H:%M:%S %Z%z"
     ts = datetime.datetime.now(pytz.timezone('US/Eastern')).strftime(ts_format)
@@ -429,6 +429,10 @@ def get_mongo_query(query_obj):
     #pmid
     if "pmid" in query_obj:
         cond_objs.append({"publication.reference.id" : {'$regex': query_obj["pmid"], '$options': 'i'}})
+
+    #id_namespace
+    if "id_namespace" in query_obj:
+        cond_objs.append({"crossref.database" : {'$regex': query_obj["id_namespace"], '$options': 'i'}})
 
     #binding_protein_id
     if "binding_protein_id" in query_obj:

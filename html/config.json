@@ -103,7 +103,7 @@
                         "name": "query_json",
                         "in": "path",
                         "description": "Query in JSON format [<a href=\"/specs/biosynthesis_enzyme_to_glycans.request.schema.json\" style=\"font-size:11px;text-decoration:none;\" target=_>view schema</a>]",
-                        "default":"{\"uniprot_canonical_ac\":\"Q921Q3-1\"}",
+                        "default":"{\"uniprot_canonical_ac\":\"P15291-1\"}",
                         "required": true,
                         "type": "string"
                     }
@@ -244,7 +244,7 @@
                                                 
                         "required": true,
                         "type": "string",
-                        "default":"{\"uniprot_canonical_ac\":\"Q921Q3-1\"}"
+                        "default":"{\"uniprot_canonical_ac\":\"P15291-1\"}"
                       }
                 ],
                 "responses": {

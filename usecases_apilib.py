@@ -917,18 +917,11 @@ def get_mongo_query(svc_name, query_obj):
                 #cond_objs.append({"species.taxid": {'$eq': query_obj["tax_id"]}})
             if query_obj["evidence_type"] == "predicted":
                 cond_objs.append({"glycosylation": {'$gt':[]}})
-                #cond_objs.append({"glycosylation.evidence.database": {'$eq':"UniProtKB"}})
-                #cond_objs.append({"glycosylation.evidence": {'$size': 1}})
-                cond_objs.append({"glycosylation.evidence.database": {'$ne':"UniCarbKB"}})
-                cond_objs.append({"glycosylation.evidence.database": {'$ne':"PDB"}})
-                cond_objs.append({"glycosylation.evidence.database": {'$ne':"PubMed"}})
+                cond_objs.append({"glycosylation.site_category": {'$ne':"reported"}})
+                cond_objs.append({"glycosylation.site_category": {'$ne':"reported_with_glycan"}})
             elif query_obj["evidence_type"] == "reported":
-                or_list = [
-                    {"glycosylation.evidence.database": {'$eq':"UniCarbKB"}}
-                    ,{"glycosylation.evidence.database": {'$eq':"PubMed"}}
-                    ,{"glycosylation.evidence.database": {'$eq':"PDB"}}
-                ]
-                cond_objs.append({'$or':or_list})
+                cond_objs.append({"glycosylation": {'$gt': []}})
+                cond_objs.append({"glycosylation.site_category":{"$regex":"reported","$options":"i"}})
             elif query_obj["evidence_type"] == "both":
                 cond_objs.append({"glycosylation": {'$gt': []}})
             elif query_obj["evidence_type"] == "none":

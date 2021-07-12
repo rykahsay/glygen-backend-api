@@ -37,7 +37,8 @@ var testInfo = {
             "organism.organism_list.name", "organism.annotation_category",
             "organism.operation", "composition.residue",
             "enzyme.id", "enzyme.type",
-            "subsumption.related_ac"
+            "subsumption.related_ac",
+            "id_namespace"
         ]
         ,"numeric_fields":[
             "organism.organism_list.id","mass.min", "mass.max",
@@ -48,14 +49,14 @@ var testInfo = {
         ,"url":"/glycan/search"
         ,"querylist":[
             {
-                "label":"xxx",
+                "label":"Query by GlyTouCan IDs",
                 "query":{
                     "glycan_identifier":{"glycan_id":"G17689DH,G01543ZX,G00009BX",
                         "subsumption":"subsumedby"}
                 }
             }
             ,{
-                "label":"xxx",
+                "label":"Query by organism",
                 "query":{
                     "organism":{
                         "organism_list":[{"id":9606, "name":"homo"},
@@ -80,10 +81,28 @@ var testInfo = {
         "numeric_fields": [
             "offset", 
             "limit"
-        ], 
-        "query": {
-            "id": ""
-        }
+        ] 
+        ,"querylist":[
+            {
+                "label":"Simple listing",
+                "query":{
+                    "id":""
+                }
+            }
+            ,{
+                "label":"Listing with filters",
+                "query":{
+                    "id":"",
+                    "filters":[
+                        {   
+                            "id":"by_mass",
+                            "selected":["2k_3k", "3k_4k"],
+                            "operator":"OR"
+                        }
+                    ]
+                }
+            }
+        ]
     }
     ,"glycan_detail": {
         "string_fields": [

@@ -86,3 +86,29 @@ def categorized_typeahead():
     http_code = 500 if "error_list" in res_obj else 200
     return jsonify(res_obj), http_code
 
+
+@app.route('/global_typeahead/', methods=['GET', 'POST'])
+def global_typeahead():
+
+    res_obj = []
+    try:
+        query_value = util.get_arg_value("query", request.method)
+        if query_value == "":
+            res_obj = {"error_list":[{"error_code": "missing-query-key-in-query-json"}]}
+        elif util.is_valid_json(query_value) == False:
+            res_obj = {"error_list":[{"error_code": "invalid-query-json"}]}
+        else:
+            query_obj = json.loads(query_value)
+            util.trim_object(query_obj)
+            tmp_obj = apilib.global_typeahead(query_obj, config_obj)
+            if "error_list" in tmp_obj:
+                res_obj = tmp_obj
+            else:
+                res_obj = tmp_obj
+    except Exception, e:
+        res_obj = errorlib.get_error_obj("global_typeahead", traceback.format_exc(), path_obj)
+
+
+    http_code = 500 if "error_list" in res_obj else 200
+    return jsonify(res_obj), http_code
+

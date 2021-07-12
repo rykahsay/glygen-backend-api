@@ -1,11 +1,11 @@
 {
-    "glycan_exact_match": 5.0,
+    "glycan_exact_match": 50.0,
     "glycan_has_glycoprotein": 5.0,
     "glycan_has_enzyme": 5.0,
     "glycan_has_species": 5.0,
     "glycan_has_publication": 5.0,
     "glycan_fully_determined": 5.0,
-    "protein_exact_match": 5.0,
+    "protein_exact_match": 50.0,
     "protein_reported_n_glycosites_with_glycan":5.0,
     "protein_reported_o_glycosites_with_glycan":5.0,
     "protein_reported_n_glycosites":4.0,

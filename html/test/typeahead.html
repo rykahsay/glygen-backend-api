@@ -49,6 +49,34 @@ var testInfo = {
             "total_limit":15,
             "categorywise_limit":5
         }
+    },
+    "global_typeahead": {
+        "string_fields": [
+            "value"
+        ],
+        "url": "/global_typeahead/",
+        "required_fields": [
+            "value",
+            "limit"
+        ],
+        "numeric_fields": [
+            "limit"
+        ],
+        "querylist":[
+            {
+                "label":"Query without target",
+                "query":{ "value": "GH", "limit": 10}
+            },
+            {
+                "label":"Query targeting protein objects",
+                "query":{ "value": "GH", "limit": 10, "target":"protein"}
+            },
+            {
+                "label":"Query targeting glycan objects",
+                "query":{ "value": "GH", "limit": 10, "target":"glycan"}
+            }
+        ]
+
     }
 };
 

@@ -180,58 +180,6 @@
             "description": "", 
             "title": ""
         }, 
-        "hosphorylation": {
-            "items": {
-                "required": [], 
-                "type": "object", 
-                "properties": {
-                    "residue": {
-                        "type": "string", 
-                        "description": "", 
-                        "title": ""
-                    }, 
-                    "position": {
-                        "type": "integer", 
-                        "description": "", 
-                        "title": ""
-                    }, 
-                    "kinase_uniprotkb_canonical_ac": {
-                        "type": "string", 
-                        "description": "", 
-                        "title": ""
-                    }, 
-                    "evidence": {
-                        "items": {
-                            "required": [], 
-                            "type": "object", 
-                            "properties": {
-                                "url": {
-                                    "type": "string", 
-                                    "description": "", 
-                                    "title": ""
-                                }, 
-                                "id": {
-                                    "type": "string", 
-                                    "description": "", 
-                                    "title": ""
-                                }, 
-                                "database": {
-                                    "type": "string", 
-                                    "description": "", 
-                                    "title": ""
-                                }
-                            }
-                        }, 
-                        "type": "array", 
-                        "description": "", 
-                        "title": ""
-                    }
-                }
-            }, 
-            "type": "array", 
-            "description": "", 
-            "title": ""
-        }, 
         "publication": {
             "items": {
                 "required": [], 
@@ -563,6 +511,11 @@
                         "description": "", 
                         "title": ""
                     }, 
+                    "protein_name": {
+                        "type": "string", 
+                        "description": "", 
+                        "title": ""
+                    }, 
                     "sequence": {
                         "description": "", 
                         "required": [], 
@@ -579,11 +532,6 @@
                                 "title": ""
                             }
                         }, 
-                        "title": ""
-                    }, 
-                    "protein name": {
-                        "type": "string", 
-                        "description": "", 
                         "title": ""
                     }, 
                     "evidence": {
@@ -1539,6 +1487,14 @@
                         "title": ""
                     }
                 }
+            }, 
+            "type": "array", 
+            "description": "", 
+            "title": ""
+        }, 
+        "history": {
+            "items": {
+                "type": "string"
             }, 
             "type": "array", 
             "description": "", 

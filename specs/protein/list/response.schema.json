@@ -80,17 +80,7 @@
                 "required": [], 
                 "type": "object", 
                 "properties": {
-                    "function": {
-                        "type": "string", 
-                        "description": "", 
-                        "title": ""
-                    }, 
                     "uniprot_canonical_ac": {
-                        "type": "string", 
-                        "description": "", 
-                        "title": ""
-                    }, 
-                    "refseq_name": {
                         "type": "string", 
                         "description": "", 
                         "title": ""
@@ -100,22 +90,17 @@
                         "description": "", 
                         "title": ""
                     }, 
-                    "protein_name": {
-                        "type": "string", 
+                    "hit_score": {
+                        "type": "number", 
                         "description": "", 
                         "title": ""
                     }, 
-                    "organism": {
-                        "type": "string", 
+                    "predicted_glycosites": {
+                        "type": "integer", 
                         "description": "", 
                         "title": ""
                     }, 
                     "protein_names_refseq": {
-                        "type": "string", 
-                        "description": "", 
-                        "title": ""
-                    }, 
-                    "protein_names_uniprotkb": {
                         "type": "string", 
                         "description": "", 
                         "title": ""
@@ -125,13 +110,53 @@
                         "description": "", 
                         "title": ""
                     }, 
-                    "disease": {
+                    "reported_n_glycosites": {
+                        "type": "integer", 
+                        "description": "", 
+                        "title": ""
+                    }, 
+                    "refseq_name": {
                         "type": "string", 
                         "description": "", 
                         "title": ""
                     }, 
-                    "reported_n_glycosites": {
+                    "protein_names_uniprotkb": {
+                        "type": "string", 
+                        "description": "", 
+                        "title": ""
+                    }, 
+                    "pathway": {
+                        "type": "string", 
+                        "description": "", 
+                        "title": ""
+                    }, 
+                    "function": {
+                        "type": "string", 
+                        "description": "", 
+                        "title": ""
+                    }, 
+                    "protein_name": {
+                        "type": "string", 
+                        "description": "", 
+                        "title": ""
+                    }, 
+                    "reported_o_glycosites_with_glycan": {
                         "type": "integer", 
+                        "description": "", 
+                        "title": ""
+                    }, 
+                    "tax_id": {
+                        "type": "integer", 
+                        "description": "", 
+                        "title": ""
+                    }, 
+                    "gene_names_refseq": {
+                        "type": "string", 
+                        "description": "", 
+                        "title": ""
+                    }, 
+                    "disease": {
+                        "type": "string", 
                         "description": "", 
                         "title": ""
                     }, 
@@ -155,33 +180,13 @@
                         "description": "", 
                         "title": ""
                     }, 
-                    "reported_o_glycosites_with_glycan": {
-                        "type": "integer", 
-                        "description": "", 
-                        "title": ""
-                    }, 
-                    "tax_id": {
-                        "type": "integer", 
-                        "description": "", 
-                        "title": ""
-                    }, 
-                    "gene_names_refseq": {
-                        "type": "string", 
-                        "description": "", 
-                        "title": ""
-                    }, 
-                    "pathway": {
+                    "organism": {
                         "type": "string", 
                         "description": "", 
                         "title": ""
                     }, 
                     "gene_name": {
                         "type": "string", 
-                        "description": "", 
-                        "title": ""
-                    }, 
-                    "predicted_glycosites": {
-                        "type": "integer", 
                         "description": "", 
                         "title": ""
                     }

@@ -14,6 +14,140 @@ import errorlib
 import util
 
 
+def global_typeahead(query_obj, config_obj):
+
+    db_obj = config_obj[config_obj["server"]]["dbinfo"]
+    dbh, error_obj = util.connect_to_mongodb(db_obj) #connect to mongodb
+    if error_obj != {}:
+        return error_obj
+
+    #Collect errors 
+    error_list = errorlib.get_errors_in_query("global_typeahead",query_obj, config_obj)
+    if error_list != []:
+        return {"error_list":error_list}
+
+    path_dict = {
+        "protein":{
+            "uniprot_canonical_ac":{
+                "type":"string"
+            },
+            "uniprot_id":{
+                "type":"string"
+            },
+            "crossref.id":{
+                "type":"objlist"
+            },
+            "protein_names.name":{
+                "type":"objlist"
+            },
+            "gene_names.name":{
+                "type":"objlist"
+            },
+            "refseq.ac":{
+                "type":"objlist"
+            },
+            "publication.reference.id":{
+                "type":"objlistobjlist"
+            },
+            "disease.synonyms.name":{
+                "type":"objlistobjlist"
+            },
+            "disease.recommended_name.name":{
+                "type":"objlist"
+            },
+            "go_annotation.categories.go_terms.id":{
+                "type":"goterms"
+            },
+            "go_annotation.categories.go_terms.name":{
+                "type":"goterms"
+            }
+        },
+        "glycan":{
+            "glytoucan_ac":{
+                "type":"string"
+            },
+            "crossref.id":{
+                "type":"objlist"
+            },
+            "enzyme.uniprot_canonical_ac":{
+                "type":"objlist"
+            },
+            "enzyme.gene":{
+                "type":"objlist"
+            },
+            "motifs.name":{
+                "type":"objlist"
+            },
+            "publication.reference.id":{
+                "type":"objlistobjlist"
+            }
+        }
+    }
+   
+    record_type_list = path_dict.keys()
+    if "target" in query_obj:
+        if query_obj["target"] in path_dict:
+            record_type_list = [query_obj["target"]]
+
+
+    res_obj = []
+    for record_type in record_type_list:
+        for path in path_dict[record_type]:
+            prop_list = path.split(".")
+            path_obj = path_dict[record_type][path]
+            mongo_query = {path:{'$regex': query_obj["value"], '$options': 'i'}}
+            prj_obj = {prop_list[0]:1}
+            coll = "c_" + record_type
+            for doc in dbh[coll].find(mongo_query, prj_obj):
+                if path_obj["type"] == "string":
+                    val = doc[prop_list[0]]
+                    if val.lower().find(query_obj["value"].lower()) != -1:
+                        if val not in res_obj:
+                            res_obj.append(val)
+                            if len(res_obj) >= query_obj["limit"]:
+                                return sorted(res_obj)
+                elif path_obj["type"] == "objlist":
+                    for o in doc[prop_list[0]]:
+                        val = o[prop_list[1]]
+                        if path == "gene_names.name":
+                            for val in o[prop_list[1]].split(";"):
+                                val = val.replace(".", "").strip() 
+                                if val.lower().find(query_obj["value"].lower()) != -1:
+                                    if val not in res_obj:
+                                        res_obj.append(val)
+                                        if len(res_obj) >= query_obj["limit"]:
+                                            return sorted(res_obj)
+                        else:
+                            val = o[prop_list[1]]
+                            if len(prop_list) == 3:
+                                val = o[prop_list[1]][prop_list[2]]
+                            if val.lower().find(query_obj["value"].lower()) != -1:
+                                if val not in res_obj:
+                                    res_obj.append(val)
+                                    if len(res_obj) >= query_obj["limit"]:
+                                        return sorted(res_obj)
+                elif path_obj["type"] == "objlistobjlist":
+                    for o in doc[prop_list[0]]:
+                        for oo in o[prop_list[1]]:
+                            val = oo[prop_list[2]]
+                            if val.lower().find(query_obj["value"].lower()) != -1:
+                                if val not in res_obj:
+                                    res_obj.append(val)
+                                    if len(res_obj) >= query_obj["limit"]:
+                                        return sorted(res_obj)
+                elif path_obj["type"] == "goterms":
+                    for cat_obj in doc["go_annotation"]["categories"]:
+                        for term_obj in cat_obj["go_terms"]:
+                            val = term_obj[prop_list[-1]]
+                            if val.lower().find(query_obj["value"].lower()) != -1:
+                                if val not in res_obj:
+                                    res_obj.append(val)
+                                    if len(res_obj) >= query_obj["limit"]:
+                                        return sorted(res_obj)
+
+
+    return sorted(set(res_obj))
+
 
 
 def glycan_typeahead(query_obj, config_obj):

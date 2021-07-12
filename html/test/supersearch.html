@@ -104,25 +104,15 @@ var queryList = [
         },
 
         {
-            "label":"Sites on human proteins that have both glycosylation and SNV data",
+            "label":"Sites with both glycosylation and SNV data",
             "query":{ "concept_query_list":[
-                {
-                    "concept": "species",
-                    "query": {
-                        "aggregator": "$and",
-                        "unaggregated_list": [
-                            {"order":1,"path":"taxid","operator":"$eq","numeric_value":9606}
-                        ],
-                        "aggregated_list": []
-                    }
-                },
                 {
                     "concept":"site",
                     "query":{
                         "aggregator":"$and",
                         "unaggregated_list":[
-                            {"order":1,"path":"glycosylation","operator":"$gt","string_value":[]},
-                            {"order":2,"path":"snv","operator":"$gt","string_value":[]}
+                            {"order":1,"path":"glycosylation_flag","operator":"$eq","string_value":true},
+                            {"order":2,"path":"snv_flag","operator":"$eq","string_value":true}
                         ],
                         "aggregated_list":[]
                     }
@@ -130,34 +120,6 @@ var queryList = [
             ]
             }
         },
-        {
-            "label":"Sites on P14210 with both glycosylation and SNV data",
-            "query":{ "concept_query_list":[
-                {
-                    "concept": "protein",
-                    "query": {
-                        "aggregator": "$and",
-                        "unaggregated_list": [
-                            {"order":1,"path": "uniprot_ac","operator": "$eq","string_value": "P14210"}
-                        ],
-                        "aggregated_list": []
-                    }
-                },
-                {
-                    "concept":"site",
-                    "query":{
-                        "aggregator":"$and",
-                        "unaggregated_list":[
-                            {"order":1,"path":"glycosylation","operator":"$gt","string_value":[]},
-                            {"order":2,"path":"snv","operator":"$gt","string_value":[]}
-                        ],
-                        "aggregated_list":[]
-                    }
-                }
-            ]
-            }
-        },
-        
         {
         "label": "human protein AND go_term has nucleus and nuclear membrane AND has o-glyco site AND has phosphorylated site AND associated with any disease",
         "query": { "concept_query_list":[

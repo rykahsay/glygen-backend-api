@@ -56,10 +56,12 @@ def motif_detail(query_obj, config_obj):
 
     
     url = config_obj["urltemplate"]["motif"] % (motif_doc["motif_ac"])
+    glytoucan_url = config_obj["urltemplate"]["glytoucan"] % (motif_doc["glytoucan_ac"])
     motif_doc["motif"] = {
         "accession":motif_doc["motif_ac"], 
         "url":url,
-        "glytoucan_ac":motif_doc["glytoucan_ac"]
+        "glytoucan_ac":motif_doc["glytoucan_ac"],
+        "glytoucan_url":glytoucan_url
     }
 
     prop_list = ["motif", "glytoucan","name",  "mass", "publication"]

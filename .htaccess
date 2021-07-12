@@ -5,7 +5,10 @@
 RewriteEngine on
 #RewriteCond %{REQUEST_FILENAME} !-f
 
+RewriteRule ^(publication)/(detail|list)/?$ /cgi-bin/publication.cgi/$1/$2/ [L]
 RewriteRule ^(idmapping)/(search_init|search|list)/?$ /cgi-bin/idmapping.cgi/$1/$2/ [L]
+RewriteRule ^(seqmapping)/(search)/?$ /cgi-bin/seqmapping.cgi/$1/$2/ [L]
+
 RewriteRule ^(supersearch)/(search_init|search|reason|list)/?$ /cgi-bin/supersearch.cgi/$1/$2/ [L]
 RewriteRule ^(site)/(detail)/?$ /cgi-bin/site.cgi/$1/$2/empty/ [L]
 RewriteRule ^(site)/(detail)/(.*)/?$ /cgi-bin/site.cgi/$1/$2/$3/ [L]
@@ -23,7 +26,7 @@ RewriteRule ^(data)/(download)/?$ /cgi-bin/data.cgi/$1/$2/ [L]
 RewriteRule ^(pages)/(home_init)/?$ /cgi-bin/pages.cgi/$1/$2/ [L]
 RewriteRule ^(auth)/(register|userid|userinfo|userupdate|login|tokenstatus|contact|contactdelete|contactupdate|contactlist)/?$ /cgi-bin/auth.cgi/$1/$2/ [L]
 RewriteRule ^(event)/(addnew|update|list|detail|delete)/?$ /cgi-bin/event.cgi/$1/$2/ [L]
-RewriteRule ^(typeahead|categorized_typeahead)/?$ /cgi-bin/typeahead.cgi/$1/ [L]
+RewriteRule ^(typeahead|categorized_typeahead|global_typeahead)/?$ /cgi-bin/typeahead.cgi/$1/ [L]
 RewriteRule ^(glycan)/(search_init|search_simple|search|list)/?$ /cgi-bin/glycan.cgi/$1/$2/ [L]
 RewriteRule ^(glycan)/(detail|image)/?$ /cgi-bin/glycan.cgi/$1/$2/empty/ [L]
 RewriteRule ^(glycan)/(detail|image)/(.*)/?$ /cgi-bin/glycan.cgi/$1/$2/$3/ [L]

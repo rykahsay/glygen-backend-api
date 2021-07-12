@@ -111,7 +111,8 @@ function setNavigation(domainUrls){
 
 $(document).on('click', '.subdomain', function (event) {
     event.preventDefault();
-    var k = this.id.split("_").pop();
+    var parts = this.id.split("_")
+    var k = parts[1];
     window.location.href = domainUrlDict[k];
 
 });

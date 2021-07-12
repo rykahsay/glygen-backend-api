@@ -1,0 +1,43 @@
+<html>
+<head>
+<link rel="stylesheet" href="styles.css" type="text/css">
+<script language="javascript" src="jquery.min.js"></script>
+<script language="javascript" src="api_test.js"></script>
+
+<script>
+var testInfo = {
+    "publication_detail":{
+        "string_fields":["id", "type"]
+        ,"numeric_fields":[]
+        ,"required_fields":["id", "type"]
+        ,"url":"/publication/detail"
+        ,"querylist":[
+            {
+                "label":"PubMed query with phosphorylation, snv, mutagenesis",
+                "query":{ "id":"11232563", "type":"PubMed"}
+            },
+            {
+                "label":"PubMed query with glycosylation, mutagenesis",
+                "query":{ "id":"28753425", "type":"PubMed"}
+            },
+            {
+                "label":"PubMed query with glycation",
+                "query":{ "id":"635569", "type":"PubMed"}
+            },
+            {
+                "label":"DOI Query",
+                "query":{ "id":"10.1101/2020.03.28.013276v2", "type":"DOI"}
+            }
+        ]
+    }
+};
+
+
+
+</script>
+
+</head>
+<body>
+
+</body>
+<html>

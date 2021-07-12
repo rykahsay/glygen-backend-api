@@ -62,7 +62,7 @@ def data_download(query_obj, config_obj):
     format_lc = query_obj["format"].lower()
 
     data_buffer = ""
-    if query_obj["type"] in ["glycan_list", "motif_list","protein_list", 
+    if query_obj["type"] in ["glycan_list", "site_list", "motif_list","protein_list", 
             "genelocus_list", "ortholog_list","idmapping_list_mapped",
             "idmapping_list_unmapped", "idmapping_list_all", "idmapping_list_all_collapsed"]:
         collection = config_obj["downloadtypes"][query_obj["type"]]["cache"]
@@ -165,6 +165,8 @@ def data_download(query_obj, config_obj):
                             val_k = obj[k]["sequence"]
                         if query_obj["type"] == "ortholog_list" and k == "evidence":
                             val_k = obj[k][0]["url"]
+                        #if query_obj["type"] == "site_list" and k in ["glycosylation", "mutagenesis", "snv","site_annotation"]:
+                        #val_k = "yes" if len(obj[k]) > 0 else "no"
                         row.append(val_k)
                     line = "\"" +  "\"\t\"".join(row) + "\"\n"
                     if format_lc == "csv":
@@ -172,7 +174,7 @@ def data_download(query_obj, config_obj):
                     line_list.append(line)
                 data_buffer += "".join(line_list)
                 #print data_buffer
-        elif format_lc in ["iupac", "wurcs","glycam","smiles_isomeric","inchi","glycoct"]:
+        elif format_lc in ["iupac", "wurcs","glycam","smiles_isomeric","inchi","glycoct", "byonic"]:
             for j in xrange(0, len(list_obj["results"])):
                 obj = list_obj["results"][j]
                 data_buffer += "%s,%s\n" % (obj["glytoucan_ac"], obj[format_lc])
@@ -203,14 +205,15 @@ def data_download(query_obj, config_obj):
         if os.path.isfile(img_file) == False:
             img_file = img_path +  "G0000000.png"
         data_buffer = open(img_file, "rb").read()
-    elif query_obj["type"] in ["glycan_detail", "motif_detail", "protein_detail","protein_detail_isoformset","protein_detail_homologset", "site_detail"]:
+    elif query_obj["type"] in ["glycan_detail", "motif_detail", "protein_detail","protein_detail_isoformset","protein_detail_homologset", "site_detail", "publication_detail"]:
         collection = config_obj["downloadtypes"][query_obj["type"]]["cache"]
         main_id = "uniprot_canonical_ac" 
         main_id = "glytoucan_ac" if query_obj["type"] == "glycan_detail" else main_id
         main_id = "motif_ac" if query_obj["type"] == "motif_detail" else main_id 
         main_id = "id" if query_obj["type"] == "site_detail" else main_id
-
-        mongo_query = {main_id:query_obj["id"]}
+        main_id = "record_id" if query_obj["type"] == "publication_detail" else main_id
+    
+        mongo_query = {main_id:{"$regex":query_obj["id"], "$options":"i"}}
         record_obj = dbh[collection].find_one(mongo_query)
         if record_obj == None:
             return {"error_list":{"error_code":"non-existent-record"}}
@@ -227,7 +230,7 @@ def data_download(query_obj, config_obj):
                 record_obj.pop("uniprot_canonical_ac")
                 record_obj.pop("uniprot_id")
                 data_buffer = json.dumps(record_obj,  indent=4)
-            elif query_obj["type"] == "site_detail":
+            elif query_obj["type"] in ["site_detail", "publication_detail"]:
                 data_buffer = json.dumps(record_obj,  indent=4)
             elif query_obj["type"] in ["glycan_detail", "motif_detail"]:
                 url = config_obj["urltemplate"]["glytoucan"] % (record_obj["glytoucan_ac"])
@@ -247,7 +250,7 @@ def data_download(query_obj, config_obj):
             for o in dbh["c_glycan"].find(m_query):
                 row = [o["glytoucan_ac"]]
                 data_buffer += "\"" +  "\",\"".join(row) + "\"\n"
-        elif format_lc in ["iupac", "wurcs","glycam","smiles_isomeric","inchi","glycoct"] and query_obj["type"] in ["glycan_detail"]:
+        elif format_lc in ["iupac", "wurcs","glycam","smiles_isomeric","inchi","glycoct", "byonic"] and query_obj["type"] in ["glycan_detail"]:
             data_buffer += record_obj[format_lc]
         elif query_obj["format"].lower() in ["fasta"]:
             if query_obj["type"] in ["protein_detail"]:

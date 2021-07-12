@@ -40,6 +40,7 @@ def get_errors_in_query(svc_name, query_obj, config_obj):
     if error_obj != {}:
         return error_obj
 
+
     field_info = config_obj[svc_name]["field_info"]
     collection_list = config_obj[svc_name]["collectionlist"]
     max_query_value_len = config_obj["max_query_value_len"]
@@ -48,6 +49,7 @@ def get_errors_in_query(svc_name, query_obj, config_obj):
     for coll in collection_list:
         if coll not in dbh.collection_names():
             error_list.append({"error_code": "missing-collection", "collection":coll})
+
 
     for key1 in query_obj:
         if key1 not in field_info:

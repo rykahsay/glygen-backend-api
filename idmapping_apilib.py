@@ -73,7 +73,9 @@ def search(query_obj, config_obj):
 
             for out_id in out_list:
                 if out_id not in mapping_dict[in_id]:
-                    o = {"anchor":doc[record_id_field], "from":in_id, "to":out_id,"category":"mapped"}
+                    i_id = int(in_id) if in_id.isdigit() == True else in_id
+                    o_id = int(out_id) if out_id.isdigit() == True else out_id
+                    o = {"anchor":doc[record_id_field], "from":i_id, "to":o_id,"category":"mapped"}
                     mapping_dict[in_id].append(o)
    
 

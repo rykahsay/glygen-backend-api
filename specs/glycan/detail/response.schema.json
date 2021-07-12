@@ -309,6 +309,11 @@
             "description": "", 
             "title": ""
         }, 
+        "byonic": {
+            "type": "string", 
+            "description": "", 
+            "title": ""
+        }, 
         "subsumption": {
             "items": {
                 "required": [], 
@@ -358,10 +363,10 @@
                 "required": [], 
                 "type": "object", 
                 "properties": {
-                    "url": {
+                    "synonym": {
                         "type": "string", 
-                        "description": "URL associated with the motif of the glycan.", 
-                        "title": "Glycan motifs URL"
+                        "description": "", 
+                        "title": ""
                     }, 
                     "id": {
                         "type": "string", 
@@ -680,6 +685,14 @@
                         "title": "Glycan expression (glycosylation position)"
                     }
                 }
+            }, 
+            "type": "array", 
+            "description": "", 
+            "title": ""
+        }, 
+        "history": {
+            "items": {
+                "type": "string"
             }, 
             "type": "array", 
             "description": "", 

@@ -273,8 +273,28 @@
                 "required": [], 
                 "type": "object", 
                 "properties": {
+                    "glycoprotein": {
+                        "type": "string", 
+                        "description": "", 
+                        "title": ""
+                    }, 
                     "mass_pme": {
                         "type": "number", 
+                        "description": "", 
+                        "title": ""
+                    }, 
+                    "inchi_key": {
+                        "type": "string", 
+                        "description": "", 
+                        "title": ""
+                    }, 
+                    "publication": {
+                        "type": "string", 
+                        "description": "", 
+                        "title": ""
+                    }, 
+                    "classification": {
+                        "type": "string", 
                         "description": "", 
                         "title": ""
                     }, 
@@ -283,13 +303,28 @@
                         "description": "", 
                         "title": ""
                     }, 
-                    "number_enzymes": {
-                        "type": "integer", 
+                    "iupac": {
+                        "type": "string", 
                         "description": "", 
                         "title": ""
                     }, 
                     "number_proteins": {
                         "type": "integer", 
+                        "description": "", 
+                        "title": ""
+                    }, 
+                    "hit_score": {
+                        "type": "number", 
+                        "description": "", 
+                        "title": ""
+                    }, 
+                    "glycam": {
+                        "type": "string", 
+                        "description": "", 
+                        "title": ""
+                    }, 
+                    "enzyme": {
+                        "type": "string", 
                         "description": "", 
                         "title": ""
                     }, 
@@ -303,12 +338,32 @@
                         "description": "", 
                         "title": ""
                     }, 
-                    "id": {
+                    "motifs": {
                         "type": "string", 
                         "description": "", 
                         "title": ""
                     }, 
-                    "iupac": {
+                    "inchi": {
+                        "type": "string", 
+                        "description": "", 
+                        "title": ""
+                    }, 
+                    "wurcs": {
+                        "type": "string", 
+                        "description": "", 
+                        "title": ""
+                    }, 
+                    "glytoucan_ac": {
+                        "type": "string", 
+                        "description": "", 
+                        "title": ""
+                    }, 
+                    "number_enzymes": {
+                        "type": "integer", 
+                        "description": "", 
+                        "title": ""
+                    }, 
+                    "composition": {
                         "type": "string", 
                         "description": "", 
                         "title": ""

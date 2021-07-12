@@ -509,6 +509,7 @@ def get_cached_records_indirect(query_obj, config_obj):
     for doc in dbh[cache_collection].find(mongo_query):
         id_list += doc["results"]
 
+
     mongo_query = {"record_id":{"$in": id_list}}
 
     cached_obj.pop("_id")
@@ -519,16 +520,59 @@ def get_cached_records_indirect(query_obj, config_obj):
         cached_obj["results"].append(obj)
 
 
-    #tmp_list = []
-    #for o in cached_obj["results"]:
-    #    tmp_list.append(o["record_id"])
-    #for record_id in id_list:
-    #    if record_id not in tmp_list:
-    #        print record_id
-    #return {}
+    filter_conf = json.loads(open("./conf/list_filters.json", "r").read())
+    record_type = cached_obj["cache_info"]["record_type"]
+
+
+    #Get available list before applying filtering
+    available_list_before = []
+    update_filters(cached_obj)
+    for obj in cached_obj["filters"]["available"]:
+        available_list_before.append(obj)
+
+    #Apply filters
+    filter_list(cached_obj, query_obj)
+
+    #Update filters
+    update_filters(cached_obj)
+  
+
+    #update available counts
+    count_dict = {}
+    for obj in cached_obj["filters"]["available"]:
+        for o in obj["options"]:
+            combo_id = "%s|%s" % (obj["id"], o["id"])
+            count_dict[combo_id] = o["count"]
+    for obj in available_list_before:
+        group_id = obj["id"]
+        ordr = 100
+        for o in obj["options"]:
+            option_id = o["id"]
+            combo_id = "%s|%s" % (group_id, option_id)
+            if combo_id in count_dict:
+                o["count"] = count_dict[combo_id]
+            else:
+                o["count"] = 0
+            if option_id in filter_conf[record_type][group_id]["order_dict"]:
+                o["order"] = filter_conf[record_type][group_id]["order_dict"][option_id]
+            else:
+                o["order"] = ordr
+                ordr += 1
+            if "label_dict" in filter_conf[record_type][group_id]:
+                if option_id in filter_conf[record_type][group_id]["label_dict"]:
+                    o["label"] = filter_conf[record_type][group_id]["label_dict"][option_id]
+
+    cached_obj["filters"]["available"] = available_list_before
+
 
     if len(cached_obj["results"]) == 0:
-        return {}
+        res_obj = {
+            "cache_info":cached_obj["cache_info"], 
+            "filters":cached_obj["filters"],
+            "results":[]
+        }
+        return res_obj
+
 
     return_fields = {"string":[], "int":[], "float":[]}
     for f in cached_obj["results"][0].keys():
@@ -542,7 +586,8 @@ def get_cached_records_indirect(query_obj, config_obj):
 
     sorted_id_list = sort_objects(cached_obj["results"], return_fields,
             query_obj["sort"], query_obj["order"])
-    res_obj = {"cache_info":cached_obj["cache_info"]}
+    res_obj = {"cache_info":cached_obj["cache_info"], "filters":cached_obj["filters"]}
+
     #check for post-access error, error_list should be empty upto this line
     if int(query_obj["offset"]) < 1 or int(query_obj["offset"]) > len(cached_obj["results"]):
         post_error_list.append({"error_code":"invalid-parameter-value", "field":"offset"})
@@ -590,3 +635,207 @@ def cache_record_list(dbh,list_id, record_list, cache_info, cache_coll, config_o
     return
 
 
+def filter_list(res_obj, query_obj):
+
+    record_type = res_obj["cache_info"]["record_type"]
+    filter_conf = json.loads(open("./conf/list_filters.json", "r").read())
+
+    if "filters" not in res_obj:
+        res_obj["filters"] = {"available":[], "applied":[]}
+    if "filters" in query_obj:
+        res_obj["filters"]["applied"] = query_obj["filters"]
+        if query_obj["filters"] == []:
+            return 
+    else:
+        return 
+
+    tmp_record_list = []
+    for record_obj in res_obj["results"]:
+        f_dict_one, f_dict_two = {}, {}
+        passed_group_id_dict = {}
+        for filter_obj in query_obj["filters"]:
+            filter_group_id = filter_obj["id"]
+            idlist_in_group = filter_obj["selected"]
+            f_dict_one[filter_group_id] = idlist_in_group
+            f_dict_two[filter_group_id] = []
+            operator = filter_obj["operator"]
+            if filter_group_id == "by_mass":
+                if "mass" in record_obj:
+                    id_list = []
+                    if filter_group_id in filter_conf[record_type]:
+                        for filter_id in filter_conf[record_type][filter_group_id]["range_dict"]:
+                            if filter_id in idlist_in_group:
+                                r = filter_conf[record_type][filter_group_id]["range_dict"][filter_id]
+
+                                if record_obj["mass"] >= r["min"] and record_obj["mass"] < r["max"]:
+                                    if filter_id not in f_dict_two[filter_group_id]:
+                                        f_dict_two[filter_group_id].append(filter_id)
+                else:
+                    filter_id = "no_mass"
+                    if filter_id not in f_dict_two[filter_group_id]:
+                        f_dict_two[filter_group_id].append(filter_id)
+            else:
+                field_map_one, field_map_two = {}, {}
+                if "numeric_field_map" in filter_conf[record_type][filter_group_id]:
+                    field_map_one = filter_conf[record_type][filter_group_id]["numeric_field_map"]
+                if "string_field_map" in filter_conf[record_type][filter_group_id]:
+                    field_map_two = filter_conf[record_type][filter_group_id]["string_field_map"]
+                if field_map_one != {} or field_map_two != {}:
+                    for filter_id in idlist_in_group:
+                        if filter_id in field_map_one:
+                            for p in field_map_one[filter_id]:
+                                if p in record_obj:
+                                    if record_obj[p] > 0:
+                                        if filter_id not in f_dict_two[filter_group_id]:
+                                            f_dict_two[filter_group_id].append(filter_id)
+                        if filter_id in field_map_two:
+                            for p in field_map_two[filter_id]:
+                                if record_obj[p] != "":
+                                    if filter_id not in f_dict_two[filter_group_id]:
+                                        f_dict_two[filter_group_id].append(filter_id)
+                else:
+                    tmp_list = []
+                    k = filter_conf[record_type][filter_group_id]["record_key"]
+                    if k in record_obj:
+                        if filter_group_id == "by_monosaccharide":
+                            res_list = []
+                            for s in record_obj[k].split(";"):
+                                res_list.append(s.strip().split(" ")[0])
+                            for filter_id in idlist_in_group:
+                                if filter_id in res_list:
+                                    if filter_id not in f_dict_two[filter_group_id]:
+                                        f_dict_two[filter_group_id].append(filter_id)
+                        else:
+                            for filter_id in idlist_in_group:
+                                if record_obj[k].find(filter_id) != -1:
+                                    if filter_id not in f_dict_two[filter_group_id]:
+                                        f_dict_two[filter_group_id].append(filter_id)
+            set_one = set(f_dict_one[filter_group_id])
+            set_two = set(f_dict_two[filter_group_id])
+            if operator.upper() == "AND" and set_one == set_two:
+                passed_group_id_dict[filter_group_id] = True
+            elif operator.upper() == "OR" and set_one.intersection(set_two) != set([]):
+                passed_group_id_dict[filter_group_id] = True
+
+        #cross filter groups are connected by AND
+        if sorted(f_dict_one.keys()) == sorted(passed_group_id_dict.keys()):
+            tmp_record_list.append(record_obj)
+
+    res_obj["results"] = tmp_record_list
+
+
+    return
+
+
+def update_filters(res_obj):
+
+    filter_conf = json.loads(open("./conf/list_filters.json", "r").read())
+    record_type = res_obj["cache_info"]["record_type"]
+
+    if "filters" not in res_obj:
+        res_obj["filters"] = {"applied":[]}
+    res_obj["filters"]["available"] = []
+
+    group_id_list = filter_conf[record_type].keys()
+    for filter_group_id in filter_conf[record_type]:
+        group_label = filter_conf[record_type][filter_group_id]["group_label"]
+        group_ordr = filter_conf[record_type][filter_group_id]["group_order"]
+        obj = {"id":filter_group_id, "label":group_label, "order":group_ordr, 
+                "tooltip":"", "tmp_options":{}}
+        for option_id in filter_conf[record_type][filter_group_id]["order_dict"]:
+            label = option_id
+            option_ordr = filter_conf[record_type][filter_group_id]["order_dict"][option_id]
+            if option_id in filter_conf[record_type][filter_group_id]["label_dict"]:
+                label = filter_conf[record_type][filter_group_id]["label_dict"][option_id]
+            obj["tmp_options"][option_id] = {"id":option_id, "label":label, 
+                    "count":0,"order":option_ordr}
+        res_obj["filters"]["available"].append(obj)
+
+
+    for record_obj in res_obj["results"]:
+        for filter_group_id in group_id_list:
+            group_idx = group_id_list.index(filter_group_id)
+            seen_option_id = {}
+            if filter_group_id in ["by_mass"]:
+                if "mass" not in record_obj:
+                    o_id = "no_mass"
+                    res_obj["filters"]["available"][group_idx]["tmp_options"][o_id]["count"] += 1
+                else:
+                    for o_id in filter_conf[record_type][filter_group_id]["range_dict"]:
+                        r = filter_conf[record_type][filter_group_id]["range_dict"][o_id]
+                        if record_obj["mass"] >= r["min"] and record_obj["mass"] < r["max"]:
+                            res_obj["filters"]["available"][group_idx]["tmp_options"][o_id]["count"] += 1
+            else:
+                tmp_list = []
+                k = filter_conf[record_type][filter_group_id]["record_key"] 
+                if filter_group_id == "by_data":
+                    field_map = filter_conf[record_type][filter_group_id]["numeric_field_map"]
+                    for opt in field_map:
+                        for k in field_map[opt]:
+                            if k in record_obj:
+                                if record_obj[k] > 0:
+                                    tmp_list.append(opt)
+                    field_map = filter_conf[record_type][filter_group_id]["string_field_map"]
+                    for opt in field_map:
+                        for k in field_map[opt]:
+                            if k in record_obj:
+                                if record_obj[k] != "":
+                                    tmp_list.append(opt)
+                elif filter_group_id == "by_ptm":
+                    field_map = filter_conf[record_type][filter_group_id]["numeric_field_map"]
+                    for opt in field_map:
+                        for k in field_map[opt]:
+                            if k in record_obj:
+                                if record_obj[k] > 0:
+                                    tmp_list.append(opt)
+                elif k in record_obj:
+                    tmp_list = record_obj[k].split(";")
+                
+                for option_id in tmp_list:
+                    if option_id.strip() != "":
+                        if filter_group_id == "by_glycan_type":
+                            option_id = option_id.strip().split("/")[0]
+                        if filter_group_id == "by_monosaccharide":
+                            option_id = option_id.strip().split(" ")[0]
+                        seen_option_id[option_id] = True
+                
+                for option_id in seen_option_id:
+                    if option_id not in filter_conf[record_type][filter_group_id]["order_dict"]:
+                        continue
+                    option_ordr = filter_conf[record_type][filter_group_id]["order_dict"][option_id]
+                    label = option_id
+                    if option_id in filter_conf[record_type][filter_group_id]["label_dict"]:
+                        label = filter_conf[record_type][filter_group_id]["label_dict"][option_id]
+                    o = {"id":option_id, "count":0, "label":label, "order":option_ordr}
+                    if option_id not in res_obj["filters"]["available"][group_idx]["tmp_options"]:
+                        res_obj["filters"]["available"][group_idx]["tmp_options"][option_id] = o
+                    res_obj["filters"]["available"][group_idx]["tmp_options"][option_id]["count"] += 1
+   
+    seen = {}
+    for grp_obj in res_obj["filters"]["available"]:
+        filter_group_id = grp_obj["id"]
+        grp_obj["options"] = []
+        for option_id in grp_obj["tmp_options"]:
+            grp_obj["options"].append(grp_obj["tmp_options"][option_id])
+            if filter_group_id not in seen:
+                seen[filter_group_id] = {}
+            if option_id not in seen[filter_group_id]:
+                seen[filter_group_id][option_id] = True
+        grp_obj.pop("tmp_options")
+
+
+
+    #add filters not seen in hit records
+    #for filter_group_id in filter_conf[record_type]:
+    #    group_idx = group_id_list.index(filter_group_id)
+    #    for option_id in filter_conf[record_type][filter_group_id]["order"]:
+    #        if option_id not in seen[filter_group_id]:
+    #            ordr = filter_conf[record_type][filter_group_id]["order"][option_id]
+    #            label = option_id
+    #            if option_id in filter_conf[record_type][filter_group_id]["label_dict"]:
+    #                label = filter_conf[record_type][filter_group_id]["label_dict"][option_id]
+    #            o = { "id": option_id, "count": 0, "order":ordr, "label":label}
+    #            res_obj["filters"]["available"][group_idx]["options"].append(o)
+
+
+    return
